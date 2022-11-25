@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div id="chat-modal" class="chat-modal modal hide" tabindex="-1" role="dialog" aria-labelledby="Chat" aria-hidden="true" data-backdrop="none">
 	<div class="modal-dialog">
 		<div class="modal-content">

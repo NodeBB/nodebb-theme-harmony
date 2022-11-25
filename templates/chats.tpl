@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="chats-full">
 	<div component="chat/nav-wrapper" data-loaded="{{{ if roomId }}}1{{{ else }}}0{{{ end }}}">
 		<div class="chat-search dropdown">

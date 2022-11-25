@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
 	<!-- IF sso.length --><div><!-- ENDIF sso.length -->

@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div component="groups/container" class="groups details row">
 	<div component="groups/cover" style="background-image: url({group.cover:url}); background-position: {group.cover:position};">
 		<!-- IF group.isOwner -->

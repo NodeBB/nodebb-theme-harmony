@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
     <span component="category-selector-selected">
         {{{ if (selectedCategory && !showCategorySelectLabel) }}}

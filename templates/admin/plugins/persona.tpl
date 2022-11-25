@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="row">
 	<div class="col-sm-2 col-12 settings-header">Theme Settings</div>
 	<div class="col-sm-10 col-12">

@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="form-group">
 	<label for="agree-terms">[[register:terms_of_use]]</label>
 	<div class="tos">{termsOfUse}</div>

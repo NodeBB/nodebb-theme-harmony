@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <!-- IF roomId -->
 <div component="chat/messages" class="expanded-chat" data-roomid="{roomId}">
 	<div component="chat/header" class="d-flex align-items-center px-3">

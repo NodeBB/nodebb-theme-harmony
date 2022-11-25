@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="persona-usercard">
 	<a href="{config.relative_path}/user/{userslug}">
 		<!-- IF picture -->

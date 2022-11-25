@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <ul id="users-container" class="users-container list-unstyled d-flex flex-wrap gap-2">
 {{{each users}}}
 <li class="users-box registered-user text-center pb-3" data-uid="{users.uid}" style="width: 102px;">

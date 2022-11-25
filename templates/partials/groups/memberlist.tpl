@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="d-flex mb-3">
 	<!-- IF group.isOwner -->
 	<div class="flex-shrink-0">

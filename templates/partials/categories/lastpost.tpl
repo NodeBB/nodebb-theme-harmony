@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="lastpost background-link-container" style="border-color: {../bgColor}">
 	{{{each ./posts}}}
 	<!-- IF @first -->

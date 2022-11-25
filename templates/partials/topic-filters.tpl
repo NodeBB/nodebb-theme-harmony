@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="btn-group bottom-sheet{{{ if !filters.length }}} hidden{{{ end }}}">
 	<button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
 		<span class="visible-sm-inline visible-md-inline visible-lg-inline">{selectedFilter.name}</span><span class="visible-xs-inline"><i class="fa fa-fw {selectedFilter.icon}"></i></span> <span class="caret"></span>

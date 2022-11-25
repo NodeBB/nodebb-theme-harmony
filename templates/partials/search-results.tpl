@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div id="results" class="search-results col-md-12" data-search-query="{search_query}">
 	{{{ if matchCount }}}
 	<div class="alert alert-info">[[search:results_matching, {matchCount}, {search_query}, {time}]] </div>

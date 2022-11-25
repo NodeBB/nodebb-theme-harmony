@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="stats text-muted">
 	<i class="fa fa-fw fa-user" title="[[global:posters]]"></i>
 	<span title="{postercount}" class="human-readable-number">{postercount}</span>

@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="btn-group bottom-sheet" component="thread/sort">
 	<button class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" type="button">
 		<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[topic:sort_by]]</span>

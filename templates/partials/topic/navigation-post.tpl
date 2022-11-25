@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="clearfix">
 	<div class="icon float-start">
 		<a href="<!-- IF post.user.userslug -->{config.relative_path}/user/{post.user.userslug}<!-- ELSE -->#<!-- ENDIF post.user.userslug -->">

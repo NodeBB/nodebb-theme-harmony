@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
 	<h2>[[user:consent.title]]</h2>

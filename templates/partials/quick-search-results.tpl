@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <ul id="quick-search-results" class="quick-search-results list-unstyled mb-0 p-0 overflow-auto" style="max-width:400px; max-height: 500px;">
 {{{each posts}}}
 <li data-tid="{posts.topic.tid}" data-pid="{posts.pid}">

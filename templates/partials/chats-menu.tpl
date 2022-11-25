@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 {{{ if config.loggedIn }}}
 <ul class="nav nav-pills">
 	<li class="nav-item">

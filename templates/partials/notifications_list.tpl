@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 
 <!-- IF !notifications.length -->
 <li class="no-notifs"><a href="#">[[notifications:no_notifs]]</a></li>

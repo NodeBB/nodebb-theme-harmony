@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 {{{ if children.length }}}
 <div class="subcategory">
 	{{{ if hasMoreSubCategories }}}

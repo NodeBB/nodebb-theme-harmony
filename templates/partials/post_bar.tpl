@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="topic-main-buttons float-end d-inline-block">
 	<span class="loading-indicator btn float-start hidden" done="0">
 		<span class="hidden-xs">[[topic:loading_more_posts]]</span> <i class="fa fa-refresh fa-spin"></i>

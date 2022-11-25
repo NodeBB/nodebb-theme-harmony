@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 {{{ if privileges.editable }}}
 <li <!-- IF locked -->hidden<!-- ENDIF locked -->><a component="topic/lock" href="#" class="dropdown-item <!-- IF locked -->hidden<!-- ENDIF locked -->"><i class="fa fa-fw fa-lock"></i> [[topic:thread_tools.lock]]</a></li>
 <li <!-- IF !locked -->hidden<!-- ENDIF !locked -->><a component="topic/unlock" href="#" class="dropdown-item <!-- IF !locked -->hidden<!-- ENDIF !locked -->"><i class="fa fa-fw fa-unlock"></i> [[topic:thread_tools.unlock]]</a></li>

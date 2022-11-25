@@ -1,1 +1,3 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <!-- This partial intentionally left blank; overwritten by nodebb-plugin-reactions -->

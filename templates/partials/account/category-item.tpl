@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <li component="categories/category" data-cid="{../cid}" data-parent-cid="{../parentCid}" class="row clearfix">
 	<meta itemprop="name" content="{../name}">
 

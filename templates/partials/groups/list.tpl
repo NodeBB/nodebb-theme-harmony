@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 	{{{each groups}}}
 	<div class="col-lg-4 col-md-6 col-sm-12 mb-3" component="groups/summary" data-slug="{groups.slug}">
 		<div class="card h-100">

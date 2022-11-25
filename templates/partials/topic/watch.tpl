@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <!-- IF config.loggedIn -->
 <div class="btn-group topic-watch-dropdown bottom-sheet" component="topic/watch"
 data-bs-toggle="tooltip"

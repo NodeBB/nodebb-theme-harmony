@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
 	<h1>[[pages:account/blocks, {username}]]</h1>

@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="text-center">
 	<div class="card mb-3">
 		<div class="card-body collapse" id="flags-daily-wrapper" aria-expanded="false">

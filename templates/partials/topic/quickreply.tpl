@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <!-- IF privileges.topics:reply -->
 <div component="topic/quickreply/container" class="clearfix quick-reply">
 	<div class="icon float-start hidden-xs">

@@ -1,3 +1,5 @@
+<!-- THIS FILE IS STILL PERSONA -->
+
 <ul class="nav nav-pills">
 	<li class="nav-item">
 		<a class="nav-link" href="{config.relative_path}/users?section=online">[[global:online]]</a>
