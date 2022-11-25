@@ -1,0 +1,20 @@
+.sidebar {
+	background-color: $gray-100;
+	width: 52px;
+	color: $gray-600;
+	.nav-link {
+		width: 36px;
+		height: 36px;
+		&.active {
+			background-color: $gray-200;
+		}
+	}
+}
+.sidebar-left {
+	border-right: 1px solid $gray-200;
+	left: 0px;
+}
+.sidebar-right {
+	border-left: 1px solid $gray-200;
+	right: 0px;
+}

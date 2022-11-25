@@ -26,15 +26,12 @@
 </head>
 
 <body class="{bodyClass} skin-{{{if bootswatchSkin}}}{bootswatchSkin}{{{else}}}noskin{{{end}}}">
-	<nav id="menu" class="slideout-menu hidden">
-		<!-- IMPORT partials/slideout-menu.tpl -->
-	</nav>
-	<nav id="chats-menu" class="slideout-menu hidden">
-		<!-- IMPORT partials/chats-menu.tpl -->
-	</nav>
+	<!-- IMPORT partials/sidebar-left.tpl -->
+	<!-- IMPORT partials/sidebar-right.tpl -->
+
 
 	<main id="panel" class="slideout-panel">
-		<nav class="navbar sticky-top navbar-expand-lg bg-light header border-bottom" id="header-menu" component="navbar">
+		<nav class="hidden navbar sticky-top navbar-expand-lg bg-light header border-bottom" id="header-menu" component="navbar">
 			<div class="container justify-content-start flex-nowrap">
 				<!-- IMPORT partials/menu.tpl -->
 			</div>
