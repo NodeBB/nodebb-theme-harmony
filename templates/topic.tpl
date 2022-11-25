@@ -1,10 +1,13 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <div data-widget-area="header">
 	{{{each widgets.header}}}
 	{{widgets.header.html}}
 	{{{end}}}
 </div>
+
+<!-- IMPORT partials/breadcrumbs.tpl -->
+
+<!-- THIS FILE IS STILL PERSONA -->
+
 <div class="row">
 	<div class="topic {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<div class="topic-header sticky-top">

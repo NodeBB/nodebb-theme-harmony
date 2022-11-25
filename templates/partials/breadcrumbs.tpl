@@ -1,11 +1,9 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <!-- IF breadcrumbs.length -->
-<ol class="breadcrumb" itemscope="itemscope" itemprop="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
+<ol class="breadcrumb justify-content-center" itemscope="itemscope" itemprop="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
 	{{{each breadcrumbs}}}
 	<li<!-- IF @last --> component="breadcrumb/current"<!-- ENDIF @last --> itemscope="itemscope" itemprop="itemListElement" itemtype="http://schema.org/ListItem" class="breadcrumb-item <!-- IF @last -->active<!-- ENDIF @last -->">
 		<meta itemprop="position" content="{@index}" />
-		{{{ if ./url }}}<a href="{breadcrumbs.url}" itemprop="item">{{{ end }}}
+		{{{ if ./url }}}<a class="text-decoration-none" href="{breadcrumbs.url}" itemprop="item">{{{ end }}}
 			<span itemprop="name">
 				{breadcrumbs.text}
 				<!-- IF @last -->
