@@ -9,6 +9,7 @@
 		"../admin/plugins/harmony.js": "public/admin.js"
 	},
 	"staticDirs": {
-		"fonts": "./public/fonts"
+		"fonts": "./public/fonts",
+		"plex": "node_modules/@ibm/plex"
 	}
 }

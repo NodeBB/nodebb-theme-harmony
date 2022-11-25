@@ -36,7 +36,9 @@
   "bugs": {
     "url": "https://github.com/NodeBB/nodebb-theme-harmony/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@ibm/plex": "^6.1.1"
+  },
   "devDependencies": {
     "eslint": "^8.0.0",
     "eslint-config-nodebb": "^0.2.0",
