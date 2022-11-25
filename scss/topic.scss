@@ -1,0 +1,14 @@
+.page-topic {
+	[component="topic/title"] {
+		font-size: 28px;
+		line-height: 34px;
+		font-weight: $font-weight-semibold;
+	}
+
+	.stats {
+		background-color: $gray-200;
+		color: $gray-700;
+		font-weight: 600;
+		font-size: 12px;
+	}
+}
