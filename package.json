@@ -1,0 +1,45 @@
+{
+  "name": "nodebb-theme-harmony",
+  "version": "0.0.0",
+  "nbbpm": {
+    "compatibility": "^3.0.0"
+  },
+  "description": "Harmony theme for NodeBB",
+  "main": "library.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NodeBB/nodebb-theme-harmony"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "nodebb",
+    "theme",
+    "forum",
+    "bootstrap",
+    "responsive"
+  ],
+  "contributors": [
+    {
+      "name": "Julian Lam",
+      "email": "julian@nodebb.org",
+      "url": "https://github.com/julianlam"
+    },
+    {
+      "name": "Barış Soner Uşaklı",
+      "email": "baris@nodebb.org",
+      "url": "https://github.com/barisusakli"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NodeBB/nodebb-theme-harmony/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-nodebb": "^0.0.2",
+    "eslint-plugin-import": "^2.24.2"
+  }
+}

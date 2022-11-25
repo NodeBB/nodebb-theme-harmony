@@ -1,0 +1,11 @@
+{
+	"id": "nodebb-theme-harmony",
+	"hooks": [
+		{ "hook": "static:app.load", "method": "init" },
+		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
+		{ "hook": "filter:widgets.getAreas", "method": "defineWidgetAreas" }
+	],
+	"modules": {
+		"../admin/plugins/harmony.js": "public/admin.js"
+	}
+}

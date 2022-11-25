@@ -1,0 +1,7 @@
+{
+    "id": "nodebb-theme-harmony",
+    "name": "Harmony",
+    "description": "The default theme for NodeBB. Uses a standard approach to forum design.",
+    "url": "https://github.com/nodebb/nodebb-theme-harmony",
+    "screenshot": "screenshot.png"
+}
