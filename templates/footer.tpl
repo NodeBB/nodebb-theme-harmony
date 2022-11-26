@@ -1,7 +1,8 @@
-<!-- THIS FILE IS STILL PERSONA -->
 
-		</div><!-- /.container#content -->
-	</main>
+			</div><!-- /.container#content -->
+		</main>
+		<!-- IMPORT partials/sidebar-right.tpl -->
+	</div>
 	{{{ if !isSpider }}}
 	<div component="toaster/tray" class="alert-window">
 		<div id="reconnect-alert" class="alert alert-dismissible alert-warning clearfix hide" component="toaster/toast">

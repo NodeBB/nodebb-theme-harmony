@@ -1,13 +1,45 @@
 .sidebar {
+	color: $gray-600;
 	background-color: $gray-100;
 	width: 52px;
-	color: $gray-600;
+	@include transition(.1s width ease-in-out);
+	&.open {
+		width: 180px;
+		.nav-link {
+			width: 164px;
+		}
+		.nav-text {
+			display: block;
+		}
+		.sidebar-toggle {
+			justify-content: end;
+			.fa-angles-right { display: none; }
+			.fa-angles-left { display: block; }
+		}
+	}
 	.nav-link {
-		width: 36px;
-		height: 36px;
 		&.active {
 			background-color: $gray-200;
 		}
+	}
+
+	.nav-text {
+		color: $gray-800;
+		display: none;
+	}
+
+	.nav-btn {
+		width: 36px;
+		height: 36px;
+		&:hover {
+			background-color: $gray-200;
+		}
+	}
+
+	.sidebar-toggle {
+		justify-content: start;
+		.fa-angles-right { display: block; }
+		.fa-angles-left { display: none; }
 	}
 }
 .sidebar-left {

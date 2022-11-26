@@ -5,6 +5,9 @@
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
 		{ "hook": "filter:widgets.getAreas", "method": "defineWidgetAreas" }
 	],
+	"scripts": [
+		"public/harmony.js"
+	],
 	"modules": {
 		"../admin/plugins/harmony.js": "public/admin.js"
 	},

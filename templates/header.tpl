@@ -1,5 +1,3 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <!DOCTYPE html>
 <html lang="{function.localeToHTML, userLang, defaultLang}" {{{if languageDirection}}}data-dir="{languageDirection}" style="direction: {languageDirection};"{{{end}}}>
 <head>
@@ -26,21 +24,20 @@
 </head>
 
 <body class="{bodyClass} skin-{{{if bootswatchSkin}}}{bootswatchSkin}{{{else}}}noskin{{{end}}}">
-	<!-- IMPORT partials/sidebar-left.tpl -->
-	<!-- IMPORT partials/sidebar-right.tpl -->
+	<div class="d-flex justify-content-between">
+		<!-- IMPORT partials/sidebar-left.tpl -->
 
-
-	<main id="panel" class="slideout-panel">
-		<nav class="hidden navbar sticky-top navbar-expand-lg bg-light header border-bottom" id="header-menu" component="navbar">
-			<div class="container justify-content-start flex-nowrap">
-				<!-- IMPORT partials/menu.tpl -->
-			</div>
-		</nav>
-		<script>
-			const rect = document.getElementById('header-menu').getBoundingClientRect();
-			const offset = Math.max(0, rect.bottom);
-			document.documentElement.style.setProperty('--panel-offset', offset + `px`);
-		</script>
-		<div class="container pt-3" id="content">
-		<!-- IMPORT partials/noscript/warning.tpl -->
-		<!-- IMPORT partials/noscript/message.tpl -->
+		<main id="panel" class="flex-grow-1">
+			<nav class="hidden navbar sticky-top navbar-expand-lg bg-light header border-bottom" id="header-menu" component="navbar">
+				<div class="container justify-content-start flex-nowrap">
+					<!-- IMPORT partials/menu.tpl -->
+				</div>
+			</nav>
+			<script>
+				const rect = document.getElementById('header-menu').getBoundingClientRect();
+				const offset = Math.max(0, rect.bottom);
+				document.documentElement.style.setProperty('--panel-offset', offset + `px`);
+			</script>
+			<div class="container pt-3" id="content">
+			<!-- IMPORT partials/noscript/warning.tpl -->
+			<!-- IMPORT partials/noscript/message.tpl -->
