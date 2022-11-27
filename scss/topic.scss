@@ -32,4 +32,12 @@
 			}
 		}
 	}
+
+	.topic {
+		.posts {
+			&.timeline {
+				@include timeline-style;
+			}
+		}
+	}
 }
