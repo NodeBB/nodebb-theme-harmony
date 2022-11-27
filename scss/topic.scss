@@ -16,4 +16,20 @@
 			text-transform: lowercase;
 		}
 	}
+
+	.topic-main-buttons {
+		font-family: $font-family-secondary;
+
+		// Hide the dropdown carat only in the post bar
+		.navbar-nav {
+			a, button {
+				font-size: 14px;
+				line-height: 20px;
+			}
+
+			.dropdown-toggle::after {
+				display: none;
+			}
+		}
+	}
 }

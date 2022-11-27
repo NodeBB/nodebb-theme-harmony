@@ -4,13 +4,7 @@
 	<li<!-- IF @last --> component="breadcrumb/current"<!-- ENDIF @last --> itemscope="itemscope" itemprop="itemListElement" itemtype="http://schema.org/ListItem" class="breadcrumb-item <!-- IF @last -->active<!-- ENDIF @last -->">
 		<meta itemprop="position" content="{@index}" />
 		{{{ if ./url }}}<a class="text-decoration-none" href="{breadcrumbs.url}" itemprop="item">{{{ end }}}
-			<span itemprop="name">
-				{breadcrumbs.text}
-				<!-- IF @last -->
-				<!-- IF !feeds:disableRSS -->
-				<!-- IF rssFeedUrl --><a target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss-square"></i></a><!-- ENDIF rssFeedUrl --><!-- ENDIF !feeds:disableRSS -->
-				<!-- ENDIF @last -->
-			</span>
+			<span itemprop="name">{breadcrumbs.text}</span>
 		{{{ if ./url }}}</a>{{{ end }}}
 	</li>
 	{{{end}}}

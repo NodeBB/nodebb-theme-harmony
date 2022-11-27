@@ -1,18 +1,16 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <!-- IF config.loggedIn -->
 <div class="btn-group topic-watch-dropdown bottom-sheet" component="topic/watch"
-data-bs-toggle="tooltip"
+	data-bs-toggle="tooltip"
 	{{{if isFollowing}}}title="[[topic:watching]]"{{{end}}}
 	{{{if isNotFollowing}}}title="[[topic:not-watching]]"{{{end}}}
 	{{{if isIgnoring}}}title="[[topic:ignoring]]"{{{end}}}
 >
-	<button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" type="button">
-		<span component="topic/following/menu" <!-- IF !isFollowing -->class="hidden"<!-- ENDIF !isFollowing -->><i class="fa fa-fw fa-bell-o"></i></span>
+	<button class="btn btn-link text-decoration-none text-dark d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown" type="button">
+		<span component="topic/following/menu" <!-- IF !isFollowing -->class="hidden"<!-- ENDIF !isFollowing -->><i class="fa fa-fw fa-bell-o link-primary"></i> [[topic:watching]]</span>
 
-		<span component="topic/not-following/menu" <!-- IF !isNotFollowing -->class="hidden"<!-- ENDIF !isNotFollowing -->><i class="fa fa-fw fa-bell-slash-o"></i></span>
+		<span component="topic/not-following/menu" <!-- IF !isNotFollowing -->class="hidden"<!-- ENDIF !isNotFollowing -->><i class="fa fa-fw fa-bell-slash-o link-primary"></i> [[topic:not-watching]]</span>
 
-		<span component="topic/ignoring/menu" <!-- IF !isIgnoring -->class="hidden"<!-- ENDIF !isIgnoring -->><i class="fa fa-fw fa-eye-slash"></i></span>
+		<span component="topic/ignoring/menu" <!-- IF !isIgnoring -->class="hidden"<!-- ENDIF !isIgnoring -->><i class="fa fa-fw fa-eye-slash link-primary"></i> [[topic:ignoring]]</span>
 
 	</button>
 	<ul class="dropdown-menu dropdown-menu-end">
