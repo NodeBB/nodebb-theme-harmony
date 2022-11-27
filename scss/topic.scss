@@ -10,5 +10,10 @@
 		color: $gray-700;
 		font-weight: 600;
 		font-size: 12px;
+
+		span.hidden-xs {
+			font-weight: normal;
+			text-transform: lowercase;
+		}
 	}
 }

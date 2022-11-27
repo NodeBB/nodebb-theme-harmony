@@ -1,14 +1,15 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <span class="badge stats">
-	<i class="fa fa-fw fa-user" title="[[global:posters]]"></i>
-	<span title="{postercount}" class="human-readable-number">{postercount}</span>
-</span>
-<span class="badge stats">
-	<i class="fa fa-fw fa-pencil" title="[[global:posts]]"></i>
+	<i class="fa fa-fw fa-pencil visible-xs-inline" title="[[global:posts]]"></i>
 	<span component="topic/post-count" title="{postcount}" class="human-readable-number">{postcount}</span>
+	<span class="hidden-xs">[[global:posts]]</span>
 </span>
 <span class="badge stats">
-	<i class="fa fa-fw fa-eye" title="[[global:views]]"></i>
+	<i class="fa fa-fw fa-user visible-xs-inline" title="[[global:posters]]"></i>
+	<span title="{postercount}" class="human-readable-number">{postercount}</span>
+	<span class="hidden-xs">[[global:posters]]</span>
+</span>
+<span class="badge stats">
+	<i class="fa fa-fw fa-eye visible-xs-inline" title="[[global:views]]"></i>
 	<span class="human-readable-number" title="{viewcount}">{viewcount}</span>
+	<span class="hidden-xs">[[global:views]]</span>
 </span>

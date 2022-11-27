@@ -1,1 +1,1 @@
-<a class="me-2" href="{config.relative_path}/tags/{./valueEncoded}"><span class="badge tag tag-class-{./class} px-1" data-tag="{./value}">{./valueEscaped}</span></a>
+<a href="{config.relative_path}/tags/{./valueEncoded}"><span class="badge tag tag-class-{./class} px-1" data-tag="{./value}">{./valueEscaped}</span></a>
