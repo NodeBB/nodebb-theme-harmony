@@ -26,14 +26,41 @@
 
 		// Hide the dropdown carat only in the post bar
 		.navbar-nav {
-			a, button {
+			a, button, span {
 				font-size: 14px;
 				line-height: 20px;
+
+				i {
+					color: $blue-500;
+				}
 			}
 
 			.dropdown-toggle::after {
 				display: none;
 			}
+		}
+	}
+
+	[component="topic/reply"] {
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	.action-bar {
+		.btn {
+			background: $blue-600;
+			color: $white;
+		}
+
+		.dropdown-toggle::after {
+			border: none;
+			font-family: "FontAwesome";
+			content: "\f078";
+			color: $blue-300;
+
+			position: relative;
+			top: 2px;
 		}
 	}
 

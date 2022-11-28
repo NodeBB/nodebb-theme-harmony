@@ -4,6 +4,6 @@
 		<i class="fa fa-fw fa-gear link-primary"></i>
 		[[topic:thread_tools.title]]
 	</button>
-	<ul class="dropdown-menu dropdown-menu-end"></ul>
+	<ul class="dropdown-menu"></ul>
 </div>
 {{{ end }}}

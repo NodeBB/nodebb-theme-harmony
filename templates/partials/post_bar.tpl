@@ -15,8 +15,9 @@
 		<a class="btn btn-link" target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss"></i></a>
 		{{{ end }}}
 
-		<span class="loading-indicator btn float-start hidden" done="0">
-			<span class="hidden-xs">[[topic:loading_more_posts]]</span> <i class="fa fa-refresh fa-spin"></i>
+		<span class="loading-indicator btn float-start text-muted navbar-text hidden" done="0">
+			<i class="fa fa-refresh fa-spin"></i>
+			<span class="hidden-xs">[[topic:loading_more_posts]]</span>
 		</span>
 	</ul>
 	<!-- IMPORT partials/topic/reply-button.tpl -->
