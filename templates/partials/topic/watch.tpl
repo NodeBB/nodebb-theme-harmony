@@ -1,10 +1,5 @@
 <!-- IF config.loggedIn -->
-<div class="btn-group topic-watch-dropdown bottom-sheet" component="topic/watch"
-	data-bs-toggle="tooltip"
-	{{{if isFollowing}}}title="[[topic:watching]]"{{{end}}}
-	{{{if isNotFollowing}}}title="[[topic:not-watching]]"{{{end}}}
-	{{{if isIgnoring}}}title="[[topic:ignoring]]"{{{end}}}
->
+<div class="btn-group topic-watch-dropdown bottom-sheet" component="topic/watch">
 	<button class="btn btn-link text-decoration-none text-dark d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown" type="button">
 		<span component="topic/following/menu" <!-- IF !isFollowing -->class="hidden"<!-- ENDIF !isFollowing -->><i class="fa fa-fw fa-bell-o link-primary"></i> [[topic:watching]]</span>
 
