@@ -1,0 +1,20 @@
+.status {
+	font-size: 10px;
+	vertical-align: middle;
+
+	&.online {
+		color: $success;
+	}
+
+	&.away {
+		color: $warning;
+	}
+
+	&.dnd {
+		color: $danger;
+	}
+
+	&.offline {
+		color: $gray-600;
+	}
+}

@@ -3,7 +3,7 @@
 		{{{ each navigation }}}
 		<!-- IF function.displayMenuItem, @index -->
 		<li class="nav-item m-2 {navigation.class}{{{ if navigation.dropdown }}} dropdown{{{ end }}}" title="{navigation.title}">
-			<a class="nav-link nav-btn px-2 rounded-1 navigation-link d-flex align-items-center {{{ if navigation.dropdown }}}dropdown-toggle{{{ end }}}"
+			<a class="nav-link nav-btn px-2 navigation-link {{{ if navigation.dropdown }}}dropdown-toggle{{{ end }}}"
 			{{{ if navigation.dropdown }}} href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{{ else }}} href="{navigation.route}"{{{ end }}} {{{ if navigation.id }}}id="{navigation.id}"{{{ end }}}{{{ if navigation.targetBlank }}} target="_blank"{{{ end }}}>
 				{{{ if navigation.iconClass }}}
 				<i class="fa fa-fw {navigation.iconClass}" data-content="{navigation.content}"></i>
@@ -26,7 +26,7 @@
 	</ul>
 
 	<div class="sidebar-toggle d-flex">
-		<div component="sidebar/toggle" class="nav-btn m-2 px-2 rounded-1 d-flex justify-content-center align-items-center pointer">
+		<div component="sidebar/toggle" class="nav-btn m-2 px-2 pointer">
 			<i class="fa fa-angles-right"></i>
 			<i class="fa fa-angles-left"></i>
 		</div>

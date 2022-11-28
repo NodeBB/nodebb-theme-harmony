@@ -1,3 +1,8 @@
 <nav class="sidebar sidebar-right vh-100 d-flex flex-column justify-content-between sticky-top">
-	Moo!
+	{{{ if config.loggedIn }}}
+	<ul id="logged-in-menu" class="list-unstyled d-flex flex-column align-items-center">
+		<!-- IMPORT partials/header/user-menu.tpl -->
+	</ul>
+	{{{ end }}}
+
 </nav>

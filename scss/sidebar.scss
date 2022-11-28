@@ -31,6 +31,9 @@
 	.nav-btn {
 		width: 36px;
 		height: 36px;
+		display: flex;
+		align-items: center;
+		border-radius: $border-radius-sm;
 		&:hover {
 			background-color: $gray-200;
 		}
