@@ -1,7 +1,6 @@
 .sidebar {
 	color: $gray-600;
 	background-color: $gray-100;
-	width: 52px;
 	@include transition(.1s width ease-in-out);
 	&.open {
 		width: 180px;
@@ -29,11 +28,13 @@
 	}
 
 	.nav-btn {
-		width: 36px;
-		height: 36px;
+		// width: 36px;
+		// height: 36px;
+		padding: ($spacer * 0.5);
 		display: flex;
 		align-items: center;
 		border-radius: $border-radius-sm;
+		cursor: pointer;
 		&:hover {
 			background-color: $gray-200;
 		}
@@ -43,6 +44,19 @@
 		justify-content: start;
 		.fa-angles-right { display: block; }
 		.fa-angles-left { display: none; }
+	}
+
+	.search-dropdown {
+		width: 300px;
+		input[name="query"] {
+			width: 244px;
+		}
+		.quick-search-title, .snippet, .filter-category {
+			font-size: 13px;
+		}
+		.timeago {
+			font-size: 12px;
+		}
 	}
 }
 .sidebar-left {

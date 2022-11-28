@@ -3,6 +3,7 @@
 $(document).ready(function () {
 	setupQuickReply();
 	setupMobileMenu();
+	setupSearch();
 
 	function setupMobileMenu() {
 		$('[component="sidebar/toggle"]').on('click', function () {
@@ -21,6 +22,12 @@ $(document).ready(function () {
 					});
 				}
 			}
+		});
+	}
+
+	function setupSearch() {
+		$('[component="sidebar/search"]').on('shown.bs.dropdown', function () {
+			$('[component="search/fields"] input[name="query"]').trigger('focus');
 		});
 	}
 });
