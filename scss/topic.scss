@@ -31,7 +31,7 @@
 				line-height: 20px;
 
 				i {
-					color: $blue-500;
+					color: $primary;
 				}
 			}
 
@@ -49,15 +49,14 @@
 
 	.action-bar {
 		.btn {
-			background: $blue-600;
-			color: $white;
+			background: shade-color($primary, 20%);
 		}
 
 		.dropdown-toggle::after {
 			border: none;
 			font-family: "FontAwesome";
 			content: "\f078";
-			color: $blue-300;
+			color: tint-color($primary, 40%);
 
 			position: relative;
 			top: 2px;

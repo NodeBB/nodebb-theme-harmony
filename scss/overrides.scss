@@ -13,6 +13,8 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
+$body-color:                $gray-900 !default;
+
 // disable smooth scroll, this makes window.scrollTo(0,0) in ajaxify.js take x milliseconds
 $enable-smooth-scroll: false;
 
@@ -27,6 +29,6 @@ $font-prefix: './plugins/nodebb-theme-harmony/plex';
 $font-family-secondary: "IBM Plex Sans" !default;
 
 $breadcrumb-divider: quote("→");
-$breadcrumb-divider-color: $gray-500;
-$breadcrumb-active-color: $gray-800;
+$breadcrumb-divider-color: lighten($body-color, 20%);
+$breadcrumb-active-color: $body-color;
 $breadcrumb-item-padding-x: 12px;

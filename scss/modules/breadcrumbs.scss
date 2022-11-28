@@ -1,8 +1,12 @@
 .breadcrumb .breadcrumb-item {
 	font-family: "IBM Plex Sans";
 
+	&::before {
+		font-family: $font-family-sans-serif;
+	}
+
 	a, span {
-		color: $gray-800;
+		color: $body-color;
 		font-weight: 500;
 		font-size: 12px;
 		line-height: 16px;
