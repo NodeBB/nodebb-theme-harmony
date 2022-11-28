@@ -5,6 +5,10 @@
 		font-weight: $font-weight-semibold;
 	}
 
+	.tag-list:empty {
+		margin-left: 0 !important;
+	}
+
 	.stats {
 		background-color: $gray-200;
 		color: $gray-700;
