@@ -2,7 +2,7 @@
 	<ul class="navbar-nav me-auto gap-2">
 		{{{ if loggedIn }}}
 		<button component="topic/mark-unread" class="btn btn-link text-decoration-none text-dark d-flex gap-2 align-items-baseline">
-			<i class="fa fa-fw fa-inbox link-primary"></i>
+			<i class="fa fa-fw fa-inbox"></i>
 			<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[topic:mark_unread]]</span>
 		</button>
 		{{{ end }}}

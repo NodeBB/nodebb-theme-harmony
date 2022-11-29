@@ -3,12 +3,10 @@
 		position: relative;	// for absolutely positioned pseudo-element, below
 		border-left: 2px solid $input-group-addon-bg;
 		margin-left: 1.5rem;
+		padding-top: $post-padding;
 
 		&:not(:last-child) {
 			padding-bottom: $post-padding;
-		}
-		&:not(:first-child) {
-			padding-top: $post-padding;
 		}
 
 		> div:not(.content) {
@@ -19,7 +17,10 @@
 			// Opaque ring
 			position: relative;
 			z-index: 1;
-			box-shadow: 0 0 0 ($spacer * .5) $body-bg;
+			box-shadow: 0 0 0 ($spacer * 0) $body-bg; // no ring around avatar
+			border: 2px solid $input-group-addon-bg;
+			background: $body-bg;
+			padding: 2px;
 		}
 	}
 
@@ -86,13 +87,26 @@
 		border-left-style: dashed;
 	}
 
+	[component="post"]:first-child:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: calc(-0.5rem + 1.5px);
+		height: 12px;
+		width: 12px;
+		background-color: $input-group-addon-bg;
+		border-radius: 100%;
+	}
+
 	[component="post"]:last-child:after {
 		content: '';
-		width: 1rem;
 		position: absolute;
 		bottom: 0;
-		left: calc(-0.5rem - 1px);
-		border-bottom: 2px solid lighten($primary, 30%);
+		left: calc(-0.5rem + 1.5px);
+		height: 12px;
+		width: 12px;
+		background-color: $input-group-addon-bg;
+		border-radius: 100%;
 	}
 
 	[component="topic/event"], [component="topic/necro-post"] {

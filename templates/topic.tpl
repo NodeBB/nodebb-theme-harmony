@@ -9,10 +9,10 @@
 <h1 component="post/header" class="text-center" itemprop="name">
 	<span class="topic-title">
 		<span component="topic/labels">
-			<i component="topic/scheduled" class="fa fa-clock-o {{{ if !scheduled }}}hidden{{{ end }}}" title="[[topic:scheduled]]"></i>
-			<i component="topic/pinned" class="fa fa-thumb-tack {{{ if (scheduled || !pinned) }}}hidden{{{ end }}}" title="{{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {pinExpiryISO}]]{{{ end }}}"></i>
-			<i component="topic/locked" class="fa fa-lock {{{ if !locked }}}hidden{{{ end }}}" title="[[topic:locked]]"></i>
-			<i class="fa fa-arrow-circle-right {{{ if !oldCid }}}hidden{{{ end }}}" title="{{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}"></i>
+			<i component="topic/scheduled" class="fa fa-clock-o fs-4 {{{ if !scheduled }}}hidden{{{ end }}}" title="[[topic:scheduled]]"></i>
+			<i component="topic/pinned" class="fa fa-thumb-tack fs-4 {{{ if (scheduled || !pinned) }}}hidden{{{ end }}}" title="{{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {pinExpiryISO}]]{{{ end }}}"></i>
+			<i component="topic/locked" class="fa fa-lock fs-4 {{{ if !locked }}}hidden{{{ end }}}" title="[[topic:locked]]"></i>
+			<i class="fa fa-arrow-circle-right fs-4 {{{ if !oldCid }}}hidden{{{ end }}}" title="{{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}"></i>
 			{{{each icons}}}<span class="align-middle">{@value}</span>{{{end}}}
 		</span>
 		<span component="topic/title">{title}</span>
@@ -29,8 +29,6 @@
 
 <!-- IMPORT partials/post_bar.tpl -->
 
-<!-- THE REST OF THIS FILE IS STILL PERSONA -->
-
 <div class="row">
 	<div class="topic {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		{{{ if merger }}}
@@ -41,7 +39,7 @@
 		<!-- IMPORT partials/topic/deleted-message.tpl -->
 		{{{ end }}}
 
-		<ul component="topic" class="posts timeline" data-tid="{tid}" data-cid="{cid}">
+		<ul component="topic" class="posts timeline mt-4 p-0" data-tid="{tid}" data-cid="{cid}">
 			{{{each posts}}}
 				<li component="post" class="{{{ if posts.deleted }}}deleted{{{ end }}} {{{ if posts.selfPost }}}self-post{{{ end }}} {{{ if posts.topicOwnerPost }}}topic-owner-post{{{ end }}}" <!-- IMPORT partials/data/topic.tpl -->>
 					<a component="post/anchor" data-index="{posts.index}" id="{posts.index}"></a>
