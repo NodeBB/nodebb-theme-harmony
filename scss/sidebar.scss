@@ -1,6 +1,7 @@
 .sidebar {
-	color: $gray-600;
-	background-color: $gray-100;
+	color: $secondary;
+	background-color: $light;
+	$hover-color: mix($white, $black, 90);
 	@include transition(.1s width ease-in-out);
 	&.open {
 		max-width: 180px;
@@ -17,12 +18,12 @@
 	.nav-link {
 		padding: 0;
 		&.active {
-			background-color: $gray-200;
+			background-color: $hover-color;
 		}
 	}
 
 	.nav-text {
-		color: $gray-800;
+		color: $body-color;
 		display: none;
 	}
 
@@ -31,7 +32,7 @@
 		border-radius: $border-radius-sm;
 		cursor: pointer;
 		&:hover {
-			background-color: $gray-200;
+			background-color: $hover-color;
 		}
 	}
 
@@ -50,12 +51,25 @@
 			font-size: 12px;
 		}
 	}
+	.notifications-dropdown {
+		.notification-chat-content, .relTime {
+			font-size: 13px;
+		}
+	}
 }
+
+// these 3 skins set secondary and light colors too close
+.skin-lumen, .skin-yeti, .skin-cerulean {
+	.sidebar {
+		color: $dark;
+	}
+}
+
 .sidebar-left {
-	border-right: 1px solid $gray-200;
+	border-right: 1px solid $border-color;
 	left: 0px;
 }
 .sidebar-right {
-	border-left: 1px solid $gray-200;
+	border-left: 1px solid $border-color;
 	right: 0px;
 }
