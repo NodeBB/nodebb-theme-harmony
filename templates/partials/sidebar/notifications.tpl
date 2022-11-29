@@ -6,7 +6,7 @@
 	</a>
 	<ul class="notifications-dropdown dropdown-menu p-2">
 		<li>
-			<ul component="notifications/list" class="notification-list list-unstyled">
+			<ul component="notifications/list" class="notification-list list-unstyled p-2">
 				<li class="loading-text text-center">
 					<a href="#" class="text-decoration-none text-reset"><i class="fa fa-refresh fa-spin"></i> [[global:notifications.loading]]</a>
 				</li>
