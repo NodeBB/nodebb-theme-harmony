@@ -66,6 +66,19 @@
 			&.timeline {
 				@include timeline-style;
 			}
+
+			.post-header {
+				font-size: 13px;
+				line-height: 20px;
+			}
+
+			.avatar ~ .status {
+				top: 100%;
+				right: calc($spacer *.25);
+				z-index: $zindex-dropdown;
+				// doesn't work well, maybe replace with CSS circle?
+				// box-shadow: 0 0 0 ($spacer * 0.1) $body-bg;
+			}
 		}
 	}
 }
