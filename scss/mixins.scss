@@ -1,7 +1,7 @@
 @mixin timeline-style() {
 	> [component="post"], .timeline-event {
 		position: relative;	// for absolutely positioned pseudo-element, below
-		border-left: 2px solid lighten($primary, 30%);
+		border-left: 2px solid $light;
 		margin-left: 1.5rem;
 
 		&:not(:last-child) {
