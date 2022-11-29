@@ -2,7 +2,6 @@
 	color: $secondary;
 	background-color: $light;
 	$hover-color: mix($white, $black, 90);
-	@include transition(.1s width ease-in-out);
 	&.open {
 		max-width: 180px;
 		width: 180px;
@@ -58,8 +57,8 @@
 	}
 }
 
-// these 3 skins set secondary and light colors too close
-.skin-lumen, .skin-yeti, .skin-cerulean {
+// these skins set secondary and light colors too close
+.skin-lumen, .skin-yeti, .skin-cerulean, .skin-quartz {
 	.sidebar {
 		color: $dark;
 	}

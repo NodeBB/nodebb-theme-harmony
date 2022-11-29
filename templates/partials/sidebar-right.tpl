@@ -3,6 +3,9 @@
 	<ul id="logged-in-menu" class="list-unstyled d-flex flex-column">
 		<!-- IMPORT partials/header/user-menu.tpl -->
 		<!-- IMPORT partials/sidebar/search.tpl -->
+		<!-- IMPORT partials/sidebar/notifications.tpl -->
+		<!-- IMPORT partials/sidebar/chats.tpl -->
+		<!-- IMPORT partials/sidebar/drafts.tpl -->
 	</ul>
 	{{{ end }}}
 

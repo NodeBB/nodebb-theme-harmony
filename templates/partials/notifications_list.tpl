@@ -1,32 +1,22 @@
-<!-- THIS FILE IS STILL PERSONA -->
+{{{ if !notifications.length }}}
+<li class="no-notifs text-center"><a href="#" class="text-decoration-none text-reset">[[notifications:no_notifs]]</a></li>
+{{{ end }}}
 
-
-<!-- IF !notifications.length -->
-<li class="no-notifs"><a href="#">[[notifications:no_notifs]]</a></li>
-<!-- ENDIF !notifications.length -->
-
-{{{each notifications}}}
-<li class="{notifications.readClass}" data-nid="{notifications.nid}" data-path="{notifications.path}" <!-- IF notifications.pid --> data-pid="{notifications.pid}"<!-- ENDIF notifications.pid --><!-- IF notifications.tid --> data-tid="{notifications.tid}"<!-- ENDIF notifications.tid -->>
-	<!-- IF notifications.image -->
-	<!-- IF notifications.from -->
-	<a href="{config.relative_path}/user/{notifications.user.userslug}"><img class="float-start user-img avatar avatar-rounded" style="--avatar-size: 32px;" src="{notifications.image}" /></a>
-	<!-- ENDIF notifications.from -->
-	<!-- ELSE -->
-	<a href="{config.relative_path}/user/{notifications.user.userslug}"><div class="float-start avatar avatar-rounded" style="--avatar-size: 32px; background-color: {notifications.user.icon:bgColor};">{notifications.user.icon:text}</div></a>
-	<!-- ENDIF notifications.image -->
-
-	<a href="{notifications.path}" class="notification-chat-content deco-none">
-		<span class="text">{notifications.bodyShort}</span>
-	</a>
-
-	<div class="notification-chat-controls">
-		{{{ if ./nid }}}
-		<div class="mark-read" aria-label="Mark Read">
-			<i class="unread fa fa-circle"></i>
-			<i class="read fa fa-circle-o"></i>
+{{{ each notifications }}}
+<li class="{./readClass} mb-2" data-nid="{./nid}" data-path="{./path}" {{{ if ./pid }}}data-pid="{./pid}"{{{ end }}}{{{ if ./tid }}}data-tid="{./tid}"{{{ end }}}>
+	<div class="d-flex gap-1 justify-content-between align-items-center">
+		<a href="{./path}" class="notification-chat-content text-decoration-none text-reset">
+			<span class="text">{./bodyShort}</span>
+		</a>
+		<div class="notification-chat-controls">
+			{{{ if ./nid }}}
+			<button class="mark-read btn btn-light btn-sm" aria-label="Mark Read">
+				<i class="unread fa fa-xs fa-circle text-primary {{{ if ./read }}}hidden{{{ end }}}"></i>
+				<i class="read fa fa-xs fa-circle-o text-secondary {{{ if !./read }}}hidden{{{ end }}}"></i>
+			</button>
+			{{{ end }}}
 		</div>
-		{{{ end }}}
-		<span class="relTime">{notifications.timeago}</span>
 	</div>
+	<div class="relTime text-muted">{./timeagoLong}</div>
 </li>
 {{{end}}}

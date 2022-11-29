@@ -1,7 +1,7 @@
 {{{ if config.searchEnabled }}}
-<div component="sidebar/search" class="nav-item m-2 dropstart position-relative">
-	<a component="search/button" id="search-button" href="#" class="nav-link nav-btn text-truncate" data-bs-toggle="dropdown">
-		<i class="fa fa-search fa-fw" title="Search"></i>
+<li component="sidebar/search" class="nav-item m-2 dropstart position-relative">
+	<a component="search/button" id="search-button" href="#" role="button" class="nav-link nav-btn text-truncate" data-bs-toggle="dropdown" title="[[global:header.search]]">
+		<i class="fa fa-search fa-fw"></i>
 		<span class="nav-text px-2">[[global:search]]</span>
 	</a>
 	<div class="search-dropdown dropdown-menu p-2">
@@ -10,8 +10,8 @@
 				<div class="d-flex gap-1">
 					<input autocomplete="off" type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">
 
-					<div class="nav-btn d-flex justify-content-center align-items-center">
-						<i class="fa fa-gears fa-fw advanced-search-link text-muted"></i>
+					<div class="nav-btn d-flex justify-content-center align-items-center advanced-search-link">
+						<i class="fa fa-gears fa-fw text-muted"></i>
 					</div>
 				</div>
 
@@ -28,5 +28,5 @@
 			</div>
 		</form>
 	</div>
-</div>
+</li>
 {{{ end }}}
