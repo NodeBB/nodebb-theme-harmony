@@ -1,16 +1,16 @@
 {{{ if config.searchEnabled }}}
 <div component="sidebar/search" class="nav-item m-2 dropstart position-relative">
-	<li class="nav-link nav-btn px-2" data-bs-toggle="dropdown">
-		<a component="search/button" id="search-button" href="#" class="text-muted"><i class="fa fa-search fa-fw" title="Search"></i></a>
+	<a component="search/button" id="search-button" href="#" class="nav-link nav-btn text-truncate" data-bs-toggle="dropdown">
+		<i class="fa fa-search fa-fw" title="Search"></i>
 		<span class="nav-text px-2">[[global:search]]</span>
-	</li>
+	</a>
 	<div class="search-dropdown dropdown-menu p-2">
 		<form component="search/form" id="search-form" class="d-flex justify-content-end align-items-center" role="search" method="GET">
 			<div component="search/fields" class="w-100" id="search-fields">
 				<div class="d-flex gap-1">
 					<input autocomplete="off" type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">
 
-					<div class="nav-btn justify-content-center">
+					<div class="nav-btn d-flex justify-content-center align-items-center">
 						<i class="fa fa-gears fa-fw advanced-search-link text-muted"></i>
 					</div>
 				</div>

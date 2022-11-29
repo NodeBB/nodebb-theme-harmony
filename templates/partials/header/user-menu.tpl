@@ -1,8 +1,6 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <li id="user_label" class="nav-item m-2 dropstart" title="[[global:header.profile]]">
-	<label class="nav-link nav-btn px-1" data-bs-toggle="dropdown" id="user_dropdown" role="button">
-		<div>{buildAvatar(user, "28px", true)}</div>
+	<label class="nav-link nav-btn px-1 text-truncate" data-bs-toggle="dropdown" id="user_dropdown" role="button">
+		{buildAvatar(user, "28px", true)}
 		<span id="user-header-name" class="nav-text px-2">{user.username}</span>
 	</label>
 	<ul id="user-control-list" component="header/usercontrol" class="dropdown-menu" aria-labelledby="user_dropdown">
