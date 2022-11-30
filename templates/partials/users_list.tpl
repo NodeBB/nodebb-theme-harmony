@@ -3,13 +3,13 @@
 <ul id="users-container" class="users-container list-unstyled d-flex flex-wrap gap-2">
 {{{each users}}}
 <li class="users-box registered-user text-center pb-3" data-uid="{users.uid}" style="width: 102px;">
-	<a href="{config.relative_path}/user/{users.userslug}">{buildAvatar(users, "64px", true)}</a>
+	<a class="text-decoration-none" href="{config.relative_path}/user/{users.userslug}">{buildAvatar(users, "64px", true)}</a>
 
 	<div class="user-info">
 		<div class="text-nowrap text-truncate">
 			<span>
 				<i component="user/status" class="fa fa-circle status {users.status}" title="[[global:{users.status}]]"></i>
-				<a  href="{config.relative_path}/user/{users.userslug}">{users.username}</a>
+				<a class="text-decoration-none" href="{config.relative_path}/user/{users.userslug}">{users.username}</a>
 			</span>
 		</div>
 		<!-- IF section_online -->
