@@ -19,14 +19,24 @@
 			{{{ end }}}
 
 			<!-- IF posts.user.banned -->
-			<span class="badge bg-danger">[[user:banned]]</span>
+			<span class="badge bg-danger rounded-1">[[user:banned]]</span>
 			<!-- ENDIF posts.user.banned -->
 
-			<span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
-				<!-- IF posts.toPid -->
-				<a component="post/parent" class="btn btn-sm btn-outline-secondary hidden-xs" data-topid="{posts.toPid}" href="{config.relative_path}/post/{posts.toPid}"><i class="fa fa-reply"></i> @<!-- IF posts.parent.username -->{posts.parent.username}<!-- ELSE -->[[global:guest]]<!-- ENDIF posts.parent.username --></a>
-				<!-- ENDIF posts.toPid -->
+			<div class="d-flex gap-1 hidden-xs align-items-center">
+				{{{ if posts.toPid }}}
+				<span class="text-muted">replied to</span><!-- FIX THIS, DOES NOT l10n PROPERLY -->
+				<a component="post/parent" data-topid="{posts.toPid}" href="{config.relative_path}/post/{posts.toPid}"><!-- IF posts.parent.username -->{posts.parent.username}<!-- ELSE -->[[global:guest]]<!-- ENDIF posts.parent.username --></a>
+				{{{ else }}}
+				<span class="text-muted">wrote</span><!-- FIX THIS, DOES NOT l10n PROPERLY -->
+				{{{ end }}}
 
+				<a class="permalink text-muted" href="{config.relative_path}/post/{posts.pid}"><span class="timeago" title="{posts.timestampISO}"></span></a>
+
+				<i component="post/edit-indicator" class="fa fa-pencil-square<!-- IF privileges.posts:history --> pointer<!-- END --> edit-icon <!-- IF !posts.editor.username -->hidden<!-- ENDIF !posts.editor.username -->"></i>
+				<span data-editor="{posts.editor.userslug}" component="post/editor" class="visually-hidden">[[global:last_edited_by, {posts.editor.username}]] <span class="timeago" title="{posts.editedISO}"></span></span>
+			</div>
+
+			<div>
 				<span>
 					<!-- IF posts.user.custom_profile_info.length -->
 					&#124;
@@ -35,17 +45,8 @@
 					{{{end}}}
 					<!-- ENDIF posts.user.custom_profile_info.length -->
 				</span>
-			</span>
+			</div>
 			<div class="d-flex align-items-center gap-1 flex-grow-1 justify-content-end">
-				<span>
-					<i component="post/edit-indicator" class="fa fa-pencil-square<!-- IF privileges.posts:history --> pointer<!-- END --> edit-icon <!-- IF !posts.editor.username -->hidden<!-- ENDIF !posts.editor.username -->"></i>
-
-					<span data-editor="{posts.editor.userslug}" component="post/editor" class="hidden">[[global:last_edited_by, {posts.editor.username}]] <span class="timeago" title="{posts.editedISO}"></span></span>
-
-					<span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
-						<a class="permalink text-muted" href="{config.relative_path}/post/{posts.pid}"><span class="timeago" title="{posts.timestampISO}"></span></a>
-					</span>
-				</span>
 				<span class="bookmarked"><i class="fa fa-bookmark-o"></i></span>
 			</div>
 		</div>
