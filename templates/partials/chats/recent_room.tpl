@@ -1,33 +1,23 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
-<li component="chat/recent/room" data-roomid="{rooms.roomId}" class="<!-- IF rooms.unread -->unread<!-- ENDIF rooms.unread -->">
-	{{{each rooms.users}}}
-	<!-- IF @first -->
-	<div class="main-avatar me-2">
-		<!-- IMPORT partials/chats/user.tpl -->
+<li component="chat/recent/room" data-roomid="{rooms.roomId}" class="{{{ if rooms.unread }}}unread{{{ end }}} card card-body pointer"
+	style="">
+	<ul class="members list-unstyled">
+	{{{ each rooms.users}}}
+	{{{ if @first }}}
+	<div class="main-avatar">
+		<a href="{config.relative_path}/user/{rooms.users.userslug}">{buildAvatar(rooms.users, "24px", false, "rounded")}</a>
+		<span component="chat/title">{{{ if rooms.roomName }}}{rooms.roomName}{{{ else }}}{rooms.usernames}{{{ end }}}</span>
 	</div>
-	<!-- ENDIF @first -->
-	{{{end}}}
-
-	{{{ if rooms.users.length }}}
-	<ul class="members">
-		{{{each rooms.users}}}
-		<li>
-			<!-- IMPORT partials/chats/user.tpl -->
-		</li>
-		{{{end}}}
-	</ul>
+	{{{ else }}}
+		<a href="{config.relative_path}/user/{rooms.users.userslug}">{buildAvatar(rooms.users, "24px", true, "rounded")}</a>
 	{{{ end }}}
+	{{{ end }}}
+	</ul>
 
-	<div class="notification-chat-content flex-grow-1">
-		<!-- IF !rooms.lastUser.uid -->
-		<div class="p-3 text-center h-100">
-			<span>[[modules:chat.no-users-in-room]]</span>
-		</div>
-		<!-- ELSE -->
+	<div class="notification-chat-content">
 		<strong class="room-name">
-			<span component="chat/title"><!-- IF rooms.roomName -->{rooms.roomName}<!-- ELSE -->{rooms.usernames}<!-- ENDIF rooms.roomName --></span>
+			<!-- IF !rooms.lastUser.uid -->
+			<span>[[modules:chat.no-users-in-room]]</span>
+			<!-- ENDIF !rooms.lastUser.uid -->
 		</strong>
-		<!-- ENDIF !rooms.lastUser.uid -->
 	</div>
 </li>

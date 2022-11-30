@@ -1,12 +1,12 @@
 {{{ if !notifications.length }}}
-<li class="no-notifs text-center"><a href="#" class="text-decoration-none text-reset">[[notifications:no_notifs]]</a></li>
+<li class="no-notifs text-center"><a href="#" class="text-reset">[[notifications:no_notifs]]</a></li>
 {{{ end }}}
 
 {{{ each notifications }}}
 <li class="{./readClass} mb-2" data-nid="{./nid}" data-path="{./path}" {{{ if ./pid }}}data-pid="{./pid}"{{{ end }}}{{{ if ./tid }}}data-tid="{./tid}"{{{ end }}}>
 	<div class="d-flex gap-1 justify-content-between">
 		<div>
-			<a href="{./path}" class="notification-chat-content text-decoration-none text-reset">
+			<a href="{./path}" class="notification-chat-content text-reset">
 				<span class="text">{./bodyShort}</span>
 			</a>
 			<div class="relTime text-muted">{./timeagoLong}</div>

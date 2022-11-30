@@ -1,0 +1,58 @@
+// chats need a bit of css
+
+/* Styles common to both full chat and chat modal */
+.chats-full, .chat-modal {
+	height: calc(100vh - var(--panel-offset) - $spacer);
+}
+
+.expanded-chat, .chat-modal {
+	// no taskbar so hide minimize button
+	[data-action="minimize"] {
+		display: none!important;
+	}
+	.chat-content .chat-message.deleted {
+		.message-body-wrapper .controls {
+			[data-action] {
+				display: none;
+			}
+
+			[data-action="restore"] {
+				display: inline;
+			}
+		}
+
+		.message-body {
+			opacity: 0.3;
+		}
+	}
+}
+
+/* Mobile handling of chat page */
+@include media-breakpoint-down(sm) {
+	.page-user-chats {
+		padding-bottom: 0;
+
+		[component="chat/nav-wrapper"][data-loaded="1"] {
+			display: none!important;
+		}
+
+		[component="chat/nav-wrapper"][data-loaded="0"] + [component="chat/main-wrapper"] {
+			display: none!important;
+		}
+
+		[component="chat/messages"] {
+			width: calc(100vw - $grid-gutter-width);
+		}
+	}
+
+	[data-action="pop-out"] {
+		display: none!important;
+	}
+}
+
+/* Mobile handling of chat modal */
+@include media-breakpoint-down(sm) {
+	.chat-modal {
+		z-index: $zindex-popover + 10;
+	}
+}

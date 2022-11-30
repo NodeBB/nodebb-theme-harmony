@@ -1,4 +1,3 @@
-{{{ if config.loggedIn }}}
 <li component="notifications" class="nav-item m-2 notifications dropstart">
 	<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link nav-btn position-relative" title="[[global:header.notifications]]">
 		<span class="d-inline-flex justify-content-between w-100">
@@ -16,7 +15,7 @@
 		<li>
 			<ul component="notifications/list" class="notification-list list-unstyled p-2">
 				<li class="loading-text text-center">
-					<a href="#" class="text-decoration-none text-reset"><i class="fa fa-refresh fa-spin"></i> [[global:notifications.loading]]</a>
+					<a href="#" class="text-reset"><i class="fa fa-refresh fa-spin"></i> [[global:notifications.loading]]</a>
 				</li>
 			</ul>
 		</li>
@@ -29,4 +28,3 @@
 		</li>
 	</ul>
 </li>
-{{{ end }}}

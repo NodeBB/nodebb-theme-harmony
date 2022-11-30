@@ -20,7 +20,7 @@
 </h1>
 
 <div class="topic-info d-flex justify-content-center">
-	<a href="{config.relative_path}/category/{category.slug}" class="text-decoration-none">{function.buildCategoryLabel, category}</a>
+	<a href="{config.relative_path}/category/{category.slug}">{function.buildCategoryLabel, category}</a>
 	<div class="tags tag-list d-flex hidden-xs gap-2 ms-2"><!-- IMPORT partials/topic/tags.tpl --></div>
 	<div class="d-flex hidden-xs gap-2 ms-2 align-items-end">
 		<!-- IMPORT partials/topic/stats.tpl -->

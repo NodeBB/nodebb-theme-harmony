@@ -1,7 +1,5 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <!-- IF roomId -->
-<div component="chat/messages" class="expanded-chat" data-roomid="{roomId}">
+<div component="chat/messages" class="expanded-chat d-flex flex-column h-100" data-roomid="{roomId}">
 	<div component="chat/header" class="d-flex align-items-center px-3">
 		<span class="members flex-grow-1">
 			[[modules:chat.chatting_with]]:
@@ -17,13 +15,15 @@
 	<div class="position-relative">
 		<div component="chat/messages/scroll-up-alert" class="position-absolute scroll-up-alert alert alert-info hidden w-100" role="button" style="z-index: 1;">[[modules:chat.scroll-up-alert]]</div>
 	</div>
-	<ul class="chat-content">
+	<ul class="chat-content p-0 m-0 list-unstyled overflow-auto flex-grow-1">
 		<!-- IMPORT partials/chats/messages.tpl -->
 	</ul>
-	<div component="chat/composer">
-		<textarea component="chat/input" placeholder="[[modules:chat.placeholder]]" class="form-control chat-input mousetrap" rows="2"></textarea>
+	<div component="chat/composer" class="d-flex">
+		<div class="flex-grow-1 position-relative">
+			<textarea component="chat/input" placeholder="[[modules:chat.placeholder]]" class="form-control chat-input mousetrap" rows="2" style="resize:none;"></textarea>
+			<span component="chat/message/remaining" class="text-muted position-absolute me-1 mb-1" style="right: 0px; bottom:0px;">{maximumChatMessageLength}</span>
+		</div>
 		<button class="btn btn-primary" type="button" data-action="send"><i class="fa fa-fw fa-2x fa-paper-plane"></i></button>
-		<span component="chat/message/remaining">{maximumChatMessageLength}</span>
 		<form component="chat/upload" method="post" enctype="multipart/form-data">
 			<input type="file" name="files[]" multiple class="hidden"/>
 		</form>

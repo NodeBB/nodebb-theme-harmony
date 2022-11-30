@@ -5,7 +5,7 @@
 	{{{ each posts }}}
 	<li data-tid="{posts.topic.tid}" data-pid="{posts.pid}">
 		<a href="{config.relative_path}/post/{posts.pid}"
-			class="text-decoration-none text-reset clearfix d-block text-truncate px-2 py-1">
+			class="text-reset clearfix d-block text-truncate px-2 py-1">
 			<span class="quick-search-title fw-bold">{posts.topic.title}</span>
 			<br/>
 			<p class="snippet text-break text-wrap">
@@ -13,7 +13,7 @@
 			</p>
 			<span class="post-info">
 				<div class="category-item d-inline-block">
-					<span href="{config.relative_path}/category/{category.slug}" class="text-decoration-none">{function.buildCategoryLabel, posts.category}</span>
+					<span>{function.buildCategoryLabel, posts.category}</span>
 					<span class="timeago text-muted" title="{posts.timestampISO}"></span>
 				</div>
 			</span>
