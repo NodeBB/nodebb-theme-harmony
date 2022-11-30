@@ -1,9 +1,32 @@
 @mixin timeline-style() {
+	// These only apply to top level posts (e.g. not threaded replies)
 	> [component="post"], .timeline-event {
 		position: relative;	// for absolutely positioned pseudo-element, below
 		border-left: 2px solid $input-group-addon-bg;
 		margin-left: 1.5rem;
 		padding-top: $post-padding;
+
+		&:first-child:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			height: 12px;
+			width: 12px;
+			background-color: $pagination-border-color;
+			border-radius: 100%;
+			transform: translateX(calc(-50% - .5px));
+		}
+
+		&:last-child:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			height: 12px;
+			width: 12px;
+			background-color: $pagination-border-color;
+			border-radius: 100%;
+			transform: translateX(calc(-50% - .5px));
+		}
 
 		> div:first-of-type {
 			margin-left: -1.5rem;
@@ -90,28 +113,6 @@
 
 	.necro-post {
 		border-left-style: dashed;
-	}
-
-	> [component="post"]:first-child:before {
-		content: '';
-		position: absolute;
-		top: 0;
-		height: 12px;
-		width: 12px;
-		background-color: $pagination-border-color;
-		border-radius: 100%;
-		transform: translateX(calc(-50% - .5px));
-	}
-
-	> [component="post"]:last-child:after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		height: 12px;
-		width: 12px;
-		background-color: $pagination-border-color;
-		border-radius: 100%;
-		transform: translateX(calc(-50% - .5px));
 	}
 
 	[component="topic/event"], [component="topic/necro-post"] {
