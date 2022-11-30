@@ -1,25 +1,25 @@
 <!-- THIS FILE IS STILL PERSONA -->
 
-<li component="topic/event" class="timeline-event text-muted" data-topic-event-id="{./id}" data-topic-event-type="{./type}">
+<li component="topic/event" class="timeline-event text-muted d-flex gap-2" data-topic-event-id="{./id}" data-topic-event-type="{./type}">
 	<div class="timeline-badge">
-		<i class="fa {{{ if ./icon }}}{./icon}{{{ else }}}fa-circle{{{ end }}}"></i>
+		<i class="fa {{{ if ./icon }}}{./icon}{{{ else }}}fa-circle{{{ end }}} small"></i>
 	</div>
-	<span class="timeline-text">
-		{{{ if ./href}}}
-		<a href="{config.relative_path}{./href}">{./text}</a>
-		{{{ else }}}
-		{./text}
-		{{{ end }}}
-		&nbsp;
-	</span>
 	{{{ if ./user }}}
 		{{{ if ./user.system }}}
-		<span class="timeline-text">[[global:system-user]]</span>&nbsp;
+		<span class="timeline-text small">[[global:system-user]]</span>
 		{{{ else }}}
-		<span><a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "16px", true)} &nbsp; {./user.username}</a></span>&nbsp;
+		<a class="fw-bold text-decoration-none small" href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "20px", true)}</a>
+		<a class="fw-bold text-decoration-none small" href="{config.relative_path}/user/{./user.userslug}">{./user.username}</a>
 		{{{ end }}}
 	{{{ end }}}
-	<span class="timeago timeline-text" title="{./timestampISO}"></span>
+	<span class="timeline-text small">
+		{{{ if ./href}}}
+		<a href="{config.relative_path}{./href}">{./x-text}</a>
+		{{{ else }}}
+		{./x-text}
+		{{{ end }}}
+	</span>
+	<span class="timeago timeline-text small" title="{./timestampISO}"></span>
 
 	{{{ if privileges.isAdminOrMod }}}
 		&nbsp;<span component="topic/event/delete" data-topic-event-id="{./id}" data-topic-event-type="{./type}" class="timeline-text pointer" title="[[topic:delete-event]]"><i class="fa fa-trash"></i></span>

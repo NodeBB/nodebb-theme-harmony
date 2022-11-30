@@ -5,10 +5,6 @@
 		margin-left: 1.5rem;
 		padding-top: $post-padding;
 
-		&:not(:last-child) {
-			padding-bottom: $post-padding;
-		}
-
 		> div:first-of-type {
 			margin-left: -1.5rem;
 		}
@@ -96,26 +92,26 @@
 		border-left-style: dashed;
 	}
 
-	[component="post"]:first-child:before {
+	> [component="post"]:first-child:before {
 		content: '';
 		position: absolute;
 		top: 0;
-		left: calc(-0.5rem + 1.5px);
 		height: 12px;
 		width: 12px;
 		background-color: $pagination-border-color;
 		border-radius: 100%;
+		transform: translateX(calc(-50% - .5px));
 	}
 
-	[component="post"]:last-child:after {
+	> [component="post"]:last-child:after {
 		content: '';
 		position: absolute;
 		bottom: 0;
-		left: calc(-0.5rem + 1.5px);
 		height: 12px;
 		width: 12px;
 		background-color: $pagination-border-color;
 		border-radius: 100%;
+		transform: translateX(calc(-50% - .5px));
 	}
 
 	[component="topic/event"], [component="topic/necro-post"] {
@@ -131,14 +127,14 @@
 				justify-content: center;
 				flex-shrink: 0;
 
-				width: 32px;
-				height: 32px;
+				width: 24px;
+				height: 24px;
 				padding: 0;
-				margin-left: -17px;
-				margin-right: 17px;
-				color: lighten($primary, 30%);
+				margin-left: -0.75rem;
+				margin-right: 1.25rem;
+				color: $gray-500;
 				background-color: $body-bg;
-				border: 2px solid lighten($primary, 30%);
+				border: 2px solid $input-group-addon-bg;
 				border-radius: 50%;
 			}
 

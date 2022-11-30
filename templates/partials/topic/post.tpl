@@ -56,14 +56,14 @@
 	</div>
 </div>
 
-<div component="post/footer" class="post-footer">
+<div component="post/footer" class="post-footer border-bottom pb-2">
 	{{{ if posts.user.signature }}}
 	<div component="post/signature" data-uid="{posts.user.uid}" class="mt-2">{posts.user.signature}</div>
 	{{{ end }}}
 
 	<div class="clearfix">
 		{{{ if !hideReplies }}}
-		<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="d-flex gap-2 align-items-center text-decoration-none threaded-replies user-select-none float-start text-muted {{{ if !posts.replies.count }}}hidden{{{ end }}}">
+		<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="d-flex gap-2 align-items-center text-decoration-none mt-2 threaded-replies user-select-none float-start text-muted {{{ if !posts.replies.count }}}hidden{{{ end }}}">
 			<span component="post/reply-count/avatars" class="avatars d-inline-flex gap-1 align-items-top hidden-xs {{{ if posts.replies.hasMore }}}hasMore{{{ end }}}">
 				{{{each posts.replies.users}}}
 				<span>{buildAvatar(posts.replies.users, "20px", true, "")}</span>
@@ -74,7 +74,7 @@
 			</span>
 
 			<span class="ms-2 replies-count fw-semibold" component="post/reply-count/text" data-replies="{posts.replies.count}">{posts.replies.text}</span>
-			<span class="ms-2 replies-last hidden-xs">[[topic:last_reply_time]] <span class="timeago" title="{posts.replies.timestampISO}"></span></span>
+			<span class="ms-2 replies-last hidden-xs">[[topic:last_reply_time]] <span class="timeago text-decoration-underline" title="{posts.replies.timestampISO}"></span></span>
 
 			<i class="fa fa-fw fa-chevron-right" component="post/replies/open"></i>
 			<i class="fa fa-fw fa-chevron-down hidden" component="post/replies/close"></i>
