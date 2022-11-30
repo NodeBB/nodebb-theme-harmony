@@ -21,9 +21,21 @@
 		}
 		.visible-open { display: initial; }
 		.visible-closed { display: none; }
+		.truncate-open {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
 	}
 	.visible-open {	display: none; }
 	.visible-closed {display: initial; }
+
+	.truncate-open {
+		overflow: initial;
+		text-overflow: initial;
+		white-space: initial;
+	}
+
 	.nav-link {
 		padding: 0;
 		&.active {
@@ -65,6 +77,7 @@
 			font-size: 13px;
 		}
 	}
+
 	.badge {
 		font-size: 9px;
 		line-height: 12px;

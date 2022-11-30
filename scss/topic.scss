@@ -23,7 +23,6 @@
 	.topic-main-buttons {
 		font-family: $font-family-secondary;
 
-		// Hide the dropdown carat only in the post bar
 		.navbar-nav {
 			a, button, span {
 				font-size: 14px;
@@ -32,10 +31,6 @@
 				i {
 					color: tint-color($primary, 20%);
 				}
-			}
-
-			.dropdown-toggle::after {
-				display: none;
 			}
 		}
 	}
