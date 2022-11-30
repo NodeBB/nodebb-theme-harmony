@@ -77,6 +77,10 @@
 						opacity: 1;
 					}
 				}
+
+				> [component="post/footer"] {
+					margin-left: calc($spacer * 2.5);
+				}
 			}
 
 			[component="post/tools"] {
@@ -86,6 +90,10 @@
 				.dropdown-toggle::after {
 					display: none; // hide carat on dropdown toggle
 				}
+			}
+
+			[component="post/reply-count"] {
+				font-size: $font-size-base * .75;
 			}
 		}
 	}

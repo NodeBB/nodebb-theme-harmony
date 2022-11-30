@@ -9,7 +9,7 @@
 			padding-bottom: $post-padding;
 		}
 
-		> div:not(.content) {
+		> div:first-of-type {
 			margin-left: -1.5rem;
 		}
 
