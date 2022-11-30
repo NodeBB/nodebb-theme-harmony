@@ -1,5 +1,5 @@
-<nav class="sidebar sidebar-left vh-100 d-flex flex-column justify-content-between sticky-top">
-	<ul id="main-nav" class="navbar-nav overflow-hidden">
+<nav class="text-dark bg-light sidebar sidebar-left vh-100 d-flex flex-column justify-content-between sticky-top">
+	<ul id="main-nav" class="navbar-nav overflow-hidden w-100">
 		{{{ each navigation }}}
 		<!-- IF function.displayMenuItem, @index -->
 		<li class="nav-item m-2 {navigation.class}{{{ if navigation.dropdown }}} dropdown{{{ end }}}" title="{navigation.title}">
@@ -9,7 +9,7 @@
 				<i class="fa fa-fw {navigation.iconClass}" data-content="{navigation.content}"></i>
 				{{{ end }}}
 				{{{ if navigation.text }}}
-				<span class="nav-text px-2">{navigation.text}</span>
+				<span class="nav-text visible-open px-2">{navigation.text}</span>
 				{{{ end }}}
 				{{{ if navigation.dropdown}}}
 				<i class="fa fa-caret-down"></i>
@@ -24,11 +24,12 @@
 		<!-- ENDIF function.displayMenuItem -->
 		{{{end}}}
 	</ul>
-
-	<div class="sidebar-toggle d-flex m-2">
-		<div component="sidebar/toggle" class="nav-btn p-2 pointer">
-			<i class="fa fa-fw fa-angles-right"></i>
-			<i class="fa fa-fw fa-angles-left"></i>
+	<div class="navbar-nav w-100">
+		<div class="sidebar-toggle d-flex m-2">
+			<a href="#" role="button" component="sidebar/toggle" class="nav-btn p-2 pointer nav-link">
+				<i class="fa fa-fw fa-angles-right"></i>
+				<i class="fa fa-fw fa-angles-left"></i>
+			</a>
 		</div>
 	</div>
 </nav>

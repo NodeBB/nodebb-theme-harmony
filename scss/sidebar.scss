@@ -1,19 +1,29 @@
+
+.skin-noskin {
+	// only using colors when there is no bootswatch skin applied
+	.sidebar {
+		color: $secondary !important;
+		background-color: $light !important;
+	}
+}
+
 .sidebar {
-	color: $secondary;
-	background-color: $light;
 	$hover-color: mix($white, $black, 90);
 	&.open {
+		min-width: 180px;
 		max-width: 180px;
 		width: 180px;
-		.nav-text {
-			display: inline;
-		}
+
 		.sidebar-toggle {
 			justify-content: end;
 			.fa-angles-right { display: none; }
 			.fa-angles-left { display: inline-block; }
 		}
+		.visible-open { display: initial; }
+		.visible-closed { display: none; }
 	}
+	.visible-open {	display: none; }
+	.visible-closed {display: initial; }
 	.nav-link {
 		padding: 0;
 		&.active {
@@ -22,8 +32,8 @@
 	}
 
 	.nav-text {
+		font-size: 14px;
 		color: $body-color;
-		display: none;
 	}
 
 	.nav-btn {
@@ -55,12 +65,13 @@
 			font-size: 13px;
 		}
 	}
-}
-
-// these skins set secondary and light colors too close
-.skin-lumen, .skin-yeti, .skin-cerulean, .skin-quartz {
-	.sidebar {
-		color: $dark;
+	.badge {
+		font-size: 9px;
+		line-height: 12px;
+		&.visible-open {
+			font-size:12px;
+			line-height: 16px;
+		}
 	}
 }
 

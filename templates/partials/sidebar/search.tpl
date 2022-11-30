@@ -2,7 +2,7 @@
 <li component="sidebar/search" class="nav-item m-2 dropstart position-relative">
 	<a component="search/button" id="search-button" href="#" role="button" class="nav-link nav-btn text-truncate" data-bs-toggle="dropdown" title="[[global:header.search]]">
 		<i class="fa fa-search fa-fw"></i>
-		<span class="nav-text px-2">[[global:search]]</span>
+		<span class="nav-text visible-open">[[global:search]]</span>
 	</a>
 	<div class="search-dropdown dropdown-menu p-2">
 		<form component="search/form" id="search-form" class="d-flex justify-content-end align-items-center" role="search" method="GET">

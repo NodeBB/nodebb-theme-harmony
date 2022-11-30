@@ -1,8 +1,16 @@
 {{{ if config.loggedIn }}}
 <li component="notifications" class="nav-item m-2 notifications dropstart">
-	<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link nav-btn text-truncate" title="[[global:header.notifications]]">
-		<i component="notifications/icon" class="fa fa-fw {{{ if unreadCount.notification}}}fa-bell{{{ else }}}fa-bell-o{{{ end }}} unread-count" data-content="{unreadCount.notification}"></i>
-		<span class="nav-text px-2">[[global:header.notifications]]</span>
+	<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link nav-btn position-relative" title="[[global:header.notifications]]">
+		<span class="d-inline-flex justify-content-between w-100">
+			<span class="text-nowrap">
+				<span class="position-relative">
+					<i component="notifications/icon" class="fa fa-fw {{{ if unreadCount.notification}}}fa-bell{{{ else }}}fa-bell-o{{{ end }}} unread-count" data-content="{unreadCount.notification}"></i>
+					<span class="visible-closed position-absolute top-0 start-100 translate-middle badge rounded-1 bg-primary {{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span>
+				</span>
+				<span class="nav-text visible-open">[[global:header.notifications]]</span>
+			</span>
+			<span class="visible-open badge rounded-1 bg-primary {{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span>
+		</span>
 	</a>
 	<ul class="notifications-dropdown dropdown-menu p-2">
 		<li>
