@@ -1,10 +1,8 @@
 @mixin timeline-style() {
-	// These only apply to top level posts (e.g. not threaded replies)
 	> [component="post"], .timeline-event {
 		position: relative;	// for absolutely positioned pseudo-element, below
 		border-left: 2px solid $input-group-addon-bg;
 		margin-left: 1.5rem;
-		padding-top: $post-padding;
 
 		&:first-child:before {
 			content: '';
@@ -55,7 +53,6 @@
 	@include media-breakpoint-down(sm) {
 		[component="post"] {
 			border: 0;
-			padding: $post-padding 0;
 
 			margin-left: initial;
 			> div:not(.content) {

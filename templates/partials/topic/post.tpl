@@ -82,7 +82,7 @@
 		</a>
 		{{{ end }}}
 	</div>
-	<div component="post/replies/container"></div>
+	<div component="post/replies/container" class="mt-2"></div>
 
 	<div component="post/tools" class="d-flex justify-content-end post-tools">
 		<!-- IMPORT partials/topic/reactions.tpl -->
