@@ -3,32 +3,36 @@
 		{buildAvatar(user, "20px", true)}
 		<span id="user-header-name" class="nav-text visible-open fw-bold">{user.username}</span>
 	</label>
-	<ul id="user-control-list" component="header/usercontrol" class="dropdown-menu shadow" aria-labelledby="user_dropdown">
+	<ul id="user-control-list" component="header/usercontrol" class="dropdown-menu shadow p-1" aria-labelledby="user_dropdown">
 		<li>
-			<a class="dropdown-item" component="header/profilelink" href="{relative_path}/user/{user.userslug}">
-				<i component="user/status" class="fa fa-fw fa-circle status {user.status}"></i> <span component="header/username">{user.username}</span>
+			<a class="dropdown-item d-flex align-items-center gap-1" component="header/profilelink" href="{relative_path}/user/{user.userslug}">
+				<div class="text-center"><span component="user/status" class="badge border border-white border-2 rounded-circle status {user.status}"><span class="visually-hidden">[[global:{user.status}]]</span></span></div>
+				<span class="fw-semibold" component="header/username">{user.username}</span>
 			</a>
 		</li>
 		<li role="presentation" class="dropdown-divider"></li>
-		<li><h6 class="dropdown-header">[[global:status]]</h6></li>
 		<li>
-			<a href="#" class="dropdown-item user-status" data-status="online">
-				<i class="fa fa-fw fa-circle status online"></i><span <!-- IF user.online -->class="fw-bold"<!-- ENDIF user.online -->> [[global:online]]</span>
+			<a href="#" class="dropdown-item user-status d-flex align-items-center gap-1" data-status="online">
+				<div class="text-center"><span component="user/status" class="badge border border-white border-2 rounded-circle status online"><span class="visually-hidden">[[global:online]]</span></span></div>
+				<span{{{ if user.online }}} class="fw-semibold"{{{ end }}}> [[global:online]]</span>
 			</a>
 		</li>
 		<li>
-			<a href="#" class="dropdown-item user-status" data-status="away">
-				<i class="fa fa-fw fa-circle status away"></i><span <!-- IF user.away -->class="fw-bold"<!-- ENDIF user.away -->> [[global:away]]</span>
+			<a href="#" class="dropdown-item user-status d-flex align-items-center gap-1" data-status="away">
+				<div class="text-center"><span component="user/status" class="badge border border-white border-2 rounded-circle status away"><span class="visually-hidden">[[global:away]]</span></span></div>
+				<span{{{ if user.away}}} class="fw-semibold"{{{ end }}}> [[global:away]]</span>
 			</a>
 		</li>
 		<li>
-			<a href="#" class="dropdown-item user-status" data-status="dnd">
-				<i class="fa fa-fw fa-circle status dnd"></i><span <!-- IF user.dnd -->class="fw-bold"<!-- ENDIF user.dnd -->> [[global:dnd]]</span>
+			<a href="#" class="dropdown-item user-status d-flex align-items-center gap-1" data-status="dnd">
+				<div class="text-center"><span component="user/status" class="badge border border-white border-2 rounded-circle status dnd"><span class="visually-hidden">[[global:dnd]]</span></span></div>
+				<span{{{ if user.dnd}}} class="fw-semibold"{{{ end }}}> [[global:dnd]]</span>
 			</a>
 		</li>
 		<li>
-			<a href="#" class="dropdown-item user-status" data-status="offline">
-				<i class="fa fa-fw fa-circle status offline"></i><span <!-- IF user.offline -->class="fw-bold"<!-- ENDIF user.offline -->> [[global:invisible]]</span>
+			<a href="#" class="dropdown-item user-status d-flex align-items-center gap-1" data-status="offline">
+				<div class="text-center"><span component="user/status" class="badge border border-white border-2 rounded-circle status offline"><span class="visually-hidden">[[global:invisible]]</span></span></div>
+				<span{{{ if user.offline}}} class="fw-semibold"{{{ end }}}> [[global:invisible]]</span>
 			</a>
 		</li>
 		<li role="presentation" class="dropdown-divider"></li>
