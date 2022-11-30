@@ -3,7 +3,7 @@
 		{buildAvatar(user, "20px", true)}
 		<span id="user-header-name" class="nav-text visible-open fw-bold">{user.username}</span>
 	</label>
-	<ul id="user-control-list" component="header/usercontrol" class="dropdown-menu" aria-labelledby="user_dropdown">
+	<ul id="user-control-list" component="header/usercontrol" class="dropdown-menu shadow" aria-labelledby="user_dropdown">
 		<li>
 			<a class="dropdown-item" component="header/profilelink" href="{relative_path}/user/{user.userslug}">
 				<i component="user/status" class="fa fa-fw fa-circle status {user.status}"></i> <span component="header/username">{user.username}</span>

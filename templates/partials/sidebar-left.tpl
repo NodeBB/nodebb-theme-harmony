@@ -21,7 +21,7 @@
 				</span>
 			</a>
 			{{{ if navigation.dropdown }}}
-			<ul class="dropdown-menu">
+			<ul class="dropdown-menu shadow">
 				{navigation.dropdownContent}
 			</ul>
 			{{{ end }}}

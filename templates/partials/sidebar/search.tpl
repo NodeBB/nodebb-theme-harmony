@@ -4,7 +4,7 @@
 		<i class="fa fa-search fa-fw"></i>
 		<span class="nav-text visible-open">[[global:search]]</span>
 	</a>
-	<div class="search-dropdown dropdown-menu p-2">
+	<div class="search-dropdown dropdown-menu p-2 shadow">
 		<form component="search/form" id="search-form" class="d-flex justify-content-end align-items-center" role="search" method="GET">
 			<div component="search/fields" class="w-100" id="search-fields">
 				<div class="d-flex gap-1">

@@ -12,7 +12,7 @@
 			<span component="notifications/count" class="visible-open badge rounded-1 bg-primary {{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span>
 		</span>
 	</a>
-	<ul class="notifications-dropdown dropdown-menu p-2">
+	<ul class="notifications-dropdown dropdown-menu p-2 shadow">
 		<li>
 			<ul component="notifications/list" class="notification-list list-unstyled p-2">
 				<li class="loading-text text-center">
