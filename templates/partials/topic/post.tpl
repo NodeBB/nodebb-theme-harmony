@@ -1,8 +1,8 @@
 <div class="d-flex align-items-start gap-3">
 	<div class="icon">
-		<a class="text-decoration-none position-relative" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
+		<a class="d-inline-block text-decoration-none position-relative" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 			{buildAvatar(posts.user, "48px", true, "", "user/picture")}
-			<i component="user/status" class="fa fa-circle position-absolute bottom-0 status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
+			<span component="user/status" class="position-absolute translate-middle-y badge border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
 		</a>
 	</div>
 
@@ -56,59 +56,55 @@
 	</div>
 </div>
 
-<!-- THE REST OF THIS FILE IS STILL PERSONA -->
-
 <div class="post-footer">
 	{{{ if posts.user.signature }}}
-	<div component="post/signature" data-uid="{posts.user.uid}" class="post-signature">{posts.user.signature}</div>
+	<div component="post/signature" data-uid="{posts.user.uid}" class="mt-2">{posts.user.signature}</div>
 	{{{ end }}}
 
 	<div class="clearfix">
-	{{{ if !hideReplies }}}
-	<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="threaded-replies user-select-none float-start text-muted {{{ if !posts.replies.count }}}hidden{{{ end }}}">
-		<span component="post/reply-count/avatars" class="avatars d-inline-flex gap-1 align-items-top hidden-xs {{{ if posts.replies.hasMore }}}hasMore{{{ end }}}">
-			{{{each posts.replies.users}}}
-			<span>{buildAvatar(posts.replies.users, "16px", true, "")}</span>
-			{{{end}}}
-			{{{ if posts.replies.hasMore}}}
-			<span><i class="fa fa-ellipsis"></i></span>
-			{{{ end }}}
-		</span>
+		{{{ if !hideReplies }}}
+		<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="threaded-replies user-select-none float-start text-muted {{{ if !posts.replies.count }}}hidden{{{ end }}}">
+			<span component="post/reply-count/avatars" class="avatars d-inline-flex gap-1 align-items-top hidden-xs {{{ if posts.replies.hasMore }}}hasMore{{{ end }}}">
+				{{{each posts.replies.users}}}
+				<span>{buildAvatar(posts.replies.users, "16px", true, "")}</span>
+				{{{end}}}
+				{{{ if posts.replies.hasMore}}}
+				<span><i class="fa fa-ellipsis"></i></span>
+				{{{ end }}}
+			</span>
 
-		<span class="replies-count small" component="post/reply-count/text" data-replies="{posts.replies.count}">{posts.replies.text}</span>
-		<span class="replies-last hidden-xs small">[[topic:last_reply_time]] <span class="timeago" title="{posts.replies.timestampISO}"></span></span>
+			<span class="replies-count small" component="post/reply-count/text" data-replies="{posts.replies.count}">{posts.replies.text}</span>
+			<span class="replies-last hidden-xs small">[[topic:last_reply_time]] <span class="timeago" title="{posts.replies.timestampISO}"></span></span>
 
-		<i class="fa fa-fw fa-chevron-right" component="post/replies/open"></i>
-		<i class="fa fa-fw fa-chevron-down hidden" component="post/replies/close"></i>
-		<i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
-	</a>
-	{{{ end }}}
+			<i class="fa fa-fw fa-chevron-right" component="post/replies/open"></i>
+			<i class="fa fa-fw fa-chevron-down hidden" component="post/replies/close"></i>
+			<i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
+		</a>
+		{{{ end }}}
+	</div>
+	<div component="post/replies/container"></div>
 
-	<small class="float-end">
+	<div component="post/tools" class="d-flex justify-content-end post-tools">
 		<!-- IMPORT partials/topic/reactions.tpl -->
-		<span class="post-tools">
-			<a component="post/reply" href="#" class="user-select-none <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]</a>
-			<a component="post/quote" href="#" class="user-select-none <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->">[[topic:quote]]</a>
-		</span>
+		<a component="post/reply" href="#" class="btn btn-link text-decoration-none user-select-none <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" title="[[topic:reply]]"><i class="fa fa-reply"></i></a>
+		<a component="post/quote" href="#" class="btn btn-link text-decoration-none user-select-none <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" title="[[topic:quote]]"><i class="fa fa-quote-right"></i></a>
 
 		<!-- IF !reputation:disabled -->
-		<span class="votes">
-			<a component="post/upvote" href="#" class="<!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
+		<div class="d-flex votes align-items-center">
+			<a component="post/upvote" href="#" class="btn btn-link text-secondary <!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
 				<i class="fa fa-chevron-up"></i>
 			</a>
 
-			<span component="post/vote-count" data-votes="{posts.votes}">{posts.votes}</span>
+			<div class="d-inline-block px-3" component="post/vote-count" data-votes="{posts.votes}">{posts.votes}</div>
 
 			<!-- IF !downvote:disabled -->
-			<a component="post/downvote" href="#" class="<!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
+			<a component="post/downvote" href="#" class="btn btn-link text-secondary <!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
 				<i class="fa fa-chevron-down"></i>
 			</a>
 			<!-- ENDIF !downvote:disabled -->
-		</span>
+		</div>
 		<!-- ENDIF !reputation:disabled -->
 
 		<!-- IMPORT partials/topic/post-menu.tpl -->
-	</small>
 	</div>
-	<div component="post/replies/container"></div>
 </div>

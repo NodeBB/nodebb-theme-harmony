@@ -17,7 +17,6 @@
 
 		span.hidden-xs {
 			font-weight: normal;
-			text-transform: lowercase;
 		}
 	}
 
@@ -72,12 +71,21 @@
 				line-height: 20px;
 			}
 
-			.avatar ~ .status {
-				top: 100%;
-				right: calc($spacer *.25);
-				z-index: $zindex-dropdown;
-				// doesn't work well, maybe replace with CSS circle?
-				// box-shadow: 0 0 0 ($spacer * 0.1) $body-bg;
+			[component="post"] {
+				&:hover {
+					[component="post/tools"] {
+						opacity: 1;
+					}
+				}
+			}
+
+			[component="post/tools"] {
+				opacity: 0;
+				transition: $transition-fade;
+
+				.dropdown-toggle::after {
+					display: none; // hide carat on dropdown toggle
+				}
 			}
 		}
 	}

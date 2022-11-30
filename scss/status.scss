@@ -3,18 +3,18 @@
 	vertical-align: middle;
 
 	&.online {
-		color: $success;
+		background-color: $success;
 	}
 
 	&.away {
-		color: $warning;
+		background-color: $warning;
 	}
 
 	&.dnd {
-		color: $danger;
+		background-color: $danger;
 	}
 
 	&.offline {
-		color: $gray-600;
+		background-color: $gray-600;
 	}
 }
