@@ -1,0 +1,7 @@
+[component="header/usercontrol"] {
+	font-family: $font-family-secondary;
+
+	[component="header/profilelink"] > div, .user-status > div {
+		min-width: 1.25em; // match fontawesome fixed width
+	}
+}
