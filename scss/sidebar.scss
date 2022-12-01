@@ -76,7 +76,7 @@
 		width: 300px;
 	}
 	.notifications-dropdown {
-		width: 300px;
+		min-width: 300px;
 		.notification-chat-content, .relTime {
 			font-size: 13px;
 		}
