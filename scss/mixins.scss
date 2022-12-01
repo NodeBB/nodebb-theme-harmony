@@ -1,3 +1,24 @@
+@mixin topic-avatars() {
+	.icon .avatar, .timeline-badge {
+		// Opaque ring
+		position: relative;
+		z-index: 1;
+		box-shadow: 0 0 0 2px $body-bg inset;
+		border: 2px solid $pagination-border-color;
+		background: $body-bg;
+		padding: 2px;
+
+		line-height: calc(var(--avatar-size) - 4px);
+	}
+
+	[component="user/status"] {
+		padding: 5px;
+		z-index: $zindex-dropdown;
+		top: 36px;
+		left: 36px;
+	}
+}
+
 @mixin timeline-style() {
 	> [component="post"], .timeline-event {
 		position: relative;	// for absolutely positioned pseudo-element, below
@@ -30,24 +51,7 @@
 			margin-left: -1.5rem;
 		}
 
-		.icon .avatar, .timeline-badge {
-			// Opaque ring
-			position: relative;
-			z-index: 1;
-			box-shadow: 0 0 0 2px $body-bg inset;
-			border: 2px solid $pagination-border-color;
-			background: $body-bg;
-			padding: 2px;
-
-			line-height: calc(var(--avatar-size) - 4px);
-		}
-
-		[component="user/status"] {
-			padding: 5px;
-			z-index: $zindex-dropdown;
-			top: 36px;
-			left: 36px;
-		}
+		@include topic-avatars();
 	}
 
 	@include media-breakpoint-down(sm) {

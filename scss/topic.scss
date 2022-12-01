@@ -92,4 +92,8 @@
 			}
 		}
 	}
+
+	.quick-reply {
+		@include topic-avatars();
+	}
 }

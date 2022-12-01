@@ -1,5 +1,8 @@
 'use strict';
 
+const meta = require.main.require('./src/meta');
+const user = require.main.require('./src/user');
+
 const controllers = require('./lib/controllers');
 
 const library = module.exports;
@@ -48,4 +51,31 @@ library.defineWidgetAreas = async function (areas) {
 	// 	},
 	// ]);
 	return areas;
+};
+
+library.getThemeConfig = async function (config) {
+	const { enableQuickReply } = await meta.settings.get('harmony');
+	config.enableQuickReply = enableQuickReply === 'on';
+
+	return config;
+};
+
+library.addUserToTopic = async function (hookData) {
+	const { enableQuickReply } = await meta.settings.get('harmony');
+	if (enableQuickReply === 'on') {
+		if (hookData.req.user) {
+			const userData = await user.getUserData(hookData.req.user.uid);
+			hookData.templateData.loggedInUser = userData;
+		} else {
+			hookData.templateData.loggedInUser = {
+				uid: 0,
+				username: '[[global:guest]]',
+				picture: user.getDefaultAvatar(),
+				'icon:text': '?',
+				'icon:bgColor': '#aaa',
+			};
+		}
+	}
+
+	return hookData;
 };

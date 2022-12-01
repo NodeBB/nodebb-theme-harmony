@@ -3,7 +3,9 @@
 	"hooks": [
 		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
-		{ "hook": "filter:widgets.getAreas", "method": "defineWidgetAreas" }
+		{ "hook": "filter:widgets.getAreas", "method": "defineWidgetAreas" },
+		{ "hook": "filter:config.get", "method": "getThemeConfig" },
+		{ "hook": "filter:topic.build", "method": "addUserToTopic" }
 	],
 	"scripts": [
 		"public/harmony.js"

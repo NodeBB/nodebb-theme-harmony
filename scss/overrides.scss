@@ -60,3 +60,7 @@ $breadcrumb-divider: quote("→");
 $breadcrumb-divider-color: $gray-500;
 $breadcrumb-active-color: $body-color;
 $breadcrumb-item-padding-x: 12px;
+
+.form-control::placeholder, .bootstrap-tagsinput::placeholder {
+	color: $gray-500 !important;
+}
