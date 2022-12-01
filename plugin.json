@@ -9,8 +9,7 @@
 		"public/harmony.js"
 	],
 	"modules": {
-		"../admin/plugins/harmony.js": "public/admin.js",
-		"persona/quickreply.js": "../nodebb-theme-persona/public/modules/quickreply.js"
+		"../admin/plugins/harmony.js": "public/admin.js"
 	},
 	"staticDirs": {
 		"fonts": "./public/fonts",
