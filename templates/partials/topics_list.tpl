@@ -91,7 +91,7 @@
 			<small>[[global:views]]</small>
 		</div>
 
-		<div class="col-md-3 col-sm-3 teaser hidden-xs" component="topic/teaser">
+		<div class="col-md-3 col-sm-3 teaser hidden-xs overflow-hidden" component="topic/teaser">
 			<div class="lastpost background-link-container" style="border-color: {topics.category.bgColor}">
 				<a class="background-link" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"></a>
 				<!-- IF topics.unreplied -->
