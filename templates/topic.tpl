@@ -11,17 +11,17 @@
 </h1>
 
 <div class="topic-info d-flex gap-2 justify-content-center align-items-middle">
-	<span component="topic/labels" class="d-flex">
-		<span class="badge bg-primary {{{ if !scheduled }}}hidden{{{ end }}}">
-			<i component="topic/scheduled" class="fa fa-clock-o"></i>
+	<span component="topic/labels" class="d-flex gap-2">
+		<span component="topic/scheduled" class="badge bg-primary {{{ if !scheduled }}}hidden{{{ end }}}">
+			<i class="fa fa-clock-o"></i>
 			[[topic:scheduled]]
 		</span>
-		<span class="badge bg-primary {{{ if (scheduled || !pinned) }}}hidden{{{ end }}}">
-			<i component="topic/pinned" class="fa fa-thumb-tack"></i>
+		<span component="topic/pinned" class="badge bg-primary {{{ if (scheduled || !pinned) }}}hidden{{{ end }}}">
+			<i class="fa fa-thumb-tack"></i>
 			{{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {pinExpiryISO}]]{{{ end }}}
 		</span>
-		<span class="badge bg-primary {{{ if !locked }}}hidden{{{ end }}}">
-			<i component="topic/locked" class="fa fa-lock"></i>
+		<span component="topic/locked" class="badge bg-primary {{{ if !locked }}}hidden{{{ end }}}">
+			<i class="fa fa-lock"></i>
 			[[topic:locked]]
 		</span>
 		<span class="badge bg-primary {{{ if !oldCid }}}hidden{{{ end }}}">
