@@ -1,13 +1,11 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
-<!-- IF ../isSection -->
-{../name}
-<!-- ELSE -->
-<!-- IF ../link -->
-<a href="{../link}" itemprop="url">
-<!-- ELSE -->
-<a href="{config.relative_path}/category/{../slug}" itemprop="url">
-<!-- ENDIF ../link -->
+{{{ if ./isSection }}}
+{./name}
+{{{ else }}}
+{{{ if ./link }}}
+<a class="text-reset" href="{./link}" itemprop="url">
+{{{ else }}}
+<a class="text-reset" href="{config.relative_path}/category/{./slug}" itemprop="url">
+{{{ end }}}
 {../name}
 </a>
-<!-- ENDIF ../isSection -->
+{{{ end }}}

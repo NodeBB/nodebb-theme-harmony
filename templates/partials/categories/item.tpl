@@ -5,34 +5,32 @@
 		<div class="">
 		{buildCategoryIcon(@value, "40px", "rounded-1")}
 		</div>
-		<div class="d-flex flex-column">
+		<div class="d-flex flex-column gap-1">
 			<h2 class="title fw-bold fs-4">
 				<!-- IMPORT partials/categories/link.tpl -->
 			</h2>
-			<div>
-				{{{ if ./descriptionParsed }}}
-				<div class="description text-muted small">
-					{./descriptionParsed}
-				</div>
-				{{{ end }}}
-				{{{ if !config.hideSubCategories }}}
-				{{{ if ./children.length }}}
-				<div class="category-children d-flex gap-3">
-					{{{ each ./children }}}
-					{{{ if !./isSection }}}
-					<span class="category-children-item small">
-						{{{ if ./link }}}
-						<a href="{./link}">{./name}</a>
-						{{{ else }}}
-						<a href="{config.relative_path}/category/{./slug}">{./name}</a>
-						{{{ end }}}
-					</span>
+			{{{ if ./descriptionParsed }}}
+			<div class="description text-muted small">
+				{./descriptionParsed}
+			</div>
+			{{{ end }}}
+			{{{ if !config.hideSubCategories }}}
+			{{{ if ./children.length }}}
+			<div class="category-children d-flex gap-3">
+				{{{ each ./children }}}
+				{{{ if !./isSection }}}
+				<span class="category-children-item small">
+					{{{ if ./link }}}
+					<a href="{./link}">{./name}</a>
+					{{{ else }}}
+					<a href="{config.relative_path}/category/{./slug}">{./name}</a>
 					{{{ end }}}
-					{{{ end }}}
-				</div>
+				</span>
 				{{{ end }}}
 				{{{ end }}}
 			</div>
+			{{{ end }}}
+			{{{ end }}}
 			<span class="d-block d-sm-none float-end">
 				{{{ if ./teaser.timestampISO }}}
 				<a class="permalink" href="{./teaser.url}">
@@ -44,14 +42,21 @@
 	</div>
 
 	{{{ if !./link }}}
-	<div class="col-md-1 d-none d-md-block stats text-muted">
-		<span class="{./unread-class} human-readable-number" title="{./totalTopicCount}">{./totalTopicCount}</span><br />
-		<small>[[global:topics]]</small>
+	<div class="col-md-2 d-none d-md-flex stats text-muted gap-2">
+		<div class="flex-fill">
+			<div class="d-flex flex-column align-items-center text-secondary bg-light p-2 rounded-1">
+				<span class="{./unread-class} human-readable-number fs-5" title="{./totalTopicCount}">{./totalTopicCount}</span>
+				<span class="text-lowercase" style="font-size:12px;">[[global:topics]]</span>
+			</div>
+		</div>
+		<div class="flex-fill">
+			<div class="d-flex flex-column align-items-center text-secondary bg-light p-2 rounded-1">
+				<span class="{./unread-class} human-readable-number fs-5" title="{./totalPostCount}">{./totalPostCount}</span>
+				<span class="text-lowercase" style="font-size:12px;">[[global:posts]]</span>
+			</div>
+		</div>
 	</div>
-	<div class="col-md-1 d-none d-md-block stats text-muted">
-		<span class="{./unread-class} human-readable-number" title="{./totalPostCount}">{./totalPostCount}</span><br />
-		<small>[[global:posts]]</small>
-	</div>
+
 	{{{ if !config.hideCategoryLastPost }}}
 	<div class="col-md-3 col-sm-3 teaser d-none d-sm-block" component="topic/teaser">
 		<!-- IMPORT partials/categories/lastpost.tpl -->
