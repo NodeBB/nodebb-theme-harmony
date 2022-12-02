@@ -9,6 +9,8 @@
 
 .sidebar {
 	$hover-color: mix($white, $black, 90);
+	font-family: $font-family-secondary;
+
 	&.open {
 		min-width: 180px;
 		max-width: 180px;
