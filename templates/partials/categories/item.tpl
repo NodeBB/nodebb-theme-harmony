@@ -31,7 +31,7 @@
 			</div>
 			{{{ end }}}
 			{{{ end }}}
-			<span class="d-block d-sm-none float-end">
+			<span class="d-block d-sm-none">
 				{{{ if ./teaser.timestampISO }}}
 				<a class="permalink" href="{./teaser.url}">
 					<small class="timeago" title="{./teaser.timestampISO}"></small>
