@@ -7,22 +7,32 @@
 <!-- IMPORT partials/breadcrumbs.tpl -->
 
 <h1 component="post/header" class="text-center" itemprop="name">
-	<span class="topic-title">
-		<span component="topic/labels">
-			<i component="topic/scheduled" class="fa fa-clock-o fs-4 {{{ if !scheduled }}}hidden{{{ end }}}" title="[[topic:scheduled]]"></i>
-			<i component="topic/pinned" class="fa fa-thumb-tack fs-4 {{{ if (scheduled || !pinned) }}}hidden{{{ end }}}" title="{{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {pinExpiryISO}]]{{{ end }}}"></i>
-			<i component="topic/locked" class="fa fa-lock fs-4 {{{ if !locked }}}hidden{{{ end }}}" title="[[topic:locked]]"></i>
-			<i class="fa fa-arrow-circle-right fs-4 {{{ if !oldCid }}}hidden{{{ end }}}" title="{{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}"></i>
-			{{{each icons}}}<span class="align-middle">{@value}</span>{{{end}}}
-		</span>
-		<span component="topic/title">{title}</span>
-	</span>
+	<span class="topic-title" component="topic/title">{title}</span>
 </h1>
 
-<div class="topic-info d-flex justify-content-center">
-	<a href="{config.relative_path}/category/{category.slug}">{function.buildCategoryLabel, category}</a>
-	<div class="tags tag-list d-flex hidden-xs gap-2 ms-2"><!-- IMPORT partials/topic/tags.tpl --></div>
-	<div class="d-flex hidden-xs gap-2 ms-2 align-items-end">
+<div class="topic-info d-flex gap-2 justify-content-center align-items-middle">
+	<span component="topic/labels" class="d-flex">
+		<span class="badge bg-primary {{{ if !scheduled }}}hidden{{{ end }}}">
+			<i component="topic/scheduled" class="fa fa-clock-o"></i>
+			[[topic:scheduled]]
+		</span>
+		<span class="badge bg-primary {{{ if (scheduled || !pinned) }}}hidden{{{ end }}}">
+			<i component="topic/pinned" class="fa fa-thumb-tack"></i>
+			{{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {pinExpiryISO}]]{{{ end }}}
+		</span>
+		<span class="badge bg-primary {{{ if !locked }}}hidden{{{ end }}}">
+			<i component="topic/locked" class="fa fa-lock"></i>
+			[[topic:locked]]
+		</span>
+		<span class="badge bg-primary {{{ if !oldCid }}}hidden{{{ end }}}">
+			<i class="fa fa-arrow-circle-right"></i>
+			{{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}
+		</span>
+		{{{each icons}}}<span class="align-middle">{@value}</span>{{{end}}}
+	</span>
+	<a class="lh-1" href="{config.relative_path}/category/{category.slug}">{function.buildCategoryLabel, category}</a>
+	<div class="tags tag-list d-flex hidden-xs gap-2"><!-- IMPORT partials/topic/tags.tpl --></div>
+	<div class="d-flex hidden-xs gap-2">
 		<!-- IMPORT partials/topic/stats.tpl -->
 	</div>
 </div>
