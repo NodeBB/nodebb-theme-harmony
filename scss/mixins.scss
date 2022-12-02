@@ -143,3 +143,12 @@
 		}
 	}
 }
+
+@mixin skeleton-placeholders() {
+	.placeholder {
+		display: inline-block;
+		width: var(--width);
+		height: var(--height);
+		background-color: var(--bs-border-color);
+	}
+}

@@ -39,6 +39,10 @@
 				}
 			}
 		}
+
+		.dropdown-menu li.skeleton {
+			@include skeleton-placeholders();
+		}
 	}
 
 	[component="topic/reply"] {
