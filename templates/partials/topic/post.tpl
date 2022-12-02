@@ -1,5 +1,5 @@
 <div class="d-flex align-items-start gap-3">
-	<div class="icon">
+	<div class="icon py-1 bg-body">
 		<a class="d-inline-block text-decoration-none position-relative" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 			{buildAvatar(posts.user, "48px", true, "", "user/picture")}
 			<span component="user/status" class="position-absolute translate-middle-y badge border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>

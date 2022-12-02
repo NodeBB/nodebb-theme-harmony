@@ -3,10 +3,6 @@
 		// Opaque ring
 		position: relative;
 		z-index: 1;
-		box-shadow: 0 0 0 2px $body-bg inset;
-		border: 2px solid $pagination-border-color;
-		background: $body-bg;
-		padding: 2px;
 
 		line-height: calc(var(--avatar-size) - 4px);
 	}
