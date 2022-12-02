@@ -1,6 +1,7 @@
 'use strict';
 
 const meta = require.main.require('./src/meta');
+const _ = require.main.require('lodash');
 const user = require.main.require('./src/user');
 
 const controllers = require('./lib/controllers');
@@ -76,6 +77,35 @@ library.addUserToTopic = async function (hookData) {
 			};
 		}
 	}
+	return hookData;
+};
 
+library.filterMiddlewareRenderHeader = async function (hookData) {
+	const userSettings = await user.getSettings(hookData.req.uid);
+
+	const lightSkins = [
+		'default', 'cerulean', 'cosmo', 'flatly', 'journal', 'litera',
+		'lumen', 'lux', 'materia', 'minty', 'morph', 'pulse', 'quartz', 'sandstone',
+		'simplex', 'sketchy', 'spacelab', 'united', 'yeti', 'zephyr',
+	];
+	const darkSkins = [
+		'cyborg', 'darkly', 'slate', 'solar', 'superhero', 'vapor',
+	];
+	function parseSkins(skins) {
+		skins = skins.map(skin => ({
+			name: _.capitalize(skin),
+			value: skin === 'default' ? '' : skin,
+		}));
+		skins.forEach((skin) => {
+			skin.selected = skin.value === userSettings.bootswatchSkin;
+		});
+		return skins;
+	}
+
+	hookData.templateData.bootswatchSkinOptions = {
+		light: parseSkins(lightSkins),
+		dark: parseSkins(darkSkins),
+	};
+	hookData.templateData.currentBSSkin = _.capitalize(hookData.templateData.bootswatchSkin);
 	return hookData;
 };

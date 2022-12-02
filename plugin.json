@@ -5,7 +5,8 @@
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
 		{ "hook": "filter:widgets.getAreas", "method": "defineWidgetAreas" },
 		{ "hook": "filter:config.get", "method": "getThemeConfig" },
-		{ "hook": "filter:topic.build", "method": "addUserToTopic" }
+		{ "hook": "filter:topic.build", "method": "addUserToTopic" },
+		{ "hook": "filter:middleware.renderHeader", "method": "filterMiddlewareRenderHeader" }
 	],
 	"scripts": [
 		"public/harmony.js"
@@ -16,5 +17,6 @@
 	"staticDirs": {
 		"fonts": "./public/fonts",
 		"plex": "node_modules/@ibm/plex"
-	}
+	},
+	"languages": "languages"
 }

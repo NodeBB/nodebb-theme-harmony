@@ -30,6 +30,7 @@
 		{{{end}}}
 	</ul>
 	<div class="navbar-nav w-100">
+		<!-- IMPORT partials/skin-switcher.tpl -->
 		<div class="sidebar-toggle d-flex m-2">
 			<a href="#" role="button" component="sidebar/toggle" class="nav-btn p-2 pointer nav-link">
 				<i class="fa fa-fw fa-angles-right"></i>

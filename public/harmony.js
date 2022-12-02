@@ -5,6 +5,21 @@ $(document).ready(function () {
 	setupSearch();
 	setupDrafts();
 
+	$('[component="skinSwitcher"]').on('click', '.dropdown-item', function () {
+		const skin = $(this).attr('data-value');
+		$('[component="skinSwitcher"] .dropdown-item .fa-check').addClass('invisible');
+		$(this).find('.fa-check').removeClass('invisible');
+		require(['forum/account/settings'], function (accountSettings) {
+			$('[component="skinSwitcher"] [component="skinSwitcher/icon"]').addClass('fa-fade');
+			accountSettings.changeSkin(skin);
+		});
+	});
+
+	require(['hooks'], function (hooks) {
+		hooks.on('action:skin.change', function () {
+			$('[component="skinSwitcher"] [component="skinSwitcher/icon"]').removeClass('fa-fade');
+		});
+	});
 	function setupMobileMenu() {
 		$('[component="sidebar/toggle"]').on('click', function () {
 			$('.sidebar').toggleClass('open');
