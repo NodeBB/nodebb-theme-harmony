@@ -1,6 +1,5 @@
 @mixin topic-avatars() {
 	.icon .avatar, .timeline-badge {
-		// Opaque ring
 		position: relative;
 		z-index: 1;
 
@@ -20,13 +19,14 @@
 		position: relative;	// for absolutely positioned pseudo-element, below
 		border-left: 2px solid $input-group-addon-bg;
 		margin-left: 1.5rem;
+		transition: border-color 1s ease-out;
 
 		&:first-child:before {
 			content: '';
 			position: absolute;
 			top: 0;
-			height: 12px;
-			width: 12px;
+			height: 16px;
+			width: 16px;
 			background-color: $pagination-border-color;
 			border-radius: 100%;
 			transform: translateX(calc(-50% - .5px));
@@ -36,8 +36,8 @@
 			content: '';
 			position: absolute;
 			bottom: 0;
-			height: 12px;
-			width: 12px;
+			height: 16px;
+			width: 16px;
 			background-color: $pagination-border-color;
 			border-radius: 100%;
 			transform: translateX(calc(-50% - .5px));
@@ -45,6 +45,10 @@
 
 		> div:first-of-type {
 			margin-left: -1.5rem;
+		}
+
+		&.highlight {
+			border-left: 2px solid $primary;
 		}
 
 		@include topic-avatars();

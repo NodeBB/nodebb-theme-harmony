@@ -61,6 +61,10 @@
 				@include timeline-style;
 			}
 
+			li:first-child {
+				padding-top: 32px !important;
+			}
+
 			.post-header {
 				font-size: 13px;
 				line-height: 20px;
