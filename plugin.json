@@ -15,8 +15,7 @@
 		"../admin/plugins/harmony.js": "public/admin.js"
 	},
 	"staticDirs": {
-		"fonts": "./public/fonts",
-		"plex": "node_modules/@ibm/plex",
+		"inter": "node_modules/@fontsource/inter/files",
 		"poppins": "node_modules/@fontsource/poppins/files"
 	},
 	"languages": "languages"

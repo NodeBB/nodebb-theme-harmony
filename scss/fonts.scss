@@ -1,0 +1,17 @@
+@use "@fontsource/inter/scss/mixins" as Inter;
+@use "@fontsource/poppins/scss/mixins" as Poppins;
+
+$weights: 300, 400, $font-weight-semibold, 700;
+
+@each $weight in $weights {
+	@include Inter.fontFace(
+		$weight: $weight,
+		$display: fallback,
+		$fontDir: "./plugins/nodebb-theme-harmony/inter"
+	);
+	@include Poppins.fontFace(
+	  $weight: $weight,
+	  $display: fallback,
+	  $fontDir: "./plugins/nodebb-theme-harmony/poppins"
+	);
+}
