@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light mt-4 p-2 border rounded topic-main-buttons">
+<nav class="navbar navbar-expand-lg bg-light mt-4 p-2 border rounded topic-main-buttons ff-secondary">
 	<ul class="navbar-nav me-auto gap-2">
 		{{{ if loggedIn }}}
 		<button component="topic/mark-unread" class="btn btn-link text-decoration-none text-dark d-flex gap-2 align-items-baseline">
