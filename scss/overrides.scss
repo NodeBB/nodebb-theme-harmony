@@ -53,9 +53,9 @@ $link-decoration:none !default;
 	src: url("./plugins/nodebb-theme-harmony/fonts/Inter.ttf") format("truetype");
 }
 $font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-prefix: './plugins/nodebb-theme-harmony/plex';
-@import 'node_modules/@ibm/plex/scss/ibm-plex.scss';
-$font-family-secondary: "IBM Plex Sans" !default;
+// $font-prefix: './plugins/nodebb-theme-harmony/plex';
+// @import 'node_modules/@ibm/plex/scss/ibm-plex.scss';
+$font-family-secondary: "Poppins" !default;
 $font-weight-semibold: 500;
 
 $breadcrumb-divider: quote("→");

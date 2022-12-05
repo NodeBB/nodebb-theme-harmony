@@ -16,7 +16,8 @@
 	},
 	"staticDirs": {
 		"fonts": "./public/fonts",
-		"plex": "node_modules/@ibm/plex"
+		"plex": "node_modules/@ibm/plex",
+		"poppins": "node_modules/@fontsource/poppins/files"
 	},
 	"languages": "languages"
 }

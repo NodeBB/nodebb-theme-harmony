@@ -1,4 +1,25 @@
-// @import "style";
+@use "@fontsource/poppins/scss/mixins" as Poppins;
+@include Poppins.fontFace(
+  $weight: 300,
+  $display: fallback,
+  $fontDir: "./plugins/nodebb-theme-harmony/poppins"
+);
+@include Poppins.fontFace(
+  $weight: 400,
+  $display: fallback,
+  $fontDir: "./plugins/nodebb-theme-harmony/poppins"
+);
+@include Poppins.fontFace(
+  $weight: 500,
+  $display: fallback,
+  $fontDir: "./plugins/nodebb-theme-harmony/poppins"
+);
+@include Poppins.fontFace(
+  $weight: 700,
+  $display: fallback,
+  $fontDir: "./plugins/nodebb-theme-harmony/poppins"
+);
+
 @import "mixins";
 @import "common";
 
