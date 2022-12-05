@@ -7,17 +7,26 @@
 	}
 
 	[component="user/status"] {
-		padding: 5px;
+		padding: 3px;
+		top: 20px;
+		left: 12px;
+
 		z-index: $zindex-dropdown;
-		top: 36px;
-		left: 36px;
+	}
+
+	@include media-breakpoint-up(sm) {
+		[component="user/status"] {
+			padding: 5px;
+			top: 36px;
+			left: 36px;
+		}
 	}
 }
 
 @mixin timeline-style() {
 	> [component="post"], .timeline-event {
 		position: relative;	// for absolutely positioned pseudo-element, below
-		border-left: 2px solid $input-group-addon-bg;
+		border: 0;
 		margin-left: 1.5rem;
 		transition: border-color 1s ease-out;
 
@@ -54,10 +63,41 @@
 		@include topic-avatars();
 	}
 
-	@include media-breakpoint-down(sm) {
-		[component="post"] {
-			border: 0;
+	[component="topic/event"], [component="topic/necro-post"] {
+		&.timeline-event {
+			text-align: left;
+			justify-content: left;
+			font-size: 1em;
 
+			.timeline-badge {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-shrink: 0;
+
+				width: 20px;
+				height: 20px;
+				padding: 0;
+				margin-right: 1rem;
+				color: $gray-500;
+				background-color: $body-bg;
+			}
+
+			.timeline-text {
+				line-height: 32px;
+				text-transform: initial;
+			}
+		}
+	}
+
+	@include media-breakpoint-down(sm) {
+		> [component="post"], .timeline-event {
+			&:first-child:before, &:last-child:after {
+				display: none;
+			}
+		}
+
+		[component="post"] {
 			margin-left: initial;
 			> div:not(.content) {
 				margin-left: 0;
@@ -69,25 +109,6 @@
 		}
 
 		.timeline-event {
-			margin-left: 1rem;
-
-			&:before, &+:not(.timeline-event):before {
-				content: '';
-				width: 1rem;
-				position: absolute;
-				top: 0;
-				left: calc(-0.5rem - 1px);
-				border-bottom: 2px solid lighten($primary, 30%);
-			}
-
-			&+:not(.timeline-event):before {
-				left: calc(.5rem + 1px);
-			}
-
-			&+.timeline-event:before {
-				display: none;
-			}
-
 			.timeline-text.timeago {
 				display: none;
 			}
@@ -95,7 +116,13 @@
 	}
 
 	@include media-breakpoint-up(sm) {
+		> [component="post"], .timeline-event {
+			border-left: 2px solid $input-group-addon-bg;
+		}
+
 		.timeline-event {
+			margin-left: 1.5rem;
+
 			[component="topic/event/delete"] {
 				visibility: hidden;
 			}
@@ -110,35 +137,16 @@
 				}
 			}
 		}
-	}
 
-	[component="topic/event"], [component="topic/necro-post"] {
-		&.timeline-event {
-			text-align: left;
-			justify-content: left;
-			font-size: 1em;
-
-			.timeline-badge {
-				float: left;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				flex-shrink: 0;
-
+		[component="topic/event"], [component="topic/necro-post"] {
+			&.timeline-event .timeline-badge {
 				width: 24px;
 				height: 24px;
 				padding: 0;
 				margin-left: -0.75rem;
 				margin-right: 1.25rem;
-				color: $gray-500;
-				background-color: $body-bg;
 				border: 2px solid $input-group-addon-bg;
 				border-radius: 50%;
-			}
-
-			.timeline-text {
-				line-height: 32px;
-				text-transform: initial;
 			}
 		}
 	}

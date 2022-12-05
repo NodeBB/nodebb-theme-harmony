@@ -1,5 +1,5 @@
 <div class="d-flex align-items-start gap-3">
-	<div class="icon py-1 bg-body">
+	<div class="icon py-1 bg-body d-none d-sm-block">
 		<a class="d-inline-block text-decoration-none position-relative" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 			{buildAvatar(posts.user, "48px", true, "", "user/picture")}
 			<span component="user/status" class="position-absolute translate-middle-y badge border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
@@ -8,6 +8,13 @@
 
 	<div class="d-flex flex-grow-1 flex-column">
 		<div class="d-flex align-items-center gap-1 flex-wrap w-100 post-header">
+			<div class="icon bg-body d-sm-none">
+				<a class="d-inline-block text-decoration-none position-relative" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
+					{buildAvatar(posts.user, "20px", true, "", "user/picture")}
+					<span component="user/status" class="position-absolute translate-middle-y badge border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
+				</a>
+			</div>
+
 			<span class="text-nowrap">
 				<a class="fw-bold text-decoration-none" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.displayname}</a>
 			</span>
@@ -65,7 +72,7 @@
 	<div class="clearfix">
 		{{{ if !hideReplies }}}
 		<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="d-flex gap-2 align-items-center text-decoration-none mt-2 threaded-replies user-select-none float-start text-muted {{{ if !posts.replies.count }}}hidden{{{ end }}}">
-			<span component="post/reply-count/avatars" class="avatars d-inline-flex gap-1 align-items-top hidden-xs {{{ if posts.replies.hasMore }}}hasMore{{{ end }}}">
+			<span component="post/reply-count/avatars" class="avatars d-inline-flex gap-1 align-items-top {{{ if posts.replies.hasMore }}}hasMore{{{ end }}}">
 				{{{each posts.replies.users}}}
 				<span>{buildAvatar(posts.replies.users, "20px", true, "")}</span>
 				{{{end}}}

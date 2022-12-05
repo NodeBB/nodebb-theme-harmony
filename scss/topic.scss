@@ -69,10 +69,6 @@
 				@include timeline-style;
 			}
 
-			li:first-child {
-				padding-top: 32px !important;
-			}
-
 			.post-header {
 				font-size: 13px;
 				line-height: 20px;
@@ -107,5 +103,13 @@
 
 	.quick-reply {
 		@include topic-avatars();
+	}
+}
+
+@include media-breakpoint-up(sm) {
+	.page-topic {
+		.topic .posts li:first-child {
+			padding-top: 32px !important;
+		}
 	}
 }
