@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand-lg bg-light mt-4 p-2 border rounded topic-main-buttons ff-secondary">
-	<ul class="navbar-nav me-auto gap-2">
+<nav class="navbar navbar-expand bg-light mt-4 p-2 border rounded topic-main-buttons ff-secondary">
+	<ul class="navbar-nav me-auto gap-2 align-items-center">
 		{{{ if loggedIn }}}
-		<button component="topic/mark-unread" class="btn btn-link text-decoration-none text-dark d-flex gap-2 align-items-baseline">
+		<button component="topic/mark-unread" class="btn btn-link text-decoration-none text-dark d-flex gap-2 align-items-center">
 			<i class="fa fa-fw fa-inbox"></i>
-			<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[topic:mark_unread]]</span>
+			<span class="d-none d-md-inline">[[topic:mark_unread]]</span>
 		</button>
 		{{{ end }}}
 
