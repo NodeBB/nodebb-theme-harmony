@@ -1,6 +1,6 @@
 <!-- THIS FILE IS STILL PERSONA -->
 
-<div component="pagination" class="pagination-container<!-- IF !pagination.pages.length --> hidden<!-- ENDIF !pagination.pages.length -->">
+<div component="pagination" class="pagination-container mt-3<!-- IF !pagination.pages.length --> hidden<!-- ENDIF !pagination.pages.length -->">
 	<ul class="pagination hidden-xs justify-content-center">
 		<li class="page-item previous float-start<!-- IF !pagination.prev.active --> disabled<!-- ENDIF !pagination.prev.active -->">
 			<a class="page-link" href="?{pagination.prev.qs}" data-page="{pagination.prev.page}"><i class="fa fa-chevron-left"></i> </a>
