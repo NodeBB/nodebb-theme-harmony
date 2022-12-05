@@ -27,4 +27,5 @@
 	</ul>
 	{{{ end }}}
 
+	<!-- IMPORT partials/topic/navigator.tpl -->
 </nav>

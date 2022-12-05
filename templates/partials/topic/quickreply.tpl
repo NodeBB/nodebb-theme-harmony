@@ -1,5 +1,3 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <!-- IF privileges.topics:reply -->
 <div component="topic/quickreply/container" class="quick-reply d-flex gap-3">
 	<div class="icon hidden-xs">

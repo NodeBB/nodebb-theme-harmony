@@ -24,7 +24,7 @@
 }
 
 @mixin timeline-style() {
-	> [component="post"], .timeline-event {
+	> [component="post"], .timeline-event, > [component="post/placeholder"] {
 		position: relative;	// for absolutely positioned pseudo-element, below
 		border: 0;
 		margin-left: 1.5rem;
@@ -41,15 +41,19 @@
 			transform: translateX(calc(-50% - .5px));
 		}
 
-		&:last-child:after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			height: 16px;
-			width: 16px;
-			background-color: $input-group-addon-bg;
-			border-radius: 100%;
-			transform: translateX(calc(-50% - .5px));
+		&:last-child {
+			min-height: 7rem;
+
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				height: 16px;
+				width: 16px;
+				background-color: $input-group-addon-bg;
+				border-radius: 100%;
+				transform: translateX(calc(-50% - .5px));
+			}
 		}
 
 		> div:first-of-type {
@@ -116,7 +120,20 @@
 	}
 
 	@include media-breakpoint-up(sm) {
-		> [component="post"], .timeline-event {
+		&.minimal {
+			.post-footer, .timeline-event, [component="topic/quickreply/container"] {
+				display: none !important;
+			}
+
+			[component="post/content"] {
+				-webkit-line-clamp: 1;
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+			}
+		}
+
+		> [component="post"], .timeline-event, > [component="post/placeholder"] {
 			border-left: 2px solid $input-group-addon-bg;
 		}
 
