@@ -9,7 +9,7 @@
 				<span class="timeago" title="{../timestampISO}" style="font-size: 12px;"></span>
 			</a>
 		</p>
-		<div class="post-content overflow-hidden" style="font-size: 12px; max-height: 72px;">
+		<div class="post-content mt-2 overflow-hidden" style="font-size: 12px; max-height: 72px;">
 			{./content}
 		</div>
 	</div>
