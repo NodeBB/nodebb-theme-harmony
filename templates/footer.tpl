@@ -3,6 +3,7 @@
 		</main>
 		<!-- IMPORT partials/sidebar-right.tpl -->
 	</div>
+	<!-- IMPORT partials/mobile-footer.tpl -->
 	{{{ if !isSpider }}}
 	<div component="toaster/tray" class="alert-window">
 		<div id="reconnect-alert" class="alert alert-dismissible alert-warning clearfix hide" component="toaster/toast">

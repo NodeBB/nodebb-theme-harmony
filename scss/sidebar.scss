@@ -1,9 +1,14 @@
-
 .skin-noskin {
 	// only using colors when there is no bootswatch skin applied
-	.sidebar {
+	.sidebar, .bottombar {
 		color: $secondary !important;
 		background-color: $light !important;
+	}
+	.bottombar {
+		.dropdown-menu {
+			color: $secondary !important;
+			background-color: $light !important;
+		}
 	}
 }
 
@@ -99,6 +104,14 @@
 			font-size:12px;
 			line-height: 16px;
 		}
+	}
+}
+
+.bottombar {
+	z-index: $zindex-dropdown;
+	.nav-text {
+		font-size: 1rem;
+		color: $body-color;
 	}
 }
 

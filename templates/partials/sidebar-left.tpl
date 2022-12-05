@@ -1,4 +1,4 @@
-<nav class="text-dark bg-light sidebar sidebar-left vh-100 d-flex flex-column justify-content-between sticky-top ff-secondary">
+<nav class="text-dark bg-light sidebar sidebar-left vh-100 d-none d-md-flex flex-column justify-content-between sticky-top ff-secondary">
 	<ul id="main-nav" class="navbar-nav w-100 gap-2 mt-2">
 		{{{ each navigation }}}
 		<!-- IF function.displayMenuItem, @index -->

@@ -3,7 +3,7 @@
 		<span class="d-inline-flex justify-content-between w-100">
 			<span class="text-nowrap truncate-open">
 				<i component="skinSwitcher/icon" class="fa fa-fw fa-paintbrush"></i>
-				<span class="nav-text visible-open px-2">[[harmony:skins]]</span>
+				<span class="nav-text visible-open px-2 fw-semibold">[[harmony:skins]]</span>
 			</span>
 		</span>
 	</a>
