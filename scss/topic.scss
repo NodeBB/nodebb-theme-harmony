@@ -18,12 +18,7 @@
 	.stats {
 		background-color: $gray-200;
 		color: $gray-700;
-		font-weight: 600;
 		font-size: 12px;
-
-		span.hidden-xs {
-			font-weight: normal;
-		}
 	}
 
 	.topic-main-buttons {
@@ -44,7 +39,6 @@
 	}
 
 	[component="topic/reply"] {
-		font-weight: 500;
 		font-size: 14px;
 		line-height: 20px;
 	}

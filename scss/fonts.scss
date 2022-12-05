@@ -1,7 +1,7 @@
 @use "@fontsource/inter/scss/mixins" as Inter;
 @use "@fontsource/poppins/scss/mixins" as Poppins;
 
-$weights: 300, 400, $font-weight-semibold, 700;
+$weights: $font-weight-light, $font-weight-normal, $font-weight-semibold, $font-weight-bold;
 
 @each $weight in $weights {
 	@include Inter.fontFace(
