@@ -28,7 +28,27 @@ $(document).ready(function () {
 
 	function setupSearch() {
 		$('[component="sidebar/search"]').on('shown.bs.dropdown', function () {
-			$('[component="search/fields"] input[name="query"]').trigger('focus');
+			$(this).find('[component="search/fields"] input[name="query"]').trigger('focus');
+		});
+
+		function resizeResults(hookData) {
+			if (hookData && hookData.data && !hookData.data.posts.length) {
+				$('.bottombar .quick-search-results').css({ height: 'initial' });
+				return;
+			}
+			const dropdown = $('.bottombar .search-dropdown');
+			const padY = dropdown.innerHeight() - dropdown.height();
+			const input = dropdown.find('.input-container').outerHeight(true);
+			const showMore = dropdown.find('.show-more-container').outerHeight(true);
+			const newHeight = Math.max(
+				150,
+				$(window).height() - (input + (showMore || 0) + (padY * 2) + 30)
+			);
+			$('.bottombar .quick-search-results').height(newHeight);
+		}
+		require(['hooks'], function (hooks) {
+			$(window).on('resize', resizeResults);
+			hooks.on('action:search.quick.complete', resizeResults);
 		});
 	}
 

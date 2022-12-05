@@ -24,7 +24,7 @@
 </head>
 
 <body class="{bodyClass} skin-{{{if bootswatchSkin}}}{bootswatchSkin}{{{else}}}noskin{{{end}}}">
-	<div class="d-flex justify-content-between">
+	<div class="d-flex justify-content-between pb-4 pb-md-0">
 		<!-- IMPORT partials/sidebar-left.tpl -->
 
 		<main id="panel" class="flex-grow-1">
