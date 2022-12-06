@@ -5,9 +5,9 @@
 		<span class="d-none d-md-inline">[[topic:thread_tools.title]]</span>
 	</button>
 	<ul class="dropdown-menu">
-		<li class="skeleton"><a class="dropdown-item d-flex gap-2" href="#"><div class="placeholder" style="--width: 1rem; --height: 0.875rem;"></div><div class="placeholder flex-grow-1" style="--height: 0.875rem;"></div></a></li>
-		<li class="skeleton"><a class="dropdown-item d-flex gap-2" href="#"><div class="placeholder" style="--width: 1rem; --height: 0.875rem;"></div><div class="placeholder flex-grow-1" style="--height: 0.875rem;"></div></a></li>
-		<li class="skeleton"><a class="dropdown-item d-flex gap-2" href="#"><div class="placeholder" style="--width: 1rem; --height: 0.875rem;"></div><div class="placeholder flex-grow-1" style="--height: 0.875rem;"></div></a></li>
+		<li class="placeholder-wave"><a class="dropdown-item d-flex gap-2" href="#"><div class="placeholder bg-secondary rounded-1" style="width: 1em;"></div><div class="placeholder bg-secondary rounded-1 col-8"></div></a></li>
+		<li class="placeholder-wave"><a class="dropdown-item d-flex gap-2" href="#"><div class="placeholder bg-secondary rounded-1" style="width: 1em;"></div><div class="placeholder bg-secondary rounded-1 col-8"></div></a></li>
+		<li class="placeholder-wave"><a class="dropdown-item d-flex gap-2" href="#"><div class="placeholder bg-secondary rounded-1" style="width: 1em;"></div><div class="placeholder bg-secondary rounded-1 col-8"></div></a></li>
 	</ul>
 </div>
 {{{ end }}}
