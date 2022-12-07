@@ -42,14 +42,14 @@
 	</div>
 
 	{{{ if !./link }}}
-	<div class="col-md-2 d-none d-md-flex stats text-muted gap-2">
-		<div class="flex-fill">
+	<div class="col-md-2 d-none d-md-flex stats text-muted gap-2 px-0">
+		<div class="w-50">
 			<div class="d-flex flex-column align-items-center text-secondary bg-light p-2 rounded-1">
 				<span class="{./unread-class} human-readable-number fs-5 fw-semibold ff-secondary" title="{./totalTopicCount}">{./totalTopicCount}</span>
 				<span class="text-lowercase" style="font-size:12px;">[[global:topics]]</span>
 			</div>
 		</div>
-		<div class="flex-fill">
+		<div class="w-50">
 			<div class="d-flex flex-column align-items-center text-secondary bg-light p-2 rounded-1">
 				<span class="{./unread-class} human-readable-number fs-5 fw-semibold ff-secondary" title="{./totalPostCount}">{./totalPostCount}</span>
 				<span class="text-lowercase" style="font-size:12px;">[[global:posts]]</span>
