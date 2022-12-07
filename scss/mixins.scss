@@ -126,10 +126,7 @@
 			}
 
 			[component="post/content"] {
-				-webkit-line-clamp: 1;
-				overflow: hidden;
-				display: -webkit-box;
-				-webkit-box-orient: vertical;
+				@include line-clamp(1);
 			}
 		}
 
