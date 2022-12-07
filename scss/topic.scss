@@ -98,7 +98,7 @@
 
 @include media-breakpoint-up(sm) {
 	.page-topic {
-		.topic .posts li:first-child {
+		.topic .posts > li:first-child {
 			padding-top: 32px !important;
 		}
 	}
