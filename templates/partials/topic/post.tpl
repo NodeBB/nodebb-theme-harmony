@@ -1,6 +1,6 @@
 <div class="d-flex align-items-start gap-3">
 	<div class="icon py-1 bg-body d-none d-sm-block">
-		<a class="d-inline-block text-decoration-none position-relative" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
+		<a class="d-inline-block position-relative" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 			{buildAvatar(posts.user, "48px", true, "", "user/picture")}
 			<span component="user/status" class="position-absolute translate-middle-y badge border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
 		</a>
@@ -9,14 +9,14 @@
 	<div class="d-flex flex-grow-1 flex-column">
 		<div class="d-flex align-items-center gap-1 flex-wrap w-100 post-header mt-1">
 			<div class="icon bg-body d-sm-none">
-				<a class="d-inline-block text-decoration-none position-relative" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
+				<a class="d-inline-block position-relative" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 					{buildAvatar(posts.user, "20px", true, "", "user/picture")}
 					<span component="user/status" class="position-absolute translate-middle-y badge border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
 				</a>
 			</div>
 
 			<span class="text-nowrap">
-				<a class="fw-bold text-decoration-none" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.displayname}</a>
+				<a class="fw-bold" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.displayname}</a>
 			</span>
 
 			{{{ each posts.user.selectedGroups }}}
@@ -71,7 +71,7 @@
 
 	<div class="clearfix">
 		{{{ if !hideReplies }}}
-		<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="d-flex gap-2 align-items-center text-decoration-none mt-2 threaded-replies user-select-none float-start text-muted {{{ if !posts.replies.count }}}hidden{{{ end }}}">
+		<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="d-flex gap-2 align-items-center mt-2 threaded-replies user-select-none float-start text-muted {{{ if !posts.replies.count }}}hidden{{{ end }}}">
 			<span component="post/reply-count/avatars" class="avatars d-inline-flex gap-1 align-items-top {{{ if posts.replies.hasMore }}}hasMore{{{ end }}}">
 				{{{each posts.replies.users}}}
 				<span>{buildAvatar(posts.replies.users, "20px", true, "")}</span>
@@ -94,8 +94,8 @@
 
 	<div component="post/tools" class="d-flex justify-content-end post-tools">
 		<!-- IMPORT partials/topic/reactions.tpl -->
-		<a component="post/reply" href="#" class="btn btn-link text-decoration-none user-select-none <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" title="[[topic:reply]]"><i class="fa fa-reply"></i></a>
-		<a component="post/quote" href="#" class="btn btn-link text-decoration-none user-select-none <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" title="[[topic:quote]]"><i class="fa fa-quote-right"></i></a>
+		<a component="post/reply" href="#" class="btn btn-link user-select-none <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" title="[[topic:reply]]"><i class="fa fa-reply"></i></a>
+		<a component="post/quote" href="#" class="btn btn-link user-select-none <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" title="[[topic:quote]]"><i class="fa fa-quote-right"></i></a>
 
 		<!-- IF !reputation:disabled -->
 		<div class="d-flex votes align-items-center">

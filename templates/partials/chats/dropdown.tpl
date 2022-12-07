@@ -1,5 +1,5 @@
 {{{ if !rooms.length }}}
-<li class="text-center"><a href="#" class="text-decoration-none text-reset">[[modules:chat.no_active]]</a></li>
+<li class="text-center"><a href="#" class="text-reset">[[modules:chat.no_active]]</a></li>
 {{{ end }}}
 
 {{{ each rooms }}}
