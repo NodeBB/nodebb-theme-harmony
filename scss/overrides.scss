@@ -45,7 +45,7 @@ $enable-caret: false;
 // disable smooth scroll, this makes window.scrollTo(0,0) in ajaxify.js take x milliseconds
 $enable-smooth-scroll: false;
 
-$link-decoration:none !default;
+$link-decoration: none;
 
 // Custom fonts
 @font-face {
