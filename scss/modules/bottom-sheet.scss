@@ -24,7 +24,7 @@
 			border-top: 1px solid $border-color;
 
 			> li {
-				> a {
+				> a, .dropdown-item {
 					padding: 10px 20px;
 					overflow: hidden;
 					text-overflow: ellipsis;
