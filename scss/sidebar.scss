@@ -72,14 +72,9 @@
 	.search-dropdown {
 		width: 300px;
 	}
-	.chats-dropdown {
-		width: 300px;
-	}
-	.notifications-dropdown {
+
+	.chats-dropdown, .notifications-dropdown, .drafts-dropdown {
 		min-width: 300px;
-	}
-	.drafts-dropdown {
-		width: 300px;
 	}
 
 	.badge {
