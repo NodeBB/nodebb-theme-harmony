@@ -20,7 +20,7 @@
 			{./lastUser.username}
 			{{{ end }}}
 		</div>
-		<div class="teaser-content text-sm line-clamp-3 text-truncate">
+		<div class="teaser-content text-sm line-clamp-3">
 			{./teaser.content}
 		</div>
 		<div class="teaser-timestamp notification-chat-controls text-muted text-xs">{./teaser.timeagoLong}</div>

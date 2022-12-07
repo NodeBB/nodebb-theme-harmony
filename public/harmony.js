@@ -80,13 +80,6 @@ $(document).ready(function () {
 				drafts.open($(this).attr('data-save-id'));
 			});
 
-			draftsEl.on('click', '[component="drafts/delete-all"]', function () {
-				const draftItems = drafts.listAvailable();
-				draftItems.forEach((item) => {
-					drafts.removeDraft(item.save_id);
-				});
-			});
-
 			draftsEl.on('click', '[component="drafts/delete"]', function () {
 				drafts.removeDraft($(this).attr('data-save-id'));
 			});

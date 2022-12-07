@@ -21,8 +21,8 @@
 	<li class="dropdown-divider"></li>
 	<li class="notif-dropdown-link">
 		<div class="d-flex justify-content-center gap-1 flex-nowrap">
-			<a role="button" href="#" class="btn btn-light mark-all-read text-nowrap"><i class="fa fa-check-double"></i> [[notifications:mark_all_read]]</a>
-			<a class="btn btn-primary text-nowrap" href="{relative_path}/notifications"><i class="fa fa-list"></i> [[notifications:see_all]]</a>
+			<a role="button" href="#" class="btn btn-sm btn-light mark-all-read flex-fill text-nowrap ff-secondary"><i class="fa fa-check-double"></i> [[notifications:mark_all_read]]</a>
+			<a class="btn btn-sm btn-primary flex-fill text-nowrap ff-secondary" href="{relative_path}/notifications"><i class="fa fa-list"></i> [[notifications:see_all]]</a>
 		</div>
 	</li>
 </ul>

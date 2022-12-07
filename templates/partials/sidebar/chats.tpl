@@ -21,8 +21,8 @@
 	<li class="dropdown-divider"></li>
 	<li class="notif-dropdown-link">
 		<div class="d-flex justify-content-center gap-1 flex-nowrap">
-			<a component="chats/mark-all-read" role="button" href="#" class="btn btn-light mark-all-read text-nowrap"><i class="fa fa-check-double"></i> [[modules:chat.mark_all_read]]</a>
-			<a class="btn btn-primary text-nowrap" href="{relative_path}/user/{user.userslug}/chats"><i class="fa fa-list"></i> [[modules:chat.see_all]]</a>
+			<a component="chats/mark-all-read" role="button" href="#" class="btn btn-sm btn-light mark-all-read flex-fill text-nowrap ff-secondary"><i class="fa fa-check-double"></i> [[modules:chat.mark_all_read]]</a>
+			<a class="btn btn-sm btn-primary flex-fill text-nowrap ff-secondary" href="{relative_path}/user/{user.userslug}/chats"><i class="fa fa-list"></i> [[modules:chat.see_all]]</a>
 		</div>
 	</li>
 </ul>

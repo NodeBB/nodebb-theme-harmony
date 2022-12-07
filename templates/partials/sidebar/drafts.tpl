@@ -10,23 +10,25 @@
 		<span component="drafts/count" class="visible-open badge rounded-1 bg-primary hidden">0</span>
 	</span>
 </a>
-<ul class="drafts-dropdown dropdown-menu p-2 shadow">
+<ul class="drafts-dropdown dropdown-menu p-1 shadow">
 	<li>
-		<ul component="drafts/list" class="draft-list list-unstyled p-2">
-			<li class="no-drafts text-center hidden">[[modules:composer.no-drafts]]</li>
+		<ul component="drafts/list" class="draft-list list-unstyled d-flex flex-column gap-1">
+			<li class="no-drafts text-center hidden p-3 text-sm text-muted">[[modules:composer.no-drafts]]</li>
 
 			{{{ each drafts }}}
-			<li class="mb-2" data-save-id="{./save_id}">
+			{{{ if !@first}}}
+			<hr class="m-0"/>
+			{{{ end }}}
+			<li class="dropdown-item rounded-1 p-2" data-save-id="{./save_id}">
 				<div class="d-flex gap-1 justify-content-between">
-					<div component="drafts/open" data-save-id="{./save_id}">
-						<a href="#" class="text-reset">
-							{{{ if ./title}}}
-							<span class="text">{./title}</span>
-							{{{ else }}}
-							<span class="text">{./text}</span>
-							{{{ end }}}
-						</a>
-						<div class="timeago text-muted" title="{./timestampISO}"></div>
+					<div class="d-flex flex-column" component="drafts/open" data-save-id="{./save_id}">
+						{{{ if ./title}}}
+						<div class="text text-xs fw-semibold">{./title}</div>
+						{{{ end }}}
+						{{{ if ./text }}}
+						<div class="text text-sm line-clamp-3">{./text}</div>
+						{{{ end }}}
+						<div class="timeago text-xs text-muted" title="{./timestampISO}"></div>
 					</div>
 					<div class="">
 						<button component="drafts/delete" data-save-id="{./save_id}" class="btn btn-light btn-sm">
@@ -37,11 +39,5 @@
 			</li>
 			{{{ end }}}
 		</ul>
-	</li>
-	<li class="dropdown-divider"></li>
-	<li class="notif-dropdown-link">
-		<div class="d-flex justify-content-center flex-nowrap">
-			<a component="drafts/delete-all" role="button" href="#" class="btn btn-light text-nowrap"><i class="fa fa-trash"></i> [[modules:composer.discard-all-drafts]]</a>
-		</div>
 	</li>
 </ul>
