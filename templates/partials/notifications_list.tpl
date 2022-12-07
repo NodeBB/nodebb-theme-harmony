@@ -7,9 +7,9 @@
 	<div class="d-flex gap-1 justify-content-between">
 		<div>
 			<a href="{./path}" class="notification-chat-content text-reset">
-				<span class="text">{./bodyShort}</span>
+				<span class="text text-sm">{./bodyShort}</span>
 			</a>
-			<div class="relTime text-muted">{./timeagoLong}</div>
+			<div class="text-xs text-muted">{./timeagoLong}</div>
 		</div>
 		<div class="notification-chat-controls">
 			{{{ if ./nid }}}

@@ -12,21 +12,21 @@
 <ul id="quick-search-results" class="quick-search-results list-unstyled mb-0 p-0 overflow-auto" style="max-width:400px; max-height: 500px;">
 	<li role="separator" class="dropdown-divider d-none d-md-block"></li>
 	{{{ each posts }}}
-	<li data-tid="{posts.topic.tid}" data-pid="{posts.pid}">
+	<li data-tid="{posts.topic.tid}" data-pid="{posts.pid}" class="d-flex flex-column gap-1">
 		<a href="{config.relative_path}/post/{posts.pid}"
-			class="text-reset clearfix d-block text-truncate px-2 py-1">
-			<span class="quick-search-title fw-bold">{posts.topic.title}</span>
+			class="dropdown-item rounded-1 text-reset d-block text-truncate px-2 py-1">
+			<span class="quick-search-title fw-semibold text-sm">{posts.topic.title}</span>
 			<br/>
-			<p class="snippet text-break text-wrap">
+			<p class="snippet text-xs text-break text-wrap mb-0">
 			{posts.snippet}
 			</p>
-			<span class="post-info">
-				<div class="category-item d-inline-block">
-					<span>{function.buildCategoryLabel, posts.category}</span>
-					<span class="timeago text-muted" title="{posts.timestampISO}"></span>
-				</div>
-			</span>
 		</a>
+		<div class="d-flex gap-1 post-info px-2 text-xs">
+			<div class="category-item d-inline-block">
+				<span>{function.buildCategoryLabel, posts.category}</span>
+			</div>
+			<span class="timeago text-muted" title="{posts.timestampISO}"></span>
+		</div>
 	</li>
 	<li role="separator" class="dropdown-divider"></li>
 	{{{ end }}}

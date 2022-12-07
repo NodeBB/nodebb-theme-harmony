@@ -3,7 +3,7 @@
 {{{ end }}}
 
 {{{ each rooms }}}
-<li class="{{{ if ./unread }}}unread{{{ end }}} dropdown-item rounded-1 p-2 d-flex gap-2" data-roomid="{./roomId}">
+<li class="{{{ if ./unread }}}unread{{{ end }}} dropdown-item rounded-1 p-2 d-flex gap-2 pointer" data-roomid="{./roomId}">
 	{{{ each ./users}}}
 	{{{ if @first }}}
 	<div class="main-avatar">

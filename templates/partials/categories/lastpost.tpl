@@ -6,10 +6,10 @@
 		<p class="mb-0">
 			<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(posts.user, "20px", true)}</a>
 			<a class="permalink text-muted" href="{config.relative_path}/topic/{./topic.slug}{{{ if ./index }}}/{./index}{{{ end }}}">
-				<span class="timeago" title="{../timestampISO}" style="font-size: 12px;"></span>
+				<span class="timeago text-xs" title="{../timestampISO}"></span>
 			</a>
 		</p>
-		<div class="post-content mt-2 overflow-hidden" style="font-size: 12px; max-height: 72px;">
+		<div class="post-content mt-2 overflow-hidden text-xs line-clamp-3">
 			{./content}
 		</div>
 	</div>
@@ -18,7 +18,7 @@
 
 	{{{ if !./posts.length }}}
 	<div component="category/posts" class="ps-3">
-		<div class="post-content overflow-hidden" style="font-size: 12px; max-height: 72px;">
+		<div class="post-content overflow-hidden text-xs">
 			[[category:no_new_posts]]
 		</div>
 	</div>
