@@ -71,6 +71,12 @@
 					}
 				}
 
+				[component="post/content"] {
+					pre {
+						max-height: calc($font-size-base * 24);
+					}
+				}
+
 				> [component="post/footer"] {
 					margin-left: calc($spacer * 2.5);
 				}

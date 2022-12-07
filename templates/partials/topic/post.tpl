@@ -6,7 +6,7 @@
 		</a>
 	</div>
 
-	<div class="d-flex flex-grow-1 flex-column">
+	<div class="d-flex flex-grow-1 flex-column w-100">
 		<div class="d-flex align-items-center gap-1 flex-wrap w-100 post-header mt-1">
 			<div class="icon bg-body d-sm-none">
 				<a class="d-inline-block position-relative" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
@@ -58,7 +58,7 @@
 			</div>
 		</div>
 
-		<div class="content mt-2" component="post/content" itemprop="text">
+		<div class="content mt-2 text-break" component="post/content" itemprop="text">
 			{posts.content}
 		</div>
 	</div>
