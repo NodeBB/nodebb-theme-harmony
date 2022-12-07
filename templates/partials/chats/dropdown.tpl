@@ -12,7 +12,7 @@
 	{{{ end }}}
 	{{{ end }}}
 
-	<div class="notification-chat-content d-flex flex-grow-1 flex-column">
+	<div class="notification-chat-content d-flex flex-grow-1 flex-column w-100">
 		<div class="room-name fw-semibold text-xs">
 			{{{ if !./lastUser.uid }}}
 			<span>[[modules:chat.no-users-in-room]]</span>
@@ -23,7 +23,7 @@
 		<div class="teaser-content text-sm line-clamp-3 text-truncate">
 			{./teaser.content}
 		</div>
-		<div class="teaser-timestamp notification-chat-controls text-muted text-xs">{./teaser.timeago}</div>
+		<div class="teaser-timestamp notification-chat-controls text-muted text-xs">{./teaser.timeagoLong}</div>
 	</div>
 </li>
 {{{ end }}}
