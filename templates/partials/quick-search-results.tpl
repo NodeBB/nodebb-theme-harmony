@@ -35,7 +35,7 @@
 
 {{{ if multiplePages }}}
 <div class="text-center mt-2 d-none d-md-block">
-	<a href="{url}" class="btn btn-primary ">
+	<a href="{url}" class="btn btn-sm btn-primary">
 		[[search:see-more-results, {matchCount}]]
 	</a>
 </div>
