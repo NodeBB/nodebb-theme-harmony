@@ -1,0 +1,20 @@
+[component="topic/navigator"] {
+	.track {
+		height: 200px;
+		width: 2px;
+		background-color: $input-group-addon-bg;
+
+		.knob {
+			width: 16px;
+			height: 16px;
+			background-color: $link-color;
+			margin-left: 1px;
+
+			transition: $transition-base;
+
+			&:active {
+				transition: none;
+			}
+		}
+	}
+}
