@@ -3,36 +3,27 @@
 {{{ end }}}
 
 {{{ each rooms }}}
-<li class="{{{ if ./unread }}}unread{{{ end }}}" data-roomid="{./roomId}">
+<li class="{{{ if ./unread }}}unread{{{ end }}} dropdown-item rounded-1 p-2 d-flex gap-2" data-roomid="{./roomId}">
 	{{{ each ./users}}}
-	<!-- IF @first -->
+	{{{ if @first }}}
 	<div class="main-avatar">
 		<!-- IMPORT partials/chats/user.tpl -->
 	</div>
-	<!-- ENDIF @first -->
+	{{{ end }}}
 	{{{ end }}}
 
-	<ul class="members list-unstyled">
-		{{{each ./users}}}
-		<li>
-			<!-- IMPORT partials/chats/user.tpl -->
-		</li>
-		{{{end}}}
-	</ul>
-
-	<div class="notification-chat-content">
-		<strong class="room-name">
+	<div class="notification-chat-content d-flex flex-grow-1 flex-column">
+		<div class="room-name fw-semibold text-xs">
 			{{{ if !./lastUser.uid }}}
 			<span>[[modules:chat.no-users-in-room]]</span>
 			{{{ else }}}
-			{{{ if ./roomName }}}{./roomName}{{{ else }}}{rooms.usernames}{{{ end }}}
+			{./lastUser.username}
 			{{{ end }}}
-		</strong>
-		<span class="teaser-content">
-			<strong class="teaser-username">{./teaser.user.username}:</strong>
+		</div>
+		<div class="teaser-content text-sm line-clamp-3 text-truncate">
 			{./teaser.content}
-		</span>
+		</div>
+		<div class="teaser-timestamp notification-chat-controls text-muted text-xs">{./teaser.timeago}</div>
 	</div>
-	<div class="teaser-timestamp notification-chat-controls">{./teaser.timeago}</div>
 </li>
 {{{ end }}}

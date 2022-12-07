@@ -10,9 +10,9 @@
 		<span component="chat/count" class="visible-open badge rounded-1 bg-primary {{{ if !unreadCount.chat }}}hidden{{{ end }}}">{unreadCount.chat}</span>
 	</span>
 </a>
-<ul class="chats-dropdown dropdown-menu p-2 shadow">
+<ul class="chats-dropdown dropdown-menu p-1 shadow">
 	<li>
-		<ul component="chat/list" class="chat-list chats-list list-unstyled p-2">
+		<ul component="chat/list" class="chat-list chats-list list-unstyled">
 			<li class="loading-text text-center">
 				<a href="#" class="text-reset"><i class="fa fa-refresh fa-spin"></i> [[global:chats.loading]]</a>
 			</li>
