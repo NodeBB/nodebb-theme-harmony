@@ -57,7 +57,7 @@
 						</span>
 						<span class="me-2 badge bg-primary {{{ if !./oldCid }}}hidden{{{ end }}}">
 							<i class="fa fa-arrow-circle-right"></i>
-							{{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {./oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}
+							[[topic:moved]]
 						</span>
 						{{{each ./icons}}}<span class="me-2">{@value}</span>{{{end}}}
 					</span>
