@@ -1,4 +1,8 @@
 .page-topic {
+	#content {
+		max-width: 960px;
+	}
+
 	.breadcrumb {
 		.breadcrumb-item:last-of-type {
 			display: none;
