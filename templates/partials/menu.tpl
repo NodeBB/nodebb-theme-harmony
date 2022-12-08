@@ -1,4 +1,4 @@
-<!-- THIS FILE IS STILL PERSONA -->
+<!-- THIS FILE SHOULD BE DELETED EVENTUALLY -->
 
 			<div class="d-flex align-items-center me-auto" style="min-width: 0px;">
 				<button type="button" class="navbar-toggler border-0" id="mobile-menu">

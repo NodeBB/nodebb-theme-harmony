@@ -27,17 +27,25 @@
 	<div class="d-flex justify-content-between pb-4 pb-md-0">
 		<!-- IMPORT partials/sidebar-left.tpl -->
 
-		<main id="panel" class="flex-grow-1">
-			<nav class="hidden navbar sticky-top navbar-expand-lg bg-light header border-bottom" id="header-menu" component="navbar">
-				<div class="container justify-content-start flex-nowrap">
-					<!-- IMPORT partials/menu.tpl -->
-				</div>
-			</nav>
+		<main id="panel" class="d-flex flex-column gap-5 flex-grow-1">
+			<div class="d-flex flex-column align-items-center mt-5 gap-2">
+				{{{ if brand:logo }}}
+				<a component="brand/logo" href="{{{ if brand:logo:url }}}{brand:logo:url}{{{ else }}}{relative_path}/{{{ end }}}">
+					<img component="brand/logo" alt="{brand:logo:alt}" class="{brand:logo:display}" src="{brand:logo}?{config.cache-buster}" />
+				</a>
+				{{{ end }}}
+
+				{{{ if config.showSiteTitle }}}
+				<a component="siteTitle" class="text-truncate shadow-sm rounded-1" href="{{{ if title:url }}}{title:url}{{{ else }}}{relative_path}/{{{ end }}}">
+					<h1 class="mx-3 my-0">{config.siteTitle}</h1>
+				</a>
+				{{{ end }}}
+			</div>
 			<script>
 				const rect = document.getElementById('header-menu').getBoundingClientRect();
 				const offset = Math.max(0, rect.bottom);
 				document.documentElement.style.setProperty('--panel-offset', offset + `px`);
 			</script>
-			<div class="container pt-3" id="content">
+			<div class="container" id="content">
 			<!-- IMPORT partials/noscript/warning.tpl -->
 			<!-- IMPORT partials/noscript/message.tpl -->
