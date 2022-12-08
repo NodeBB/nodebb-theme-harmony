@@ -47,13 +47,6 @@ $enable-smooth-scroll: false;
 
 $link-decoration: none;
 
-// Constrain breakpoints on larger viewports
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px
-);
-
 // Custom fonts
 @font-face {
 	font-family: "Inter";
