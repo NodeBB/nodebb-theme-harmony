@@ -1,13 +1,10 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
-<!-- IF showTopicTools -->
+{{{ if showTopicTools }}}
 <div class="btn-group thread-tools bottom-sheet">
-	<button class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" type="button">
+	<button class="btn btn-link text-dark d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown" type="button">
+		<i class="fa fa-fw fa-gear"></i>
 		<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[topic:thread_tools.title]]</span>
-		<span class="visible-xs-inline"><i class="fa fa-fw fa-gear"></i></span>
-		<span class="caret"></span>
 	</button>
-	<ul class="dropdown-menu dropdown-menu-end">
+	<ul class="dropdown-menu">
 		<li>
 			<a component="topic/mark-unread-for-all" href="#" class="dropdown-item">
 				<i class="fa fa-fw fa-inbox"></i> [[topic:thread_tools.markAsUnreadForAll]]
@@ -80,4 +77,4 @@
 		{{{end}}}
 	</ul>
 </div>
-<!-- ENDIF showTopicTools -->
+{{{ end }}}

@@ -9,7 +9,7 @@
 
 		<!-- IMPORT partials/topic/watch.tpl -->
 		<!-- IMPORT partials/topic/sort.tpl -->
-		<!-- IMPORT partials/thread_tools.tpl -->
+		<!-- IMPORT partials/topic/tools.tpl -->
 
 		{{{ if (!feeds:disableRSS && rssFeedUrl) }}}
 		<a class="btn btn-link" target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss"></i></a>

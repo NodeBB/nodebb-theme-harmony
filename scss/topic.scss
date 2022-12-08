@@ -13,19 +13,6 @@
 		display: none !important;
 	}
 
-	.topic-main-buttons {
-		.navbar-nav {
-			a, button, span {
-				font-size: 14px;
-				line-height: 20px;
-
-				i {
-					color: tint-color($primary, 20%);
-				}
-			}
-		}
-	}
-
 	[component="topic/reply"] {
 		font-size: 14px;
 		line-height: 20px;

@@ -15,3 +15,16 @@
 	color: $gray-700;
 	font-size: 12px;
 }
+
+.topic-main-buttons, .topic-list-header {
+	.navbar-nav {
+		a, button, span {
+			font-size: 14px;
+			line-height: 20px;
+
+			i {
+				color: tint-color($primary, 20%);
+			}
+		}
+	}
+}

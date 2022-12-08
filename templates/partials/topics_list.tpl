@@ -1,4 +1,4 @@
-<ul component="category" class="list-unstyled topic-list" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
+<ul component="category" class="list-unstyled topic-list my-4" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
 	{{{ each topics }}}
 	<li component="category/topic" class="row clearfix category-item pb-4 {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
 		<link itemprop="url" content="{config.relative_path}/topic/{./slug}" />
@@ -127,7 +127,7 @@
 						<span class="timeago text-xs" title="{./teaser.timestampISO}"></span>
 					</a>
 				</p>
-				<div class="post-content mt-2 overflow-hidden text-xs line-clamp-3 ps-3">
+				<div class="post-content mt-2 overflow-hidden text-xs line-clamp-2 ps-3">
 					{./teaser.content}
 				</div>
 				{{{ end }}}
