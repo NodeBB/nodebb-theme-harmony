@@ -8,7 +8,7 @@
 		<a id="{./index}" data-index="{./index}" component="topic/anchor"></a>
 
 		<div class="col-md-6 col-sm-9 col-10 content d-flex">
-			<div>
+			<div class="me-3">
 				<div class="avatar">
 					{{{ if showSelect }}}
 					<div class="select" component="topic/select">
@@ -17,7 +17,8 @@
 						{{{ else }}}
 						{buildAvatar(../user, "40px", true, "not-responsive")}
 						{{{ end }}}
-						<i class="fa fa-check"></i>
+						<!-- TODO: topic select -->
+						<i class="fa fa-check hidden"></i>
 					</div>
 					{{{ end }}}
 
@@ -67,19 +68,20 @@
 					{{{ end }}}
 
 					{{{ if ./tags.length }}}
-					<span class="lh-1 tag-list hidden-xs d-flex gap-2">
+					<span class="lh-1 tag-list hidden-xs d-flex gap-2 me-2">
 						{{{ each ./tags }}}
 						<!-- IMPORT partials/topic/tag.tpl -->
 						{{{ end }}}
 					</span>
 					{{{ end }}}
 
-					<span class="hidden-xs text-xs"><span class="timeago text-muted" title="{./timestampISO}"></span> &bull; <a class="text-muted" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{./user.displayname}</a></span>
+					<span class="hidden-xs text-xs timeago text-muted me-2" title="{./timestampISO}"></span>
+
+					<a class="hidden-xs text-xs text-muted" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{./user.displayname}</a>
 
 					<span class="visible-xs-inline timeago text-muted text-xs" title="{{{ if ./teaser.timestampISO }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>
 				</div>
 			</div>
-
 		</div>
 
 		<div class="mobile-stat col-2 visible-xs text-end">
