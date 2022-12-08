@@ -10,7 +10,7 @@
 	<span class="topic-title" component="topic/title">{title}</span>
 </h1>
 
-<div class="topic-info d-flex gap-2 justify-content-center align-items-middle">
+<div class="topic-info d-flex gap-2 justify-content-center align-items-center">
 	<span component="topic/labels" class="d-flex gap-2">
 		<span component="topic/scheduled" class="badge bg-primary {{{ if !scheduled }}}hidden{{{ end }}}">
 			<i class="fa fa-clock-o"></i>
@@ -31,7 +31,7 @@
 		{{{each icons}}}<span class="align-middle">{@value}</span>{{{end}}}
 	</span>
 	<a class="lh-1" href="{config.relative_path}/category/{category.slug}">{function.buildCategoryLabel, category}</a>
-	<div class="tags tag-list d-flex hidden-xs gap-2"><!-- IMPORT partials/topic/tags.tpl --></div>
+	<div class="lh-1 tags tag-list d-flex hidden-xs gap-2"><!-- IMPORT partials/topic/tags.tpl --></div>
 	<div class="d-flex hidden-xs gap-2">
 		<!-- IMPORT partials/topic/stats.tpl -->
 	</div>
