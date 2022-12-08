@@ -1,5 +1,3 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 {{{ if children.length }}}
 <div class="subcategory">
 	{{{ if hasMoreSubCategories }}}
@@ -9,8 +7,10 @@
 	{{{ end }}}
 
 	<ul component="category/subcategory/container" class="categories list-unstyled" itemscope itemtype="http://www.schema.org/ItemList">
+		<hr class="text-muted"/>
 		{{{each children}}}
 		<!-- IMPORT partials/categories/item.tpl -->
+		<hr class="text-muted"/>
 		{{{end}}}
 	</ul>
 	{{{ if hasMoreSubCategories}}}
