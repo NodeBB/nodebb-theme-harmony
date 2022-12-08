@@ -6,7 +6,8 @@
 		{ "hook": "filter:widgets.getAreas", "method": "defineWidgetAreas" },
 		{ "hook": "filter:config.get", "method": "getThemeConfig" },
 		{ "hook": "filter:topic.build", "method": "addUserToTopic" },
-		{ "hook": "filter:middleware.renderHeader", "method": "filterMiddlewareRenderHeader" }
+		{ "hook": "filter:middleware.renderHeader", "method": "filterMiddlewareRenderHeader" },
+		{ "hook": "filter:middleware.render", "method": "filterMiddlewareRender" }
 	],
 	"scripts": [
 		"public/harmony.js"

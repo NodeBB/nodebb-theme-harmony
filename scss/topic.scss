@@ -3,12 +3,6 @@
 		max-width: 960px;
 	}
 
-	.breadcrumb {
-		.breadcrumb-item:last-of-type {
-			display: none;
-		}
-	}
-
 	[component="topic/title"] {
 		font-size: 28px;
 		line-height: 34px;

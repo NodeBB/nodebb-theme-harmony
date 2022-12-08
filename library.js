@@ -109,3 +109,15 @@ library.filterMiddlewareRenderHeader = async function (hookData) {
 	hookData.templateData.currentBSSkin = _.capitalize(hookData.templateData.bootswatchSkin);
 	return hookData;
 };
+
+library.filterMiddlewareRender = async (hookData) => {
+	const { templateData } = hookData;
+	const { breadcrumbs } = templateData;
+
+	// Remove the last breadcrumb (the current page) as it is not part of Harmony's design
+	if (breadcrumbs && breadcrumbs.length) {
+		breadcrumbs.pop();
+	}
+
+	return hookData;
+};
