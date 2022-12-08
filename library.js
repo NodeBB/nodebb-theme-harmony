@@ -110,7 +110,7 @@ library.filterMiddlewareRenderHeader = async function (hookData) {
 	return hookData;
 };
 
-library.filterMiddlewareRender = async (hookData) => {
+library.removeFinalBreadcrumb = async (hookData) => {
 	const { templateData } = hookData;
 	const { breadcrumbs } = templateData;
 

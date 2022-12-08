@@ -7,7 +7,7 @@
 		{ "hook": "filter:config.get", "method": "getThemeConfig" },
 		{ "hook": "filter:topic.build", "method": "addUserToTopic" },
 		{ "hook": "filter:middleware.renderHeader", "method": "filterMiddlewareRenderHeader" },
-		{ "hook": "filter:middleware.render", "method": "filterMiddlewareRender" }
+		{ "hook": "filter:middleware.render", "method": "removeFinalBreadcrumb" }
 	],
 	"scripts": [
 		"public/harmony.js"
