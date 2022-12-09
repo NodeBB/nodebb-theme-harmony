@@ -36,7 +36,7 @@
 					<a class="btn btn-link" target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss"></i></a>
 					{{{ end }}}
 
-					<a href="{config.relative_path}/{selectedFilter.url}{querystring}" class="d-inline-block">
+					<a href="{config.relative_path}/{url}" class="d-inline-block">
 						<div class="alert alert-warning h-100 m-0 px-2 py-1 d-flex align-items-center hide" id="new-topics-alert"></div>
 					</a>
 				</div>
