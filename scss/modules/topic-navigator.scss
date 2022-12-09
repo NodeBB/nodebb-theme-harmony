@@ -1,21 +1,45 @@
 [component="topic/navigator"] {
 	max-height: calc(200px + (2rem * 4));
+	user-select: none;
 
 	.track {
 		width: 2px;
 		background-color: $input-group-addon-bg;
+
+		.handle {
+			cursor: grab;
+			transition: $transition-base;
+
+			&:active {
+				transition: none;
+				cursor: grabbing;
+			}
+		}
 
 		.knob {
 			width: 16px;
 			height: 16px;
 			background-color: $link-color;
 			margin-left: 1px;
-
-			transition: $transition-base;
-
-			&:active {
-				transition: none;
-			}
 		}
+
+		.meta {
+			display: none;
+			top: -8px;
+			left: calc($spacer + 8px);
+			font-size: 13px;
+		}
+	}
+}
+
+.sidebar.open {
+	[component="topic/navigator"] {
+		align-self: flex-start;
+		margin-left: calc($spacer * 0.25);
+		margin-right: calc($spacer * 0.25);
+	}
+
+	.meta {
+		display: block;
 	}
 }
