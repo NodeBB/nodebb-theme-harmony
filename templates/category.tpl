@@ -1,6 +1,6 @@
 <!-- IMPORT partials/breadcrumbs.tpl -->
 
-<div class="d-flex flex-column gap-4 mt-1">
+<div class="d-flex flex-column gap-2 mt-1">
 	<div class="d-flex justify-content-center gap-2">
 		{buildCategoryIcon(@value, "40px", "rounded-1")}
 		<h2 class="fs-2 fw-semibold">{./name}</h2>
@@ -25,7 +25,7 @@
 	<div class="category {{{if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<!-- IMPORT partials/category/subcategory.tpl -->
 
-		<nav class="topic-list-header navbar navbar-expand bg-light mt-4 p-2 border rounded ff-secondary">
+		<nav class="topic-list-header sticky-top navbar navbar-expand bg-light mt-4 p-2 border rounded ff-secondary" style="z-index: 3!important;">
 			<ul class="navbar-nav me-auto gap-2 align-items-center">
 				<div class="d-flex gap-1 align-items-stretch">
 					<!-- IMPORT partials/category/watch.tpl -->

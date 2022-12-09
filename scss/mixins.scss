@@ -11,7 +11,7 @@
 		top: 20px;
 		left: 12px;
 
-		z-index: $zindex-dropdown;
+		z-index: 2;
 	}
 
 	@include media-breakpoint-up(sm) {
