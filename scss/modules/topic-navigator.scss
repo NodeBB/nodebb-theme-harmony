@@ -29,6 +29,14 @@
 			left: calc($spacer + 8px);
 			font-size: 13px;
 		}
+
+		.unread {
+			width: 2px;
+			height: 0; // initial
+			bottom: 0;
+			background: $primary;
+			transition: $transition-base;
+		}
 	}
 }
 

@@ -2,6 +2,7 @@
 	<button class="btn btn-link text-secondary border-0" data-action="toTop"><i class="fa fa-fw fa-angles-up"></i></button>
 	<button class="btn btn-link text-secondary border-0" data-action="scrollUp"><i class="fa fa-fw fa-angle-up"></i></button>
 	<div class="track d-inline-block flex-grow-1 position-relative">
+		<div class="unread d-inline-block position-absolute"></div>
 		<div class="handle d-inline-block position-absolute">
 			<div class="knob d-inline-block rounded-circle translate-middle"></div>
 			<div class="meta small text-secondary position-absolute text-nowrap fw-semibold">
