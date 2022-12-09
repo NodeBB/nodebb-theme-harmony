@@ -1,12 +1,14 @@
+{{{ if widgets.header.length }}}
 <div data-widget-area="header">
 	{{{each widgets.header}}}
 	{{widgets.header.html}}
 	{{{end}}}
 </div>
+{{{ end }}}
 
 <!-- IMPORT partials/breadcrumbs.tpl -->
 
-<h1 component="post/header" class="text-center" itemprop="name">
+<h1 component="post/header" class="text-center mb-0" itemprop="name">
 	<span class="topic-title" component="topic/title">{title}</span>
 </h1>
 
