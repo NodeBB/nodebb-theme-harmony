@@ -19,5 +19,5 @@
 .sticky-tools {
 	position: sticky;
 	z-index: 3;
-	top: 1rem;
+	top: calc($spacer * 0.5);
 }
