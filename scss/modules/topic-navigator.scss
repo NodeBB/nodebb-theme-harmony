@@ -1,6 +1,7 @@
 [component="topic/navigator"] {
+	max-height: calc(200px + (2rem * 4));
+
 	.track {
-		height: 200px;
 		width: 2px;
 		background-color: $input-group-addon-bg;
 
