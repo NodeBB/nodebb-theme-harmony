@@ -25,7 +25,7 @@
 	<div class="category {{{if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<!-- IMPORT partials/category/subcategory.tpl -->
 
-		<nav class="topic-list-header sticky-top navbar navbar-expand bg-light mt-4 p-2 border rounded ff-secondary" style="z-index: 3!important;">
+		<nav class="topic-list-header sticky-tools navbar navbar-expand bg-light mt-4 p-2 border rounded ff-secondary">
 			<ul class="navbar-nav me-auto gap-2 align-items-center">
 				<div class="d-flex gap-1 align-items-stretch">
 					<!-- IMPORT partials/category/watch.tpl -->
