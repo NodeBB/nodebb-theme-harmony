@@ -25,31 +25,7 @@
 	<div class="category {{{if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<!-- IMPORT partials/category/subcategory.tpl -->
 
-		<nav class="topic-list-header sticky-tools navbar navbar-expand bg-light mt-4 p-2 border rounded ff-secondary">
-			<ul class="navbar-nav me-auto gap-2 align-items-center">
-				<!-- IMPORT partials/category/watch.tpl -->
-				<!-- IMPORT partials/category/sort.tpl -->
-				<!-- IMPORT partials/category/tools.tpl -->
-
-				{{{ if (!feeds:disableRSS && rssFeedUrl) }}}
-				<a class="btn btn-link" target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss"></i></a>
-				{{{ end }}}
-
-				<a href="{config.relative_path}/{url}" class="d-inline-block">
-					<div class="alert alert-warning h-100 m-0 px-2 py-1 d-flex align-items-center hide" id="new-topics-alert"></div>
-				</a>
-			</ul>
-
-			<div class="d-flex gap-1 align-items-stretch">
-				{{{ if privileges.topics:create }}}
-				<a href="{config.relative_path}/compose?cid={cid}" component="category/post" id="new_topic" class="btn btn-primary text-nowrap" data-ajaxify="false" role="button">[[category:new_topic_button]]</a>
-				{{{ else }}}
-					{{{ if !loggedIn }}}
-					<a component="category/post/guest" href="{config.relative_path}/login" class="btn btn-primary">[[category:guest-login-post]]</a>
-					{{{ end }}}
-				{{{ end }}}
-			</div>
-		</nav>
+		<!-- IMPORT partials/topic-list-bar.tpl -->
 
 		{{{ if !topics.length }}}
 		{{{ if privileges.topics:create }}}

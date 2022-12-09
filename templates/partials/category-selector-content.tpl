@@ -1,6 +1,4 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
-<button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+<button type="button" class="btn btn-link text-dark d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown">
     <span component="category-selector-selected">
         {{{ if (selectedCategory && !showCategorySelectLabel) }}}
         <span class="category-item">
@@ -8,8 +6,9 @@
             {selectedCategory.name}
         </span>
         {{{ else }}}
-    <span class="visible-sm-inline visible-md-inline visible-lg-inline">{{{ if selectCategoryLabel }}}{selectCategoryLabel}{{{ else }}}[[topic:thread_tools.select_category]]{{{ end }}}</span><span class="visible-xs-inline"><i class="fa fa-fw {{{ if selectCategoryIcon }}}{selectCategoryIcon}{{{ else }}}fa-list{{{ end }}}"></i></span>
-    {{{ end }}}</span> <span class="caret"></span>
+    <i class="fa fa-fw {{{ if selectCategoryIcon }}}{selectCategoryIcon}{{{ else }}}fa-list{{{ end }}} link-primary small"></i>
+    <span class="visible-sm-inline visible-md-inline visible-lg-inline small">{{{ if selectCategoryLabel }}}{selectCategoryLabel}{{{ else }}}[[topic:thread_tools.select_category]]{{{ end }}}</span>
+    {{{ end }}}</span>
 </button>
 <div component="category-selector-search" class="hidden position-absolute">
     <input type="text" class="form-control" autocomplete="off">
