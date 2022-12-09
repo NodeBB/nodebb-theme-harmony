@@ -28,6 +28,7 @@
 		<!-- IMPORT partials/sidebar-left.tpl -->
 
 		<main id="panel" class="d-flex flex-column gap-5 flex-grow-1">
+			{{{ if (brand:logo || config.showSiteTitle )}}}
 			<div class="d-flex flex-column align-items-center mt-5 gap-2">
 				{{{ if brand:logo }}}
 				<a component="brand/logo" href="{{{ if brand:logo:url }}}{brand:logo:url}{{{ else }}}{relative_path}/{{{ end }}}">
@@ -41,6 +42,7 @@
 				</a>
 				{{{ end }}}
 			</div>
+			{{{ end }}}
 			<script>
 				const rect = document.getElementById('header-menu').getBoundingClientRect();
 				const offset = Math.max(0, rect.bottom);
