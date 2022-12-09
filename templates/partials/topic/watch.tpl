@@ -2,18 +2,18 @@
 <div class="btn-group topic-watch-dropdown bottom-sheet" component="topic/watch">
 	<button class="btn btn-link text-dark d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown" type="button">
 		<span component="topic/following/menu" class="d-flex gap-2 align-items-center<!-- IF !isFollowing --> hidden<!-- ENDIF !isFollowing -->">
-			<i class="fa fa-fw fa-bell-o"></i>
-			<span class="d-none d-md-inline">[[topic:watching]]</span>
+			<i class="fa fa-fw fa-bell-o small link-primary"></i>
+			<span class="d-none d-md-inline small">[[topic:watching]]</span>
 		</span>
 
 		<span component="topic/not-following/menu" class="d-flex gap-2 align-items-center<!-- IF !isNotFollowing --> hidden<!-- ENDIF !isNotFollowing -->">
-			<i class="fa fa-fw fa-bell-slash-o"></i>
-			<span class="d-none d-md-inline">[[topic:not-watching]]</span>
+			<i class="fa fa-fw fa-bell-slash-o small link-primary"></i>
+			<span class="d-none d-md-inline small">[[topic:not-watching]]</span>
 		</span>
 
 		<span component="topic/ignoring/menu" class="d-flex gap-2 align-items-center<!-- IF !isIgnoring --> hidden<!-- ENDIF !isIgnoring -->">
-			<i class="fa fa-fw fa-eye-slash"></i>
-			<span class="d-none d-md-inline">[[topic:ignoring]]</span>
+			<i class="fa fa-fw fa-eye-slash small link-primary"></i>
+			<span class="d-none d-md-inline small">[[topic:ignoring]]</span>
 		</span>
 
 	</button>
