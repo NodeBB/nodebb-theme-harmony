@@ -21,3 +21,13 @@
 	z-index: 3;
 	top: calc($spacer * 0.5);
 }
+
+[component="topic/select"] {
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+
+	> img:not(.avatar) {
+		width: 40px;
+	}
+}
