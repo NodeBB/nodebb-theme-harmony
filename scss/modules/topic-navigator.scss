@@ -49,8 +49,6 @@
 .sidebar.open {
 	[component="topic/navigator"] {
 		align-self: flex-start;
-		margin-left: calc($spacer * 0.25);
-		margin-right: calc($spacer * 0.25);
 	}
 
 	.handle .meta, .unread .meta {
