@@ -7,7 +7,7 @@
 		<meta itemprop="position" content="{./index}" />
 		<a id="{./index}" data-index="{./index}" component="topic/anchor"></a>
 
-		<div class="col-md-6 col-sm-9 col-10 content d-flex">
+		<div class="col-md-7 col-sm-9 col-10 content d-flex">
 			<div class="me-3">
 				<div class="avatar">
 					{{{ if showSelect }}}
@@ -42,7 +42,7 @@
 					{{{ end }}}
 				</h2>
 				<div class="info d-flex align-items-center flex-wrap">
-					<span component="topic/labels" class="d-flex">
+					<span component="topic/labels" class="d-flex mb-1">
 						<span component="topic/scheduled" class="me-2 badge bg-primary {{{ if !./scheduled }}}hidden{{{ end }}}">
 							<i class="fa fa-clock-o"></i>
 							[[topic:scheduled]]
@@ -64,20 +64,20 @@
 
 
 					{{{ if !template.category }}}
-					<a class="lh-1 me-2" href="{config.relative_path}/category/{./category.slug}">{function.buildCategoryLabel, ./category}</a>
+					<a class="lh-1 me-2 mb-1" href="{config.relative_path}/category/{./category.slug}">{function.buildCategoryLabel, ./category}</a>
 					{{{ end }}}
 
 					{{{ if ./tags.length }}}
-					<span class="lh-1 tag-list hidden-xs d-flex gap-2 me-2">
+					<span class="lh-1 tag-list hidden-xs d-flex gap-2 me-2 mb-1">
 						{{{ each ./tags }}}
 						<!-- IMPORT partials/topic/tag.tpl -->
 						{{{ end }}}
 					</span>
 					{{{ end }}}
 
-					<span class="hidden-xs text-xs timeago text-muted me-2" title="{./timestampISO}"></span>
+					<span class="hidden-xs text-xs timeago text-muted me-2 mb-1" title="{./timestampISO}"></span>
 
-					<a class="hidden-xs text-xs text-muted" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{./user.displayname}</a>
+					<a class="hidden-xs text-xs mb-1" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{./user.displayname}</a>
 
 					<span class="visible-xs-inline timeago text-muted text-xs" title="{{{ if ./teaser.timestampISO }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>
 				</div>
@@ -89,24 +89,24 @@
 		</div>
 
 
-		<div class="col-md-3 d-none d-md-flex stats text-muted gap-2 px-0">
+		<div class="col-md-2 d-none d-md-flex stats text-muted gap-2 px-0">
 			<div class="stats-votes flex-1">
 				<div class="d-flex flex-column align-items-center text-secondary bg-light py-2 rounded-1">
 					{{{ if !reputation:disabled }}}
-					<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{./votes}">{./votes}</span>
+					<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{./votes}" data-toFixed="0">{./votes}</span>
 					<span class="text-lowercase text-xs">[[global:votes]]</span>
 					{{{ end }}}
 				</div>
 			</div>
 			<div class="stats-postcount flex-1">
 				<div class="d-flex flex-column align-items-center text-secondary bg-light py-2 rounded-1">
-					<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{./postcount}">{./postcount}</span>
+					<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{./postcount}" data-toFixed="0">{./postcount}</span>
 					<span class="text-lowercase text-xs">[[global:posts]]</span>
 				</div>
 			</div>
 			<div class="stats-viewcount flex-1">
 				<div class="d-flex flex-column align-items-center text-secondary bg-light py-2 rounded-1">
-					<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{./viewcount}">{./viewcount}</span>
+					<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
 					<span class="text-lowercase text-xs">[[global:views]]</span>
 				</div>
 			</div>
@@ -127,7 +127,7 @@
 						<span class="timeago text-xs" title="{./teaser.timestampISO}"></span>
 					</a>
 				</p>
-				<div class="post-content mt-2 overflow-hidden text-xs line-clamp-2 ps-3">
+				<div class="post-content mt-1 overflow-hidden text-xs line-clamp-2 ps-3">
 					{./teaser.content}
 				</div>
 				{{{ end }}}
