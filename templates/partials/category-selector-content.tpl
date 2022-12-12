@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-link text-dark d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown">
+<button type="button" class="btn btn-link d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown">
     <span component="category-selector-selected">
         {{{ if (selectedCategory && !showCategorySelectLabel) }}}
         <span class="category-item">

@@ -88,10 +88,9 @@
 			<span class="human-readable-number">{topics.postcount}</span> <a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><i class="fa fa-arrow-circle-right"></i></a>
 		</div>
 
-
 		<div class="col-md-2 d-none d-md-flex stats text-muted gap-2 px-0">
 			<div class="stats-votes flex-1">
-				<div class="d-flex flex-column align-items-center text-secondary bg-light py-2 rounded-1">
+				<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
 					{{{ if !reputation:disabled }}}
 					<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{./votes}" data-toFixed="0">{./votes}</span>
 					<span class="text-lowercase text-xs">[[global:votes]]</span>
@@ -99,13 +98,13 @@
 				</div>
 			</div>
 			<div class="stats-postcount flex-1">
-				<div class="d-flex flex-column align-items-center text-secondary bg-light py-2 rounded-1">
+				<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
 					<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{./postcount}" data-toFixed="0">{./postcount}</span>
 					<span class="text-lowercase text-xs">[[global:posts]]</span>
 				</div>
 			</div>
 			<div class="stats-viewcount flex-1">
-				<div class="d-flex flex-column align-items-center text-secondary bg-light py-2 rounded-1">
+				<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
 					<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
 					<span class="text-lowercase text-xs">[[global:views]]</span>
 				</div>

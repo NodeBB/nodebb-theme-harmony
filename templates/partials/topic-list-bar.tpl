@@ -1,4 +1,4 @@
-<nav class="topic-list-header sticky-tools navbar navbar-expand bg-light mt-4 mb-3 p-2 border rounded ff-secondary">
+<nav class="topic-list-header sticky-tools navbar navbar-expand card card-header flex-row mt-4 mb-3 p-2 border rounded ff-secondary">
 	<ul class="navbar-nav me-auto gap-2 align-items-center">
 		{{{ if template.category }}}
 		<!-- IMPORT partials/category/watch.tpl -->

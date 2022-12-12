@@ -44,13 +44,13 @@
 	{{{ if !./link }}}
 	<div class="col-md-2 d-none d-md-flex stats text-muted gap-2 px-0">
 		<div class="w-50">
-			<div class="d-flex flex-column align-items-center text-secondary bg-light p-2 rounded-1">
+			<div class="card card-header align-items-center px-0 py-2 border-0 rounded-1">
 				<span class="{./unread-class} human-readable-number fs-5 fw-semibold ff-secondary" title="{./totalTopicCount}">{./totalTopicCount}</span>
 				<span class="text-lowercase text-xs">[[global:topics]]</span>
 			</div>
 		</div>
 		<div class="w-50">
-			<div class="d-flex flex-column align-items-center text-secondary bg-light p-2 rounded-1">
+			<div class="card card-header align-items-center px-0 py-2 border-0 rounded-1">
 				<span class="{./unread-class} human-readable-number fs-5 fw-semibold ff-secondary" title="{./totalPostCount}">{./totalPostCount}</span>
 				<span class="text-lowercase text-xs">[[global:posts]]</span>
 			</div>

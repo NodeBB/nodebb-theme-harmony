@@ -1,4 +1,4 @@
-<nav class="sticky-tools navbar navbar-expand bg-light mt-4 p-2 border rounded topic-main-buttons ff-secondary">
+<nav class="sticky-tools navbar navbar-expand card card-header flex-row mt-4 p-2 border rounded topic-main-buttons ff-secondary">
 	<ul class="navbar-nav me-auto gap-2 align-items-center">
 		{{{ if loggedIn }}}
 		<button component="topic/mark-unread" class="btn btn-link text-dark d-flex gap-2 align-items-center">
