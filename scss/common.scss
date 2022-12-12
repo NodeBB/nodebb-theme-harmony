@@ -27,6 +27,12 @@
 	background-color: initial;
 }
 
+.skin-noskin {
+	.sticky-tools .btn-link {
+		color: $dark;
+	}
+}
+
 [component="topic/select"] {
 	width: 40px;
 	height: 40px;

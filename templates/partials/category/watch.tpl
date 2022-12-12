@@ -6,7 +6,6 @@
 		<span component="category/notwatching/menu" <!-- IF !../isNotWatched -->class="hidden"<!-- ENDIF !../isNotWatched -->><i class="fa fa-fw fa-clock-o small link-primary"></i><span class="visible-sm-inline visible-md-inline visible-lg-inline small"> [[category:not-watching]]</span></span>
 
 		<span component="category/ignoring/menu" <!-- IF !../isIgnored -->class="hidden"<!-- ENDIF !../isIgnored -->><i class="fa fa-fw fa-eye-slash small link-primary"></i><span class="visible-sm-inline visible-md-inline visible-lg-inline small"> [[category:ignoring]]</span></span>
-		<span class="caret"></span>
 	</button>
 
 	<ul class="dropdown-menu">
