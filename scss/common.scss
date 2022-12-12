@@ -20,6 +20,11 @@
 	position: sticky;
 	z-index: 3;
 	top: calc($spacer * 0.5);
+	background-color: $body-bg;
+}
+// quartz doesn't need body-bg for tool background
+.skin-quartz .sticky-tools {
+	background-color: initial;
 }
 
 [component="topic/select"] {
