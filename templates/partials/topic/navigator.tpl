@@ -3,7 +3,9 @@
 	<button class="btn btn-link text-secondary border-0" data-action="scrollUp"><i class="fa fa-fw fa-angle-up"></i></button>
 	<div class="track d-inline-block flex-grow-1 position-relative">
 		<div class="unread d-inline-block position-absolute">
-			<div class="meta small text-secondary position-absolute top-50 translate-middle-y text-nowrap fw-semibold">4 unread</div>
+			<div class="meta small text-secondary position-absolute top-50 translate-middle-y text-nowrap fw-semibold">
+				<a href="{url}"></a>
+			</div>
 		</div>
 		<div class="handle d-inline-block position-absolute">
 			<div class="knob d-inline-block rounded-circle translate-middle"></div>
