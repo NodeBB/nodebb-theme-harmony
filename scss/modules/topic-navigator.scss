@@ -14,6 +14,13 @@
 				transition: none;
 				cursor: grabbing;
 			}
+
+			.meta {
+				display: none;
+				top: -8px;
+				left: calc($spacer + 8px);
+				font-size: 13px;
+			}
 		}
 
 		.knob {
@@ -23,19 +30,18 @@
 			margin-left: 1px;
 		}
 
-		.meta {
-			display: none;
-			top: -8px;
-			left: calc($spacer + 8px);
-			font-size: 13px;
-		}
-
 		.unread {
 			width: 2px;
 			height: 0; // initial
 			bottom: 0;
 			background: $primary;
 			transition: $transition-base;
+
+			.meta {
+				display: none;
+				left: calc($spacer + 8px);
+				font-size: 13px;
+			}
 		}
 	}
 }
@@ -47,7 +53,7 @@
 		margin-right: calc($spacer * 0.25);
 	}
 
-	.meta {
+	.handle .meta, .unread .meta {
 		display: block;
 	}
 }
