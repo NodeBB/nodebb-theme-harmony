@@ -44,9 +44,12 @@
 			</div>
 			{{{ end }}}
 			<script>
-				const rect = document.getElementById('header-menu').getBoundingClientRect();
-				const offset = Math.max(0, rect.bottom);
-				document.documentElement.style.setProperty('--panel-offset', offset + `px`);
+				const headerEl = document.getElementById('header-menu');
+				if (headerEl) {
+					const rect = headerEl.getBoundingClientRect();
+					const offset = Math.max(0, rect.bottom);
+					document.documentElement.style.setProperty('--panel-offset', offset + `px`);
+				}
 			</script>
 			<div class="container d-flex flex-column gap-3 mt-3" id="content">
 			<!-- IMPORT partials/noscript/warning.tpl -->
