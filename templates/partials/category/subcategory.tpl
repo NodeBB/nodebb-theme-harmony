@@ -14,7 +14,7 @@
 		{{{end}}}
 	</ul>
 	{{{ if hasMoreSubCategories}}}
-	<button class="btn btn-outline-secondary mb-2" component="category/load-more-subcategories">[[category:x-more-categories, {subCategoriesLeft}]]</button>
+	<button class="btn btn-link mb-2" component="category/load-more-subcategories">[[category:x-more-categories, {subCategoriesLeft}]]</button>
 	{{{ end }}}
 </div>
 {{{ end }}}

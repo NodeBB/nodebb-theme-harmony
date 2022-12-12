@@ -61,6 +61,10 @@
 			<!-- IMPORT partials/sidebar/user-menu.tpl -->
 			</li>
 		</ul>
+		{{{ else }}}
+		<ul id="logged-out-menu" class="list-unstyled d-flex w-100 gap-3 mb-0 logged-out-menu">
+			<!-- IMPORT partials/sidebar/logged-out-menu.tpl -->
+		</ul>
 		{{{ end }}}
 	</div>
 </div>

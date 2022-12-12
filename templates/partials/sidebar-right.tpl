@@ -25,6 +25,10 @@
 		<!-- IMPORT partials/sidebar/drafts.tpl -->
 		</li>
 	</ul>
+	{{{ else }}}
+	<ul id="logged-out-menu" class="list-unstyled d-flex flex-column w-100 gap-2 mt-2">
+	<!-- IMPORT partials/sidebar/logged-out-menu.tpl -->
+	</ul>
 	{{{ end }}}
 
 	<!-- IMPORT partials/topic/navigator.tpl -->

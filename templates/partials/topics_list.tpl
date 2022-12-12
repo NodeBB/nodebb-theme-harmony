@@ -90,22 +90,22 @@
 
 
 		<div class="col-md-3 d-none d-md-flex stats text-muted gap-2 px-0">
-			<div class="stats-votes flex-grow-1">
-				<div class="d-flex flex-column align-items-center text-secondary bg-light p-2 rounded-1">
+			<div class="stats-votes flex-1">
+				<div class="d-flex flex-column align-items-center text-secondary bg-light py-2 rounded-1">
 					{{{ if !reputation:disabled }}}
 					<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{./votes}">{./votes}</span>
 					<span class="text-lowercase text-xs">[[global:votes]]</span>
 					{{{ end }}}
 				</div>
 			</div>
-			<div class="stats-postcount flex-grow-1">
-				<div class="d-flex flex-column align-items-center text-secondary bg-light p-2 rounded-1">
+			<div class="stats-postcount flex-1">
+				<div class="d-flex flex-column align-items-center text-secondary bg-light py-2 rounded-1">
 					<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{./postcount}">{./postcount}</span>
 					<span class="text-lowercase text-xs">[[global:posts]]</span>
 				</div>
 			</div>
-			<div class="stats-viewcount flex-grow-1">
-				<div class="d-flex flex-column align-items-center text-secondary bg-light p-2 rounded-1">
+			<div class="stats-viewcount flex-1">
+				<div class="d-flex flex-column align-items-center text-secondary bg-light py-2 rounded-1">
 					<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{./viewcount}">{./viewcount}</span>
 					<span class="text-lowercase text-xs">[[global:views]]</span>
 				</div>
