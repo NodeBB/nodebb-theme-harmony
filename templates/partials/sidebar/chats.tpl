@@ -13,8 +13,35 @@
 <ul class="chats-dropdown dropdown-menu p-1 shadow">
 	<li>
 		<ul component="chat/list" class="chat-list chats-list list-unstyled p-2">
-			<li class="loading-text text-center">
-				<a href="#" class="text-reset"><i class="fa fa-refresh fa-spin"></i> [[global:chats.loading]]</a>
+			<li class="dropdown-item rounded-1 p-2 d-flex gap-2 placeholder-wave">
+				<div class="main-avatar">
+					<div class="placeholder" style="width: 32px; height: 32px;"></div>
+				</div>
+				<div class="d-flex flex-grow-1 flex-column w-100">
+					<div class="text-xs placeholder col-3">&nbsp;</div>
+					<div class="text-sm placeholder col-11">&nbsp;</div>
+					<div class="text-xs placeholder col-4">&nbsp;</div>
+				</div>
+			</li>
+			<li class="dropdown-item rounded-1 p-2 d-flex gap-2 placeholder-wave">
+				<div class="main-avatar">
+					<div class="placeholder" style="width: 32px; height: 32px;"></div>
+				</div>
+				<div class="d-flex flex-grow-1 flex-column w-100">
+					<div class="text-xs placeholder col-3">&nbsp;</div>
+					<div class="text-sm placeholder col-11">&nbsp;</div>
+					<div class="text-xs placeholder col-4">&nbsp;</div>
+				</div>
+			</li>
+			<li class="dropdown-item rounded-1 p-2 d-flex gap-2 placeholder-wave">
+				<div class="main-avatar">
+					<div class="placeholder" style="width: 32px; height: 32px;"></div>
+				</div>
+				<div class="d-flex flex-grow-1 flex-column w-100">
+					<div class="text-xs placeholder col-3">&nbsp;</div>
+					<div class="text-sm placeholder col-11">&nbsp;</div>
+					<div class="text-xs placeholder col-4">&nbsp;</div>
+				</div>
 			</li>
 		</ul>
 	</li>

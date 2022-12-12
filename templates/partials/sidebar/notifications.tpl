@@ -13,8 +13,10 @@
 <ul class="notifications-dropdown dropdown-menu p-2 shadow">
 	<li>
 		<ul component="notifications/list" class="notification-list list-unstyled p-2">
-			<li class="loading-text text-center">
-				<a href="#" class="text-reset"><i class="fa fa-refresh fa-spin"></i> [[global:notifications.loading]]</a>
+			<li class="mb-2 placeholder-wave">
+				<div class="text-sm placeholder col-11">&nbsp;</div>
+				<div class="text-sm placeholder col-5">&nbsp;</div><br />
+				<div class="text-xs placeholder col-3">&nbsp;</div>
 			</li>
 		</ul>
 	</li>
