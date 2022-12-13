@@ -17,6 +17,9 @@
 				<!-- IMPORT partials/category-selector.tpl -->
 			</div>
 			{{{ end }}}
+			{{{ if template.tag }}}
+			<!-- IMPORT partials/category-filter.tpl -->
+			{{{ end }}}
 			<!-- IMPORT partials/category/tools.tpl -->
 
 			{{{ if (!feeds:disableRSS && rssFeedUrl) }}}
@@ -38,10 +41,12 @@
 					{{{ end }}}
 				{{{ end }}}
 			{{{ else }}}
-				{{{ if (canPost || template.unread) }}}
+				{{{ if canPost }}}
 				<!-- IMPORT partials/buttons/newTopic.tpl -->
 				{{{ else }}}
-				<a component="category/post/guest" href="{config.relative_path}/login" class="btn btn-primary">[[category:guest-login-post]]</a>
+					{{{ if !loggedIn }}}
+					<a component="category/post/guest" href="{config.relative_path}/login" class="btn btn-primary">[[category:guest-login-post]]</a>
+					{{{ end }}}
 				{{{ end }}}
 			{{{ end }}}
 		</div>
