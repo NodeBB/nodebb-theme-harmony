@@ -14,6 +14,13 @@
 	[data-action="minimize"] {
 		display: none!important;
 	}
+	.chat-content .chat-message {
+		.message-body-wrapper .controls {
+			[data-action="restore"] {
+				display: none;
+			}
+		}
+	}
 	.chat-content .chat-message.deleted {
 		.message-body-wrapper .controls {
 			[data-action] {

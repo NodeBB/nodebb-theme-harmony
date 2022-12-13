@@ -1,4 +1,4 @@
-<li component="chat/recent/room" data-roomid="{rooms.roomId}" class="{{{ if rooms.unread }}}unread{{{ end }}} card card-body pointer"
+<li component="chat/recent/room" data-roomid="{rooms.roomId}" class="{{{ if rooms.unread }}}unread{{{ end }}} card card-body p-1 mb-1 border-0 pointer"
 	style="">
 	<ul class="members list-unstyled">
 	{{{ each rooms.users}}}
