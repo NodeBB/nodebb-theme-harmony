@@ -3,6 +3,9 @@
 .page-user-chats #content {
 	max-width: 100%;
 }
+body.page-user-chats {
+	overflow: hidden;
+}
 
 /* Styles common to both full chat and chat modal */
 .chats-full, .chat-modal {
