@@ -1,5 +1,9 @@
 // chats need a bit of css
 
+.page-user-chats #content {
+	max-width: 100%;
+}
+
 /* Styles common to both full chat and chat modal */
 .chats-full, .chat-modal {
 	height: calc(100vh - var(--panel-offset) - $spacer);
