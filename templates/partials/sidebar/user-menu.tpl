@@ -1,6 +1,6 @@
 <label class="nav-link nav-btn text-truncate d-flex p-1 align-items-center" data-bs-toggle="dropdown" id="user_dropdown" role="button">
 	{buildAvatar(user, "28px", true)}
-	<span id="user-header-name" class="nav-text visible-open px-2 fw-semibold">{user.username}</span>
+	<span id="user-header-name" class="nav-text visible-open fw-semibold">{user.username}</span>
 </label>
 <ul id="user-control-list" component="header/usercontrol" class="dropdown-menu shadow p-1 text-sm" aria-labelledby="user_dropdown">
 	<li>

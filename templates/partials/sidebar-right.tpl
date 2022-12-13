@@ -1,4 +1,4 @@
-<nav class="text-dark bg-light sidebar sidebar-right vh-100 d-none d-md-flex flex-column justify-content-between sticky-top">
+<nav class="text-dark bg-light sidebar sidebar-right vh-100 d-none d-md-flex flex-column justify-content-between sticky-top ff-secondary">
 	{{{ if config.loggedIn }}}
 	<ul id="logged-in-menu" class="list-unstyled d-flex flex-column w-100 gap-2 mt-2">
 		<li id="user_label" class="nav-item mx-2 dropstart usermenu" title="[[global:header.profile]]">

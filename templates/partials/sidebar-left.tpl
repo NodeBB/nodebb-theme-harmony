@@ -3,7 +3,7 @@
 		{{{ each navigation }}}
 		<!-- IF function.displayMenuItem, @index -->
 		<li class="nav-item mx-2 {./class}{{{ if ./dropdown }}} dropend{{{ end }}}" title="{./title}">
-			<a class="nav-link nav-btn navigation-link py-1 {{{ if navigation.dropdown }}}dropdown-toggle{{{ end }}}"
+			<a class="nav-link nav-btn navigation-link {{{ if navigation.dropdown }}}dropdown-toggle{{{ end }}}"
 			{{{ if ./dropdown }}} href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{{ else }}} href="{./route}"{{{ end }}} {{{ if ./id }}}id="{./id}"{{{ end }}}{{{ if ./targetBlank }}} target="_blank"{{{ end }}}>
 				<span class="d-inline-flex justify-content-between w-100">
 					<span class="text-nowrap truncate-open">
@@ -14,7 +14,7 @@
 							{{{ end }}}
 						</span>
 						{{{ if navigation.text }}}
-						<span class="nav-text visible-open px-2 fw-semibold">{navigation.text}</span>
+						<span class="nav-text visible-open fw-semibold">{navigation.text}</span>
 						{{{ end }}}
 					</span>
 					<span component="navigation/count" class="visible-open badge rounded-1 bg-primary {{{ if !./content }}}hidden{{{ end }}}">{./content}</span>
@@ -32,10 +32,10 @@
 	<div class="navbar-nav w-100">
 		<!-- IMPORT partials/skin-switcher.tpl -->
 		<div class="sidebar-toggle d-flex m-2">
-			<a href="#" role="button" component="sidebar/toggle" class="nav-btn p-2 pointer nav-link w-100">
+			<a href="#" role="button" component="sidebar/toggle" class="nav-btn p-2 pointer nav-link w-100 text-nowrap">
 				<i class="fa fa-fw fa-angles-right"></i>
 				<i class="fa fa-fw fa-angles-left"></i>
-				<span class="nav-text visible-open px-2 fw-semibold">[[harmony:collapse]]</span>
+				<span class="nav-text visible-open fw-semibold">[[harmony:collapse]]</span>
 			</a>
 		</div>
 	</div>

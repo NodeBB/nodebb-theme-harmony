@@ -5,7 +5,7 @@
 				<i component="drafts/icon" class="fa fa-fw fa-pen-to-square unread-count"></i>
 				<span component="drafts/count" class="visible-closed position-absolute top-0 start-100 translate-middle badge rounded-1 bg-primary hidden">0</span>
 			</span>
-			<span class="nav-text visible-open px-2 fw-semibold">[[global:header.drafts]]</span>
+			<span class="nav-text visible-open fw-semibold">[[global:header.drafts]]</span>
 		</span>
 		<span component="drafts/count" class="visible-open badge rounded-1 bg-primary hidden">0</span>
 	</span>

@@ -5,7 +5,7 @@
 		<span class="d-inline-flex justify-content-between w-100">
 			<span class="text-nowrap truncate-open">
 				<i class="fa fa-fw fa-pencil"></i>
-				<span class="nav-text visible-open px-2 fw-semibold">[[global:register]]</span>
+				<span class="nav-text visible-open fw-semibold">[[global:register]]</span>
 			</span>
 		</span>
 	</a>
@@ -17,7 +17,7 @@
 		<span class="d-inline-flex justify-content-between w-100">
 			<span class="text-nowrap truncate-open">
 				<i class="fa fa-fw fa-sign-in"></i>
-				<span class="nav-text visible-open px-2 fw-semibold">[[global:login]]</span>
+				<span class="nav-text visible-open fw-semibold">[[global:login]]</span>
 			</span>
 		</span>
 	</a>

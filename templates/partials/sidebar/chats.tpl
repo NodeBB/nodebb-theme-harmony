@@ -5,7 +5,7 @@
 				<i component="chat/icon" class="fa fa-fw {{{ if unreadCount.chat}}}fa-comment{{{ else }}}fa-comment-o{{{ end }}} unread-count" data-content="{unreadCount.chat}"></i>
 				<span component="chat/count" class="visible-closed position-absolute top-0 start-100 translate-middle badge rounded-1 bg-primary {{{ if !unreadCount.chat }}}hidden{{{ end }}}">{unreadCount.chat}</span>
 			</span>
-			<span class="nav-text visible-open px-2 fw-semibold">[[global:header.chats]]</span>
+			<span class="nav-text visible-open fw-semibold">[[global:header.chats]]</span>
 		</span>
 		<span component="chat/count" class="visible-open badge rounded-1 bg-primary {{{ if !unreadCount.chat }}}hidden{{{ end }}}">{unreadCount.chat}</span>
 	</span>
