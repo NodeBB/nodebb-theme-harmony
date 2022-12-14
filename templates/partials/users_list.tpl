@@ -7,10 +7,10 @@
 
 	<div class="user-info">
 		<div class="text-nowrap text-truncate">
-			<span>
-				<i component="user/status" class="fa fa-circle status {users.status}" title="[[global:{users.status}]]"></i>
-				<a href="{config.relative_path}/user/{users.userslug}">{users.username}</a>
-			</span>
+			<div class="d-flex gap-2 align-items-center justify-content-center">
+				<span component="user/status" class="badge rounded-circle status {./status}"><span class="visually-hidden">[[global:{./status}]]</span></span>
+				<a class="text-truncate" href="{config.relative_path}/user/{users.userslug}">{users.username}</a>
+			</div>
 		</div>
 		<!-- IF section_online -->
 		<div class="lastonline">

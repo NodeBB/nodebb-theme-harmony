@@ -1,7 +1,5 @@
 .status {
-	padding: 4px;
-	font-size: 10px;
-	vertical-align: middle;
+	padding: 3px;
 
 	&.online {
 		background-color: $success;
@@ -17,5 +15,11 @@
 
 	&.offline {
 		background-color: $gray-600;
+	}
+}
+
+@include media-breakpoint-up(sm) {
+	.status {
+		padding: 5px;
 	}
 }
