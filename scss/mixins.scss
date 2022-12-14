@@ -1,6 +1,5 @@
 @mixin topic-avatars() {
 	.icon .avatar, .timeline-badge {
-		position: relative;
 		z-index: 1;
 
 		line-height: calc(var(--avatar-size) - 4px);
