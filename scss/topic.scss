@@ -48,12 +48,6 @@
 			}
 
 			[component="post"] {
-				&:hover {
-					[component="post/tools"] {
-						opacity: 1;
-					}
-				}
-
 				[component="post/content"] {
 					pre {
 						max-height: calc($font-size-base * 24);
@@ -62,15 +56,6 @@
 
 				> [component="post/footer"] {
 					margin-left: calc($spacer * 2.5);
-				}
-			}
-
-			[component="post/tools"] {
-				opacity: 0;
-				transition: $transition-fade;
-
-				.dropdown-toggle::after {
-					display: none; // hide carat on dropdown toggle
 				}
 			}
 
@@ -119,8 +104,23 @@
 
 @include media-breakpoint-up(sm) {
 	.page-topic {
-		.topic .posts > li:first-child {
-			padding-top: 32px !important;
+		.topic .posts {
+			> li:first-child {
+				padding-top: 32px !important;
+			}
+
+			[component="post"] {
+				[component="post/actions"] {
+					opacity: 0;
+					transition: $transition-fade;
+				}
+
+				&:hover {
+					> .post-footer > [component="post/actions"] {
+						opacity: 1;
+					}
+				}
+			}
 		}
 	}
 }

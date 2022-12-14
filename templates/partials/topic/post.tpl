@@ -93,7 +93,7 @@
 
 	<div component="post/replies/container" class="mt-2 col-11 border rounded-1 p-3"></div>
 
-	<div component="post/tools" class="d-flex justify-content-end post-tools">
+	<div component="post/actions" class="d-flex justify-content-end post-tools">
 		<!-- IMPORT partials/topic/reactions.tpl -->
 		<a component="post/reply" href="#" class="btn btn-link user-select-none <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" title="[[topic:reply]]"><i class="fa fa-reply"></i></a>
 		<a component="post/quote" href="#" class="btn btn-link user-select-none <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" title="[[topic:quote]]"><i class="fa fa-quote-right"></i></a>
