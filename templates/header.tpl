@@ -27,22 +27,24 @@
 	<div class="d-flex justify-content-between pb-4 pb-md-0">
 		<!-- IMPORT partials/sidebar-left.tpl -->
 
-		<main id="panel" class="d-flex flex-column gap-5 flex-grow-1">
-			{{{ if (brand:logo || config.showSiteTitle )}}}
-			<div class="d-flex flex-column align-items-center mt-5 gap-2">
-				{{{ if brand:logo }}}
-				<a component="brand/logo" href="{{{ if brand:logo:url }}}{brand:logo:url}{{{ else }}}{relative_path}/{{{ end }}}">
-					<img component="brand/logo" alt="{brand:logo:alt}" class="{brand:logo:display}" src="{brand:logo}?{config.cache-buster}" />
-				</a>
-				{{{ end }}}
+		<main id="panel" class="d-flex flex-column gap-3 flex-grow-1">
+			<div class="mt-3 d-flex justify-content-center">
+				{{{ if (brand:logo || config.showSiteTitle )}}}
+				<div component="brand/wrapper" class="d-flex align-items-center gap-2 p-2">
+					{{{ if brand:logo }}}
+					<a component="brand/anchor" href="{{{ if brand:logo:url }}}{brand:logo:url}{{{ else }}}{relative_path}/{{{ end }}}">
+						<img component="brand/logo" alt="{brand:logo:alt}" class="{brand:logo:display}" src="{brand:logo}?{config.cache-buster}" />
+					</a>
+					{{{ end }}}
 
-				{{{ if config.showSiteTitle }}}
-				<a component="siteTitle" class="text-truncate shadow-sm rounded-1" href="{{{ if title:url }}}{title:url}{{{ else }}}{relative_path}/{{{ end }}}">
-					<h1 class="mx-3 my-0">{config.siteTitle}</h1>
-				</a>
+					{{{ if config.showSiteTitle }}}
+					<a component="siteTitle" class="text-truncate" href="{{{ if title:url }}}{title:url}{{{ else }}}{relative_path}/{{{ end }}}">
+						<h1 class="fs-6 fw-bold text-body mb-0">{config.siteTitle}</h1>
+					</a>
+					{{{ end }}}
+				</div>
 				{{{ end }}}
 			</div>
-			{{{ end }}}
 			<script>
 				const headerEl = document.getElementById('header-menu');
 				if (headerEl) {
@@ -51,6 +53,6 @@
 					document.documentElement.style.setProperty('--panel-offset', offset + `px`);
 				}
 			</script>
-			<div class="container d-flex flex-column gap-3 mt-3" id="content">
+			<div class="container d-flex flex-column gap-3" id="content">
 			<!-- IMPORT partials/noscript/warning.tpl -->
 			<!-- IMPORT partials/noscript/message.tpl -->
