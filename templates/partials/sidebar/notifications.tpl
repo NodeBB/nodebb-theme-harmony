@@ -1,14 +1,12 @@
-<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link nav-btn position-relative" title="[[global:header.notifications]]">
-	<span class="d-inline-flex justify-content-between w-100">
-		<span class="text-nowrap truncate-open">
-			<span class="position-relative">
-				<i component="notifications/icon" class="fa fa-fw {{{ if unreadCount.notification}}}fa-bell{{{ else }}}fa-bell-o{{{ end }}} unread-count" data-content="{unreadCount.notification}"></i>
-				<span component="notifications/count" class="visible-closed position-absolute top-0 start-100 translate-middle badge rounded-1 bg-primary {{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span>
-			</span>
-			<span class="nav-text visible-open fw-semibold">[[global:header.notifications]]</span>
+<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link nav-btn d-flex gap-2 align-items-center position-relative" title="[[global:header.notifications]]">
+	<span class="d-flex gap-2 align-items-center text-nowrap truncate-open">
+		<span class="position-relative">
+			<i component="notifications/icon" class="fa fa-fw {{{ if unreadCount.notification}}}fa-bell{{{ else }}}fa-bell-o{{{ end }}} unread-count" data-content="{unreadCount.notification}"></i>
+			<span component="notifications/count" class="visible-closed position-absolute top-0 start-100 translate-middle badge rounded-1 bg-primary {{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span>
 		</span>
-		<span component="notifications/count" class="visible-open badge rounded-1 bg-primary {{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span>
+		<span class="nav-text small visible-open fw-semibold">[[global:header.notifications]]</span>
 	</span>
+	<span component="notifications/count" class="visible-open badge rounded-1 bg-primary {{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span>
 </a>
 <ul class="notifications-dropdown dropdown-menu p-2 shadow">
 	<li>

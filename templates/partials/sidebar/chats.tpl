@@ -1,14 +1,12 @@
-<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link nav-btn position-relative" title="[[global:header.chats]]" component="chat/dropdown">
-	<span class="d-inline-flex justify-content-between w-100">
-		<span class="text-nowrap truncate-open">
-			<span class="position-relative">
-				<i component="chat/icon" class="fa fa-fw {{{ if unreadCount.chat}}}fa-comment{{{ else }}}fa-comment-o{{{ end }}} unread-count" data-content="{unreadCount.chat}"></i>
-				<span component="chat/count" class="visible-closed position-absolute top-0 start-100 translate-middle badge rounded-1 bg-primary {{{ if !unreadCount.chat }}}hidden{{{ end }}}">{unreadCount.chat}</span>
-			</span>
-			<span class="nav-text visible-open fw-semibold">[[global:header.chats]]</span>
+<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link nav-btn d-flex gap-2 align-items-center position-relative" title="[[global:header.chats]]" component="chat/dropdown">
+	<span class="d-flex gap-2 align-items-center text-nowrap truncate-open">
+		<span class="position-relative">
+			<i component="chat/icon" class="fa fa-fw {{{ if unreadCount.chat}}}fa-comment{{{ else }}}fa-comment-o{{{ end }}} unread-count" data-content="{unreadCount.chat}"></i>
+			<span component="chat/count" class="visible-closed position-absolute top-0 start-100 translate-middle badge rounded-1 bg-primary {{{ if !unreadCount.chat }}}hidden{{{ end }}}">{unreadCount.chat}</span>
 		</span>
-		<span component="chat/count" class="visible-open badge rounded-1 bg-primary {{{ if !unreadCount.chat }}}hidden{{{ end }}}">{unreadCount.chat}</span>
+		<span class="nav-text small visible-open fw-semibold">[[global:header.chats]]</span>
 	</span>
+	<span component="chat/count" class="visible-open badge rounded-1 bg-primary {{{ if !unreadCount.chat }}}hidden{{{ end }}}">{unreadCount.chat}</span>
 </a>
 <ul class="chats-dropdown dropdown-menu p-1 shadow">
 	<li>

@@ -1,14 +1,12 @@
-<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link nav-btn position-relative" title="[[global:header.drafts]]">
-	<span class="d-inline-flex justify-content-between w-100">
-		<span class="text-nowrap truncate-open">
-			<span class="position-relative">
-				<i component="drafts/icon" class="fa fa-fw fa-pen-to-square unread-count"></i>
-				<span component="drafts/count" class="visible-closed position-absolute top-0 start-100 translate-middle badge rounded-1 bg-primary hidden">0</span>
-			</span>
-			<span class="nav-text visible-open fw-semibold">[[global:header.drafts]]</span>
+<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link nav-btn d-flex gap-2 align-items-center position-relative" title="[[global:header.drafts]]">
+	<span class="d-flex gap-2 align-items-center text-nowrap truncate-open">
+		<span class="position-relative">
+			<i component="drafts/icon" class="fa fa-fw fa-pen-to-square unread-count"></i>
+			<span component="drafts/count" class="visible-closed position-absolute top-0 start-100 translate-middle badge rounded-1 bg-primary hidden">0</span>
 		</span>
-		<span component="drafts/count" class="visible-open badge rounded-1 bg-primary hidden">0</span>
+		<span class="nav-text small visible-open fw-semibold">[[global:header.drafts]]</span>
 	</span>
+	<span component="drafts/count" class="visible-open badge rounded-1 bg-primary hidden">0</span>
 </a>
 <ul class="drafts-dropdown dropdown-menu p-1 shadow">
 	<li>
