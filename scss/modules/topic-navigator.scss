@@ -4,7 +4,7 @@
 
 	.track {
 		width: 2px;
-		background-color: $input-group-addon-bg;
+		background-color: mix($dark, $light, 10%);
 
 		.handle {
 			cursor: grab;
