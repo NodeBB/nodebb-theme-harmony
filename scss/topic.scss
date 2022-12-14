@@ -46,6 +46,10 @@
 			}
 
 			[component="post"] {
+				&.deleted {
+					opacity: .5;
+				}
+
 				[component="post/content"] {
 					pre {
 						max-height: calc($font-size-base * 24);
