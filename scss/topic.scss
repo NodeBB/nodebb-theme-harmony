@@ -1,8 +1,4 @@
 .page-topic {
-	#content {
-		max-width: 960px;
-	}
-
 	[component="topic/title"] {
 		font-size: 28px;
 		line-height: 34px;
@@ -31,6 +27,8 @@
 	}
 
 	.topic {
+		max-width: 960px;
+
 		.posts {
 			list-style-type: none;
 

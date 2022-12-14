@@ -40,7 +40,7 @@
 </div>
 
 <div class="row">
-	<div class="topic {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
+	<div class="topic mx-auto {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<!-- IMPORT partials/post_bar.tpl -->
 
 		{{{ if merger }}}
