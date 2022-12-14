@@ -53,7 +53,7 @@
 
 					<div class="row">
 						<div class="offset-lg-2 col-lg-10">
-							<button class="btn btn-primary btn-lg" id="register" type="submit">[[register:register_now_button]]</button>
+							<button class="btn btn-primary" id="register" type="submit">[[register:register_now_button]]</button>
 						</div>
 					</div>
 					<input id="token" type="hidden" name="token" value="" />

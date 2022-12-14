@@ -1,5 +1,3 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <!-- IMPORT partials/breadcrumbs.tpl -->
 <div data-widget-area="header">
 	{{{each widgets.header}}}
@@ -53,11 +51,11 @@
 						<input type="hidden" name="noscript" id="noscript" value="true" />
 						<div class="row">
 							<div class="col-lg-10 offset-lg-2">
-								<button class="btn btn-primary btn-lg" id="login" type="submit">[[global:login]]</button>
+								<button class="btn btn-primary" id="login" type="submit">[[global:login]]</button>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-lg-10 offset-lg-2">
+							<div class="col-lg-10 offset-lg-2 d-flex flex-column gap-1">
 								{{{ if allowRegistration }}}
 								<span>[[login:dont_have_account]] <a href="{config.relative_path}/register">[[register:register]]</a></span>
 								{{{ end }}}

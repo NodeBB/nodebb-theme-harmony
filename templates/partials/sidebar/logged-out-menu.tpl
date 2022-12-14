@@ -1,17 +1,4 @@
 
-{{{ if allowRegistration }}}
-<li class="nav-item mx-2" title="[[global:register]]">
-	<a class="nav-link nav-btn" href="{relative_path}/register">
-		<span class="d-inline-flex justify-content-between w-100">
-			<span class="text-nowrap truncate-open">
-				<i class="fa fa-fw fa-pencil"></i>
-				<span class="nav-text visible-open fw-semibold">[[global:register]]</span>
-			</span>
-		</span>
-	</a>
-</li>
-{{{ end }}}
-
 <li class="nav-item mx-2" title="[[global:login]]">
 	<a class="nav-link nav-btn" href="{relative_path}/login">
 		<span class="d-inline-flex justify-content-between w-100">
@@ -22,3 +9,30 @@
 		</span>
 	</a>
 </li>
+<hr class="my-2 mx-2 visible-open">
+{{{ if allowRegistration }}}
+<li class="nav-item mx-2" title="[[global:register]]">
+	<span class="text-xs visible-open">[[login:dont_have_account]]</span>
+	<a class="nav-link nav-btn" href="{relative_path}/register">
+		<span class="d-inline-flex justify-content-between w-100">
+			<span class="text-nowrap truncate-open">
+				<i class="fa fa-fw fa-user-plus"></i>
+				<span class="nav-text visible-open fw-semibold">[[global:register]]</span>
+			</span>
+		</span>
+	</a>
+</li>
+<hr class="my-2 mx-2 visible-open">
+{{{ end }}}
+
+{{{ if config.searchEnabled }}}
+<li component="sidebar/search" class="visible-open nav-item mx-2 search">
+	<div class="d-flex gap-2 py-1 px-2 align-items-center" title="[[harmony:login-register-to-search]]">
+		<i class="fa fa-fw fa-search text-muted"></i>
+		<span class="nav-text visible-open text-xs text-muted">[[harmony:login-register-to-search]]</span>
+	</a>
+</a>
+{{{ end }}}
+
+
+

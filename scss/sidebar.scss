@@ -26,6 +26,7 @@
 		}
 		.visible-open { display: initial; }
 		.visible-closed { display: none; }
+		hr.visible-open { display: block; }
 		.truncate-open {
 			overflow: hidden;
 			text-overflow: ellipsis;
