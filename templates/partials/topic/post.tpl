@@ -66,7 +66,7 @@
 
 <div component="post/footer" class="post-footer border-bottom pb-2">
 	{{{ if posts.user.signature }}}
-	<div component="post/signature" data-uid="{posts.user.uid}" class="mt-2">{posts.user.signature}</div>
+	<div component="post/signature" data-uid="{posts.user.uid}" class="text-xs text-muted mt-2">{posts.user.signature}</div>
 	{{{ end }}}
 
 	<div class="clearfix">
@@ -90,7 +90,6 @@
 		</a>
 		{{{ end }}}
 	</div>
-	<div component="post/replies/container" class="mt-2"></div>
 
 	<div component="post/tools" class="d-flex justify-content-end post-tools">
 		<!-- IMPORT partials/topic/reactions.tpl -->
@@ -115,4 +114,5 @@
 
 		<!-- IMPORT partials/topic/post-menu.tpl -->
 	</div>
+	<div component="post/replies/container" class="mt-2"></div>
 </div>
