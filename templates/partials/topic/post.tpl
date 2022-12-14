@@ -54,7 +54,7 @@
 				</span>
 			</div>
 			<div class="d-flex align-items-center gap-1 flex-grow-1 justify-content-end">
-				<span class="bookmarked"><i class="fa fa-bookmark-o"></i></span>
+				<span class="bookmarked opacity-0 text-primary"><i class="fa fa-bookmark-o"></i></span>
 			</div>
 		</div>
 

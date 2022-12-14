@@ -41,6 +41,10 @@
 			.post-header {
 				font-size: 13px;
 				line-height: 20px;
+
+				.bookmarked {
+					transition: $transition-fade;
+				}
 			}
 
 			[component="post"] {

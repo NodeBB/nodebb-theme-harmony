@@ -61,6 +61,10 @@
 
 		&.highlight {
 			border-left: 2px solid $primary;
+
+			.bookmarked {
+				opacity: 1 !important;
+			}
 		}
 
 		@include topic-avatars();
@@ -120,7 +124,7 @@
 
 	@include media-breakpoint-up(sm) {
 		&.minimal {
-			.post-footer, .timeline-event, [component="topic/quickreply/container"] {
+			.post-footer, .timeline-event, [component="topic/quickreply/container"], .bookmarked {
 				display: none !important;
 			}
 
