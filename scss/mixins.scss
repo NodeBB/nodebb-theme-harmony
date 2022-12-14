@@ -59,8 +59,6 @@
 		}
 
 		&.highlight {
-			border-left: 2px solid $primary;
-
 			.bookmarked {
 				opacity: 1 !important;
 			}
@@ -134,6 +132,10 @@
 
 		> [component="post"], .timeline-event, > [component="post/placeholder"] {
 			border-left: 2px solid $input-group-addon-bg;
+
+			&.highlight {
+				border-left: 2px solid $primary;
+			}
 		}
 
 		.timeline-event {
