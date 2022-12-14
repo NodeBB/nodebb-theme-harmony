@@ -79,6 +79,38 @@
 	.quick-reply {
 		@include topic-avatars();
 	}
+
+	[component="post/replies/container"] {
+		&:empty {
+			display: none;
+		}
+
+		.icon {
+			display: none !important;
+		}
+
+		.post-header .icon {
+			display: initial !important;
+
+			.status {
+				display: none;
+			}
+		}
+
+		.timeline-event {
+			display: none !important;
+		}
+
+		[component="post"] {
+			padding-top: 0 !important;
+
+			&:last-of-type {
+				.post-footer {
+					border-bottom: none !important;
+				}
+			}
+		}
+	}
 }
 
 @include media-breakpoint-up(sm) {
