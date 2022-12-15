@@ -27,7 +27,7 @@
 		<!-- ENDIF function.displayMenuItem -->
 		{{{end}}}
 	</ul>
-	<div class="navbar-nav w-100">
+	<div class="w-100">
 		<!-- IMPORT partials/skin-switcher.tpl -->
 		<div class="sidebar-toggle m-2">
 			<a href="#" role="button" component="sidebar/toggle" class="nav-btn d-flex gap-2 align-items-center p-2 pointer nav-link w-100 text-nowrap">
