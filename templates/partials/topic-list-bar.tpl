@@ -23,7 +23,7 @@
 			<!-- IMPORT partials/category/tools.tpl -->
 
 			{{{ if (!feeds:disableRSS && rssFeedUrl) }}}
-			<a class="btn btn-link" target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss"></i></a>
+			<a class="btn btn-link link-primary" target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss"></i></a>
 			{{{ end }}}
 
 			<a href="{config.relative_path}{{{ if template.category }}}{url}{{{ else }}}/{selectedFilter.url}{querystring}{{{ end }}}" class="d-inline-block">
