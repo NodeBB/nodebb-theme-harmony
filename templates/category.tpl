@@ -2,7 +2,7 @@
 
 <div class="d-flex flex-column gap-2">
 	<div class="d-flex justify-content-center gap-2 align-items-center mb-2">
-		{buildCategoryIcon(@value, "40px", "rounded-1")}
+		{buildCategoryIcon(@value, "40px", "rounded-1 flex-shrink-0")}
 		<h2 class="fs-2 fw-semibold mb-0">{./name}</h2>
 	</div>
 	<div class="d-flex flex-wrap justify-content-center gap-2">
