@@ -3,7 +3,7 @@
 		{{{ each navigation }}}
 		<!-- IF function.displayMenuItem, @index -->
 		<li class="nav-item mx-2 {./class}{{{ if ./dropdown }}} dropend{{{ end }}}" title="{./title}">
-			<a class="nav-link nav-btn navigation-link d-flex gap-2 align-items-center {{{ if navigation.dropdown }}}dropdown-toggle{{{ end }}}"
+			<a class="nav-link nav-btn navigation-link d-flex gap-2 justify-content-between align-items-center {{{ if navigation.dropdown }}}dropdown-toggle{{{ end }}}"
 			{{{ if ./dropdown }}} href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{{ else }}} href="{./route}"{{{ end }}} {{{ if ./id }}}id="{./id}"{{{ end }}}{{{ if ./targetBlank }}} target="_blank"{{{ end }}}>
 				<span class="d-flex gap-2 align-items-center text-nowrap truncate-open">
 					<span class="position-relative">
