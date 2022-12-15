@@ -1,3 +1,9 @@
+[component="brand/wrapper"] {
+	&:hover {
+		background-color: $card-cap-bg;
+	}
+}
+
 [component="brand/logo"] {
 	max-height: 48px;
 	width: auto;

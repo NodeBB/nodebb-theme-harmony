@@ -1,11 +1,12 @@
 .skin-quartz {
+	// $body-bg-image is gradient in quartz
 	.icon {
-		// $body-bg-image is gradient in quartz
 		background-color: transparent !important;
 	}
 }
 
 .skin-quartz, .skin-lux, .skin-morph {
+	// $spacer being modified looks bad on this element
 	.topic-list-header .btn, .topic-main-buttons .btn {
 		padding: 6px 12px;
 	}
