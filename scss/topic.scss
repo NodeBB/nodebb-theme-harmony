@@ -107,10 +107,6 @@
 @include media-breakpoint-up(sm) {
 	.page-topic {
 		.topic .posts {
-			> li:first-child {
-				padding-top: 32px !important;
-			}
-
 			[component="post"] {
 				[component="post/actions"] {
 					opacity: 0;

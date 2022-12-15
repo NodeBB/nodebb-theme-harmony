@@ -28,15 +28,22 @@
 		margin-left: 1.5rem;
 		transition: border-color 1s ease-out;
 
-		&:first-child:before {
-			content: '';
-			position: absolute;
-			top: 0;
-			height: 16px;
-			width: 16px;
-			background-color: $input-group-addon-bg;
-			border-radius: 100%;
-			transform: translateX(calc(-50% - .5px));
+		&:first-child {
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				height: 16px;
+				width: 16px;
+				background-color: $border-color;
+				border-radius: 100%;
+				transform: translate(calc(-50% - .5px), -100%);
+				transition: background-color 1s ease-out;
+			}
+
+			&.highlight:before {
+				background-color: $primary;
+			}
 		}
 
 		&:last-child {
@@ -48,9 +55,14 @@
 				bottom: 0;
 				height: 16px;
 				width: 16px;
-				background-color: $input-group-addon-bg;
+				background-color: $border-color;
 				border-radius: 100%;
-				transform: translateX(calc(-50% - .5px));
+				transform: translate(calc(-50% - .5px), 100%);
+				transition: background-color 1s ease-out;
+			}
+
+			&.highlight:after {
+				background-color: $primary;
 			}
 		}
 
@@ -131,7 +143,7 @@
 		}
 
 		> [component="post"], .timeline-event, > [component="post/placeholder"] {
-			border-left: 2px solid $input-group-addon-bg;
+			border-left: 2px solid $border-color;
 
 			&.highlight {
 				border-left: 2px solid $primary;
@@ -163,7 +175,7 @@
 				padding: 0;
 				margin-left: -0.75rem;
 				margin-right: 1.25rem;
-				border: 2px solid $input-group-addon-bg;
+				border: 2px solid $border-color;
 				border-radius: 50%;
 			}
 		}

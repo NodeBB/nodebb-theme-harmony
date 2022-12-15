@@ -30,7 +30,7 @@
 		<main id="panel" class="d-flex flex-column gap-3 flex-grow-1">
 			<div class="mt-3 d-flex justify-content-center">
 				{{{ if (brand:logo || config.showSiteTitle )}}}
-				<div component="brand/wrapper" class="d-flex align-items-center gap-2 p-2">
+				<div component="brand/wrapper" class="d-flex align-items-center gap-3 p-2">
 					{{{ if brand:logo }}}
 					<a component="brand/anchor" href="{{{ if brand:logo:url }}}{brand:logo:url}{{{ else }}}{relative_path}/{{{ end }}}">
 						<img component="brand/logo" alt="{brand:logo:alt}" class="{brand:logo:display}" src="{brand:logo}?{config.cache-buster}" />
