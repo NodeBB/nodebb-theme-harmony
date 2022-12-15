@@ -5,10 +5,12 @@
 	</div>
 	<!-- IMPORT partials/mobile-footer.tpl -->
 	{{{ if !isSpider }}}
-	<div component="toaster/tray" class="alert-window fixed-bottom w-25 pb-3 pe-3 end-0 me-5 ms-auto">
-		<div id="reconnect-alert" class="alert alert-dismissible alert-warning clearfix hide" component="toaster/toast">
-			<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-hidden="true"></button>
-			<p>[[global:reconnecting-message, {config.siteTitle}]]</p>
+	<div class="row">
+		<div component="toaster/tray" class="col-12 col-md-3 alert-window fixed-bottom pb-3 mb-5 mb-md-2 me-md-5 ms-auto">
+			<div id="reconnect-alert" class="alert alert-dismissible alert-warning clearfix hide" component="toaster/toast">
+				<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-hidden="true"></button>
+				<p>[[global:reconnecting-message, {config.siteTitle}]]</p>
+			</div>
 		</div>
 	</div>
 	{{{ end }}}
