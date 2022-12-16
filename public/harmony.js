@@ -19,10 +19,19 @@ $(document).ready(function () {
 		hooks.on('action:skin.change', function () {
 			$('[component="skinSwitcher"] [component="skinSwitcher/icon"]').removeClass('fa-fade');
 		});
+
+		$(window).on('action:composer.resize action:sidebar.toggle', function () {
+			$('[component="composer"]').css({
+				left: $('.sidebar-left').outerWidth(true),
+				width: $('#panel').width(),
+			});
+		});
 	});
+
 	function setupMobileMenu() {
 		$('[component="sidebar/toggle"]').on('click', function () {
 			$('.sidebar').toggleClass('open');
+			$(window).trigger('action:sidebar.toggle');
 		});
 	}
 
