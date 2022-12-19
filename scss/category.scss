@@ -1,0 +1,7 @@
+.page-category {
+	[component="category/topic"] {
+		&.selected {
+			background-color: lighten($primary, 45%);
+		}
+	}
+}
