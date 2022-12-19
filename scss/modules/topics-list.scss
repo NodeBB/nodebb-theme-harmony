@@ -1,0 +1,5 @@
+[component="category/topic"] {
+	&.selected {
+		background-color: tint-color($primary, 90%);
+	}
+}
