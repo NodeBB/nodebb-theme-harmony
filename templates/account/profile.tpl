@@ -139,23 +139,11 @@
 	<div class="row">
 		{{{ if bestPosts.length }}}
 		<div class="col-lg-12 col-12">
-			<h1>[[pages:account/best, {username}]]</h1>
+			<h3 class="fw-semibold fs-4">[[pages:account/best, {username}]]</h3>
 
 			<div class="col-12">
-				<ul component="posts" class="posts-list list-unstyled">
+				<ul component="posts" class="posts-list list-unstyled d-flex flex-column gap-2">
 				{{{each bestPosts}}}
-				<!-- IMPORT partials/posts_list_item.tpl -->
-				{{{end}}}
-				</ul>
-			</div>
-		</div>
-		{{{ end }}}
-		{{{ if latestPosts.length}}}
-		<div class="col-lg-12 col-12">
-			<h1>[[pages:account/latest-posts, {username}]]</h1>
-			<div class="col-12">
-				<ul component="posts" class="posts-list list-unstyled">
-				{{{each latestPosts}}}
 				<!-- IMPORT partials/posts_list_item.tpl -->
 				{{{end}}}
 				</ul>

@@ -1,5 +1,3 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <ul component="posts" class="posts-list list-unstyled" data-nextstart="{nextStart}">
 	{{{each posts}}}
 	<!-- IMPORT partials/posts_list_item.tpl -->
