@@ -1,8 +1,6 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
-	<h1>[[pages:account/blocks, {username}]]</h1>
+	<h3 class="fw-semibold fs-4">[[pages:account/blocks, {username}]]</h3>
 	<div class="row justify-content-end mb-2">
 		<div class="col-3">
 			<div class="dropdown">

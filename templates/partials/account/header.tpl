@@ -1,5 +1,3 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <div data-widget-area="header">
 	{{{each widgets.header}}}
 	{{widgets.header.html}}
@@ -8,8 +6,8 @@
 
 <div class="cover position-absolute start-0 top-0 w-100" component="account/cover" style="background-image: url({cover:url}); background-position: {cover:position};">
 	<div class="container">
-		<!-- IF allowCoverPicture -->
-		<!-- IF canEdit -->
+		{{{ if allowCoverPicture }}}
+		{{{ if canEdit }}}
 		<div class="controls">
 			<span class="upload"><i class="fa fa-fw fa-4x fa-upload"></i></span>
 			<span class="resize"><i class="fa fa-fw fa-4x fa-arrows"></i></span>
@@ -17,18 +15,18 @@
 		</div>
 		<div class="save">[[groups:cover-save]] <i class="fa fa-fw fa-floppy-o"></i></div>
 		<div class="indicator">[[groups:cover-saving]] <i class="fa fa-fw fa-refresh fa-spin"></i></div>
-		<!-- ENDIF canEdit -->
-		<!-- ENDIF allowCoverPicture -->
+		{{{ end }}}
+		{{{ end }}}
 	</div>
 </div>
 
 <div class="d-flex gap-2 w-100">
-	<div class="avatar-wrapper border-4 position-relative align-self-start" style="margin-top: -3.5rem;">
-		<!-- IF picture -->
+	<div class="avatar-wrapper border-4 position-relative align-self-start d-none d-md-block" style="margin-top: -3.5rem;">
+		{{{ if picture }}}
 		<img src="{picture}" class="avatar avatar-rounded" style="--avatar-size: 128px;" />
-		<!-- ELSE -->
+		{{{ else }}}
 		<div class="avatar avatar-rounded" style="background-color: {icon:bgColor}; --avatar-size: 128px;" title="{username}">{icon:text}</div>
-		<!-- ENDIF picture -->
+		{{{ end }}}
 	</div>
 	<div class="d-flex flex-1 flex-column gap-2">
 		<!-- IMPORT partials/breadcrumbs.tpl -->
@@ -38,13 +36,11 @@
 				<span class="username fw-bold">{{{ if !banned }}}@{username}{{{ else }}}[[user:banned]]{{{ end }}}</span>
 				<div class="d-flex align-items-center gap-1 p-1">
 					{{{ if selectedGroup.length }}}
-					<div class="text-center">
-						{{{ each selectedGroup }}}
-						<!-- IF selectedGroup.slug -->
-						<!-- IMPORT partials/groups/badge.tpl -->
-						<!-- ENDIF selectedGroup.slug -->
-						{{{end}}}
-					</div>
+					{{{ each selectedGroup }}}
+					<!-- IF selectedGroup.slug -->
+					<!-- IMPORT partials/groups/badge.tpl -->
+					<!-- ENDIF selectedGroup.slug -->
+					{{{end}}}
 					{{{ end }}}
 				</div>
 			</div>
@@ -66,7 +62,7 @@
 		{aboutmeParsed}
 		</div>
 		{{{ end }}}
-		<div class="account-stats d-flex gap-1 {{{ if !template.account/profile }}} hidden{{{ end }}}">
+		<div class="account-stats d-flex flex-wrap gap-1 {{{ if !template.account/profile }}} hidden{{{ end }}}">
 			{{{ if !reputation:disabled }}}
 			<div class="stat">
 				<div class="align-items-center card card-header px-0 border-0 rounded-1">
@@ -117,40 +113,40 @@
 	</div>
 </div>
 
-<div class="profile border rounded p-3 my-4 {{{ if !template.account/profile }}} hidden {{{ end }}}">
-	<div class="row row-cols-3">
-		<div class="col">
+<div class="profile border rounded px-3 pt-3 my-4 {{{ if !template.account/profile }}} hidden {{{ end }}}">
+	<div class="row">
+		<div class="col-6 col-md-4 mb-3">
 			<div class="text-muted fw-semibold text-xs">[[user:joined]]</div>
 			<div class="timeago" title="{joindateISO}"></div>
 		</div>
-		<div class="col">
+		<div class="col-6 col-md-4 mb-3">
 			<div class="text-muted fw-semibold text-xs">[[user:lastonline]]</div>
 			<div class="timeago" title="{lastonlineISO}"></div>
 		</div>
 
 		{{{ if email }}}
-		<div class="col">
+		<div class="col-6 col-md-4 mb-3">
 			<div class="text-muted fw-semibold text-xs">[[user:email]] {{{ if emailHidden}}}<span class="text-lowercase">([[global:hidden]])</span>{{{ end }}}</div>
 			<div>{email}</div>
 		</div>
 		{{{ end }}}
 
 		{{{ if websiteName }}}
-		<div class="col">
+		<div class="col-6 col-md-4 mb-3">
 			<div class="text-muted fw-semibold text-xs">[[user:website]]</div>
 			<div><a href="{websiteLink}" rel="nofollow noopener noreferrer">{websiteName}</a></div>
 		</div>
 		{{{ end }}}
 
 		{{{ if location }}}
-		<div class="col">
+		<div class="col-6 col-md-4 mb-3">
 			<div class="text-muted fw-semibold text-xs">[[user:location]]</div>
 			<div>{location}</div>
 		</div>
 		{{{ end }}}
 
 		{{{ if age }}}
-		<div class="col">
+		<div class="col-6 col-md-4 mb-3">
 			<div class="text-muted fw-semibold text-xs">[[user:age]]</div>
 			<div>{age}</div>
 		</div>
