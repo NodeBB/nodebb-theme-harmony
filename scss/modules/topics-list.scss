@@ -1,5 +1,7 @@
 [component="category/topic"] {
 	&.selected {
-		background-color: tint-color($primary, 90%);
+		[component="topic/select"] {
+			color: $success!important;
+		}
 	}
 }
