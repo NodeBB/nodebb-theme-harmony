@@ -1,0 +1,154 @@
+.account {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	.breadcrumb {
+		justify-content: start!important;
+	}
+	.stat {
+		min-width: 80px;
+		.card {
+			padding: 0.25rem;
+		}
+	}
+	.cover {
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 200px;
+		position: absolute;
+		margin-bottom: 1em;
+		background-origin: content-box;
+		width: 100%;
+		top: var(--panel-offset);
+		left: auto;
+		right: 0px;
+
+
+		&:hover {
+			.controls {
+				opacity: 0.8;
+			}
+		}
+
+		.controls {
+			text-align: center;
+			height: 200px;
+			line-height: 200px;
+			opacity: 0;
+			@include transition(opacity .15s linear);
+			cursor: pointer;
+			pointer-events: none;
+
+			> * {
+				pointer-events: all;
+			}
+
+			.fa {
+				color: white;
+				background-color: #333;
+				opacity: 1;
+				margin: 15px;
+				padding: 5px;
+				border-radius: 4px;
+			}
+		}
+
+		&.active {
+			&:hover {
+				cursor: move;
+			}
+
+			.controls {
+				> * {
+					display: none;
+				}
+			}
+
+			.save {
+				display: inline-block;
+			}
+		}
+
+		&.saving {
+			.save {
+				display: none;
+			}
+
+			.indicator {
+				display: inline-block;
+			}
+		}
+
+		.save, .indicator {
+			display: inline-block;
+			position: absolute;
+			top: 1em;
+			right: 2em;
+			opacity: 1;
+			background-color: $primary;
+			color: $gray-200;
+			padding: 0.5em;
+			font-weight: bold;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		.save {
+			display: none;
+		}
+
+		.indicator {
+			display: none;
+		}
+	}
+
+	.avatar-wrapper {
+		border: 4px solid white;
+		border-radius: 50%;
+	}
+
+
+	margin-top: 200px;
+
+	.container {
+		height: 200px;
+		position: relative;
+		pointer-events: none;
+
+		> * {
+			pointer-events: all;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		margin-top: 280px;
+
+		.cover,  .container {
+			height: 300px;
+
+			.controls {
+				height: 300px;
+				line-height: 300px;
+			}
+		}
+	}
+
+	.categories {
+		[component="categories/category"] {
+			.depth-1 {
+				padding-left: 50px;
+			}
+			.depth-2 {
+				padding-left: 100px;
+			}
+			.depth-3 {
+				padding-left: 150px;
+			}
+			.depth-4 {
+				padding-left: 150px;
+			}
+		}
+	}
+}

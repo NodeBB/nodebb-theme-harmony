@@ -1,10 +1,8 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
 
 	<div class="row">
-		<h1>{title}</h1>
+		<h3 class="fw-semibold fs-4">{title}</h3>
 		<div class="col-lg-12 mb-2">
 			<div class="btn-group bottom-sheet" component="category/watch/all">
 				<button class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" type="button">

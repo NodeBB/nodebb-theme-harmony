@@ -1,21 +1,19 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
 
 	<div class="row">
-		<h1>{title}</h1>
+		<h3 class="fw-semibold fs-4">{title}</h3>
 
-		<!-- IF !posts.length -->
+		{{{ if !posts.length }}}
 			<div class="alert alert-warning text-center">{noItemsFoundKey}</div>
-		<!-- ENDIF !posts.length -->
+		{{{ end }}}
 
 		<div class="col-12">
 			<!-- IMPORT partials/posts_list.tpl -->
 
-			<!-- IF config.usePagination -->
-				<!-- IMPORT partials/paginator.tpl -->
-			<!-- ENDIF config.usePagination -->
+			{{{ if config.usePagination }}}
+			<!-- IMPORT partials/paginator.tpl -->
+			{{{ end }}}
 		</div>
 	</div>
 </div>

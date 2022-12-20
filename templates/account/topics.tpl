@@ -1,11 +1,9 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
 
 	<div class="row">
-		<h1>{title}</h1>
-		<!-- IF showSort -->
+		<h3 class="fw-semibold fs-4">{title}</h3>
+		{{{ if showSort }}}
 		<div class="btn-toolbar justify-content-end mb-2">
 			<div class="btn-group bottom-sheet" component="thread/sort">
 				<button class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" type="button"><span>[[topic:sort_by]]</span> <span class="caret"></span></button>
@@ -16,17 +14,17 @@
 				</ul>
 			</div>
 		</div>
-		<!-- ENDIF showSort -->
+		{{{ end }}}
 
-		<!-- IF !topics.length -->
+		{{{ if !topics.length }}}
 			<div class="alert alert-warning text-center">{noItemsFoundKey}</div>
-		<!-- ENDIF !topics.length -->
+		{{{ end }}}
 
 		<div class="category">
 			<!-- IMPORT partials/topics_list.tpl -->
-			<!-- IF config.usePagination -->
-				<!-- IMPORT partials/paginator.tpl -->
-			<!-- ENDIF config.usePagination -->
+			{{{ if config.usePagination }}}
+			<!-- IMPORT partials/paginator.tpl -->
+			{{{ end }}}
 		</div>
 	</div>
 </div>

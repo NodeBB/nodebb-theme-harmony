@@ -1,8 +1,8 @@
 <!-- THIS FILE IS STILL PERSONA -->
 
-<div class="btn-group account-fab bottom-sheet">
-	<button type="button" class="persona-fab dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		<i class="fa fa-ellipsis-v"></i>
+<div class="btn-group bottom-sheet">
+	<button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<i class="fa fa-ellipsis-v fa-fw"></i>
 	</button>
 	<ul class="dropdown-menu dropdown-menu-end account-sub-links">
 		<!-- IF loggedIn -->
