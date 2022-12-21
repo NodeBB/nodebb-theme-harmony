@@ -8,7 +8,7 @@
 		<div class="col-lg-12 col-12">
 			<h3 class="fw-semibold fs-4">[[pages:account/best, {username}]]</h3>
 
-			<div class="col-12">
+			<div class="">
 				<ul component="posts" class="posts-list list-unstyled d-flex flex-column gap-2">
 				{{{each bestPosts}}}
 				<!-- IMPORT partials/posts_list_item.tpl -->
