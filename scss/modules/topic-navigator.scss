@@ -51,6 +51,10 @@
 		align-self: flex-start;
 	}
 
+	[component="topic/navigator"].d-sm-flex.mt-auto + .mt-auto {
+		margin-top: 0 !important;
+	}
+
 	.handle .meta, .unread .meta {
 		display: block;
 	}

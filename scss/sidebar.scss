@@ -84,6 +84,10 @@
 			line-height: 16px;
 		}
 	}
+
+	[data-widget-area="sidebar-footer"] {
+		font-size: $font-size-base * 0.75;
+	}
 }
 
 .bottombar {

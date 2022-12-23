@@ -1,4 +1,4 @@
-<div class="d-none flex-column flex-grow-1 align-items-center mb-2 mx-2" component="topic/navigator">
+<div class="d-none flex-column flex-grow-1 align-items-center mb-2 mx-2 mt-auto" component="topic/navigator">
 	<a href="#" class="nav-link border-0 p-2" data-action="toTop"><i class="fa fa-fw fa-angles-up"></i></a>
 	<a href="#" class="nav-link border-0 p-2" data-action="scrollUp"><i class="fa fa-fw fa-angle-up"></i></a>
 	<div class="track d-inline-block flex-grow-1 position-relative">

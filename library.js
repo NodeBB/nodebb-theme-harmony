@@ -44,13 +44,14 @@ library.defineWidgetAreas = async function (areas) {
 	// 	});
 	// });
 
-	// areas = areas.concat([
-	// 	{
-	// 		name: 'Account Header',
-	// 		template: 'account/profile.tpl',
-	// 		location: 'header',
-	// 	},
-	// ]);
+	areas = areas.concat([
+		{
+			name: 'Sidebar Footer',
+			template: 'global',
+			location: 'sidebar-footer',
+		},
+	]);
+
 	return areas;
 };
 
