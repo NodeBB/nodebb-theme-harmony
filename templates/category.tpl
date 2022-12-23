@@ -1,11 +1,11 @@
 <!-- IMPORT partials/breadcrumbs.tpl -->
 
 <div class="d-flex flex-column gap-2">
-	<div class="d-flex justify-content-center gap-2 align-items-center mb-2">
+	<div class="d-flex gap-2 align-items-center mb-3">
 		{buildCategoryIcon(@value, "40px", "rounded-1 flex-shrink-0")}
 		<h2 class="fs-2 fw-semibold mb-0">{./name}</h2>
 	</div>
-	<div class="d-flex flex-wrap justify-content-center gap-2">
+	<div class="d-flex flex-wrap gap-2">
 		<span class="badge stats">
 			<span title="{totalTopicCount}" class="human-readable-number fw-bold">{totalTopicCount}</span>
 			<span class="text-lowercase fw-normal">[[global:topics]]</span>

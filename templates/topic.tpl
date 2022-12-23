@@ -8,11 +8,11 @@
 
 <!-- IMPORT partials/breadcrumbs.tpl -->
 
-<h1 component="post/header" class="text-center mb-0" itemprop="name">
+<h2 component="post/header" class="fs-2 mb-3" itemprop="name">
 	<span class="topic-title" component="topic/title">{title}</span>
-</h1>
+</h2>
 
-<div class="topic-info d-flex gap-2 justify-content-center align-items-center">
+<div class="topic-info d-flex gap-2 align-items-center">
 	<span component="topic/labels" class="d-flex gap-2">
 		<span component="topic/scheduled" class="badge bg-primary {{{ if !scheduled }}}hidden{{{ end }}}">
 			<i class="fa fa-clock-o"></i>
@@ -40,7 +40,7 @@
 </div>
 
 <div class="row">
-	<div class="topic mx-auto {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
+	<div class="topic {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<!-- IMPORT partials/post_bar.tpl -->
 
 		{{{ if merger }}}
