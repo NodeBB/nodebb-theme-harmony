@@ -33,4 +33,14 @@
 		<div class="flex-1">[[user:following]]</div>
 		<span class="text-xs human-readable-number" title="{counts.following}">{counts.following}</span>
 	</a>
+
+	<a href="{config.relative_path}/user/{userslug}/blocks" class="btn-ghost fw-semibold">
+		<div class="flex-1">[[user:blocked-users]]</div>
+		<span class="text-xs human-readable-number" title="{counts.blocks}">{counts.blocks}</span>
+	</a>
+
+	<a href="{config.relative_path}/user/{userslug}/uploads" class="btn-ghost fw-semibold">
+		<div class="flex-1">[[global:uploads]]</div>
+		<span class="text-xs human-readable-number" title="{counts.uploaded}">{counts.uploaded}</span>
+	</a>
 </div>
