@@ -3,7 +3,7 @@
 	{{{ if hasMoreSubCategories }}}
 	<div class="mb-2"><!-- IMPORT partials/category-selector.tpl --></div>
 	{{{ else }}}
-	<p>[[category:subcategories]]</p>
+	<h3 class="fs-6 fw-semibold">[[category:subcategories]]</h3>
 	{{{ end }}}
 
 	<ul component="category/subcategory/container" class="categories list-unstyled" itemscope itemtype="http://www.schema.org/ItemList">

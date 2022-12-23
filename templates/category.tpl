@@ -25,8 +25,8 @@
 </div>
 {{{ end }}}
 
-<div class="row">
-	<div class="category {{{if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
+<div class="row mt-3">
+	<div class="category d-flex flex-column gap-3 {{{if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<!-- IMPORT partials/category/subcategory.tpl -->
 
 		<!-- IMPORT partials/topic-list-bar.tpl -->
