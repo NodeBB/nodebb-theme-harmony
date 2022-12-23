@@ -51,7 +51,7 @@
 		<!-- IMPORT partials/topic/deleted-message.tpl -->
 		{{{ end }}}
 
-		<ul component="topic" class="posts timeline mt-sm-4 p-0 pt-3" data-tid="{tid}" data-cid="{cid}">
+		<ul component="topic" class="posts timeline mt-sm-4 p-0 py-3" data-tid="{tid}" data-cid="{cid}">
 			{{{each posts}}}
 				<li component="post" class="pt-4 {{{ if posts.deleted }}}deleted{{{ end }}} {{{ if posts.selfPost }}}self-post{{{ end }}} {{{ if posts.topicOwnerPost }}}topic-owner-post{{{ end }}}" <!-- IMPORT partials/data/topic.tpl -->>
 					<a component="post/anchor" data-index="{posts.index}" id="{posts.index}"></a>
