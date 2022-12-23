@@ -1,3 +1,7 @@
+
+body {
+	overflow-y: scroll;
+}
 .ff-secondary {
 	font-family: $font-family-secondary;
 }
@@ -31,4 +35,35 @@
 	.sticky-tools .btn-link {
 		color: $dark;
 	}
+}
+
+@mixin btn-ghost-base {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: $spacer;
+	border-radius: $border-radius-sm;
+	border-width: 1px;
+	border-color: transparent;
+	background-color: transparent;
+	padding: ($spacer * 0.25) ($spacer * 0.5);
+	text-align: left;
+	--bs-text-opacity: 1;
+	color: inherit !important;
+	$hover-color: mix($white, $black, 90);
+	cursor: pointer;
+	&:hover, &.active {
+		background-color: $hover-color;
+	}
+}
+
+.btn-ghost {
+	@include btn-ghost-base();
+	line-height: 1.5rem;
+}
+
+.btn-ghost-sm {
+	@include btn-ghost-base();
+	font-size: 0.875rem;
+	line-height: 1.25rem;
 }

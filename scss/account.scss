@@ -1,17 +1,11 @@
 .account {
-	max-width: 960px;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	.breadcrumb {
 		justify-content: start!important;
 	}
-	.stat {
-		min-width: 80px;
-		.card {
-			padding: 0.25rem;
-		}
-	}
+
 	.cover {
 		background-size: cover;
 		background-repeat: no-repeat;

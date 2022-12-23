@@ -20,7 +20,7 @@
 	</div>
 </div>
 
-<div class="d-flex gap-2 w-100">
+<div class="d-flex gap-2 w-100 mb-4">
 	<div class="avatar-wrapper border-4 position-relative align-self-start d-none d-md-block" style="margin-top: -3.5rem;">
 		{{{ if picture }}}
 		<img src="{picture}" class="avatar avatar-rounded" style="--avatar-size: 128px;" />
@@ -30,7 +30,7 @@
 	</div>
 	<div class="d-flex flex-1 flex-column gap-2">
 		<!-- IMPORT partials/breadcrumbs.tpl -->
-		<div class="d-grid gap-1 {{{ if !template.account/profile }}} hidden {{{ end }}}">
+		<div class="d-grid gap-1">
 			<h2 class="fullname fw-semibold fs-3">{{{ if fullname }}}{fullname}{{{ else }}}{username}{{{ end }}}</h2>
 			<div class="d-flex flex-wrap gap-1 text-sm">
 				<span class="username fw-bold">{{{ if !banned }}}@{username}{{{ else }}}[[user:banned]]{{{ end }}}</span>
@@ -57,48 +57,6 @@
 			{{{ end }}}
 			{{{ end }}}
 		</div>
-		{{{ if aboutme }}}
-		<div component="aboutme" class="text-sm {{{ if !template.account/profile }}} hidden {{{ end }}}">
-		{aboutmeParsed}
-		</div>
-		{{{ end }}}
-		<div class="account-stats d-flex flex-wrap gap-1 {{{ if !template.account/profile }}} hidden{{{ end }}}">
-			{{{ if !reputation:disabled }}}
-			<div class="stat">
-				<div class="align-items-center card card-header px-0 border-0 rounded-1">
-					<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{reputation}">{reputation}</span>
-					<span class="stat-label text-xs">[[global:reputation]]</span>
-				</div>
-			</div>
-			{{{ end }}}
-			<div class="stat">
-				<div class="align-items-center card card-header px-0 border-0 rounded-1">
-					<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{profileviews}">{profileviews}</span>
-					<span class="stat-label text-xs">[[user:profile_views]]</span>
-				</div>
-			</div>
-
-			<div class="stat">
-				<div class="align-items-center card card-header px-0 border-0 rounded-1">
-					<div><a href="{config.relative_path}/user/{userslug}/posts" class="human-readable-number fs-5 fw-semibold ff-secondary" title="{counts.posts}">{counts.posts}</a></div>
-					<span class="stat-label text-xs">[[global:posts]]</span>
-				</div>
-			</div>
-
-			<div class="stat">
-				<div class="align-items-center card card-header px-0 border-0 rounded-1">
-					<div><a href="{config.relative_path}/user/{userslug}/followers" class="human-readable-number fs-5 fw-semibold ff-secondary" title="{counts.followers}">{counts.followers}</a></div>
-					<span class="stat-label text-xs">[[user:followers]]</span>
-				</div>
-			</div>
-
-			<div class="stat">
-				<div class="align-items-center card card-header px-0 border-0 rounded-1">
-					<div><a href="{config.relative_path}/user/{userslug}/following" class="human-readable-number fs-5 fw-semibold ff-secondary" title="{counts.following}">{counts.following}</a></div>
-					<span class="stat-label text-xs">[[user:following]]</span>
-				</div>
-			</div>
-		</div>
 	</div>
 
 	<div class="d-flex gap-1 align-self-start">
@@ -113,43 +71,3 @@
 	</div>
 </div>
 
-<div class="profile border rounded px-3 pt-3 my-4 {{{ if !template.account/profile }}} hidden {{{ end }}}">
-	<div class="row">
-		<div class="col-6 col-md-4 mb-3">
-			<div class="text-muted fw-semibold text-xs">[[user:joined]]</div>
-			<div class="timeago" title="{joindateISO}"></div>
-		</div>
-		<div class="col-6 col-md-4 mb-3">
-			<div class="text-muted fw-semibold text-xs">[[user:lastonline]]</div>
-			<div class="timeago" title="{lastonlineISO}"></div>
-		</div>
-
-		{{{ if email }}}
-		<div class="col-6 col-md-4 mb-3">
-			<div class="text-muted fw-semibold text-xs">[[user:email]] {{{ if emailHidden}}}<span class="text-lowercase">([[global:hidden]])</span>{{{ end }}}</div>
-			<div>{email}</div>
-		</div>
-		{{{ end }}}
-
-		{{{ if websiteName }}}
-		<div class="col-6 col-md-4 mb-3">
-			<div class="text-muted fw-semibold text-xs">[[user:website]]</div>
-			<div><a href="{websiteLink}" rel="nofollow noopener noreferrer">{websiteName}</a></div>
-		</div>
-		{{{ end }}}
-
-		{{{ if location }}}
-		<div class="col-6 col-md-4 mb-3">
-			<div class="text-muted fw-semibold text-xs">[[user:location]]</div>
-			<div>{location}</div>
-		</div>
-		{{{ end }}}
-
-		{{{ if age }}}
-		<div class="col-6 col-md-4 mb-3">
-			<div class="text-muted fw-semibold text-xs">[[user:age]]</div>
-			<div>{age}</div>
-		</div>
-		{{{ end }}}
-	</div>
-</div>
