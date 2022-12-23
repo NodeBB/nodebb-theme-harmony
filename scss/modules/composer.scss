@@ -1,3 +1,21 @@
+$composer-color: $body-color !default;
+$composer-bg: $body-bg !default;
+
+@mixin composer-text-bg($color, $bg) {
+	color: $color !important;
+	background-color: $bg !important;
+}
+
 .composer {
 	z-index: 3 !important;
+}
+
+.skin-noskin {
+	// only using colors when there is no bootswatch skin applied
+	$composer-color: $secondary;
+	$composer-bg: $light;
+
+	.composer {
+		@include composer-text-bg($composer-color, $composer-bg);
+	}
 }
