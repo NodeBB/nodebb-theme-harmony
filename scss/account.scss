@@ -107,7 +107,7 @@
 
 	margin-top: 200px;
 
-	.container {
+	.cover > .container {
 		height: 200px;
 		position: relative;
 		pointer-events: none;
@@ -120,7 +120,7 @@
 	@include media-breakpoint-up(md) {
 		margin-top: 280px;
 
-		.cover,  .container {
+		.cover,  .cover > .container {
 			height: 300px;
 
 			.controls {
