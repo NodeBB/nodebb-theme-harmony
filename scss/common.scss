@@ -25,6 +25,7 @@ body {
 	z-index: 3;
 	top: calc($spacer * 0.5);
 	background-color: $body-bg;
+	margin-bottom: $spacer;
 }
 // quartz doesn't need body-bg for tool background
 .skin-quartz .sticky-tools {
@@ -41,7 +42,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: $spacer;
+	gap: ($spacer * 0.5);
 	border-radius: $border-radius-sm;
 	border-width: 1px;
 	border-color: transparent;
@@ -50,7 +51,7 @@ body {
 	text-align: left;
 	--bs-text-opacity: 1;
 	color: inherit !important;
-	$hover-color: mix($white, $black, 90);
+	$hover-color: mix($light, $dark, 90);
 	cursor: pointer;
 	&:hover, &.active {
 		background-color: $hover-color;

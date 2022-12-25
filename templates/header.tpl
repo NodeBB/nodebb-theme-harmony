@@ -27,10 +27,10 @@
 	<div class="d-flex justify-content-between pb-4 pb-md-0">
 		<!-- IMPORT partials/sidebar-left.tpl -->
 
-		<main id="panel" class="d-flex flex-column gap-3 flex-grow-1">
-			<div class="container mt-3">
+		<main id="panel" class="d-flex flex-column gap-3 flex-grow-1 mt-3">
+			{{{ if (brand:logo || config.showSiteTitle)}}}
+			<div class="container">
 				<div class="col-12 d-flex border-bottom pb-3">
-					{{{ if (brand:logo || config.showSiteTitle )}}}
 					<div component="brand/wrapper" class="d-flex align-items-center gap-3 p-2 rounded-1 align-content-stretch">
 						{{{ if brand:logo }}}
 						<a component="brand/anchor" href="{{{ if brand:logo:url }}}{brand:logo:url}{{{ else }}}{relative_path}/{{{ end }}}">
@@ -44,9 +44,9 @@
 						</a>
 						{{{ end }}}
 					</div>
-					{{{ end }}}
 				</div>
 			</div>
+			{{{ end }}}
 			<script>
 				const headerEl = document.getElementById('header-menu');
 				if (headerEl) {
