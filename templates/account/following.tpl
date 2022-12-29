@@ -11,9 +11,9 @@
 			<div class="alert alert-warning text-center">[[user:follows_no_one]]</div>
 			{{{ end }}}
 
-			<div class="d-flex flex-wrap gap-2">
+			<div class="row row-cols-2 row-cols-lg-4 g-2">
 			{{{ each users }}}
-				<a href="{config.relative_path}/user/{users.userslug}" class="btn-ghost align-items-start" style="flex-basis: 210px;">
+				<a href="{config.relative_path}/user/{users.userslug}" class="btn-ghost align-items-start">
 					{buildAvatar(users, "48px", true)}
 					<div class="d-flex flex-1 flex-column">
 						<div class="fw-semibold">{users.displayname}</div>
