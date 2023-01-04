@@ -121,7 +121,7 @@
 						<a class="permalink text-muted timeago text-xs" href="{config.relative_path}/topic/{./slug}/{./teaser.index}" title="{./teaser.timestampISO}">
 						</a>
 					</p>
-					<div class="post-content mt-1 overflow-hidden text-xs line-clamp-2 ps-3">
+					<div class="post-content overflow-hidden text-xs line-clamp-2 ps-3">
 						{./teaser.content}
 					</div>
 					{{{ end }}}
