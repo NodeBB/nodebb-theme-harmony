@@ -1,4 +1,5 @@
 <ul component="category" class="list-unstyled topic-list" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
+	<hr class="text-muted opacity-25"/>
 	{{{ each topics }}}
 	<li component="category/topic" class="category-item mb-4 position-relative {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
 		<link itemprop="url" content="{config.relative_path}/topic/{./slug}" />
@@ -22,7 +23,7 @@
 						{{{ end }}}
 
 						{{{ if !showSelect }}}
-						<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" class="">
+						<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" class="text-decoration-none">
 							{{{ if ./thumbs.length }}}
 							<img src="{./thumbs.0.url}" class="not-responsive" />
 							{{{ else }}}
@@ -84,23 +85,23 @@
 			</div>
 
 			<div class="col-md-2 d-none d-md-flex stats text-muted gap-2 px-0">
+				{{{ if !reputation:disabled }}}
 				<div class="stats-votes flex-1">
 					<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
-						{{{ if !reputation:disabled }}}
-						<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{./votes}" data-toFixed="0">{./votes}</span>
+						<span class="human-readable-number fs-5 fw-semibold ff-secondary lh-1" title="{./votes}" data-toFixed="0">{./votes}</span>
 						<span class="text-lowercase text-xs">[[global:votes]]</span>
-						{{{ end }}}
 					</div>
 				</div>
+				{{{ end }}}
 				<div class="stats-postcount flex-1">
 					<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
-						<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{./postcount}" data-toFixed="0">{./postcount}</span>
+						<span class="human-readable-number fs-5 fw-semibold ff-secondary lh-1" title="{./postcount}" data-toFixed="0">{./postcount}</span>
 						<span class="text-lowercase text-xs">[[global:posts]]</span>
 					</div>
 				</div>
 				<div class="stats-viewcount flex-1">
 					<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
-						<span class="human-readable-number fs-5 fw-semibold ff-secondary" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
+						<span class="human-readable-number fs-5 fw-semibold ff-secondary lh-1" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
 						<span class="text-lowercase text-xs">[[global:views]]</span>
 					</div>
 				</div>
@@ -110,15 +111,14 @@
 				<div class="lastpost background-link-container border-start border-2 h-100" style="border-color: {./category.bgColor}!important;">
 					<a class="background-link" href="{config.relative_path}/topic/{./slug}/{./teaser.index}"></a>
 					{{{ if ./unreplied }}}
-					<p class="mt-2 text-xs ps-3">
+					<p class="ps-3 text-xs lh-1">
 						[[category:no_replies]]
 					</p>
 					{{{ else }}}
 					{{{ if ./teaser.pid }}}
-					<p class="ps-3 mb-0">
-						<a href="{config.relative_path}/user/{./teaser.user.userslug}">{buildAvatar(./teaser.user, "20px", true, "not-responsive")}</a>
-						<a class="permalink text-muted" href="{config.relative_path}/topic/{./slug}/{./teaser.index}">
-							<span class="timeago text-xs" title="{./teaser.timestampISO}"></span>
+					<p class="ps-3 mb-0 lh-1">
+						<a href="{config.relative_path}/user/{./teaser.user.userslug}" class="text-decoration-none">{buildAvatar(./teaser.user, "18px", true, "not-responsive")}</a>
+						<a class="permalink text-muted timeago text-xs" href="{config.relative_path}/topic/{./slug}/{./teaser.index}" title="{./teaser.timestampISO}">
 						</a>
 					</p>
 					<div class="post-content mt-1 overflow-hidden text-xs line-clamp-2 ps-3">
@@ -131,10 +131,11 @@
 
 			{{{ if showSelect }}}
 			<div class="position-absolute top-0 end-0 w-auto p-0">
-				<i component="topic/select" class="fa fa-square-o fs-5 text-muted"></i>
+				<i component="topic/select" class="fa fa-square-o fs-5 text-muted pointer"></i>
 			</div>
 			{{{ end }}}
 		</div>
 	</li>
+	<hr class="text-muted opacity-25"/>
 	{{{end}}}
 </ul>

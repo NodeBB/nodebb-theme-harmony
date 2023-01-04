@@ -10,10 +10,10 @@
 		<div><!-- IMPORT partials/category-selector.tpl --></div>
 		{{{ end }}}
 		<ul class="categories list-unstyled" itemscope itemtype="http://www.schema.org/ItemList">
-			<hr class="text-muted"/>
+			<hr class="text-muted opacity-25"/>
 			{{{ each categories }}}
 			<!-- IMPORT partials/categories/item.tpl -->
-			<hr class="text-muted"/>
+			<hr class="text-muted opacity-25"/>
 			{{{ end }}}
 		</ul>
 

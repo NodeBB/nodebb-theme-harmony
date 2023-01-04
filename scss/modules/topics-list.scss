@@ -4,4 +4,7 @@
 			color: $success!important;
 		}
 	}
+	.lastpost .post-content {
+		p { margin-bottom: 0; }
+	}
 }

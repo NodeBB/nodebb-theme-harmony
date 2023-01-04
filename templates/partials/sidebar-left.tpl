@@ -13,7 +13,7 @@
 						{{{ end }}}
 					</span>
 					{{{ if navigation.text }}}
-					<span class="nav-text small visible-open fw-semibold">{navigation.text}</span>
+					<span class="nav-text small visible-open fw-semibold text-truncate">{navigation.text}</span>
 					{{{ end }}}
 				</span>
 				<span component="navigation/count" class="visible-open badge rounded-1 bg-primary {{{ if !./content }}}hidden{{{ end }}}">{./content}</span>

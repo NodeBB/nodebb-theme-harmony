@@ -20,12 +20,15 @@ body {
 	font-size: 12px;
 }
 
+.btn-link:hover {
+	text-decoration: none;
+}
+
 .sticky-tools {
 	position: sticky;
 	z-index: 3;
 	top: calc($spacer * 0.5);
 	background-color: $body-bg;
-	margin-bottom: $spacer;
 }
 // quartz doesn't need body-bg for tool background
 .skin-quartz .sticky-tools {
@@ -59,6 +62,7 @@ body {
 	cursor: pointer;
 	&:hover, &.active {
 		background-color: $hover-color;
+		text-decoration: none;
 	}
 }
 
