@@ -38,6 +38,10 @@ body {
 	}
 }
 
+.group-hover-bg:hover {
+	background-color: mix($light, $dark, 97);
+}
+
 @mixin btn-ghost-base {
 	display: flex;
 	align-items: center;
