@@ -6,13 +6,9 @@ body {
 	font-family: $font-family-secondary;
 }
 
-.text-sm {
-	font-size: 0.875rem!important;
-}
-
-.text-xs {
-	font-size: 0.75rem!important;
-}
+.text-md { font-size: 1.125rem!important; } // 18px
+.text-sm { font-size: 0.875rem!important; } // 14px
+.text-xs { font-size: 0.75rem!important; } // 12px
 
 .badge.stats {
 	background-color: $gray-200;

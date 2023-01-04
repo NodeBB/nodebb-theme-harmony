@@ -33,8 +33,8 @@
 						{{{ end }}}
 					</div>
 				</div>
-				<div class="d-flex flex-column">
-					<h2 component="topic/header" class="title mb-1 fs-5 fw-bold">
+				<div class="d-flex flex-column gap-1">
+					<h2 component="topic/header" class="title mb-1 text-md fw-bold">
 						{{{ if topics.noAnchor }}}
 						<span>{./title}</span>
 						{{{ else }}}
