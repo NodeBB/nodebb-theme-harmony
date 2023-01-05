@@ -1,7 +1,10 @@
 <ul component="category" class="list-unstyled topic-list" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
-	<hr class="text-muted opacity-25"/>
+
 	{{{ each topics }}}
-	<li component="category/topic" class="category-item mb-4 position-relative {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
+	{{{ if @first }}}
+	<hr class="text-muted opacity-25"/>
+	{{{ end }}}
+	<li component="category/topic" class="category-item pb-1 position-relative {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
 		<link itemprop="url" content="{config.relative_path}/topic/{./slug}" />
 		<meta itemprop="name" content="{function.stripTags, ./title}" />
 		<meta itemprop="itemListOrder" content="descending" />
@@ -70,14 +73,14 @@
 						{{{ if ./tags.length }}}
 						<span class="lh-1 tag-list hidden-xs d-flex gap-2 me-2 mb-1">
 							{{{ each ./tags }}}
-							<!-- IMPORT partials/topic/tag.tpl -->
+							<a href="{config.relative_path}/tags/{./valueEncoded}"><span class="badge text-xs fw-normal tag tag-class-{./class}" data-tag="{./value}">{./valueEscaped}</span></a>
 							{{{ end }}}
 						</span>
 						{{{ end }}}
 
 						<span class="hidden-xs text-xs timeago text-muted me-2 mb-1" title="{./timestampISO}"></span>
 
-						<a class="hidden-xs text-xs mb-1" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{./user.displayname}</a>
+						<a class="hidden-xs text-xs fw-semibold mb-1" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{./user.displayname}</a>
 
 						<span class="visible-xs-inline timeago text-muted text-xs" title="{{{ if ./teaser.timestampISO }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>
 					</div>
