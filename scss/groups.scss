@@ -1,0 +1,33 @@
+.template-groups-details #panel {
+	margin-top: 0px!important;
+}
+
+.group-hover-bg {
+	$hover-color: mix($light, $dark, 97);
+	$border-color: mix($light, $dark, 90);
+	.card-body {
+		border-color: $border-color!important;
+	}
+	&:hover {
+		background-color: $hover-color;
+	}
+}
+
+.groups.details {
+	margin-top: 200px;
+
+	[component="groups/members"] {
+		tbody {
+			max-height: 500px;
+			display: block;
+			overflow-y: auto;
+			.member-name {
+				width: 100%;
+			}
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		margin-top: 300px;
+	}
+}

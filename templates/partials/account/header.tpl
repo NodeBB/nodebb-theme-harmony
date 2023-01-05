@@ -13,8 +13,8 @@
 			<span class="resize"><i class="fa fa-fw fa-2x fa-arrows"></i></span>
 			<span class="remove"><i class="fa fa-fw fa-2x fa-times"></i></span>
 		</div>
-		<div class="save">[[groups:cover-save]] <i class="fa fa-fw fa-floppy-o"></i></div>
-		<div class="indicator">[[groups:cover-saving]] <i class="fa fa-fw fa-refresh fa-spin"></i></div>
+		<div class="save text-bg-primary">[[groups:cover-save]] <i class="fa fa-fw fa-floppy-o"></i></div>
+		<div class="indicator text-bg-primary">[[groups:cover-saving]] <i class="fa fa-fw fa-refresh fa-spin"></i></div>
 		{{{ end }}}
 		{{{ end }}}
 	</div>
