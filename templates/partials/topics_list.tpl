@@ -15,17 +15,6 @@
 			<div class="col-md-7 col-sm-9 col-12 content d-flex">
 				<div class="me-3">
 					<div class="avatar">
-						{{{ if showSelect }}}
-						<div class="select" component="topic/select">
-							{{{ if ./thumbs.length }}}
-							<img src="{./thumbs.0.url}" class="not-responsive" />
-							{{{ else }}}
-							{buildAvatar(../user, "40px", true, "not-responsive")}
-							{{{ end }}}
-						</div>
-						{{{ end }}}
-
-						{{{ if !showSelect }}}
 						<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" class="text-decoration-none">
 							{{{ if ./thumbs.length }}}
 							<img src="{./thumbs.0.url}" class="not-responsive" />
@@ -33,7 +22,6 @@
 							{buildAvatar(./user, "40px", true, "not-responsive")}
 							{{{ end }}}
 						</a>
-						{{{ end }}}
 					</div>
 				</div>
 				<div class="d-flex flex-column gap-1">
