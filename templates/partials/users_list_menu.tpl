@@ -1,23 +1,15 @@
-<!-- THIS FILE IS STILL PERSONA -->
+<div component="user/list/menu" class="text-sm d-flex align-items-center gap-2">
+	<a class="btn-ghost fw-semibold" href="{config.relative_path}/users?section=online">[[global:online]]</a>
 
-<ul class="nav nav-pills">
-	<li class="nav-item">
-		<a class="nav-link" href="{config.relative_path}/users?section=online">[[global:online]]</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link" href="{config.relative_path}/users?section=sort-posts">[[users:top_posters]]</a>
-	</li>
+	<a class="btn-ghost fw-semibold" href="{config.relative_path}/users?section=sort-posts">[[users:top_posters]]</a>
+
 	{{{ if !reputation:disabled }}}
-	<li class="nav-item">
-		<a class="nav-link" href="{config.relative_path}/users?section=sort-reputation">[[users:most_reputation]]</a>
-	</li>
+	<a class="btn-ghost fw-semibold" href="{config.relative_path}/users?section=sort-reputation">[[users:most_reputation]]</a>
 	{{{ end }}}
+
 	{{{ if isAdminOrGlobalMod }}}
-	<li class="nav-item">
-		<a class="nav-link" href="{config.relative_path}/users?section=flagged">[[users:most_flags]]</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link" href="{config.relative_path}/users?section=banned">[[user:banned]]</a>
-	</li>
+	<a class="btn-ghost fw-semibold" href="{config.relative_path}/users?section=flagged">[[users:most_flags]]</a>
+
+	<a class="btn-ghost fw-semibold" href="{config.relative_path}/users?section=banned">[[user:banned]]</a>
 	{{{ end }}}
-</ul>
+</div>

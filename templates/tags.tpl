@@ -1,5 +1,3 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <!-- IMPORT partials/breadcrumbs.tpl -->
 <div data-widget-area="header">
 	{{{each widgets.header}}}
@@ -7,13 +5,14 @@
 	{{{end}}}
 </div>
 <div class="tags">
+	<h2 class="fw-semibold">[[pages:tags]]</h2>
 	{{{ if displayTagSearch }}}
 	{{{ if tags.length }}}
 	<div class="row justify-content-end mb-3">
 		<div class="col-lg-3">
 			<div class="input-group">
-				<input type="text" class="form-control" placeholder="[[global:search]]" id="tag-search">
-				<button class="btn btn-primary" type="button">
+				<input type="text" class="form-control form-control-sm" placeholder="[[global:search]]" id="tag-search">
+				<button class="btn btn-primary btn-sm" type="button">
 					<i class="fa fa-search"></i>
 				</button>
 			</div>
