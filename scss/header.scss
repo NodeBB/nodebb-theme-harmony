@@ -1,3 +1,9 @@
+// hide brand/title on user and group details pages so it doesnt break covers
+.page-user, template-groups-details {
+	.brand-container {
+		display: none;
+	}
+}
 [component="brand/wrapper"] {
 	&:hover {
 		background-color: $card-cap-bg;
