@@ -1,10 +1,7 @@
-<ul component="category" class="list-unstyled topic-list" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
+<ul component="category" class="list-unstyled topic-list pt-3" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
 
 	{{{ each topics }}}
-	{{{ if @first }}}
-	<hr class="text-muted opacity-25"/>
-	{{{ end }}}
-	<li component="category/topic" class="category-item pb-1 position-relative {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
+	<li component="category/topic" class="category-item position-relative {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
 		<link itemprop="url" content="{config.relative_path}/topic/{./slug}" />
 		<meta itemprop="name" content="{function.stripTags, ./title}" />
 		<meta itemprop="itemListOrder" content="descending" />
@@ -126,7 +123,7 @@
 			</div>
 			{{{ end }}}
 		</div>
+		<hr class="text-muted opacity-25"/>
 	</li>
-	<hr class="text-muted opacity-25"/>
 	{{{end}}}
 </ul>
