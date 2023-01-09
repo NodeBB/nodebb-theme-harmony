@@ -1,47 +1,45 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
-<div component="pagination" class="pagination-container mt-3<!-- IF !pagination.pages.length --> hidden<!-- ENDIF !pagination.pages.length -->">
-	<ul class="pagination hidden-xs justify-content-center">
-		<li class="page-item previous float-start<!-- IF !pagination.prev.active --> disabled<!-- ENDIF !pagination.prev.active -->">
-			<a class="page-link" href="?{pagination.prev.qs}" data-page="{pagination.prev.page}"><i class="fa fa-chevron-left"></i> </a>
+<div component="pagination" class="pagination-container mt-3{{{ if !pagination.pages.length }}} hidden{{{ end }}}">
+	<ul class="pagination pagination-sm gap-1 hidden-xs hidden-sm justify-content-center">
+		<li class="page-item previous float-start{{{ if !pagination.prev.active }}} disabled{{{ end }}}">
+			<a class="page-link rounded fw-secondary text-reset px-3" href="?{pagination.prev.qs}" data-page="{pagination.prev.page}"><i class="fa fa-chevron-left"></i> </a>
 		</li>
 
 		{{{each pagination.pages}}}
-			<!-- IF pagination.pages.separator -->
+			{{{ if pagination.pages.separator }}}
 			<li component="pagination/select-page" class="page-item page select-page">
-				<a class="page-link" href="#"><i class="fa fa-ellipsis-h"></i></a>
+				<a class="page-link rounded fw-secondary text-reset px-3" href="#"><i class="fa fa-ellipsis-h"></i></a>
 			</li>
-			<!-- ELSE -->
-			<li class="page-item page<!-- IF pagination.pages.active --> active<!-- ENDIF pagination.pages.active -->" >
-				<a class="page-link" href="?{pagination.pages.qs}" data-page="{pagination.pages.page}">{pagination.pages.page}</a>
+			{{{ else }}}
+			<li class="page-item page{{{ if pagination.pages.active }}} active{{{ end }}}" >
+				<a class="page-link rounded fw-secondary text-reset px-3" href="?{pagination.pages.qs}" data-page="{pagination.pages.page}">{pagination.pages.page}</a>
 			</li>
-			<!-- ENDIF pagination.pages.separator -->
+			{{{ end }}}
 		{{{end}}}
 
-		<li class="page-item next float-end<!-- IF !pagination.next.active --> disabled<!-- ENDIF !pagination.next.active -->">
-			<a class="page-link" href="?{pagination.next.qs}" data-page="{pagination.next.page}"> <i class="fa fa-chevron-right"></i></a>
+		<li class="page-item next float-end {{{ if !pagination.next.active }}} disabled{{{ end }}}">
+			<a class="page-link rounded fw-secondary text-reset px-3" href="?{pagination.next.qs}" data-page="{pagination.next.page}"> <i class="fa fa-chevron-right"></i></a>
 		</li>
 	</ul>
 
-	<ul class="pagination hidden-sm hidden-md hidden-lg justify-content-center">
-		<li class="page-item first<!-- IF !pagination.prev.active --> disabled<!-- ENDIF !pagination.prev.active -->">
-			<a class="page-link" href="?{pagination.first.qs}" data-page="1"><i class="fa fa-fast-backward"></i> </a>
+	<ul class="pagination pagination-sm hidden-md hidden-lg justify-content-center">
+		<li class="page-item first{{{ if !pagination.prev.active }}} disabled{{{ end }}}">
+			<a class="page-link fw-secondary text-reset" href="?{pagination.first.qs}" data-page="1"><i class="fa fa-fast-backward"></i> </a>
 		</li>
 
-		<li class="page-item previous<!-- IF !pagination.prev.active --> disabled<!-- ENDIF !pagination.prev.active -->">
-			<a class="page-link" href="?{pagination.prev.qs}" data-page="{pagination.prev.page}"><i class="fa fa-chevron-left"></i> </a>
+		<li class="page-item previous{{{ if !pagination.prev.active }}} disabled{{{ end }}}">
+			<a class="page-link fw-secondary text-reset" href="?{pagination.prev.qs}" data-page="{pagination.prev.page}"><i class="fa fa-chevron-left"></i> </a>
 		</li>
 
 		<li component="pagination/select-page" class="page-item page select-page">
-			<a class="page-link" href="#">{pagination.currentPage} / {pagination.pageCount}</a>
+			<a class="page-link fw-secondary text-reset" href="#">{pagination.currentPage} / {pagination.pageCount}</a>
 		</li>
 
-		<li class="page-item next<!-- IF !pagination.next.active --> disabled<!-- ENDIF !pagination.next.active -->">
-			<a class="page-link" href="?{pagination.next.qs}" data-page="{pagination.next.page}"> <i class="fa fa-chevron-right"></i></a>
+		<li class="page-item next{{{ if !pagination.next.active }}} disabled{{{ end }}}">
+			<a class="page-link fw-secondary text-reset" href="?{pagination.next.qs}" data-page="{pagination.next.page}"> <i class="fa fa-chevron-right"></i></a>
 		</li>
 
-		<li class="page-item last<!-- IF !pagination.next.active --> disabled<!-- ENDIF !pagination.next.active -->">
-			<a class="page-link" href="?{pagination.last.qs}" data-page="{pagination.pageCount}"><i class="fa fa-fast-forward"></i> </a>
+		<li class="page-item last{{{ if !pagination.next.active }}} disabled{{{ end }}}">
+			<a class="page-link fw-secondary text-reset" href="?{pagination.last.qs}" data-page="{pagination.pageCount}"><i class="fa fa-fast-forward"></i> </a>
 		</li>
 	</ul>
 </div>
