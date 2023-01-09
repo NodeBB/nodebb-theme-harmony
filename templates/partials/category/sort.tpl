@@ -1,7 +1,7 @@
 <div class="btn-group bottom-sheet" component="thread/sort">
 	<button class="btn btn-link d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown" type="button">
 		<i class="fa fa-fw fa-arrow-down-wide-short small link-primary"></i>
-		<span class="visible-sm-inline visible-md-inline visible-lg-inline small">[[topic:sort_by]]</span>
+		<span class="visible-md-inline visible-lg-inline small">[[topic:sort_by]]</span>
 	</button>
 
 	<ul class="dropdown-menu">

@@ -47,7 +47,7 @@
 					<div class="stat">
 						<div class="align-items-center justify-content-center card card-header px-0 py-3 border-0 rounded-1 h-100 gap-2">
 							<span class="stat-label text-xs fw-semibold"><i class="text-muted fa-solid fa-envelope"></i> <span>[[user:email]]</span> {{{ if emailHidden}}}<span class="text-lowercase">([[global:hidden]])</span>{{{ end }}}</span>
-							<span class="fs-6 ff-secondary">{email}</span>
+							<span class="text-sm text-break ff-secondary">{email}</span>
 						</div>
 					</div>
 					{{{ end }}}
@@ -56,7 +56,7 @@
 					<div class="stat">
 						<div class="align-items-center justify-content-center card card-header px-0 py-3 border-0 rounded-1 h-100 gap-2">
 							<span class="stat-label text-xs fw-semibold"><i class="text-muted fa-solid fa-globe"></i> <span>[[user:website]]</span></span>
-							<a class="fs-6 ff-secondary text-underline text-reset" href="{websiteLink}" rel="nofollow noopener noreferrer">{websiteName}</a>
+							<a class="text-sm text-break ff-secondary text-underline text-reset" href="{websiteLink}" rel="nofollow noopener noreferrer">{websiteName}</a>
 						</div>
 					</div>
 					{{{ end }}}

@@ -7,7 +7,7 @@
         </span>
         {{{ else }}}
     <i class="fa fa-fw {{{ if selectCategoryIcon }}}{selectCategoryIcon}{{{ else }}}fa-list{{{ end }}} link-primary small"></i>
-    <span class="visible-sm-inline visible-md-inline visible-lg-inline small">{{{ if selectCategoryLabel }}}{selectCategoryLabel}{{{ else }}}[[topic:thread_tools.select_category]]{{{ end }}}</span>
+    <span class="visible-md-inline visible-lg-inline small">{{{ if selectCategoryLabel }}}{selectCategoryLabel}{{{ else }}}[[topic:thread_tools.select_category]]{{{ end }}}</span>
     {{{ end }}}</span>
 </button>
 <div component="category-selector-search" class="hidden position-absolute">

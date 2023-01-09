@@ -1,7 +1,7 @@
 <div class="btn-group bottom-sheet {{{ if !terms.length }}}hidden{{{ end }}}">
 	<button type="button" class="btn btn-link d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown">
 		<i class="fa fa-fw fa-clock small link-primary"></i>
-		<span class="visible-sm-inline visible-md-inline visible-lg-inline small">{selectedTerm.name}</span>
+		<span class="visible-md-inline visible-lg-inline small">{selectedTerm.name}</span>
 	</button>
 	<ul class="dropdown-menu" role="menu">
 		{{{each terms}}}
