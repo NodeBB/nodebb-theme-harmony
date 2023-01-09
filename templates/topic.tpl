@@ -8,31 +8,31 @@
 
 <!-- IMPORT partials/breadcrumbs.tpl -->
 
-<h2 component="post/header" class="fs-2 mb-3" itemprop="name">
+<h2 component="post/header" class="fs-2 mb-1" itemprop="name">
 	<span class="topic-title" component="topic/title">{title}</span>
 </h2>
 
 <div class="topic-info d-flex gap-2 align-items-center flex-wrap">
 	<span component="topic/labels" class="d-flex gap-2">
-		<span component="topic/scheduled" class="badge bg-primary {{{ if !scheduled }}}hidden{{{ end }}}">
+		<span component="topic/scheduled" class="badge badge border border-gray-300 text-primary {{{ if !scheduled }}}hidden{{{ end }}}">
 			<i class="fa fa-clock-o"></i>
 			[[topic:scheduled]]
 		</span>
-		<span component="topic/pinned" class="badge bg-primary {{{ if (scheduled || !pinned) }}}hidden{{{ end }}}">
+		<span component="topic/pinned" class="badge badge border border-gray-300 text-primary {{{ if (scheduled || !pinned) }}}hidden{{{ end }}}">
 			<i class="fa fa-thumb-tack"></i>
 			{{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {pinExpiryISO}]]{{{ end }}}
 		</span>
-		<span component="topic/locked" class="badge bg-primary {{{ if !locked }}}hidden{{{ end }}}">
+		<span component="topic/locked" class="badge badge border border-gray-300 text-primary {{{ if !locked }}}hidden{{{ end }}}">
 			<i class="fa fa-lock"></i>
 			[[topic:locked]]
 		</span>
-		<span class="badge bg-primary {{{ if !oldCid }}}hidden{{{ end }}}">
+		<span class="badge badge border border-gray-300 text-primary {{{ if !oldCid }}}hidden{{{ end }}}">
 			<i class="fa fa-arrow-circle-right"></i>
 			{{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}
 		</span>
 		{{{each icons}}}<span class="align-middle">{@value}</span>{{{end}}}
 	</span>
-	<a class="lh-1" href="{config.relative_path}/category/{category.slug}">{function.buildCategoryLabel, category}</a>
+	<a class="lh-1" href="{config.relative_path}/category/{category.slug}">{function.buildCategoryLabel, category, "border"}</a>
 	<div class="lh-1 tags tag-list d-flex hidden-xs gap-2"><!-- IMPORT partials/topic/tags.tpl --></div>
 	<div class="d-flex hidden-xs gap-2">
 		<!-- IMPORT partials/topic/stats.tpl -->

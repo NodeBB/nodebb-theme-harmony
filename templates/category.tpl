@@ -6,11 +6,11 @@
 		<h2 class="fs-2 fw-semibold mb-0">{./name}</h2>
 	</div>
 	<div class="d-flex flex-wrap gap-2">
-		<span class="badge stats">
+		<span class="badge text-body border border-gray-300 stats text-xs">
 			<span title="{totalTopicCount}" class="human-readable-number fw-bold">{totalTopicCount}</span>
 			<span class="text-lowercase fw-normal">[[global:topics]]</span>
 		</span>
-		<span class="badge stats">
+		<span class="badge text-body border border-gray-300 stats text-xs">
 			<span title="{totalPostCount}" class="human-readable-number fw-bold">{totalPostCount}</span>
 			<span class="text-lowercase fw-normal">[[global:posts]]</span>
 		</span>

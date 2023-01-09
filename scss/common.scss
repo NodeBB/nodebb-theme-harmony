@@ -10,12 +10,6 @@ body {
 .text-sm { font-size: 0.875rem!important; } // 14px
 .text-xs { font-size: 0.75rem!important; } // 12px
 
-.badge.stats {
-	background-color: $gray-200;
-	color: $gray-700;
-	font-size: 12px;
-}
-
 .btn-link:hover {
 	text-decoration: none;
 }

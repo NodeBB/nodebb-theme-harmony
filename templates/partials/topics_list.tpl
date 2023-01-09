@@ -31,19 +31,19 @@
 					</h2>
 					<div class="info d-flex align-items-center flex-wrap">
 						<span component="topic/labels" class="d-flex mb-1">
-							<span component="topic/scheduled" class="me-2 badge bg-primary {{{ if !./scheduled }}}hidden{{{ end }}}">
+							<span component="topic/scheduled" class="me-2 badge border border-gray-300 text-primary {{{ if !./scheduled }}}hidden{{{ end }}}">
 								<i class="fa fa-clock-o"></i>
 								[[topic:scheduled]]
 							</span>
-							<span component="topic/pinned" class="me-2 badge bg-primary {{{ if (./scheduled || !./pinned) }}}hidden{{{ end }}}">
+							<span component="topic/pinned" class="me-2 badge border border-gray-300 text-primary {{{ if (./scheduled || !./pinned) }}}hidden{{{ end }}}">
 								<i class="fa fa-thumb-tack"></i>
 								{{{ if !./pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {./pinExpiryISO}]]{{{ end }}}
 							</span>
-							<span component="topic/locked" class="me-2 badge bg-primary {{{ if !./locked }}}hidden{{{ end }}}">
+							<span component="topic/locked" class="me-2 badge border border-gray-300 text-primary {{{ if !./locked }}}hidden{{{ end }}}">
 								<i class="fa fa-lock"></i>
 								[[topic:locked]]
 							</span>
-							<span class="me-2 badge bg-primary {{{ if !./oldCid }}}hidden{{{ end }}}">
+							<span class="me-2 badge border border-gray-300 text-primary {{{ if !./oldCid }}}hidden{{{ end }}}">
 								<i class="fa fa-arrow-circle-right"></i>
 								[[topic:moved]]
 							</span>
@@ -58,7 +58,7 @@
 						{{{ if ./tags.length }}}
 						<span class="lh-1 tag-list hidden-xs d-flex gap-2 me-2 mb-1">
 							{{{ each ./tags }}}
-							<a href="{config.relative_path}/tags/{./valueEncoded}"><span class="badge text-xs fw-normal tag tag-class-{./class}" data-tag="{./value}">{./valueEscaped}</span></a>
+							<a href="{config.relative_path}/tags/{./valueEncoded}"><span class="badge border border-gray-300 text-xs fw-normal tag tag-class-{./class}" data-tag="{./value}">{./valueEscaped}</span></a>
 							{{{ end }}}
 						</span>
 						{{{ end }}}
