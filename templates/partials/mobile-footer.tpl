@@ -38,26 +38,26 @@
 		{{{ if config.loggedIn }}}
 		<ul id="logged-in-menu" class="list-unstyled d-flex align-items-center w-100 gap-3 mb-0">
 			{{{ if config.searchEnabled }}}
-			<li component="sidebar/search" class="nav-item search bottom-sheet position-relative">
+			<li component="sidebar/search" class="nav-item m-0 search bottom-sheet position-relative">
 			<!-- IMPORT partials/sidebar/search-mobile.tpl -->
 			</li>
 			{{{ end }}}
 
-			<li component="notifications" class="nav-item notifications bottom-sheet">
+			<li component="notifications" class="nav-item m-0 notifications bottom-sheet">
 			<!-- IMPORT partials/sidebar/notifications.tpl -->
 			</li>
 
 			{{{ if canChat }}}
-			<li class="nav-item chats bottom-sheet">
+			<li class="nav-item m-0 chats bottom-sheet">
 			<!-- IMPORT partials/sidebar/chats.tpl -->
 			</li>
 			{{{ end }}}
 
-			<li component="sidebar/drafts" class="nav-item drafts bottom-sheet">
+			<li component="sidebar/drafts" class="nav-item m-0 drafts bottom-sheet">
 			<!-- IMPORT partials/sidebar/drafts.tpl -->
 			</li>
 
-			<li id="user_label" class="nav-item py-2 bottom-sheet usermenu">
+			<li id="user_label" class="nav-item m-0 py-2 bottom-sheet usermenu">
 			<!-- IMPORT partials/sidebar/user-menu.tpl -->
 			</li>
 		</ul>

@@ -12,7 +12,7 @@
 	<span class="topic-title" component="topic/title">{title}</span>
 </h2>
 
-<div class="topic-info d-flex gap-2 align-items-center">
+<div class="topic-info d-flex gap-2 align-items-center flex-wrap">
 	<span component="topic/labels" class="d-flex gap-2">
 		<span component="topic/scheduled" class="badge bg-primary {{{ if !scheduled }}}hidden{{{ end }}}">
 			<i class="fa fa-clock-o"></i>

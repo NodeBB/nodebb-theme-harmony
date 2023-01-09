@@ -13,7 +13,7 @@
 			<!-- IMPORT partials/topic/tools.tpl -->
 
 			{{{ if (!feeds:disableRSS && rssFeedUrl) }}}
-			<a class="btn btn-link link-primary" target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss"></i></a>
+			<a class="btn btn-link link-primary hidden-xs" target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss"></i></a>
 			{{{ end }}}
 
 			<span class="loading-indicator btn float-start text-muted navbar-text hidden" done="0">
