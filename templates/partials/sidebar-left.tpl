@@ -33,7 +33,7 @@
 			<a href="#" role="button" component="sidebar/toggle" class="nav-btn d-flex gap-2 align-items-center p-2 pointer nav-link w-100 text-nowrap">
 				<i class="fa fa-fw fa-angles-right"></i>
 				<i class="fa fa-fw fa-angles-left"></i>
-				<span class="nav-text visible-open fw-semibold small">[[harmony:collapse]]</span>
+				<span class="nav-text visible-open fw-semibold small lh-1">[[harmony:collapse]]</span>
 			</a>
 		</div>
 	</div>

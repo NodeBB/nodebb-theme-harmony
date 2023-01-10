@@ -65,8 +65,6 @@
 
 						<span class="hidden-xs text-xs timeago text-muted me-2 mb-1" title="{./timestampISO}"></span>
 
-						<a class="hidden-xs text-xs fw-semibold mb-1" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{./user.displayname}</a>
-
 						<span class="visible-xs-inline timeago text-muted text-xs" title="{{{ if ./teaser.timestampISO }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>
 					</div>
 				</div>
