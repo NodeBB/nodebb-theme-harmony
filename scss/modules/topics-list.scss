@@ -1,3 +1,6 @@
+.topic-list {
+	overflow-x: hidden!important;
+}
 [component="category/topic"] {
 	&.selected {
 		[component="topic/select"] {
