@@ -4,13 +4,16 @@
 
 {{{ each rooms }}}
 <li class="{{{ if ./unread }}}unread{{{ end }}} dropdown-item rounded-1 p-2 d-flex gap-2 pointer" data-roomid="{./roomId}">
+	<div class="main-avatar">
 	{{{ each ./users}}}
 	{{{ if @first }}}
-	<div class="main-avatar">
 		<!-- IMPORT partials/chats/user.tpl -->
+	{{{ end }}}
+	{{{ end }}}
+	{{{ if !./users.length}}}
+	<span class="avatar avatar-rounded text-bg-warning" component="avatar/icon" style="--avatar-size: 32px;">?</span>
+	{{{ end }}}
 	</div>
-	{{{ end }}}
-	{{{ end }}}
 
 	<div class="notification-chat-content d-flex flex-grow-1 flex-column w-100">
 		<div class="room-name fw-semibold text-xs">

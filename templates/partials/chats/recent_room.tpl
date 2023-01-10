@@ -4,7 +4,7 @@
 	{{{ each rooms.users}}}
 	{{{ if @first }}}
 	<div class="main-avatar">
-		<a href="{config.relative_path}/user/{rooms.users.userslug}">{buildAvatar(rooms.users, "24px", false, "rounded")}</a>
+		<a href="{config.relative_path}/user/{rooms.users.userslug}" class="text-decoration-none">{buildAvatar(rooms.users, "24px", false, "rounded")}</a>
 		<span component="chat/title">{{{ if rooms.roomName }}}{rooms.roomName}{{{ else }}}{rooms.usernames}{{{ end }}}</span>
 	</div>
 	{{{ else }}}

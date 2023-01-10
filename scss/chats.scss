@@ -9,7 +9,7 @@ body.page-user-chats {
 
 /* Styles common to both full chat and chat modal */
 .chats-full, .chat-modal {
-	height: calc(100vh - var(--panel-offset) - $spacer);
+	height: calc(100vh - var(--panel-offset) - $spacer)!important;
 }
 
 .expanded-chat, .chat-modal {
