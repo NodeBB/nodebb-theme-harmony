@@ -11,4 +11,7 @@
 	&.unread .title {
 		color: $link-color;
 	}
+	.ui-sortable-handle {
+		cursor: move;
+	}
 }
