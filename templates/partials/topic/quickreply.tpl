@@ -13,7 +13,7 @@
 			<textarea name="content" component="topic/quickreply/text" class="form-control mousetrap" placeholder="[[modules:composer.textarea.placeholder]]"></textarea>
 			<div class="imagedrop"><div>[[topic:composer.drag_and_drop_images]]</div></div>
 		</div>
-		<div class="text-end">
+		<div>
 			<div class="btn-group">
 				<button type="submit" component="topic/quickreply/button" class="btn btn-sm btn-primary">[[topic:post-quick-reply]]</button>
 				<button type="submit" component="topic/quickreply/expand" class="btn btn-sm btn-primary" formmethod="get"><i class="fa fa-expand"></i></button>
