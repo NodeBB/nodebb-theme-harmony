@@ -27,7 +27,6 @@
 	}
 
 	.topic {
-
 		.posts {
 			max-width: 960px;
 			// fixes code blocks pushing content out on mobile
@@ -72,6 +71,7 @@
 	}
 
 	.quick-reply {
+		max-width: 960px;
 		@include topic-avatars();
 	}
 
