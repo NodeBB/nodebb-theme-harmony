@@ -8,11 +8,11 @@
 
 <!-- IMPORT partials/breadcrumbs.tpl -->
 
-<h2 component="post/header" class="fs-2 mb-1" itemprop="name">
+<h2 component="post/header" class="fs-2 mb-1 {{{ if config.centerHeaderElements }}}text-center{{{ end }}}" itemprop="name">
 	<span class="topic-title" component="topic/title">{title}</span>
 </h2>
 
-<div class="topic-info d-flex gap-2 align-items-center flex-wrap">
+<div class="topic-info d-flex gap-2 align-items-center flex-wrap {{{ if config.centerHeaderElements }}}justify-content-center{{{ end }}}">
 	<span component="topic/labels" class="d-flex gap-2">
 		<span component="topic/scheduled" class="badge badge border border-gray-300 text-primary {{{ if !scheduled }}}hidden{{{ end }}}">
 			<i class="fa fa-clock-o"></i>

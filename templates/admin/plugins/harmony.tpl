@@ -6,6 +6,10 @@
 				<input type="checkbox" class="form-check-input" id="enableQuickReply" name="enableQuickReply" />
 				<label for="enableQuickReply" class="form-check-label">Enable quick reply</label>
 			</div>
+			<div class="form-check form-switch">
+				<input type="checkbox" class="form-check-input" id="centerHeaderElements" name="centerHeaderElements" />
+				<label for="centerHeaderElements" class="form-check-label">Center header elements</label>
+			</div>
 		</form>
 	</div>
 </div>

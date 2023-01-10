@@ -56,9 +56,9 @@ library.defineWidgetAreas = async function (areas) {
 };
 
 library.getThemeConfig = async function (config) {
-	const { enableQuickReply } = await meta.settings.get('harmony');
+	const { enableQuickReply, centerHeaderElements } = await meta.settings.get('harmony');
 	config.enableQuickReply = enableQuickReply === 'on';
-
+	config.centerHeaderElements = centerHeaderElements === 'on';
 	return config;
 };
 
