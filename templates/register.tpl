@@ -73,7 +73,11 @@
 						{{{ each authentication }}}
 						<li class="{./name} mb-2">
 							<a class="btn btn-outline-light d-flex align-items-center" rel="nofollow noopener noreferrer" target="_top" href="{config.relative_path}{./url}">
-								<i class="fa {./icons.normal}" style="color:{./color};"></i>
+								{{{ if ./icons.svg }}}
+								{./icons.svg}
+								{{{ else }}}
+								<i class="{./icons.normal}" style="color:{./color};"></i>
+								{{{ end }}}
 								{{{ if ./labels.register }}}
 								<div class="flex-1 text-body text-sm">{./labels.register}</div>
 								{{{ end }}}
