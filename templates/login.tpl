@@ -6,9 +6,9 @@
 <div class="row login">
 	<div class="d-flex flex-column gap-2 {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<h2 class="tracking-tight fw-semibold text-center">[[global:login]]</h2>
-		<div class="row justify-content-center gap-3">
+		<div class="row justify-content-center gap-5">
 			{{{ if allowLocalLogin }}}
-			<div class="col-12 col-md-4">
+			<div class="col-12 col-md-3 px-md-0">
 				<div class="login-block">
 					<div class="alert alert-danger alert-dismissible" id="login-error-notify" {{{ if error }}}style="display:block"{{{ else }}}style="display: none;"{{{ end }}}>
 						<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -59,7 +59,7 @@
 						<hr/>
 
 						{{{ if allowRegistration }}}
-						<span>[[login:dont_have_account]]</span>
+						<span class="text-sm">[[login:dont_have_account]]</span>
 						<a class="btn btn-outline-light text-body" href="{config.relative_path}/register">[[register:register]]</a>
 						{{{ end }}}
 					</form>
@@ -68,7 +68,7 @@
 			{{{ end }}}
 
 			{{{ if alternate_logins }}}
-			<div class="col-12 col-md-4">
+			<div class="col-12 col-md-3 px-md-0">
 				<div class="alt-login-block d-flex flex-column gap-2">
 					<label>[[login:alternative_logins]]</label>
 					<ul class="alt-logins list-unstyled">
@@ -76,8 +76,8 @@
 						<li class="{./name}">
 							<a class="btn btn-outline-light d-flex align-items-center" rel="nofollow noopener noreferrer" target="_top" href="{config.relative_path}{./url}">
 								<i class="fa {./icons.normal}" style="color:{./color};"></i>
-								{{{ if ./label }}}
-								<div class="flex-1 text-body text-sm">{./label}</div>
+								{{{ if ./labels.login }}}
+								<div class="flex-1 text-body text-sm">{./labels.login}</div>
 								{{{ end }}}
 							</a></li>
 						{{{ end }}}
