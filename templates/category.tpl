@@ -11,7 +11,7 @@
 <div class="d-flex flex-column gap-2">
 	<div class="d-flex gap-2 align-items-center mb-1 {{{ if config.centerHeaderElements }}}justify-content-center{{{ end }}}">
 		{buildCategoryIcon(@value, "40px", "rounded-1 flex-shrink-0")}
-		<h2 class="fs-2 fw-semibold mb-0">{./name}</h2>
+		<h2 class="fs-2 fw-semibold mb-0 text-center">{./name}</h2>
 	</div>
 	<div class="d-flex flex-wrap gap-2 {{{ if config.centerHeaderElements }}}justify-content-center{{{ end }}}">
 		<span class="badge text-body border border-gray-300 stats text-xs">
