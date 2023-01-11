@@ -5,6 +5,7 @@ body {
 .ff-secondary {
 	font-family: $font-family-secondary;
 }
+.tracking-tight { letter-spacing: -0.025em; }
 
 .text-md { font-size: 1.125rem!important; } // 18px
 .text-sm { font-size: 0.875rem!important; } // 14px
