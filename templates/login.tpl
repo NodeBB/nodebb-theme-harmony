@@ -73,7 +73,7 @@
 					<label>[[login:alternative_logins]]</label>
 					<ul class="alt-logins list-unstyled">
 						{{{ each authentication }}}
-						<li class="{./name}">
+						<li class="{./name} mb-2">
 							<a class="btn btn-outline-light d-flex align-items-center" rel="nofollow noopener noreferrer" target="_top" href="{config.relative_path}{./url}">
 								<i class="fa {./icons.normal}" style="color:{./color};"></i>
 								{{{ if ./labels.login }}}
