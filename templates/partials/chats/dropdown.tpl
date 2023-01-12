@@ -8,8 +8,8 @@
 	{{{ if ./users.length }}}
 		{{{ if ./groupChat}}}
 		<div class="position-relative" style="width:32px; height:32px;">
-			<a class="position-absolute top-0" style="left: 8px;" href="{config.relative_path}/user/{./users.1.userslug}" class="text-decoration-none">{buildAvatar(./users.1, "24px", true)}</a>
-			<a class="position-absolute start-0" style="top: 8px;" href="{config.relative_path}/user/{./users.0.userslug}" class="text-decoration-none">{buildAvatar(./users.0, "24px", true)}</a>
+			<a class="text-decoration-none position-absolute top-0" style="left: 8px;" href="{config.relative_path}/user/{./users.1.userslug}">{buildAvatar(./users.1, "24px", true)}</a>
+			<a class="text-decoration-none position-absolute start-0" style="top: 8px;" href="{config.relative_path}/user/{./users.0.userslug}" >{buildAvatar(./users.0, "24px", true)}</a>
 		</div>
 		{{{ else }}}
 		<a href="{config.relative_path}/user/{./users.0.userslug}" class="text-decoration-none">{buildAvatar(./users.0, "32px", true)}</a>
