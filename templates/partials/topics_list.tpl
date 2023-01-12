@@ -52,7 +52,7 @@
 
 
 						{{{ if !template.category }}}
-						<a class="lh-1 me-2 mb-1" href="{config.relative_path}/category/{./category.slug}">{function.buildCategoryLabel, ./category}</a>
+						<a class="lh-1 me-2 mb-1" href="{config.relative_path}/category/{./category.slug}">{function.buildCategoryLabel, ./category, "border"}</a>
 						{{{ end }}}
 
 						{{{ if ./tags.length }}}

@@ -42,14 +42,14 @@
 	<hr />
 
 	<div component="groups/container" class="row" id="groups-list" data-nextstart={nextStart}>
-		<!-- IF groups.length -->
+		{{{ if groups.length }}}
 		<!-- IMPORT partials/groups/list.tpl -->
-		<!-- ELSE -->
+		{{{ else }}}
 		<div class="col-12">
 			<div class="alert alert-warning">
 			[[groups:no_groups_found]]
 			</div>
 		</div>
-		<!-- ENDIF groups.length -->
+		{{{ end }}}
 	</div>
 </div>

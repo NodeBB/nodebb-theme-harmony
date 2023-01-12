@@ -13,16 +13,12 @@
 		</div>
 	</div>
 
-	<div class="my-2">
-		<!-- IMPORT partials/breadcrumbs.tpl -->
-	</div>
-
-	<div class="d-flex flex-column mb-2">
+	<div class="d-flex flex-column pb-4 mb-4 mt-2 border-bottom">
 		<div class="d-flex justify-content-between align-items-center">
 			<div class="d-flex align-items-center gap-2">
 				<h2 class="mb-0">{group.displayName}</h2>
-				{{{ if group.private }}}<span class="badge text-bg-info">[[groups:details.private]]</span>{{{ end }}}
-				{{{ if group.hidden }}}<span class="badge text-bg-info">[[groups:details.hidden]]</span>{{{ end }}}
+				{{{ if group.private }}}<span class="badge text-bg-light border border-1">[[groups:details.private]]</span>{{{ end }}}
+				{{{ if group.hidden }}}<span class="badge text-bg-light border border-1">[[groups:details.hidden]]</span>{{{ end }}}
 			</div>
 
 			<div>
