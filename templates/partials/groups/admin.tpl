@@ -80,13 +80,11 @@
 
 		<div class="mb-3">
 			<label class="form-label" for="memberPostCids">[[groups:details.member-post-cids]]</label>
-			<div class="row">
-				<div class="col-md-6">
-					<input id="memberPostCids" type="text" class="form-control" value="{group.memberPostCids}">
-				</div>
-				<div class="col-md-6 member-post-cids-selector">
+			<div class="d-flex gap-1">
+				<div class="member-post-cids-selector">
 					<!-- IMPORT partials/category-selector.tpl -->
 				</div>
+				<input id="memberPostCids" type="text" class="form-control" value="{group.memberPostCids}">
 			</div>
 		</div>
 
