@@ -17,12 +17,12 @@
 				<a href="{./path}" class="text-decoration-none notification-chat-content text-reset text text-sm">
 					{./bodyShort}
 				</a>
-				<div class="text-xs text-muted">{./timeagoLong}</div>
+				<div class="text-xs text-muted">{{{ if ./timeagoLong }}}{./timeagoLong}{{{ else }}}<span class="timeago" title="{./datetimeISO}"></span>{{{ end }}}</div>
 			</div>
 		</div>
 		<div class="notification-chat-controls">
 			{{{ if ./nid }}}
-			<button class="mark-read btn btn-light btn-sm" aria-label="Mark Read">
+			<button class="mark-read btn btn-light btn-sm">
 				<i class="unread fa fa-xs fa-circle text-primary {{{ if ./read }}}hidden{{{ end }}}"></i>
 				<i class="read fa fa-xs fa-circle-o text-secondary {{{ if !./read }}}hidden{{{ end }}}"></i>
 			</button>

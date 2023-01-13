@@ -1,68 +1,33 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
-
 <div class="notifications">
 
-	<!-- IMPORT partials/breadcrumbs.tpl -->
 	<div class="btn-toolbar justify-content-end" role="toolbar">
-		<div class="btn-group me-2">
-			<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-				{{{ if selectedFilter }}}{selectedFilter.name}{{{ end}}} <span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu dropdown-menu-end" role="menu">
-				{{{ each filters }}}
-				{{{ if filters.separator }}}
-				<li role="separator" class="dropdown-divider"></li>
-				{{{ else }}}
-				<li role="presentation" class="category">
-					<a class="dropdown-item" role="menu-item" href="{config.relative_path}/notifications?filter={filters.filter}"><i class="fa fa-fw {{{ if filters.selected }}}fa-check{{{ end }}}"></i> {filters.name}</a>
-				</li>
-				{{{ end }}}
-				{{{ end }}}
-			</ul>
-		</div>
-
-		<div class="btn-group">
-			<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
-				<i class="fa fa-eye"></i>
-				<span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu dropdown-menu-end" role="menu" aria-labelledby="dropdownMenu1">
-				<li role="presentation"><a class="dropdown-item" role="menuitem" tabindex="-1" href="#" component="notifications/mark_all">[[notifications:mark_all_read]]</a></li>
-			</ul>
-		</div>
+		<button class="btn btn-light" component="notifications/mark_all">[[notifications:mark_all_read]]</button>
 	</div>
 
 	<hr />
 
-	<div class="alert alert-info {{{ if notifications.length }}}hidden{{{ end }}}">
-		[[notifications:no_notifs]]
-	</div>
-
-	<ul class="notifications-list list-unstyled" data-nextstart="{nextStart}">
-	{{{each notifications}}}
-		<li data-nid="{notifications.nid}" class="{notifications.readClass} {{{ if !./read}}}text-bg-warning{{{ end }}} d-flex pointer border p-3 mb-2" component="notifications/item">
-			<div class="me-2">
-				{{{ if notifications.from }}}
-				{buildAvatar(notifications.user, "24px", true)}
+	<div class="row">
+		<div class="col-12 col-md-3 col-lg-2 border-end-md text-sm mb-3">
+			<div class="nav sticky-top d-flex flex-row flex-md-column flex-wrap gap-1" style="z-index: 1;">
+				{{{ each filters }}}
+				{{{ if ./separator }}}
+				<hr/>
 				{{{ else }}}
-				{{{ if notifications.image }}}
-				<img width="24" height="24" src="{notifications.image}" />
+				<a class="btn-ghost fw-semibold {{{ if ./selected }}}active{{{ end }}}" href="{config.relative_path}/notifications?filter={./filter}">
+					<div class="flex-1">{filters.name}</div>
+					<span class="text-xs human-readable-number" title="{./count}">{./count}</span>
+				</a>
 				{{{ end }}}
 				{{{ end }}}
 			</div>
-			<div>
-				<p class="mb-1">
-					<a class="text-reset" component="notifications/item/link" href="{notifications.path}">{notifications.bodyShort}</a>
-				</p>
-				<p class="timestamp">
-					<span class="timeago small text-reset" title="{notifications.datetimeISO}"></span>
-				</p>
-			</div>
-		</li>
-	{{{end}}}
-	</ul>
-	<!-- IMPORT partials/paginator.tpl -->
+		</div>
+		<div class="col-12 col-md-9 col-lg-10">
+			<ul class="notifications-list list-unstyled" data-nextstart="{nextStart}">
+				<!-- IMPORT partials/notifications_list.tpl -->
+			</ul>
+			<!-- IMPORT partials/paginator.tpl -->
+		</div>
+	</div>
 </div>
 
 
