@@ -1,18 +1,15 @@
 <!-- IF roomId -->
 <div component="chat/messages" class="expanded-chat d-flex flex-column h-100" data-roomid="{roomId}">
 	<div component="chat/header" class="d-flex align-items-center px-3 gap-1">
-		<span class="members flex-grow-1">
-			[[modules:chat.chatting_with]]:
-			{{{each users}}}
-			<a href="{config.relative_path}/uid/{../uid}">{../username}</a><!-- IF !@last -->,<!-- END -->
-			{{{end}}}
-		</span>
+		<h5 class="members flex-1 fw-semibold tracking-tight">
+			{./chatWithMessage}
+		</h5>
 
 		<!-- IMPORT partials/chats/options.tpl -->
 	</div>
 	<hr class="text-muted opacity-25"/>
 	<div class="position-relative">
-		<div component="chat/messages/scroll-up-alert" class="position-absolute scroll-up-alert alert alert-info hidden w-100" role="button" style="z-index: 1;">[[modules:chat.scroll-up-alert]]</div>
+		<div component="chat/messages/scroll-up-alert" class="position-absolute me-4 end-0 text-sm scroll-up-alert alert alert-info hidden w-25" role="button" style="z-index: 1;">[[modules:chat.scroll-up-alert]]</div>
 	</div>
 	<ul class="chat-content p-0 m-0 list-unstyled overflow-auto flex-grow-1">
 		<!-- IMPORT partials/chats/messages.tpl -->
