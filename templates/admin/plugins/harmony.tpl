@@ -10,6 +10,10 @@
 				<input type="checkbox" class="form-check-input" id="centerHeaderElements" name="centerHeaderElements" />
 				<label for="centerHeaderElements" class="form-check-label">Center header elements</label>
 			</div>
+			<div class="form-check form-switch">
+				<input type="checkbox" class="form-check-input" id="stickyToolbar" name="stickyToolbar" />
+				<label for="stickyToolbar" class="form-check-label">Sticky toolbar on topic and category pages</label>
+			</div>
 		</form>
 	</div>
 </div>

@@ -1,4 +1,4 @@
-<nav class="topic-list-header sticky-tools navbar navbar-expand p-0 border-0 rounded">
+<nav class="topic-list-header {{{ if config.stickyToolbar }}} sticky-tools{{{ end }}} navbar navbar-expand p-0 border-0 rounded">
 	<div class="card card-header flex-row p-2 border rounded ff-secondary w-100">
 		<ul class="navbar-nav me-auto gap-2 align-items-center">
 			{{{ if template.category }}}

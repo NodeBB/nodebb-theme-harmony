@@ -8,6 +8,12 @@ const controllers = require('./lib/controllers');
 
 const library = module.exports;
 
+const defaults = {
+	enableQuickReply: 'on',
+	centerHeaderElements: 'off',
+	stickyToolbar: 'on',
+};
+
 library.init = async function (params) {
 	const { router } = params;
 	const routeHelpers = require.main.require('./src/routes/helpers');
@@ -55,15 +61,31 @@ library.defineWidgetAreas = async function (areas) {
 	return areas;
 };
 
+async function loadThemeConfig() {
+	const themeConfig = await meta.settings.get('harmony');
+	return { ...defaults, ...themeConfig };
+}
+
 library.getThemeConfig = async function (config) {
-	const { enableQuickReply, centerHeaderElements } = await meta.settings.get('harmony');
-	config.enableQuickReply = enableQuickReply === 'on';
-	config.centerHeaderElements = centerHeaderElements === 'on';
+	const themeConfig = await loadThemeConfig();
+	config.enableQuickReply = themeConfig.enableQuickReply === 'on';
+	config.centerHeaderElements = themeConfig.centerHeaderElements === 'on';
+	config.stickyToolbar = themeConfig.stickyToolbar === 'on';
 	return config;
 };
 
+library.getAdminSettings = async function (hookData) {
+	if (hookData.plugin === 'harmony') {
+		hookData.values = {
+			...defaults,
+			...hookData.values,
+		};
+	}
+	return hookData;
+};
+
 library.addUserToTopic = async function (hookData) {
-	const { enableQuickReply } = await meta.settings.get('harmony');
+	const { enableQuickReply } = await loadThemeConfig();
 	if (enableQuickReply === 'on') {
 		if (hookData.req.user) {
 			const userData = await user.getUserData(hookData.req.user.uid);
