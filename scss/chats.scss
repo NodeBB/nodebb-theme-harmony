@@ -7,11 +7,6 @@ body.page-user-chats {
 	overflow: hidden;
 }
 
-/* Styles common to both full chat and chat modal */
-.chats-full, .chat-modal {
-	height: calc(100vh - var(--panel-offset) - $spacer)!important;
-}
-
 .expanded-chat, .chat-modal {
 	// no taskbar so hide minimize button
 	[data-action="minimize"] {
@@ -42,9 +37,11 @@ body.page-user-chats {
 }
 
 /* Mobile handling of chat page */
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(md) {
 	.page-user-chats {
-		padding-bottom: 0;
+		.chats-full {
+			padding-bottom: 8rem!important;
+		}
 
 		[component="chat/nav-wrapper"][data-loaded="1"] {
 			display: none!important;
@@ -53,20 +50,5 @@ body.page-user-chats {
 		[component="chat/nav-wrapper"][data-loaded="0"] + [component="chat/main-wrapper"] {
 			display: none!important;
 		}
-
-		[component="chat/messages"] {
-			width: calc(100vw - $grid-gutter-width);
-		}
-	}
-
-	[data-action="pop-out"] {
-		display: none!important;
-	}
-}
-
-/* Mobile handling of chat modal */
-@include media-breakpoint-down(sm) {
-	.chat-modal {
-		z-index: $zindex-popover + 10;
 	}
 }

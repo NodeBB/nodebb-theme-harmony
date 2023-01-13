@@ -11,7 +11,7 @@
 <ul class="drafts-dropdown dropdown-menu p-1 shadow">
 	<li>
 		<ul component="drafts/list" class="draft-list list-unstyled d-flex flex-column gap-1">
-			<li class="no-drafts text-center hidden p-3 text-sm text-muted">[[modules:composer.no-drafts]]</li>
+			<li class="no-drafts text-center p-2">[[modules:composer.no-drafts]]</li>
 
 			{{{ each drafts }}}
 			{{{ if !@first}}}

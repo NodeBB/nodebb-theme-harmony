@@ -3,11 +3,11 @@
 		<div class="modal-content">
 			<div class="modal-header d-flex">
 				<div class="fs-5 flex-grow-1" component="chat/room/name"><!-- IF roomName -->{roomName}<!-- ELSE -->{usernames}<!-- ENDIF roomName --></div>
-				<button type="button" class="btn btn-link d-none d-md-block p-2 text-muted align-text-top" data-action="maximize">
+				<button type="button" class="btn btn-outline d-none d-md-flex" data-action="maximize">
 					<span aria-hidden="true"><i class="fa fa-fw fa-expand"></i></span>
 					<span class="sr-only">[[modules:chat.maximize]]</span>
 				</button>
-				<button type="button" class="btn btn-link d-none d-md-block p-2 text-muted align-text-top" data-action="minimize">
+				<button type="button" class="btn btn-outline d-none d-md-flex" data-action="minimize">
 					<span aria-hidden="true"><i class="fa fa-fw fa-minus"></i></span>
 					<span class="sr-only">[[modules:chat.minimize]]</span>
 				</button>

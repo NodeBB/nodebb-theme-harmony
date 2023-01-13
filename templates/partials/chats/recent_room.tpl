@@ -1,20 +1,37 @@
-<li component="chat/recent/room" data-roomid="{rooms.roomId}" class="{{{ if rooms.unread }}}unread{{{ end }}} card card-body p-1 mb-1 border-0 pointer">
-	<div class="members">
-	{{{ each rooms.users}}}
-	{{{ if @first }}}
-	<div class="main-avatar">
-		<a href="{config.relative_path}/user/{rooms.users.userslug}" class="text-decoration-none">{buildAvatar(rooms.users, "24px", true)}</a>
-		<span component="chat/title">{{{ if rooms.roomName }}}{rooms.roomName}{{{ else }}}{rooms.usernames}{{{ end }}}</span>
-	</div>
-	{{{ else }}}
-	<a href="{config.relative_path}/user/{rooms.users.userslug}" class="text-decoration-none">{buildAvatar(rooms.users, "24px", true)}</a>
-	{{{ end }}}
-	{{{ end }}}
-	{{{ if !./users.length}}}
-	<span class="avatar avatar-rounded text-bg-warning" component="avatar/icon" style="--avatar-size: 24px;">?</span>
-	{{{ if !rooms.lastUser.uid }}}
-	<span class="text-muted">[[modules:chat.no-users-in-room]]</span>
-	{{{ end }}}
-	{{{ end }}}
-	</div>
-</li>
+<a class="text-decoration-none text-reset" href="{config.relative_path}/me/chats/{./roomId}">
+	<li component="chat/recent/room" data-roomid="{./roomId}" data-full="1" class="{{{ if ./unread }}}unread{{{ end }}} btn-ghost-sm gap-2 justify-content-start align-items-start">
+		<div class="main-avatar">
+		{{{ if ./users.length }}}
+			{{{ if ./groupChat}}}
+			<div class="position-relative" style="width:32px; height:32px;">
+				<span class="text-decoration-none position-absolute top-0" style="left: 8px;" href="{config.relative_path}/user/{./users.1.userslug}">{buildAvatar(./users.1, "24px", true)}</span>
+				<span class="text-decoration-none position-absolute start-0" style="top: 8px;" href="{config.relative_path}/user/{./users.0.userslug}" >{buildAvatar(./users.0, "24px", true)}</span>
+			</div>
+			{{{ else }}}
+			<span href="{config.relative_path}/user/{./users.0.userslug}" class="text-decoration-none">{buildAvatar(./users.0, "32px", true)}</span>
+			{{{ end }}}
+		{{{ else }}}
+		<span class="avatar avatar-rounded text-bg-warning" component="avatar/icon" style="--avatar-size: 32px;">?</span>
+		{{{ end }}}
+		</div>
+
+		<div class="d-flex flex-grow-1 flex-column w-100">
+			<div class="room-name fw-semibold text-xs">
+				{{{ if !./lastUser.uid }}}
+				<span>[[modules:chat.no-users-in-room]]</span>
+				{{{ else }}}
+				{{{ if ./roomName }}}{./roomName}{{{ else }}}{./usernames}{{{ end }}}
+				{{{ end }}}
+			</div>
+			{{{ if ./teaser }}}
+			<div class="teaser-content text-sm line-clamp-3 text-break">
+				<span href="#" class="text-decoration-none">{buildAvatar(./teaser.user, "14px", true)}</span>
+				<strong class="text-xs fw-semibold teaser-username">{./teaser.user.username}:</strong>
+				{./teaser.content}
+			</div>
+			<div class="teaser-timestamp text-muted text-xs">{./teaser.timeagoLong}</div>
+			{{{ end }}}
+		</div>
+	</li>
+</a>
+<hr class="text-muted opacity-25 my-1"/>

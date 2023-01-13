@@ -63,3 +63,15 @@ body {
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 }
+
+.btn-outline {
+	@include btn-ghost-base();
+	border-color: $border-color;
+}
+
+.btn-outline-sm {
+	@include btn-ghost-base();
+	border-color: $border-color;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+}

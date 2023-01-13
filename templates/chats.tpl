@@ -1,12 +1,21 @@
 <div class="chats-full d-flex gap-1 vh-100 py-3">
 	<div class="d-flex flex-column h-100" component="chat/nav-wrapper" data-loaded="{{{ if roomId }}}1{{{ else }}}0{{{ end }}}">
 		<div class="chat-search dropdown mb-2">
-			<input class="form-control" type="text" component="chat/search" placeholder="[[users:search-user-for-chat]]" data-bs-toggle="dropdown" />
+			<label class="text-xs text-muted">[[users:search-user-for-chat]]</label>
+
+			<div class="input-group">
+				<input class="form-control" type="text" component="chat/search" data-bs-toggle="dropdown" />
+				<button class="btn btn-primary" type="button">
+					<i class="fa fa-search"></i>
+				</button>
+			</div>
+
 			<ul component="chat/search/list" class="dropdown-menu">
 				<li><a href="#" class="dropdown-item">[[admin/menu:search.start-typing]]</a></li>
 			</ul>
 		</div>
-		<ul component="chat/recent" class="chats-list list-unstyled overflow-auto mb-0 pe-2" data-nextstart="{nextStart}">
+		<hr class="text-muted opacity-25 my-1">
+		<ul component="chat/recent" class="chats-list list-unstyled overflow-auto mb-0 pe-2" data-nextstart="{nextStart}" style="width:300px;">
 			{{{each rooms}}}
 			<!-- IMPORT partials/chats/recent_room.tpl -->
 			{{{end}}}

@@ -26,6 +26,12 @@ $(document).ready(function () {
 				width: $('#panel').width(),
 			});
 		});
+
+		hooks.on('filter:chat.openChat', function (hookData) {
+			// disables chat modals & goes straight to chat page
+			hookData.modal = false;
+			return hookData;
+		});
 	});
 
 	function setupMobileMenu() {

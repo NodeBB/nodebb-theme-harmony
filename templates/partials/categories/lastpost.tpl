@@ -4,7 +4,7 @@
 	<div component="category/posts" class="ps-3">
 		<a class="background-link" href="{config.relative_path}/topic/{./topic.slug}{{{ if ./index }}}/{./index}{{{ end }}}"></a>
 		<p class="mb-0">
-			<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(posts.user, "20px", true)}</a>
+			<a class="text-decoration-none" href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(posts.user, "20px", true)}</a>
 			<a class="permalink text-muted" href="{config.relative_path}/topic/{./topic.slug}{{{ if ./index }}}/{./index}{{{ end }}}">
 				<span class="timeago text-xs" title="{../timestampISO}"></span>
 			</a>
