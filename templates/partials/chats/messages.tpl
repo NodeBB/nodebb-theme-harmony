@@ -1,5 +1,3 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 {{{each messages}}}
 	{{{ if !./system }}}
 	<!-- IMPORT partials/chats/message.tpl -->

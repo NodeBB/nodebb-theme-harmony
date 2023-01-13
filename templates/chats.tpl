@@ -1,5 +1,5 @@
 <div class="chats-full d-flex gap-1 vh-100 py-3">
-	<div class="d-flex flex-column h-100" component="chat/nav-wrapper" data-loaded="{{{ if roomId }}}1{{{ else }}}0{{{ end }}}">
+	<div class="d-flex flex-column h-100" style="width:300px;" component="chat/nav-wrapper" data-loaded="{{{ if roomId }}}1{{{ else }}}0{{{ end }}}">
 		<div class="chat-search dropdown mb-2">
 			<label class="text-xs text-muted">[[users:search-user-for-chat]]</label>
 
@@ -15,7 +15,7 @@
 			</ul>
 		</div>
 		<hr class="text-muted opacity-25 my-1">
-		<ul component="chat/recent" class="chats-list list-unstyled overflow-auto mb-0 pe-2" data-nextstart="{nextStart}" style="width:300px;">
+		<ul component="chat/recent" class="chats-list list-unstyled overflow-auto mb-0 pe-2" data-nextstart="{nextStart}">
 			{{{each rooms}}}
 			<!-- IMPORT partials/chats/recent_room.tpl -->
 			{{{end}}}
