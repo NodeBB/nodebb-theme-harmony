@@ -1,11 +1,10 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
 
-	<!-- IF sessions.length -->
-	<div class="row">
-		<div class="col-12 col-md-12">
+	<div class="row gx-5">
+		<!-- IMPORT partials/account/sidebar-left.tpl -->
+
+		<div class="col-12 col-md-9 col-lg-10 ps-md-5">
 			<p class="lead">[[user:sessions.description]]</p>
 			<hr />
 			<ul class="list-group" component="user/sessions">
@@ -30,5 +29,4 @@
 			</ul>
 		</div>
 	</div>
-	<!-- ENDIF sessions.length -->
 </div>

@@ -1,5 +1,5 @@
 <div class="col-12 col-md-3 col-lg-2 border-end-md text-sm mb-3">
-	<div class="sticky-top d-flex flex-row flex-md-column flex-wrap gap-1" style="z-index: 1;">
+	<div class="sticky-top d-flex flex-row flex-md-column flex-wrap gap-1" style="top: 1rem;z-index: 1;">
 		<a href="{config.relative_path}/user/{userslug}" class="btn-ghost fw-semibold {{{ if template.account/profile }}}active{{{ end }}}">
 			<div class="flex-1">[[global:about]]</div>
 		</a>
@@ -70,16 +70,18 @@
 		{{{ end }}}
 
 		{{{ if canEdit }}}
-		<a href="{config.relative_path}/user/{userslug}/edit" class="btn-ghost-sm text-xs">
+		<a href="{config.relative_path}/user/{userslug}/edit" class="btn-ghost-sm text-xs
+		{{{ if template.account/edit }}}active{{{ end }}}">
 			<div class="flex-1">[[user:edit-profile]]</div>
 		</a>
-		<a href="{config.relative_path}/user/{userslug}/settings" class="btn-ghost-sm text-xs">
+		<a href="{config.relative_path}/user/{userslug}/settings" class="btn-ghost-sm text-xs
+			{{{ if template.account/settings }}}active{{{ end }}}">
 			<div class="flex-1">[[user:settings]]</div>
 		</a>
 		{{{ end }}}
 
 		{{{ each profile_links }}}
-		<a href="{config.relative_path}/user/{userslug}/{./route}" class="btn-ghost-sm text-xs plugin-link {{{ if ./public }}}public{{{ else }}}private{{{ end }}}" id="{./id}">
+		<a href="{config.relative_path}/user/{userslug}/{./route}" class="btn-ghost-sm text-xs plugin-link {{{ if ./public }}}public{{{ else }}}private{{{ end }}} {url} {{{ if (url == ./url) }}}active{{{ end }}}" id="{./id}">
 			<div class="flex-1">{./name}</div>
 		</a>
 		{{{end}}}
