@@ -6,6 +6,8 @@
 		{ "hook": "filter:widgets.getAreas", "method": "defineWidgetAreas" },
 		{ "hook": "filter:config.get", "method": "getThemeConfig" },
 		{ "hook": "filter:settings.get", "method": "getAdminSettings"},
+		{ "hook": "filter:user.saveSettings", "method": "saveUserSettings" },
+		{ "hook": "filter:user.profileMenu", "method": "addProfileItem" },
 		{ "hook": "filter:topic.build", "method": "addUserToTopic" },
 		{ "hook": "filter:middleware.renderHeader", "method": "filterMiddlewareRenderHeader" },
 		{ "hook": "filter:middleware.render", "method": "removeFinalBreadcrumb" }
@@ -14,7 +16,8 @@
 		"public/harmony.js"
 	],
 	"modules": {
-		"../admin/plugins/harmony.js": "public/admin.js"
+		"../admin/plugins/harmony.js": "public/admin.js",
+		"../client/account/theme.js": "public/settings.js"
 	},
 	"staticDirs": {
 		"inter": "node_modules/@fontsource/inter/files",

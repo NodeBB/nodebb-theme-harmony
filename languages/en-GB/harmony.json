@@ -1,5 +1,9 @@
 {
 	"skins": "Skins",
 	"collapse": "Collapse",
-	"login-register-to-search": "Login or register to search."
+	"login-register-to-search": "Login or register to search.",
+	"settings.title": "Theme settings",
+	"settings.enableQuickReply": "Enable quick reply",
+	"settings.centerHeaderElements": "Center header elements",
+	"settings.stickyToolbar": "Sticky toolbar"
 }

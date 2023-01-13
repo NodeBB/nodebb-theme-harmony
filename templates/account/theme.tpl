@@ -1,29 +1,30 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
 
-	<p>[[persona:settings.intro]]</p>
+	<div class="row gx-5">
+		<!-- IMPORT partials/account/sidebar-left.tpl -->
 
-	<hr />
+		<div class="col-12 col-md-9 col-lg-10 ps-md-5">
+			<h3 class="fw-semibold fs-5">[[harmony:settings.title]]</h3>
 
-	<form id="theme-settings" role="form">
-		<div class="checkbox">
-			<label>
-				<input type="checkbox" id="persona:menus:legacy-layout" name="persona:menus:legacy-layout"> <strong>[[persona:settings.mobile-menu-side]]</strong>
-			</label>
-		</div><br />
+			<form id="theme-settings" role="form">
+				<div class="form-check mb-2">
+					<input class="form-check-input" type="checkbox" id="enableQuickReply" name="enableQuickReply" {{{ if config.enableQuickReply }}}checked{{{ end }}}>
+					<label class="form-check-label">[[harmony:settings.enableQuickReply]]</label>
+				</div>
 
-		<div class="form-group">
-			<label for="persona:navbar:autohide">[[persona:settings.autoHidingNavbar]]</label>
-			<select multiple class="form-control" name="persona:navbar:autohide" id="persona:navbar:autohide">
-				<option value="xs">[[persona:settings.autoHidingNavbar-xs]]</option>
-				<option value="sm">[[persona:settings.autoHidingNavbar-sm]]</option>
-				<option value="md">[[persona:settings.autoHidingNavbar-md]]</option>
-				<option value="lg">[[persona:settings.autoHidingNavbar-lg]]</option>
-			</select>
+				<div class="form-check mb-2">
+					<input class="form-check-input" type="checkbox" id="centerHeaderElements" name="centerHeaderElements" {{{ if config.centerHeaderElements }}}checked{{{ end }}}>
+					<label class="form-check-label">[[harmony:settings.centerHeaderElements]]</label>
+				</div>
+
+				<div class="form-check mb-2">
+					<input class="form-check-input" type="checkbox" id="stickyToolbar" name="stickyToolbar" {{{ if config.stickyToolbar }}}checked{{{ end }}}>
+					<label class="form-check-label">[[harmony:settings.stickyToolbar]]</label>
+				</div>
+
+				<button id="save" type="button" class="btn btn-primary">[[global:save_changes]]</button>
+			</form>
 		</div>
-
-		<button id="save" type="button" class="btn btn-primary">[[global:save_changes]]</button>
-	</form>
+	</div>
 </div>

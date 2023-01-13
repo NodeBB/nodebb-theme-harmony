@@ -15,10 +15,17 @@ const defaults = {
 };
 
 library.init = async function (params) {
-	const { router } = params;
+	const { router, middleware } = params;
 	const routeHelpers = require.main.require('./src/routes/helpers');
 
 	routeHelpers.setupAdminPageRoute(router, '/admin/plugins/harmony', [], controllers.renderAdminPage);
+
+	routeHelpers.setupPageRoute(router, '/user/:userslug/theme', [
+		middleware.exposeUid,
+		middleware.ensureLoggedIn,
+		middleware.canViewUsers,
+		middleware.checkAccountPermissions,
+	], controllers.renderThemeSettings);
 };
 
 library.addAdminNavigation = async function (header) {
@@ -28,6 +35,24 @@ library.addAdminNavigation = async function (header) {
 		name: 'Harmony Theme',
 	});
 	return header;
+};
+
+library.addProfileItem = async (data) => {
+	data.links.push({
+		id: 'theme',
+		route: 'theme',
+		icon: 'fa-paint-brush',
+		name: '[[harmony:settings.title]]',
+		visibility: {
+			self: true,
+			other: false,
+			moderator: false,
+			globalMod: false,
+			admin: false,
+		},
+	});
+
+	return data;
 };
 
 library.defineWidgetAreas = async function (areas) {
@@ -61,13 +86,16 @@ library.defineWidgetAreas = async function (areas) {
 	return areas;
 };
 
-async function loadThemeConfig() {
-	const themeConfig = await meta.settings.get('harmony');
-	return { ...defaults, ...themeConfig };
+async function loadThemeConfig(uid) {
+	const [themeConfig, userConfig] = await Promise.all([
+		meta.settings.get('harmony'),
+		user.getSettings(uid),
+	]);
+	return { ...defaults, ...themeConfig, ...userConfig };
 }
 
 library.getThemeConfig = async function (config) {
-	const themeConfig = await loadThemeConfig();
+	const themeConfig = await loadThemeConfig(config.uid);
 	config.enableQuickReply = themeConfig.enableQuickReply === 'on';
 	config.centerHeaderElements = themeConfig.centerHeaderElements === 'on';
 	config.stickyToolbar = themeConfig.stickyToolbar === 'on';
@@ -84,11 +112,18 @@ library.getAdminSettings = async function (hookData) {
 	return hookData;
 };
 
+library.saveUserSettings = async function (hookData) {
+	Object.keys(defaults).forEach((key) => {
+		hookData.settings[key] = hookData.data[key] || undefined;
+	});
+	return hookData;
+};
+
 library.addUserToTopic = async function (hookData) {
-	const { enableQuickReply } = await loadThemeConfig();
+	const { enableQuickReply } = await loadThemeConfig(hookData.req.uid);
 	if (enableQuickReply === 'on') {
 		if (hookData.req.user) {
-			const userData = await user.getUserData(hookData.req.user.uid);
+			const userData = await user.getUserData(hookData.req.uid);
 			hookData.templateData.loggedInUser = userData;
 		} else {
 			hookData.templateData.loggedInUser = {
