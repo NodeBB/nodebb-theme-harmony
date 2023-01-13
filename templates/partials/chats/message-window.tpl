@@ -26,7 +26,7 @@
 	</div>
 </div>
 <!-- ELSE -->
-<div class="alert alert-info me-3">
-	[[modules:chat.no-messages]]
+<div class="text-center p-2">
+	[[modules:chat.no_active]]
 </div>
 <!-- ENDIF roomId -->
