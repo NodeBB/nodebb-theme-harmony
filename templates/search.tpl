@@ -1,7 +1,5 @@
 <!-- THIS FILE IS STILL PERSONA -->
 
-<!-- IMPORT partials/breadcrumbs.tpl -->
-
 <div class="search">
 	<div class="row">
 		<div class="{{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
