@@ -70,7 +70,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-2 d-none d-md-flex stats text-muted gap-2 px-0">
+			<div class="col-md-2 d-none d-lg-flex stats text-muted gap-2 px-0">
 				{{{ if !reputation:disabled }}}
 				<div class="stats-votes flex-1">
 					<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
