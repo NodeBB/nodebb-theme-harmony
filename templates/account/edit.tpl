@@ -5,57 +5,12 @@
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
 
 		<div class="col-12 col-md-9 col-lg-10 ps-md-5">
-			<div class="d-flex justify-content-end mb-3 sticky-lg-top" style="top: 1rem;">
+			<div class="d-flex justify-content-between mb-3">
+				<h3 class="fw-semibold fs-5">{{{ if isSelf }}}[[user:edit-profile]]{{{ else }}}[[pages:account/edit, {username}]]{{{ end }}}</h3>
 				<button id="submitBtn" class="btn btn-primary">[[global:save_changes]]</button>
 			</div>
 			<div class="row">
-				<div class="col-xl-2 col-12">
-					<div class="account-picture-block text-center">
-						<div class="row mb-3">
-							<div class="col-12 hidden-xs">
-								<!-- IF picture -->
-								<img id="user-current-picture" class="avatar avatar-rounded" style="--avatar-size: 128px;" src="{picture}" />
-								<!-- ELSE -->
-								<div class="avatar avatar-rounded" style="background-color: {icon:bgColor}; --avatar-size: 128px;">{icon:text}</div>
-								<!-- ENDIF picture -->
-							</div>
-						</div>
-						<ul class="list-group mb-3 text-sm text-nowrap">
-							<!-- IF allowProfilePicture -->
-							<a id="changePictureBtn" href="#" class="list-group-item px-1 text-decoration-none">[[user:change_picture]]</a>
-							<!-- ENDIF allowProfilePicture -->
-							<!-- IF !username:disableEdit -->
-							<a href="{config.relative_path}/user/{userslug}/edit/username" class="list-group-item px-1 text-decoration-none">[[user:change_username]]</a>
-							<!-- ENDIF !username:disableEdit -->
-							<!-- IF !email:disableEdit -->
-							<a href="{config.relative_path}/user/{userslug}/edit/email" class="list-group-item px-1 text-decoration-none">[[user:change_email]]</a>
-							<!-- ENDIF !email:disableEdit -->
-							<!-- IF canChangePassword -->
-							<a href="{config.relative_path}/user/{userslug}/edit/password" class="list-group-item px-1 text-decoration-none">[[user:change_password]]</a>
-							<!-- ENDIF canChangePassword -->
-							{{{each editButtons}}}
-							<a href="{config.relative_path}{editButtons.link}" class="list-group-item px-1 text-decoration-none">{editButtons.text}</a>
-							{{{end}}}
-						</ul>
-
-						<!-- IF config.requireEmailConfirmation -->
-						<!-- IF email -->
-						<!-- IF isSelf -->
-						<a id="confirm-email" href="#" class="btn btn-warning <!-- IF email:confirmed -->hide<!-- ENDIF email:confirmed -->">[[user:confirm_email]]</a><br/><br/>
-						<!-- ENDIF isSelf -->
-						<!-- ENDIF email -->
-						<!-- ENDIF config.requireEmailConfirmation -->
-
-						<!-- IF allowAccountDelete -->
-						<!-- IF isSelf -->
-						<a id="deleteAccountBtn" href="#" class="btn btn-danger">[[user:delete_account]]</a><br/><br/>
-						<!-- ENDIF isSelf -->
-						<!-- ENDIF allowAccountDelete -->
-
-					</div>
-				</div>
-
-				<div class="col-xl-5 col-12">
+				<div class="col-xl-6 col-12">
 					<form role="form" component="profile/edit/form">
 						<div class="mb-2">
 							<label class="form-label fw-bold" for="fullname">[[user:fullname]]</label>
@@ -111,12 +66,39 @@
 						<!-- ENDIF !disableSignatures -->
 						<!-- ENDIF allowSignature -->
 					</form>
-
 					<hr class="visible-xs visible-sm"/>
 				</div>
 
-				{{{ if sso.length }}}
-				<div class="col-xl-5 col-12">
+				<div class="col-xl-6 col-12">
+					<div class="text-center">
+						<ul class="list-group mb-3 text-sm text-nowrap">
+							<!-- IF allowProfilePicture -->
+							<a id="changePictureBtn" href="#" class="list-group-item px-1 text-decoration-none">[[user:change_picture]]</a>
+							<!-- ENDIF allowProfilePicture -->
+							<!-- IF !username:disableEdit -->
+							<a href="{config.relative_path}/user/{userslug}/edit/username" class="list-group-item px-1 text-decoration-none">[[user:change_username]]</a>
+							<!-- ENDIF !username:disableEdit -->
+							<!-- IF !email:disableEdit -->
+							<a href="{config.relative_path}/user/{userslug}/edit/email" class="list-group-item px-1 text-decoration-none">[[user:change_email]]</a>
+							<!-- ENDIF !email:disableEdit -->
+							<!-- IF canChangePassword -->
+							<a href="{config.relative_path}/user/{userslug}/edit/password" class="list-group-item px-1 text-decoration-none">[[user:change_password]]</a>
+							<!-- ENDIF canChangePassword -->
+							{{{each editButtons}}}
+							<a href="{config.relative_path}{editButtons.link}" class="list-group-item px-1 text-decoration-none">{editButtons.text}</a>
+							{{{end}}}
+						</ul>
+
+						<!-- IF config.requireEmailConfirmation -->
+						<!-- IF email -->
+						<!-- IF isSelf -->
+						<a id="confirm-email" href="#" class="btn btn-warning <!-- IF email:confirmed -->hide<!-- ENDIF email:confirmed -->">[[user:confirm_email]]</a><br/><br/>
+						<!-- ENDIF isSelf -->
+						<!-- ENDIF email -->
+						<!-- ENDIF config.requireEmailConfirmation -->
+					</div>
+
+					{{{ if sso.length }}}
 					<label class="form-label text-sm fw-semibold">[[user:sso.title]]</label>
 					<div class="list-group">
 						{{{each sso}}}
@@ -132,8 +114,15 @@
 						</div>
 						{{{end}}}
 					</div>
+					{{{ end }}}
+
+					<hr/>
+					{{{ if (allowAccountDelete && isSelf) }}}
+					<div class="d-flex justify-content-end">
+						<button id="deleteAccountBtn" class="btn btn-danger">[[user:delete_account]]</button>
+					</div>
+					{{{ end }}}
 				</div>
-				{{{ end }}}
 			</div>
 		</div>
 	</div>

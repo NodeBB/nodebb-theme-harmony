@@ -27,7 +27,7 @@
 							<div class="d-flex justify-content-between align-items-center">
 								<label for="password">[[user:password]]</label>
 								{{{ if allowPasswordReset }}}
-								<a id="reset-link" class="text-sm text-reset text-decoration-underline" href="{config.relative_path}/reset">[[login:forgot_password]]</a>
+								<a id="reset-link" tabindex="-1" class="text-sm text-reset text-decoration-underline" href="{config.relative_path}/reset">[[login:forgot_password]]</a>
 								{{{ end }}}
 							</div>
 							<div>

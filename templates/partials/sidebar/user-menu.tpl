@@ -1,4 +1,4 @@
-<label class="nav-link nav-btn text-truncate d-flex gap-2 align-items-center" data-bs-toggle="dropdown" id="user_dropdown" role="button">
+<label class="nav-link nav-btn text-truncate d-flex gap-2 align-items-center" data-bs-toggle="dropdown" id="user_dropdown" role="button" component="header/avatar">
 	{buildAvatar(user, "20px", true)}
 	<span id="user-header-name" class="nav-text small visible-open fw-semibold">{user.username}</span>
 </label>

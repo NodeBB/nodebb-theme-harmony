@@ -81,7 +81,7 @@
 		{{{ end }}}
 
 		{{{ each profile_links }}}
-		<a href="{config.relative_path}/user/{userslug}/{./route}" class="btn-ghost-sm text-xs plugin-link {{{ if ./public }}}public{{{ else }}}private{{{ end }}} {url} {{{ if (url == ./url) }}}active{{{ end }}}" id="{./id}">
+		<a href="{config.relative_path}/user/{userslug}/{./route}" class="btn-ghost-sm text-xs plugin-link {{{ if ./public }}}public{{{ else }}}private{{{ end }}} {{{ if (url == ./url) }}}active{{{ end }}}" id="{./id}">
 			<div class="flex-1">{./name}</div>
 		</a>
 		{{{end}}}

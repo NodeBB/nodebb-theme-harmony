@@ -5,7 +5,11 @@
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
 
 		<div class="col-12 col-md-9 col-lg-10 ps-md-5">
-			<h3 class="fw-semibold fs-5">[[harmony:settings.title]]</h3>
+			<div class="mb-3 d-flex justify-content-between">
+				<h3 class="fw-semibold fs-5">[[harmony:settings.title]]</h3>
+
+				<button id="save" type="button" class="btn btn-primary">[[global:save_changes]]</button>
+			</div>
 
 			<form id="theme-settings" role="form">
 				<div class="form-check mb-2">
@@ -23,7 +27,7 @@
 					<label class="form-check-label">[[harmony:settings.stickyToolbar]]</label>
 				</div>
 
-				<button id="save" type="button" class="btn btn-primary">[[global:save_changes]]</button>
+
 			</form>
 		</div>
 	</div>

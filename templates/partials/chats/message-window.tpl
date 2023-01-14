@@ -1,4 +1,10 @@
-<!-- IF roomId -->
+{{{ if !roomId }}}
+<div class="text-center p-2">
+	[[modules:chat.no_active]]
+</div>
+{{{ end }}}
+
+{{{ if roomId }}}
 <div component="chat/messages" class="expanded-chat d-flex flex-column h-100" data-roomid="{roomId}">
 	<div component="chat/header" class="d-flex align-items-center px-3 gap-1">
 		<h5 class="members flex-1 fw-semibold tracking-tight">
@@ -25,8 +31,4 @@
 		</form>
 	</div>
 </div>
-<!-- ELSE -->
-<div class="text-center p-2">
-	[[modules:chat.no_active]]
-</div>
-<!-- ENDIF roomId -->
+{{{ end }}}
