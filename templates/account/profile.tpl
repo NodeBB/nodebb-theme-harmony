@@ -31,7 +31,7 @@
 
 					<div class="stat">
 						<div class="align-items-center justify-content-center card card-header px-0 py-3 border-0 rounded-1 h-100 gap-2">
-							<span class="stat-label text-xs fw-semibold"><i class="text-muted fa-solid fa-cake-candles"></i> <span>[[user:joined]]</span></span>
+							<span class="stat-label text-xs fw-semibold"><i class="text-muted fa-solid fa-user-plus"></i> <span>[[user:joined]]</span></span>
 							<span class="timeago fs-6 ff-secondary" title="{joindateISO}"></span>
 						</div>
 					</div>
@@ -73,7 +73,7 @@
 					{{{ if age }}}
 					<div class="stat">
 						<div class="align-items-center justify-content-center card card-header px-0 py-3 border-0 rounded-1 h-100 gap-2">
-							<span class="stat-label text-xs fw-semibold"><span>[[user:age]]</span></span>
+							<span class="stat-label text-xs fw-semibold"><span><i class="text-muted fa-solid fa-cake-candles"></i> [[user:age]]</span></span>
 							<span class="fs-6 ff-secondary">{age}</span>
 						</div>
 					</div>
