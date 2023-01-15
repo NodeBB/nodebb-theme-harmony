@@ -14,13 +14,13 @@
 			<a class="text-decoration-none"  href="{config.relative_path}/user/{./user.userslug}"><div class="avatar avatar-rounded" style="--avatar-size: 32px; background-color: {./user.icon:bgColor};">{./user.icon:text}</div></a>
 			{{{ end }}}
 			<div class=" d-flex flex-column">
-				<a href="{./path}" class="text-decoration-none notification-chat-content text-reset text text-sm">
+				<a href="{./path}" class="text-decoration-none text-reset text text-sm">
 					{./bodyShort}
 				</a>
 				<div class="text-xs text-muted">{{{ if ./timeagoLong }}}{./timeagoLong}{{{ else }}}<span class="timeago" title="{./datetimeISO}"></span>{{{ end }}}</div>
 			</div>
 		</div>
-		<div class="notification-chat-controls">
+		<div class="">
 			{{{ if ./nid }}}
 			<button class="mark-read btn-ghost-sm" style="width: 1.5rem; height: 1.5rem;">
 				<i class="unread fa fa-2xs fa-circle text-primary {{{ if ./read }}}hidden{{{ end }}}"></i>

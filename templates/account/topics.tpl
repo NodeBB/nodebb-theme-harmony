@@ -1,7 +1,7 @@
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
 
-	<div class="row gx-5">
+	<div class="row gx-md-5">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
 		<div class="col-12 col-md-9 col-lg-10 ps-md-5">
 			<div class="d-flex justify-content-between align-items-center mb-3">
@@ -9,7 +9,7 @@
 					<h3 class="fw-semibold fs-5 mb-0">[[global:topics]]</h3>
 					{{{ if showSort }}}
 					<div class="btn-group bottom-sheet" component="thread/sort">
-						<button class="btn-ghost-sm dropdown-toggle" data-bs-toggle="dropdown" type="button"><i class="fa-solid fa-arrow-up-wide-short"></i></button>
+						<button title="[[global:sort]]" class="btn-ghost-sm dropdown-toggle" data-bs-toggle="dropdown" type="button"><i class="fa-solid fa-arrow-up-wide-short"></i></button>
 						<ul class="dropdown-menu">
 							{{{each sortOptions }}}
 							<li><a class="dropdown-item" href="{config.relative_path}{./url}"><i class="fa fa-fw {{{if ./selected}}}fa-check{{{end}}}"></i>{./name}</a></li>

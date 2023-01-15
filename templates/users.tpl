@@ -5,11 +5,11 @@
 </div>
 <div class="users">
 	<h2 class="fw-semibold">[[global:users]]</h2>
-	<div class="row justify-content-between">
-		<div class="col-lg-6">
+	<div class="d-flex flex-wrap justify-content-between">
+		<div class="mb-2 mb-md-0">
 		<!-- IMPORT partials/users_list_menu.tpl -->
 		</div>
-		<div class="col-lg-6 text-end">
+		<div class="">
 			<div class="d-flex justify-content-end gap-2">
 				{{{ if showInviteButton }}}
 				<button component="user/invite" class="btn btn-primary btn-sm"><i class="fa fa-user-plus"></i> [[users:invite]]</button>

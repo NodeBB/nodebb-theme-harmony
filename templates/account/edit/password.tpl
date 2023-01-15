@@ -1,7 +1,7 @@
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
 
-	<div class="row gx-5">
+	<div class="row gx-md-5">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
 
 		<div class="col-12 col-md-9 col-lg-10 ps-md-5">

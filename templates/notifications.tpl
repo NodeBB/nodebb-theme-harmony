@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<div class="col-12 col-md-9 col-lg-10">
-			<ul class="notifications-list list-unstyled" data-nextstart="{nextStart}">
+			<ul component="notifications/list" class="notifications-list list-unstyled" data-nextstart="{nextStart}">
 				<!-- IMPORT partials/notifications_list.tpl -->
 			</ul>
 			<!-- IMPORT partials/paginator.tpl -->

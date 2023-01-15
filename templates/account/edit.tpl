@@ -1,7 +1,7 @@
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
 
-	<div class="row gx-5">
+	<div class="row gx-md-5">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
 
 		<div class="col-12 col-md-9 col-lg-10 ps-md-5">
@@ -36,7 +36,7 @@
 						<div class="mb-2">
 							<label class="form-label fw-bold" for="groupTitle">[[user:grouptitle]]</label>
 
-							<select class="form-select" id="groupTitle" name="groupTitle" <!-- IF allowMultipleBadges --> size="{groupSelectSize}" multiple<!-- ENDIF allowMultipleBadges -->>
+							<select class="form-select mb-1" id="groupTitle" name="groupTitle" <!-- IF allowMultipleBadges --> size="{groupSelectSize}" multiple<!-- ENDIF allowMultipleBadges -->>
 								<option value="">[[user:no-group-title]]</option>
 								{{{each groups}}}
 								<!-- IF groups.userTitleEnabled -->
@@ -45,8 +45,10 @@
 								{{{end}}}
 							</select>
 							<!-- IF allowMultipleBadges -->
-							<span>[[user:group-order-help]]</span>
-							<i role="button" component="group/order/up" class="fa fa-chevron-up"></i> <i role="button" component="group/order/down" class="fa fa-chevron-down"></i>
+							<div class="d-none d-md-block">
+								<span class="form-text">[[user:group-order-help]]</span>
+								<i role="button" component="group/order/up" class="fa fa-chevron-up"></i> <i role="button" component="group/order/down" class="fa fa-chevron-down"></i>
+							</div>
 							<!-- ENDIF -->
 						</div>
 

@@ -1,7 +1,7 @@
 <div class="account mx-auto">
 	<!-- IMPORT partials/account/header.tpl -->
 
-	<div class="row gx-5">
+	<div class="row gx-md-5">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
 
 		<div class="col-12 col-md-9 col-lg-10 ps-md-5">
@@ -39,7 +39,7 @@
 					<div class="stat">
 						<div class="align-items-center justify-content-center card card-header px-0 py-3 border-0 rounded-1 h-100 gap-2">
 							<span class="stat-label text-xs fw-semibold"><i class="text-muted fa-solid fa-clock"></i> <span>[[user:lastonline]]</span></span>
-							<span class="timeago fs-6 ff-secondary" title="{lastonlineISO}"></span>
+							<span class="timeago text-center text-break w-100 px-2 fs-6 ff-secondary" title="{lastonlineISO}"></span>
 						</div>
 					</div>
 
@@ -47,7 +47,7 @@
 					<div class="stat">
 						<div class="align-items-center justify-content-center card card-header px-0 py-3 border-0 rounded-1 h-100 gap-2">
 							<span class="stat-label text-xs fw-semibold"><i class="text-muted fa-solid fa-envelope"></i> <span>[[user:email]]</span> {{{ if emailHidden}}}<span class="text-lowercase">([[global:hidden]])</span>{{{ end }}}</span>
-							<span class="text-sm text-break ff-secondary">{email}</span>
+							<span class="text-sm text-center text-break w-100 px-2 ff-secondary">{email}</span>
 						</div>
 					</div>
 					{{{ end }}}
@@ -56,7 +56,7 @@
 					<div class="stat">
 						<div class="align-items-center justify-content-center card card-header px-0 py-3 border-0 rounded-1 h-100 gap-2">
 							<span class="stat-label text-xs fw-semibold"><i class="text-muted fa-solid fa-globe"></i> <span>[[user:website]]</span></span>
-							<a class="text-sm text-break ff-secondary text-underline text-reset" href="{websiteLink}" rel="nofollow noopener noreferrer">{websiteName}</a>
+							<a class="text-sm text-center text-break w-100 px-2 ff-secondary text-underline text-reset" href="{websiteLink}" rel="nofollow noopener noreferrer">{websiteName}</a>
 						</div>
 					</div>
 					{{{ end }}}
@@ -65,7 +65,7 @@
 					<div class="stat">
 						<div class="align-items-center justify-content-center card card-header px-0 py-3 border-0 rounded-1 h-100 gap-2">
 							<span class="stat-label text-xs fw-semibold"><i class="text-muted fa-solid fa-map-pin"></i> <span>[[user:location]]</span></span>
-							<span class="fs-6 ff-secondary">{location}</span>
+							<span class="text-center text-break w-100 px-2 fs-6 ff-secondary">{location}</span>
 						</div>
 					</div>
 					{{{ end }}}

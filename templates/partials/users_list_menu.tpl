@@ -1,4 +1,4 @@
-<div component="user/list/menu" class="text-sm d-flex align-items-center gap-2">
+<div component="user/list/menu" class="text-sm d-flex flex-wrap align-items-center gap-2">
 	<a class="btn-ghost fw-semibold" href="{config.relative_path}/users?section=online">[[global:online]]</a>
 
 	<a class="btn-ghost fw-semibold" href="{config.relative_path}/users?section=sort-posts">[[users:top_posters]]</a>

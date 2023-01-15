@@ -29,7 +29,9 @@
 		{{{ end }}}
 	</div>
 	<div class="d-flex mt-1 justify-content-between w-100">
-		<div class="d-flex flex-1 flex-column gap-2">
+		<div class="d-flex flex-1 flex-row gap-2">
+			<a href="{config.relative_path}/uid/{./uid}" class="d-block d-md-none text-decoration-none">{buildAvatar(edit, "48px", true)}</a>
+
 			<div class="d-grid gap-1">
 				<h2 class="fullname fw-semibold fs-2 tracking-tight mb-0">{{{ if fullname }}}{fullname}{{{ else }}}{username}{{{ end }}}</h2>
 				<div class="d-flex flex-wrap gap-1 text-sm align-items-center">

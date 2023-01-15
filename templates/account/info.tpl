@@ -1,7 +1,7 @@
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
 
-	<div class="row gx-5">
+	<div class="row gx-md-5">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
 
 		<div class="col-12 col-md-9 col-lg-10 ps-md-5">
@@ -32,7 +32,7 @@
 			{{{ end }}}
 
 			<div class="row">
-				<div class="col-sm-6">
+				<div class="col-sm-6 mb-3">
 					<div class="card mb-3">
 						<h5 class="card-header">
 							[[global:recentips]]
@@ -78,7 +78,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-6 mb-3">
 					<div class="card mb-3">
 						<h5 class="card-header">
 							[[user:info.latest-flags]]

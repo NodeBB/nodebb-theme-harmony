@@ -1,12 +1,9 @@
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
-	<div class="row gx-5">
+	<div class="row gx-md-5">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
 
-
-
 		<div class="col-12 col-md-9 col-lg-10 ps-md-5">
-
 			<h3 class="fw-semibold fs-5">{title}</h3>
 
 			<!-- IF privateUploads -->
@@ -19,7 +16,7 @@
 			<div class="alert alert-warning text-center">[[uploads:no-uploads-found]]</div>
 			<!-- ENDIF !uploads.length -->
 
-			<table class="table table-striped">
+			<table class="table table-striped table-responsive">
 				<thead>
 					<tr>
 						<th></th>
@@ -30,7 +27,7 @@
 					{{{each uploads}}}
 					<tr data-name="{uploads.name}">
 						<td>
-							<a href="{config.relative_path}{uploads.url}">{uploads.url}</a>
+							<a class="text-break" href="{config.relative_path}{uploads.url}">{uploads.url}</a>
 						</td>
 						<td>
 							<div class="btn-group ">
