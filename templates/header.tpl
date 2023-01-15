@@ -39,6 +39,6 @@
 					document.documentElement.style.setProperty('--panel-offset', `0px`);
 				}
 			</script>
-			<div class="container d-flex flex-column gap-2" id="content">
+			<div class="container d-flex flex-column gap-3" id="content">
 			<!-- IMPORT partials/noscript/warning.tpl -->
 			<!-- IMPORT partials/noscript/message.tpl -->

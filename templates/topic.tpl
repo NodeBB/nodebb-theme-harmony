@@ -6,7 +6,7 @@
 </div>
 {{{ end }}}
 
-<h2 component="post/header" class="fs-2 mb-1 {{{ if config.centerHeaderElements }}}text-center{{{ end }}}" itemprop="name">
+<h2 component="post/header" class="fs-2 mb-0 {{{ if config.centerHeaderElements }}}text-center{{{ end }}}" itemprop="name">
 	<span class="topic-title" component="topic/title">{title}</span>
 </h2>
 
