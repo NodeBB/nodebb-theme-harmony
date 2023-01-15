@@ -1,10 +1,9 @@
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
 
-	<div class="row gx-md-5">
+	<div class="d-flex flex-column flex-md-row">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
-
-		<div class="col-12 col-md-9 col-lg-10 ps-md-5">
+		<div class="flex-1 ps-md-2 ps-lg-5" style="min-width: 0;">
 			{{{ if sessions.length }}}
 			<div class="mb-3">
 				<h4>[[global:sessions]]</h4>

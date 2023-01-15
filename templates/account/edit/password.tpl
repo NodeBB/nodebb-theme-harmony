@@ -1,10 +1,9 @@
 <div class="account">
 	<!-- IMPORT partials/account/header.tpl -->
 
-	<div class="row gx-md-5">
+	<div class="d-flex flex-column flex-md-row">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
-
-		<div class="col-12 col-md-9 col-lg-10 ps-md-5">
+		<div class="flex-1 ps-md-2 ps-lg-5" style="min-width: 0;">
 			<h3 class="fw-semibold fs-5">{{{ if isSelf }}}[[user:change_password]]{{{ else }}}[[pages:{template.name}, {username}]]{{{ end }}}</h3>
 
 			<form class="edit-form w-25">

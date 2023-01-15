@@ -1,10 +1,10 @@
 <div class="account mx-auto">
 	<!-- IMPORT partials/account/header.tpl -->
 
-	<div class="row gx-md-5">
+	<div class="d-flex flex-column flex-md-row">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
 
-		<div class="col-12 col-md-9 col-lg-10 ps-md-5">
+		<div class="flex-1 ps-md-2 ps-lg-5">
 			{{{ if aboutme }}}
 			<div component="aboutme" class="text-sm">
 			{aboutmeParsed}
@@ -12,7 +12,7 @@
 			{{{ end }}}
 
 			<div class="account-stats container">
-				<div class="row row-cols-2 row-cols-lg-3 row-cols-xl-4 g-2">
+				<div class="row row-cols-2 row-cols-xl-3 row-cols-xxl-4 g-2">
 					{{{ if !reputation:disabled }}}
 					<div class="stat">
 						<div class="align-items-center justify-content-center card card-header px-0 py-3 border-0 rounded-1 h-100">

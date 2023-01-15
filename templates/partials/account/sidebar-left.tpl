@@ -1,5 +1,5 @@
-<div class="col-12 col-md-3 col-lg-2 border-end-md text-sm mb-3">
-	<div class="sticky-top d-flex flex-row flex-md-column flex-wrap gap-1" style="top: 1rem;z-index: 1;">
+<div class="sidebar flex-0 pe-2 border-end-md text-sm mb-3">
+	<div class="sticky-md-top d-flex flex-row flex-md-column flex-wrap gap-1" style="top: 1rem;z-index: 1;">
 		<a href="{config.relative_path}/user/{userslug}" class="btn-ghost fw-semibold {{{ if template.account/profile }}}active{{{ end }}}">
 			<div class="flex-1">[[global:about]]</div>
 		</a>
