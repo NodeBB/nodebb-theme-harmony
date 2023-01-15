@@ -6,31 +6,31 @@
 
 		<div class="align-self-start">
 			{{{ if section_online }}}
-			<div class="card card-header border py-0 px-1 text-xs">
+			<div class="card card-header border rounded-1 py-0 px-1 text-xs">
 				<span class="timeago" title="{./lastonlineISO}"></span>
 			</div>
 			{{{ end }}}
 
 			{{{ if section_joindate }}}
-			<div class="card card-header border py-0 px-1 text-xs">
+			<div class="card card-header border rounded-1 py-0 px-1 text-xs">
 				<span class="timeago" title="{./joindateISO}"></span>
 			</div>
 			{{{ end }}}
 
 			{{{ if section_sort-reputation }}}
-			<div class="card card-header border py-0 px-1 text-xs">
+			<div class="card card-header border rounded-1 py-0 px-1 text-xs">
 				<span class="formatted-number">{./reputation}</span>
 			</div>
 			{{{ end }}}
 
 			{{{ if section_sort-posts }}}
-			<div class="card card-header border py-0 px-1 text-xs">
+			<div class="card card-header border rounded-1 py-0 px-1 text-xs">
 				<span class="formatted-number">{./postcount}</span>
 			</div>
 			{{{ end }}}
 
 			{{{ if section_flagged }}}
-			<div class="card card-header border py-0 px-1 text-xs">
+			<div class="card card-header border rounded-1 py-0 px-1 text-xs">
 				<span class="formatted-number">{./flags}</span>
 			</div>
 			{{{ end }}}

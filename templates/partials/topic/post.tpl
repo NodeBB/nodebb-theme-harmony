@@ -93,26 +93,26 @@
 
 	<div component="post/replies/container" class="mt-2 col-11 border rounded-1 p-3"></div>
 
-	<div component="post/actions" class="d-flex justify-content-end post-tools">
+	<div component="post/actions" class="d-flex justify-content-end gap-1 post-tools">
 		<!-- IMPORT partials/topic/reactions.tpl -->
-		<a component="post/reply" href="#" class="btn btn-link user-select-none <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" title="[[topic:reply]]"><i class="fa fa-reply"></i></a>
-		<a component="post/quote" href="#" class="btn btn-link user-select-none <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" title="[[topic:quote]]"><i class="fa fa-quote-right"></i></a>
+		<a component="post/reply" href="#" class="btn-ghost-sm user-select-none {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="[[topic:reply]]"><i class="fa fa-reply text-primary"></i></a>
+		<a component="post/quote" href="#" class="btn-ghost-sm user-select-none {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="[[topic:quote]]"><i class="fa fa-quote-right text-primary"></i></a>
 
-		<!-- IF !reputation:disabled -->
-		<div class="d-flex votes align-items-center">
-			<a component="post/upvote" href="#" class="btn btn-link text-secondary <!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
-				<i class="fa fa-chevron-up"></i>
+		{{{ if !reputation:disabled }}}
+		<div class="d-flex votes align-items-stretch">
+			<a component="post/upvote" href="#" class="btn-ghost-sm {{{ if posts.upvoted }}}upvoted{{{ end }}}">
+				<i class="fa fa-chevron-up text-primary"></i>
 			</a>
 
-			<div class="d-inline-block px-3" component="post/vote-count" data-votes="{posts.votes}">{posts.votes}</div>
+			<div class="d-inline-block px-3 btn-ghost-sm" component="post/vote-count" data-votes="{posts.votes}">{posts.votes}</div>
 
-			<!-- IF !downvote:disabled -->
-			<a component="post/downvote" href="#" class="btn btn-link text-secondary <!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
-				<i class="fa fa-chevron-down"></i>
+			{{{ if !downvote:disabled }}}
+			<a component="post/downvote" href="#" class="btn-ghost-sm {{{ if posts.downvoted }}}downvoted{{{ end }}}">
+				<i class="fa fa-chevron-down text-primary"></i>
 			</a>
-			<!-- ENDIF !downvote:disabled -->
+			{{{ end }}}
 		</div>
-		<!-- ENDIF !reputation:disabled -->
+		{{{ end }}}
 
 		<!-- IMPORT partials/topic/post-menu.tpl -->
 	</div>

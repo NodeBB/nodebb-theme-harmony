@@ -23,10 +23,10 @@
 			<!-- IMPORT partials/category/tools.tpl -->
 
 			{{{ if (!feeds:disableRSS && rssFeedUrl) }}}
-			<a class="btn btn-link link-primary d-none d-lg-block" target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss"></i></a>
+			<a class="btn-ghost-sm d-none d-lg-flex align-self-stretch" target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss text-primary"></i></a>
 			{{{ end }}}
 
-			<a href="{config.relative_path}{{{ if template.category }}}{url}{{{ else }}}/{selectedFilter.url}{querystring}{{{ end }}}" class="d-inline-block">
+			<a href="{config.relative_path}{{{ if template.category }}}{url}{{{ else }}}/{selectedFilter.url}{querystring}{{{ end }}}" class="d-inline-block text-decoration-none">
 				<div class="alert alert-warning h-100 m-0 px-2 py-1 d-flex align-items-center hide" id="new-topics-alert"></div>
 			</a>
 		</ul>
@@ -34,20 +34,16 @@
 		<div class="d-flex gap-1 align-items-stretch">
 			{{{ if template.category }}}
 				{{{ if privileges.topics:create }}}
-				<a href="{config.relative_path}/compose?cid={cid}" component="category/post" id="new_topic" class="btn btn-primary text-nowrap" data-ajaxify="false" role="button">[[category:new_topic_button]]</a>
-				{{{ else }}}
-					{{{ if !loggedIn }}}
-					<a component="category/post/guest" href="{config.relative_path}/login" class="btn btn-primary">[[category:guest-login-post]]</a>
-					{{{ end }}}
+				<a href="{config.relative_path}/compose?cid={cid}" component="category/post" id="new_topic" class="btn btn-primary btn-sm text-nowrap" data-ajaxify="false" role="button">[[category:new_topic_button]]</a>
 				{{{ end }}}
 			{{{ else }}}
 				{{{ if canPost }}}
 				<!-- IMPORT partials/buttons/newTopic.tpl -->
-				{{{ else }}}
-					{{{ if !loggedIn }}}
-					<a component="category/post/guest" href="{config.relative_path}/login" class="btn btn-primary">[[category:guest-login-post]]</a>
-					{{{ end }}}
 				{{{ end }}}
+			{{{ end }}}
+			<!-- only show login button if not logged in and doesn't have any posting privilege -->
+			{{{ if (!loggedIn && (!privileges.topics:create && !canPost))}}}
+			<a component="category/post/guest" href="{config.relative_path}/login" class="btn btn-primary">[[category:guest-login-post]]</a>
 			{{{ end }}}
 		</div>
 	</div>

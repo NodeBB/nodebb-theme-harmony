@@ -1,4 +1,4 @@
-<ul component="category" class="list-unstyled topic-list pt-3 overflow-auto position-relative" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
+<ul component="category" class="list-unstyled topic-list pt-4 overflow-auto position-relative" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
 
 	{{{ each topics }}}
 	<li component="category/topic" class="category-item position-relative {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>

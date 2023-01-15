@@ -1,4 +1,3 @@
-<!-- IMPORT partials/breadcrumbs.tpl -->
 <div data-widget-area="header">
 	{{{each widgets.header}}}
 	{{widgets.header.html}}
@@ -19,7 +18,7 @@
 			<div class="d-flex justify-content-end gap-2">
 				<div class="">
 					{{{ if allowGroupCreation }}}
-					<button class="btn btn-primary btn-sm" data-action="new"><i class="fa fa-plus"></i> [[groups:new_group]]</button>
+					<button class="btn btn-primary btn-sm" data-action="new"><i class="fa fa-users"></i> [[groups:new_group]]</button>
 					{{{ end }}}
 					<select class="form-select hidden" id="search-sort">
 						<option value="alpha">[[groups:details.group_name]]</option>
