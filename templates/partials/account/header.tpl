@@ -20,7 +20,7 @@
 	</div>
 </div>
 
-<div class="d-flex gap-2 w-100 pb-4 mb-4 mt-2 border-bottom">
+<div class="d-flex flex-column flex-md-row gap-2 w-100 pb-4 mb-4 mt-2 border-bottom">
 	<div class="avatar-wrapper border-4 position-relative align-self-start d-none d-md-block" style="margin-top: -75px;">
 		{{{ if picture }}}
 		<img src="{picture}" class="avatar avatar-rounded" style="--avatar-size: 142px;" />
@@ -28,11 +28,18 @@
 		<div class="avatar avatar-rounded" style="background-color: {icon:bgColor}; --avatar-size: 142px;" title="{username}">{icon:text}</div>
 		{{{ end }}}
 	</div>
-	<div class="d-flex mt-1 justify-content-between w-100">
-		<div class="d-flex flex-1 flex-row gap-2">
-			<a href="{config.relative_path}/uid/{./uid}" class="d-block d-md-none text-decoration-none">{buildAvatar(edit, "48px", true)}</a>
 
-			<div class="d-grid gap-1">
+	<div class="avatar-wrapper border-4 position-relative align-self-center d-block d-md-none" style="margin-top: -75px;">
+		{{{ if picture }}}
+		<img src="{picture}" class="avatar avatar-rounded" style="--avatar-size: 142px;" />
+		{{{ else }}}
+		<div class="avatar avatar-rounded" style="background-color: {icon:bgColor}; --avatar-size: 142px;" title="{username}">{icon:text}</div>
+		{{{ end }}}
+	</div>
+
+	<div class="d-flex flex-column flex-md-row mt-1 justify-content-between w-100 gap-2">
+		<div class="d-flex flex-1 flex-row gap-2">
+			<div class="d-flex flex-column">
 				<h2 class="fullname fw-semibold fs-2 tracking-tight mb-0">{{{ if fullname }}}{fullname}{{{ else }}}{username}{{{ end }}}</h2>
 				<div class="d-flex flex-wrap gap-1 text-sm align-items-center">
 					<span class="username fw-bold">{{{ if !banned }}}@{username}{{{ else }}}[[user:banned]]{{{ end }}}</span>
@@ -61,19 +68,19 @@
 			</div>
 		</div>
 
-		<div class="d-flex gap-1 align-self-start">
+		<div class="d-flex gap-1 align-self-stretch align-self-md-start justify-content-end">
 			{{{ if loggedIn }}}
 			{{{ if !isSelf }}}
-			<a component="account/unfollow" href="#" class="btn btn-info{{{ if !isFollowing }}} hide{{{ end }}}">[[user:unfollow]]</a>
-			<a component="account/follow" href="#" class="btn btn-primary{{{ if isFollowing }}} hide{{{ end }}}">[[user:follow]]</a>
+			<a component="account/unfollow" href="#" class="btn btn-info flex-fill{{{ if !isFollowing }}} hide{{{ end }}}">[[user:unfollow]]</a>
+			<a component="account/follow" href="#" class="btn btn-primary flex-fill{{{ if isFollowing }}} hide{{{ end }}}">[[user:follow]]</a>
 			{{{ end }}}
 			{{{ end }}}
 
 			{{{ if (loggedIn && (!isSelf && (!banned && !config.disableChat))) }}}
-			<div class="btn-group">
+			<div class="btn-group flex-fill">
 				<a {{{ if hasPrivateChat }}}component="account/chat"{{{ else }}}component="account/new-chat"{{{ end }}} href="#" class="btn btn-light" role="button">[[user:chat]]</a>
 				{{{ if hasPrivateChat}}}
-				<button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">
+				<button type="button" class="btn btn-light dropdown-toggle flex-0" data-bs-toggle="dropdown">
 					<i class="fa fa-caret-down"></i>
 				</button>
 				<ul class="dropdown-menu dropdown-menu-end" role="menu">

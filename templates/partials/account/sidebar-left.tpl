@@ -52,7 +52,7 @@
 		</a>
 		{{{ end }}}
 
-		<hr/>
+		<hr class="w-100 my-2"/>
 		{{{ if (loggedIn && (!isSelf && !banned)) }}}
 		<a href="#" component="account/flag" class="btn-ghost-sm">
 			<i class="fa-solid fa-flag text-danger"></i>
@@ -66,7 +66,7 @@
 			<i class="fa-solid fa-ban text-danger"></i>
 			<div class="flex-1 text-nowrap">[[user:unblock_user]]</div>
 		</a>
-		<hr/>
+		<hr class="w-100 my-2"/>
 		{{{ end }}}
 
 		{{{ if canEdit }}}
