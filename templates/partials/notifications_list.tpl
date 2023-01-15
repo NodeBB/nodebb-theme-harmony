@@ -22,9 +22,9 @@
 		</div>
 		<div class="notification-chat-controls">
 			{{{ if ./nid }}}
-			<button class="mark-read btn btn-light btn-sm">
-				<i class="unread fa fa-xs fa-circle text-primary {{{ if ./read }}}hidden{{{ end }}}"></i>
-				<i class="read fa fa-xs fa-circle-o text-secondary {{{ if !./read }}}hidden{{{ end }}}"></i>
+			<button class="mark-read btn-ghost-sm" style="width: 1.5rem; height: 1.5rem;">
+				<i class="unread fa fa-2xs fa-circle text-primary {{{ if ./read }}}hidden{{{ end }}}"></i>
+				<i class="read fa fa-2xs fa-circle-o text-secondary {{{ if !./read }}}hidden{{{ end }}}"></i>
 			</button>
 			{{{ end }}}
 		</div>
