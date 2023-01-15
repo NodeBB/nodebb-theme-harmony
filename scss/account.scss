@@ -16,12 +16,6 @@
 		margin-top: 300px;
 	}
 
-	.sidebar {
-		@include media-breakpoint-up(md) {
-			flex-basis: 200px!important;
-		}
-	}
-
 	.categories {
 		[component="categories/category"] {
 			.depth-1 {

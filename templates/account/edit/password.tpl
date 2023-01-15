@@ -6,7 +6,7 @@
 		<div class="flex-1 ps-md-2 ps-lg-5" style="min-width: 0;">
 			<h3 class="fw-semibold fs-5">{{{ if isSelf }}}[[user:change_password]]{{{ else }}}[[pages:{template.name}, {username}]]{{{ end }}}</h3>
 
-			<form class="edit-form w-25">
+			<form class="edit-form">
 				<!-- disables autocomplete on FF --><input type="password" style="display:none">
 
 				{{{ if isSelf }}}

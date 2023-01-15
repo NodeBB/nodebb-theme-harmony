@@ -33,11 +33,10 @@
 		{group.descriptionParsed}
 	</div>
 
-	<div class="row">
+	<div class="d-flex flex-column flex-md-row">
 		<!-- IMPORT partials/groups/sidebar-left.tpl -->
 
-		<div class="col-12 col-md-9 col-lg-10 ps-md-5">
-
+		<div class="flex-1 ps-md-2 ps-lg-5" style="min-width:0;">
 			<div class="tab-content">
 				<div class="tab-pane fade show active" id="groups-posts" role="tabpanel">
 					<h3 class="fw-semibold fs-5 mb-0">[[global:posts]]</h3>
@@ -67,22 +66,6 @@
 					<!-- IMPORT partials/groups/admin.tpl -->
 				</div>
 				{{{ end }}}
-			</div>
-
-			<div data-widget-area="left">
-				{{{each widgets.left}}}
-				{{widgets.left.html}}
-				{{{end}}}
-			</div>
-		</div>
-		<div class="col-lg-8 col-12">
-			<div class="col-lg-11">
-
-			</div>
-			<div data-widget-area="right">
-				{{{each widgets.right}}}
-				{{widgets.right.html}}
-				{{{end}}}
 			</div>
 		</div>
 	</div>

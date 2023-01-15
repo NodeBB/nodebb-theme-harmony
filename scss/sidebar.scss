@@ -15,22 +15,24 @@
 .sidebar {
 	$hover-color: mix($light, $dark, 90);
 
-	&.open {
-		min-width: 200px;
-		max-width: 200px;
-		width: 200px;
+	@include media-breakpoint-up(lg) {
+		&.open {
+			min-width: 200px;
+			max-width: 200px;
+			width: 200px;
 
-		.sidebar-toggle {
-			.fa-angles-right { display: none; }
-			.fa-angles-left { display: inline-block; }
-		}
-		.visible-open { display: initial; }
-		.visible-closed { display: none; }
-		hr.visible-open { display: block; }
-		.truncate-open {
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
+			.sidebar-toggle {
+				.fa-angles-right { display: none; }
+				.fa-angles-left { display: inline-block; }
+			}
+			.visible-open { display: initial; }
+			.visible-closed { display: none; }
+			hr.visible-open { display: block; }
+			.truncate-open {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
 		}
 	}
 	.visible-open {	display: none; }

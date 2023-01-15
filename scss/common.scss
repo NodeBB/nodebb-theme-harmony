@@ -75,3 +75,9 @@ body {
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 }
+
+.flex-basis-md-200 {
+	@include media-breakpoint-up(md) {
+		flex-basis: 200px!important;
+	}
+}

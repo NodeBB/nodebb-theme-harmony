@@ -16,7 +16,6 @@
 			}
 
 			.meta {
-				display: none;
 				top: -8px;
 				left: calc($spacer + 8px);
 				font-size: 13px;
@@ -38,7 +37,6 @@
 			transition: $transition-base;
 
 			.meta {
-				display: none;
 				left: calc($spacer + 8px);
 				font-size: 13px;
 			}
@@ -53,9 +51,5 @@
 
 	[component="topic/navigator"].d-sm-flex.mt-auto + .mt-auto {
 		margin-top: 0 !important;
-	}
-
-	.handle .meta, .unread .meta {
-		display: block;
 	}
 }

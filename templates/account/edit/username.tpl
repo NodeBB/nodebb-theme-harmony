@@ -6,7 +6,7 @@
 		<div class="flex-1 ps-md-2 ps-lg-5" style="min-width: 0;">
 			<h3 class="fw-semibold fs-5">{{{ if isSelf }}}[[user:change_username]]{{{ else }}}[[pages:{template.name}, {username}]]{{{ end }}}</h3>
 
-			<form class="form-horizontal edit-form w-25">
+			<form class="form-horizontal edit-form">
 				<div class="mb-2">
 					<label class="form-label fw-semibold text-sm" for="inputNewUsername">[[user:username]]</label>
 					<input class="form-control" type="text" id="inputNewUsername" placeholder="[[user:username]]" value="{username}">
