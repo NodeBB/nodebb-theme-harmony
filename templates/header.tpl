@@ -27,7 +27,7 @@
 	<div class="d-flex justify-content-between pb-4 pb-md-0">
 		<!-- IMPORT partials/sidebar-left.tpl -->
 
-		<main id="panel" class="d-flex flex-column gap-3 flex-grow-1 mt-3">
+		<main id="panel" class="d-flex flex-column gap-3 flex-grow-1 mt-3" style="min-width: 0;">
 			<!-- IMPORT partials/header/brand.tpl -->
 			<script>
 				const headerEl = document.getElementById('header-menu');
