@@ -1,5 +1,5 @@
 <div component="topic/reply/container" class="btn-group action-bar bottom-sheet {{{ if !privileges.topics:reply }}}hidden{{{ end }}}">
-	<a href="{config.relative_path}/compose?tid={tid}&title={title}" class="d-flex align-items-center btn btn-sm btn-primary px-3 fw-semibold " component="topic/reply" data-ajaxify="false" role="button"><i class="fa fa-reply visible-xs-inline"></i><span class="visible-md-inline visible-lg-inline"> [[topic:reply]]</span></a>
+	<a href="{config.relative_path}/compose?tid={tid}&title={title}" class="d-flex align-items-center btn btn-sm btn-primary px-3 fw-semibold " component="topic/reply" data-ajaxify="false" role="button"><i class="fa fa-reply d-sm-block d-md-none"></i><span class="d-none d-md-block"> [[topic:reply]]</span></a>
 	<button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown">
 		<span class="caret"></span>
 	</button>
