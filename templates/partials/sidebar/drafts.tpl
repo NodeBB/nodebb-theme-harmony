@@ -10,19 +10,30 @@
 </a>
 <ul class="drafts-dropdown dropdown-menu p-1 shadow">
 	<li>
-		<ul component="drafts/list" class="draft-list list-unstyled d-flex flex-column gap-1">
+		<ul component="drafts/list" class="draft-list list-unstyled d-flex flex-column gap-1 pe-1">
 			<li class="no-drafts text-center p-2">[[modules:composer.no-drafts]]</li>
 
 			{{{ each drafts }}}
 			{{{ if !@first}}}
 			<hr class="m-0"/>
 			{{{ end }}}
-			<li class="dropdown-item rounded-1 p-2" data-save-id="{./save_id}">
-				<div class="d-flex gap-1 justify-content-between">
-					<div class="d-flex flex-column" component="drafts/open" data-save-id="{./save_id}">
+			<li class="" data-save-id="{./save_id}">
+				<div class="d-flex gap-1 justify-content-between ff-base">
+					<div class="dropdown-item rounded-1 p-2 d-flex flex-column gap-2 pointer" component="drafts/open" data-save-id="{./save_id}">
+						{{{ if (./action == "topics.post") }}}
 						{{{ if ./title}}}
-						<div class="text text-xs fw-semibold">{./title}</div>
+						<div class="text text-xs fw-semibold line-clamp-2">{./title}</div>
 						{{{ end }}}
+						{{{ end }}}
+
+						{{{ if (./action == "posts.reply") }}}
+						<div class="text text-xs fw-semibold line-clamp-2">[[topic:composer.replying_to, "{./title}"]]</div>
+						{{{ end }}}
+
+						{{{ if (./action == "posts.edit") }}}
+						<div class="text text-xs fw-semibold line-clamp-2">[[topic:composer.editing]]</div>
+						{{{ end }}}
+
 						{{{ if ./text }}}
 						<div class="text text-sm line-clamp-3">{./text}</div>
 						{{{ end }}}

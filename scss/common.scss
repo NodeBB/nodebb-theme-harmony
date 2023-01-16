@@ -2,6 +2,9 @@
 body {
 	overflow-y: scroll;
 }
+.ff-base {
+	font-family: $font-family-base;
+}
 .ff-secondary {
 	font-family: $font-family-secondary;
 }

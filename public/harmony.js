@@ -76,13 +76,20 @@ $(document).ready(function () {
 
 			async function renderDraftList() {
 				const draftListEl = $('[component="drafts/list"]');
-				draftListEl.find('[data-save-id]').remove();
+				draftListEl.children(':not(.no-drafts)').remove();
 
 				const draftItems = drafts.listAvailable();
+				console.log('harmony sees', draftItems);
 				if (!draftItems.length) {
 					draftListEl.find('.no-drafts').removeClass('hidden');
 					return;
 				}
+				draftItems.reverse().forEach((draft) => {
+					if (draft) {
+						draft.text = draft.text.replace(/(?:\r\n|\r|\n)/g, '<br>');
+					}
+				});
+				console.log(draftItems);
 				const html = await app.parseAndTranslate('partials/sidebar/drafts', 'drafts', { drafts: draftItems });
 				draftListEl.find('.no-drafts').addClass('hidden');
 				draftListEl.append(html).find('.timeago').timeago();
@@ -97,6 +104,8 @@ $(document).ready(function () {
 
 			draftsEl.on('click', '[component="drafts/delete"]', function () {
 				drafts.removeDraft($(this).attr('data-save-id'));
+				renderDraftList();
+				return false;
 			});
 
 			$(window).on('action:composer.drafts.save', updateBadgeCount);

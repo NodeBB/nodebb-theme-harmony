@@ -99,6 +99,7 @@ library.getThemeConfig = async function (config) {
 	config.enableQuickReply = themeConfig.enableQuickReply === 'on';
 	config.centerHeaderElements = themeConfig.centerHeaderElements === 'on';
 	config.stickyToolbar = themeConfig.stickyToolbar === 'on';
+	config.openDraftsOnPageLoad = false;
 	return config;
 };
 
