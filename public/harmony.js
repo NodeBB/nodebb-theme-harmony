@@ -35,9 +35,19 @@ $(document).ready(function () {
 	});
 
 	function setupMobileMenu() {
-		$('[component="sidebar/toggle"]').on('click', function () {
-			$('.sidebar').toggleClass('open');
-			$(window).trigger('action:sidebar.toggle');
+		require(['api'], function (api) {
+			$('[component="sidebar/toggle"]').on('click', async function () {
+				const sidebarEl = $('.sidebar');
+				sidebarEl.toggleClass('open');
+				if (app.user.uid) {
+					await api.put(`/users/${app.user.uid}/settings`, {
+						settings: {
+							openSidebars: sidebarEl.hasClass('open') ? 'on' : 'off',
+						},
+					});
+				}
+				$(window).trigger('action:sidebar.toggle');
+			});
 		});
 	}
 
@@ -79,7 +89,6 @@ $(document).ready(function () {
 				draftListEl.children(':not(.no-drafts)').remove();
 
 				const draftItems = drafts.listAvailable();
-				console.log('harmony sees', draftItems);
 				if (!draftItems.length) {
 					draftListEl.find('.no-drafts').removeClass('hidden');
 					return;
@@ -89,7 +98,7 @@ $(document).ready(function () {
 						draft.text = draft.text.replace(/(?:\r\n|\r|\n)/g, '<br>');
 					}
 				});
-				console.log(draftItems);
+
 				const html = await app.parseAndTranslate('partials/sidebar/drafts', 'drafts', { drafts: draftItems });
 				draftListEl.find('.no-drafts').addClass('hidden');
 				draftListEl.append(html).find('.timeago').timeago();

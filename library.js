@@ -12,6 +12,7 @@ const defaults = {
 	enableQuickReply: 'on',
 	centerHeaderElements: 'off',
 	stickyToolbar: 'on',
+	openSidebars: 'off',
 };
 
 library.init = async function (params) {
@@ -99,6 +100,7 @@ library.getThemeConfig = async function (config) {
 	config.enableQuickReply = themeConfig.enableQuickReply === 'on';
 	config.centerHeaderElements = themeConfig.centerHeaderElements === 'on';
 	config.stickyToolbar = themeConfig.stickyToolbar === 'on';
+	config.openSidebars = themeConfig.openSidebars === 'on';
 	config.openDraftsOnPageLoad = false;
 	return config;
 };
@@ -115,7 +117,9 @@ library.getAdminSettings = async function (hookData) {
 
 library.saveUserSettings = async function (hookData) {
 	Object.keys(defaults).forEach((key) => {
-		hookData.settings[key] = hookData.data[key] || undefined;
+		if (hookData.data.hasOwnProperty(key)) {
+			hookData.settings[key] = hookData.data[key] || undefined;
+		}
 	});
 	return hookData;
 };
