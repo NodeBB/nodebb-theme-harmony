@@ -1,6 +1,6 @@
 .skin-quartz {
 	// $body-bg-image is gradient in quartz
-	.icon {
+	[component="post"] .icon {
 		background-color: transparent !important;
 	}
 }
@@ -9,5 +9,12 @@
 	// $spacer being modified looks bad on this element
 	.topic-list-header .btn, .topic-main-buttons .btn {
 		padding: 6px 12px;
+	}
+}
+
+.skin-yeti {
+	.badge {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
 	}
 }

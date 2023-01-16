@@ -14,8 +14,8 @@
 		<!-- IMPORT partials/chats/options.tpl -->
 	</div>
 	<hr class="text-muted opacity-25"/>
-	<div class="position-relative">
-		<div component="chat/messages/scroll-up-alert" class="position-absolute me-md-4 end-0 text-sm scroll-up-alert alert alert-info hidden w-25 d-none d-md-block" role="button" style="z-index: 1;">[[modules:chat.scroll-up-alert]]</div>
+	<div class="row position-relative justify-content-center mx-5">
+		<div component="chat/messages/scroll-up-alert" class="col-12 col-xl-6 position-absolute text-sm scroll-up-alert alert alert-info hidden d-none d-md-block" role="button" style="z-index: 1;">[[modules:chat.scroll-up-alert]]</div>
 	</div>
 	<ul class="chat-content p-0 m-0 list-unstyled overflow-auto flex-grow-1">
 		<!-- IMPORT partials/chats/messages.tpl -->
