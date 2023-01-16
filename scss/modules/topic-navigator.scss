@@ -1,3 +1,7 @@
+body:not(.page-topic) [component="topic/navigator"] {
+	display: none!important;
+}
+
 [component="topic/navigator"] {
 	max-height: calc(200px + (2rem * 4));
 	user-select: none;
