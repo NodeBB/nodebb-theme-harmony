@@ -34,6 +34,11 @@
 	</div>
 
 	<div class="d-flex flex-column flex-md-row">
+		<div data-widget-area="left">
+			{{{each widgets.left}}}
+			{{widgets.left.html}}
+			{{{end}}}
+		</div>
 		<!-- IMPORT partials/groups/sidebar-left.tpl -->
 
 		<div class="flex-1 ps-md-2 ps-lg-5" style="min-width:0;">
@@ -67,6 +72,12 @@
 				</div>
 				{{{ end }}}
 			</div>
+		</div>
+
+		<div data-widget-area="right">
+			{{{each widgets.right}}}
+			{{widgets.right.html}}
+			{{{end}}}
 		</div>
 	</div>
 </div>
