@@ -1,11 +1,11 @@
 <div class="text-dark bg-light bottombar p-2 d-flex d-md-none justify-content-between fixed-bottom ff-secondary align-items-center">
 	<div class="">
-		<button class="btn" data-bs-toggle="dropdown">
+		<a href="#" role="button" class="nav-link nav-btn d-flex justify-content-between align-items-center position-relative" data-bs-toggle="dropdown">
 			<span class="position-relative">
-				<i class="fa fa-bars"></i>
-				<span component="unread/count" data-unread-url="{unreadCount.unreadUrl}" class="position-absolute top-0 start-100 translate-middle badge rounded-1 text-bg-danger {{{ if !unreadCount.mobileUnread }}}hidden{{{ end }}}">{unreadCount.mobileUnread}</span>
+				<i class="fa fa-fw fa-lg fa-bars"></i>
+				<span component="unread/count" data-unread-url="{unreadCount.unreadUrl}" class="position-absolute top-0 start-100 translate-middle badge rounded-1 bg-primary {{{ if !unreadCount.mobileUnread }}}hidden{{{ end }}}">{unreadCount.mobileUnread}</span>
 			</span>
-		</button>
+		</a>
 		<ul class="navigation-dropdown dropdown-menu">
 			{{{ each navigation }}}
 			<!-- IF function.displayMenuItem, @index -->
