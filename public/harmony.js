@@ -1,6 +1,7 @@
 'use strict';
 
 $(document).ready(function () {
+	setupNProgress();
 	setupMobileMenu();
 	setupSearch();
 	setupDrafts();
@@ -120,6 +121,20 @@ $(document).ready(function () {
 			$(window).on('action:composer.drafts.save', updateBadgeCount);
 			$(window).on('action:composer.drafts.remove', updateBadgeCount);
 			updateBadgeCount();
+		});
+	}
+	function setupNProgress() {
+		require(['nprogress'], function (NProgress) {
+			window.nprogress = NProgress;
+			if (NProgress) {
+				$(window).on('action:ajaxify.start', function () {
+					NProgress.set(0.7);
+				});
+
+				$(window).on('action:ajaxify.end', function () {
+					NProgress.done(true);
+				});
+			}
 		});
 	}
 });
