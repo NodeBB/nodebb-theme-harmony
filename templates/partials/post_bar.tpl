@@ -16,10 +16,11 @@
 			<a class="btn-ghost-sm d-none d-lg-flex align-self-stretch" target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss text-primary"></i></a>
 			{{{ end }}}
 
-			<span class="loading-indicator btn float-start text-muted navbar-text hidden" done="0">
-				<i class="fa fa-refresh fa-spin"></i>
-				<span class="hidden-xs">[[topic:loading_more_posts]]</span>
-			</span>
+			{{{ if browsingUsers }}}
+			<div class="hidden-xs">
+			<!-- IMPORT partials/topic/browsing-users.tpl -->
+			</div>
+			{{{ end }}}
 		</ul>
 		<!-- IMPORT partials/topic/reply-button.tpl -->
 	</div>
