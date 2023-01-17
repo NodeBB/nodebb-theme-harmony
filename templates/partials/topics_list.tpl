@@ -14,7 +14,7 @@
 					<div class="avatar">
 						<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" class="text-decoration-none">
 							{{{ if ./thumbs.length }}}
-							<img src="{./thumbs.0.url}" class="not-responsive" />
+							<img class="topic-thumb rounded-1" width="80" height="auto" src="{./thumbs.0.url}" class="not-responsive" />
 							{{{ else }}}
 							{buildAvatar(./user, "40px", true, "not-responsive")}
 							{{{ end }}}
