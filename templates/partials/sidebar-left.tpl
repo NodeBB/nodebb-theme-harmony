@@ -28,7 +28,10 @@
 		{{{end}}}
 	</ul>
 	<div class="w-100">
+		{{{ if !config.disableCustomUserSkins }}}
 		<!-- IMPORT partials/skin-switcher.tpl -->
+		{{{ end }}}
+
 		<div class="sidebar-toggle m-2 d-none d-lg-block">
 			<a href="#" role="button" component="sidebar/toggle" class="nav-btn d-flex gap-2 align-items-center p-2 pointer nav-link w-100 text-nowrap">
 				<i class="fa fa-fw fa-angles-right"></i>
