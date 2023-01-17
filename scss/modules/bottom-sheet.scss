@@ -1,5 +1,5 @@
 .bottom-sheet {
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(md) {
 		.dropdown-menu {
 			display: block;
 			visibility: hidden;
