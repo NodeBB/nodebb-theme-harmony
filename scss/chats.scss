@@ -6,8 +6,10 @@
 body.page-user-chats {
 	overflow: hidden;
 }
-
-.expanded-chat, .chat-modal {
+[component="chat/nav-wrapper"] {
+	width: 300px;
+}
+.expanded-chat {
 	// no taskbar so hide minimize button
 	[data-action="minimize"] {
 		display: none!important;
@@ -38,6 +40,9 @@ body.page-user-chats {
 
 /* Mobile handling of chat page */
 @include media-breakpoint-down(md) {
+	[component="chat/nav-wrapper"] {
+		width: 100%;
+	}
 	.page-user-chats {
 		.chats-full {
 			padding-bottom: 8rem!important;

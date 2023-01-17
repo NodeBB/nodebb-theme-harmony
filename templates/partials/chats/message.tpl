@@ -14,7 +14,7 @@
 		{{{ end }}}
 	</div>
 	<div class="message-body-wrapper hover-parent">
-		<div component="chat/message/body" class="message-body ps-0 py-0 overflow-auto">
+		<div component="chat/message/body" class="message-body ps-0 py-0 overflow-auto text-break">
 			{messages.content}
 		</div>
 
