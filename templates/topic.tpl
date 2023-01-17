@@ -11,7 +11,7 @@
 </h2>
 
 <div class="topic-info d-flex gap-2 align-items-center flex-wrap {{{ if config.centerHeaderElements }}}justify-content-center{{{ end }}}">
-	<span component="topic/labels" class="d-flex gap-2">
+	<span component="topic/labels" class="d-flex gap-2 lh-1">
 		<span component="topic/scheduled" class="badge badge border border-gray-300 text-primary {{{ if !scheduled }}}hidden{{{ end }}}">
 			<i class="fa fa-clock-o"></i>
 			[[topic:scheduled]]
@@ -28,7 +28,7 @@
 			<i class="fa fa-arrow-circle-right"></i>
 			{{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}
 		</span>
-		{{{each icons}}}{@value}{{{end}}}
+		{{{each icons}}}<span>{@value}</span>{{{end}}}
 	</span>
 	<a class="lh-1" href="{config.relative_path}/category/{category.slug}">{function.buildCategoryLabel, category, "border"}</a>
 	<div class="lh-1 tags tag-list d-flex hidden-xs gap-2"><!-- IMPORT partials/topic/tags.tpl --></div>
