@@ -9,7 +9,7 @@
 	<form class="flex-grow-1 d-flex flex-column gap-2" method="post" action="{config.relative_path}/compose">
 		<input type="hidden" name="tid" value="{tid}" />
 		<input type="hidden" name="_csrf" value="{config.csrf_token}" />
-		<div class="quickreply-message">
+		<div class="quickreply-message position-relative">
 			<textarea rows="4" name="content" component="topic/quickreply/text" class="form-control mousetrap" placeholder="[[modules:composer.textarea.placeholder]]"></textarea>
 			<div class="imagedrop"><div>[[topic:composer.drag_and_drop_images]]</div></div>
 		</div>
