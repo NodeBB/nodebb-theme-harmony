@@ -22,12 +22,12 @@
 					<div class="dropdown-item rounded-1 p-2 d-flex flex-column gap-2 pointer" component="drafts/open" data-save-id="{./save_id}">
 						{{{ if (./action == "topics.post") }}}
 						{{{ if ./title}}}
-						<div class="text text-xs fw-semibold line-clamp-2">{./title}</div>
+						<div class="text text-xs fw-semibold line-clamp-2 text-break">{./title}</div>
 						{{{ end }}}
 						{{{ end }}}
 
 						{{{ if (./action == "posts.reply") }}}
-						<div class="text text-xs fw-semibold line-clamp-2">[[topic:composer.replying_to, "{./title}"]]</div>
+						<div class="text text-xs fw-semibold line-clamp-2 text-break">[[topic:composer.replying_to, "{./title}"]]</div>
 						{{{ end }}}
 
 						{{{ if (./action == "posts.edit") }}}

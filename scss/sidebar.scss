@@ -113,7 +113,32 @@
 		font-size: 9px;
 		line-height: 12px;
 	}
-	.search.bottom-sheet .dropdown-menu {
-		max-height: 100%;
+
+	.navigation-dropdown, .user-dropdown {
+		> li {
+			> a, .dropdown-item {
+				padding: 10px 20px!important;
+			}
+		}
+		left: 0!important;
+		right: 0!important;
+		bottom: $spacer!important;
+		box-shadow: none!important;
+		max-height: 60vh!important;
+		overflow: auto!important;
+	}
+	.search-dropdown .quick-search-results {
+		max-height: 250px!important;
+		overflow-y: auto!important;
+	}
+	.search-dropdown, .chats-dropdown, .notifications-dropdown, .drafts-dropdown {
+		left: 0!important;
+		right: 0!important;
+		bottom: $spacer!important;
+		box-shadow: none!important;
+		ul {
+			max-height: 60vh!important;
+			overflow-y: auto!important;
+		}
 	}
 }

@@ -15,7 +15,7 @@
 				<div class="quick-search-results-container"></div>
 			</div>
 
-			<div class="d-flex gap-1 input-container mt-2">
+			<div class="d-flex gap-1 input-container">
 				<input autocomplete="off" type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">
 
 				<div class="nav-btn d-flex justify-content-center align-items-center advanced-search-link">
