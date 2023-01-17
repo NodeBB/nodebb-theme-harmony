@@ -14,7 +14,7 @@
 			<div class="imagedrop"><div>[[topic:composer.drag_and_drop_images]]</div></div>
 		</div>
 		<div>
-			<div class="btn-group">
+			<div class="d-flex justify-content-end gap-2">
 				<button type="submit" component="topic/quickreply/button" class="btn btn-sm btn-primary">[[topic:post-quick-reply]]</button>
 				<button type="submit" component="topic/quickreply/expand" class="btn btn-sm btn-primary" formmethod="get"><i class="fa fa-expand"></i></button>
 			</div>
