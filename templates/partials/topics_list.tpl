@@ -22,7 +22,7 @@
 					</div>
 				</div>
 				<div class="d-flex flex-column gap-1">
-					<h2 component="topic/header" class="title mb-1 {{{ if showSelect }}}me-4{{{ end }}} me-md-0 text-md fw-bold">
+					<h2 component="topic/header" class="text-break title mb-1 {{{ if showSelect }}}me-4{{{ end }}} me-md-0 text-md fw-bold">
 						{{{ if topics.noAnchor }}}
 						<span>{./title}</span>
 						{{{ else }}}
