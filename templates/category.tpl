@@ -33,8 +33,7 @@
 
 		{{{ if !topics.length }}}
 		{{{ if privileges.topics:create }}}
-		<hr class="visible-xs" />
-		<div class="alert alert-warning" id="category-no-topics">
+		<div class="alert alert-info mt-3" id="category-no-topics">
 			[[category:no_topics]]
 		</div>
 		{{{ end }}}

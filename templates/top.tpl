@@ -7,7 +7,7 @@
 	<!-- IMPORT partials/topic-list-bar.tpl -->
 	<div class="category">
 		{{{ if !topics.length }}}
-		<div class="alert alert-warning" id="category-no-topics">[[top:no_top_topics]]</div>
+		<div class="alert alert-info mt-3" id="category-no-topics">[[top:no_top_topics]]</div>
 		{{{ end }}}
 
 		<!-- IMPORT partials/topics_list.tpl -->

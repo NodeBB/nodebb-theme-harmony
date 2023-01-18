@@ -6,7 +6,7 @@
 <div class="unread">
 	<!-- IMPORT partials/topic-list-bar.tpl -->
 	<div class="category">
-		<div id="category-no-topics" class="alert alert-warning {{{ if topics.length }}}hidden{{{ end }}}">[[unread:no_unread_topics]]</div>
+		<div id="category-no-topics" class="alert alert-info mt-3 {{{ if topics.length }}}hidden{{{ end }}}">[[unread:no_unread_topics]]</div>
 
 		<!-- IMPORT partials/topics_list.tpl -->
 		<button id="load-more-btn" class="btn btn-primary hide">[[unread:load_more]]</button>
