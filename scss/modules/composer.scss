@@ -6,10 +6,6 @@ $composer-bg: $body-bg !default;
 	background-color: $bg !important;
 }
 
-.composer {
-	z-index: 3 !important;
-}
-
 .skin-noskin {
 	// only using colors when there is no bootswatch skin applied
 	$composer-color: $secondary;
