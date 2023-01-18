@@ -69,6 +69,17 @@
 			[component="post/reply-count"] {
 				font-size: $font-size-base * .75;
 			}
+
+			[component="post/upvote"], [component="post/downvote"] {
+				&.upvoted, &.downvoted {
+					background-color: lighten($btn-ghost-hover-color, 5%);
+
+					&:hover {
+					background-color: $btn-ghost-hover-color;
+
+					}
+				}
+			}
 		}
 	}
 

@@ -48,10 +48,10 @@ body {
 	text-align: left;
 	--bs-text-opacity: 1;
 	color: inherit !important;
-	$hover-color: mix($light, $dark, 90);
+
 	cursor: pointer;
 	&:hover, &.active {
-		background-color: $hover-color;
+		background-color: $btn-ghost-hover-color;
 		text-decoration: none;
 	}
 }

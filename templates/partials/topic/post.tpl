@@ -104,7 +104,7 @@
 				<i class="fa fa-chevron-up text-primary"></i>
 			</a>
 
-			<div class="d-inline-block px-3 btn-ghost-sm" component="post/vote-count" data-votes="{posts.votes}">{posts.votes}</div>
+			<div class="d-inline-block px-2 mx-1 btn-ghost-sm" component="post/vote-count" data-votes="{posts.votes}">{posts.votes}</div>
 
 			{{{ if !downvote:disabled }}}
 			<a component="post/downvote" href="#" class="btn-ghost-sm {{{ if posts.downvoted }}}downvoted{{{ end }}}">

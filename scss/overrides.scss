@@ -39,6 +39,8 @@ $text-muted: $gray-600 !default;
 $border-color: $gray-200 !default;
 $link-color: shade-color($blue, 20%) !default;
 
+$btn-ghost-hover-color: mix($light, $dark, 90);
+
 // no caret on dropdown-toggle
 $enable-caret: false;
 
