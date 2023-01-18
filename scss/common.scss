@@ -14,10 +14,6 @@ body {
 .text-sm { font-size: 0.875rem!important; } // 14px
 .text-xs { font-size: 0.75rem!important; } // 12px
 
-.btn-link:hover {
-	text-decoration: none;
-}
-
 .caret {
 	&::after {
 		border: none;
@@ -41,6 +37,13 @@ body {
 .skin-noskin {
 	.sticky-tools .btn-link {
 		color: $dark;
+	}
+}
+
+.btn-link {
+	&:hover, &.active {
+		background-color: $btn-ghost-hover-color;
+		text-decoration: none;
 	}
 }
 
