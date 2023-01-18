@@ -1,5 +1,5 @@
 <nav class="topic-list-header {{{ if config.stickyToolbar }}} sticky-tools{{{ end }}} navbar navbar-expand p-0 border-0 rounded">
-	<div class="card card-header flex-row p-2 border rounded ff-secondary w-100">
+	<div class="card card-header flex-row p-2 gap-1 border rounded ff-secondary w-100">
 		<ul class="navbar-nav me-auto gap-2 align-items-center">
 			{{{ if template.category }}}
 			<!-- IMPORT partials/category/watch.tpl -->
@@ -27,11 +27,11 @@
 			{{{ end }}}
 
 			<a href="{config.relative_path}{{{ if template.category }}}{url}{{{ else }}}/{selectedFilter.url}{querystring}{{{ end }}}" class="d-inline-block text-decoration-none">
-				<div class="alert alert-warning h-100 m-0 px-2 py-1 d-flex align-items-center hide" id="new-topics-alert"></div>
+				<div class="d-md-block alert alert-warning h-100 m-0 px-2 py-1 line-clamp-2 text-sm text-break" id="new-topics-alert">There is a new post. Click here to reload.</div>
 			</a>
 		</ul>
 
-		<div class="d-flex gap-1 align-items-stretch">
+		<div class="d-flex gap-1 align-items-center">
 			{{{ if template.category }}}
 				{{{ if privileges.topics:create }}}
 				<a href="{config.relative_path}/compose?cid={cid}" component="category/post" id="new_topic" class="btn btn-primary btn-sm text-nowrap" data-ajaxify="false" role="button">[[category:new_topic_button]]</a>
