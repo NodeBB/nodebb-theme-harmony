@@ -5,6 +5,7 @@ $(document).ready(function () {
 	setupMobileMenu();
 	setupSearch();
 	setupDrafts();
+	handleMobileNavigator();
 
 	$('[component="skinSwitcher"]').on('click', '.dropdown-item', function () {
 		const skin = $(this).attr('data-value');
@@ -103,6 +104,7 @@ $(document).ready(function () {
 			updateBadgeCount();
 		});
 	}
+
 	function setupNProgress() {
 		require(['nprogress'], function (NProgress) {
 			window.nprogress = NProgress;
@@ -115,6 +117,19 @@ $(document).ready(function () {
 					NProgress.done(true);
 				});
 			}
+		});
+	}
+
+	function handleMobileNavigator() {
+		const paginationBlockEl = $('.pagination-block');
+		require(['hooks'], function (hooks) {
+			hooks.on('action:ajaxify.end', function () {
+				paginationBlockEl.find('.dropdown-menu.show').removeClass('show');
+			});
+			hooks.on('filter:navigator.scroll', function (hookData) {
+				paginationBlockEl.find('.dropdown-menu.show').removeClass('show');
+				return hookData;
+			});
 		});
 	}
 });

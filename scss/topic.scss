@@ -1,3 +1,5 @@
+.pagination-block { display: none; }
+
 .page-topic {
 	[component="topic/title"] {
 		font-size: 28px;
@@ -104,6 +106,15 @@
 					border-bottom: none !important;
 				}
 			}
+		}
+	}
+
+	.pagination-block {
+		display: block;
+		transition: opacity 250ms ease-in;
+		opacity: 0;
+		&.ready {
+			opacity: 1;
 		}
 	}
 }
