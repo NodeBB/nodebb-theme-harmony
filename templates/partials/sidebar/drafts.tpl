@@ -35,7 +35,7 @@
 						{{{ end }}}
 
 						{{{ if ./text }}}
-						<div class="text text-sm line-clamp-3">{./text}</div>
+						<div class="text text-sm line-clamp-3 text-break">{./text}</div>
 						{{{ end }}}
 						<div class="timeago text-xs text-muted" title="{./timestampISO}"></div>
 					</div>
