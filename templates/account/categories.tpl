@@ -11,7 +11,6 @@
 					<div class="btn-group bottom-sheet" component="category/watch/all">
 						<button class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" type="button">
 							<span>[[user:change_all]]</span>
-							<span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu">
 							<li><a class="dropdown-item" href="#" component="category/watching" data-state="watching"><i class="fa fa-fw fa-inbox"></i> [[category:watching]]<p class="help-text"><small>[[category:watching.description]]</small></p></a></li>

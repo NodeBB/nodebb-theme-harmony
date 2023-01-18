@@ -146,7 +146,6 @@
 						<button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<i class="fa fa-street-view"></i>
 							[[flags:flagged-user]]
-							<span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu">
 							<li><a class="dropdown-item" href="{config.relative_path}/uid/{target.uid}">[[flags:view-profile]]</a></li>

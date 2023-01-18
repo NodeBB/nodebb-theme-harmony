@@ -16,18 +16,6 @@
 		line-height: 20px;
 	}
 
-	.action-bar {
-		.dropdown-toggle::after {
-			border: none;
-			font-family: "FontAwesome";
-			content: "\f078";
-			color: tint-color($primary, 40%);
-
-			position: relative;
-			top: 2px;
-		}
-	}
-
 	.topic {
 		.posts {
 			max-width: 960px;

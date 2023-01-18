@@ -18,6 +18,15 @@ body {
 	text-decoration: none;
 }
 
+.caret {
+	&::after {
+		border: none;
+		font-family: "FontAwesome";
+		content: "\f078";
+		color: tint-color($primary, 40%);
+	}
+}
+
 .sticky-tools {
 	position: sticky;
 	z-index: 3;

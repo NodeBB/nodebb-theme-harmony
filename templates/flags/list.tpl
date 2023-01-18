@@ -18,7 +18,7 @@
 
 		<div class="btn-group float-end" component="flags/bulk-actions">
 			<button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" autocomplete="off" aria-haspopup="true" aria-expanded="false" disabled="disabled">
-				<i class="fa fa-clone"></i> [[flags:bulk-actions]] <span class="caret"></span>
+				<i class="fa fa-clone"></i> <span class="fw-semibold">[[flags:bulk-actions]]</span>
 			</button>
 			<ul class="dropdown-menu">
 				<li><a href="#" class="dropdown-item" data-action="bulk-assign">[[flags:assign-to-me]]</a></li>
