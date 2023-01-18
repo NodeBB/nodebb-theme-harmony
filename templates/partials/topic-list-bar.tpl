@@ -27,7 +27,7 @@
 			{{{ end }}}
 
 			<a href="{config.relative_path}{{{ if template.category }}}{url}{{{ else }}}/{selectedFilter.url}{querystring}{{{ end }}}" class="d-inline-block text-decoration-none">
-				<div class="d-md-block alert alert-warning h-100 m-0 px-2 py-1 line-clamp-2 text-sm text-break" id="new-topics-alert">There is a new post. Click here to reload.</div>
+				<div class="d-md-block alert alert-warning h-100 m-0 px-2 py-1 line-clamp-2 text-sm text-break hide" id="new-topics-alert">There is a new post. Click here to reload.</div>
 			</a>
 		</ul>
 
