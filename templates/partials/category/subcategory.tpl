@@ -1,7 +1,7 @@
 {{{ if children.length }}}
 <div class="subcategory">
 	{{{ if hasMoreSubCategories }}}
-	<div class="mb-2"><!-- IMPORT partials/category-selector.tpl --></div>
+	<div class="mb-2"><!-- IMPORT partials/category/selector-dropdown-left.tpl --></div>
 	{{{ else }}}
 	<h3 class="fs-6 fw-semibold">[[category:subcategories]]</h3>
 	{{{ end }}}

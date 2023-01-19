@@ -10,15 +10,15 @@
 			{{{ end }}}
 			{{{ if (template.unread || (template.recent || (template.popular || template.top))) }}}
 			<!-- IMPORT partials/topic-filters.tpl -->
-			<!-- IMPORT partials/category-filter.tpl -->
+			<!-- IMPORT partials/category/filter-dropdown-left.tpl -->
 			{{{ end }}}
 			{{{ if template.unread }}}
 			<div class="markread btn-group {{{ if !topics.length }}}hidden{{{ end }}}">
-				<!-- IMPORT partials/category-selector.tpl -->
+				<!-- IMPORT partials/category/selector-dropdown-left.tpl -->
 			</div>
 			{{{ end }}}
 			{{{ if template.tag }}}
-			<!-- IMPORT partials/category-filter.tpl -->
+			<!-- IMPORT partials/category/filter-dropdown-left.tpl -->
 			{{{ end }}}
 			<!-- IMPORT partials/category/tools.tpl -->
 
