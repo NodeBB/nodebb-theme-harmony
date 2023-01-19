@@ -10,7 +10,7 @@
 </a>
 <ul class="notifications-dropdown dropdown-menu p-1 shadow">
 	<li>
-		<ul component="notifications/list" class="notification-list list-unstyled">
+		<ul component="notifications/list" class="notification-list list-unstyled overscroll-behavior-contain">
 			<li class="mb-2 placeholder-wave">
 				<div class="text-sm placeholder col-11">&nbsp;</div>
 				<div class="text-sm placeholder col-5">&nbsp;</div><br />

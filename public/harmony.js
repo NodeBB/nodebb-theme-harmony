@@ -61,8 +61,13 @@ $(document).ready(function () {
 
 	function setupDrafts() {
 		require(['composer/drafts'], function (drafts) {
+			const draftsEl = $('[component="sidebar/drafts"]');
+
 			function updateBadgeCount() {
 				const count = drafts.getAvailableCount();
+				if (count > 0) {
+					draftsEl.removeClass('hidden');
+				}
 				$('[component="drafts/count"]').toggleClass('hidden', count <= 0).text(count);
 			}
 
@@ -86,7 +91,7 @@ $(document).ready(function () {
 				draftListEl.append(html).find('.timeago').timeago();
 			}
 
-			const draftsEl = $('[component="sidebar/drafts"]');
+
 			draftsEl.on('shown.bs.dropdown', renderDraftList);
 
 			draftsEl.on('click', '[component="drafts/open"]', function () {

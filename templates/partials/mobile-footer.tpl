@@ -60,7 +60,7 @@
 				</li>
 				{{{ end }}}
 
-				<li component="sidebar/drafts" class="nav-item m-0 drafts">
+				<li component="sidebar/drafts" class="hidden nav-item m-0 drafts">
 				<!-- IMPORT partials/sidebar/drafts.tpl -->
 				</li>
 

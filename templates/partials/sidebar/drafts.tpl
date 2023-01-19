@@ -10,7 +10,7 @@
 </a>
 <ul class="drafts-dropdown dropdown-menu p-1 shadow">
 	<li>
-		<ul component="drafts/list" class="draft-list list-unstyled d-flex flex-column gap-1 pe-1">
+		<ul component="drafts/list" class="draft-list list-unstyled d-flex flex-column overscroll-behavior-contain gap-1 pe-1">
 			<li class="no-drafts text-center p-2">[[modules:composer.no-drafts]]</li>
 
 			{{{ each drafts }}}

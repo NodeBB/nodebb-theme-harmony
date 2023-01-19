@@ -10,7 +10,7 @@
 </a>
 <ul class="chats-dropdown dropdown-menu p-1 shadow">
 	<li>
-		<ul component="chat/list" class="chat-list chats-list list-unstyled p-0 pe-1">
+		<ul component="chat/list" class="chat-list chats-list list-unstyled overscroll-behavior-contain p-0 pe-1">
 			<li class="dropdown-item rounded-1 p-2 d-flex gap-2 placeholder-wave">
 				<div class="main-avatar">
 					<div class="placeholder" style="width: 32px; height: 32px;"></div>
