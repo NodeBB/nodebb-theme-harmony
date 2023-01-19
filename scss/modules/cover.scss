@@ -12,12 +12,11 @@
 
 	&:hover {
 		.controls {
-			opacity: 0.8;
+			opacity: 1;
 		}
 	}
 
 	.controls {
-		text-align: center;
 		height: 200px;
 		line-height: 200px;
 		opacity: 0;
@@ -27,15 +26,6 @@
 
 		> * {
 			pointer-events: all;
-		}
-
-		.fa {
-			color: white;
-			background-color: #333;
-			opacity: 1;
-			margin: 15px;
-			padding: 5px;
-			border-radius: 4px;
 		}
 	}
 

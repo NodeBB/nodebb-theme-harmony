@@ -74,7 +74,7 @@
 					<div class="text-center">
 						<ul class="list-group mb-3 text-sm text-nowrap">
 							<!-- IF allowProfilePicture -->
-							<a id="changePictureBtn" href="#" class="list-group-item px-1 text-decoration-none">[[user:change_picture]]</a>
+							<a component="profile/change/picture" href="#" class="list-group-item px-1 text-decoration-none">[[user:change_picture]]</a>
 							<!-- ENDIF allowProfilePicture -->
 							<!-- IF !username:disableEdit -->
 							<a href="{config.relative_path}/user/{userslug}/edit/username" class="list-group-item px-1 text-decoration-none">[[user:change_username]]</a>

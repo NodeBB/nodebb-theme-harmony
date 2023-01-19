@@ -8,10 +8,10 @@
 	<div class="container">
 		{{{ if allowCoverPicture }}}
 		{{{ if canEdit }}}
-		<div class="controls">
-			<span class="upload"><i class="fa fa-fw fa-2x fa-upload"></i></span>
-			<span class="resize"><i class="fa fa-fw fa-2x fa-arrows"></i></span>
-			<span class="remove"><i class="fa fa-fw fa-2x fa-times"></i></span>
+		<div class="controls text-center">
+			<span class="upload p-2 m-2 rounded-1 text-bg-light opacity-75"><i class="fa fa-fw fa-upload"></i></span>
+			<span class="resize p-2 m-2 rounded-1 text-bg-light opacity-75"><i class="fa fa-fw fa-arrows"></i></span>
+			<span class="remove p-2 m-2 rounded-1 text-bg-light opacity-75"><i class="fa fa-fw fa-times"></i></span>
 		</div>
 		<div class="save text-bg-primary">[[groups:cover-save]] <i class="fa fa-fw fa-floppy-o"></i></div>
 		<div class="indicator text-bg-primary">[[groups:cover-saving]] <i class="fa fa-fw fa-refresh fa-spin"></i></div>
@@ -21,19 +21,16 @@
 </div>
 
 <div class="d-flex flex-column flex-md-row gap-2 w-100 pb-4 mb-4 mt-2 border-bottom">
-	<div class="avatar-wrapper border-4 position-relative align-self-start d-none d-md-block" style="margin-top: -75px;">
+	<div {{{ if (allowProfilePicture && isSelfOrAdminOrGlobalModerator)}}}component="profile/change/picture"{{{ end }}} class="avatar-wrapper border-4 position-relative align-self-center align-self-md-start hover-parent" style="margin-top: -75px;">
 		{{{ if picture }}}
 		<img src="{picture}" class="avatar avatar-rounded" style="--avatar-size: 142px;" />
 		{{{ else }}}
 		<div class="avatar avatar-rounded" style="background-color: {icon:bgColor}; --avatar-size: 142px;" title="{username}">{icon:text}</div>
 		{{{ end }}}
-	</div>
-
-	<div class="avatar-wrapper border-4 position-relative align-self-center d-block d-md-none" style="margin-top: -75px;">
-		{{{ if picture }}}
-		<img src="{picture}" class="avatar avatar-rounded" style="--avatar-size: 142px;" />
-		{{{ else }}}
-		<div class="avatar avatar-rounded" style="background-color: {icon:bgColor}; --avatar-size: 142px;" title="{username}">{icon:text}</div>
+		{{{ if (allowProfilePicture && isSelfOrAdminOrGlobalModerator)}}}
+		<div component="profile/change/picture" class="d-none d-md-block pointer p-2 rounded-1 opacity-75 text-bg-light position-absolute top-50 start-50 translate-middle hover-visible">
+			<span class="upload"><i class="fa fa-fw fa-upload"></i></span>
+		</div>
 		{{{ end }}}
 	</div>
 
