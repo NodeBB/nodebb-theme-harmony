@@ -22,11 +22,7 @@
 
 <div class="d-flex flex-column flex-md-row gap-2 w-100 pb-4 mb-4 mt-2 border-bottom">
 	<div {{{ if (allowProfilePicture && isSelfOrAdminOrGlobalModerator)}}}component="profile/change/picture"{{{ end }}} class="avatar-wrapper border-4 position-relative align-self-center align-self-md-start hover-parent" style="margin-top: -75px;">
-		{{{ if picture }}}
-		<img src="{picture}" class="avatar avatar-rounded" style="--avatar-size: 142px;" />
-		{{{ else }}}
-		<div class="avatar avatar-rounded" style="background-color: {icon:bgColor}; --avatar-size: 142px;" title="{username}">{icon:text}</div>
-		{{{ end }}}
+		{buildAvatar(@value, "142px", true)}
 		{{{ if (allowProfilePicture && isSelfOrAdminOrGlobalModerator)}}}
 		<div component="profile/change/picture" class="d-none d-md-block pointer p-2 rounded-1 opacity-75 text-bg-light position-absolute top-50 start-50 translate-middle hover-visible">
 			<span class="upload"><i class="fa fa-fw fa-upload"></i></span>
