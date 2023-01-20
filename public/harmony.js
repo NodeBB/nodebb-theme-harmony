@@ -37,7 +37,7 @@ $(document).ready(function () {
 	});
 
 	function setupMobileMenu() {
-		require(['api'], function (api) {
+		require(['hooks', 'api', 'navigator'], function (hooks, api, navigator) {
 			$('[component="sidebar/toggle"]').on('click', async function () {
 				const sidebarEl = $('.sidebar');
 				sidebarEl.toggleClass('open');
@@ -49,6 +49,9 @@ $(document).ready(function () {
 					});
 				}
 				$(window).trigger('action:sidebar.toggle');
+				if (ajaxify.data.template.topic) {
+					hooks.fire('action:navigator.update', { newIndex: navigator.getIndex() });
+				}
 			});
 		});
 	}
