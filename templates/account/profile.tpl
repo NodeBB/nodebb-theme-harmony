@@ -6,7 +6,7 @@
 
 		<div class="flex-1 ps-md-2 ps-lg-5" style="min-width: 0;">
 			{{{ if aboutme }}}
-			<div component="aboutme text-break" class="text-sm">
+			<div component="aboutme" class="text-sm text-break">
 			{aboutmeParsed}
 			</div>
 			{{{ end }}}
