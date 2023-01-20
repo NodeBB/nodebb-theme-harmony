@@ -74,7 +74,7 @@
 		<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="d-flex gap-2 align-items-center mt-2 btn-outline border rounded-1 p-1 threaded-replies user-select-none float-start text-muted text-decoration-none {{{ if !posts.replies.count }}}hidden{{{ end }}}">
 			<span component="post/reply-count/avatars" class="avatars d-inline-flex gap-1 align-items-top {{{ if posts.replies.hasMore }}}hasMore{{{ end }}}">
 				{{{each posts.replies.users}}}
-				<span>{buildAvatar(posts.replies.users, "20px", true, "")}</span>
+				<span>{buildAvatar(posts.replies.users, "20px", true, "avatar-tooltip")}</span>
 				{{{end}}}
 				{{{ if posts.replies.hasMore}}}
 				<span><i class="fa fa-ellipsis"></i></span>

@@ -2,7 +2,7 @@
 	<div class="timeline-badge">
 		<i class="fa {{{ if ./icon }}}{./icon}{{{ else }}}fa-circle{{{ end }}} small"></i>
 	</div>
-	<span class="timeline-text small">
+	<span class="timeline-text small d-flex align-items-center gap-1">
 		{./text}
 	</span>
 	{{{ if privileges.isAdminOrMod }}}

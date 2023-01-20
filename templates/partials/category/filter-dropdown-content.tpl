@@ -1,7 +1,7 @@
 <button type="button" class="btn-ghost-sm d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown">
     {{{ if selectedCategory }}}
     <span class="category-item">
-        {buildCategoryIcon(selectedCategory, "20px", "rounded-circle")}
+        {buildCategoryIcon(selectedCategory, "18px", "rounded-circle")}
         <span class="visible-md-inline visible-lg-inline fw-semibold">{selectedCategory.name}</span>
     </span>
     {{{ else }}}

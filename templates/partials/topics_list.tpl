@@ -16,7 +16,7 @@
 							{{{ if ./thumbs.length }}}
 							<img class="topic-thumb rounded-1" width="80" height="auto" src="{./thumbs.0.url}" class="not-responsive" />
 							{{{ else }}}
-							{buildAvatar(./user, "40px", true, "not-responsive")}
+							{buildAvatar(./user, "40px", true, "avatar-tooltip not-responsive")}
 							{{{ end }}}
 						</a>
 					</div>
@@ -103,7 +103,7 @@
 					{{{ else }}}
 					{{{ if ./teaser.pid }}}
 					<p class="ps-3 mb-0 lh-1">
-						<a href="{config.relative_path}/user/{./teaser.user.userslug}" class="text-decoration-none">{buildAvatar(./teaser.user, "18px", true, "not-responsive")}</a>
+						<a href="{config.relative_path}/user/{./teaser.user.userslug}" class="text-decoration-none">{buildAvatar(./teaser.user, "18px", true, "avatar-tooltip not-responsive")}</a>
 						<a class="permalink text-muted timeago text-xs" href="{config.relative_path}/topic/{./slug}/{./teaser.index}" title="{./teaser.timestampISO}">
 						</a>
 					</p>
