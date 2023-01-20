@@ -2,10 +2,10 @@
 	<div class="cover position-absolute start-0 top-0" component="groups/cover" style="background-image: url({group.cover:url}); background-position: {group.cover:position};">
 		<div class="container">
 			{{{ if group.isOwner }}}
-			<div class="controls">
-				<span class="upload"><i class="fa fa-fw fa-2x fa-upload"></i></span>
-				<span class="resize"><i class="fa fa-fw fa-2x fa-arrows"></i></span>
-				<span class="remove"><i class="fa fa-fw fa-2x fa-times"></i></span>
+			<div class="controls text-center">
+				<span class="upload p-2 m-2 rounded-1 text-bg-light opacity-75"><i class="fa fa-fw fa-upload"></i></span>
+				<span class="resize p-2 m-2 rounded-1 text-bg-light opacity-75"><i class="fa fa-fw fa-arrows"></i></span>
+				<span class="remove p-2 m-2 rounded-1 text-bg-light opacity-75"><i class="fa fa-fw fa-times"></i></span>
 			</div>
 			<div class="save text-bg-primary">[[groups:cover-save]] <i class="fa fa-fw fa-floppy-o"></i></div>
 			<div class="indicator text-bg-primary">[[groups:cover-saving]] <i class="fa fa-fw fa-refresh fa-spin"></i></div>
@@ -13,24 +13,27 @@
 		</div>
 	</div>
 
-	<div class="d-flex flex-column pb-4 mb-4 mt-2 border-bottom">
-		<div class="d-flex justify-content-between mt-1 align-items-center">
+	<div class="d-flex flex-column flex-md-row justify-content-md-between pb-4 mb-4 mt-2 border-bottom">
+		<div class="d-flex flex-column mt-1">
 			<div class="d-flex align-items-center gap-2">
 				<h2 class="mb-0">{group.displayName}</h2>
-				{{{ if group.private }}}<span class="badge text-bg-light border border-1">[[groups:details.private]]</span>{{{ end }}}
-				{{{ if group.hidden }}}<span class="badge text-bg-light border border-1">[[groups:details.hidden]]</span>{{{ end }}}
 			</div>
-
-			<div>
-				{{{ if loggedIn }}}
-				{function.membershipBtn, group}
-				{{{ end }}}
-				{{{ if isAdmin }}}
-				<a href="{config.relative_path}/admin/manage/groups/{group.nameEncoded}" target="_blank" class="btn btn-light"><i class="fa fa-gear"></i> [[user:edit]]</a>
-				{{{ end }}}
+			<div class="d-flex gap-2">
+				{group.descriptionParsed}
+				<div>
+					{{{ if group.private }}}<span class="badge text-bg-light border border-1">[[groups:details.private]]</span>{{{ end }}}
+					{{{ if group.hidden }}}<span class="badge text-bg-light border border-1">[[groups:details.hidden]]</span>{{{ end }}}
+				</div>
 			</div>
 		</div>
-		{group.descriptionParsed}
+		<div>
+			{{{ if loggedIn }}}
+			{function.membershipBtn, group}
+			{{{ end }}}
+			{{{ if isAdmin }}}
+			<a href="{config.relative_path}/admin/manage/groups/{group.nameEncoded}" target="_blank" class="btn btn-light"><i class="fa fa-gear"></i> [[user:edit]]</a>
+			{{{ end }}}
+		</div>
 	</div>
 
 	<div class="d-flex flex-column flex-md-row">
