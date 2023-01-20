@@ -4,9 +4,9 @@
 	<div class="d-flex flex-column flex-md-row">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
 
-		<div class="flex-1 ps-md-2 ps-lg-5">
+		<div class="flex-1 ps-md-2 ps-lg-5" style="min-width: 0;">
 			{{{ if aboutme }}}
-			<div component="aboutme" class="text-sm">
+			<div component="aboutme text-break" class="text-sm">
 			{aboutmeParsed}
 			</div>
 			{{{ end }}}
