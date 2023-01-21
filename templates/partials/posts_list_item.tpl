@@ -1,5 +1,5 @@
 <hr/>
-<a class="topic-title fw-semibold fs-5 text-reset text-break" href="{config.relative_path}/post/{./pid}">
+<a class="d-inline-block topic-title fw-semibold fs-5 mb-3 text-reset text-break" href="{config.relative_path}/post/{./pid}">
     {{{ if !./isMainPost }}}RE: {{{ end }}}{./topic.title}
 </a>
 <li component="post" class="posts-list-item  {{{ if ./deleted }}} deleted{{{ else }}}{{{ if ./topic.deleted }}} deleted{{{ end }}}{{{ end }}}{{{ if ./topic.scheduled }}} scheduled{{{ end }}}" data-pid="{./pid}" data-uid="{./uid}">

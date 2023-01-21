@@ -2,7 +2,7 @@
 	<!-- category filter TODO: -->
 	<div class="post-search-item">
 		<div component="category/filter" class="dropdown" data-filter-name="category">
-			<a component="category/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.category.active }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+			<a component="category/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.categories.active }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 				<span class="filter-label">{{{ if filters.categories.active }}}{filters.categories.label}{{{ else }}}[[search:categories]]{{{ end }}}</span>
 				<span class="caret"></span>
 			</a>
@@ -14,6 +14,12 @@
 					</div>
 				</li>
 				<div component="category/list" class="overflow-auto" style="max-height: 350px;"></div>
+				<div class="px-3 py-1">
+					<div class="form-check">
+						<input id="search-children" class="form-check-input" type="checkbox"/>
+						<label class="form-check-label" for="search-children">[[search:search-child-categories]]</label>
+					</div>
+				</div>
 			</ul>
 		</div>
 	</div>

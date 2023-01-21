@@ -2,7 +2,7 @@
 	<div id="advanced-search" class="d-flex flex-column flex-md-row">
 		<!-- sidebar -->
 		<div class="flex-0 pe-2 border-end-md text-sm mb-3" style="flex-basis: 240px!important;">
-			<form action="{config.relative_path}/search" method="get" class="nav sticky-top d-flex flex-column flex-wrap gap-3 pe-md-3" style="z-index: 1;">
+			<form action="{config.relative_path}/search" method="get" class="nav sticky-md-top d-flex flex-row flex-md-column flex-wrap gap-3 pe-md-3" style="top: 1rem; z-index: 1;">
 				<h2 class="fw-semibold tracking-tight mb-0">[[global:search]]</h2>
 
 				<input id="search-input" name="term" type="text" class="form-control fw-semibold py-2 ps-2 pe-3" id="search-input" placeholder="[[search:type-to-search]]">
@@ -40,60 +40,6 @@
 				<!-- IMPORT partials/search-filters.tpl -->
 				<!-- IMPORT partials/search-results.tpl -->
 			</div>
-		</div>
-	</div>
-
-
-	<hr/>
-	<div>old design below</div>
-
-	<div class="row">
-		<div class="{{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
-			<form id="advanced-search" class="mb-3">
-				<div class="card">
-					<h5 class="card-header pointer" data-bs-toggle="collapse" data-bs-target=".search-options">
-						<i class="fa fa-sort"></i> [[search:advanced-search]]
-					</h5>
-					<div class="collapse search-options {{{ if expandSearch }}}show{{{ end }}}">
-					<div class="card-body">
-						<div class="mb-2 post-search-item">
-							<div class="row">
-								<div class="col-md-6">
-									<label class="form-label">[[search:in-categories]]</label>
-									<select multiple class="form-select" id="posted-in-categories" size="{allCategoriesCount}">
-										{{{each allCategories}}}
-										<option value="{allCategories.value}">{allCategories.text}</option>
-										{{{end}}}
-									</select>
-									<div class="form-check">
-										<input id="search-children" class="form-check-input" type="checkbox"/>
-										<label class="form-check-label" for="search-children">[[search:search-child-categories]]</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="mb-2 post-search-item">
-										<div class="row">
-											<div class="col-md-6">
-												<label class="form-label">[[search:posted-by]]</label>
-												<div>
-													<input type="text" class="form-control" id="posted-by-user">
-												</div>
-											</div>
-											<div class="col-md-6">
-												<label class="form-label">[[search:has-tags]]</label>
-												<div>
-													<input type="text" class="form-control" id="has-tags">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					</div>
-				</div>
-			</form>
 		</div>
 	</div>
 </div>

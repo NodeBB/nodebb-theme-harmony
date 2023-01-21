@@ -1,5 +1,5 @@
 <div class="flex-0 pe-2 border-end-md text-sm mb-3 flex-basis-md-200">
-	<div class="nav sticky-top d-flex flex-row flex-md-column flex-wrap gap-1" style="z-index: 1;">
+	<div class="nav sticky-md-top d-flex flex-row flex-md-column flex-wrap gap-1" style="top: 1rem; z-index: 1;">
 		<button data-bs-toggle="tab" data-bs-target="#groups-posts" class="btn-ghost fw-semibold {{{ if template.groups/details }}}active{{{ end }}}">
 			<div class="flex-1">[[global:posts]]</div>
 		</button>
