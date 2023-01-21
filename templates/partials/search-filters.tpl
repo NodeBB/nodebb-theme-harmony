@@ -2,29 +2,18 @@
 	<!-- category filter TODO: -->
 	<div class="post-search-item">
 		<div component="category/filter" class="dropdown" data-filter-name="category">
-			<a component="tag/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.category.active }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-				<span class="filter-label">{{{ if filters.category.active }}}{filters.category.label}{{{ else }}}[[search:categories]]{{{ end }}}</span>
+			<a component="category/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.category.active }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+				<span class="filter-label">{{{ if filters.categories.active }}}{filters.categories.label}{{{ else }}}[[search:categories]]{{{ end }}}</span>
 				<span class="caret"></span>
 			</a>
 
-			<ul class="dropdown-menu" style="width: 350px;">
-				<li class="px-3 py-1 d-flex flex-column gap-2">
-					<input type="text" class="form-control" component="category/filter/search" placeholder="[[search:type-a-category]]">
-					<div component="category/filter/selected" class="d-flex flex-wrap gap-2">
-						{{{ each categoryFilterSelected }}}
-						<div class="d-flex px-2 py-1 rounded-1 text-bg-primary gap-2 align-items-center text-sm">
-							<div>{./name}</div>
-							<button component="category/filter/delete" data-uid="{./uid}" class="btn btn-primary btn-sm py-0"><i class="fa fa-times fa-xs"></i></button>
-						</div>
-						{{{ end }}}
-					</div>
-					<hr/>
-					<div component="category/filter/results" class="d-flex flex-wrap gap-2">
-						{{{ each categoryFilterResults }}}
-						<button class="btn-ghost-sm" data-cid="{./cid}"> {./name}</button>
-						{{{ end }}}
+			<ul class="dropdown-menu" style="">
+				<li class="px-3 py-1 mb-2 d-flex flex-column gap-2">
+					<div component="category-selector-search">
+						<input type="text" class="form-control" component="category/filter/search" placeholder="[[search:type-a-category]]">
 					</div>
 				</li>
+				<div component="category/list" class="overflow-auto" style="max-height: 350px;"></div>
 			</ul>
 		</div>
 	</div>
