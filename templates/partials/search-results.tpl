@@ -1,41 +1,37 @@
-<!-- THIS FILE IS STILL PERSONA -->
+{{{ if matchCount }}}
+<div class="card card-header text-xs px-2 py-1 fw-semibold border-0 align-self-start">[[search:results_matching, {matchCount}, {search_query}, {time}]] </div>
+{{{ else }}}
+{{{ if search_query }}}
+<div class="badge text-bg-warning align-self-start">[[search:no-matches]]</div>
+{{{ end }}}
+{{{ end }}}
 
-<div id="results" class="search-results col-md-12" data-search-query="{search_query}">
-	{{{ if matchCount }}}
-	<div class="alert alert-info">[[search:results_matching, {matchCount}, {search_query}, {time}]] </div>
-	{{{ else }}}
-	{{{ if search_query }}}
-	<div class="alert alert-warning">[[search:no-matches]]</div>
+<div id="results" class="search-results" data-search-query="{search_query}">
+	{{{ if showAsPosts }}}
+	{{{ if posts.length }}}
+	<!-- IMPORT partials/posts_list.tpl -->
 	{{{ end }}}
 	{{{ end }}}
 
-	{{{each posts}}}
-	<div class="topic-row card clearfix mb-3">
-		<div class="card-body">
-			<div>
-				<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "24px", true)}</a>
-				<span class="search-result-text search-result-title"><a href="{config.relative_path}/post/{posts.pid}">{./topic.title}</a></span>
+	{{{ if showAsTopics }}}
+	{{{ each posts }}}
+	<hr/>
+	<div class="topic-row  mb-3">
+		<a class="topic-title fw-semibold fs-5 text-reset text-break" href="{config.relative_path}/post/{./pid}">
+			{{{ if !./isMainPost }}}RE: {{{ end }}}{./topic.title}
+		</a>
+		<div class="post-body d-flex flex-column gap-1">
+			<div class="d-flex gap-3 post-info">
+				<div class="post-author d-flex gap-1">
+					<a class="lh-1 text-decoration-none" href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "16px", true, "not-responsive")}</a>
+					<a class="fw-semibold text-sm" href="{config.relative_path}/user/{./user.userslug}">{../user.displayname}</a>
+				</div>
+				<span class="timeago text-sm text-muted" title="{./timestampISO}"></span>
 			</div>
-
-			{{{ if showAsPosts }}}
-			<div class="search-result-text">
-				{./content}
-				<p class="fade-out"></p>
-			</div>
-			{{{ end }}}
-
-			<small class="post-info float-end">
-				<a href="{config.relative_path}/category/{./category.slug}">
-					<div class="category-item d-inline-block">
-						{buildCategoryIcon(./category, "24px", "rounded-circle")}
-						{./category.name}
-					</div>
-				</a> &bull;
-				<span class="timeago" title="{./timestampISO}"></span>
-			</small>
 		</div>
 	</div>
-	{{{end}}}
+	{{{ end }}}
+	{{{ end }}}
 
 	{{{ if users.length }}}
 	<!-- IMPORT partials/users_list.tpl -->

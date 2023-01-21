@@ -6,14 +6,14 @@
     <div class="post-body d-flex flex-column gap-1">
         <div class="d-flex gap-3 post-info">
             <div class="post-author d-flex gap-1">
-                <a class="lh-1" href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "16px", true, "not-responsive")}</a>
+                <a class="lh-1 text-decoration-none" href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "16px", true, "not-responsive")}</a>
                 <a class="fw-semibold text-sm" href="{config.relative_path}/user/{./user.userslug}">{../user.displayname}</a>
             </div>
-            <span class="timeago text-sm text-muted" title="{../timestampISO}"></span>
+            <span class="timeago text-sm text-muted" title="{./timestampISO}"></span>
         </div>
 
         <div component="post/content" class="content text-sm text-break">
-            {../content}
+            {./content}
         </div>
     </div>
 </li>
