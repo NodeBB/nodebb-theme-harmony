@@ -1,4 +1,5 @@
 <div class="d-flex flex-wrap gap-2 align-items-center" component="search/filters">
+	<!-- category filter -->
 	<div class="post-search-item">
 		<div component="category/filter" class="dropdown" data-filter-name="category">
 			<a component="category/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.categories.active }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
