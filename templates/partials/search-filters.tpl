@@ -82,7 +82,7 @@
 					<hr/>
 					<div component="user/filter/results" class="d-flex flex-wrap gap-2">
 						{{{ each userFilterResults }}}
-						<button class="btn-ghost-sm" data-uid="{./uid}" data-username="{./username}">{buildAvatar(@value, "16px", true)} {./username}</button>
+						<button class="btn-ghost-sm border" data-uid="{./uid}" data-username="{./username}">{buildAvatar(@value, "16px", true)} {./username}</button>
 						{{{ end }}}
 					</div>
 				</li>
