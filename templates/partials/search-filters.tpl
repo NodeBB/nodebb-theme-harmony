@@ -1,5 +1,4 @@
 <div class="d-flex flex-wrap gap-2 align-items-center" component="search/filters">
-	<!-- category filter TODO: -->
 	<div class="post-search-item">
 		<div component="category/filter" class="dropdown" data-filter-name="category">
 			<a component="category/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.categories.active }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
@@ -7,7 +6,7 @@
 				<span class="caret"></span>
 			</a>
 
-			<ul class="dropdown-menu" style="">
+			<ul class="dropdown-menu">
 				<li class="px-3 py-1 mb-2 d-flex flex-column gap-2">
 					<div component="category-selector-search">
 						<input type="text" class="form-control" component="category/filter/search" placeholder="[[search:type-a-category]]">
