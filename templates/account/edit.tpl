@@ -3,7 +3,7 @@
 
 	<div class="d-flex flex-column flex-md-row">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
-		<div class="flex-1 ps-md-2 ps-lg-5" style="min-width: 0;">
+		<div class="account-content flex-1 ps-md-2 ps-lg-5" style="min-width: 0;">
 			<div class="d-flex justify-content-between mb-3">
 				<h3 class="fw-semibold fs-5">{{{ if isSelf }}}[[user:edit-profile]]{{{ else }}}[[pages:account/edit, {username}]]{{{ end }}}</h3>
 				<button id="submitBtn" class="btn btn-primary">[[global:save_changes]]</button>

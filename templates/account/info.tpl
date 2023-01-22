@@ -3,7 +3,7 @@
 
 	<div class="d-flex flex-column flex-md-row">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
-		<div class="flex-1 ps-md-2 ps-lg-5" style="min-width: 0;">
+		<div class="account-content flex-1 ps-md-2 ps-lg-5" style="min-width: 0;">
 			{{{ if sessions.length }}}
 			<div class="mb-3">
 				<h4>[[global:sessions]]</h4>

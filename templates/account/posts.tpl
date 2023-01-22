@@ -3,7 +3,7 @@
 
 	<div class="d-flex flex-column flex-md-row">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
-		<div class="flex-1 ps-md-2 ps-lg-5" style="min-width: 0;">
+		<div class="account-content flex-1 ps-md-2 ps-lg-5" style="min-width: 0;">
 			<div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
 				<h3 class="fw-semibold fs-5 mb-0">[[global:posts]]</h3>
 				<div class="d-flex flex-wrap gap-1">

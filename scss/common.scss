@@ -23,6 +23,26 @@ body {
 	}
 }
 
+body:not(.page-user) {
+	#content {
+		transition: opacity 150ms linear;
+		&.ajaxifying {
+			-moz-opacity: 0;
+			opacity: 0;
+		}
+	}
+}
+.page-user {
+	#content {
+		transition: opacity 150ms linear;
+		&.ajaxifying .account-content {
+			transition: opacity 150ms linear;
+			-moz-opacity: 0;
+			opacity: 0;
+		}
+	}
+}
+
 .sticky-tools {
 	position: sticky;
 	z-index: 3;

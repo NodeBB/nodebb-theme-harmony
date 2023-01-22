@@ -3,7 +3,7 @@
 
 	<div class="d-flex flex-column flex-md-row">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
-		<div class="flex-1 ps-md-2 ps-lg-5" style="min-width: 0;">
+		<div class="account-content flex-1 ps-md-2 ps-lg-5" style="min-width: 0;">
 			<h3 class="fw-semibold fs-5">{{{ if isSelf }}}[[user:change_username]]{{{ else }}}[[pages:{template.name}, {username}]]{{{ end }}}</h3>
 
 			<form class="form-horizontal edit-form">
