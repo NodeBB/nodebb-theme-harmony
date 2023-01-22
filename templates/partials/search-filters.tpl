@@ -25,7 +25,7 @@
 	</div>
 
 
-	<!-- tag filter TODO: -->
+	<!-- tag filter -->
 	<div class="post-search-item">
 		<div component="tag/filter" class="dropdown" data-filter-name="tag">
 			<a component="tag/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.tags.active }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
@@ -39,15 +39,15 @@
 					<div component="tag/filter/selected" class="d-flex flex-wrap gap-2">
 						{{{ each tagFilterSelected }}}
 						<div class="d-flex px-2 py-1 rounded-1 text-bg-primary gap-2 align-items-center text-sm">
-							<div>{./value}</div>
-							<button component="tag/filter/delete" data-uid="{./uid}" class="btn btn-primary btn-sm py-0"><i class="fa fa-times fa-xs"></i></button>
+							<div>{./valueEscaped}</div>
+							<button component="tag/filter/delete" data-tag="{./valueEscaped}" class="btn btn-primary btn-sm py-0"><i class="fa fa-times fa-xs"></i></button>
 						</div>
 						{{{ end }}}
 					</div>
 					<hr/>
 					<div component="tag/filter/results" class="d-flex flex-wrap gap-2">
 						{{{ each tagFilterResults }}}
-						<button class="btn-ghost-sm" data-tag="{./value}">{buildAvatar(@value, "16px", true)} {./value}</button>
+						<button class="btn-ghost-sm border" data-tag="{./valueEscaped}">{./valueEscaped}</button>
 						{{{ end }}}
 					</div>
 				</li>
