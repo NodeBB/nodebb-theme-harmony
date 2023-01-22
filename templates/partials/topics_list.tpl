@@ -93,7 +93,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-3 col-sm-3 teaser d-none d-md-block overflow-hidden" component="topic/teaser">
+			<div class="col-md-3 col-sm-3 teaser d-none d-md-block overflow-hidden align-selft-start" component="topic/teaser">
 				<div class="lastpost background-link-container border-start border-2 h-100" style="border-color: {./category.bgColor}!important;">
 					<a class="background-link" href="{config.relative_path}/topic/{./slug}/{./teaser.index}"></a>
 					{{{ if ./unreplied }}}
