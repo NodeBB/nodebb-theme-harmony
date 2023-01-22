@@ -1,3 +1,11 @@
+{{{ if (!./index && widgets.mainpost-header.length) }}}
+<div data-widget-area="mainpost-header">
+	{{{ each widgets.mainpost-header }}}
+	{widgets.mainpost-header.html}
+	{{{ end }}}
+</div>
+{{{ end }}}
+
 <div class="d-flex align-items-start gap-3">
 	<div class="icon py-1 bg-body d-none d-sm-block">
 		<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
@@ -117,3 +125,11 @@
 		<!-- IMPORT partials/topic/post-menu.tpl -->
 	</div>
 </div>
+
+{{{ if (!./index && widgets.mainpost-footer.length) }}}
+<div data-widget-area="mainpost-footer">
+	{{{ each widgets.mainpost-footer }}}
+	{widgets.mainpost-footer.html}
+	{{{ end }}}
+</div>
+{{{ end }}}

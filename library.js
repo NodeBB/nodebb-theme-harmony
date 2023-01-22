@@ -78,6 +78,16 @@ library.defineWidgetAreas = async function (areas) {
 
 	areas = areas.concat([
 		{
+			name: 'Main post header',
+			template: 'topic.tpl',
+			location: 'mainpost-header',
+		},
+		{
+			name: 'Main post footer',
+			template: 'topic.tpl',
+			location: 'mainpost-footer',
+		},
+		{
 			name: 'Sidebar Footer',
 			template: 'global',
 			location: 'sidebar-footer',
