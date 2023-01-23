@@ -124,9 +124,13 @@
 			display: none;
 		}
 
-		.timeline-event {
-			.timeline-text.timeago {
-				display: none;
+
+		[component="topic/event"], [component="topic/necro-post"] {
+			&.timeline-event {
+				.timeline-text {
+					line-height: 16px;
+					font-size: 0.75rem;
+				}
 			}
 		}
 	}
