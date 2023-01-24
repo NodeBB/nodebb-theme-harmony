@@ -1,5 +1,3 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <!-- IF posts.display_moderator_tools -->
 <li>
 	<a class="dropdown-item" component="post/edit" role="menuitem" tabindex="-1" href="#">
