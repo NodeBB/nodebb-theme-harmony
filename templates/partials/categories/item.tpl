@@ -33,27 +33,24 @@
 			{{{ end }}}
 		</div>
 	</div>
-
-	{{{ if !./link }}}
-	<div class="col-md-2 d-none d-md-flex stats text-muted gap-2 px-0">
-		<div class="w-50">
-			<div class="card card-header align-items-center px-0 py-2 border-0 rounded-1">
+	<div class="row col-md-5 col-sm-3 d-none d-md-flex align-self-start">
+		{{{ if !./link }}}
+		<div class="col-md-5 d-none d-lg-flex stats text-muted gap-2 px-0">
+			<div class="w-50 card card-header align-items-center px-0 py-2 border-0 rounded-1">
 				<span class="{./unread-class} human-readable-number fs-5 fw-semibold ff-secondary" title="{./totalTopicCount}">{./totalTopicCount}</span>
 				<span class="text-lowercase text-xs">[[global:topics]]</span>
 			</div>
-		</div>
-		<div class="w-50">
-			<div class="card card-header align-items-center px-0 py-2 border-0 rounded-1">
+			<div class="w-50 card card-header align-items-center px-0 py-2 border-0 rounded-1">
 				<span class="{./unread-class} human-readable-number fs-5 fw-semibold ff-secondary" title="{./totalPostCount}">{./totalPostCount}</span>
 				<span class="text-lowercase text-xs">[[global:posts]]</span>
 			</div>
 		</div>
-	</div>
 
-	{{{ if !config.hideCategoryLastPost }}}
-	<div class="col-md-3 col-sm-3 teaser d-none d-sm-block" component="topic/teaser">
-		<!-- IMPORT partials/categories/lastpost.tpl -->
+		{{{ if !config.hideCategoryLastPost }}}
+		<div class="col-md-7 col-sm-3 teaser d-none d-sm-block" component="topic/teaser">
+			<!-- IMPORT partials/categories/lastpost.tpl -->
+		</div>
+		{{{ end }}}
+		{{{ end }}}
 	</div>
-	{{{ end }}}
-	{{{ end }}}
 </li>

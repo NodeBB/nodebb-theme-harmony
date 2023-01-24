@@ -69,57 +69,58 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="col-md-2 d-none d-lg-flex stats text-muted gap-2 px-0">
-				{{{ if !reputation:disabled }}}
-				<div class="stats-votes flex-1">
-					<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
-						<span class="human-readable-number fs-5 fw-semibold ff-secondary lh-1" title="{./votes}" data-toFixed="0">{./votes}</span>
-						<span class="text-lowercase text-xs">[[global:votes]]</span>
+			<div class="row col-md-5 col-sm-3 d-none d-md-flex align-self-stretch align-self-lg-start">
+				<div class="col-md-5 d-none d-lg-flex stats text-muted gap-2 px-0">
+					{{{ if !reputation:disabled }}}
+					<div class="stats-votes flex-1">
+						<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
+							<span class="human-readable-number fs-5 fw-semibold ff-secondary lh-1" title="{./votes}" data-toFixed="0">{./votes}</span>
+							<span class="text-lowercase text-xs">[[global:votes]]</span>
+						</div>
 					</div>
+					{{{ end }}}
+					<div class="stats-postcount flex-1">
+						<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
+							<span class="human-readable-number fs-5 fw-semibold ff-secondary lh-1" title="{./postcount}" data-toFixed="0">{./postcount}</span>
+							<span class="text-lowercase text-xs">[[global:posts]]</span>
+						</div>
+					</div>
+					<div class="stats-viewcount flex-1">
+						<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
+							<span class="human-readable-number fs-5 fw-semibold ff-secondary lh-1" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
+							<span class="text-lowercase text-xs">[[global:views]]</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-7 col-sm-3 teaser d-none d-md-block overflow-hidden" component="topic/teaser">
+					<div class="lastpost background-link-container border-start border-2 h-100" style="border-color: {./category.bgColor}!important;">
+						<a class="background-link" href="{config.relative_path}/topic/{./slug}/{./teaser.index}"></a>
+						{{{ if ./unreplied }}}
+						<p class="ps-3 text-xs lh-1">
+							[[category:no_replies]]
+						</p>
+						{{{ else }}}
+						{{{ if ./teaser.pid }}}
+						<p class="ps-3 mb-0 lh-1">
+							<a href="{config.relative_path}/user/{./teaser.user.userslug}" class="text-decoration-none">{buildAvatar(./teaser.user, "18px", true, "avatar-tooltip not-responsive")}</a>
+							<a class="permalink text-muted timeago text-xs" href="{config.relative_path}/topic/{./slug}/{./teaser.index}" title="{./teaser.timestampISO}">
+							</a>
+						</p>
+						<div class="post-content overflow-hidden text-xs line-clamp-2 ps-3">
+							{./teaser.content}
+						</div>
+						{{{ end }}}
+						{{{ end }}}
+					</div>
+				</div>
+
+				{{{ if showSelect }}}
+				<div class="position-absolute top-0 end-0 w-auto p-0">
+					<i component="topic/select" class="fa fa-square-o fs-5 text-muted pointer"></i>
 				</div>
 				{{{ end }}}
-				<div class="stats-postcount flex-1">
-					<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
-						<span class="human-readable-number fs-5 fw-semibold ff-secondary lh-1" title="{./postcount}" data-toFixed="0">{./postcount}</span>
-						<span class="text-lowercase text-xs">[[global:posts]]</span>
-					</div>
-				</div>
-				<div class="stats-viewcount flex-1">
-					<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
-						<span class="human-readable-number fs-5 fw-semibold ff-secondary lh-1" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
-						<span class="text-lowercase text-xs">[[global:views]]</span>
-					</div>
-				</div>
 			</div>
-
-			<div class="col-md-3 col-sm-3 teaser d-none d-md-block overflow-hidden align-self-start" component="topic/teaser">
-				<div class="lastpost background-link-container border-start border-2 h-100" style="border-color: {./category.bgColor}!important;">
-					<a class="background-link" href="{config.relative_path}/topic/{./slug}/{./teaser.index}"></a>
-					{{{ if ./unreplied }}}
-					<p class="ps-3 text-xs lh-1">
-						[[category:no_replies]]
-					</p>
-					{{{ else }}}
-					{{{ if ./teaser.pid }}}
-					<p class="ps-3 mb-0 lh-1">
-						<a href="{config.relative_path}/user/{./teaser.user.userslug}" class="text-decoration-none">{buildAvatar(./teaser.user, "18px", true, "avatar-tooltip not-responsive")}</a>
-						<a class="permalink text-muted timeago text-xs" href="{config.relative_path}/topic/{./slug}/{./teaser.index}" title="{./teaser.timestampISO}">
-						</a>
-					</p>
-					<div class="post-content overflow-hidden text-xs line-clamp-2 ps-3">
-						{./teaser.content}
-					</div>
-					{{{ end }}}
-					{{{ end }}}
-				</div>
-			</div>
-
-			{{{ if showSelect }}}
-			<div class="position-absolute top-0 end-0 w-auto p-0">
-				<i component="topic/select" class="fa fa-square-o fs-5 text-muted pointer"></i>
-			</div>
-			{{{ end }}}
 		</div>
 		<hr class="text-muted opacity-25"/>
 	</li>
