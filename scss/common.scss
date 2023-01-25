@@ -23,6 +23,16 @@ body {
 	}
 }
 
+blockquote {
+	background-color: $light;
+	font-style: normal;
+	border-left: 2px solid $border-color;
+	padding: 1rem;
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
 body:not(.page-user) {
 	#content {
 		transition: opacity 150ms linear;
