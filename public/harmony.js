@@ -6,6 +6,7 @@ $(document).ready(function () {
 	setupSearch();
 	setupDrafts();
 	handleMobileNavigator();
+	setupNavTooltips();
 
 	$('[component="skinSwitcher"]').on('click', '.dropdown-item', function () {
 		const skin = $(this).attr('data-value');
@@ -140,6 +141,27 @@ $(document).ready(function () {
 				paginationBlockEl.find('.dropdown-menu.show').removeClass('show');
 				return hookData;
 			});
+		});
+	}
+
+	function setupNavTooltips() {
+		// remove title from user icon in sidebar to prevent double tooltip
+		$('.sidebar [component="header/avatar"] .avatar').removeAttr('title');
+		const tooltipEls = $('.sidebar [title]');
+		tooltipEls.tooltip({
+			trigger: 'manual',
+			animation: false,
+		});
+
+		tooltipEls.on('mouseenter', function (ev) {
+			const target = $(ev.target);
+			const isDropdown = target.hasClass('dropdown-menu') || !!target.parents('.dropdown-menu').length;
+			if (!$('.sidebar').hasClass('open') && !isDropdown) {
+				$(this).tooltip('show');
+			}
+		});
+		tooltipEls.on('click mouseleave', function () {
+			$(this).tooltip('hide');
 		});
 	}
 });
