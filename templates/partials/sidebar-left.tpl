@@ -1,7 +1,7 @@
 <nav class="{{{ if config.openSidebars}}}open{{{ end }}} text-dark bg-light sidebar sidebar-left start-0 border-end vh-100 d-none d-md-flex flex-column justify-content-between sticky-top ff-secondary">
 	<ul id="main-nav" class="list-unstyled d-flex flex-column w-100 gap-2 mt-2">
 		{{{ each navigation }}}
-		<!-- IF function.displayMenuItem, @index -->
+		{{{ if displayMenuItem(@root, @index) }}}
 		<li class="nav-item mx-2 {./class}{{{ if ./dropdown }}} dropend{{{ end }}}" title="{./title}">
 			<a class="nav-link nav-btn navigation-link d-flex gap-2 justify-content-between align-items-center {{{ if navigation.dropdown }}}dropdown-toggle{{{ end }}}"
 			{{{ if ./dropdown }}} href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{{ else }}} href="{./route}"{{{ end }}} {{{ if ./id }}}id="{./id}"{{{ end }}}{{{ if ./targetBlank }}} target="_blank"{{{ end }}}>
@@ -24,8 +24,8 @@
 			</ul>
 			{{{ end }}}
 		</li>
-		<!-- ENDIF function.displayMenuItem -->
-		{{{end}}}
+		{{{ end }}}
+		{{{ end }}}
 	</ul>
 	<div class="w-100">
 		{{{ if !config.disableCustomUserSkins }}}
