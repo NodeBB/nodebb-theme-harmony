@@ -23,7 +23,7 @@
 	</div>
 	{{{ end }}}
 	{{{ end }}}
-
+	<hr/>
 	{{{ if !tags.length }}}
 	<div class="alert alert-warning">[[tags:no_tags]]</div>
 	{{{ end }}}
