@@ -26,6 +26,7 @@
 			<textarea component="chat/input" placeholder="[[modules:chat.placeholder]]" class="form-control chat-input mousetrap" rows="2" style="resize:none;"></textarea>
 			<span component="chat/message/remaining" class="text-muted position-absolute me-1 mb-1" style="right: 0px; bottom:0px;">{maximumChatMessageLength}</span>
 		</div>
+		<button component="chat/upload/button" class="btn btn-light" type="button"><i class="fa fa-fw fa-2x fa-upload"></i></button>
 		<button class="btn btn-primary" type="button" data-action="send"><i class="fa fa-fw fa-2x fa-paper-plane"></i></button>
 		<form component="chat/upload" method="post" enctype="multipart/form-data">
 			<input type="file" name="files[]" multiple class="hidden"/>
