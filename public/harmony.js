@@ -64,7 +64,7 @@ $(document).ready(function () {
 	}
 
 	function setupDrafts() {
-		require(['composer/drafts'], function (drafts) {
+		require(['composer/drafts', 'bootbox'], function (drafts, bootbox) {
 			const draftsEl = $('[component="sidebar/drafts"]');
 
 			function updateBadgeCount() {
@@ -105,8 +105,13 @@ $(document).ready(function () {
 			});
 
 			draftsEl.on('click', '[component="drafts/delete"]', function () {
-				drafts.removeDraft($(this).attr('data-save-id'));
-				renderDraftList();
+				const save_id = $(this).attr('data-save-id');
+				bootbox.confirm('[[modules:composer.discard-draft-confirm]]', function (ok) {
+					if (ok) {
+						drafts.removeDraft(save_id);
+						renderDraftList();
+					}
+				});
 				return false;
 			});
 
