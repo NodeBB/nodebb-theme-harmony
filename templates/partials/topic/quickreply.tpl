@@ -1,7 +1,7 @@
-<!-- IF privileges.topics:reply -->
+{{{ if privileges.topics:reply }}}
 <div component="topic/quickreply/container" class="quick-reply d-flex gap-3">
 	<div class="icon hidden-xs">
-		<a class="d-inline-block position-relative" href="<!-- IF loggedInUser.userslug -->{config.relative_path}/user/{loggedInUser.userslug}<!-- ELSE -->#<!-- ENDIF loggedInUser.userslug -->">
+		<a class="d-inline-block position-relative" href="{{{ if loggedInUser.userslug }}}{config.relative_path}/user/{loggedInUser.userslug}{{{ else }}}#{{{ end }}}">
 			{buildAvatar(loggedInUser, "48px", true, "", "user/picture")}
 			{{{ if loggedInUser.status }}}<span component="user/status" class="position-absolute translate-middle-y badge border border-white border-2 rounded-circle status {loggedInUser.status}"><span class="visually-hidden">[[global:{loggedInUser.status}]]</span></span>{{{ end }}}
 		</a>
@@ -25,4 +25,4 @@
 	</form>
 
 </div>
-<!-- ENDIF privileges.topics:reply -->
+{{{ end }}}

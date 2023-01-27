@@ -62,24 +62,24 @@
 				[[user:info.latest-flags]]
 			</h5>
 			<div class="card-body">
-				<!-- IF history.flags.length -->
+				{{{ if history.flags.length }}}
 				<ul class="recent-flags list-unstyled">
-					{{{each history.flags}}}
+					{{{ each history.flags }}}
 					<li>
 						<p>
 							{{{ if history.flags.targetPurged }}}
 							<div>[[flags:target-purged]]</div>
 							{{{ else }}}
-							<a class="title" href="{config.relative_path}/post/{../pid}">{../title}</a><br />
+							<a class="title" href="{config.relative_path}/post/{./pid}">{./title}</a><br />
 							{{{ end }}}
-							<span class="timestamp">[[flags:flagged-timeago-readable, {../timestampISO}, {../timestampReadable}]]</span>
+							<span class="timestamp">[[flags:flagged-timeago-readable, {./timestampISO}, {./timestampReadable}]]</span>
 						</p>
 					</li>
-					{{{end}}}
+					{{{ end }}}
 				</ul>
-				<!-- ELSE -->
+				{{{ else }}}
 				<div class="alert alert-success">[[user:info.no-flags]]</div>
-				<!-- ENDIF history.flags.length -->
+				{{{ end }}}
 			</div>
 		</div>
 
@@ -87,40 +87,37 @@
 			<h5 class="card-header">
 				[[user:info.ban-history]]
 
-				<!-- IF !banned -->
-				<!-- IF !isSelf -->
+				{{{ if (!banned && !isSelf) }}}
 				<button class="btn btn-sm float-end btn-danger" component="account/ban">[[user:ban_account]]</button>
-				<!-- ENDIF !isSelf -->
-				<!-- ELSE -->
-				<!-- IF !isSelf -->
+				{{{ end }}}
+				{{{ if (banned && !isSelf) }}}
 				<button class="btn btn-sm float-end btn-success" component="account/unban">[[user:unban_account]]</button>
-				<!-- ENDIF !isSelf -->
-				<!-- ENDIF !banned -->
+				{{{ end }}}
 			</h5>
 			<div class="card-body">
-				<!-- IF history.bans.length -->
+				{{{ if history.bans.length }}}
 				<ul class="ban-history list-unstyled">
 					{{{each history.bans}}}
 					<li>
 						<p>
-							<a href="{config.relative_path}/user/{history.bans.user.userslug}">{buildAvatar(history.bans.user, "24px", true)}</a>
+							<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "24px", true)}</a>
 							<strong>
-								<a href="<!-- IF history.bans.user.userslug -->{config.relative_path}/user/{history.bans.user.userslug}<!-- ELSE -->#<!-- ENDIF history.bans.user.userslug -->" itemprop="author" data-username="{history.bans.user.username}" data-uid="{history.bans.user.uid}">{history.bans.user.username}</a>
+								<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" itemprop="author" data-username="{./user.username}" data-uid="{./user.uid}">{./user.username}</a>
 							</strong>
-							<span class="timestamp timeago" title="{../timestampISO}"></span> &mdash; {../timestampReadable}<br />
-							<!-- IF ../until -->
-							<span class="expiry">[[user:info.banned-until, {../untilReadable}]]</span><br />
-							<!-- ELSE -->
+							<span class="timestamp timeago" title="{./timestampISO}"></span> &mdash; {./timestampReadable}<br />
+							{{{ if ./until }}}
+							<span class="expiry">[[user:info.banned-until, {./untilReadable}]]</span><br />
+							{{{ else }}}
 							<span class="expiry">[[user:info.banned-permanently]]</span><br />
-							<!-- ENDIF ../until -->
-							<span class="reason"><strong>[[user:info.banned-reason-label]]</strong>: {../reason}</span>
+							{{{ end }}}
+							<span class="reason"><strong>[[user:info.banned-reason-label]]</strong>: {./reason}</span>
 						</p>
 					</li>
 					{{{end}}}
 				</ul>
-				<!-- ELSE -->
+				{{{ else }}}
 				<div class="alert alert-success">[[user:info.no-ban-history]]</div>
-				<!-- ENDIF history.bans.length -->
+				{{{ end }}}
 			</div>
 		</div>
 
@@ -144,19 +141,19 @@
 					{{{ each history.mutes }}}
 					<li>
 						<p>
-							<a href="{config.relative_path}/user/{history.mutes.user.userslug}">{buildAvatar(history.mutes.user, "24px", true)}</a>
+							<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "24px", true)}</a>
 							<strong>
-								<a href="<!-- IF history.mutes.user.userslug -->{config.relative_path}/user/{history.mutes.user.userslug}<!-- ELSE -->#<!-- ENDIF history.mutes.user.userslug -->" itemprop="author" data-username="{history.mutes.user.username}" data-uid="{history.mutes.user.uid}">{history.mutes.user.username}</a>
+								<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" itemprop="author" data-username="{./user.username}" data-uid="{./user.uid}">{./user.username}</a>
 							</strong>
-							<span class="timestamp timeago" title="{../timestampISO}"></span> &mdash; {../timestampReadable}<br />
-							{{{ if ../until }}}
-							<span class="expiry">[[user:info.muted-until, {../untilReadable}]]</span><br />
+							<span class="timestamp timeago" title="{./timestampISO}"></span> &mdash; {./timestampReadable}<br />
+							{{{ if ./until }}}
+							<span class="expiry">[[user:info.muted-until, {./untilReadable}]]</span><br />
 							{{{ end }}}
 
-							<span class="reason"><strong>[[user:info.banned-reason-label]]</strong>: {../reason}</span>
+							<span class="reason"><strong>[[user:info.banned-reason-label]]</strong>: {./reason}</span>
 						</p>
 					</li>
-					{{{end}}}
+					{{{ end }}}
 				</ul>
 				{{{ else }}}
 				<div class="alert alert-success">[[user:info.no-mute-history]]</div>
@@ -164,7 +161,7 @@
 			</div>
 		</div>
 
-		<!-- IF isAdminOrGlobalModerator -->
+		{{{ if isAdminOrGlobalModerator }}}
 		<div class="card">
 			<h5 class="card-header">
 				[[user:info.moderation-note]]
@@ -175,32 +172,30 @@
 				<button class="btn btn-sm float-end btn-success" component="account/save-moderation-note">[[user:info.moderation-note.add]]</button>
 				<br/>
 				<div component="account/moderation-note/list">
-					{{{each moderationNotes}}}
+					{{{ each moderationNotes }}}
 					<hr/>
 
-					<div class="clearfix">
-						<div class="float-start">
-							<a href="<!-- IF moderationNotes.user.userslug -->{config.relative_path}/user/{moderationNotes.user.userslug}<!-- ELSE -->#<!-- ENDIF moderationNotes.user.userslug -->">{buildAvatar(moderationNotes.user, "24px", true)}</a>
-							<strong>
-								<a href="<!-- IF moderationNotes.user.userslug -->{config.relative_path}/user/{moderationNotes.user.userslug}<!-- ELSE -->#<!-- ENDIF moderationNotes.user.userslug -->" itemprop="author" data-username="{moderationNotes.user.username}" data-uid="{moderationNotes.user.uid}">{moderationNotes.user.username}</a>
-							</strong>
+					<div>
+						<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{buildAvatar(./user, "24px", true)}</a>
+						<strong>
+							<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" itemprop="author" data-username="{./user.username}" data-uid="{./user.uid}">{./user.username}</a>
+						</strong>
 
-							<div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
-								<span class="timeago" title="{moderationNotes.timestampISO}"></span>
-							</div>
-							<br />
+						<div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+							<span class="timeago" title="{./timestampISO}"></span>
+						</div>
+						<br />
 
-							<div class="content">
-								{moderationNotes.note}
-							</div>
+						<div class="content">
+							{./note}
 						</div>
 					</div>
-					{{{end}}}
+					{{{ end }}}
 				</div>
 				<!-- IMPORT partials/paginator.tpl -->
 			</div>
 		</div>
-		<!-- ENDIF isAdminOrGlobalModerator -->
+		{{{ end }}}
 	</div>
 </div>
 

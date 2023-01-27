@@ -11,7 +11,7 @@
 
 		<hr />
 
-		<!-- IF type_bool.post -->
+		{{{ if type_bool.post }}}
 		<div class="d-flex">
 			<div class="flex-shrink-0">
 				<a href="{config.relative_path}/user/{target.user.userslug}">{buildAvatar(target.user, "64px", true, "media-object")}</a>
@@ -21,9 +21,9 @@
 				{target.content}
 			</div>
 		</div>
-		<!-- ENDIF type_bool.post -->
+		{{{ end }}}
 
-		<!-- IF type_bool.user -->
+		{{{ if type_bool.user }}}
 		<div class="d-flex">
 			<div class="flex-shrink-0">
 				<a href="{config.relative_path}/user/{target.userslug}">{buildAvatar(target, "64px", true, "media-object")}</a>
@@ -36,11 +36,11 @@
 				</p>
 			</div>
 		</div>
-		<!-- ENDIF type_bool.user -->
+		{{{ end }}}
 
-		<!-- IF type_bool.empty -->
+		{{{ if type_bool.empty }}}
 		<div class="alert alert-warning" role="alert">[[flags:target-purged]]</div>
-		<!-- ENDIF type_bool.empty -->
+		{{{ end }}}
 
 		<hr />
 
@@ -95,27 +95,27 @@
 				</form>
 
 				<div component="flag/notes">
-					<!-- IF !notes.length -->
+					{{{ if !notes.length }}}
 					<div class="alert alert-success text-center">[[flags:no-notes]]</div>
-					<!-- ENDIF !notes.length -->
-					{{{each notes}}}
+					{{{ end }}}
+					{{{ each notes }}}
 					<div class="d-flex mb-3">
 						<div class="flex-shrink-0">
-							<a href="{config.relative_path}/user/{../user.userslug}">{buildAvatar(notes.user, "32px", true, "media-object")}</a>
+							<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "32px", true, "media-object")}</a>
 						</div>
 						<div class="flex-grow-1 mx-3">
 							<h2 class="h5">
-								<a href="{config.relative_path}/user/{../user.userslug}">{../user.username}</a>
-								<small><span class="timeago" title="{../datetimeISO}"></span></small>
+								<a href="{config.relative_path}/user/{./user.userslug}">{./user.username}</a>
+								<small><span class="timeago" title="{./datetimeISO}"></span></small>
 							</h4>
-							{../content}
+							{./content}
 						</div>
 						<div class="flex-shrink-0">
 							<a href="#" class="btn btn-sm btn-link" data-action="prepare-edit"><i class="fa fa-pencil"></i></a>
 							<a href="#" class="btn btn-sm btn-link" data-action="delete-note"><i class="fa fa-trash text-danger"></i></a>
 						</div>
 					</div>
-					{{{end}}}
+					{{{ end }}}
 				</div>
 			</div>
 			<div class="col-sm-6">
@@ -175,25 +175,25 @@
 
 				<h2 class="h4">[[flags:history]]</h2>
 				<div component="flag/history">
-					<!-- IF !history.length -->
+					{{{ if !history.length }}}
 					<div class="alert alert-success text-center">[[flags:no-history]]</div>
-					<!-- ENDIF !history.length -->
-					{{{each history}}}
+					{{{ end }}}
+					{{{ each history }}}
 					<div class="d-flex">
 						<div class="flex-shrink-0">
-							<a href="{config.relative_path}/user/{../user.userslug}">{buildAvatar(history.user, "32px", true, "media-object")}</a>
+							<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "32px", true, "media-object")}</a>
 						</div>
 						<div class="flex-grow-1 ms-3">
 							<h4 class="media-heading">
-								<a href="{config.relative_path}/user/{../user.userslug}">{../user.username}</a>
-								<small><span class="timeago" title="{../datetimeISO}"></span></small>
+								<a href="{config.relative_path}/user/{./user.userslug}">{./user.username}</a>
+								<small><span class="timeago" title="{./datetimeISO}"></span></small>
 							</h4>
 							<ul>
-								{{{each ./fields}}}
+								{{{ each ./fields }}}
 								<li>
-									<span class="badge bg-primary">[[flags:{@key}]]</span><!-- IF @value --> &rarr; <span class="badge bg-light text-dark">{@value}</span><!-- ENDIF @value -->
+									<span class="badge bg-primary">[[flags:{@key}]]</span>{{{ if @value }}} &rarr; <span class="badge bg-light text-dark">{@value}</span>{{{ end }}}
 								</li>
-								{{{end}}}
+								{{{ end }}}
 								{{{ each ./meta }}}
 								<li>
 									<span class="badge bg-{{./labelClass}}">{{./key}}</span>{{{ if ./value }}} &rarr; <span class="badge bg-light text-dark">{{ ./value }}</span>{{{ end }}}
@@ -202,7 +202,7 @@
 							</ul>
 						</div>
 					</div>
-					{{{end}}}
+					{{{ end }}}
 				</div>
 			</div>
 		</div>

@@ -4,7 +4,7 @@
 			<div class="col-12 col-lg-6">
 				<div class="mb-3">
 					<label class="form-label" for="name">[[groups:details.group_name]]</label>
-					<input <!-- IF group.system -->readonly<!-- ENDIF group.system --> class="form-control" name="name" id="name" type="text" value="{group.displayName}" />
+					<input {{{ if group.system }}}readonly{{{ end }}} class="form-control" name="name" id="name" type="text" value="{group.displayName}" />
 				</div>
 				<div class="mb-3">
 					<label class="form-label" for="name">[[groups:details.description]]</label>
@@ -13,7 +13,7 @@
 
 				<div class="form-check">
 					<label class="form-check-label">[[groups:details.private]]</label>
-					<input class="form-check-input" name="private" type="checkbox"<!-- IF group.private --> checked<!-- ENDIF group.private -->>
+					<input class="form-check-input" name="private" type="checkbox"{{{ if group.private }}} checked{{{ end }}}>
 					{{{ if !allowPrivateGroups }}}
 					<p class="form-text">
 						[[groups:details.private_system_help]]
@@ -25,7 +25,7 @@
 				</div>
 				<div class="form-check">
 					<label class="form-check-label">[[groups:details.hidden]]</label>
-					<input class="form-check-input" name="hidden" type="checkbox"<!-- IF group.hidden --> checked<!-- ENDIF group.hidden -->>
+					<input class="form-check-input" name="hidden" type="checkbox"{{{ if group.hidden }}} checked{{{ end }}}>
 					<p class="form-text text-xs m-0">
 						[[groups:details.hidden_help]]
 					</p>

@@ -1,4 +1,4 @@
-<div class="d-flex flex-column d-md-none fixed-bottom ff-secondary  gap-1 align-items-center">
+<div class="d-flex flex-column d-md-none fixed-bottom ff-secondary gap-1 align-items-center">
 
 	<!-- IMPORT partials/topic/navigator-mobile.tpl -->
 
@@ -12,32 +12,32 @@
 			</a>
 			<ul class="navigation-dropdown dropdown-menu">
 				{{{ each navigation }}}
-				<!-- IF function.displayMenuItem, @index -->
+				{{{ if displayMenuItem(@root, @index) }}}
 				<li class="nav-item {./class}{{{ if ./dropdown }}} dropend{{{ end }}}" title="{./title}">
-					<a class="nav-link nav-btn navigation-link px-3 py-2 {{{ if navigation.dropdown }}}dropdown-toggle{{{ end }}}"
+					<a class="nav-link nav-btn navigation-link px-3 py-2 {{{ if ./dropdown }}}dropdown-toggle{{{ end }}}"
 					{{{ if ./dropdown }}} href="#" role="button" data-bs-toggle="collapse" data-bs-target="#collapse-target-{@index}" onclick="event.stopPropagation();" {{{ else }}} href="{./route}"{{{ end }}} {{{ if ./id }}}id="{./id}"{{{ end }}}{{{ if ./targetBlank }}} target="_blank"{{{ end }}}>
 						<span class="d-inline-flex justify-content-between align-items-center w-100">
 							<span class="text-nowrap truncate-open">
 								{{{ if ./iconClass }}}
 								<i class="fa fa-fw {./iconClass}" data-content="{./content}"></i>
 								{{{ end }}}
-								{{{ if navigation.text }}}
-								<span class="nav-text visible-open px-2 fw-semibold">{navigation.text}</span>
+								{{{ if ./text }}}
+								<span class="nav-text visible-open px-2 fw-semibold">{./text}</span>
 								{{{ end }}}
 							</span>
 							<span component="navigation/count" class="visible-open badge rounded-1 bg-primary {{{ if !./content }}}hidden{{{ end }}}">{./content}</span>
 						</span>
 					</a>
-					{{{ if navigation.dropdown }}}
+					{{{ if ./dropdown }}}
 					<div class="ps-3">
 						<ul id="collapse-target-{@index}" class="collapse list-unstyled ps-3">
-							{navigation.dropdownContent}
+							{./dropdownContent}
 						</ul>
 					</div>
 					{{{ end }}}
 				</li>
-				<!-- ENDIF function.displayMenuItem -->
-				{{{end}}}
+				{{{ end }}}
+				{{{ end }}}
 			</ul>
 		</div>
 

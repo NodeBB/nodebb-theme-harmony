@@ -3,7 +3,7 @@
 		{{{ each navigation }}}
 		{{{ if displayMenuItem(@root, @index) }}}
 		<li class="nav-item mx-2 {./class}{{{ if ./dropdown }}} dropend{{{ end }}}" title="{./title}">
-			<a class="nav-link nav-btn navigation-link d-flex gap-2 justify-content-between align-items-center {{{ if navigation.dropdown }}}dropdown-toggle{{{ end }}}"
+			<a class="nav-link nav-btn navigation-link d-flex gap-2 justify-content-between align-items-center {{{ if ./dropdown }}}dropdown-toggle{{{ end }}}"
 			{{{ if ./dropdown }}} href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{{ else }}} href="{./route}"{{{ end }}} {{{ if ./id }}}id="{./id}"{{{ end }}}{{{ if ./targetBlank }}} target="_blank"{{{ end }}}>
 				<span class="d-flex gap-2 align-items-center text-nowrap truncate-open">
 					<span class="position-relative">
@@ -12,15 +12,15 @@
 						<span component="navigation/count" class="visible-closed position-absolute top-0 start-100 translate-middle badge rounded-1 bg-primary {{{ if !./content }}}hidden{{{ end }}}">{./content}</span>
 						{{{ end }}}
 					</span>
-					{{{ if navigation.text }}}
-					<span class="nav-text small visible-open fw-semibold text-truncate">{navigation.text}</span>
+					{{{ if ./text }}}
+					<span class="nav-text small visible-open fw-semibold text-truncate">{./text}</span>
 					{{{ end }}}
 				</span>
 				<span component="navigation/count" class="visible-open badge rounded-1 bg-primary {{{ if !./content }}}hidden{{{ end }}}">{./content}</span>
 			</a>
-			{{{ if navigation.dropdown }}}
+			{{{ if ./dropdown }}}
 			<ul class="dropdown-menu shadow">
-				{navigation.dropdownContent}
+				{./dropdownContent}
 			</ul>
 			{{{ end }}}
 		</li>

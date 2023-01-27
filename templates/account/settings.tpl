@@ -24,9 +24,9 @@
 			<div class="mb-2">
 				<select class="form-select form-select-sm" id="homePageRoute" data-property="homePageRoute">
 					<option value="none">None</option>
-					{{{each homePageRoutes}}}
-					<option value="{homePageRoutes.route}" <!-- IF homePageRoutes.selected -->selected="1"<!-- ENDIF homePageRoutes.selected -->>{homePageRoutes.name}</option>
-					{{{end}}}
+					{{{ each homePageRoutes }}}
+					<option value="{./route}" {{{ if ./selected }}}selected="1"{{{ end }}}>{./name}</option>
+					{{{ end }}}
 				</select>
 				<p class="form-text text-xs">[[user:homepage_description]]</p>
 			</div>

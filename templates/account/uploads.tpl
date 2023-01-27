@@ -2,15 +2,13 @@
 
 <h3 class="fw-semibold fs-5">{title}</h3>
 
-<!-- IF privateUploads -->
-<div class="alert alert-info text-center">[[uploads:private-uploads-info]]</div>
-<!-- ELSE -->
-<div class="alert alert-info text-center">[[uploads:public-uploads-info]]</div>
-<!-- ENDIF privateUploads -->
+<div class="alert alert-info text-center">
+	{{{ if privateUploads }}}[[uploads:private-uploads-info]]{{{ else }}}[[uploads:public-uploads-info]]{{{ end }}}
+</div>
 
-<!-- IF !uploads.length -->
+{{{ if !uploads.length }}}
 <div class="alert alert-warning text-center">[[uploads:no-uploads-found]]</div>
-<!-- ENDIF !uploads.length -->
+{{{ end }}}
 
 <table class="table table-striped table-responsive">
 	<thead>
@@ -20,10 +18,10 @@
 		</tr>
 	</thead>
 	<tbody>
-		{{{each uploads}}}
-		<tr data-name="{uploads.name}">
+		{{{ each uploads }}}
+		<tr data-name="{./name}">
 			<td>
-				<a class="text-break" href="{config.relative_path}{uploads.url}">{uploads.url}</a>
+				<a class="text-break" href="{config.relative_path}{./url}">{./url}</a>
 			</td>
 			<td>
 				<div class="btn-group ">
@@ -31,7 +29,7 @@
 				</div>
 			</td>
 		</tr>
-		{{{end}}}
+		{{{ end }}}
 	</tbody>
 </table>
 

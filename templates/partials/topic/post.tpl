@@ -33,14 +33,14 @@
 			{{{ end }}}
 			{{{ end }}}
 
-			<!-- IF posts.user.banned -->
+			{{{ if posts.user.banned }}}
 			<span class="badge bg-danger rounded-1">[[user:banned]]</span>
-			<!-- ENDIF posts.user.banned -->
+			{{{ end }}}
 
 			<div class="d-flex gap-1 hidden-xs align-items-center">
 				{{{ if posts.toPid }}}
 				<span class="text-muted">replied to</span><!-- FIX THIS, DOES NOT l10n PROPERLY -->
-				<a component="post/parent" data-topid="{posts.toPid}" href="{config.relative_path}/post/{posts.toPid}"><!-- IF posts.parent.username -->{posts.parent.username}<!-- ELSE -->[[global:guest]]<!-- ENDIF posts.parent.username --></a>
+				<a component="post/parent" data-topid="{posts.toPid}" href="{config.relative_path}/post/{posts.toPid}">{{{ if posts.parent.username }}}{posts.parent.username}{{{ else }}}[[global:guest]]{{{ end }}}</a>
 				{{{ else }}}
 				<span class="text-muted">wrote</span><!-- FIX THIS, DOES NOT l10n PROPERLY -->
 				{{{ end }}}
@@ -53,12 +53,12 @@
 
 			<div>
 				<span>
-					<!-- IF posts.user.custom_profile_info.length -->
+					{{{ if posts.user.custom_profile_info.length }}}
 					&#124;
-					{{{each posts.user.custom_profile_info}}}
+					{{{ each posts.user.custom_profile_info }}}
 					{posts.user.custom_profile_info.content}
-					{{{end}}}
-					<!-- ENDIF posts.user.custom_profile_info.length -->
+					{{{ end }}}
+					{{{ end }}}
 				</span>
 			</div>
 			<div class="d-flex align-items-center gap-1 flex-grow-1 justify-content-end">

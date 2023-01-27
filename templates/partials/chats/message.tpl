@@ -18,19 +18,17 @@
 			{messages.content}
 		</div>
 
-		<!-- IF !config.disableChatMessageEditing -->
-		<!-- IF messages.self -->
+		{{{ if (!config.disableChatMessageEditing && ./self ) }}}
 		<div class="position-relative">
 			<div class="btn-group border shadow-sm controls position-absolute small hover-d-block" style="bottom:5px; right:30px; display:none;">
 				<button class="btn btn-sm btn-link" data-action="edit"><i class="fa fa-pencil"></i></button>
 				<button class="btn btn-sm btn-link" data-action="delete"><i class="fa fa-trash"></i></button>
 				<button class="btn btn-sm btn-link" data-action="restore"><i class="fa fa-repeat"></i></button>
-				<!-- IF isAdminOrGlobalMod -->
+				{{{ if isAdminOrGlobalMod }}}
 				<button class="btn btn-sm btn-link chat-ip" title="[[modules:chat.show-ip]]"><i class="fa fa-info-circle chat-ip-button"></i></button>
-				<!-- ENDIF isAdminOrGlobalMod -->
+				{{{ end }}}
 			</div>
 		</div>
-		<!-- ENDIF messages.self -->
-		<!-- ENDIF !config.disableChatMessageEditing -->
+		{{{ end }}}
 	</div>
 </li>

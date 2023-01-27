@@ -1,12 +1,12 @@
 {{{ if breadcrumbs.length }}}
 <ol class="breadcrumb mb-0 {{{ if config.centerHeaderElements }}}justify-content-center{{{ end }}}" itemscope="itemscope" itemprop="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
-	{{{each breadcrumbs}}}
-	<li<!-- IF @last --> component="breadcrumb/current"<!-- ENDIF @last --> itemscope="itemscope" itemprop="itemListElement" itemtype="http://schema.org/ListItem" class="breadcrumb-item <!-- IF @last -->active<!-- ENDIF @last -->">
+	{{{ each breadcrumbs }}}
+	<li{{{ if @last }}} component="breadcrumb/current"{{{ end }}} itemscope="itemscope" itemprop="itemListElement" itemtype="http://schema.org/ListItem" class="breadcrumb-item {{{ if @last }}}active{{{ end }}}">
 		<meta itemprop="position" content="{@index}" />
-		{{{ if ./url }}}<a href="{breadcrumbs.url}" itemprop="item">{{{ end }}}
-			<span class="fw-semibold" itemprop="name">{breadcrumbs.text}</span>
+		{{{ if ./url }}}<a href="{./url}" itemprop="item">{{{ end }}}
+			<span class="fw-semibold" itemprop="name">{./text}</span>
 		{{{ if ./url }}}</a>{{{ end }}}
 	</li>
-	{{{end}}}
+	{{{ end }}}
 </ol>
 {{{ end }}}

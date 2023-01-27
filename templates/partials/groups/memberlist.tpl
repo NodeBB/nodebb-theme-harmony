@@ -25,7 +25,7 @@
 			<div class="d-flex align-items-center justify-content-between">
 				<div class="d-flex align-items-center gap-2">
 					<a class="align-text-top" href="{config.relative_path}/user/{group.members.userslug}">{group.members.username}</a>
-					<i component="groups/owner/icon" title="[[groups:owner]]" class="user-owner-icon fa fa-star align-text-top text-warning <!-- IF !group.members.isOwner -->invisible<!-- ENDIF !group.members.isOwner -->"></i>
+					<i component="groups/owner/icon" title="[[groups:owner]]" class="user-owner-icon fa fa-star align-text-top text-warning {{{ if !group.members.isOwner }}}invisible{{{ end }}}"></i>
 				</div>
 
 				{{{ if group.isOwner }}}

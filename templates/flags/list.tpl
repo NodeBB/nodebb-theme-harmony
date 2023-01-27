@@ -7,14 +7,14 @@
 		<!-- IMPORT partials/flags/filters.tpl -->
 	</div>
 	<div class="col-sm-8 col-md-9">
-		<!-- IF hasFilter -->
+		{{{ if hasFilter }}}
 		<div class="alert alert-warning">
 			<p class="float-end">
 				<a href="{config.relative_path}/flags">[[flags:filter-reset]]</a>
 			</p>
 			[[flags:filter-active]]
 		</div>
-		<!-- ENDIF hasFilter -->
+		{{{ end }}}
 
 		<div class="btn-group float-end" component="flags/bulk-actions">
 			<button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" autocomplete="off" aria-haspopup="true" aria-expanded="false" disabled="disabled">
@@ -39,7 +39,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<!-- IF !flags.length -->
+				{{{ if !flags.length }}}
 				<tr>
 					<td colspan="5">
 						<div class="alert alert-success text-center">
@@ -47,22 +47,22 @@
 						</div>
 					</td>
 				</tr>
-				<!-- ENDIF !flags.length -->
-				{{{each flags}}}
-				<tr data-flag-id="{../flagId}">
+				{{{ end }}}
+				{{{ each flags }}}
+				<tr data-flag-id="{./flagId}">
 					<td>
 						<input type="checkbox" autocomplete="off" />
 					</td>
 					<td>
-						<a href="{config.relative_path}/flags/{../flagId}">
-							<strong>{../target_readable}</strong>
+						<a href="{config.relative_path}/flags/{./flagId}">
+							<strong>{./target_readable}</strong>
 						</a>
 					</td>
 					<td>
 						{./heat}
 					</td>
-					<td><span class="timeago" title="{../datetimeISO}"></span></td>
-					<td><span class="badge bg-{../labelClass}">[[flags:state-{../state}]]</span></td>
+					<td><span class="timeago" title="{./datetimeISO}"></span></td>
+					<td><span class="badge bg-{./labelClass}">[[flags:state-{./state}]]</span></td>
 				</tr>
 				{{{end}}}
 			</tbody>

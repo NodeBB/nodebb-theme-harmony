@@ -8,12 +8,12 @@
 
 <div class="row">
 	<div class="col-sm-6">
-		<!-- IF gdpr_consent -->
+		{{{ if gdpr_consent }}}
 		<div class="alert alert-success">
 			<i class="fa fa-check float-end fa-3x"></i>
 			[[user:consent.received]]
 		</div>
-		<!-- ELSE -->
+		{{{ else }}}
 		<div class="alert alert-warning">
 			[[user:consent.not_received]]
 			<br /><br />
@@ -21,7 +21,7 @@
 				<button class="btn btn-warning" data-action="consent">[[user:consent.give]]</button>
 			</div>
 		</div>
-		<!-- END -->
+		{{{ end }}}
 		<div class="card">
 			<div class="card-body">
 				<p>[[user:consent.email_intro]]</p>

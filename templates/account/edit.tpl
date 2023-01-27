@@ -11,12 +11,12 @@
 				<label class="form-label fw-bold" for="fullname">[[user:fullname]]</label>
 				<input class="form-control" type="text" id="fullname" name="fullname" placeholder="[[user:fullname]]" value="{fullname}">
 			</div>
-			<!-- IF allowWebsite -->
+			{{{ if allowWebsite }}}
 			<div class="mb-2">
 				<label class="form-label fw-bold" for="website">[[user:website]]</label>
 				<input class="form-control" type="text" id="website" name="website" placeholder="http://..." value="{website}">
 			</div>
-			<!-- ENDIF allowWebsite -->
+			{{{ end }}}
 
 			<div class="mb-2">
 				<label class="form-label fw-bold" for="location">[[user:location]]</label>
@@ -31,37 +31,35 @@
 			<div class="mb-2">
 				<label class="form-label fw-bold" for="groupTitle">[[user:grouptitle]]</label>
 
-				<select class="form-select mb-1" id="groupTitle" name="groupTitle" <!-- IF allowMultipleBadges --> size="{groupSelectSize}" multiple<!-- ENDIF allowMultipleBadges -->>
+				<select class="form-select mb-1" id="groupTitle" name="groupTitle" {{{ if allowMultipleBadges }}} size="{groupSelectSize}" multiple{{{ end }}}>
 					<option value="">[[user:no-group-title]]</option>
-					{{{each groups}}}
-					<!-- IF groups.userTitleEnabled -->
-					<option value="{groups.displayName}" <!-- IF groups.selected -->selected<!-- ENDIF groups.selected -->>{groups.userTitle}</option>
-					<!-- ENDIF groups.userTitleEnabled -->
-					{{{end}}}
+					{{{ each groups }}}
+					{{{ if ./userTitleEnabled }}}
+					<option value="{groups.displayName}" {{{ if ./selected }}}selected{{{ end }}}>{./userTitle}</option>
+					{{{ end }}}
+					{{{ end }}}
 				</select>
-				<!-- IF allowMultipleBadges -->
+				{{{ if allowMultipleBadges }}}
 				<div class="d-none d-md-block">
 					<span class="form-text">[[user:group-order-help]]</span>
 					<i role="button" component="group/order/up" class="fa fa-chevron-up"></i> <i role="button" component="group/order/down" class="fa fa-chevron-down"></i>
 				</div>
-				<!-- ENDIF -->
+				{{{ end }}}
 			</div>
 
-			<!-- IF allowAboutMe -->
+			{{{ if allowAboutMe }}}
 			<div class="mb-2">
 				<label class="form-label fw-bold" for="aboutme">[[user:aboutme]]</label> <small><label id="aboutMeCharCountLeft"></label></small>
 				<textarea class="form-control" id="aboutme" name="aboutme" rows="5">{aboutme}</textarea>
 			</div>
-			<!-- ENDIF allowAboutMe -->
+			{{{ end }}}
 
-			<!-- IF allowSignature -->
-			<!-- IF !disableSignatures -->
+			{{{ if (allowSignature && !disableSignatures) }}}
 			<div class="mb-2">
 				<label class="form-label fw-bold" for="signature">[[user:signature]]</label> <small><label id="signatureCharCountLeft"></label></small>
 				<textarea class="form-control" id="signature" name="signature" rows="5">{signature}</textarea>
 			</div>
-			<!-- ENDIF !disableSignatures -->
-			<!-- ENDIF allowSignature -->
+			{{{ end }}}
 		</form>
 		<hr class="visible-xs visible-sm"/>
 	</div>
@@ -69,47 +67,45 @@
 	<div class="col-xl-6 col-12">
 		<div class="text-center">
 			<ul class="list-group mb-3 text-sm text-nowrap">
-				<!-- IF allowProfilePicture -->
+				{{{ if allowProfilePicture }}}
 				<a component="profile/change/picture" href="#" class="list-group-item px-1 text-decoration-none">[[user:change_picture]]</a>
-				<!-- ENDIF allowProfilePicture -->
-				<!-- IF !username:disableEdit -->
+				{{{ end }}}
+				{{{ if !username:disableEdit }}}
 				<a href="{config.relative_path}/user/{userslug}/edit/username" class="list-group-item px-1 text-decoration-none">[[user:change_username]]</a>
-				<!-- ENDIF !username:disableEdit -->
-				<!-- IF !email:disableEdit -->
+				{{{ end }}}
+				{{{ if !email:disableEdit }}}
 				<a href="{config.relative_path}/user/{userslug}/edit/email" class="list-group-item px-1 text-decoration-none">[[user:change_email]]</a>
-				<!-- ENDIF !email:disableEdit -->
-				<!-- IF canChangePassword -->
+				{{{ end }}}
+				{{{ if canChangePassword }}}
 				<a href="{config.relative_path}/user/{userslug}/edit/password" class="list-group-item px-1 text-decoration-none">[[user:change_password]]</a>
-				<!-- ENDIF canChangePassword -->
-				{{{each editButtons}}}
-				<a href="{config.relative_path}{editButtons.link}" class="list-group-item px-1 text-decoration-none">{editButtons.text}</a>
-				{{{end}}}
+				{{{ end }}}
+				{{{ each editButtons }}}
+				<a href="{config.relative_path}{./link}" class="list-group-item px-1 text-decoration-none">{./text}</a>
+				{{{ end }}}
 			</ul>
 
-			<!-- IF config.requireEmailConfirmation -->
-			<!-- IF email -->
-			<!-- IF isSelf -->
-			<a id="confirm-email" href="#" class="btn btn-warning <!-- IF email:confirmed -->hide<!-- ENDIF email:confirmed -->">[[user:confirm_email]]</a><br/><br/>
-			<!-- ENDIF isSelf -->
-			<!-- ENDIF email -->
-			<!-- ENDIF config.requireEmailConfirmation -->
+			{{{ if config.requireEmailConfirmation }}}
+			{{{ if (email && isSelf) }}}
+			<a id="confirm-email" href="#" class="btn btn-warning {{{ if email:confirmed }}}hide{{{ end }}}">[[user:confirm_email]]</a><br/><br/>
+			{{{ end }}}
+			{{{ end }}}
 		</div>
 
 		{{{ if sso.length }}}
 		<label class="form-label text-sm fw-semibold">[[user:sso.title]]</label>
 		<div class="list-group">
-			{{{each sso}}}
+			{{{ each sso }}}
 			<div class="list-group-item d-flex justify-content-between">
-				<a class="text-sm text-reset text-decoration-none" data-component="{../component}" href="{../url}" target="<!-- IF ../associated -->_blank<!-- ELSE -->_top<!-- ENDIF ../associated -->">
-					<!-- IF ../icon --><i class="fa {../icon}"></i><!-- ENDIF ../icon -->
-					<!-- IF ../associated -->[[user:sso.associated]]<!-- ELSE -->[[user:sso.not-associated]]<!-- ENDIF ../associated -->
-					{../name}
+				<a class="text-sm text-reset text-decoration-none" data-component="{./component}" href="{./url}" target="{{{ if ./associated }}}_blank{{{ else }}}_top{{{ end }}}">
+					{{{ if ./icon }}}<i class="fa {./icon}"></i>{{{ end }}}
+					{{{ if ./associated }}}[[user:sso.associated]]{{{ else }}}[[user:sso.not-associated]]{{{ end }}}
+					{./name}
 				</a>
-				<!-- IF ../deauthUrl -->
-				<a data-component="{../component}" class="btn btn-outline-secondary btn-sm" href="{../deauthUrl}">[[user:sso.dissociate]]</a>
-				<!-- END -->
+				{{{ if ./deauthUrl }}}
+				<a data-component="{./component}" class="btn btn-outline-secondary btn-sm" href="{./deauthUrl}">[[user:sso.dissociate]]</a>
+				{{{ end }}}
 			</div>
-			{{{end}}}
+			{{{ end }}}
 		</div>
 		{{{ end }}}
 
