@@ -1,6 +1,6 @@
 <button type="button" class="btn-ghost-sm d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown">
     {{{ if selectedCategory }}}
-    <span class="category-item">
+    <span class="category-item d-inline-flex align-items-center gap-1">
         {buildCategoryIcon(selectedCategory, "18px", "rounded-circle")}
         <span class="visible-md-inline visible-lg-inline fw-semibold">{selectedCategory.name}</span>
     </span>
@@ -19,7 +19,7 @@
     <li role="presentation" class="category {{{ if ../disabledClass }}}disabled{{{ end }}}" data-cid="{../cid}" data-parent-cid="{../parentCid}" data-name="{../name}">
         <a class="dropdown-item" role="menu-item" href="#">{../level}<i component="category/select/icon" class="fa fa-fw fa-check {{{ if !../selected }}}invisible{{{ end }}}"></i>
             <span component="category-markup" style="{{{ if ../match }}}font-weight: bold;{{{end}}}">
-                <div class="category-item d-inline-block">
+                <div class="category-item d-inline-flex align-items-center gap-1">
                     {{{ if ./icon }}}
                     {buildCategoryIcon(@value, "24px", "rounded-circle")}
                     {{{ end }}}
