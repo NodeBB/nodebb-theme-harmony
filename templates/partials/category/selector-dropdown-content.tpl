@@ -1,7 +1,7 @@
 <button type="button" class="btn-ghost-sm d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown">
     <span component="category-selector-selected">
         {{{ if (selectedCategory && !showCategorySelectLabel) }}}
-        <span class="category-item">
+        <span class="category-item d-inline-flex align-items-center gap-1">
             {buildCategoryIcon(selectedCategory, "24px", "rounded-circle")}
             <span class="fw-semibold">{selectedCategory.name}</span>
         </span>
@@ -22,7 +22,7 @@
     <li role="presentation" class="category {{{ if ./disabledClass }}}disabled {{{ end }}}" data-cid="{./cid}" data-name="{./name}" data-parent-cid="{./parentCid}">
         <a class="dropdown-item" role="menu-item">{./level}
             <span component="category-markup" style="{{{ if ./match }}}font-weight: bold;{{{end}}}">
-                <div class="category-item d-inline-block">
+                <div class="category-item d-inline-flex align-items-center gap-1">
                     {{{ if ./icon }}}
                     {buildCategoryIcon(@value, "24px", "rounded-circle")}
                     {{{ end }}}
