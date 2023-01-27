@@ -10,43 +10,51 @@
 </a>
 <ul class="drafts-dropdown dropdown-menu p-1 shadow">
 	<li>
-		<ul component="drafts/list" class="draft-list list-unstyled d-flex flex-column overscroll-behavior-contain gap-1 pe-1">
-			<li class="no-drafts text-center p-2">[[modules:composer.no-drafts]]</li>
+		<div component="drafts/list" class="draft-list list-unstyled d-flex flex-column overscroll-behavior-contain gap-1 pe-1">
+			<div class="dropdown-item rounded-1 p-2 d-flex gap-2 placeholder-wave">
+				<div class="d-flex flex-grow-1 flex-column w-100">
+					<div class="text-xs placeholder col-3">&nbsp;</div>
+					<div class="text-sm placeholder col-11">&nbsp;</div>
+					<div class="text-xs placeholder col-4">&nbsp;</div>
+				</div>
+			</div>
+			<div class="hidden no-drafts text-center p-2">[[modules:composer.no-drafts]]</div>
+			<div class="draft-item-container">
+				{{{ each drafts }}}
+				{{{ if !@first}}}
+				<hr class="my-1"/>
+				{{{ end }}}
+				<div data-save-id="{./save_id}">
+					<div class="d-flex gap-1 justify-content-between ff-base">
+						<div class="dropdown-item rounded-1 p-2 d-flex flex-column gap-2 pointer" component="drafts/open" data-save-id="{./save_id}">
+							{{{ if (./action == "topics.post") }}}
+							{{{ if ./title}}}
+							<div class="text text-xs fw-semibold line-clamp-2 text-break">{./title}</div>
+							{{{ end }}}
+							{{{ end }}}
 
-			{{{ each drafts }}}
-			{{{ if !@first}}}
-			<hr class="m-0"/>
-			{{{ end }}}
-			<li class="" data-save-id="{./save_id}">
-				<div class="d-flex gap-1 justify-content-between ff-base">
-					<div class="dropdown-item rounded-1 p-2 d-flex flex-column gap-2 pointer" component="drafts/open" data-save-id="{./save_id}">
-						{{{ if (./action == "topics.post") }}}
-						{{{ if ./title}}}
-						<div class="text text-xs fw-semibold line-clamp-2 text-break">{./title}</div>
-						{{{ end }}}
-						{{{ end }}}
+							{{{ if (./action == "posts.reply") }}}
+							<div class="text text-xs fw-semibold line-clamp-2 text-break">[[topic:composer.replying_to, "{./title}"]]</div>
+							{{{ end }}}
 
-						{{{ if (./action == "posts.reply") }}}
-						<div class="text text-xs fw-semibold line-clamp-2 text-break">[[topic:composer.replying_to, "{./title}"]]</div>
-						{{{ end }}}
+							{{{ if (./action == "posts.edit") }}}
+							<div class="text text-xs fw-semibold line-clamp-2">[[topic:composer.editing]]</div>
+							{{{ end }}}
 
-						{{{ if (./action == "posts.edit") }}}
-						<div class="text text-xs fw-semibold line-clamp-2">[[topic:composer.editing]]</div>
-						{{{ end }}}
-
-						{{{ if ./text }}}
-						<div class="text text-sm line-clamp-3 text-break">{./text}</div>
-						{{{ end }}}
-						<div class="timeago text-xs text-muted" title="{./timestampISO}"></div>
-					</div>
-					<div class="">
-						<button component="drafts/delete" data-save-id="{./save_id}" class="btn btn-light btn-sm">
-							<i class="unread fa fa-xs fa-trash text-secondary"></i>
-						</button>
+							{{{ if ./text }}}
+							<div class="text text-sm line-clamp-3 text-break">{./text}</div>
+							{{{ end }}}
+							<div class="timeago text-xs text-muted" title="{./timestampISO}"></div>
+						</div>
+						<div>
+							<button component="drafts/delete" data-save-id="{./save_id}" class="btn btn-light btn-sm">
+								<i class="unread fa fa-xs fa-trash text-secondary"></i>
+							</button>
+						</div>
 					</div>
 				</div>
-			</li>
-			{{{ end }}}
-		</ul>
+				{{{ end }}}
+			</div>
+		</div>
 	</li>
 </ul>

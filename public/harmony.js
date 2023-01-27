@@ -77,11 +77,11 @@ $(document).ready(function () {
 
 			async function renderDraftList() {
 				const draftListEl = $('[component="drafts/list"]');
-				draftListEl.children(':not(.no-drafts)').remove();
-
 				const draftItems = drafts.listAvailable();
 				if (!draftItems.length) {
 					draftListEl.find('.no-drafts').removeClass('hidden');
+					draftListEl.find('.placeholder-wave').addClass('hidden');
+					draftListEl.find('.draft-item-container').html('');
 					return;
 				}
 				draftItems.reverse().forEach((draft) => {
@@ -94,7 +94,8 @@ $(document).ready(function () {
 
 				const html = await app.parseAndTranslate('partials/sidebar/drafts', 'drafts', { drafts: draftItems });
 				draftListEl.find('.no-drafts').addClass('hidden');
-				draftListEl.append(html).find('.timeago').timeago();
+				draftListEl.find('.placeholder-wave').addClass('hidden');
+				draftListEl.find('.draft-item-container').html(html).find('.timeago').timeago();
 			}
 
 
