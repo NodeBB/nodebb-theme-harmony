@@ -19,7 +19,7 @@
 {{{ if !scheduled }}}
 <li {{{ if !deleted }}}hidden{{{ end }}}><a component="topic/restore" href="#" class="dropdown-item {{{ if !deleted }}}hidden{{{ end }}}"><i class="fa fa-fw fa-history"></i> [[topic:thread_tools.restore]]</a></li>
 {{{ end }}}
-{{{ if privileges.purge }}]
+{{{ if privileges.purge }}}
 <li {{{ if !deleted }}}hidden{{{ end }}}><a component="topic/purge" href="#" class="dropdown-item {{{ if !deleted }}}hidden{{{ end }}}"><i class="fa fa-fw fa-eraser"></i> [[topic:thread_tools.purge]]</a></li>
 {{{ end }}}
 {{{ if privileges.isAdminOrMod }}}
