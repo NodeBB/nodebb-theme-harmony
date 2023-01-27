@@ -87,8 +87,8 @@ $(document).ready(function () {
 				draftItems.reverse().forEach((draft) => {
 					if (draft) {
 						draft.text = utils.escapeHTML(
-							draft.text.replace(/(?:\r\n|\r|\n)/g, '<br>')
-						);
+							draft.text
+						).replace(/(?:\r\n|\r|\n)/g, '<br>');
 					}
 				});
 
