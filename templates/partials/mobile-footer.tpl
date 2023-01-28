@@ -1,8 +1,8 @@
-<div class="d-flex flex-column d-md-none fixed-bottom ff-secondary gap-1 align-items-center">
+<div component="bottombar" class="bottombar d-flex flex-column d-md-none fixed-bottom ff-secondary gap-1 align-items-center">
 
 	<!-- IMPORT partials/topic/navigator-mobile.tpl -->
 
-	<div class="bottombar p-2 text-dark bg-light d-flex justify-content-between align-items-center w-100">
+	<div class="bottombar-nav p-2 text-dark bg-light d-flex justify-content-between align-items-center w-100">
 		<div class="">
 			<a href="#" role="button" class="nav-link nav-btn d-flex justify-content-between align-items-center position-relative" data-bs-toggle="dropdown">
 				<span class="position-relative">
@@ -17,15 +17,15 @@
 					<a class="nav-link nav-btn navigation-link px-3 py-2 {{{ if ./dropdown }}}dropdown-toggle{{{ end }}}"
 					{{{ if ./dropdown }}} href="#" role="button" data-bs-toggle="collapse" data-bs-target="#collapse-target-{@index}" onclick="event.stopPropagation();" {{{ else }}} href="{./route}"{{{ end }}} {{{ if ./id }}}id="{./id}"{{{ end }}}{{{ if ./targetBlank }}} target="_blank"{{{ end }}}>
 						<span class="d-inline-flex justify-content-between align-items-center w-100">
-							<span class="text-nowrap truncate-open">
+							<span class="text-nowrap">
 								{{{ if ./iconClass }}}
 								<i class="fa fa-fw {./iconClass}" data-content="{./content}"></i>
 								{{{ end }}}
 								{{{ if ./text }}}
-								<span class="nav-text visible-open px-2 fw-semibold">{./text}</span>
+								<span class="nav-text px-2 fw-semibold">{./text}</span>
 								{{{ end }}}
 							</span>
-							<span component="navigation/count" class="visible-open badge rounded-1 bg-primary {{{ if !./content }}}hidden{{{ end }}}">{./content}</span>
+							<span component="navigation/count" class="badge rounded-1 bg-primary {{{ if !./content }}}hidden{{{ end }}}">{./content}</span>
 						</span>
 					</a>
 					{{{ if ./dropdown }}}

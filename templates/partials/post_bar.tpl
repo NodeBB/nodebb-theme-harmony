@@ -1,4 +1,4 @@
-<nav class="{{{ if config.stickyToolbar }}}sticky-tools{{{ end }}} navbar navbar-expand mt-4 p-0 border-0 rounded topic-main-buttons">
+<nav class="{{{ if config.theme.stickyToolbar }}}sticky-tools{{{ end }}} navbar navbar-expand mt-4 p-0 border-0 rounded topic-main-buttons">
 	<div class="card card-header flex-row p-2 border rounded ff-secondary w-100">
 		<ul class="navbar-nav me-auto gap-2 align-items-center">
 			{{{ if loggedIn }}}

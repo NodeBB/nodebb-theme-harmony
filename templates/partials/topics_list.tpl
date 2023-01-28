@@ -114,13 +114,12 @@
 						{{{ end }}}
 					</div>
 				</div>
-
-				{{{ if showSelect }}}
-				<div class="position-absolute top-0 end-0 w-auto p-0">
-					<i component="topic/select" class="fa fa-square-o fs-5 text-muted pointer"></i>
-				</div>
-				{{{ end }}}
 			</div>
+			{{{ if showSelect }}}
+			<div class="position-absolute top-0 end-0 w-auto p-0">
+				<i component="topic/select" class="fa fa-square-o fs-5 text-muted pointer"></i>
+			</div>
+			{{{ end }}}
 		</div>
 		<hr class="text-muted opacity-25"/>
 	</li>

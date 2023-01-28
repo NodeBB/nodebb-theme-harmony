@@ -12,6 +12,7 @@ const defaults = {
 	enableQuickReply: 'on',
 	centerHeaderElements: 'off',
 	stickyToolbar: 'on',
+	autohideBottombar: 'off',
 	openSidebars: 'off',
 };
 
@@ -102,15 +103,18 @@ async function loadThemeConfig(uid) {
 		meta.settings.get('harmony'),
 		user.getSettings(uid),
 	]);
-	return { ...defaults, ...themeConfig, ...userConfig };
+
+	const config = { ...defaults, ...themeConfig, ...(_.pick(userConfig, Object.keys(defaults))) };
+	config.enableQuickReply = config.enableQuickReply === 'on';
+	config.centerHeaderElements = config.centerHeaderElements === 'on';
+	config.stickyToolbar = config.stickyToolbar === 'on';
+	config.autohideBottombar = config.autohideBottombar === 'on';
+	config.openSidebars = config.openSidebars === 'on';
+	return config;
 }
 
 library.getThemeConfig = async function (config) {
-	const themeConfig = await loadThemeConfig(config.uid);
-	config.enableQuickReply = themeConfig.enableQuickReply === 'on';
-	config.centerHeaderElements = themeConfig.centerHeaderElements === 'on';
-	config.stickyToolbar = themeConfig.stickyToolbar === 'on';
-	config.openSidebars = themeConfig.openSidebars === 'on';
+	config.theme = await loadThemeConfig(config.uid);;
 	config.openDraftsOnPageLoad = false;
 	return config;
 };
@@ -136,7 +140,7 @@ library.saveUserSettings = async function (hookData) {
 
 library.addUserToTopic = async function (hookData) {
 	const { enableQuickReply } = await loadThemeConfig(hookData.req.uid);
-	if (enableQuickReply === 'on') {
+	if (enableQuickReply) {
 		if (hookData.req.user) {
 			const userData = await user.getUserData(hookData.req.uid);
 			hookData.templateData.loggedInUser = userData;

@@ -5,8 +5,8 @@
 	</div>
 	<!-- IMPORT partials/mobile-footer.tpl -->
 	{{{ if !isSpider }}}
-	<div class="row">
-		<div component="toaster/tray" class="col-12 col-md-3 alert-window fixed-bottom pb-3 mb-5 mb-md-2 me-md-5 ms-auto">
+	<div class="">
+		<div component="toaster/tray" class="alert-window fixed-bottom pb-5 pb-md-0 mb-5 mb-md-2 pe-3 me-md-5 ms-auto" style="width:300px; z-index: 2!important;">
 			<div id="reconnect-alert" class="alert alert-dismissible alert-warning clearfix hide" component="toaster/toast">
 				<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-hidden="true"></button>
 				<p>[[global:reconnecting-message, {config.siteTitle}]]</p>

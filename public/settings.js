@@ -19,6 +19,7 @@ define('forum/account/theme', ['forum/account/header', 'api', 'settings', 'alert
 						...themeSettings,
 					},
 				});
+				config.theme = (await api.get('/api/config')).theme;
 				alerts.success('[[success:settings-saved]]');
 			});
 		}

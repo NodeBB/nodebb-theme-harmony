@@ -6,11 +6,11 @@
 </div>
 {{{ end }}}
 
-<h2 component="post/header" class="fs-2 mb-0 text-break {{{ if config.centerHeaderElements }}}text-center{{{ end }}}" itemprop="name">
+<h2 component="post/header" class="fs-2 mb-0 text-break {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}" itemprop="name">
 	<span class="topic-title" component="topic/title">{title}</span>
 </h2>
 
-<div class="topic-info d-flex gap-2 align-items-center flex-wrap {{{ if config.centerHeaderElements }}}justify-content-center{{{ end }}}">
+<div class="topic-info d-flex gap-2 align-items-center flex-wrap {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
 	<span component="topic/labels" class="d-flex gap-2">
 		<span component="topic/scheduled" class="badge badge border border-gray-300 text-primary {{{ if !scheduled }}}hidden{{{ end }}}">
 			<i class="fa fa-clock-o"></i>
@@ -74,7 +74,7 @@
 		</div>
 		{{{ end }}}
 
-		{{{ if config.enableQuickReply }}}
+		{{{ if config.theme.enableQuickReply }}}
 		<!-- IMPORT partials/topic/quickreply.tpl -->
 		{{{ end }}}
 

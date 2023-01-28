@@ -1,26 +1,31 @@
-<div class="d-flex justify-content-end w-100">
-	<div class="pagination-block text-bg-light m-2 rounded-1 border border-gray-300" style="height:50px;">
+<div class="d-flex w-100">
+	<div class="pagination-block text-bg-light m-2 rounded-1 border border-gray-300 w-100" style="height:30px;">
 		<div class="position-relative">
-			<div class="progress-bar rounded-1 bg-info d-block position-absolute" style="height:50px;"></div>
+			<div class="progress-bar rounded-1 bg-info d-block position-absolute" style="height:28px;"></div>
 		</div>
-		<div class="wrapper d-flex align-items-center h-100" style="padding: 5px 0px;">
-			<i class="fa fa-2x fa-angle-double-up pointer fa-fw pagetop" style="z-index: 1;"></i>
+		<div class="wrapper dropup-center d-flex align-items-center justify-content-between w-100 h-100" style="padding: 5px 0px;">
+			<div class="lh-1 px-2">
+				<i class="fa fa-angle-double-up pointer fa-fw pagetop fs-5" style="z-index: 1;"></i>
+			</div>
 
 			<a href="#" class="text-reset dropdown-toggle d-inline-block px-3 text-decoration-none" data-bs-toggle="dropdown">
 				<span class="pagination-text position-relative fw-bold"></span>
 			</a>
 
-			<i class="fa fa-2x fa-angle-double-down pointer fa-fw pagebottom" style="z-index: 1;"></i>
+			<div class="lh-1 px-2">
+				<i class="fa fa-angle-double-down pointer fa-fw pagebottom fs-5" style="z-index: 1;"></i>
+			</div>
+
 			<ul class="dropdown-menu p-0" role="menu" style="width: 100%;">
 				<li class="p-3">
 					<div class="row">
 						<div class="col-8 post-content overflow-hidden mb-3" style="height: 350px;"></div>
-						<div class="col-4 text-end">
+						<div class="col-4 ps-0 text-end">
 							<div class="scroller-content">
 								<span class="pointer pagetop">[[topic:first-post]] <i class="fa fa-angle-double-up"></i></span>
 								<div class="scroller-container border-gray-200" style="height: 300px; border-right: 3px solid; margin-right: 5.5px;">
-									<div class="scroller-thumb position-relative" style="height: 40px;right: -6px; padding-right: 15px; margin-right: -15px;">
-										<span class="thumb-text fw-bold user-select-none position-relative" style="top: -15px; padding-right: 10px;"></span>
+									<div class="scroller-thumb position-relative text-nowrap" style="height: 40px;right: -6px; padding-right: 15px; margin-right: -15px;">
+										<span class="thumb-text text-sm fw-bold user-select-none position-relative pe-2" style="top: -15px;"></span>
 										<div class="rounded-2 scroller-thumb-icon bg-primary d-inline-block position-relative" style="width: 9px; height:40px;"></div>
 									</div>
 								</div>

@@ -54,6 +54,51 @@ $(document).ready(function () {
 					hooks.fire('action:navigator.update', { newIndex: navigator.getIndex() });
 				}
 			});
+
+			const bottomBar = $('[component="bottombar"]');
+			$('body').on('shown.bs.dropdown', '.sticky-tools', function () {
+				bottomBar.addClass('hidden');
+			});
+			$('body').on('hidden.bs.dropdown', '.sticky-tools', function () {
+				bottomBar.removeClass('hidden');
+			});
+
+			let lastScrollTop = 0;
+			const $window = $(window);
+			function onWindowScroll() {
+				const st = $window.scrollTop();
+				if (st !== lastScrollTop) {
+					const diff = Math.abs(st - lastScrollTop);
+					const scrolledDown = st > lastScrollTop;
+					const scrolledUp = st < lastScrollTop;
+					if (diff > 5) {
+						bottomBar.css({
+							bottom: !scrolledUp && scrolledDown ?
+								-bottomBar.find('.bottombar-nav').outerHeight(true) :
+								0,
+						});
+						lastScrollTop = st;
+					}
+				}
+			}
+
+			const delayedScroll = utils.throttle(onWindowScroll, 250);
+			function enableAutohide() {
+				if (config.theme.autohideBottombar) {
+					lastScrollTop = $window.scrollTop();
+					$window.on('scroll', delayedScroll);
+				}
+			}
+
+			hooks.on('action:posts.loading', function () {
+				$window.off('scroll', delayedScroll);
+			});
+			hooks.on('action:posts.loaded', enableAutohide);
+			hooks.on('action:ajaxify.end', function () {
+				$window.off('scroll', delayedScroll);
+				enableAutohide();
+			});
+			enableAutohide();
 		});
 	}
 
