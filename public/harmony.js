@@ -96,6 +96,7 @@ $(document).ready(function () {
 			hooks.on('action:posts.loaded', enableAutohide);
 			hooks.on('action:ajaxify.end', function () {
 				$window.off('scroll', delayedScroll);
+				bottomBar.css({ bottom: 0 });
 				enableAutohide();
 			});
 			enableAutohide();
