@@ -5,7 +5,7 @@
 		<div class="">
 		{buildCategoryIcon(@value, "40px", "rounded-1")}
 		</div>
-		<div class="d-flex flex-column gap-1">
+		<div class="d-flex flex-column gap-1 flex-1">
 			<h2 class="title fw-bold fs-4">
 				<!-- IMPORT partials/categories/link.tpl -->
 			</h2>
