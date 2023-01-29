@@ -6,7 +6,7 @@
 
 {{{ if roomId }}}
 <div component="chat/messages" class="expanded-chat d-flex flex-column h-100" data-roomid="{roomId}">
-	<div component="chat/header" class="d-flex align-items-center px-3 gap-2">
+	<div component="chat/header" class="d-flex align-items-center px-md-3 gap-3">
 		<a href="#" data-action="close" role="button" class="d-flex d-md-none btn btn-outline align-text-top"><i class="fa fa-chevron-left"></i></a>
 		<h5 class="members flex-1 fw-semibold tracking-tight mb-0">
 			{./chatWithMessage}

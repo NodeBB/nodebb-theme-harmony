@@ -5,6 +5,19 @@
 }
 body.page-user-chats {
 	overflow: hidden;
+	[data-widget-area="footer"] {
+		display: none;
+	}
+	height: 100%;
+	> .layout-container {
+		height: 100%;
+		> #panel {
+			height: 100%;
+			> .container {
+				height: 100%;
+			}
+		}
+	}
 }
 [component="chat/nav-wrapper"] {
 	width: 300px;
@@ -43,17 +56,18 @@ body.page-user-chats {
 	[component="chat/nav-wrapper"] {
 		width: 100%;
 	}
-	.page-user-chats {
-		.chats-full {
-			padding-bottom: 8rem!important;
-		}
 
-		[component="chat/nav-wrapper"][data-loaded="1"] {
-			display: none!important;
-		}
 
-		[component="chat/nav-wrapper"][data-loaded="0"] + [component="chat/main-wrapper"] {
-			display: none!important;
-		}
+	.page-user-chats.chat-loaded .bottombar {
+		display: none!important;
 	}
+
+	[component="chat/nav-wrapper"][data-loaded="1"] {
+		display: none!important;
+	}
+
+	[component="chat/nav-wrapper"][data-loaded="0"] + [component="chat/main-wrapper"] {
+		display: none!important;
+	}
+
 }
