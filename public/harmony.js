@@ -56,18 +56,27 @@ $(document).ready(function () {
 			});
 
 			const bottomBar = $('[component="bottombar"]');
-			$('body').on('shown.bs.dropdown', '.sticky-tools', function () {
+			const $body = $('body');
+			const $window = $(window);
+			$body.on('shown.bs.dropdown', '.sticky-tools', function () {
 				bottomBar.addClass('hidden');
 			});
-			$('body').on('hidden.bs.dropdown', '.sticky-tools', function () {
+			$body.on('hidden.bs.dropdown', '.sticky-tools', function () {
 				bottomBar.removeClass('hidden');
 			});
 
 			let lastScrollTop = 0;
-			const $window = $(window);
+			let newPostsLoaded = false;
+
+
 			function onWindowScroll() {
 				const st = $window.scrollTop();
-				if (st !== lastScrollTop) {
+				if (newPostsLoaded) {
+					newPostsLoaded = false;
+					lastScrollTop = st;
+					return;
+				}
+				if (st !== lastScrollTop && !navigator.scrollActive) {
 					const diff = Math.abs(st - lastScrollTop);
 					const scrolledDown = st > lastScrollTop;
 					const scrolledUp = st < lastScrollTop;
@@ -77,13 +86,14 @@ $(document).ready(function () {
 								-bottomBar.find('.bottombar-nav').outerHeight(true) :
 								0,
 						});
-						lastScrollTop = st;
 					}
 				}
+				lastScrollTop = st;
 			}
 
 			const delayedScroll = utils.throttle(onWindowScroll, 250);
 			function enableAutohide() {
+				$window.off('scroll', delayedScroll);
 				if (config.theme.autohideBottombar) {
 					lastScrollTop = $window.scrollTop();
 					$window.on('scroll', delayedScroll);
@@ -93,17 +103,19 @@ $(document).ready(function () {
 			hooks.on('action:posts.loading', function () {
 				$window.off('scroll', delayedScroll);
 			});
-			hooks.on('action:posts.loaded', enableAutohide);
+			hooks.on('action:posts.loaded', function () {
+				newPostsLoaded = true;
+				enableAutohide();
+			});
 			hooks.on('action:ajaxify.end', function () {
 				$window.off('scroll', delayedScroll);
-				$('body').removeClass('chat-loaded');
+				$body.removeClass('chat-loaded');
 				bottomBar.css({ bottom: 0 });
 				enableAutohide();
 			});
 			hooks.on('action:chat.loaded', function () {
-				$('body').toggleClass('chat-loaded', !!(ajaxify.data.template.chats && ajaxify.data.roomId));
+				$body.toggleClass('chat-loaded', !!(ajaxify.data.template.chats && ajaxify.data.roomId));
 			});
-			enableAutohide();
 		});
 	}
 
