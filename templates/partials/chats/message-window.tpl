@@ -27,8 +27,8 @@
 			<span component="chat/message/remaining" class="text-xs text-muted position-absolute me-1 mb-1" style="right: 0px; bottom:0px;">{maximumChatMessageLength}</span>
 		</div>
 		<div class="d-flex justify-content-between align-self-stretch gap-2">
-			<button component="chat/upload/button" class="btn btn-light btn-sm align-self-end" type="button"><i class="fa fa-fw fa-upload"></i></button>
-			<button class="btn btn-primary btn-sm align-self-end" type="button" data-action="send"><i class="fa fa-fw fa-paper-plane"></i></button>
+			<button component="chat/upload/button" class="btn btn-light btn-sm align-self-end px-3 px-md-2" type="button"><i class="fa fa-fw fa-upload"></i></button>
+			<button class="btn btn-primary btn-sm align-self-end px-3 px-md-2" type="button" data-action="send"><i class="fa fa-fw fa-paper-plane"></i></button>
 		</div>
 		<form class="hidden" component="chat/upload" method="post" enctype="multipart/form-data">
 			<input type="file" name="files[]" multiple class="hidden"/>
