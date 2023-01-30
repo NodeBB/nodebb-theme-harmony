@@ -5,14 +5,13 @@
 
 			<div class="input-group">
 				<input class="form-control" type="text" component="chat/search" data-bs-toggle="dropdown" />
+				<ul component="chat/search/list" class="dropdown-menu">
+					<li><a href="#" class="dropdown-item">[[admin/menu:search.start-typing]]</a></li>
+				</ul>
 				<button class="btn btn-primary" type="button">
 					<i class="fa fa-search"></i>
 				</button>
 			</div>
-
-			<ul component="chat/search/list" class="dropdown-menu">
-				<li><a href="#" class="dropdown-item">[[admin/menu:search.start-typing]]</a></li>
-			</ul>
 		</div>
 		<hr class="text-muted opacity-25 my-1">
 		<ul component="chat/recent" class="chats-list list-unstyled overflow-auto mb-0 pe-2" data-nextstart="{nextStart}">
