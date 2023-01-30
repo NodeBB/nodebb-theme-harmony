@@ -52,10 +52,10 @@
 		<ul component="topic" class="posts timeline mt-sm-4 p-0 py-3" data-tid="{tid}" data-cid="{cid}">
 			{{{each posts}}}
 				<li component="post" class="pt-4 {{{ if posts.deleted }}}deleted{{{ end }}} {{{ if posts.selfPost }}}self-post{{{ end }}} {{{ if posts.topicOwnerPost }}}topic-owner-post{{{ end }}}" <!-- IMPORT partials/data/topic.tpl -->>
-					<a component="post/anchor" data-index="{posts.index}" id="{posts.index}"></a>
+					<a component="post/anchor" data-index="{./index}" id="{increment(./index, "1")}"></a>
 
-					<meta itemprop="datePublished" content="{posts.timestampISO}">
-					<meta itemprop="dateModified" content="{posts.editedISO}">
+					<meta itemprop="datePublished" content="{./timestampISO}">
+					<meta itemprop="dateModified" content="{./editedISO}">
 
 					<!-- IMPORT partials/topic/post.tpl -->
 				</li>
