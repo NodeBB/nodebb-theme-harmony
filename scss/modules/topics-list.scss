@@ -1,7 +1,12 @@
 .topic-list {
 	overflow-x: hidden!important;
 }
+
 [component="category/topic"] {
+	&.deleted {
+		opacity: 0.6;
+	}
+
 	&.selected {
 		[component="topic/select"] {
 			color: $success!important;
