@@ -5,6 +5,7 @@
 [component="category/topic"] {
 	&.deleted {
 		opacity: 0.6;
+		.meta { display: none!important; }
 	}
 
 	&.selected {

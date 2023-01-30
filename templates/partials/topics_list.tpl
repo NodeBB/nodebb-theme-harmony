@@ -69,8 +69,8 @@
 					</div>
 				</div>
 			</div>
-			{{{ if !../deleted }}}
-			<div class="row col-md-5 col-sm-3 d-none d-md-flex align-self-stretch align-self-lg-start">
+
+			<div class="meta row col-md-5 col-sm-3 d-none d-md-flex align-self-stretch align-self-lg-start">
 				<div class="col-md-5 d-none d-lg-flex stats text-muted gap-2 px-0">
 					{{{ if !reputation:disabled }}}
 					<div class="stats-votes flex-1">
@@ -116,7 +116,7 @@
 					</div>
 				</div>
 			</div>
-			{{{ end }}}
+
 			{{{ if showSelect }}}
 			<div class="position-absolute top-0 end-0 w-auto p-0">
 				<i component="topic/select" class="fa fa-square-o fs-5 text-muted pointer"></i>
