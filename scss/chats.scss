@@ -27,26 +27,31 @@ body.page-user-chats {
 	[data-action="minimize"] {
 		display: none!important;
 	}
-	.chat-content .chat-message {
-		.message-body-wrapper .controls {
-			[data-action="restore"] {
-				display: none;
+
+	.chat-content {
+		@include fix-lists;
+
+		.chat-message {
+			.message-body-wrapper .controls {
+				[data-action="restore"] {
+					display: none;
+				}
 			}
 		}
-	}
-	.chat-content .chat-message.deleted {
-		.message-body-wrapper .controls {
-			[data-action] {
-				display: none;
+		.chat-message.deleted {
+			.message-body-wrapper .controls {
+				[data-action] {
+					display: none;
+				}
+
+				[data-action="restore"] {
+					display: inline;
+				}
 			}
 
-			[data-action="restore"] {
-				display: inline;
+			.message-body {
+				opacity: 0.3;
 			}
-		}
-
-		.message-body {
-			opacity: 0.3;
 		}
 	}
 }

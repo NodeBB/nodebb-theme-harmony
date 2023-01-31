@@ -25,8 +25,6 @@
 			}
 			list-style-type: none;
 
-			@include fix-lists();
-
 			&.timeline {
 				@include timeline-style;
 			}
@@ -46,6 +44,8 @@
 				}
 
 				[component="post/content"] {
+					@include fix-lists();
+
 					pre {
 						max-height: calc($font-size-base * 24);
 					}
