@@ -8,7 +8,7 @@
 		<h2 class="tracking-tight fw-semibold text-center">[[global:register]]</h2>
 		<div class="row justify-content-center gap-5">
 
-			<div class="col-12 col-md-3 px-md-0">
+			<div class="col-12 col-md-5 col-lg-3 px-md-0">
 				<div class="register-block">
 					<div class="alert alert-danger{{{ if !error }}} hidden{{{ end }}}" id="register-error-notify" >
 						<strong>[[error:registration-error]]</strong>
@@ -66,7 +66,7 @@
 			</div>
 
 			{{{ if alternate_logins }}}
-			<div class="col-12 col-md-3 px-md-0">
+			<div class="col-12 col-md-5 col-lg-3 px-md-0">
 				<div class="alt-register-block d-flex flex-column gap-2">
 					<label>[[register:alternative_registration]]</label>
 					<ul class="alt-logins list-unstyled">

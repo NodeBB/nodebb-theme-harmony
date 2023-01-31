@@ -8,7 +8,7 @@
 		<h2 class="tracking-tight fw-semibold text-center">[[global:login]]</h2>
 		<div class="row justify-content-center gap-5">
 			{{{ if allowLocalLogin }}}
-			<div class="col-12 col-md-3 px-md-0">
+			<div class="col-12 col-md-5 col-lg-3 px-md-0">
 				<div class="login-block">
 					<div class="alert alert-danger alert-dismissible" id="login-error-notify" {{{ if error }}}style="display:block"{{{ else }}}style="display: none;"{{{ end }}}>
 						<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -68,7 +68,7 @@
 			{{{ end }}}
 
 			{{{ if alternate_logins }}}
-			<div class="col-12 col-md-3 px-md-0">
+			<div class="col-12 col-md-5 col-lg-3 px-md-0">
 				<div class="alt-login-block d-flex flex-column gap-2">
 					<label>[[login:alternative_logins]]</label>
 					<ul class="alt-logins list-unstyled">
