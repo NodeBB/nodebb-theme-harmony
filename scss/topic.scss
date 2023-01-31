@@ -25,6 +25,8 @@
 			}
 			list-style-type: none;
 
+			@include fix-lists();
+
 			&.timeline {
 				@include timeline-style;
 			}
