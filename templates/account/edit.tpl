@@ -1,7 +1,7 @@
 <!-- IMPORT partials/account/header.tpl -->
 
-<div class="d-flex justify-content-between mb-3">
-	<h3 class="fw-semibold fs-5">{{{ if isSelf }}}[[user:edit-profile]]{{{ else }}}[[pages:account/edit, {username}]]{{{ end }}}</h3>
+<div class="d-flex justify-content-between mb-3 align-items-center">
+	<h3 class="fw-semibold fs-5 mb-0">{{{ if isSelf }}}[[user:edit-profile]]{{{ else }}}[[pages:account/edit, {username}]]{{{ end }}}</h3>
 	<button id="submitBtn" class="btn btn-primary">[[global:save_changes]]</button>
 </div>
 <div class="row">
