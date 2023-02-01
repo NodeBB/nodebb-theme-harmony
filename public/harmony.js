@@ -68,7 +68,6 @@ $(document).ready(function () {
 			let lastScrollTop = 0;
 			let newPostsLoaded = false;
 
-
 			function onWindowScroll() {
 				const st = $window.scrollTop();
 				if (newPostsLoaded) {
@@ -105,13 +104,13 @@ $(document).ready(function () {
 			});
 			hooks.on('action:posts.loaded', function () {
 				newPostsLoaded = true;
-				enableAutohide();
+				setTimeout(enableAutohide, 250);
 			});
 			hooks.on('action:ajaxify.end', function () {
 				$window.off('scroll', delayedScroll);
 				$body.removeClass('chat-loaded');
 				bottomBar.css({ bottom: 0 });
-				enableAutohide();
+				setTimeout(enableAutohide, 250);
 			});
 			hooks.on('action:chat.loaded', function () {
 				$body.toggleClass('chat-loaded', !!(ajaxify.data.template.chats && ajaxify.data.roomId));
