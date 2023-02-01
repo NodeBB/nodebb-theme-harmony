@@ -23,23 +23,23 @@
 
 	<ul class="pagination pagination-sm hidden-md hidden-lg justify-content-center">
 		<li class="page-item first{{{ if !pagination.prev.active }}} disabled{{{ end }}}">
-			<a class="page-link fw-secondary  href="?{pagination.first.qs}" data-page="1"><i class="fa fa-fast-backward"></i> </a>
+			<a class="page-link fw-secondary"  href="?{pagination.first.qs}" data-page="1"><i class="fa fa-fast-backward"></i> </a>
 		</li>
 
 		<li class="page-item previous{{{ if !pagination.prev.active }}} disabled{{{ end }}}">
-			<a class="page-link fw-secondary  href="?{pagination.prev.qs}" data-page="{pagination.prev.page}"><i class="fa fa-chevron-left"></i> </a>
+			<a class="page-link fw-secondary"  href="?{pagination.prev.qs}" data-page="{pagination.prev.page}"><i class="fa fa-chevron-left"></i> </a>
 		</li>
 
 		<li component="pagination/select-page" class="page-item page select-page">
-			<a class="page-link fw-secondary  href="#">{pagination.currentPage} / {pagination.pageCount}</a>
+			<a class="page-link fw-secondary"  href="#">{pagination.currentPage} / {pagination.pageCount}</a>
 		</li>
 
 		<li class="page-item next{{{ if !pagination.next.active }}} disabled{{{ end }}}">
-			<a class="page-link fw-secondary  href="?{pagination.next.qs}" data-page="{pagination.next.page}"> <i class="fa fa-chevron-right"></i></a>
+			<a class="page-link fw-secondary"  href="?{pagination.next.qs}" data-page="{pagination.next.page}"> <i class="fa fa-chevron-right"></i></a>
 		</li>
 
 		<li class="page-item last{{{ if !pagination.next.active }}} disabled{{{ end }}}">
-			<a class="page-link fw-secondary  href="?{pagination.last.qs}" data-page="{pagination.pageCount}"><i class="fa fa-fast-forward"></i> </a>
+			<a class="page-link fw-secondary"  href="?{pagination.last.qs}" data-page="{pagination.pageCount}"><i class="fa fa-fast-forward"></i> </a>
 		</li>
 	</ul>
 </div>
