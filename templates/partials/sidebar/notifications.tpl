@@ -11,10 +11,31 @@
 <ul class="notifications-dropdown dropdown-menu p-1 shadow">
 	<li>
 		<ul component="notifications/list" class="notification-list list-unstyled overscroll-behavior-contain">
-			<li class="mb-2 placeholder-wave">
-				<div class="text-sm placeholder col-11">&nbsp;</div>
-				<div class="text-sm placeholder col-5">&nbsp;</div><br />
-				<div class="text-xs placeholder col-3">&nbsp;</div>
+			<li class="mb-2 p-1 placeholder-wave">
+				<div class="d-flex gap-1 justify-content-between">
+					<div class="d-flex gap-2 flex-grow-1">
+						<div class="placeholder" style="width: 32px; height: 32px;"></div>
+						<div class="flex-grow-1">
+							<div class="d-flex flex-column">
+								<div class="text-sm">
+									<span class="placeholder placeholder-sm col-4"></span>
+									<span class="placeholder placeholder-sm col-6"></span>
+									<span class="placeholder placeholder-sm col-7"></span>
+									<span class="placeholder placeholder-sm col-2"></span>
+									<span class="placeholder placeholder-sm col-5"></span>
+								</div>
+								<div class="text-xs">
+									<div class="placeholder placeholder-xs col-6"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="">
+						<button class="mark-read btn-ghost-sm" style="width: 1.5rem; height: 1.5rem;">
+							<i class="unread fa fa-2xs fa-circle text-primary"></i>
+						</button>
+					</div>
+				</div>
 			</li>
 		</ul>
 	</li>

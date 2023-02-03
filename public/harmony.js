@@ -7,6 +7,7 @@ $(document).ready(function () {
 	setupDrafts();
 	handleMobileNavigator();
 	setupNavTooltips();
+	fixPlaceholders();
 
 	$('[component="skinSwitcher"]').on('click', '.dropdown-item', function () {
 		const skin = $(this).attr('data-value');
@@ -230,5 +231,18 @@ $(document).ready(function () {
 		tooltipEls.on('click mouseleave', function () {
 			$(this).tooltip('hide');
 		});
+	}
+
+	function fixPlaceholders() {
+		const count = parseInt(document.querySelector('[component="notifications/count"]').innerText, 10);
+		if (count > 1) {
+			const notifListEl = document.querySelector('[component="notifications/list"]');
+			const placeholder = notifListEl.querySelector('li');
+
+			for (let x = 0; x < count - 1; x++) {
+				const cloneEl = placeholder.cloneNode(true);
+				notifListEl.insertBefore(cloneEl, placeholder);
+			}
+		}
 	}
 });
