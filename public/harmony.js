@@ -236,13 +236,15 @@ $(document).ready(function () {
 	function fixPlaceholders() {
 		const count = parseInt(document.querySelector('[component="notifications/count"]').innerText, 10);
 		if (count > 1) {
-			const notifListEl = document.querySelector('[component="notifications/list"]');
-			const placeholder = notifListEl.querySelector('li');
+			const notifListEls = document.querySelectorAll('[component="notifications/list"]');
+			notifListEls.forEach((notifListEl) => {
+				const placeholder = notifListEl.querySelector('li');
 
-			for (let x = 0; x < count - 1; x++) {
-				const cloneEl = placeholder.cloneNode(true);
-				notifListEl.insertBefore(cloneEl, placeholder);
-			}
+				for (let x = 0; x < count - 1; x++) {
+					const cloneEl = placeholder.cloneNode(true);
+					notifListEl.insertBefore(cloneEl, placeholder);
+				}
+			});
 		}
 	}
 });
