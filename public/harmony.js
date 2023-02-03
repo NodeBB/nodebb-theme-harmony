@@ -234,17 +234,19 @@ $(document).ready(function () {
 	}
 
 	function fixPlaceholders() {
-		const count = parseInt(document.querySelector('[component="notifications/count"]').innerText, 10);
-		if (count > 1) {
-			const notifListEls = document.querySelectorAll('[component="notifications/list"]');
-			notifListEls.forEach((notifListEl) => {
-				const placeholder = notifListEl.querySelector('li');
+		['notifications', 'chat'].forEach((type) => {
+			const count = parseInt(document.querySelector(`[component="${type}/count"]`).innerText, 10);
+			if (count > 1) {
+				const listEls = document.querySelectorAll(`[component="${type}/list"]`);
+				listEls.forEach((listEl) => {
+					const placeholder = listEl.querySelector('li');
 
-				for (let x = 0; x < count - 1; x++) {
-					const cloneEl = placeholder.cloneNode(true);
-					notifListEl.insertBefore(cloneEl, placeholder);
-				}
-			});
-		}
+					for (let x = 0; x < count - 1; x++) {
+						const cloneEl = placeholder.cloneNode(true);
+						listEl.insertBefore(cloneEl, placeholder);
+					}
+				});
+			}
+		});
 	}
 });
