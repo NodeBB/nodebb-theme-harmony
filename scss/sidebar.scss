@@ -135,10 +135,16 @@
 		overflow-y: auto!important;
 	}
 	.search-dropdown, .chats-dropdown, .notifications-dropdown, .drafts-dropdown {
-		left: 0!important;
-		right: 0!important;
-		bottom: $spacer!important;
+		left: 0 !important;
+		right: 0 !important;
+		bottom: $spacer * 0.7 !important;
 		box-shadow: none!important;
+
+		border-left: 0;
+		border-right: 0;
+		border-bottom: 0;
+		border-radius: 0;
+
 		ul {
 			max-height: 60vh!important;
 			overflow-y: auto!important;
