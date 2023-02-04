@@ -234,8 +234,15 @@ $(document).ready(function () {
 	}
 
 	function fixPlaceholders() {
+		if (!config.loggedIn) {
+			return;
+		}
 		['notifications', 'chat'].forEach((type) => {
-			const count = parseInt(document.querySelector(`[component="${type}/count"]`).innerText, 10);
+			const countEl = document.querySelector(`[component="${type}/count"]`);
+			if (!countEl) {
+				return;
+			}
+			const count = parseInt(countEl.innerText, 10);
 			if (count > 1) {
 				const listEls = document.querySelectorAll(`[component="${type}/list"]`);
 				listEls.forEach((listEl) => {
