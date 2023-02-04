@@ -1,5 +1,7 @@
+<!-- IMPORT partials/breadcrumbs.tpl -->
+
+{{{ if (!singlePost && posts.length) }}}
 <div class="btn-toolbar justify-content-end">
-	{{{ if (!singlePost && posts.length) }}}
 	<div class="me-2">
 	<!-- IMPORT partials/category/filter-dropdown-right.tpl -->
 	</div>
@@ -20,18 +22,24 @@
 			{{{ end }}}
 		</ul>
 	</div>
-	{{{ end }}}
 </div>
+
 <hr/>
+{{{ end }}}
+
 <div class="row">
 	<div class="col-12">
 		<div class="post-queue preventSlideout posts-list">
-			{{{ if !posts.length }}}
-			{{{ if isAdmin }}}
-			<div class="card card-body">
-				<p>
-				[[post-queue:description, {config.relative_path}/admin/settings/post#post-queue]]
-				</p>
+			{{{ if (!posts.length && isAdmin) }}}
+			{{{ if !singlePost }}}
+			<div class="alert alert-info">
+				<p>[[post-queue:no-queued-posts]]</p>
+				{{{ if !enabled }}}<p>[[post-queue:enabling-help, {config.relative_path}/admin/settings/post#post-queue]]</p>{{{ end }}}
+			</div>
+			{{{ else }}}
+			<div class="alert alert-info d-flex align-items-center">
+				<p class="mb-0 me-auto">[[post-queue:no-single-post]]</p>
+				<a class="btn btn-sm btn-primary" href=".">[[post-queue:back-to-list]]</a>
 			</div>
 			{{{ end }}}
 			{{{ end }}}

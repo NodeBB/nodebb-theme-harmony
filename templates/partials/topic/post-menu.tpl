@@ -2,24 +2,24 @@
 	<a class="btn-ghost-sm dropdown-toggle d-block" href="#" data-bs-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v text-primary"></i></a>
 	<ul class="dropdown-menu dropdown-menu-end" role="menu">
 		<li class="dropdown-item placeholder-wave">
-			<div class="placeholder" style="width: 20px;">&nbsp;</div>
-			<div class="placeholder col-3">&nbsp;</div>
+			<div class="placeholder" style="width: 20px;"></div>
+			<div class="placeholder col-3"></div>
 		</li>
 		<li class="dropdown-item placeholder-wave">
-			<div class="placeholder" style="width: 20px;">&nbsp;</div>
-			<div class="placeholder col-5">&nbsp;</div>
+			<div class="placeholder" style="width: 20px;"></div>
+			<div class="placeholder col-5"></div>
 		</li>
 		<li class="dropdown-item placeholder-wave">
-			<div class="placeholder" style="width: 20px;">&nbsp;</div>
-			<div class="placeholder col-11">&nbsp;</div>
+			<div class="placeholder" style="width: 20px;"></div>
+			<div class="placeholder col-9"></div>
 		</li>
 		<li class="dropdown-item placeholder-wave">
-			<div class="placeholder" style="width: 20px;">&nbsp;</div>
-			<div class="placeholder col-7">&nbsp;</div>
+			<div class="placeholder" style="width: 20px;"></div>
+			<div class="placeholder col-7"></div>
 		</li>
 		<li class="dropdown-item placeholder-wave">
-			<div class="placeholder" style="width: 20px;">&nbsp;</div>
-			<div class="placeholder col-12">&nbsp;</div>
+			<div class="placeholder" style="width: 20px;"></div>
+			<div class="placeholder col-10"></div>
 		</li>
 	</ul>
 </span>

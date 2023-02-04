@@ -16,29 +16,9 @@
 					<div class="placeholder" style="width: 32px; height: 32px;"></div>
 				</div>
 				<div class="d-flex flex-grow-1 flex-column w-100">
-					<div class="text-xs placeholder col-3">&nbsp;</div>
-					<div class="text-sm placeholder col-11">&nbsp;</div>
-					<div class="text-xs placeholder col-4">&nbsp;</div>
-				</div>
-			</li>
-			<li class="dropdown-item rounded-1 p-2 d-flex gap-2 placeholder-wave">
-				<div class="main-avatar">
-					<div class="placeholder" style="width: 32px; height: 32px;"></div>
-				</div>
-				<div class="d-flex flex-grow-1 flex-column w-100">
-					<div class="text-xs placeholder col-3">&nbsp;</div>
-					<div class="text-sm placeholder col-11">&nbsp;</div>
-					<div class="text-xs placeholder col-4">&nbsp;</div>
-				</div>
-			</li>
-			<li class="dropdown-item rounded-1 p-2 d-flex gap-2 placeholder-wave">
-				<div class="main-avatar">
-					<div class="placeholder" style="width: 32px; height: 32px;"></div>
-				</div>
-				<div class="d-flex flex-grow-1 flex-column w-100">
-					<div class="text-xs placeholder col-3">&nbsp;</div>
-					<div class="text-sm placeholder col-11">&nbsp;</div>
-					<div class="text-xs placeholder col-4">&nbsp;</div>
+					<div class="text-xs"><div class="placeholder col-3"></div></div>
+					<div class="text-sm"><div class="placeholder col-11"></div></div>
+					<div class="text-xs"><div class="placeholder col-4"></div></div>
 				</div>
 			</li>
 		</ul>
