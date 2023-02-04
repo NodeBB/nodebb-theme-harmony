@@ -1,5 +1,5 @@
 
-<li class="nav-item mx-2" title="[[global:login]]">
+<li class="nav-item mx-2 order-last order-md-first" title="[[global:login]]">
 	<a class="nav-link nav-btn" href="{relative_path}/login">
 		<span class="d-flex gap-2 align-items-center text-nowrap truncate-open">
 			<span class="position-relative">
