@@ -5,7 +5,7 @@
 <ul id="user-control-list" component="header/usercontrol" class="overscroll-behavior-contain user-dropdown dropdown-menu shadow p-1 text-sm" aria-labelledby="user_dropdown">
 	<li>
 		<a class="dropdown-item rounded-1 d-flex align-items-center gap-1" component="header/profilelink" href="{relative_path}/user/{user.userslug}">
-			<div class="text-center"><span component="user/status" class="badge border border-white border-2 rounded-circle status {user.status}"><span class="visually-hidden">[[global:{user.status}]]</span></span></div>
+			<span component="user/status" class="badge border border-white border-2 rounded-circle status {user.status}"><span class="visually-hidden">[[global:{user.status}]]</span></span>
 			<span class="fw-semibold" component="header/username">{user.username}</span>
 		</a>
 	</li>
@@ -13,25 +13,25 @@
 	<li><h6 class="dropdown-header text-xs">[[global:status]]</h6></li>
 	<li>
 		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-1" data-status="online">
-			<div class="text-center"><span component="user/status" class="badge border border-white border-2 rounded-circle status online"><span class="visually-hidden">[[global:online]]</span></span></div>
+			<span component="user/status" class="badge border border-white border-2 rounded-circle status online"><span class="visually-hidden">[[global:online]]</span></span>
 			<span{{{ if user.online }}} class="fw-semibold"{{{ end }}}> [[global:online]]</span>
 		</a>
 	</li>
 	<li>
 		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-1" data-status="away">
-			<div class="text-center"><span component="user/status" class="badge border border-white border-2 rounded-circle status away"><span class="visually-hidden">[[global:away]]</span></span></div>
+			<span component="user/status" class="badge border border-white border-2 rounded-circle status away"><span class="visually-hidden">[[global:away]]</span></span>
 			<span{{{ if user.away}}} class="fw-semibold"{{{ end }}}> [[global:away]]</span>
 		</a>
 	</li>
 	<li>
 		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-1" data-status="dnd">
-			<div class="text-center"><span component="user/status" class="badge border border-white border-2 rounded-circle status dnd"><span class="visually-hidden">[[global:dnd]]</span></span></div>
+			<span component="user/status" class="badge border border-white border-2 rounded-circle status dnd"><span class="visually-hidden">[[global:dnd]]</span></span>
 			<span{{{ if user.dnd}}} class="fw-semibold"{{{ end }}}> [[global:dnd]]</span>
 		</a>
 	</li>
 	<li>
 		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-1" data-status="offline">
-			<div class="text-center"><span component="user/status" class="badge border border-white border-2 rounded-circle status offline"><span class="visually-hidden">[[global:invisible]]</span></span></div>
+			<span component="user/status" class="badge border border-white border-2 rounded-circle status offline"><span class="visually-hidden">[[global:invisible]]</span></span>
 			<span{{{ if user.offline}}} class="fw-semibold"{{{ end }}}> [[global:invisible]]</span>
 		</a>
 	</li>
