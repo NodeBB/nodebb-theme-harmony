@@ -1,4 +1,4 @@
-<li component="chat/recent/room" data-roomid="{./roomId}" data-full="1" class="rounded-1 {{{ if ./unread }}}unread{{{ end }}}">
+<li component="chat/recent/room" data-roomid="{./roomId}" data-full="1" class="border-bottom my-1 rounded-1 {{{ if ./unread }}}unread{{{ end }}}">
 	<div class="d-flex gap-1 justify-content-between">
 		<div class="position-relative d-flex flex-grow-1 gap-2 p-2 justify-content-start align-items-start">
 			<a class="stretched-link" href="{config.relative_path}/me/chats/{./roomId}"></a>
@@ -43,4 +43,3 @@
 		</div>
 	</div>
 </li>
-<hr class="text-muted opacity-25 my-1"/>
