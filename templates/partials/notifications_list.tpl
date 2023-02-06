@@ -20,7 +20,7 @@
 				<div class="text-xs text-muted">{{{ if ./timeagoLong }}}{./timeagoLong}{{{ else }}}<span class="timeago" title="{./datetimeISO}"></span>{{{ end }}}</div>
 			</div>
 		</div>
-		<div class="">
+		<div>
 			{{{ if ./nid }}}
 			<button class="mark-read btn-ghost-sm" style="width: 1.5rem; height: 1.5rem;">
 				<i class="unread fa fa-2xs fa-circle text-primary {{{ if ./read }}}hidden{{{ end }}}"></i>

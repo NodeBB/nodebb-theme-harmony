@@ -3,6 +3,7 @@
 .page-user-chats #content {
 	max-width: 100%;
 }
+
 body.page-user-chats {
 	overflow: hidden;
 	[data-widget-area="footer"] {
@@ -19,9 +20,17 @@ body.page-user-chats {
 		}
 	}
 }
+
+[component="chat/recent"] {
+	.active {
+		background-color: $btn-ghost-hover-color;
+	}
+}
+
 [component="chat/nav-wrapper"] {
 	width: 300px;
 }
+
 .expanded-chat {
 	// no taskbar so hide minimize button
 	[data-action="minimize"] {
