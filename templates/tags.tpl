@@ -4,7 +4,7 @@
 	{{{end}}}
 </div>
 <div class="tags">
-	<h2 class="fw-semibold">[[pages:tags]]</h2>
+	<h3 class="fw-semibold">[[pages:tags]]</h3>
 	{{{ if displayTagSearch }}}
 	{{{ if tags.length }}}
 	<div class="row justify-content-end mb-3">

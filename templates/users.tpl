@@ -4,7 +4,7 @@
 	{{{end}}}
 </div>
 <div class="users">
-	<h2 class="fw-semibold">[[global:users]]</h2>
+	<h3 class="fw-semibold">[[global:users]]</h3>
 	<div class="d-flex flex-wrap justify-content-between">
 		<div class="mb-2 mb-md-0">
 		<!-- IMPORT partials/users_list_menu.tpl -->
