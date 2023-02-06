@@ -30,7 +30,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="">
+					<div>
 						<button class="mark-read btn-ghost-sm" style="width: 1.5rem; height: 1.5rem;">
 							<i class="unread fa fa-2xs fa-circle text-primary"></i>
 						</button>
