@@ -1,99 +1,156 @@
 <!-- THIS FILE IS STILL PERSONA -->
 
-<div class="text-center">
-	<div class="card mb-3">
-		<div class="card-body collapse" id="flags-daily-wrapper" aria-expanded="false">
-			<div><canvas id="flags:daily" height="150"></canvas></div>
-		</div>
-		<div class="card-footer" data-bs-toggle="collapse" data-bs-target="#flags-daily-wrapper" aria-controls="#flags-daily-wrapper"><small>[[flags:graph-label]]</small>&nbsp;<i class="fa fa-sort"></i></div>
-	</div>
-</div>
+<div class="d-flex align-items-start gap-2 pb-3 border-bottom">
+	<a class="filter-btn btn btn-light btn-sm border {{{ if filters.quick }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+		<span class="filter-label">{{{ if filters.quick }}}[[flags:filter-quick-{./filters.quick}]]{{{ else }}}[[flags:quick-filters]]{{{ end }}}</span>
+		<span class="caret"></span>
+	</a>
+	<ul class="dropdown-menu">
+		<li>
+			<a class="dropdown-item" href="{config.relative_path}/flags?quick=mine">[[flags:filter-quick-mine]]</a>
+		</li>
+	</ul>
 
-<div class="card mb-3">
-	<div class="card-header">
-		[[flags:quick-filters]]
-	</div>
-	<div class="card-body">
-		<ul>
-			<li><a href="{config.relative_path}/flags?quick=mine">[[flags:filter-quick-mine]]</a></li>
+	<div component="flags/filters" class="ps-2 ms-2 border-start d-flex gap-2 me-auto">
+		<!-- IMPORT partials/category/filter-dropdown-left.tpl -->
+
+		<a class="filter-btn btn btn-light btn-sm border {{{ if (sort != "newest") }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+			<span class="filter-label">{{{ if (sort != "newest") }}}[[flags:sort-{./sort}]]{{{ else }}}[[flags:sort]]{{{ end }}}</span>
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li><h6 class="dropdown-header">[[flags:sort-all]]</h6></li>
+			<li class="dropdown-item" data-name="sort" data-value="newest">[[flags:sort-newest]]</li>
+			<li class="dropdown-item" data-name="sort" data-value="oldest">[[flags:sort-oldest]]</li>
+			<li class="dropdown-item" data-name="sort" data-value="reports">[[flags:sort-reports]]</li>
+			<li><h6 class="dropdown-header">[[flags:sort-posts-only]]</h6></li>
+			<li class="dropdown-item" data-name="sort" data-value="downvotes">[[flags:sort-downvotes]]</li>
+			<li class="dropdown-item" data-name="sort" data-value="upvotes">[[flags:sort-upvotes]]</li>
+			<li class="dropdown-item" data-name="sort" data-value="replies">[[flags:sort-replies]]</li>
 		</ul>
-	</div>
-</div>
 
-<div class="card mb-3">
-	<div class="card-header">
-		[[flags:filters]]
-	</div>
-	<div class="card-body">
-		<form role="form" component="flags/filters">
-			<fieldset>
-				<div class="mb-3">
-					<label class="form-label" for="filter-cid">[[flags:filter-cid]]</label>
-					<div class="input-group">
-					<!-- IMPORT partials/category/filter-dropdown-left.tpl -->
+		<a class="filter-btn btn btn-light btn-sm border {{{ if filters.state }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+			<span class="filter-label">{{{ if filters.state }}}[[flags:state-{./filters.state}]]{{{ else }}}[[flags:filter-state]]{{{ end }}}</span>
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li class="dropdown-item" data-name="state" data-value="open">[[flags:state-open]]</li>
+			<li class="dropdown-item" data-name="state" data-value="wip">[[flags:state-wip]]</li>
+			<li class="dropdown-item" data-name="state" data-value="resolved">[[flags:state-resolved]]</li>
+			<li class="dropdown-item" data-name="state" data-value="rejected">[[flags:state-rejected]]</li>
+		</ul>
+
+		<a class="filter-btn btn btn-light btn-sm border {{{ if filters.type }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+			<span class="filter-label">{{{ if filters.type }}}[[flags:filter-type-{./filters.type}]]{{{ else }}}[[flags:filter-type]]{{{ end }}}</span>
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li class="dropdown-item" data-name="type" data-value="all">[[flags:filter-type-all]]</li>
+			<li class="dropdown-item" data-name="type" data-value="post">[[flags:filter-type-post]]</li>
+			<li class="dropdown-item" data-name="type" data-value="user">[[flags:filter-type-user]]</li>
+		</ul>
+
+		<div component="flags/filter/assignee" class="dropdown" data-filter-name="assignee">
+			<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.assignee }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+				<span class="filter-label">[[flags:filter-assignee]]</span>
+				<span class="caret"></span>
+			</a>
+
+			<ul class="dropdown-menu" style="width: 350px;">
+				<li class="px-3 py-1 d-flex flex-column gap-2">
+					<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
+					<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
+						{{{ each selected.assignee }}}
+						<div class="d-flex px-2 py-1 rounded-1 text-bg-primary gap-2 align-items-center text-sm">
+							{buildAvatar(@value, "16px", true)} {./username}
+							<button component="user/filter/delete" data-uid="{./uid}" class="btn btn-primary btn-sm py-0"><i class="fa fa-times fa-xs"></i></button>
+						</div>
+						{{{ end }}}
 					</div>
-				</div>
-				<div class="mb-3">
-					<label class="form-label" for="sort">[[flags:sort]]</label>
-					<select class="form-control" id="sort" name="sort">
-						<optgroup label="[[flags:sort-all]]">
-							<option value="newest">[[flags:sort-newest]]</option>
-							<option value="oldest">[[flags:sort-oldest]]</option>
-							<option value="reports">[[flags:sort-reports]]</option>
-						</optgroup>
-						<optgroup label="[[flags:sort-posts-only]]">
-							<option value="downvotes">[[flags:sort-downvotes]]</option>
-							<option value="upvotes">[[flags:sort-upvotes]]</option>
-							<option value="replies">[[flags:sort-replies]]</option>
-						</optgroup>
-					</select>
-				</div>
-				<div class="mb-3">
-					<label class="form-label" for="filter-state">[[flags:filter-state]]</label>
-					<select class="form-control" id="filter-state" name="state">
-						<option value="">[[flags:state-all]]</option>
-						<option value="open">[[flags:state-open]]</option>
-						<option value="wip">[[flags:state-wip]]</option>
-						<option value="resolved">[[flags:state-resolved]]</option>
-						<option value="rejected">[[flags:state-rejected]]</option>
-					</select>
-				</div>
+					<hr/>
+					<div component="user/filter/results" class="d-flex flex-wrap gap-2">
+						{{{ each userFilterResults }}}
+						<button class="btn btn-light btn-sm border" data-uid="{./uid}" data-username="{./username}">{buildAvatar(@value, "16px", true)} {./username}</button>
+						{{{ end }}}
+					</div>
+				</li>
+			</ul>
+		</div>
 
-				<div class="mb-3">
-					<label class="form-label" for="filter-type">[[flags:filter-type]]</label>
-					<select class="form-control" id="filter-type" name="type">
-						<option value="">[[flags:filter-type-all]]</option>
-						<option value="post">[[flags:filter-type-post]]</option>
-						<option value="user">[[flags:filter-type-user]]</option>
-					</select>
-				</div>
-			</fieldset>
+		<div component="flags/filter/reporterId" class="dropdown" data-filter-name="reporterId">
+			<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.reporterId }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+				<span class="filter-label">[[flags:filter-reporterId]]</span>
+				<span class="caret"></span>
+			</a>
 
-			<fieldset class="collapse{{{ if expanded }}} show{{{ end }}}" id="more-filters" aria-expanded="{expanded}">
-				<div class="mb-3">
-					<label class="form-label" for="filter-assignee">[[flags:filter-assignee]]</label>
-					<input type="text" class="form-control" id="filter-assignee" name="assignee" />
-				</div>
+			<ul class="dropdown-menu" style="width: 350px;">
+				<li class="px-3 py-1 d-flex flex-column gap-2">
+					<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
+					<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
+						{{{ each selected.reporterId }}}
+						<div class="d-flex px-2 py-1 rounded-1 text-bg-primary gap-2 align-items-center text-sm">
+							{buildAvatar(@value, "16px", true)} {./username}
+							<button component="user/filter/delete" data-uid="{./uid}" class="btn btn-primary btn-sm py-0"><i class="fa fa-times fa-xs"></i></button>
+						</div>
+						{{{ end }}}
+					</div>
+					<hr/>
+					<div component="user/filter/results" class="d-flex flex-wrap gap-2">
+						{{{ each userFilterResults }}}
+						<button class="btn btn-light btn-sm border" data-uid="{./uid}" data-username="{./username}">{buildAvatar(@value, "16px", true)} {./username}</button>
+						{{{ end }}}
+					</div>
+				</li>
+			</ul>
+		</div>
 
-				<div class="mb-3">
-					<label class="form-label" for="filter-targetUid">[[flags:filter-targetUid]]</label>
-					<input type="text" class="form-control" id="filter-targetUid" name="targetUid" />
-				</div>
+		<div component="flags/filter/targetUid" class="dropdown" data-filter-name="targetUid">
+			<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.targetUid }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+				<span class="filter-label">[[flags:filter-targetUid]]</span>
+				<span class="caret"></span>
+			</a>
 
-				<div class="mb-3">
-					<label class="form-label" for="filter-reporterId">[[flags:filter-reporterId]]</label>
-					<input type="text" class="form-control" id="filter-reporterId" name="reporterId" />
-				</div>
-			</fieldset>
+			<ul class="dropdown-menu" style="width: 350px;">
+				<li class="px-3 py-1 d-flex flex-column gap-2">
+					<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
+					<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
+						{{{ each selected.targetUid }}}
+						<div class="d-flex px-2 py-1 rounded-1 text-bg-primary gap-2 align-items-center text-sm">
+							{buildAvatar(@value, "16px", true)} {./username}
+							<button component="user/filter/delete" data-uid="{./uid}" class="btn btn-primary btn-sm py-0"><i class="fa fa-times fa-xs"></i></button>
+						</div>
+						{{{ end }}}
+					</div>
+					<hr/>
+					<div component="user/filter/results" class="d-flex flex-wrap gap-2">
+						{{{ each userFilterResults }}}
+						<button class="btn btn-light btn-sm border" data-uid="{./uid}" data-username="{./username}">{buildAvatar(@value, "16px", true)} {./username}</button>
+						{{{ end }}}
+					</div>
+				</li>
+			</ul>
+		</div>
 
-			<div class="d-grid gap-2">
-				{{{ if expanded }}}
-				<button type="button" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#more-filters" aria-controls="#more-filters" data-text-variant="[[flags:more-filters]] ">[[flags:fewer-filters]]&nbsp;<i class="fa fa-sort"></i></button>
-				{{{ else }}}
-				<button type="button" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#more-filters" aria-controls="#more-filters" data-text-variant="[[flags:fewer-filters]] ">[[flags:more-filters]]&nbsp;<i class="fa fa-sort"></i></button>
-				{{{ end }}}
-				<button type="button" id="apply-filters" class="btn btn-primary">[[flags:apply-filters]]</button>
-			  </div>
+		<form role="form">
+			<input type="hidden" name="sort" value="{./sort}" />
+			<input type="hidden" name="state" value="{./filters.state}" />
+			<input type="hidden" name="type" value="{./filters.type}" />
 		</form>
+	</div>
+
+	<div component="flags/filters/reset">
+		<a class="filter-btn btn btn-warning btn-sm border {{{ if !hasFilter }}}btn-light disabled{{{ end }}}" href="{config.relative_path}/flags" role="button">
+			<span class="filter-label">[[flags:filter-reset]]</span>
+		</a>
+	</div>
+
+	<div class="btn-group float-end" component="flags/bulk-actions">
+		<button class="filter-btn btn btn-light btn-sm border" data-bs-toggle="dropdown" autocomplete="off" aria-haspopup="true" aria-expanded="false" disabled="disabled">
+			<span class="filter-label">[[flags:bulk-actions]]</span>
+		</button>
+		<ul class="dropdown-menu">
+			<li><a href="#" class="dropdown-item" data-action="bulk-assign">[[flags:assign-to-me]]</a></li>
+			<li><a href="#" class="dropdown-item" data-action="bulk-mark-resolved">[[flags:bulk-resolve]]</a></li>
+		</ul>
 	</div>
 </div>

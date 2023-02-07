@@ -1,0 +1,8 @@
+[component="search/filters"], [component="flags/filters"] {
+	.filter-btn {
+		border-color: $gray-300!important;
+		&.active-filter {
+			border-color: $primary!important;
+		}
+	}
+}
