@@ -10,15 +10,24 @@
 </a>
 <ul class="chats-dropdown dropdown-menu p-1 shadow">
 	<li>
-		<ul component="chat/list" class="chat-list chats-list list-unstyled overscroll-behavior-contain p-0 pe-1">
-			<li class="dropdown-item rounded-1 p-2 d-flex gap-2 placeholder-wave">
-				<div class="main-avatar">
-					<div class="placeholder" style="width: 32px; height: 32px;"></div>
-				</div>
-				<div class="d-flex flex-grow-1 flex-column w-100">
-					<div class="text-xs"><div class="placeholder col-3"></div></div>
-					<div class="text-sm"><div class="placeholder col-11"></div></div>
-					<div class="text-xs"><div class="placeholder col-4"></div></div>
+		<ul component="chat/list" class="chat-list chats-list list-unstyled overscroll-behavior-contain p-0">
+			<li class="rounded-1">
+				<div class="d-flex gap-1 justify-content-between">
+					<div class="dropdown-item p-2 d-flex gap-2 placeholder-wave">
+						<div class="main-avatar">
+							<div class="placeholder" style="width: 32px; height: 32px;"></div>
+						</div>
+						<div class="d-flex flex-grow-1 flex-column w-100">
+							<div class="text-xs"><div class="placeholder col-3"></div></div>
+							<div class="text-sm"><div class="placeholder col-11"></div></div>
+							<div class="text-xs"><div class="placeholder col-4"></div></div>
+						</div>
+					</div>
+					<div>
+						<button class="mark-read btn-ghost-sm" style="width: 1.5rem; height: 1.5rem;">
+							<i class="unread fa fa-2xs fa-circle text-primary"></i>
+						</button>
+					</div>
 				</div>
 			</li>
 		</ul>
