@@ -33,7 +33,7 @@
 			{{{ if (!posts.length && isAdmin) }}}
 			{{{ if !singlePost }}}
 			<div class="alert alert-info">
-				<p>[[post-queue:no-queued-posts]]</p>
+				[[post-queue:no-queued-posts]]
 				{{{ if !enabled }}}<p>[[post-queue:enabling-help, {config.relative_path}/admin/settings/post#post-queue]]</p>{{{ end }}}
 			</div>
 			{{{ else }}}
