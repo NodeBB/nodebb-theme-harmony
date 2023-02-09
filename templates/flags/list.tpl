@@ -1,5 +1,3 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <!-- IMPORT partials/breadcrumbs.tpl -->
 
 <div class="d-flex flex-column gap-3">
