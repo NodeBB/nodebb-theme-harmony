@@ -95,7 +95,7 @@ body:not(.page-user) {
 	text-align: left;
 	--bs-text-opacity: 1;
 	color: inherit !important;
-
+	font-family: $font-family-secondary;
 	cursor: pointer;
 	&:hover, &.active {
 		background-color: $btn-ghost-hover-color;

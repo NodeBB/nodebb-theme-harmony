@@ -1,8 +1,8 @@
-<li component="chat/recent/room" data-roomid="{./roomId}" data-full="1" class="border-bottom my-1 rounded-1 {{{ if ./unread }}}unread{{{ end }}}">
-	<div class="d-flex gap-1 justify-content-between">
-		<div class="position-relative d-flex flex-grow-1 gap-2 p-2 justify-content-start align-items-start">
-			<a class="stretched-link" href="{config.relative_path}/me/chats/{./roomId}"></a>
+<li component="chat/recent/room" data-roomid="{./roomId}" data-full="1" class="border-bottom mb-1 rounded-1 {{{ if ./unread }}}unread{{{ end }}}">
+	<div class="d-flex gap-1 justify-content-between p-1">
+		<div class="position-relative d-flex flex-grow-1 gap-2 justify-content-start align-items-start">
 			<div class="main-avatar">
+				<a class="stretched-link" href="{config.relative_path}/me/chats/{./roomId}"></a>
 				{{{ if ./users.length }}}
 				{{{ if ./groupChat}}}
 				<div class="position-relative" style="width:32px; height:32px;">

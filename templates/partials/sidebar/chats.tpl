@@ -10,7 +10,7 @@
 </a>
 <ul class="chats-dropdown dropdown-menu p-1 shadow">
 	<li>
-		<ul component="chat/list" class="chat-list chats-list list-unstyled overscroll-behavior-contain p-0">
+		<ul component="chat/list" class="chat-list chats-list list-unstyled overscroll-behavior-contain p-0 ff-base">
 			<li class="rounded-1">
 				<div class="d-flex gap-1 justify-content-between">
 					<div class="dropdown-item p-2 d-flex gap-2 placeholder-wave">
