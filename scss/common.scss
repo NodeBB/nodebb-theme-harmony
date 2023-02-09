@@ -61,7 +61,8 @@ body:not(.page-user) {
 .sticky-tools {
 	position: sticky;
 	z-index: 3;
-	top: calc($spacer * 0.5);
+	top: 0;
+	padding: 0.25rem 0;
 	background-color: $body-bg;
 }
 // quartz doesn't need body-bg for tool background
