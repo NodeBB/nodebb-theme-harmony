@@ -29,7 +29,7 @@
 	{{{ end }}}
 
 	<div class="category">
-		<div class="tag-list row row-cols-2 row-cols-lg-3 row-cols-xl-4  row-cols-xxl-5 gx-3 gy-2" data-nextstart="{nextStart}">
+		<div class="tag-list row row-cols-2 row-cols-lg-4 row-cols-xl-5 gx-3 gy-2" data-nextstart="{nextStart}">
 			<!-- IMPORT partials/tags_list.tpl -->
 		</div>
 	</div>
