@@ -52,7 +52,7 @@
 			{{{ end }}}
 		</div>
 
-		<div class="d-flex flex-column gap-3">
+		<form class="d-flex flex-column gap-3" id="attributes">
 			<div>
 				<label class="text-muted fw-semibold" for="state">[[flags:state]]</label>
 				<select class="form-select form-select-sm" id="state" name="state" disabled>
@@ -74,10 +74,10 @@
 			<div class="d-grid">
 				<button type="button" class="btn btn-primary" data-action="update">[[flags:update]]</button>
 			</div>
-		</div>
+		</form>
 
-		<div component="flag/history">
-			<h2 class="h6 fw-semibold">[[flags:history]]</h2>
+		<div class="overflow-auto" component="flag/history">
+			<h2 class="h6 fw-bold">[[flags:history]]</h2>
 			{{{ if !history.length }}}
 			<div class="alert alert-success text-center">[[flags:no-history]]</div>
 			{{{ end }}}
@@ -107,106 +107,71 @@
 		</div>
 	</div>
 	<div class="flex-1 ps-md-2 ps-lg-5" style="min-width:0;">
-		<div class="d-flex flex-column gap-3">
-			test derp
-		</div>
-	</div>
-</div>
+		<div class="d-flex flex-column gap-4">
+			<h2 class="h6 fw-bold">
+				{target_readable}
+			</h2>
+			<div component="flag/content" class="d-flex flex-column gap-1 pb-3 border-bottom">
+				{{{ if type_bool.post }}}
+				<div class="d-flex gap-2">
+					<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(target.user, "16px", true)}</a>
+					<a href="{config.relative_path}/user/{./user.userslug}">{target.user.username}</a>
+					<span class="timeago text-muted" title="{target.timestampISO}"></span>
+				</div>
+				<blockquote>{target.content}</blockquote>
+				{{{ end }}}
 
-<div class="row">
-	<div class="col-12">
-		<h2 class="h4">
-			{target_readable}
-			<small><span class="text-muted timeago" title="{datetimeISO}"></span></small>
-		</h2>
+				{{{ if type_bool.user }}}
+				<div class="d-flex gap-2">
+					<a href="{config.relative_path}/user/{./target.userslug}">{buildAvatar(target, "16px", true)}</a>
+					<a href="{config.relative_path}/user/{./target.userslug}">{target.username}</a>
+				</div>
+				<blockquote>{{{ if target.aboutme }}}{target.aboutme}{{{ else }}}<em>[[flags:target-aboutme-empty]]</em>{{{ end }}}</blockquote>
+				{{{ end }}}
 
-		<hr />
-
-		{{{ if type_bool.post }}}
-		<div class="d-flex">
-			<div class="flex-shrink-0">
-				<a href="{config.relative_path}/user/{target.user.userslug}">{buildAvatar(target.user, "64px", true, "media-object")}</a>
+				{{{ if type_bool.empty }}}
+				<div class="alert alert-warning" role="alert">[[flags:target-purged]]</div>
+				{{{ end }}}
 			</div>
-			<div class="flex-grow-1 ms-3">
-				<h4 class="media-heading"><a href="{config.relative_path}/user/{target.user.userslug}">{target.user.username}</a></h4>
-				{target.content}
-			</div>
-		</div>
-		{{{ end }}}
-
-		{{{ if type_bool.user }}}
-		<div class="d-flex">
-			<div class="flex-shrink-0">
-				<a href="{config.relative_path}/user/{target.userslug}">{buildAvatar(target, "64px", true, "media-object")}</a>
-			</div>
-			<div class="flex-grow-1 ms-3">
-				<h4 class="media-heading"><a href="{config.relative_path}/user/{target.userslug}">{target.username}</a></h4>
-				<p class="lead">
-					<a href="{config.relative_path}/uid/{target.uid}">[[flags:user-view]]</a> |
-					<a href="{config.relative_path}/uid/{target.uid}/edit">[[flags:user-edit]]</a>
-				</p>
-			</div>
-		</div>
-		{{{ end }}}
-
-		{{{ if type_bool.empty }}}
-		<div class="alert alert-warning" role="alert">[[flags:target-purged]]</div>
-		{{{ end }}}
-
-		<hr />
-
-		<div class="row">
-			<div class="col-sm-6">
-				<form role="form" id="attributes">
-					<div class="mb-3">
-						<h2 class="h4">[[flags:reports]]</h2>
-						<ul class="list-group" component="flag/reports">
-							{{{ each reports }}}
-							<li class="list-group-item">
-								<a href="{config.relative_path}/user/{./reporter.userslug}">{buildAvatar(./reporter, "24px", true)}</a>
-								&ndash; <span class="timeago" title="{./timestampISO}"></span>
-								<blockquote><em>{./value}</em></blockquote>
-							</li>
-							{{{ end }}}
-						</ul>
-					</div>
-				</form>
-
-				<hr />
-
-				<form role="form">
-					<div class="mb-3">
-						<h2 class="h4" for="note">[[flags:notes]]</h2>
-						<textarea id="note" class="form-control"></textarea>
-						<div class="d-grid">
-							<button type="button" class="btn btn-block btn-primary" data-action="appendNote">[[flags:add-note]]</button>
+			<div class="flag/reports" class="pb-4 border-bottom">
+				<h2 class="h6 fw-bold">[[flags:reports]]</h2>
+				<ul class="list-unstyled mt-4">
+					{{{ each reports }}}
+					<li class="d-flex flex-column gap-1" component="flag/report" data-timestamp="{./timestamp}">
+						<div class="d-flex gap-2">
+							<a href="{config.relative_path}/user/{./reporter.userslug}">{buildAvatar(./reporter, "16px", true)}</a>
+							<a href="{config.relative_path}/user/{./reporter.userslug}">{./reporter.username}</a>
+							<span class="timeago text-muted" title="{./timestampISO}"></span>
 						</div>
-					</div>
-				</form>
-
-				<div component="flag/notes">
+						<p>{./value}</p>
+					</li>
+					{{{ end }}}
+				</ul>
+			</div>
+			<div class="pb-4 border-bottom">
+				<div class="d-flex align-items-center">
+					<h2 class="h6 fw-bold me-auto mb-0">[[flags:notes]]</h2>
+					<button class="btn btn-ghost border" data-action="addEditNote">[[flags:add-note]]</button>
+				</div>
+				<ul component="flag/notes" class="list-unstyled mt-4">
 					{{{ if !notes.length }}}
-					<div class="alert alert-success text-center">[[flags:no-notes]]</div>
+					<em>[[flags:no-notes]]</em>
 					{{{ end }}}
 					{{{ each notes }}}
-					<div class="d-flex mb-3">
-						<div class="flex-shrink-0">
-							<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "32px", true, "media-object")}</a>
+					<li class="d-flex flex-column gap-1" component="flag/note" data-datetime="{./datetime}" data-index="{@index}">
+						<div class="d-flex gap-2 align-items-center">
+							<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "16px", true)}</a>
+							<a href="{config.relative_path}/user/{./user.userslug}">{./user.username}</a>
+							<span class="timeago text-muted" title="{./datetimeISO}"></span>
+							<div class=" ms-auto flex-shrink-0">
+								<a href="#" class="btn btn-sm btn-link" data-action="addEditNote"><i class="fa fa-pencil"></i></a>
+								<a href="#" class="btn btn-sm btn-link" data-action="delete-note"><i class="fa fa-trash text-danger"></i></a>
+							</div>
 						</div>
-						<div class="flex-grow-1 mx-3">
-							<h2 class="h5">
-								<a href="{config.relative_path}/user/{./user.userslug}">{./user.username}</a>
-								<small><span class="timeago" title="{./datetimeISO}"></span></small>
-							</h4>
-							{./content}
-						</div>
-						<div class="flex-shrink-0">
-							<a href="#" class="btn btn-sm btn-link" data-action="prepare-edit"><i class="fa fa-pencil"></i></a>
-							<a href="#" class="btn btn-sm btn-link" data-action="delete-note"><i class="fa fa-trash text-danger"></i></a>
-						</div>
-					</div>
+						<p>{./content}</p>
+					</li>
 					{{{ end }}}
-				</div>
+				</ul>
 			</div>
 		</div>
 	</div>
