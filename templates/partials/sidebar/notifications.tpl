@@ -11,9 +11,9 @@
 <ul class="notifications-dropdown dropdown-menu p-1 shadow">
 	<li>
 		<ul component="notifications/list" class="notification-list list-unstyled overscroll-behavior-contain ff-base">
-			<li class="mb-2 p-1 placeholder-wave">
+			<li class="mb-2 p-1">
 				<div class="d-flex gap-1 justify-content-between">
-					<div class="d-flex gap-2 flex-grow-1">
+					<div class="d-flex gap-2 flex-grow-1 placeholder-wave">
 						<div class="placeholder" style="width: 32px; height: 32px;"></div>
 						<div class="flex-grow-1">
 							<div class="d-flex flex-column">
