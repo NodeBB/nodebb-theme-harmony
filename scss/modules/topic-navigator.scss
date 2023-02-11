@@ -1,59 +1,13 @@
-body:not(.page-topic) [component="topic/navigator"] {
-	display: none!important;
-}
-
-[component="topic/navigator"] {
-	max-height: calc(200px + (2rem * 4));
-	user-select: none;
-
-	.track {
-		width: 2px;
-		background-color: mix($dark, $light, 10%);
-
-		.handle {
+.topic .pagination-block {
+	min-width: 150px;
+	.scroller-container {
+		height: 300px;
+		border-left: 2px solid $border-color;
+		.scroller-thumb {
 			cursor: grab;
-			transition: $transition-base;
-
-			&:active {
-				transition: none;
+			&.active {
 				cursor: grabbing;
 			}
-
-			.meta {
-				top: -8px;
-				left: calc($spacer + 8px);
-				font-size: 13px;
-			}
 		}
-
-		.knob {
-			width: 16px;
-			height: 16px;
-			background-color: $link-color;
-			margin-left: 1px;
-		}
-
-		.unread {
-			width: 2px;
-			height: 0; // initial
-			bottom: 0;
-			background: $primary;
-			transition: $transition-base;
-
-			.meta {
-				left: calc($spacer + 8px);
-				font-size: 13px;
-			}
-		}
-	}
-}
-
-.sidebar.open {
-	[component="topic/navigator"] {
-		align-self: flex-start;
-	}
-
-	[component="topic/navigator"].d-sm-flex.mt-auto + .mt-auto {
-		margin-top: 0 !important;
 	}
 }
