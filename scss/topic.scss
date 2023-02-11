@@ -19,6 +19,7 @@
 	.topic {
 		.posts {
 			max-width: 960px;
+			width: 960px;
 			// fixes code blocks pushing content out on mobile
 			@include media-breakpoint-down(md) {
 				max-width: calc(100vw - $grid-gutter-width);
