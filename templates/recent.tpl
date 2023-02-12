@@ -1,15 +1,16 @@
+{{{ if widgets.header.length }}}
 <div data-widget-area="header">
 	{{{each widgets.header}}}
 	{{widgets.header.html}}
 	{{{end}}}
 </div>
-
+{{{ end }}}
 <div class="recent">
 	<!-- IMPORT partials/topic-list-bar.tpl -->
 
 	<div class="category">
 		{{{ if !topics.length }}}
-		<div class="alert alert-info mt-3" id="category-no-topics">[[recent:no_recent_topics]]</div>
+		<div class="alert alert-info" id="category-no-topics">[[recent:no_recent_topics]]</div>
 		{{{ end }}}
 
 		<!-- IMPORT partials/topics_list.tpl -->

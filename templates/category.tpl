@@ -33,7 +33,7 @@
 
 		{{{ if !topics.length }}}
 		{{{ if privileges.topics:create }}}
-		<div class="alert alert-info mt-3" id="category-no-topics">
+		<div class="alert alert-info" id="category-no-topics">
 			[[category:no_topics]]
 		</div>
 		{{{ end }}}

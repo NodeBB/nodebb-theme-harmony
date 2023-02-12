@@ -1,5 +1,5 @@
-<div class="{{{ if config.theme.stickyToolbar }}}sticky-tools{{{ end }}}">
-	<nav class="topic-list-header navbar navbar-expand p-0 border-0 rounded my-2">
+<div class="{{{ if config.theme.stickyToolbar }}}sticky-tools{{{ end }}} mb-3">
+	<nav class="topic-list-header navbar navbar-expand p-0 border-0 rounded">
 		<div class="card card-header flex-row p-2 gap-1 border rounded w-100">
 			<ul component="category/controls" class="navbar-nav me-auto gap-2 align-items-center">
 				{{{ if template.category }}}
