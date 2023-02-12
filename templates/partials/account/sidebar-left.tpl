@@ -39,6 +39,12 @@
 		</a>
 
 		{{{ if canEdit }}}
+		<a href="{config.relative_path}/user/{userslug}/categories" class="btn-ghost fw-semibold
+			{{{ if template.account/categories }}}active{{{ end }}}">
+			<div class="flex-1">[[user:watched_categories]]</div>
+			<span class="text-xs human-readable-number" title="{counts.categoriesWatched}">{counts.categoriesWatched}</span>
+		</a>
+
 		<a href="{config.relative_path}/user/{userslug}/blocks" class="btn-ghost fw-semibold
 			{{{ if template.account/blocks }}}active{{{ end }}}">
 			<div class="flex-1">[[user:blocked-users]]</div>

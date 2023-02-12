@@ -1,6 +1,6 @@
-<li component="categories/category" data-cid="{./cid}" class="row category-{./cid} mb-4">
+<li component="categories/category" data-cid="{./cid}" data-parent-cid="{../parentCid}" class="row category-{./cid} mb-4">
 	<meta itemprop="name" content="{./name}">
-	<div class="content col-10 depth-{../depth}">
+	<div class="content col-10 depth-{./depth}">
 		<div class="d-flex">
 			<div class="fs-3">
 				{buildCategoryIcon(@value, "40px", "rounded-1")}
@@ -12,8 +12,8 @@
 				</h3>
 				<!-- description -->
 				<div class="mb-2">
-					{{{ if ../descriptionParsed }}}
-					<div class="description text-muted">{../descriptionParsed}</div>
+					{{{ if ./descriptionParsed }}}
+					<div class="description text-muted">{./descriptionParsed}</div>
 					{{{ end }}}
 				</div>
 			</div>
