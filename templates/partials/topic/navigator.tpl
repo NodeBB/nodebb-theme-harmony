@@ -7,7 +7,7 @@
 					<div class="scroller-thumb-icon bg-primary rounded d-inline-block" style="width:9px; height: 40px;"></div>
 					<div>
 						<p class="small thumb-text d-none d-md-inline-block ff-secondary fw-semibold user-select-none mb-0"></p>
-						<p class="meta thumb-timestamp timeago text-xs text-muted ff-secondary fw-semibold mb-0"></p>
+						<p class="meta thumb-timestamp timeago text-xs text-muted ff-secondary fw-semibold mb-0 user-select-none"></p>
 					</div>
 				</div>
 
