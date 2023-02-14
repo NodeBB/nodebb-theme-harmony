@@ -3,11 +3,26 @@
 	.scroller-container {
 		height: 300px;
 		border-left: 2px solid $border-color;
+
 		.scroller-thumb {
 			cursor: grab;
 			&.active {
 				cursor: grabbing;
 			}
+		}
+
+		.unread {
+			width: 1px;
+			height: 0; // initial
+			bottom: 0;
+			background: $primary;
+			transition: $transition-base;
+			left: -1px;
+
+			// .meta {
+			// 	left: calc($spacer + 8px);
+			// 	font-size: 13px;
+			// }
 		}
 	}
 }

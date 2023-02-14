@@ -11,11 +11,10 @@
 					</div>
 				</div>
 
-				<!-- TODO -->
-				<div class="unread d-inline-block position-relative hidden">
-					<div class="meta small position-absolute top-50 translate-middle-y text-nowrap fw-semibold">
+				<div class="unread d-inline-block position-absolute bottom-0">
+					<!--<div class="meta small position-absolute top-50 translate-middle-y text-nowrap fw-semibold">
 						<a href="{url}"></a>
-					</div>
+					</div>-->
 				</div>
 			</div>
 			<div class="pointer pagebottom btn-ghost-sm d-inline-flex" style="padding: 4px;"><i class="fa fa-chevron-down"></i></div>
