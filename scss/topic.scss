@@ -40,7 +40,7 @@
 			}
 
 			[component="post"] {
-				&.deleted {
+				&.deleted .post-container {
 					opacity: .5;
 				}
 

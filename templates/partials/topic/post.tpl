@@ -14,7 +14,7 @@
 		</a>
 	</div>
 
-	<div class="d-flex flex-grow-1 flex-column w-100" style="min-width: 0;">
+	<div class="post-container d-flex flex-grow-1 flex-column w-100" style="min-width: 0;">
 		<div class="d-flex align-items-center gap-1 flex-wrap w-100 post-header mt-1">
 			<div class="icon bg-body d-sm-none">
 				<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
