@@ -22,10 +22,10 @@
 			transition: $transition-base;
 			left: -1px;
 
-			// .meta {
-			// 	left: calc($spacer + 8px);
-			// 	font-size: 13px;
-			// }
+			.meta {
+				left: 5px;
+				font-size: 13px;
+			}
 		}
 	}
 }
