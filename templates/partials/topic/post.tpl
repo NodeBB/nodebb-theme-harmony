@@ -38,14 +38,13 @@
 			{{{ end }}}
 
 			<div class="d-flex gap-1 hidden-xs align-items-center">
+				<span class="text-muted">
 				{{{ if posts.toPid }}}
-				<span class="text-muted">replied to</span><!-- FIX THIS, DOES NOT l10n PROPERLY -->
-				<a component="post/parent" data-topid="{posts.toPid}" href="{config.relative_path}/post/{posts.toPid}">{{{ if posts.parent.username }}}{posts.parent.username}{{{ else }}}[[global:guest]]{{{ end }}}</a>
+				{generateRepliedTo(@value, config.timeagoCutoff)}
 				{{{ else }}}
-				<span class="text-muted">wrote</span><!-- FIX THIS, DOES NOT l10n PROPERLY -->
+				{generateWrote(@value, config.timeagoCutoff)}
 				{{{ end }}}
-
-				<a class="permalink text-muted" href="{config.relative_path}/post/{posts.pid}"><span class="timeago" title="{posts.timestampISO}"></span></a>
+				</span>
 
 				<i component="post/edit-indicator" class="fa fa-edit text-muted{{{ if privileges.posts:history }}} pointer{{{ end }}} edit-icon {{{ if !posts.editor.username }}}hidden{{{ end }}}" title="[[global:edited-timestamp, {./editedISO}]]"></i>
 				<span data-editor="{posts.editor.userslug}" component="post/editor" class="visually-hidden">[[global:last_edited_by, {posts.editor.username}]] <span class="timeago" title="{posts.editedISO}"></span></span>
