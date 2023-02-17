@@ -14,11 +14,11 @@
 			</div>
 		</div>
 		<hr class="text-muted opacity-25 my-1">
-		<ul component="chat/recent" class="chats-list list-unstyled overflow-auto mb-0" data-nextstart="{nextStart}">
+		<div component="chat/recent" class="chats-list overflow-auto mb-0 pe-1" data-nextstart="{nextStart}">
 			{{{each rooms}}}
 			<!-- IMPORT partials/chats/recent_room.tpl -->
 			{{{end}}}
-		</ul>
+		</div>
 	</div>
 	<div class="flex-1 ms-md-2 ps-md-2 border-1 border-start-md h-100" component="chat/main-wrapper">
 		<!-- IMPORT partials/chats/message-window.tpl -->

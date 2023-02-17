@@ -1,4 +1,4 @@
-<li component="chat/recent/room" data-roomid="{./roomId}" data-full="1" class="{{{ if !@last }}}border-bottom mb-1{{{ end }}} rounded-1 {{{ if ./unread }}}unread{{{ end }}}">
+<div component="chat/recent/room" data-roomid="{./roomId}" data-full="1" class="rounded-1 {{{ if ./unread }}}unread{{{ end }}}">
 	<div class="d-flex gap-1 justify-content-between p-1">
 		<div class="position-relative d-flex flex-grow-1 gap-2 justify-content-start align-items-start">
 			<div class="main-avatar">
@@ -42,4 +42,5 @@
 			</button>
 		</div>
 	</div>
-</li>
+</div>
+<hr class="text-muted opacity-25 my-1" />
