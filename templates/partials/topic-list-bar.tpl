@@ -4,6 +4,7 @@
 			<ul component="category/controls" class="navbar-nav me-auto gap-2 align-items-center">
 				{{{ if template.category }}}
 				<!-- IMPORT partials/category/watch.tpl -->
+				<!-- IMPORT partials/tags/filter-dropdown-left.tpl -->
 				<!-- IMPORT partials/category/sort.tpl -->
 				{{{ end }}}
 				{{{ if (template.popular || template.top)}}}
@@ -12,6 +13,7 @@
 				{{{ if (template.unread || (template.recent || (template.popular || template.top))) }}}
 				<!-- IMPORT partials/topic-filters.tpl -->
 				<!-- IMPORT partials/category/filter-dropdown-left.tpl -->
+				<!-- IMPORT partials/tags/filter-dropdown-left.tpl -->
 				{{{ end }}}
 				{{{ if template.unread }}}
 				<div class="markread btn-group {{{ if !topics.length }}}hidden{{{ end }}}">
