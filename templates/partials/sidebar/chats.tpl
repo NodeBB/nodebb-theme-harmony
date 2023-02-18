@@ -10,7 +10,7 @@
 </a>
 <ul class="chats-dropdown dropdown-menu p-1 shadow">
 	<li>
-		<div component="chat/list" class="chat-list chats-list overscroll-behavior-contain p-0 pe-1 ff-base">
+		<div component="chat/list" class="list-container chats-list overscroll-behavior-contain p-0 pe-1 ff-base">
 			<div class="rounded-1">
 				<div class="d-flex gap-1 justify-content-between">
 					<div class="dropdown-item p-2 d-flex gap-2 placeholder-wave">
@@ -33,7 +33,7 @@
 		</div>
 	</li>
 	<li class="dropdown-divider"></li>
-	<li class="notif-dropdown-link">
+	<li>
 		<div class="d-flex justify-content-center gap-1 flex-wrap">
 			<a component="chats/mark-all-read" role="button" href="#" class="btn btn-sm btn-light mark-all-read flex-fill text-nowrap text-truncate ff-secondary"><i class="fa fa-check-double"></i> [[modules:chat.mark_all_read]]</a>
 			<!-- on md and up see all chats button goes to last room -->
