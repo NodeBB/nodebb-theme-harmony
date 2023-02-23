@@ -21,5 +21,10 @@
 			<div class="placeholder" style="width: 20px;"></div>
 			<div class="placeholder col-10"></div>
 		</li>
+		<li class="dropdown-divider"></li>
+		<li class="dropdown-item placeholder-wave">
+			<div class="placeholder" style="width: 20px;"></div>
+			<div class="placeholder col-10"></div>
+		</li>
 	</ul>
 </span>
