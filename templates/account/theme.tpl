@@ -7,34 +7,34 @@
 </div>
 
 <form id="theme-settings" role="form">
-	<div class="form-check mb-2">
+	<div class="form-check mb-3">
 		<input class="form-check-input" type="checkbox" id="enableQuickReply" name="enableQuickReply" {{{ if config.theme.enableQuickReply }}}checked{{{ end }}}>
-		<label class="form-check-label">[[harmony:settings.enableQuickReply]]</label>
+		<label class="form-check-label" for="enableQuickReply">[[harmony:settings.enableQuickReply]]</label>
 	</div>
 
-	<div class="form-check mb-2">
+	<div class="form-check mb-3">
 		<input class="form-check-input" type="checkbox" id="centerHeaderElements" name="centerHeaderElements" {{{ if config.theme.centerHeaderElements }}}checked{{{ end }}}>
-		<label class="form-check-label">[[harmony:settings.centerHeaderElements]]</label>
+		<label class="form-check-label" for="centerHeaderElements">[[harmony:settings.centerHeaderElements]]</label>
 	</div>
 
-	<div class="form-check mb-2">
+	<div class="form-check mb-3">
 		<input class="form-check-input" type="checkbox" id="stickyToolbar" name="stickyToolbar" {{{ if config.theme.stickyToolbar }}}checked{{{ end }}}>
-		<div class="form-check-label">
+		<label class="form-check-label" for="stickyToolbar">
 			[[harmony:settings.stickyToolbar]]
-			<p class="form-text">
+			<p class="form-text mb-0">
 				[[harmony:settings.stickyToolbar.help]]
 			</p>
-		</div>
+		</label>
 	</div>
 
-	<div class="form-check mb-2">
+	<div class="form-check mb-3">
 		<input class="form-check-input" type="checkbox" id="autohideBottombar" name="autohideBottombar" {{{ if config.theme.autohideBottombar }}}checked{{{ end }}}>
-		<div class="form-check-label">
+		<label class="form-check-label" for="autohideBottombar">
 			[[harmony:settings.autohideBottombar]]
-			<p class="form-text">
+			<p class="form-text mb-0">
 				[[harmony:settings.autohideBottombar.help]]
 			</p>
-		</div>
+		</label>
 	</div>
 
 </form>
