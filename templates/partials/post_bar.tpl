@@ -14,7 +14,7 @@
 				<!-- IMPORT partials/topic/tools.tpl -->
 
 				{{{ if (!feeds:disableRSS && rssFeedUrl) }}}
-				<a class="btn-ghost-sm d-none d-lg-flex align-self-stretch" target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss text-primary"></i></a>
+				<a class="btn-ghost-sm d-none d-lg-flex align-self-stretch" target="_blank" href="{rssFeedUrl}"><i class="fa fa-rss text-primary"></i></a>
 				{{{ end }}}
 
 				{{{ if browsingUsers }}}
