@@ -75,11 +75,11 @@
 	<li>
 		<a class="dropdown-item" component="post/bookmark" role="menuitem" tabindex="-1" href="#" data-bookmarked="{posts.bookmarked}">
 			<span class="menu-icon">
-				<i component="post/bookmark/on" class="fa fa-fw fa-heart {{{ if !posts.bookmarked }}}hidden{{{ end }}}"></i>
-				<i component="post/bookmark/off" class="fa fa-fw fa-heart-o {{{ if posts.bookmarked }}}hidden{{{ end }}}"></i>
+				<i component="post/bookmark/on" class="fa fa-fw fa-bookmark {{{ if !posts.bookmarked }}}hidden{{{ end }}}"></i>
+				<i component="post/bookmark/off" class="fa fa-fw fa-bookmark-o {{{ if posts.bookmarked }}}hidden{{{ end }}}"></i>
 			</span>
 			<span class="bookmark-text">[[topic:bookmark]]</span>
-			<span component="post/bookmark-count" class="bookmarkCount badge" data-bookmarks="{posts.bookmarks}">{posts.bookmarks}</span>&nbsp;
+			<span component="post/bookmark-count" class="bookmarkCount badge bg-secondary" data-bookmarks="{posts.bookmarks}">{posts.bookmarks}</span>&nbsp;
 		</a>
 	</li>
 	{{{ end }}}
