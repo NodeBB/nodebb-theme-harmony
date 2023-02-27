@@ -12,8 +12,8 @@ Issues are tracked in [the main project issue tracker](https://github.com/NodeBB
 ### Categories
 <img height="450" src="screenshots/categories.png">
 
-### Category
-<img height="450" src="screenshots/category.png">
+### Recent
+<img height="450" src="screenshots/recent.png">
 
 ### Topic
 <img height="450" src="screenshots/topic.png">
