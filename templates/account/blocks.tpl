@@ -5,24 +5,25 @@
 		<div class="dropdown">
 			<div class="input-group">
 				<input class="form-control form-control-sm" type="text" id="user-search" placeholder="[[users:enter_username]]" data-bs-toggle="dropdown" autocomplete="off"/>
+
+				<ul component="blocks/search/list" class="dropdown-menu dropdown-menu-end block-edit overflow-auto" style="max-height:300px;">
+					<li><a href="#" class="dropdown-item">[[admin/menu:search.start-typing]]</a></li>
+					{{{ each edit }}}
+					<li class="">
+						<div class="dropdown-item d-flex flex-nowrap gap-2 justify-content-between">
+							<div class="text-truncate">
+								<a href="{config.relative_path}/uid/{./uid}" class="text-decoration-none">{buildAvatar(edit, "24px", true)} {./username}</a>
+							</div>
+							<button class="btn btn-sm btn-primary text-nowrap" data-uid="{./uid}" data-action="toggle">[[user:block_toggle]]</button>
+						</div>
+					</li>
+					{{{ end }}}
+				</ul>
+
 				<button class="btn btn-primary btn-sm" type="button">
 					<i class="fa fa-search"></i>
 				</button>
 			</div>
-
-			<ul component="blocks/search/list" class="dropdown-menu dropdown-menu-end block-edit overflow-auto" style="max-height:300px;">
-				<li><a href="#" class="dropdown-item">[[admin/menu:search.start-typing]]</a></li>
-				{{{ each edit }}}
-				<li class="">
-					<div class="dropdown-item d-flex flex-nowrap gap-2 justify-content-between">
-						<div class="text-truncate">
-							<a href="{config.relative_path}/uid/{./uid}" class="text-decoration-none">{buildAvatar(edit, "24px", true)} {./username}</a>
-						</div>
-						<button class="btn btn-sm btn-primary text-nowrap" data-uid="{./uid}" data-action="toggle">[[user:block_toggle]]</button>
-					</div>
-				</li>
-				{{{ end }}}
-			</ul>
 		</div>
 	</div>
 </div>
