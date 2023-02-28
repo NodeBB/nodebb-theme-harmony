@@ -71,7 +71,7 @@
 			</div>
 
 			<div class="meta row col-md-5 col-sm-3 d-none d-md-flex align-self-stretch align-self-lg-start">
-				<div class="col-md-5 d-none d-lg-flex stats text-muted gap-2 px-0">
+				<div class="col-lg-5 d-none d-lg-flex stats text-muted gap-2 px-0">
 					{{{ if !reputation:disabled }}}
 					<div class="stats-votes flex-1">
 						<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
@@ -94,7 +94,7 @@
 					</div>
 				</div>
 
-				<div class="col-md-7 col-sm-3 teaser d-none d-md-block overflow-hidden" component="topic/teaser">
+				<div class="col-lg-7 col-md-12 teaser d-none d-md-block overflow-hidden" component="topic/teaser">
 					<div class="lastpost background-link-container border-start border-2 h-100" style="border-color: {./category.bgColor}!important;">
 						<a class="background-link" href="{config.relative_path}/topic/{./slug}/{./teaser.index}"></a>
 						{{{ if ./unreplied }}}
