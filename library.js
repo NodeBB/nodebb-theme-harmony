@@ -138,25 +138,6 @@ library.saveUserSettings = async function (hookData) {
 	return hookData;
 };
 
-library.addUserToTopic = async function (hookData) {
-	const { enableQuickReply } = await loadThemeConfig(hookData.req.uid);
-	if (enableQuickReply) {
-		if (hookData.req.user) {
-			const userData = await user.getUserData(hookData.req.uid);
-			hookData.templateData.loggedInUser = userData;
-		} else {
-			hookData.templateData.loggedInUser = {
-				uid: 0,
-				username: '[[global:guest]]',
-				picture: user.getDefaultAvatar(),
-				'icon:text': '?',
-				'icon:bgColor': '#aaa',
-			};
-		}
-	}
-	return hookData;
-};
-
 library.filterMiddlewareRenderHeader = async function (hookData) {
 	const userSettings = await user.getSettings(hookData.req.uid);
 
