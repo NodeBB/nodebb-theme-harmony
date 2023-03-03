@@ -103,13 +103,13 @@
 
 	<div component="post/actions" class="d-flex justify-content-end gap-1 post-tools">
 		<!-- IMPORT partials/topic/reactions.tpl -->
-		<a component="post/reply" href="#" class="btn-ghost-sm user-select-none {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="[[topic:reply]]"><i class="fa fa-reply text-primary"></i></a>
-		<a component="post/quote" href="#" class="btn-ghost-sm user-select-none {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="[[topic:quote]]"><i class="fa fa-quote-right text-primary"></i></a>
+		<a component="post/reply" href="#" class="btn-ghost-sm user-select-none {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="[[topic:reply]]"><i class="fa fa-fw fa-reply text-primary"></i></a>
+		<a component="post/quote" href="#" class="btn-ghost-sm user-select-none {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="[[topic:quote]]"><i class="fa fa-fw fa-quote-right text-primary"></i></a>
 
 		{{{ if !reputation:disabled }}}
 		<div class="d-flex votes align-items-stretch">
 			<a component="post/upvote" href="#" class="btn-ghost-sm {{{ if posts.upvoted }}}upvoted{{{ end }}}">
-				<i class="fa fa-chevron-up text-primary"></i>
+				<i class="fa fa-fw fa-chevron-up text-primary"></i>
 			</a>
 
 			<meta itemprop="upvoteCount" content="{posts.upvotes}">
@@ -118,7 +118,7 @@
 
 			{{{ if !downvote:disabled }}}
 			<a component="post/downvote" href="#" class="btn-ghost-sm {{{ if posts.downvoted }}}downvoted{{{ end }}}">
-				<i class="fa fa-chevron-down text-primary"></i>
+				<i class="fa fa-fw fa-chevron-down text-primary"></i>
 			</a>
 			{{{ end }}}
 		</div>
