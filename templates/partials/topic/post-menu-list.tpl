@@ -63,7 +63,7 @@
 {{{ end }}}
 
 {{{ if !posts.deleted }}}
-	{{{ if posts.display_history }}}
+	{{{ if (posts.display_history && privileges.posts:history)}}}
 	<li>
 		<a class="dropdown-item" component="post/view-history" role="menuitem" tabindex="-1" href="#">
 			<span class="menu-icon"><i class="fa fa-fw fa-history"></i></span> [[topic:view-history]]
