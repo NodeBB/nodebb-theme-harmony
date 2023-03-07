@@ -59,7 +59,7 @@
 							<strong>[[post-queue:user]]</strong>
 							<div>
 								{{{ if posts.user.userslug}}}
-								<a href="{config.relative_path}/uid/{posts.user.uid}">{buildAvatar(posts.user, "24px", true, "not-responsive")} {posts.user.username}</a>
+								<a class="text-decoration-none" href="{config.relative_path}/uid/{posts.user.uid}">{buildAvatar(posts.user, "24px", true, "not-responsive")} {posts.user.username}</a>
 								{{{ else }}}
 								{posts.user.username}
 								{{{ end }}}
