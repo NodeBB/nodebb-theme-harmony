@@ -13,7 +13,7 @@
 }
 
 .sidebar {
-	$hover-color: mix($light, $dark, 90);
+	$hover-color: mix($light, $dark, 90%);
 
 	@include media-breakpoint-up(lg) {
 		&.open {

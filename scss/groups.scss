@@ -3,8 +3,8 @@
 }
 
 .group-hover-bg {
-	$hover-color: mix($light, $dark, 97);
-	$border-color: mix($light, $dark, 90);
+	$hover-color: mix($light, $dark, 97%);
+	$border-color: mix($light, $dark, 90%);
 	.card-body {
 		border-color: $border-color!important;
 	}
