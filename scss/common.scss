@@ -111,12 +111,18 @@ body:not(.page-user) {
 .btn-ghost {
 	@include btn-ghost-base();
 	line-height: 1.5rem;
+	> i {
+		line-height: 1.5rem;
+	}
 }
 
 .btn-ghost-sm {
 	@include btn-ghost-base();
 	font-size: 0.875rem;
 	line-height: 1.25rem;
+	> i {
+		line-height: 1.25rem;
+	}
 }
 
 .btn-outline {
