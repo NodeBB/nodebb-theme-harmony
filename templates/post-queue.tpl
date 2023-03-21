@@ -41,7 +41,7 @@
 	{{{ end }}}
 
 	{{{ each posts }}}
-	<div class="card mb-4" data-id="{./id}">
+	<div class="card mb-4" data-id="{./id}" data-uid="{./user.uid}">
 		<div class="row g-0">
 			<div class="col-sm-4 col-md-3 bg-light rounded-start">
 				<ul class="list-unstyled ps-0 mb-0 border-end h-100">
@@ -56,6 +56,7 @@
 					<li class="card-body border-bottom">
 						<div class="d-flex text-xs fw-semibold mb-1 align-items-center">
 							[[post-queue:user]]
+							{{{ if ((privileges.ban || privileges.mute) || privileges.admin:users) }}}
 							<div class="ms-auto btn-group bottom-sheet">
 								<button href="#" class="btn btn-outline-sm text-xs dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
 								<ul class="dropdown-menu">
@@ -74,6 +75,7 @@
 									{{{ end }}}
 								</ul>
 							</div>
+							{{{ end }}}
 						</div>
 						<div class="small">
 							{{{ if posts.user.userslug}}}
