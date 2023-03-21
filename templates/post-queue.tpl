@@ -43,8 +43,8 @@
 	{{{ each posts }}}
 	<div class="card mb-4" data-id="{./id}">
 		<div class="row g-0">
-			<div class="col-md-2 bg-light">
-				<ul class="list-unstyled ps-0 mb-0 border-end">
+			<div class="col-sm-4 col-md-3 bg-light rounded-start">
+				<ul class="list-unstyled ps-0 mb-0 border-end h-100">
 					<li class="card-body border-bottom position-relative">
 						{{{ if !singlePost }}}
 						<input id="{./id}" type="checkbox" class="form-check-input" autocomplete="off" />
@@ -54,7 +54,27 @@
 						</label>
 					</li>
 					<li class="card-body border-bottom">
-						<div class="text-xs fw-semibold mb-1">[[post-queue:user]]</div>
+						<div class="d-flex text-xs fw-semibold mb-1 align-items-center">
+							[[post-queue:user]]
+							<div class="ms-auto btn-group bottom-sheet">
+								<button href="#" class="btn btn-outline-sm text-xs dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
+								<ul class="dropdown-menu">
+									{{{ if privileges.ban }}}
+									<li class="{{{ if target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="ban">[[user:ban_account]]</a></li>
+									<li class="{{{ if !target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="unban">[[user:unban_account]]</a></li>
+									{{{ end }}}
+									{{{ if privileges.mute}}}
+									<li class="{{{ if target.user.muted }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="mute">[[user:mute_account]]</a></li>
+									<li class="{{{ if !target.user.muted }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="unmute">[[user:unmute_account]]</a></li>
+									{{{ end }}}
+									{{{ if privileges.admin:users }}}
+									<li><a class="dropdown-item" href="#" data-action="delete-account">[[user:delete_account_as_admin]]</a></li>
+									<li><a class="dropdown-item" href="#" data-action="delete-content">[[user:delete_content]]</a></li>
+									<li><a class="dropdown-item" href="#" data-action="delete-all">[[user:delete_all]]</a></li>
+									{{{ end }}}
+								</ul>
+							</div>
+						</div>
 						<div class="small">
 							{{{ if posts.user.userslug}}}
 							<a class="text-decoration-none" href="{config.relative_path}/uid/{posts.user.uid}">{buildAvatar(posts.user, "24px", true, "not-responsive")} {posts.user.username}</a>
@@ -98,7 +118,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="col-md-10 d-flex flex-column">
+			<div class="col-sm-8 col-md-9 d-flex flex-column">
 				<div class="post-content mb-auto text-break p-3 pb-0 h-100">{posts.data.content}</div>
 				<div class="post-content-editable flex-grow-1 hidden">
 					<textarea class="form-control w-100 h-100 p-3">{posts.data.rawContent}</textarea>
