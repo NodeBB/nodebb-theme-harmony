@@ -1,19 +1,21 @@
 <!-- THIS FILE IS STILL PERSONA -->
 
-<div class="d-flex align-items-start gap-2 pb-3 border-bottom">
-	<a class="filter-btn btn btn-light btn-sm border {{{ if filters.quick }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-		<span class="filter-label">{{{ if filters.quick }}}[[flags:filter-quick-{./filters.quick}]]{{{ else }}}[[flags:quick-filters]]{{{ end }}}</span>
-		<span class="caret"></span>
-	</a>
-	<ul class="dropdown-menu">
-		<li>
-			<a class="dropdown-item" href="{config.relative_path}/flags?quick=mine">[[flags:filter-quick-mine]]</a>
-		</li>
-	</ul>
+<div component="flags/filters" class="d-flex flex-wrap gap-2 pb-3 border-bottom">
+	<div class="btn-group bottom-sheet">
+		<a class="filter-btn btn btn-light btn-sm border {{{ if filters.quick }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+			<span class="filter-label">{{{ if filters.quick }}}[[flags:filter-quick-{./filters.quick}]]{{{ else }}}[[flags:quick-filters]]{{{ end }}}</span>
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a class="dropdown-item" href="{config.relative_path}/flags?quick=mine">[[flags:filter-quick-mine]]</a>
+			</li>
+		</ul>
+	</div>
 
-	<div component="flags/filters" class="ps-2 ms-2 border-start d-flex gap-2 me-auto">
-		<!-- IMPORT partials/category/filter-dropdown-left.tpl -->
+	<!-- IMPORT partials/category/filter-dropdown-left.tpl -->
 
+	<div class="btn-group bottom-sheet">
 		<a class="filter-btn btn btn-light btn-sm border {{{ if (sort != "newest") }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 			<span class="filter-label">{{{ if (sort != "newest") }}}[[flags:sort-{./sort}]]{{{ else }}}[[flags:sort]]{{{ end }}}</span>
 			<span class="caret"></span>
@@ -28,7 +30,9 @@
 			<li class="dropdown-item" data-name="sort" data-value="upvotes">[[flags:sort-upvotes]]</li>
 			<li class="dropdown-item" data-name="sort" data-value="replies">[[flags:sort-replies]]</li>
 		</ul>
+	</div>
 
+	<div class="btn-group bottom-sheet">
 		<a class="filter-btn btn btn-light btn-sm border {{{ if filters.state }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 			<span class="filter-label">{{{ if filters.state }}}[[flags:state-{./filters.state}]]{{{ else }}}[[flags:filter-state]]{{{ end }}}</span>
 			<span class="caret"></span>
@@ -39,7 +43,9 @@
 			<li class="dropdown-item" data-name="state" data-value="resolved">[[flags:state-resolved]]</li>
 			<li class="dropdown-item" data-name="state" data-value="rejected">[[flags:state-rejected]]</li>
 		</ul>
+	</div>
 
+	<div class="btn-group bottom-sheet">
 		<a class="filter-btn btn btn-light btn-sm border {{{ if filters.type }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 			<span class="filter-label">{{{ if filters.type }}}[[flags:filter-type-{./filters.type}]]{{{ else }}}[[flags:filter-type]]{{{ end }}}</span>
 			<span class="caret"></span>
@@ -49,96 +55,90 @@
 			<li class="dropdown-item" data-name="type" data-value="post">[[flags:filter-type-post]]</li>
 			<li class="dropdown-item" data-name="type" data-value="user">[[flags:filter-type-user]]</li>
 		</ul>
-
-		<div component="flags/filter/assignee" class="dropdown" data-filter-name="assignee">
-			<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.assignee }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-				<span class="filter-label">[[flags:filter-assignee]]</span>
-				<span class="caret"></span>
-			</a>
-
-			<ul class="dropdown-menu" style="width: 350px;">
-				<li class="px-3 py-1 d-flex flex-column gap-2">
-					<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
-					<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
-						{{{ each selected.assignee }}}
-						<div class="d-flex px-2 py-1 rounded-1 text-bg-primary gap-2 align-items-center text-sm">
-							{buildAvatar(@value, "16px", true)} {./username}
-							<button component="user/filter/delete" data-uid="{./uid}" class="btn btn-primary btn-sm py-0"><i class="fa fa-times fa-xs"></i></button>
-						</div>
-						{{{ end }}}
-					</div>
-					<hr/>
-					<div component="user/filter/results" class="d-flex flex-wrap gap-2">
-						{{{ each userFilterResults }}}
-						<button class="btn btn-light btn-sm border" data-uid="{./uid}" data-username="{./username}">{buildAvatar(@value, "16px", true)} {./username}</button>
-						{{{ end }}}
-					</div>
-				</li>
-			</ul>
-		</div>
-
-		<div component="flags/filter/reporterId" class="dropdown" data-filter-name="reporterId">
-			<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.reporterId }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-				<span class="filter-label">[[flags:filter-reporterId]]</span>
-				<span class="caret"></span>
-			</a>
-
-			<ul class="dropdown-menu" style="width: 350px;">
-				<li class="px-3 py-1 d-flex flex-column gap-2">
-					<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
-					<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
-						{{{ each selected.reporterId }}}
-						<div class="d-flex px-2 py-1 rounded-1 text-bg-primary gap-2 align-items-center text-sm">
-							{buildAvatar(@value, "16px", true)} {./username}
-							<button component="user/filter/delete" data-uid="{./uid}" class="btn btn-primary btn-sm py-0"><i class="fa fa-times fa-xs"></i></button>
-						</div>
-						{{{ end }}}
-					</div>
-					<hr/>
-					<div component="user/filter/results" class="d-flex flex-wrap gap-2">
-						{{{ each userFilterResults }}}
-						<button class="btn btn-light btn-sm border" data-uid="{./uid}" data-username="{./username}">{buildAvatar(@value, "16px", true)} {./username}</button>
-						{{{ end }}}
-					</div>
-				</li>
-			</ul>
-		</div>
-
-		<div component="flags/filter/targetUid" class="dropdown" data-filter-name="targetUid">
-			<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.targetUid }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-				<span class="filter-label">[[flags:filter-targetUid]]</span>
-				<span class="caret"></span>
-			</a>
-
-			<ul class="dropdown-menu" style="width: 350px;">
-				<li class="px-3 py-1 d-flex flex-column gap-2">
-					<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
-					<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
-						{{{ each selected.targetUid }}}
-						<div class="d-flex px-2 py-1 rounded-1 text-bg-primary gap-2 align-items-center text-sm">
-							{buildAvatar(@value, "16px", true)} {./username}
-							<button component="user/filter/delete" data-uid="{./uid}" class="btn btn-primary btn-sm py-0"><i class="fa fa-times fa-xs"></i></button>
-						</div>
-						{{{ end }}}
-					</div>
-					<hr/>
-					<div component="user/filter/results" class="d-flex flex-wrap gap-2">
-						{{{ each userFilterResults }}}
-						<button class="btn btn-light btn-sm border" data-uid="{./uid}" data-username="{./username}">{buildAvatar(@value, "16px", true)} {./username}</button>
-						{{{ end }}}
-					</div>
-				</li>
-			</ul>
-		</div>
-
-		<form role="form">
-			<input type="hidden" name="sort" value="{./sort}" />
-			<input type="hidden" name="state" value="{./filters.state}" />
-			<input type="hidden" name="type" value="{./filters.type}" />
-		</form>
 	</div>
 
-	<div component="flags/filters/reset">
+	<div component="flags/filter/assignee" class="dropdown bottom-sheet" data-filter-name="assignee">
+		<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.assignee }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+			<span class="filter-label">[[flags:filter-assignee]]</span>
+			<span class="caret"></span>
+		</a>
+
+		<ul class="dropdown-menu" style="min-width: 350px;">
+			<li class="px-3 py-1 d-flex flex-column gap-2">
+				<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
+				<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
+					{{{ each selected.assignee }}}
+					<div class="d-flex px-2 py-1 rounded-1 text-bg-primary gap-2 align-items-center text-sm">
+						{buildAvatar(@value, "16px", true)} {./username}
+						<button component="user/filter/delete" data-uid="{./uid}" class="btn btn-primary btn-sm py-0"><i class="fa fa-times fa-xs"></i></button>
+					</div>
+					{{{ end }}}
+				</div>
+				<hr/>
+				<div component="user/filter/results" class="d-flex flex-wrap gap-2">
+					{{{ each userFilterResults }}}
+					<button class="btn btn-light btn-sm border" data-uid="{./uid}" data-username="{./username}">{buildAvatar(@value, "16px", true)} {./username}</button>
+					{{{ end }}}
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div component="flags/filter/reporterId" class="dropdown bottom-sheet" data-filter-name="reporterId">
+		<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.reporterId }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+			<span class="filter-label">[[flags:filter-reporterId]]</span>
+			<span class="caret"></span>
+		</a>
+
+		<ul class="dropdown-menu" style="min-width: 350px;">
+			<li class="px-3 py-1 d-flex flex-column gap-2">
+				<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
+				<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
+					{{{ each selected.reporterId }}}
+					<div class="d-flex px-2 py-1 rounded-1 text-bg-primary gap-2 align-items-center text-sm">
+						{buildAvatar(@value, "16px", true)} {./username}
+						<button component="user/filter/delete" data-uid="{./uid}" class="btn btn-primary btn-sm py-0"><i class="fa fa-times fa-xs"></i></button>
+					</div>
+					{{{ end }}}
+				</div>
+				<hr/>
+				<div component="user/filter/results" class="d-flex flex-wrap gap-2">
+					{{{ each userFilterResults }}}
+					<button class="btn btn-light btn-sm border" data-uid="{./uid}" data-username="{./username}">{buildAvatar(@value, "16px", true)} {./username}</button>
+					{{{ end }}}
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div component="flags/filter/targetUid" class="dropdown bottom-sheet" data-filter-name="targetUid">
+		<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.targetUid }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+			<span class="filter-label">[[flags:filter-targetUid]]</span>
+			<span class="caret"></span>
+		</a>
+
+		<ul class="dropdown-menu" style="min-width: 350px;">
+			<li class="px-3 py-1 d-flex flex-column">
+				<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
+				<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
+					{{{ each selected.targetUid }}}
+					<div class="d-flex px-2 py-1 rounded-1 text-bg-primary gap-2 align-items-center text-sm">
+						{buildAvatar(@value, "16px", true)} {./username}
+						<button component="user/filter/delete" data-uid="{./uid}" class="btn btn-primary btn-sm py-0"><i class="fa fa-times fa-xs"></i></button>
+					</div>
+					{{{ end }}}
+				</div>
+				<hr/>
+				<div component="user/filter/results" class="d-flex flex-wrap gap-2">
+					{{{ each userFilterResults }}}
+					<button class="btn btn-light btn-sm border" data-uid="{./uid}" data-username="{./username}">{buildAvatar(@value, "16px", true)} {./username}</button>
+					{{{ end }}}
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div component="flags/filters/reset" class="ms-auto">
 		<a class="filter-btn btn btn-warning btn-sm border {{{ if !hasFilter }}}btn-light disabled{{{ end }}}" href="{config.relative_path}/flags" role="button">
 			<span class="filter-label">[[flags:filter-reset]]</span>
 		</a>
@@ -153,4 +153,10 @@
 			<li><a href="#" class="dropdown-item" data-action="bulk-mark-resolved">[[flags:bulk-resolve]]</a></li>
 		</ul>
 	</div>
+
+	<form role="form">
+		<input type="hidden" name="sort" value="{./sort}" />
+		<input type="hidden" name="state" value="{./filters.state}" />
+		<input type="hidden" name="type" value="{./filters.type}" />
+	</form>
 </div>
