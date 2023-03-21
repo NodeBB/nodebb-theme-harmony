@@ -1,5 +1,3 @@
-<!-- THIS FILE IS STILL PERSONA -->
-
 <div component="flags/filters" class="d-flex flex-wrap gap-2 pb-3 border-bottom">
 	<div class="btn-group bottom-sheet">
 		<a class="filter-btn btn btn-light btn-sm border {{{ if filters.quick }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
