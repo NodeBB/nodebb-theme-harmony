@@ -100,8 +100,8 @@
 			</div>
 			<div class="col-md-10 d-flex flex-column">
 				<div class="post-content mb-auto text-break p-3 pb-0 h-100">{posts.data.content}</div>
-				<div class="post-content-editable hidden">
-					<textarea class="form-control w-100" style="height:300px;">{posts.data.rawContent}</textarea>
+				<div class="post-content-editable flex-grow-1 hidden">
+					<textarea class="form-control w-100 h-100 p-3">{posts.data.rawContent}</textarea>
 				</div>
 				<div class="border-top p-3 d-grid d-md-flex gap-2">
 					{{{ if canAccept }}}
@@ -114,15 +114,6 @@
 					<span class="d-none d-md-inline ms-auto align-self-center text-xs fw-semibold">[[post-queue:content-editable]]</span>
 				</div>
 			</div>
-		</div>
-		<div class="card-body" style="display: none;">
-			<div>
-				<strong>[[post-queue:content]] <i class="fa fa-fw fa-edit" data-bs-toggle="tooltip" title="[[post-queue:content-editable]]"></i></strong>
-
-			</div>
-		</div>
-		<div class="card-footer text-end" style="display: none;">
-
 		</div>
 	</div>
 	{{{ end }}}
