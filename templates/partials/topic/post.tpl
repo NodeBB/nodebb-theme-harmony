@@ -37,14 +37,14 @@
 			<span class="badge bg-danger rounded-1">[[user:banned]]</span>
 			{{{ end }}}
 
-			<div class="d-flex gap-1 hidden-xs align-items-center">
-				<a class="text-muted" href="{config.relative_path}/post/{./pid}">
+			<div class="d-flex gap-1 align-items-center">
+				<span class="text-muted">
 					{{{ if posts.toPid }}}
 					{generateRepliedTo(@value, config.timeagoCutoff)}
 					{{{ else }}}
 					{generateWrote(@value, config.timeagoCutoff)}
 					{{{ end }}}
-				</a>
+				</span>
 
 				<i component="post/edit-indicator" class="fa fa-edit text-muted{{{ if privileges.posts:history }}} pointer{{{ end }}} edit-icon {{{ if !posts.editor.username }}}hidden{{{ end }}}" title="[[global:edited-timestamp, {./editedISO}]]"></i>
 				<span data-editor="{posts.editor.userslug}" component="post/editor" class="visually-hidden">[[global:last_edited_by, {posts.editor.username}]] <span class="timeago" title="{posts.editedISO}"></span></span>
