@@ -11,15 +11,19 @@
 		<div class="row">
 			<div class="col-md-7 col-sm-9 col-12 content d-flex">
 				<div class="me-3">
-					<div class="avatar">
-						<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" class="text-decoration-none">
-							{{{ if ./thumbs.length }}}
-							<img class="topic-thumb rounded-1" width="80" height="auto" src="{./thumbs.0.url}" class="not-responsive" />
-							{{{ else }}}
-							{buildAvatar(./user, "40px", true, "avatar-tooltip not-responsive")}
-							{{{ end }}}
+					{{{ if ./thumbs.length }}}
+					<div class="topic-thumb">
+						<a href="{./thumbs.0.url}">
+							<img class="topic-thumb rounded-1" src="{./thumbs.0.url}" class="not-responsive" />
 						</a>
 					</div>
+					{{{ else }}}
+					<div class="avatar">
+						<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" class="text-decoration-none">
+							{buildAvatar(./user, "40px", true, "avatar-tooltip not-responsive")}
+						</a>
+					</div>
+					{{{ end }}}
 				</div>
 				<div class="d-flex flex-column gap-1">
 					<h2 component="topic/header" class="text-break title mb-1 {{{ if showSelect }}}me-4{{{ end }}} me-md-0 text-md fw-bold">

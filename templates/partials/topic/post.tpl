@@ -37,13 +37,13 @@
 			<span class="badge bg-danger rounded-1">[[user:banned]]</span>
 			{{{ end }}}
 
-			<div class="d-flex gap-1 hidden-xs align-items-center">
+			<div class="d-flex gap-1 align-items-center">
 				<span class="text-muted">
-				{{{ if posts.toPid }}}
-				{generateRepliedTo(@value, config.timeagoCutoff)}
-				{{{ else }}}
-				{generateWrote(@value, config.timeagoCutoff)}
-				{{{ end }}}
+					{{{ if posts.toPid }}}
+					{generateRepliedTo(@value, config.timeagoCutoff)}
+					{{{ else }}}
+					{generateWrote(@value, config.timeagoCutoff)}
+					{{{ end }}}
 				</span>
 
 				<i component="post/edit-indicator" class="fa fa-edit text-muted{{{ if privileges.posts:history }}} pointer{{{ end }}} edit-icon {{{ if !posts.editor.username }}}hidden{{{ end }}}" title="[[global:edited-timestamp, {./editedISO}]]"></i>
