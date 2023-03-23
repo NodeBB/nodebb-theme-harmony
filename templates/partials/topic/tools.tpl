@@ -1,6 +1,6 @@
 {{{ if privileges.view_thread_tools }}}
 <div class="btn-group thread-tools bottom-sheet">
-	<button class="btn-ghost-sm d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown" type="button">
+	<button class="btn-ghost-sm d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown" type="button">
 		<i class="fa fa-fw fa-gear link-primary"></i>
 		<span class="d-none d-md-inline fw-semibold">[[topic:thread_tools.title]]</span>
 	</button>

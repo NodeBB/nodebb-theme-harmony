@@ -1,6 +1,6 @@
 {{{ if config.loggedIn }}}
 <div class="btn-group bottom-sheet" component="topic/watch">
-	<button class="btn-ghost-sm d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown" type="button">
+	<button class="btn-ghost-sm d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown" type="button">
 		<span component="topic/following/menu" class="d-flex gap-2 align-items-center{{{ if !isFollowing }}} hidden{{{ end }}}">
 			<i class="fa fa-fw fa-bell-o link-primary"></i>
 			<span class="d-none d-md-inline fw-semibold">[[topic:watching]]</span>
