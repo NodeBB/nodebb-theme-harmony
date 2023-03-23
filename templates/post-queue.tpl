@@ -105,7 +105,7 @@
 						</div>
 						{{{end}}}
 					</li>
-					<li class="card-body">
+					<li class="card-body border-bottom">
 						<div class="text-xs fw-semibold mb-1">
 							[[post-queue:category]]{{{ if posts.data.cid}}} <i class="fa fa-fw fa-edit" data-bs-toggle="tooltip" title="[[post-queue:category-editable]]"></i>{{{ end }}}
 						</div>
@@ -118,6 +118,15 @@
 							</a>
 						</div>
 					</li>
+					<li class="card-body d-grid d-lg-flex gap-2">
+						{{{ if canAccept }}}
+						<button class="btn btn-success btn-sm" data-action="accept"><i class="fa fa-fw fa-check"></i> [[post-queue:accept]] </button>
+						<button class="btn btn-info btn-sm" data-action="notify"><i class="fa fa-fw fa-bell-o"></i> [[post-queue:notify]]</button>
+						<button class="btn btn-danger btn-sm" data-action="reject"><i class="fa fa-fw fa-times"></i> [[post-queue:reject]]</button>
+						{{{ else }}}
+						<button class="btn btn-danger btn-sm" data-action="reject"><i class="fa fa-fw fa-times"></i> [[post-queue:remove]]</button>
+						{{{ end }}}
+					</li>
 				</ul>
 			</div>
 			<div class="col-sm-8 col-md-9 d-flex flex-column">
@@ -125,16 +134,7 @@
 				<div class="post-content-editable flex-grow-1 hidden">
 					<textarea class="form-control w-100 h-100 p-3">{posts.data.rawContent}</textarea>
 				</div>
-				<div class="border-top p-3 d-grid d-md-flex gap-2">
-					{{{ if canAccept }}}
-					<button class="btn btn-success btn-sm" data-action="accept"><i class="fa fa-fw fa-check"></i> [[post-queue:accept]] </button>
-					<button class="btn btn-info btn-sm" data-action="notify"><i class="fa fa-fw fa-bell-o"></i> [[post-queue:notify]]</button>
-					<button class="btn btn-danger btn-sm" data-action="reject"><i class="fa fa-fw fa-times"></i> [[post-queue:reject]]</button>
-					{{{ else }}}
-					<button class="btn btn-danger btn-sm" data-action="reject"><i class="fa fa-fw fa-times"></i> [[post-queue:remove]]</button>
-					{{{ end }}}
-					<span class="d-none d-md-inline ms-auto align-self-center text-xs fw-semibold">[[post-queue:content-editable]]</span>
-				</div>
+				<div class="border-top p-2 d-none d-md-block text-xs fw-semibold text-end">[[post-queue:content-editable]]</div>
 			</div>
 		</div>
 	</div>
