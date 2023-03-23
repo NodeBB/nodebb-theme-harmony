@@ -43,7 +43,7 @@
 	{{{ each posts }}}
 	<div class="card mb-4" data-id="{./id}" data-uid="{./user.uid}">
 		<div class="row g-0">
-			<div class="col-sm-4 col-md-3 bg-light rounded-start">
+			<div class="col-sm-4 col-md-3 bg-card-cap rounded-start">
 				<ul class="list-unstyled ps-0 mb-0 border-end h-100">
 					<li class="card-body border-bottom position-relative">
 						{{{ if !singlePost }}}

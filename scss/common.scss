@@ -32,6 +32,11 @@ body * {
 	opacity: 0.5;
 }
 
+.bg-card-cap {
+	--bs-bg-opacity: 1;
+	background-color: $card-cap-bg!important;
+}
+
 blockquote {
 	background-color: $light;
 	font-style: normal;
