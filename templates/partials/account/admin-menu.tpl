@@ -2,7 +2,7 @@
 	<button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		<i class="fa fa-gear fa-fw"></i>
 	</button>
-	<ul class="dropdown-menu dropdown-menu-end account-sub-links">
+	<ul class="dropdown-menu dropdown-menu-end p-1 text-sm account-sub-links">
 		<li>
 			<a class="dropdown-item" href="{config.relative_path}/user/{userslug}/info">[[user:account_info]]</a>
 		</li>

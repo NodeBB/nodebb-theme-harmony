@@ -4,9 +4,9 @@
 			<span class="filter-label">{{{ if filters.quick }}}[[flags:filter-quick-{./filters.quick}]]{{{ else }}}[[flags:quick-filters]]{{{ end }}}</span>
 			<span class="caret"></span>
 		</a>
-		<ul class="dropdown-menu">
+		<ul class="dropdown-menu p-1 text-sm">
 			<li>
-				<a class="dropdown-item" href="{config.relative_path}/flags?quick=mine">[[flags:filter-quick-mine]]</a>
+				<a class="dropdown-item rounded-1" href="{config.relative_path}/flags?quick=mine">[[flags:filter-quick-mine]]</a>
 			</li>
 		</ul>
 	</div>
@@ -18,15 +18,15 @@
 			<span class="filter-label">{{{ if (sort != "newest") }}}[[flags:sort-{./sort}]]{{{ else }}}[[flags:sort]]{{{ end }}}</span>
 			<span class="caret"></span>
 		</a>
-		<ul class="dropdown-menu">
+		<ul class="dropdown-menu p-1 text-sm">
 			<li><h6 class="dropdown-header">[[flags:sort-all]]</h6></li>
-			<li class="dropdown-item" data-name="sort" data-value="newest">[[flags:sort-newest]]</li>
-			<li class="dropdown-item" data-name="sort" data-value="oldest">[[flags:sort-oldest]]</li>
-			<li class="dropdown-item" data-name="sort" data-value="reports">[[flags:sort-reports]]</li>
+			<li class="dropdown-item rounded-1" data-name="sort" data-value="newest">[[flags:sort-newest]]</li>
+			<li class="dropdown-item rounded-1" data-name="sort" data-value="oldest">[[flags:sort-oldest]]</li>
+			<li class="dropdown-item rounded-1" data-name="sort" data-value="reports">[[flags:sort-reports]]</li>
 			<li><h6 class="dropdown-header">[[flags:sort-posts-only]]</h6></li>
-			<li class="dropdown-item" data-name="sort" data-value="downvotes">[[flags:sort-downvotes]]</li>
-			<li class="dropdown-item" data-name="sort" data-value="upvotes">[[flags:sort-upvotes]]</li>
-			<li class="dropdown-item" data-name="sort" data-value="replies">[[flags:sort-replies]]</li>
+			<li class="dropdown-item rounded-1" data-name="sort" data-value="downvotes">[[flags:sort-downvotes]]</li>
+			<li class="dropdown-item rounded-1" data-name="sort" data-value="upvotes">[[flags:sort-upvotes]]</li>
+			<li class="dropdown-item rounded-1" data-name="sort" data-value="replies">[[flags:sort-replies]]</li>
 		</ul>
 	</div>
 
@@ -35,11 +35,11 @@
 			<span class="filter-label">{{{ if filters.state }}}[[flags:state-{./filters.state}]]{{{ else }}}[[flags:filter-state]]{{{ end }}}</span>
 			<span class="caret"></span>
 		</a>
-		<ul class="dropdown-menu">
-			<li class="dropdown-item" data-name="state" data-value="open">[[flags:state-open]]</li>
-			<li class="dropdown-item" data-name="state" data-value="wip">[[flags:state-wip]]</li>
-			<li class="dropdown-item" data-name="state" data-value="resolved">[[flags:state-resolved]]</li>
-			<li class="dropdown-item" data-name="state" data-value="rejected">[[flags:state-rejected]]</li>
+		<ul class="dropdown-menu p-1 text-sm">
+			<li class="dropdown-item rounded-1" data-name="state" data-value="open">[[flags:state-open]]</li>
+			<li class="dropdown-item rounded-1" data-name="state" data-value="wip">[[flags:state-wip]]</li>
+			<li class="dropdown-item rounded-1" data-name="state" data-value="resolved">[[flags:state-resolved]]</li>
+			<li class="dropdown-item rounded-1" data-name="state" data-value="rejected">[[flags:state-rejected]]</li>
 		</ul>
 	</div>
 
@@ -48,10 +48,10 @@
 			<span class="filter-label">{{{ if filters.type }}}[[flags:filter-type-{./filters.type}]]{{{ else }}}[[flags:filter-type]]{{{ end }}}</span>
 			<span class="caret"></span>
 		</a>
-		<ul class="dropdown-menu">
-			<li class="dropdown-item" data-name="type" data-value="all">[[flags:filter-type-all]]</li>
-			<li class="dropdown-item" data-name="type" data-value="post">[[flags:filter-type-post]]</li>
-			<li class="dropdown-item" data-name="type" data-value="user">[[flags:filter-type-user]]</li>
+		<ul class="dropdown-menu p-1 text-sm">
+			<li class="dropdown-item rounded-1" data-name="type" data-value="all">[[flags:filter-type-all]]</li>
+			<li class="dropdown-item rounded-1" data-name="type" data-value="post">[[flags:filter-type-post]]</li>
+			<li class="dropdown-item rounded-1" data-name="type" data-value="user">[[flags:filter-type-user]]</li>
 		</ul>
 	</div>
 
@@ -61,7 +61,7 @@
 			<span class="caret"></span>
 		</a>
 
-		<ul class="dropdown-menu" style="min-width: 350px;">
+		<ul class="dropdown-menu p-1 text-sm" style="min-width: 350px;">
 			<li class="px-3 py-1 d-flex flex-column gap-2">
 				<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
 				<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
@@ -88,7 +88,7 @@
 			<span class="caret"></span>
 		</a>
 
-		<ul class="dropdown-menu" style="min-width: 350px;">
+		<ul class="dropdown-menu p-1 text-sm" style="min-width: 350px;">
 			<li class="px-3 py-1 d-flex flex-column gap-2">
 				<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
 				<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
@@ -115,7 +115,7 @@
 			<span class="caret"></span>
 		</a>
 
-		<ul class="dropdown-menu" style="min-width: 350px;">
+		<ul class="dropdown-menu p-1 text-sm" style="min-width: 350px;">
 			<li class="px-3 py-1 d-flex flex-column">
 				<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
 				<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
@@ -146,9 +146,9 @@
 		<button class="filter-btn btn btn-light btn-sm border" data-bs-toggle="dropdown" autocomplete="off" aria-haspopup="true" aria-expanded="false" disabled="disabled">
 			<span class="filter-label">[[flags:bulk-actions]]</span>
 		</button>
-		<ul class="dropdown-menu">
-			<li><a href="#" class="dropdown-item" data-action="bulk-assign">[[flags:assign-to-me]]</a></li>
-			<li><a href="#" class="dropdown-item" data-action="bulk-mark-resolved">[[flags:bulk-resolve]]</a></li>
+		<ul class="dropdown-menu p-1 text-sm">
+			<li><a href="#" class="dropdown-item rounded-1" data-action="bulk-assign">[[flags:assign-to-me]]</a></li>
+			<li><a href="#" class="dropdown-item rounded-1" data-action="bulk-mark-resolved">[[flags:bulk-resolve]]</a></li>
 		</ul>
 	</div>
 

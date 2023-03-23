@@ -45,6 +45,7 @@
 	}
 
 	.nav-link {
+		@extend .ff-secondary;
 		padding: 0;
 		&.active {
 			background-color: $hover-color;

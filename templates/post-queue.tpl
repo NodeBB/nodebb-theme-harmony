@@ -9,16 +9,16 @@
 		<button type="button" class="btn-ghost-sm dropdown-toggle" data-bs-toggle="dropdown" autocomplete="off" aria-haspopup="true" aria-expanded="false">
 			<i class="fa fa-clone"></i><span class="fw-semibold"> [[post-queue:bulk-actions]]</span>
 		</button>
-		<ul class="dropdown-menu dropdown-menu-end">
+		<ul class="dropdown-menu p-1 text-sm dropdown-menu-end">
 			{{{ if canAccept }}}
-			<li><a class="dropdown-item" href="#" data-action="accept-all">[[post-queue:accept-all]]</a></li>
-			<li><a class="dropdown-item" href="#" data-action="accept-selected">[[post-queue:accept-selected]]</a></li>
+			<li><a class="dropdown-item rounded-1" href="#" data-action="accept-all">[[post-queue:accept-all]]</a></li>
+			<li><a class="dropdown-item rounded-1" href="#" data-action="accept-selected">[[post-queue:accept-selected]]</a></li>
 			<li class="dropdown-divider"></li>
-			<li><a class="dropdown-item" href="#" data-action="reject-all">[[post-queue:reject-all]]</a></li>
-			<li><a class="dropdown-item" href="#" data-action="reject-selected">[[post-queue:reject-selected]]</a></li>
+			<li><a class="dropdown-item rounded-1" href="#" data-action="reject-all">[[post-queue:reject-all]]</a></li>
+			<li><a class="dropdown-item rounded-1" href="#" data-action="reject-selected">[[post-queue:reject-selected]]</a></li>
 			{{{ else }}}
-			<li><a class="dropdown-item" href="#" data-action="reject-all">[[post-queue:remove-all]]</a></li>
-			<li><a class="dropdown-item" href="#" data-action="reject-selected">[[post-queue:remove-selected]]</a></li>
+			<li><a class="dropdown-item rounded-1" href="#" data-action="reject-all">[[post-queue:remove-all]]</a></li>
+			<li><a class="dropdown-item rounded-1" href="#" data-action="reject-selected">[[post-queue:remove-selected]]</a></li>
 			{{{ end }}}
 		</ul>
 	</div>
@@ -59,19 +59,19 @@
 							{{{ if ((privileges.ban || privileges.mute) || privileges.admin:users) }}}
 							<div class="ms-auto btn-group bottom-sheet">
 								<button href="#" class="btn btn-outline-sm text-xs dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
-								<ul class="dropdown-menu">
+								<ul class="dropdown-menu p-1 text-sm">
 									{{{ if privileges.ban }}}
-									<li class="{{{ if target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="ban">[[user:ban_account]]</a></li>
-									<li class="{{{ if !target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="unban">[[user:unban_account]]</a></li>
+									<li class="{{{ if target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item rounded-1" href="#" data-action="ban">[[user:ban_account]]</a></li>
+									<li class="{{{ if !target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item rounded-1" href="#" data-action="unban">[[user:unban_account]]</a></li>
 									{{{ end }}}
 									{{{ if privileges.mute}}}
-									<li class="{{{ if target.user.muted }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="mute">[[user:mute_account]]</a></li>
-									<li class="{{{ if !target.user.muted }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="unmute">[[user:unmute_account]]</a></li>
+									<li class="{{{ if target.user.muted }}}hidden{{{ end }}}"><a class="dropdown-item rounded-1" href="#" data-action="mute">[[user:mute_account]]</a></li>
+									<li class="{{{ if !target.user.muted }}}hidden{{{ end }}}"><a class="dropdown-item rounded-1" href="#" data-action="unmute">[[user:unmute_account]]</a></li>
 									{{{ end }}}
 									{{{ if privileges.admin:users }}}
-									<li><a class="dropdown-item" href="#" data-action="delete-account">[[user:delete_account_as_admin]]</a></li>
-									<li><a class="dropdown-item" href="#" data-action="delete-content">[[user:delete_content]]</a></li>
-									<li><a class="dropdown-item" href="#" data-action="delete-all">[[user:delete_all]]</a></li>
+									<li><a class="dropdown-item rounded-1" href="#" data-action="delete-account">[[user:delete_account_as_admin]]</a></li>
+									<li><a class="dropdown-item rounded-1" href="#" data-action="delete-content">[[user:delete_content]]</a></li>
+									<li><a class="dropdown-item rounded-1" href="#" data-action="delete-all">[[user:delete_all]]</a></li>
 									{{{ end }}}
 								</ul>
 							</div>

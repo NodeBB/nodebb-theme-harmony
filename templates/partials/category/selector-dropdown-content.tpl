@@ -14,7 +14,7 @@
 <div component="category-selector-search" class="hidden position-absolute">
     <input type="text" class="form-control form-control-sm" autocomplete="off">
 </div>
-<ul component="category/list" class="dropdown-menu category-dropdown-menu" role="menu">
+<ul component="category/list" class="dropdown-menu p-1 text-sm category-dropdown-menu" role="menu">
     <li component="category/no-matches" role="presentation" class="category hidden">
         <a class="dropdown-item" role="menu-item">[[search:no-matches]]</a>
     </li>

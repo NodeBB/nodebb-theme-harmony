@@ -29,8 +29,9 @@
 				<a class="btn-ghost-sm d-none d-lg-flex align-self-stretch" target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss text-primary"></i></a>
 				{{{ end }}}
 
-				<a href="{config.relative_path}{{{ if template.category }}}{url}{{{ else }}}/{selectedFilter.url}{querystring}{{{ end }}}" class="d-inline-block text-decoration-none">
-					<div class="d-md-block alert alert-warning h-100 m-0 px-2 py-1 line-clamp-2 text-sm text-break hide" id="new-topics-alert">There is a new post. Click here to reload.</div>
+				<a href="{config.relative_path}{{{ if template.category }}}{url}{{{ else }}}/{selectedFilter.url}{querystring}{{{ end }}}" class="btn btn-secondary btn-sm text-nowrap d-flex align-items-center gap-2 flex-nowrap">
+					<i class="fa-solid fa-rotate-right"></i>
+					<div id="new-topics-alert">Load new posts</div>
 				</a>
 			</ul>
 

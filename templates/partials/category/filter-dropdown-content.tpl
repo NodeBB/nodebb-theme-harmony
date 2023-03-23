@@ -11,7 +11,7 @@
 <div component="category-selector-search" class="hidden position-absolute">
     <input type="text" class="form-control form-control-sm" autocomplete="off">
 </div>
-<ul component="category/list" class="dropdown-menu category-dropdown-menu" role="menu">
+<ul component="category/list" class="dropdown-menu p-1 text-sm category-dropdown-menu" role="menu">
     <li role="presentation" class="category" data-cid="all">
         <a class="dropdown-item" role="menu-item" href="{{{ if allCategoriesUrl }}}{config.relative_path}/{allCategoriesUrl}{{{ else }}}#{{{ end }}}"><i component="category/select/icon" class="fa fa-fw fa-check {{{if selectedCategory}}}invisible{{{end}}}"></i> [[unread:all_categories]]</a>
     </li>

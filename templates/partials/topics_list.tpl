@@ -8,7 +8,7 @@
 		<meta itemprop="position" content="{./index}" />
 		<a id="{./index}" data-index="{./index}" component="topic/anchor"></a>
 
-		<div class="row">
+		<div class="row py-2">
 			<div class="col-md-7 col-sm-9 col-12 content d-flex">
 				<div class="me-3">
 					{{{ if ./thumbs.length }}}
@@ -26,7 +26,7 @@
 					{{{ end }}}
 				</div>
 				<div class="d-flex flex-column gap-1">
-					<h2 component="topic/header" class="text-break title mb-1 {{{ if showSelect }}}me-4{{{ end }}} me-md-0 text-md fw-bold">
+					<h2 component="topic/header" class="tracking-tight text-break title mb-1 {{{ if showSelect }}}me-4{{{ end }}} me-md-0 text-md text-dark fw-semibold">
 						{{{ if topics.noAnchor }}}
 						<span>{./title}</span>
 						{{{ else }}}
@@ -79,20 +79,20 @@
 					{{{ if !reputation:disabled }}}
 					<div class="stats-votes flex-1">
 						<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
-							<span class="human-readable-number fs-5 fw-semibold ff-secondary lh-1" title="{./votes}" data-toFixed="0">{./votes}</span>
+							<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./votes}" data-toFixed="0">{./votes}</span>
 							<span class="text-lowercase text-xs">[[global:votes]]</span>
 						</div>
 					</div>
 					{{{ end }}}
 					<div class="stats-postcount flex-1">
 						<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
-							<span class="human-readable-number fs-5 fw-semibold ff-secondary lh-1" title="{./postcount}" data-toFixed="0">{./postcount}</span>
+							<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./postcount}" data-toFixed="0">{./postcount}</span>
 							<span class="text-lowercase text-xs">[[global:posts]]</span>
 						</div>
 					</div>
 					<div class="stats-viewcount flex-1">
 						<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
-							<span class="human-readable-number fs-5 fw-semibold ff-secondary lh-1" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
+							<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
 							<span class="text-lowercase text-xs">[[global:views]]</span>
 						</div>
 					</div>

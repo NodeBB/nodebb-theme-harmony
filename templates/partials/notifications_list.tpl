@@ -1,5 +1,8 @@
 {{{ if !notifications.length }}}
-<li class="no-notifs text-center p-2">[[notifications:no_notifs]]</li>
+<li class="no-notifs text-center p-4 d-flex flex-column">
+	<div class="p-4"><i class="fa-solid fa-wind fs-2 text-muted"></i></div>
+	<div class="text-xs fw-semibold text-muted">[[notifications:no_notifs]]</div>
+</li>
 {{{ end }}}
 
 {{{ each notifications }}}

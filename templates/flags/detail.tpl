@@ -14,24 +14,24 @@
 					<i class="fa fa-fw fa-street-view text-primary"></i>
 					[[flags:flagged-user]]
 				</button>
-				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="{config.relative_path}/uid/{target.uid}">[[flags:view-profile]]</a></li>
+				<ul class="dropdown-menu p-1 text-sm">
+					<li><a class="dropdown-item rounded-1" href="{config.relative_path}/uid/{target.uid}">[[flags:view-profile]]</a></li>
 					{{{ if !config.disableChat }}}
-						<li><a class="dropdown-item" href="#" data-action="chat">[[flags:start-new-chat]]</a></li>
+						<li><a class="dropdown-item rounded-1" href="#" data-action="chat">[[flags:start-new-chat]]</a></li>
 					{{{ end }}}
 					<li class="dropdown-divider"></li>
 					{{{ if privileges.ban }}}
-					<li class="{{{ if target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="ban">[[user:ban_account]]</a></li>
-					<li class="{{{ if !target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="unban">[[user:unban_account]]</a></li>
+					<li class="{{{ if target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item rounded-1" href="#" data-action="ban">[[user:ban_account]]</a></li>
+					<li class="{{{ if !target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item rounded-1" href="#" data-action="unban">[[user:unban_account]]</a></li>
 					{{{ end }}}
 					{{{ if privileges.mute}}}
-					<li class="{{{ if target.user.muted }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="mute">[[user:mute_account]]</a></li>
-					<li class="{{{ if !target.user.muted }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="unmute">[[user:unmute_account]]</a></li>
+					<li class="{{{ if target.user.muted }}}hidden{{{ end }}}"><a class="dropdown-item rounded-1" href="#" data-action="mute">[[user:mute_account]]</a></li>
+					<li class="{{{ if !target.user.muted }}}hidden{{{ end }}}"><a class="dropdown-item rounded-1" href="#" data-action="unmute">[[user:unmute_account]]</a></li>
 					{{{ end }}}
 					{{{ if privileges.admin:users }}}
-					<li><a class="dropdown-item" href="#" data-action="delete-account">[[user:delete_account_as_admin]]</a></li>
-					<li><a class="dropdown-item" href="#" data-action="delete-content">[[user:delete_content]]</a></li>
-					<li><a class="dropdown-item" href="#" data-action="delete-all">[[user:delete_all]]</a></li>
+					<li><a class="dropdown-item rounded-1" href="#" data-action="delete-account">[[user:delete_account_as_admin]]</a></li>
+					<li><a class="dropdown-item rounded-1" href="#" data-action="delete-content">[[user:delete_content]]</a></li>
+					<li><a class="dropdown-item rounded-1" href="#" data-action="delete-all">[[user:delete_all]]</a></li>
 					{{{ end }}}
 				</ul>
 			</div>

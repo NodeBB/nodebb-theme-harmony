@@ -16,34 +16,34 @@
 			<span class="d-none d-md-inline fw-semibold">[[topic:ignoring]]</span>
 		</span>
 	</button>
-	<ul class="dropdown-menu">
+	<ul class="dropdown-menu p-1 text-sm">
 		<li>
-			<a class="dropdown-item d-flex" href="#" component="topic/following">
+			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2 p-2" href="#" component="topic/following">
+				<div class="flex-1 d-flex flex-column">
+					<span class="d-flex align-items-center gap-2"><i class="fa fa-fw fa-bell-o"></i><span class="flex-1 fw-semibold">[[topic:watching]]</span></span>
+					<div class="help-text text-muted text-xs">[[topic:watching.description]]</div>
+				</div>
 				<span><i component="topic/following/check" class="fa fa-fw {{{ if isFollowing }}}fa-check{{{ end }}}"></i></span>
-				<div class="d-flex flex-column">
-					<span><i class="fa fa-fw fa-bell-o"></i> [[topic:watching]]</span>
-					<p class="help-text text-muted"><small>[[topic:watching.description]]</small></p>
-				</div>
 			</a>
 		</li>
 
 		<li>
-			<a class="dropdown-item d-flex" href="#" component="topic/not-following">
+			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2 p-2" href="#" component="topic/not-following">
+				<div class="flex-1 d-flex flex-column">
+					<span class="d-flex align-items-center gap-2"><i class="fa fa-fw fa-bell-slash-o"></i><span class="flex-1 fw-semibold">[[topic:not-watching]]</span></span>
+					<div class="help-text text-muted text-xs">[[topic:not-watching.description]]</div>
+				</div>
 				<span><i component="topic/not-following/check" class="fa fa-fw {{{ if isNotFollowing }}}fa-check{{{ end }}}"></i></span>
-				<div class="d-flex flex-column">
-					<span><i class="fa fa-fw fa-bell-slash-o"></i> [[topic:not-watching]]</span>
-					<p class="help-text text-muted"><small>[[topic:not-watching.description]]</small></p>
-				</div>
 			</a>
 		</li>
 
 		<li>
-			<a class="dropdown-item d-flex" href="#" component="topic/ignoring">
-				<span><i component="topic/ignoring/check" class="fa fa-fw {{{ if isIgnoring }}}fa-check{{{ end }}}"></i></span>
-				<div class="d-flex flex-column">
-					<span><i class="fa fa-fw fa-eye-slash"></i> [[topic:ignoring]]</span>
-					<p class="help-text text-muted"><small>[[topic:ignoring.description]]</small></p>
+			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2 p-2" href="#" component="topic/ignoring">
+				<div class="flex-1 d-flex flex-column">
+					<span class="d-flex align-items-center gap-2"><i class="fa fa-fw fa-eye-slash"></i><span class="flex-1 fw-semibold">[[topic:ignoring]]</span></span>
+					<div class="help-text text-muted text-xs">[[topic:ignoring.description]]</div>
 				</div>
+				<span><i component="topic/ignoring/check" class="fa fa-fw {{{ if isIgnoring }}}fa-check{{{ end }}}"></i></span>
 			</a>
 		</li>
 	</ul>

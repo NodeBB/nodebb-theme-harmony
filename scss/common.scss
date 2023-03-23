@@ -1,6 +1,9 @@
 
 body {
 	overflow-y: scroll;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 // fixes chrome font boosting :/ https://stackoverflow.com/questions/13430897/how-to-override-font-boosting-in-mobile-chrome

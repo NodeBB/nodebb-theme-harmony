@@ -77,7 +77,7 @@
 					<button type="button" class="btn btn-light dropdown-toggle flex-0" data-bs-toggle="dropdown">
 						<i class="fa fa-caret-down"></i>
 					</button>
-					<ul class="dropdown-menu dropdown-menu-end" role="menu">
+					<ul class="dropdown-menu dropdown-menu-end p-1 text-sm" role="menu">
 						<li><a class="dropdown-item" href="#" component="account/new-chat">[[user:new_chat_with, {username}]]</a></li>
 					</ul>
 					{{{ end }}}
