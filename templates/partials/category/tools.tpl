@@ -16,7 +16,7 @@
 			</a>
 		</li>
 		<li>
-			<a component="topic/unpin" href="#" class="hidden dropdown-item">
+			<a component="topic/unpin" href="#" class="hidden dropdown-item rounded-1">
 				<i class="fa fa-fw text-muted fa-thumb-tack fa-rotate-90"></i> [[topic:thread_tools.unpin]]
 			</a>
 		</li>
@@ -27,7 +27,7 @@
 			</a>
 		</li>
 		<li>
-			<a component="topic/unlock" href="#" class="hidden dropdown-item" >
+			<a component="topic/unlock" href="#" class="hidden dropdown-item rounded-1" >
 				<i class="fa fa-fw text-muted fa-unlock"></i> [[topic:thread_tools.unlock]]
 			</a>
 		</li>
@@ -60,12 +60,12 @@
 			</a>
 		</li>
 		<li>
-			<a component="topic/restore" href="#" class="hidden dropdown-item">
+			<a component="topic/restore" href="#" class="hidden dropdown-item rounded-1">
 				<i class="fa fa-fw text-muted fa-history"></i> [[topic:thread_tools.restore]]
 			</a>
 		</li>
 		<li>
-			<a component="topic/purge" href="#" class="hidden dropdown-item">
+			<a component="topic/purge" href="#" class="hidden dropdown-item rounded-1">
 				<i class="fa fa-fw text-muted fa-eraser"></i> [[topic:thread_tools.purge]]
 			</a>
 		</li>

@@ -6,7 +6,7 @@
 			<div class="input-group">
 				<input class="form-control" type="text" component="chat/search" data-bs-toggle="dropdown" />
 				<ul component="chat/search/list" class="dropdown-menu">
-					<li><a href="#" class="dropdown-item">[[admin/menu:search.start-typing]]</a></li>
+					<li><a href="#" class="dropdown-item rounded-1">[[admin/menu:search.start-typing]]</a></li>
 				</ul>
 				<button class="btn btn-primary" type="button">
 					<i class="fa fa-search"></i>
