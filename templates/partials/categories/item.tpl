@@ -21,9 +21,9 @@
 				{{{ if !./isSection }}}
 				<span class="category-children-item small">
 					{{{ if ./link }}}
-					<div class="d-flex align-items-center gap-1"><i class="fa fa-fw fa-caret-right text-primary"></i><a href="{./link}" class="text-dark fw-semibold">{./name}</a></div>
+					<div class="d-flex align-items-center gap-1"><i class="fa fa-fw fa-caret-right text-primary"></i><a href="{./link}" class="text-reset fw-semibold">{./name}</a></div>
 					{{{ else }}}
-					<div class="d-flex align-items-center gap-1"><i class="fa fa-fw fa-caret-right text-primary"></i><a href="{config.relative_path}/category/{./slug}" class="text-dark fw-semibold">{./name}</a></div>
+					<div class="d-flex align-items-center gap-1"><i class="fa fa-fw fa-caret-right text-primary"></i><a href="{config.relative_path}/category/{./slug}" class="text-reset fw-semibold">{./name}</a></div>
 					{{{ end }}}
 				</span>
 				{{{ end }}}
