@@ -1,5 +1,5 @@
 <div class="btn-group bottom-sheet{{{ if !filters.length }}} hidden{{{ end }}}">
-	<button type="button" class="btn-ghost-sm d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown">
+	<button type="button" class="btn-ghost-sm d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown">
 		<i class="fa fa-fw fa-filter link-primary"></i>
 		<span class="visible-md-inline visible-lg-inline fw-semibold">{selectedFilter.name}</span>
 	</button>

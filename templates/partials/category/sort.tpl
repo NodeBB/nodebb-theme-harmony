@@ -1,5 +1,5 @@
 <div class="btn-group bottom-sheet" component="thread/sort">
-	<button class="btn-ghost-sm d-flex gap-2 align-items-baseline dropdown-toggle" data-bs-toggle="dropdown" type="button">
+	<button class="btn-ghost-sm d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown" type="button">
 		<i class="fa fa-fw fa-arrow-down-wide-short text-primary"></i>
 		<span class="visible-md-inline visible-lg-inline fw-semibold">[[topic:sort_by]]</span>
 	</button>
