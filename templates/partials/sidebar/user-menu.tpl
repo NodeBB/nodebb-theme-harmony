@@ -12,31 +12,31 @@
 	<li role="presentation" class="dropdown-divider"></li>
 	<li><h6 class="dropdown-header text-xs">[[global:status]]</h6></li>
 	<li>
-		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2" data-status="online">
+		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2 {{{ if user.online }}}selected{{{ end }}}" data-status="online">
 			<span component="user/status" class="badge border border-white border-2 rounded-circle status online"><span class="visually-hidden">[[global:online]]</span></span>
 			<span class="flex-1">[[global:online]]</span>
-			{{{ if user.online }}}<i class="fa-solid fa-check text-muted flex-grow-0"></i>{{{ end }}}
+			<i class="fa-solid fa-check text-muted flex-grow-0"></i>
 		</a>
 	</li>
 	<li>
-		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2" data-status="away">
+		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2 {{{ if user.away }}}selected{{{ end }}}" data-status="away">
 			<span component="user/status" class="badge border border-white border-2 rounded-circle status away"><span class="visually-hidden">[[global:away]]</span></span>
 			<span class="flex-1">[[global:away]]</span>
-			{{{ if user.away}}}<i class="fa-solid fa-check text-muted flex-grow-0"></i>{{{ end }}}
+			<i class="fa-solid fa-check text-muted flex-grow-0"></i>
 		</a>
 	</li>
 	<li>
-		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2" data-status="dnd">
+		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2 {{{ if user.dnd }}}selected{{{ end }}}" data-status="dnd">
 			<span component="user/status" class="badge border border-white border-2 rounded-circle status dnd"><span class="visually-hidden">[[global:dnd]]</span></span>
 			<span class="flex-1">[[global:dnd]]</span>
-			{{{ if user.dnd}}}<i class="fa-solid fa-check text-muted flex-grow-0"></i>{{{ end }}}
+			<i class="fa-solid fa-check text-muted flex-grow-0"></i>
 		</a>
 	</li>
 	<li>
-		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2" data-status="offline">
+		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2 {{{ if user.offline }}}selected{{{ end }}}" data-status="offline">
 			<span component="user/status" class="badge border border-white border-2 rounded-circle status offline"><span class="visually-hidden">[[global:invisible]]</span></span>
 			<span class="flex-1">[[global:invisible]]</span>
-			{{{ if user.offline}}}<i class="fa-solid fa-check text-muted flex-grow-0"></i>{{{ end }}}
+			<i class="fa-solid fa-check text-muted flex-grow-0"></i>
 		</a>
 	</li>
 	<li role="presentation" class="dropdown-divider"></li>
