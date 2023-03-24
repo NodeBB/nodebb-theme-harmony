@@ -26,13 +26,16 @@
 					{{{ end }}}
 				</div>
 				<div class="d-flex flex-column gap-1">
-					<h2 component="topic/header" class="tracking-tight text-break title mb-1 {{{ if showSelect }}}me-4{{{ end }}} me-md-0 text-md text-dark fw-semibold">
-						{{{ if topics.noAnchor }}}
-						<span>{./title}</span>
-						{{{ else }}}
-						<a class="text-reset" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">{./title}</a>
-						{{{ end }}}
-					</h2>
+					<div class="d-flex align-items-center gap-1 mb-1 {{{ if showSelect }}}me-4{{{ end }}} me-md-0">
+						{{{ if ./unread }}}<span class="text-primary text-xs">&#9679;</span>{{{ end }}}
+						<h2 component="topic/header" class="tracking-tight text-break title text-md fw-semibold m-0">
+							{{{ if topics.noAnchor }}}
+							<span>{./title}</span>
+							{{{ else }}}
+							<a class="text-reset" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">{./title}</a>
+							{{{ end }}}
+						</h2>
+					</div>
 					<div class="info d-flex align-items-center flex-wrap">
 						<span component="topic/labels" class="d-flex mb-1">
 							<span component="topic/scheduled" class="me-2 badge border border-gray-300 text-primary {{{ if !./scheduled }}}hidden{{{ end }}}">

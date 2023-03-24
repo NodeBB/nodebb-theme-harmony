@@ -29,9 +29,9 @@
 				<a class="btn-ghost-sm d-none d-lg-flex align-self-stretch" target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss text-primary"></i></a>
 				{{{ end }}}
 
-				<a href="{config.relative_path}{{{ if template.category }}}{url}{{{ else }}}/{selectedFilter.url}{querystring}{{{ end }}}" class="btn btn-secondary btn-sm text-nowrap d-flex align-items-center gap-2 flex-nowrap">
-					<i class="fa-solid fa-rotate-right"></i>
-					<div id="new-topics-alert">Load new posts</div>
+				<a href="{config.relative_path}{{{ if template.category }}}{url}{{{ else }}}/{selectedFilter.url}{querystring}{{{ end }}}" class="btn-ghost-sm fw-semibold text-nowrap d-flex align-items-baseline gap-2 flex-nowrap hide"  id="new-topics-alert">
+					<i class="fa fa-solid fa-rotate-right text-primary"></i>
+					Load new posts
 				</a>
 			</ul>
 
