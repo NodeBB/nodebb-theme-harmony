@@ -51,6 +51,11 @@
 			background-color: $hover-color;
 		}
 	}
+	.nav-item {
+		.dropdown-menu .dropdown-item {
+			@extend .rounded-1;
+		}
+	}
 	#user_dropdown .avatar {
 		margin: 2px 0; // fixes the avatar so its height is same as the icons on right sidebar
 	}

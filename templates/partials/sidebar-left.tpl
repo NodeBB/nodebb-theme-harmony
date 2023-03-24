@@ -19,7 +19,7 @@
 				<span component="navigation/count" class="visible-open badge rounded-1 bg-primary {{{ if !./content }}}hidden{{{ end }}}">{./content}</span>
 			</a>
 			{{{ if ./dropdown }}}
-			<ul class="dropdown-menu shadow">
+			<ul class="dropdown-menu p-1 shadow">
 				{./dropdownContent}
 			</ul>
 			{{{ end }}}
