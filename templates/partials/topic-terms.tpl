@@ -6,7 +6,10 @@
 	<ul class="dropdown-menu p-1 text-sm" role="menu">
 		{{{each terms}}}
 		<li role="presentation" class="category">
-			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menu-item" href="{config.relative_path}/{terms.url}"><i class="fa fa-fw {{{ if terms.selected }}}fa-check{{{ end }}}"></i>{terms.name}</a>
+			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menu-item" href="{config.relative_path}/{terms.url}">
+				<div class="flex-1">{terms.name}</div>
+				<i class="fa fa-fw {{{ if terms.selected }}}fa-check{{{ end }}}"></i>
+			</a>
 		</li>
 		{{{end}}}
 	</ul>

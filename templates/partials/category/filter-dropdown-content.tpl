@@ -13,12 +13,16 @@
 </div>
 <ul component="category/list" class="dropdown-menu p-1 text-sm category-dropdown-menu" role="menu">
     <li role="presentation" class="category" data-cid="all">
-        <a class="dropdown-item rounded-1" role="menu-item" href="{{{ if allCategoriesUrl }}}{config.relative_path}/{allCategoriesUrl}{{{ else }}}#{{{ end }}}"><i component="category/select/icon" class="fa fa-fw fa-check {{{if selectedCategory}}}invisible{{{end}}}"></i> [[unread:all_categories]]</a>
+        <a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menu-item" href="{{{ if allCategoriesUrl }}}{config.relative_path}/{allCategoriesUrl}{{{ else }}}#{{{ end }}}">
+            <div class="flex-1">[[unread:all_categories]]</div>
+            <i component="category/select/icon" class="fa fa-fw fa-check {{{if selectedCategory}}}invisible{{{end}}}"></i>
+        </a>
     </li>
     {{{each categoryItems}}}
     <li role="presentation" class="category {{{ if ../disabledClass }}}disabled{{{ end }}}" data-cid="{../cid}" data-parent-cid="{../parentCid}" data-name="{../name}">
-        <a class="dropdown-item rounded-1" role="menu-item" href="#">{../level}<i component="category/select/icon" class="fa fa-fw fa-check {{{ if !../selected }}}invisible{{{ end }}}"></i>
-            <span component="category-markup" style="{{{ if ../match }}}font-weight: bold;{{{end}}}">
+        <a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menu-item" href="#">
+            {../level}
+            <span component="category-markup" class="flex-1" style="{{{ if ../match }}}font-weight: bold;{{{end}}}">
                 <div class="category-item d-inline-flex align-items-center gap-1">
                     {{{ if ./icon }}}
                     {buildCategoryIcon(@value, "24px", "rounded-circle")}
@@ -26,6 +30,7 @@
                     {./name}
                 </div>
             </span>
+            <i component="category/select/icon" class="fa fa-fw fa-check {{{ if !../selected }}}invisible{{{ end }}}"></i>
         </a>
     </li>
     {{{end}}}
