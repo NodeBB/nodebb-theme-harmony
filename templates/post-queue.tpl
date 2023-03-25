@@ -33,9 +33,11 @@
 		{{{ if !enabled }}}<p>[[post-queue:enabling-help, {config.relative_path}/admin/settings/post#post-queue]]</p>{{{ end }}}
 	</div>
 	{{{ else }}}
-	<div class="alert alert-info d-flex align-items-center">
-		<p class="mb-0 me-auto">[[post-queue:no-single-post]]</p>
-		<a class="btn btn-sm btn-primary" href=".">[[post-queue:back-to-list]]</a>
+	<div class="alert alert-info d-flex align-items-md-center d-flex flex-column flex-md-row">
+		<p class="mb-md-0">[[post-queue:no-single-post]]</p>
+		<div class="d-grid ms-md-auto">
+			<a class="btn btn-sm btn-primary flex-shrink text-nowrap" href=".">[[post-queue:back-to-list]]</a>
+		</div>
 	</div>
 	{{{ end }}}
 	{{{ end }}}
