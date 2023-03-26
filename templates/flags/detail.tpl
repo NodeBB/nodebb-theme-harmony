@@ -114,8 +114,8 @@
 			<div component="flag/content" class="d-flex flex-column gap-1 pb-3 border-bottom">
 				{{{ if type_bool.post }}}
 				<div class="d-flex gap-2">
-					<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(target.user, "16px", true)}</a>
-					<a href="{config.relative_path}/user/{./user.userslug}">{target.user.username}</a>
+					<a href="{config.relative_path}/user/{target.user.userslug}">{buildAvatar(target.user, "16px", true)}</a>
+					<a href="{config.relative_path}/user/{target.user.userslug}">{target.user.username}</a>
 					<span class="timeago text-muted" title="{target.timestampISO}"></span>
 				</div>
 				<blockquote>{target.content}</blockquote>
