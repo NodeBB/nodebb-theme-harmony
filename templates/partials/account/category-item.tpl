@@ -1,14 +1,14 @@
 <li component="categories/category" data-cid="{./cid}" data-parent-cid="{../parentCid}" class="category-{./cid}">
 	<meta itemprop="name" content="{./name}">
-	<div class="content depth-{./depth} d-flex gap-3 py-3">
-		<div class="flex-1 d-flex gap-2">
-			<div class="fs-5">
+	<div class="content depth-{./depth} d-flex gap-2">
+		<div class="flex-1 align-items-start d-flex gap-2">
+			<div>
 				{buildCategoryIcon(@value, "24px", "rounded-1")}
 			</div>
-			<div>
-				<h2 class="title fw-semibold fs-5 m-0 tracking-tight">
+			<div class="d-grid gap-0">
+				<div class="title fw-semibold">
 					<!-- IMPORT partials/categories/link.tpl -->
-				</h2>
+				</div>
 				{{{ if ./descriptionParsed }}}
 				<div class="description text-muted text-xs">{./descriptionParsed}</div>
 				{{{ end }}}
@@ -18,5 +18,5 @@
 			<!-- IMPORT partials/category/watch.tpl -->
 		</div>
 	</div>
-	<hr class="text-muted opacity-25 m-0"/>
+	<hr class="text-muted opacity-25"/>
 </li>
