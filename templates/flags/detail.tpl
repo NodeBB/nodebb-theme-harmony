@@ -83,8 +83,8 @@
 			{{{ end }}}
 			{{{ each history }}}
 			<div class="d-flex flex-column gap-1">
-				<div class="d-flex gap-2">
-					<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "16px", true)}</a>
+				<div class="d-flex gap-2 align-items-center">
+					<a class="d-flex text-decoration-none" href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "16px", true)}</a>
 					<a href="{config.relative_path}/user/{./user.userslug}">{./user.username}</a>
 					<span class="timeago text-muted" title="{./datetimeISO}"></span>
 				</div>
@@ -113,8 +113,8 @@
 			</h2>
 			<div component="flag/content" class="d-flex flex-column gap-1 pb-3 border-bottom">
 				{{{ if type_bool.post }}}
-				<div class="d-flex gap-2">
-					<a href="{config.relative_path}/user/{target.user.userslug}">{buildAvatar(target.user, "16px", true)}</a>
+				<div class="d-flex gap-2 align-items-center">
+					<a class="d-flex text-decoration-none" href="{config.relative_path}/user/{target.user.userslug}">{buildAvatar(target.user, "16px", true)}</a>
 					<a href="{config.relative_path}/user/{target.user.userslug}">{target.user.username}</a>
 					<span class="timeago text-muted" title="{target.timestampISO}"></span>
 				</div>
@@ -138,8 +138,8 @@
 				<ul class="list-unstyled mt-4">
 					{{{ each reports }}}
 					<li class="d-flex flex-column gap-1" component="flag/report" data-timestamp="{./timestamp}">
-						<div class="d-flex gap-2">
-							<a href="{config.relative_path}/user/{./reporter.userslug}">{buildAvatar(./reporter, "16px", true)}</a>
+						<div class="d-flex gap-2 align-items-center">
+							<a class="d-flex text-decoration-none" href="{config.relative_path}/user/{./reporter.userslug}">{buildAvatar(./reporter, "16px", true)}</a>
 							<a href="{config.relative_path}/user/{./reporter.userslug}">{./reporter.username}</a>
 							<span class="timeago text-muted" title="{./timestampISO}"></span>
 						</div>
