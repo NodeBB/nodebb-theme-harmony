@@ -27,7 +27,7 @@
 				</div>
 				<div class="d-flex flex-column gap-1">
 					<div class="d-flex align-items-center gap-1 mb-1 {{{ if showSelect }}}me-4{{{ end }}} me-md-0">
-						{{{ if ./unread }}}<span class="text-primary text-xs">&#9679;</span>{{{ end }}}
+						{{{ if ./unread }}}<span class="text-primary" style="font-size:8px">&#9679;</span>{{{ end }}}
 						<h2 component="topic/header" class="tracking-tight text-break title text-md fw-semibold m-0">
 							{{{ if topics.noAnchor }}}
 							<span>{./title}</span>
