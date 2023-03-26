@@ -1,7 +1,7 @@
 <div class="{{{ if config.theme.stickyToolbar }}}sticky-tools{{{ end }}}">
 	<nav class="navbar navbar-expand my-2 p-0 border-0 rounded topic-main-buttons">
 		<div class="card card-header flex-row p-2 border rounded w-100">
-			<ul class="navbar-nav me-auto gap-2 align-items-center">
+			<ul class="navbar-nav me-auto gap-2 align-items-start">
 				{{{ if loggedIn }}}
 				<button component="topic/mark-unread" class="btn-ghost-sm d-flex gap-2 align-items-center">
 					<i class="fa fa-fw fa-inbox text-primary"></i>
