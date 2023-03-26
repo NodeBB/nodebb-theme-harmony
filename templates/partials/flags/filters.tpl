@@ -13,7 +13,7 @@
 
 
 	<div component="category/dropdown" class="btn-group category-dropdown-container bottom-sheet">
-		<button type="button" class="filter-btn btn btn-light btn-sm border d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown">
+		<button type="button" class="filter-btn btn btn-light btn-sm border d-flex gap-2 dropdown-toggle {{{ if filters.cid }}}active-filter{{{ end }}}" data-bs-toggle="dropdown">
 			{{{ if selectedCategory }}}
 			<span class="category-item d-inline-flex align-items-center gap-1">
 				{buildCategoryIcon(selectedCategory, "18px", "rounded-circle")}
