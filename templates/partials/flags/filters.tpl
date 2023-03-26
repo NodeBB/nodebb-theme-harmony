@@ -11,7 +11,41 @@
 		</ul>
 	</div>
 
-	<!-- IMPORT partials/category/filter-dropdown-left.tpl -->
+
+	<div component="category/dropdown" class="btn-group category-dropdown-container bottom-sheet">
+		<button type="button" class="filter-btn btn btn-light btn-sm border d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown">
+			{{{ if selectedCategory }}}
+			<span class="category-item d-inline-flex align-items-center gap-1">
+				{buildCategoryIcon(selectedCategory, "18px", "rounded-circle")}
+				<span class="visible-md-inline visible-lg-inline">{selectedCategory.name}</span>
+			</span>
+			{{{ else }}}
+			<span class="visible-md-inline visible-lg-inline">[[unread:all_categories]]</span>
+			{{{ end }}}
+			<span class="caret"></span>
+		</button>
+		<div component="category-selector-search" class="hidden position-absolute">
+			<input type="text" class="form-control form-control-sm" autocomplete="off">
+		</div>
+		<ul component="category/list" class="dropdown-menu p-1 text-sm category-dropdown-menu" role="menu">
+			{{{each categoryItems}}}
+			<li role="presentation" class="category {{{ if ../disabledClass }}}disabled{{{ end }}}" data-cid="{../cid}" data-parent-cid="{../parentCid}" data-name="{../name}">
+				<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menu-item" href="#">
+					{../level}
+					<span component="category-markup" class="flex-1" style="{{{ if ../match }}}font-weight: bold;{{{end}}}">
+						<div class="category-item d-inline-flex align-items-center gap-1">
+							{{{ if ./icon }}}
+							{buildCategoryIcon(@value, "24px", "rounded-circle")}
+							{{{ end }}}
+							{./name}
+						</div>
+					</span>
+					<i component="category/select/icon" class="fa fa-fw fa-check {{{ if !../selected }}}invisible{{{ end }}}"></i>
+				</a>
+			</li>
+			{{{end}}}
+		</ul>
+	</div>
 
 	<div class="btn-group bottom-sheet">
 		<a class="filter-btn btn btn-light btn-sm border {{{ if (sort != "newest") }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
