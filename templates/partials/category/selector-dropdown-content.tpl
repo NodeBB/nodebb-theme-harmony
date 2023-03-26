@@ -12,7 +12,7 @@
     </span>
 </button>
 <div component="category-selector-search" class="hidden position-absolute">
-    <input type="text" class="form-control form-control-sm" autocomplete="off">
+    <input type="text" class="form-control form-control-sm" placeholder="[[search:type-to-search]]" autocomplete="off">
 </div>
 <ul component="category/list" class="dropdown-menu p-1 text-sm category-dropdown-menu" role="menu">
     <li component="category/no-matches" role="presentation" class="category hidden">
