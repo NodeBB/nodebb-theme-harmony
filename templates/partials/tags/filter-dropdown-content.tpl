@@ -10,7 +10,7 @@
     {{{ end }}}
 </button>
 <div component="tag/filter/search" class="hidden position-absolute top-0">
-    <input type="text" class="form-control form-control-sm" autocomplete="off">
+    <input type="text" class="form-control form-control-sm" placeholder="[[search:type-to-search]]" autocomplete="off">
 </div>
 <ul component="tag/filter/list" class="dropdown-menu p-1 text-sm overflow-auto" role="menu" style="max-height: 500px;">
     <li role="presentation" data-tag="">
