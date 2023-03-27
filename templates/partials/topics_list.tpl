@@ -8,9 +8,9 @@
 		<meta itemprop="position" content="{./index}" />
 		<a id="{./index}" data-index="{./index}" component="topic/anchor"></a>
 
-		<div class="row py-2">
-			<div class="col-md-7 col-sm-9 col-12 content d-flex">
-				<div class="me-3">
+		<div class="row flex-nowrap gap-2 align-items-start">
+			<div class="content d-flex gap-2 flex-fill">
+				<div class="flex-0">
 					{{{ if ./thumbs.length }}}
 					<div class="topic-thumb">
 						<a href="{./thumbs.0.url}">
@@ -25,7 +25,7 @@
 					</div>
 					{{{ end }}}
 				</div>
-				<div class="d-flex flex-column gap-1">
+				<div class="d-flex flex-column gap-1 flex-fill">
 					<div class="d-flex align-items-start gap-1 mb-1 {{{ if showSelect }}}me-4{{{ end }}} me-md-0">
 						{{{ if ./unread }}}<span class="text-primary mt-1" style="font-size:8px">&#9679;</span>{{{ end }}}
 						<h2 component="topic/header" class="tracking-tight text-break title text-md fw-semibold m-0">
@@ -77,32 +77,26 @@
 				</div>
 			</div>
 
-			<div class="meta row col-md-5 col-sm-3 d-none d-md-flex align-self-stretch align-self-lg-start">
-				<div class="col-lg-5 d-none d-lg-flex stats text-muted gap-2 px-0">
+			<div class="meta d-none d-md-flex flex-0 gap-3">
+				<div class="d-none d-lg-flex stats text-muted gap-2 px-0 align-items-start">
 					{{{ if !reputation:disabled }}}
-					<div class="stats-votes flex-1">
-						<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
-							<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./votes}" data-toFixed="0">{./votes}</span>
-							<span class="text-lowercase text-xs">[[global:votes]]</span>
-						</div>
+					<div class="stats-votes align-items-center card card-header px-1 py-2 border-0 rounded-1" style="min-width:3rem">
+						<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./votes}" data-toFixed="0">{./votes}</span>
+						<span class="text-lowercase text-xs">[[global:votes]]</span>
 					</div>
 					{{{ end }}}
-					<div class="stats-postcount flex-1">
-						<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
-							<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./postcount}" data-toFixed="0">{./postcount}</span>
-							<span class="text-lowercase text-xs">[[global:posts]]</span>
-						</div>
+					<div class="stats-postcount align-items-center card card-header px-1 py-2 border-0 rounded-1" style="min-width:3rem">
+						<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./postcount}" data-toFixed="0">{./postcount}</span>
+						<span class="text-lowercase text-xs">[[global:posts]]</span>
 					</div>
-					<div class="stats-viewcount flex-1">
-						<div class="align-items-center card card-header px-0 py-2 border-0 rounded-1">
-							<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
-							<span class="text-lowercase text-xs">[[global:views]]</span>
-						</div>
+					<div class="stats-viewcount align-items-center card card-header px-1 py-2 border-0 rounded-1" style="min-width:3rem">
+						<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
+						<span class="text-lowercase text-xs">[[global:views]]</span>
 					</div>
 				</div>
 
-				<div class="col-lg-7 col-md-12 teaser d-none d-md-block overflow-hidden" component="topic/teaser">
-					<div class="lastpost background-link-container border-start border-2 h-100" style="border-color: {./category.bgColor}!important;">
+				<div class="teaser d-none d-md-flex overflow-hidden" component="topic/teaser">
+					<div class="lastpost background-link-container border-start border-2 h-100" style="border-color: {./category.bgColor}!important;min-width:8rem">
 						<a class="background-link" href="{config.relative_path}/topic/{./slug}/{./teaser.index}"></a>
 						{{{ if ./unreplied }}}
 						<p class="ps-3 text-xs lh-1">
@@ -125,7 +119,7 @@
 			</div>
 
 			{{{ if showSelect }}}
-			<div class="position-absolute top-0 end-0 w-auto p-0">
+			<div class="flex-0">
 				<i component="topic/select" class="fa fa-square-o fs-5 text-muted pointer"></i>
 			</div>
 			{{{ end }}}
