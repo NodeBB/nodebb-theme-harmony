@@ -31,12 +31,12 @@
 				<div class="flex-fill d-flex gap-3">
 					<div class="content flex-fill d-flex flex-column gap-2">
 						<div class="d-flex gap-1 align-items-start">
-							{{{ if ./unread }}}<span class="text-primary mt-1" style="font-size:8px">&#9679;</span>{{{ end }}}
+							{{{ if ./unread }}}<i class="fa fa-circle text-primary" style="font-size:8px;margin-top:0.45rem"></i>{{{ end }}}
 							<h2 component="topic/header" class="tracking-tight text-break title text-md fw-semibold m-0">
 								{{{ if topics.noAnchor }}}
 								<span>{./title}</span>
 								{{{ else }}}
-								<a class="text-reset" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">{./title}</a>
+								<a class="{{{ if ./unread }}}text-primary{{{ else }}}text-reset{{{ end }}}" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">{./title}</a>
 								{{{ end }}}
 							</h2>
 						</div>
