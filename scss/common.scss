@@ -15,7 +15,10 @@ body * {
 }
 
 .ff-base {
-	font-family: $font-family-base;
+	font-family: $font-family-base !important;
+}
+.ff-sans {
+	font-family: $font-family-sans-serif !important;
 }
 .ff-secondary {
 	font-family: $font-family-secondary;
