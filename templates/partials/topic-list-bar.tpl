@@ -1,7 +1,7 @@
 <div class="{{{ if config.theme.stickyToolbar }}}sticky-tools{{{ end }}} mb-3">
 	<nav class="topic-list-header navbar navbar-expand p-0 border-0 rounded">
-		<div class="card card-header flex-row p-2 gap-1 border rounded w-100">
-			<ul component="category/controls" class="navbar-nav me-auto gap-2 align-items-start">
+		<div class="card card-header flex-row p-2 gap-1 border rounded w-100 align-items-center">
+			<ul component="category/controls" class="navbar-nav me-auto gap-2 align-items-start flex-wrap">
 				{{{ if template.category }}}
 				<!-- IMPORT partials/category/watch.tpl -->
 				<!-- IMPORT partials/tags/filter-dropdown-left.tpl -->
