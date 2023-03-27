@@ -3,6 +3,7 @@
 	<button class="btn-ghost-sm d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown" type="button">
 		<i class="fa fa-fw fa-gear text-primary"></i>
 		<span class="visible-md-inline visible-lg-inline fw-semibold">[[topic:thread_tools.title]]</span>
+		<span class="badge rounded-pill bg-secondary">12</span>
 	</button>
 	<ul class="dropdown-menu p-1 text-sm">
 		<li>
@@ -72,7 +73,9 @@
 
 		{{{each thread_tools}}}
 		<li>
-			<a href="#" class="dropdown-item rounded-1 d-flex align-items-center gap-2 {thread_tools.class}"><i class="fa fa-fw {thread_tools.icon}"></i> {thread_tools.title}</a>
+			<a href="#" class="dropdown-item rounded-1 d-flex align-items-center gap-2 {thread_tools.class}">
+				<i class="fa fa-fw {thread_tools.icon}"></i>
+				{thread_tools.title}</a>
 		</li>
 		{{{end}}}
 	</ul>
