@@ -10,7 +10,7 @@
 
 		<div class="d-flex gap-3 flex-nowrap w-100">
 			
-			<div class="content flex-0 ___thumb">
+			<div class="content flex-0">
 				{{{ if ./thumbs.length }}}
 				<div class="topic-thumb">
 					<a href="{./thumbs.0.url}">
@@ -28,9 +28,9 @@
 
 			<!-- wrapper -->
 			<div class="flex-fill d-grid align-items-start d-xl-flex gap-3">
-				<div class="flex-fill d-flex gap-3 ___title_badges_stats">
-					<div class="content flex-fill ___title_badges d-flex flex-column gap-2">
-						<div class="___title d-flex gap-1 align-items-start">
+				<div class="flex-fill d-flex gap-3">
+					<div class="content flex-fill d-flex flex-column gap-2">
+						<div class="d-flex gap-1 align-items-start">
 							{{{ if ./unread }}}<span class="text-primary mt-1" style="font-size:8px">&#9679;</span>{{{ end }}}
 							<h2 component="topic/header" class="tracking-tight text-break title text-md fw-semibold m-0">
 								{{{ if topics.noAnchor }}}
@@ -40,7 +40,7 @@
 								{{{ end }}}
 							</h2>
 						</div>
-						<div class="info ___badges d-flex flex-wrap gap-1 align-items-center">
+						<div class="info d-flex flex-wrap gap-1 align-items-center">
 							<span component="topic/labels" class="d-flex flex-wrap gap-1">
 								<span component="topic/scheduled" class="badge border border-gray-300 text-primary {{{ if !./scheduled }}}hidden{{{ end }}}">
 									<i class="fa fa-clock-o"></i>
