@@ -3,7 +3,7 @@
 	<button class="btn-ghost-sm d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown" type="button">
 		<i class="fa fa-fw fa-gear text-primary"></i>
 		<span class="visible-md-inline visible-lg-inline fw-semibold">[[topic:thread_tools.title]]</span>
-		<span class="badge rounded-pill bg-secondary">12</span>
+		<span component="topic/selected/badge" class="badge rounded-pill bg-secondary"></span>
 	</button>
 	<ul class="dropdown-menu p-1 text-sm">
 		<li>
