@@ -61,8 +61,6 @@
 							{{{ end }}}
 						</span>
 						{{{ end }}}
-						<span class="hidden-xs text-xs timeago text-muted" title="{./timestampISO}"></span>
-						<span class="visible-xs-inline timeago text-muted text-xs" title="{{{ if ./teaser.timestampISO }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>
 					</div>
 				</div>
 				<div class="meta stats">
