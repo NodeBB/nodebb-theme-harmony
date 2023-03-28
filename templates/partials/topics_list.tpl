@@ -9,7 +9,7 @@
 		<a id="{./index}" data-index="{./index}" component="topic/anchor"></a>
 
 		<div class="d-flex gap-3 flex-nowrap w-100">
-			
+
 			<div class="content flex-0">
 				{{{ if ./thumbs.length }}}
 				<div class="topic-thumb">
@@ -58,7 +58,7 @@
 									<i class="fa fa-arrow-circle-right"></i>
 									[[topic:moved]]
 								</span>
-								{{{each ./icons}}}<span class="me-2">{@value}</span>{{{end}}}
+								{{{each ./icons}}}<span class="lh-1 me-2">{@value}</span>{{{end}}}
 							</span>
 							{{{ if !template.category }}}
 							<a class="lh-1" href="{config.relative_path}/category/{./category.slug}">{function.buildCategoryLabel, ./category, "border"}</a>
@@ -113,7 +113,7 @@
 						{{{ end }}}
 					</div>
 				</div>
-				
+
 			</div><!-- /wrapper -->
 
 			{{{ if showSelect }}}
