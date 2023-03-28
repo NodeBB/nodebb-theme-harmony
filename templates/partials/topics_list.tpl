@@ -68,18 +68,18 @@
 				<div class="meta stats">
 					{{{ if !reputation:disabled }}}
 					<div class="stats-votes card card-header">
-						<i class="fa fa-solid fa-thumbs-up"></i>
+						<i class="fa fa-fw fa-thumbs-up"></i>
 						<span class="human-readable-number ff-secondary" title="{./votes}" data-toFixed="0">{./votes}</span>
 						<span class="text-lowercase text-xs">[[global:votes]]</span>
 					</div>
 					{{{ end }}}
 					<div class="stats-postcount card card-header">
-						<i class="fa fa-solid fa-bars"></i>
+						<i class="fa fa-fw fa-bars"></i>
 						<span class="human-readable-number ff-secondary" title="{./postcount}" data-toFixed="0">{./postcount}</span>
 						<span class="text-lowercase text-xs">[[global:posts]]</span>
 					</div>
 					<div class="stats-viewcount card card-header">
-						<i class="fa fa-solid fa-eye"></i>
+						<i class="fa fa-fw fa-eye"></i>
 						<span class="human-readable-number ff-secondary" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
 						<span class="text-lowercase text-xs">[[global:views]]</span>
 					</div>
@@ -87,7 +87,7 @@
 			</div>
 
 			<div class="meta teaser" component="topic/teaser">
-				<div class="lastpost background-link-container border-start border-2 h-100" style="border-color: {./category.bgColor}!important;">
+				<div class="lastpost background-link-container border-start border-2" style="border-color: {./category.bgColor}!important;">
 					<a class="background-link" href="{config.relative_path}/topic/{./slug}/{./teaser.index}"></a>
 					{{{ if ./unreplied }}}
 					<p class="ps-2 text-xs lh-1">
