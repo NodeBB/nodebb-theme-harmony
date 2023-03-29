@@ -93,6 +93,11 @@ library.defineWidgetAreas = async function (areas) {
 			template: 'global',
 			location: 'sidebar-footer',
 		},
+		{
+			name: 'Brand Header',
+			template: 'global',
+			location: 'brand-header',
+		},
 	]);
 
 	return areas;
