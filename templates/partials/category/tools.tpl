@@ -28,7 +28,7 @@
 			</a>
 		</li>
 		<li>
-			<a component="topic/unlock" href="#" class="hidden dropdown-item rounded-1" >
+			<a component="topic/unlock" href="#" class="hidden dropdown-item rounded-1 d-flex align-items-center gap-2">
 				<i class="fa fa-fw text-muted fa-unlock"></i> [[topic:thread_tools.unlock]]
 			</a>
 		</li>
