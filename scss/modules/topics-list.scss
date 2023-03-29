@@ -129,9 +129,9 @@ ul.topics-list {
 					@include media-breakpoint-up(xl) {
 						-webkit-line-clamp: 2;
 					}
-					* {
-						display: inline !important;
-					}
+					// * {
+					// 	display: inline !important;
+					// }
 				}
 			}
 		}
@@ -147,9 +147,9 @@ ul.topics-list {
 
 	&.narrow {
 		li {
-			.thumb-avatar-box {
-				display: none !important;
-			}
+			// .thumb-avatar-box {
+			// 	display: none !important;
+			// }
 			.wrapper {
 				display: grid !important;
 
