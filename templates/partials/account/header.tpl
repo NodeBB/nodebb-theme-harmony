@@ -94,5 +94,5 @@
 
 	<div class="d-flex flex-column flex-md-row">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
-		<div class="account-content flex-1 ps-md-2 ps-lg-5" style="min-width: 0;">
+		<div class="account-content flex-1 ps-md-2 ps-lg-3 ps-xl-4" style="min-width: 0;">
 
