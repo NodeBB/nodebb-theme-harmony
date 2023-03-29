@@ -32,7 +32,7 @@
 						{{{ end }}}
 					</h2>
 					<div class="info">
-						<span component="topic/labels" class="d-flex flex-wrap gap-1">
+						<span component="topic/labels" class="d-flex flex-wrap gap-1 {{{ if (!./scheduled && (!./pinned && (!./locked && (!./oldCid && !./icons.length)))) }}}hidden{{{ end }}}">
 							<span component="topic/scheduled" class="badge border border-gray-300 text-primary {{{ if !./scheduled }}}hidden{{{ end }}}">
 								<i class="fa fa-clock-o"></i>
 								[[topic:scheduled]]
