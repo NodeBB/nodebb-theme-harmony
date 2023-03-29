@@ -9,13 +9,13 @@
 		<a id="{./index}" data-index="{./index}" component="topic/anchor"></a>
 
 
-		<div class="thumb-box">
+		<div class="thumb-avatar-box">
 			{{{ if ./thumbs.length }}}
-			<a href="{./thumbs.0.url}">
-				<img class="thumb" src="{./thumbs.0.url}"/>
+			<a class="text-decoration-none" href="{./thumbs.0.url}" target="_blank">
+				<img class="topic-thumb rounded-1" width="40" style="height: auto;" src="{./thumbs.0.url}"/>
 			</a>
 			{{{ else }}}
-			<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
+			<a class="text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 				{buildAvatar(./user, "40px", true, "avatar avatar-tooltip")}
 			</a>
 			{{{ end }}}
