@@ -119,6 +119,10 @@
 			opacity: 1;
 		}
 	}
+
+	[component="topic/thumb/list"] {
+		height: calc($font-size-base * 4);
+	}
 }
 
 @include media-breakpoint-up(sm) {
