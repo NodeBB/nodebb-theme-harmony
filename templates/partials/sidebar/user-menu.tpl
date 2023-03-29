@@ -37,8 +37,13 @@
 	</li>
 	<li role="presentation" class="dropdown-divider"></li>
 	<li>
-		<a class="dropdown-item rounded-1" component="header/profilelink/edit" href="{relative_path}/user/{user.userslug}/edit">
-			<i class="fa fa-fw fa-edit"></i> <span>[[user:edit-profile]]</span>
+		<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="{relative_path}/user/{user.userslug}/bookmarks">
+			<i class="fa fa-fw fa-bookmark text-muted"></i> <span>[[user:bookmarks]]</span>
+		</a>
+	</li>
+	<li>
+		<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" component="header/profilelink/edit" href="{relative_path}/user/{user.userslug}/edit">
+			<i class="fa fa-fw fa-edit text-muted"></i> <span>[[user:edit-profile]]</span>
 		</a>
 	</li>
 	<li>
