@@ -91,7 +91,7 @@ ul.topics-list {
 							flex-direction: column;
 							padding: 0.5rem 1rem;
 							gap: 0;
-							min-width:3.6rem;
+							min-height:3.4rem;
 						}
 
 						> i.fa {
@@ -118,20 +118,19 @@ ul.topics-list {
 
 				@include media-breakpoint-up(xl) {
 					width:12rem;
-					min-height: 3.6rem;
+				}
+				
+				> .lastpost {
+					@include media-breakpoint-up(xl) {
+						min-height: 3.4rem;
+					}
 				}
 
 				.post-content {
-					overflow: hidden;
-					display: -webkit-box;
-					-webkit-box-orient: vertical;
-					-webkit-line-clamp: 1;
+					@include line-clamp(1);
 					@include media-breakpoint-up(xl) {
-						-webkit-line-clamp: 2;
+						@include line-clamp(2);
 					}
-					// * {
-					// 	display: inline !important;
-					// }
 				}
 			}
 		}
@@ -147,9 +146,6 @@ ul.topics-list {
 
 	&.narrow {
 		li {
-			// .thumb-avatar-box {
-			// 	display: none !important;
-			// }
 			.wrapper {
 				display: grid !important;
 
