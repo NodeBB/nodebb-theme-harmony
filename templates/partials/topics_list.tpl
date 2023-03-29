@@ -24,7 +24,7 @@
 		<div class="wrapper">
 			<div class="wrapper2">
 				<div class="title_badges">
-					<h2 component="topic/header" class="tracking-tight text-break title text-md fw-semibold m-0">
+					<h2 component="topic/header" class="text-break title text-md fw-semibold m-0">
 						{{{ if topics.noAnchor }}}
 						<span>{./title}</span>
 						{{{ else }}}

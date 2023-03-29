@@ -4,8 +4,10 @@ ul.topics-list {
 	li {
 		display: flex;
 		gap: 1rem;
-		padding: 1.5rem 0;
 		border-bottom: 1px solid $border-color;
+		padding: 0.75rem 0;
+
+		@include media-breakpoint-up(sm) { padding: 1.5rem 0; }
 
 		&.deleted {
 			opacity: 0.6;
@@ -30,21 +32,33 @@ ul.topics-list {
 			flex: 1 1 auto;
 			display: grid;
 			align-items: start;
-			gap: 1rem;
+			gap: 0.5rem;
 
+			@include media-breakpoint-up(sm) { gap: 1rem; }
 			@include media-breakpoint-up(xl) { display: flex; }
 			// @container (min-width: 799px) { display: flex; }
 
 			> .wrapper2 {
 				flex: 1 1 auto;
 				display: flex;
-				gap: 1rem;
+				gap: 0.5rem;
+
+				@include media-breakpoint-up(sm) { gap: 1rem; }
 
 				> .title_badges {
 					flex: 1 1 auto;
 					display: flex;
-					gap: 0.5rem;
 					flex-direction: column;
+					gap: 0.25rem;
+
+					@include media-breakpoint-up(sm) { gap: 0.5rem; }
+
+					> h2 {
+						font-size: 1rem !important;
+						@include media-breakpoint-up(sm) {
+							font-size: 1.125rem !important;
+						}
+					}
 
 					> .info {
 						display: flex;
