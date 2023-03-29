@@ -75,7 +75,10 @@ ul.topics-list {
 					align-items: start;
 					grid-auto-rows: min-content;
 					@include media-breakpoint-up(md) { display: grid; }
-					@include media-breakpoint-up(xl) { display: flex; }
+					@include media-breakpoint-up(xl) { 
+						grid-auto-columns: minmax(0, 1fr);
+						grid-auto-flow: column;
+					 }
 
 					> .card {
 						display: flex;
@@ -89,8 +92,9 @@ ul.topics-list {
 						color: $text-muted;
 						@include media-breakpoint-up(xl) {
 							flex-direction: column;
-							padding: 0.5rem 1rem;
+							padding: 0.5rem;
 							gap: 0;
+							min-width: 4.4rem;
 							min-height:3.4rem;
 						}
 
