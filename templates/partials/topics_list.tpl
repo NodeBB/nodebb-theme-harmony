@@ -61,6 +61,7 @@
 							{{{ end }}}
 						</span>
 						{{{ end }}}
+						<span class="hidden-xs text-xs timeago text-muted" title="{./timestampISO}"></span>
 					</div>
 				</div>
 				<div class="meta stats">
