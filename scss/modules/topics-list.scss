@@ -6,16 +6,16 @@ ul.topics-list, ul.categories-list {
 		padding: 0.5rem 0;
 		margin: 1px 0;
 		display: grid;
-		gap: 0.5rem;
+		gap: 0.25rem 0.5rem;
 		grid-template-columns: 1fr 4.4rem;
-		grid-template-rows: min-content min-content min-content;
+		grid-template-rows: auto;
 		grid-template-areas:
 			"title stats"
 			"info stats"
 			"teaser stats";
 
 		@include media-breakpoint-up(md) { 
-			gap: 1rem;
+			gap: 0.25rem 1rem;
 			padding: 1rem 0; 
 			grid-template-columns: min-content 1fr 4.4rem;
 			grid-template-areas:
@@ -26,7 +26,6 @@ ul.topics-list, ul.categories-list {
 		
 		@include media-breakpoint-up(xl) { 
 			grid-template-columns: min-content 1fr min-content 10rem;
-			grid-template-rows: min-content min-content;
 			grid-template-areas:
 				"avatar title stats teaser"
 				"avatar info stats teaser"
@@ -96,7 +95,7 @@ ul.topics-list, ul.categories-list {
 			grid-area: stats;
             display: grid;
 			gap: 0.25rem;
-            grid-template-rows: min-content min-content min-content;
+            grid-template-rows: auto;
 			@include media-breakpoint-up(xl) {
 				grid-template-columns: 1fr 1fr 1fr;
 			}
