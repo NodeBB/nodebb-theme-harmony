@@ -8,6 +8,7 @@ ul.topics-list, ul.categories-list {
 		display: grid;
 		gap: 0.25rem 0.5rem;
 		grid-template-columns: 1fr 4.4rem;
+		align-items: start;
 		grid-template-rows: auto;
 		grid-template-areas:
 			"title stats"
@@ -95,7 +96,8 @@ ul.topics-list, ul.categories-list {
 			grid-area: stats;
             display: grid;
 			gap: 0.25rem;
-            grid-template-rows: auto;
+			align-items: start;
+            grid-template-rows: min-content;
 			@include media-breakpoint-up(xl) {
 				grid-template-columns: 1fr 1fr 1fr;
 			}
