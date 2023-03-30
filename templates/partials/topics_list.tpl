@@ -49,7 +49,7 @@
 								<i class="fa fa-arrow-circle-right"></i>
 								[[topic:moved]]
 							</span>
-							{{{each ./icons}}}<span class="lh-1 me-2">{@value}</span>{{{end}}}
+							{{{each ./icons}}}<span class="lh-1">{@value}</span>{{{end}}}
 						</span>
 						{{{ if !template.category }}}
 						<a class="lh-1" href="{config.relative_path}/category/{./category.slug}">{function.buildCategoryLabel, ./category, "border"}</a>
