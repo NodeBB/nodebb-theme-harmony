@@ -37,8 +37,8 @@
 						<div class="col-4 ps-0 text-end">
 							<div class="scroller-content">
 								<span class="pointer pagetop">[[topic:first-post]] <i class="fa fa-angle-double-up"></i></span>
-								<div class="scroller-container border-gray-200" style="height: 300px; border-right: 3px solid; margin-right: 5.5px;">
-									<div class="scroller-thumb position-relative text-nowrap" style="height: 40px;right: -6px; padding-right: 15px; margin-right: -15px;">
+								<div class="scroller-container border-gray-200" style="height: 300px;">
+									<div class="scroller-thumb position-relative text-nowrap" style="height: 40px;">
 										<span class="thumb-text text-sm fw-bold user-select-none position-relative pe-2" style="top: -15px;"></span>
 										<div class="rounded-2 scroller-thumb-icon bg-primary d-inline-block position-relative" style="width: 9px; height:40px;"></div>
 									</div>
