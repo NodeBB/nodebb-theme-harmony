@@ -13,7 +13,7 @@
 				</button>
 			</div>
 		</div>
-		<hr class="text-muted opacity-25 my-1">
+		<hr class="my-1">
 		<div component="chat/recent" class="chats-list overflow-auto mb-0 pe-1" data-nextstart="{nextStart}">
 			{{{each rooms}}}
 			<!-- IMPORT partials/chats/recent_room.tpl -->

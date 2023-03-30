@@ -14,6 +14,11 @@ body * {
 	-moz-text-size-adjust: none;
 }
 
+hr {
+    border-top-color: $border-color;
+	opacity: 1;
+}
+
 .ff-base {
 	font-family: $font-family-base !important;
 }
@@ -23,7 +28,7 @@ body * {
 .ff-secondary {
 	font-family: $font-family-secondary;
 }
-.tracking-tight { letter-spacing: -0.025em; }
+.tracking-tight { letter-spacing: -0.02em; }
 
 .caret {
 	&::after {

@@ -18,5 +18,5 @@
 			<!-- IMPORT partials/category/watch.tpl -->
 		</div>
 	</div>
-	<hr class="text-muted opacity-25"/>
+	<hr />
 </li>

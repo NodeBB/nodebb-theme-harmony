@@ -1,4 +1,4 @@
-ul.topics-list {
+ul.topics-list, ul.categories-list {
 
 	li {
 		position: relative;
@@ -67,9 +67,17 @@ ul.topics-list {
 
 		h2.title {
 			grid-area: title;
-			font-size: 1rem !important;
+			font-size: 1.25rem !important;
 			@include media-breakpoint-up(md) {
-				font-size: 1.125rem !important;
+				font-size: 1.5rem !important;
+			}
+		}
+
+		h3.title {
+			grid-area: title;
+			font-size: 1.125rem !important;
+			@include media-breakpoint-up(md) {
+				font-size: 1.25rem !important;
 			}
 		}
 
@@ -79,6 +87,10 @@ ul.topics-list {
 			flex-wrap: wrap;
 			gap: 0.25rem;
 			align-items: center;
+
+			p:last-child {
+				margin: 0 !important;
+			}
 		}
 		.stats {
 			grid-area: stats;

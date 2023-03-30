@@ -43,4 +43,4 @@
 		</div>
 	</div>
 </div>
-<hr class="text-muted opacity-25 my-1" />
+<hr class="my-1" />

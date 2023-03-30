@@ -21,13 +21,13 @@
 			{{{ end }}}
 		</div>
 
-		<h2 component="topic/header" class="title text-break text-md fw-semibold m-0">
+		<h3 component="topic/header" class="title text-break fw-semibold m-0 tracking-tight">
 			{{{ if topics.noAnchor }}}
 			<span>{./title}</span>
 			{{{ else }}}
 			<a class="text-reset" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">{./title}</a>
 			{{{ end }}}
-		</h2>
+		</h3>
 
 		<div class="info">
 			<span component="topic/labels" class="d-flex flex-wrap gap-1 {{{ if (!./scheduled && (!./pinned && (!./locked && (!./oldCid && !./icons.length)))) }}}hidden{{{ end }}}">
@@ -71,7 +71,7 @@
 			</div>
 			{{{ end }}}
 			<div class="stats-postcount card card-header">
-				<i class="fa fa-fw fa-bars"></i>
+				<i class="fa fa-fw fa-message"></i>
 				<span class="human-readable-number ff-secondary" title="{./postcount}" data-toFixed="0">{./postcount}</span>
 				<span class="text-lowercase text-xs">[[global:posts]]</span>
 			</div>
