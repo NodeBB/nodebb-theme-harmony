@@ -1,21 +1,55 @@
 ul.topics-list {
-	position: relative;
+
+	// * {
+	// 	outline: 1px solid rgba(255, 0, 0, 0.06);
+	// 	background-color: rgba(255, 0, 0, 0.03);
+	// }
 
 	li {
-		display: flex;
-		gap: 1rem;
+		position: relative;
 		border-bottom: 1px solid $border-color;
-		padding: 0.75rem 0;
+		padding: 0.5rem 0;
+		margin: 1px 0;
+		display: grid;
+		gap: 0.5rem;
+		grid-template-columns: 1fr 4.4rem;
+		grid-template-rows: min-content min-content min-content;
+		grid-template-areas:
+			"title stats"
+			"info stats"
+			"teaser stats";
 
-		@include media-breakpoint-up(sm) { padding: 1.5rem 0; }
+		@include media-breakpoint-up(md) { 
+			gap: 1rem;
+			padding: 1rem 0; 
+			grid-template-columns: min-content 1fr 4.4rem;
+			grid-template-areas:
+			"avatar title stats"
+			"avatar info stats"
+			"avatar teaser stats"
+		}
+		
+		@include media-breakpoint-up(xl) { 
+			grid-template-columns: min-content 1fr min-content 10rem;
+			grid-template-rows: min-content min-content;
+			grid-template-areas:
+				"avatar title stats teaser"
+				"avatar info stats teaser"
+		}
 
 		&.deleted {
 			opacity: 0.6;
 			.meta { display: none!important; }
+			grid-template-columns: min-content 1fr;
+			grid-template-rows: min-content min-content;
+			grid-template-areas:
+				"avatar title"
+				"avatar info"
 		}
 
 		&.selected {
-			border-color: $primary;
+			outline: 1px solid $primary;
+			border-radius: 4px;
 
 			[component="topic/select"] {
 				color: $primary!important;
@@ -27,125 +61,97 @@ ul.topics-list {
 			color: $link-color;
 		}
 
-		> .thumb-avatar-box {
-			flex: none;
-			display: none;
-			@include media-breakpoint-up(sm) { display: flex; }
+
+		.thumb-avatar-box {
+			grid-area: avatar;
+            min-width: 40px;
+            height: auto;
+            display: none;
+			@include media-breakpoint-up(md) { display: flex; }
 		}
 
-		> .wrapper {
-			flex: 1 1 auto;
-			display: grid;
-			align-items: start;
-			gap: 0.5rem;
+		h2.title {
+			grid-area: title;
+			font-size: 1rem !important;
+			@include media-breakpoint-up(md) {
+				font-size: 1.125rem !important;
+			}
+		}
 
-			@include media-breakpoint-up(sm) { gap: 1rem; }
-			@include media-breakpoint-up(xl) { display: flex; }
-			// @container (min-width: 799px) { display: flex; }
+		.info {
+			grid-area: info;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.25rem;
+			align-items: center;
+		}
+		.stats {
+			grid-area: stats;
+            display: grid;
+			gap: 0.25rem;
+            grid-template-rows: min-content min-content min-content;
+			@include media-breakpoint-up(xl) {
+				grid-template-columns: 1fr 1fr 1fr;
+			}
 
-			> .wrapper2 {
-				flex: 1 1 auto;
+			> .card {
 				display: flex;
+				flex-direction: row;
 				gap: 0.5rem;
-
-				@include media-breakpoint-up(sm) { gap: 1rem; }
-
-				> .title_badges {
-					flex: 1 1 auto;
-					display: flex;
-					flex-direction: column;
-					gap: 0.25rem;
-
-					@include media-breakpoint-up(sm) { gap: 0.5rem; }
-
-					> h2 {
-						font-size: 1rem !important;
-						@include media-breakpoint-up(sm) {
-							font-size: 1.125rem !important;
-						}
-					}
-
-					> .info {
-						display: flex;
-						flex-wrap: wrap;
-						gap: 0.25rem;
-						align-items: center;
-					}
-				}
-
-				> .stats {
-					flex: none;
-					display: none;
-					gap: 0.25rem;
-					align-items: start;
-					grid-auto-rows: min-content;
-					@include media-breakpoint-up(md) { display: grid; }
-					@include media-breakpoint-up(xl) {
-						grid-auto-columns: minmax(0, 1fr);
-						grid-auto-flow: column;
-					 }
-
-					> .card {
-						display: flex;
-						flex-direction: row;
-						gap: 0.5rem;
-						flex-wrap: nowrap;
-						align-items: center;
-						padding: 0.25rem 0.5rem;
-						border: none;
-						border-radius: 4px;
-						color: $text-muted;
-						@include media-breakpoint-up(xl) {
-							flex-direction: column;
-							padding: 0.5rem;
-							gap: 0;
-							min-width: 4.4rem;
-							min-height:3.4rem;
-						}
-
-						> i.fa {
-							display: flex;
-							font-size: 0.75rem;
-							@include media-breakpoint-up(xl) { display: none; }
-						}
-						> .human-readable-number {
-							line-height: 1;
-							font-size: 0.875rem;
-							@include media-breakpoint-up(xl) { font-size: 1.25rem; }
-						}
-						> .text-lowercase {
-							display: none;
-							@include media-breakpoint-up(xl) { display: flex; }
-						}
-					}
-				}
-			}
-
-			> .teaser {
-				flex: none;
-				overflow: hidden;
-
+				flex-wrap: nowrap;
+				align-items: center;
+				padding: 0.25rem 0.5rem;
+				border: none;
+				border-radius: 4px;
+				color: $text-muted;
 				@include media-breakpoint-up(xl) {
-					width:12rem;
+					flex-direction: column;
+					padding: 0.5rem;
+					gap: 0;
+					min-width: 4.4rem;
+					min-height:3.4rem;
 				}
 
-				> .lastpost {
-					@include media-breakpoint-up(xl) {
-						min-height: 3.4rem;
-					}
+				> i.fa {
+					display: flex;
+					font-size: 0.75rem;
+					@include media-breakpoint-up(xl) { display: none; }
 				}
-
-				.post-content {
-					@include line-clamp(1);
-					@include media-breakpoint-up(xl) {
-						@include line-clamp(2);
-					}
+				> .human-readable-number {
+					line-height: 1;
+					font-size: 0.875rem;
+					@include media-breakpoint-up(xl) { font-size: 1.25rem; }
+				}
+				> .text-lowercase {
+					display: none;
+					@include media-breakpoint-up(xl) { display: flex; }
 				}
 			}
 		}
 
-		> .checkbox {
-			flex: none;
+		.teaser {
+			grid-area: teaser;
+
+			.lastpost {
+				@include media-breakpoint-up(xl) { min-height:3.4rem; }
+			}
+
+			.post-content {
+				@include line-clamp(1);
+				@include media-breakpoint-up(xl) {
+					@include line-clamp(2);
+				}
+			}
+		}
+
+		.checkbox {
+			position: absolute;
+			display: grid;
+            left: 2px;
+            top: 0.55rem;
+			@include media-breakpoint-up(md) { 
+				top: 1rem;
+			}
 		}
 
 		.ui-sortable-handle {
@@ -154,19 +160,7 @@ ul.topics-list {
 	}
 
 	&.narrow {
-		li {
-			.wrapper {
-				display: grid !important;
-
-				.teaser {
-					width: auto !important;
-
-					.post-content {
-						-webkit-line-clamp: 1 !important;
-					}
-				}
-			}
-		}
+		// to do
 	}
 }
 
