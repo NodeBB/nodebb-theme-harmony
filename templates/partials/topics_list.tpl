@@ -28,7 +28,7 @@
 						{{{ if topics.noAnchor }}}
 						<span>{./title}</span>
 						{{{ else }}}
-						<a class="{{{ if ./unread }}}text-primary{{{ else }}}text-reset{{{ end }}}" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">{./title}</a>
+						<a class="text-reset" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">{./title}</a>
 						{{{ end }}}
 					</h2>
 					<div class="info">

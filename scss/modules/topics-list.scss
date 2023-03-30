@@ -22,6 +22,11 @@ ul.topics-list {
 			}
 		}
 
+		// all other skins use link-color for unread titles
+		&.unread .title {
+			color: $link-color;
+		}
+
 		> .thumb-avatar-box {
 			flex: none;
 			display: none;
@@ -163,6 +168,9 @@ ul.topics-list {
 			}
 		}
 	}
+}
 
-
+// on default skin use primary color for unread titles
+.skin-noskin ul.topics-list li.unread .title {
+	color: $primary;
 }
