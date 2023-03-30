@@ -117,6 +117,7 @@ ul.topics-list, ul.categories-list {
 					gap: 0;
 					min-width: 4.4rem;
 					min-height:3.4rem;
+					max-height:3.4rem;
 				}
 
 				> i.fa {
@@ -140,7 +141,10 @@ ul.topics-list, ul.categories-list {
 			grid-area: teaser;
 
 			.lastpost {
-				@include media-breakpoint-up(xl) { min-height:3.4rem; }
+				@include media-breakpoint-up(xl) { 
+					min-height:3.4rem; 
+					max-height:3.4rem; 
+				}
 			}
 
 			.post-content {

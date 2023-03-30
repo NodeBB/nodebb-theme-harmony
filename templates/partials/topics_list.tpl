@@ -85,17 +85,17 @@
 			<div class="lastpost background-link-container border-start border-2" style="border-color: {./category.bgColor}!important;">
 				<a class="background-link" href="{config.relative_path}/topic/{./slug}/{./teaser.index}"></a>
 				{{{ if ./unreplied }}}
-				<p class="ps-2 text-xs lh-1">
+				<div class="ps-2 text-xs">
 					[[category:no_replies]]
-				</p>
+				</div>
 				{{{ else }}}
 				{{{ if ./teaser.pid }}}
-				<p class="ps-2 mb-0 lh-1">
+				<div class="ps-2">
 					<a href="{config.relative_path}/user/{./teaser.user.userslug}" class="text-decoration-none">{buildAvatar(./teaser.user, "18px", true, "avatar-tooltip not-responsive")}</a>
 					<a class="permalink text-muted timeago text-xs" href="{config.relative_path}/topic/{./slug}/{./teaser.index}" title="{./teaser.timestampISO}">
 					</a>
-				</p>
-				<div class="post-content text-xs ps-2">
+				</div>
+				<div class="post-content text-xs ps-2 ">
 					{./teaser.content}
 				</div>
 				{{{ end }}}

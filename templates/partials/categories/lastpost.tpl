@@ -1,15 +1,15 @@
-<div class="lastpost background-link-container border-start border-2 h-100" style="border-color: {./bgColor}!important;">
+<div class="lastpost background-link-container border-start border-2" style="border-color: {./bgColor}!important;">
 	{{{ each ./posts }}}
 	{{{ if @first }}}
-	<div component="category/posts" class="ps-3">
+	<div component="category/posts" class="ps-2 text-xs">
 		<a class="background-link" href="{config.relative_path}/topic/{./topic.slug}{{{ if ./index }}}/{./index}{{{ end }}}"></a>
-		<p class="mb-0">
-			<a class="text-decoration-none" href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(posts.user, "20px", true, "avatar-tooltip")}</a>
+		<div>
+			<a class="text-decoration-none" href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(posts.user, "18px", true, "avatar-tooltip")}</a>
 			<a class="permalink text-muted" href="{config.relative_path}/topic/{./topic.slug}{{{ if ./index }}}/{./index}{{{ end }}}">
 				<span class="timeago text-xs" title="{../timestampISO}"></span>
 			</a>
-		</p>
-		<div class="post-content overflow-hidden text-xs line-clamp-2">
+		</div>
+		<div class="post-content text-xs">
 			{./content}
 		</div>
 	</div>
@@ -17,7 +17,7 @@
 	{{{ end }}}
 
 	{{{ if !./posts.length }}}
-	<div component="category/posts" class="ps-3">
+	<div component="category/posts" class="ps-2">
 		<div class="post-content overflow-hidden text-xs">
 			[[category:no_new_posts]]
 		</div>
