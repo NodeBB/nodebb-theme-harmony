@@ -1,4 +1,4 @@
-<ul component="category" class="topics-list list-unstyled {{{ if template.account/topics }}}narrow{{{ end}}}" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
+<ul component="category" class="topics-list list-unstyled {{{ if template.account/topics }}}narrow{{{ end }}}" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
 
 	{{{ each topics }}}
 	<li component="category/topic" class="category-item position-relative {{{ if showSelect }}}ps-4{{{ end }}} {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
