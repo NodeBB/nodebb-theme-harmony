@@ -32,7 +32,7 @@
 			<li role="presentation" class="category {{{ if ../disabledClass }}}disabled{{{ end }}}" data-cid="{../cid}" data-parent-cid="{../parentCid}" data-name="{../name}">
 				<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menu-item" href="#">
 					{../level}
-					<span component="category-markup" class="flex-1" style="{{{ if ../match }}}font-weight: bold;{{{end}}}">
+					<span component="category-markup" class="flex-grow-1" style="{{{ if ../match }}}font-weight: bold;{{{end}}}">
 						<div class="category-item d-inline-flex align-items-center gap-1">
 							{{{ if ./icon }}}
 							{buildCategoryIcon(@value, "24px", "rounded-circle")}
@@ -40,7 +40,7 @@
 							{./name}
 						</div>
 					</span>
-					<i component="category/select/icon" class="fa fa-fw fa-check {{{ if !../selected }}}invisible{{{ end }}}"></i>
+					<i component="category/select/icon" class="flex-shrink-0 fa fa-fw fa-check {{{ if !../selected }}}invisible{{{ end }}}"></i>
 				</a>
 			</li>
 			{{{end}}}

@@ -78,10 +78,10 @@
 								{{{ if ./icons.svg }}}
 								{./icons.svg}
 								{{{ else }}}
-								<i class="{./icons.normal}" style="color:{./color};"></i>
+								<i class="flex-shrink-0 {./icons.normal}" style="color:{./color};"></i>
 								{{{ end }}}
 								{{{ if ./labels.login }}}
-								<div class="flex-1 text-body text-sm">{./labels.login}</div>
+								<div class="flex-grow-1 text-body text-sm">{./labels.login}</div>
 								{{{ end }}}
 							</a></li>
 						{{{ end }}}

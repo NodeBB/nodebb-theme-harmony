@@ -9,8 +9,8 @@
 			<ul class="dropdown-menu p-1 text-sm">
 				{{{each sortOptions }}}
 				<li><a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="{config.relative_path}{./url}">
-					<div class="flex-1">{./name}</div>
-					<i class="fa fa-fw {{{if ./selected}}}fa-check{{{end}}}"></i>
+					<div class="flex-grow-1">{./name}</div>
+					<i class="flex-shrink-0 fa fa-fw {{{if ./selected}}}fa-check{{{end}}}"></i>
 				</a></li>
 				{{{end}}}
 			</ul>

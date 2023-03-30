@@ -14,17 +14,20 @@
 </div>
 <ul component="tag/filter/list" class="dropdown-menu p-1 text-sm overflow-auto" role="menu" style="max-height: 500px;">
     <li role="presentation" data-tag="">
-        <a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menu-item" href="#"><span class="flex-1">[[tags:all-tags]]</span><i component="tag/select/icon" class="fa fa-fw fa-check {{{if selectedTag }}}invisible{{{ end }}}"></i></a>
+        <a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menu-item" href="#">
+            <span class="flex-grow-1">[[tags:all-tags]]</span>
+            <i component="tag/select/icon" class="flex-shrink-0 fa fa-fw fa-check {{{if selectedTag }}}invisible{{{ end }}}"></i>
+        </a>
     </li>
     {{{ each tagItems }}}
     <li role="presentation" data-tag="{./valueEscaped}">
         <a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menu-item" href="#">
-            <span component="tag-markup" class="flex-1">
+            <span component="tag-markup" class="flex-grow-1">
                 <div class="d-inline-flex align-items-center gap-1">
                     {./valueEscaped}
                 </div>
             </span>
-            <i component="tag/select/icon" class="fa fa-fw fa-check {{{ if !./selected }}}invisible{{{ end }}}"></i>
+            <i component="tag/select/icon" class="flex-shrink-0 fa fa-fw fa-check {{{ if !./selected }}}invisible{{{ end }}}"></i>
         </a>
     </li>
     {{{ end }}}

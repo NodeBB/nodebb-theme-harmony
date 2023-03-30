@@ -32,7 +32,7 @@
 		</div>
 
 		<div class="d-flex flex-column flex-md-row mt-1 justify-content-between w-100 gap-2">
-			<div class="d-flex flex-1 flex-row gap-2">
+			<div class="d-flex flex-grow-1 flex-row gap-2">
 				<div class="d-flex flex-column">
 					<h2 class="fullname fw-semibold fs-2 tracking-tight mb-0">{{{ if fullname }}}{fullname}{{{ else }}}{username}{{{ end }}}</h2>
 					<div class="d-flex flex-wrap gap-1 text-sm align-items-center">
@@ -62,7 +62,7 @@
 				</div>
 			</div>
 
-			<div class="d-flex gap-1 align-self-stretch align-self-md-start justify-content-end">
+			<div class="flex-shrink-0 d-flex gap-1 align-self-stretch align-self-md-start justify-content-end">
 				{{{ if loggedIn }}}
 				{{{ if !isSelf }}}
 				<a component="account/unfollow" href="#" class="btn btn-info flex-fill{{{ if !isFollowing }}} hide{{{ end }}}">[[user:unfollow]]</a>
@@ -94,5 +94,5 @@
 
 	<div class="d-flex flex-column flex-md-row">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
-		<div class="account-content flex-1 ps-md-2 ps-lg-3 ps-xl-4" style="min-width: 0;">
+		<div class="account-content flex-grow-1 ps-md-2 ps-lg-3 ps-xl-4" style="min-width: 0;">
 

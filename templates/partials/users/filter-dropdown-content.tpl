@@ -8,15 +8,15 @@
 <ul class="dropdown-menu p-1 text-sm" role="menu">
 	<li role="presentation" class="user {{{ if !selectedUser}}}selected{{{end}}}">
 		<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menu-item" href="{config.relative_path}/{allUsersUrl}">
-			<div class="flex-1">[[users:all-users]]</div>
-			<i class="fa fa-fw {{{ if !selectedUser }}}fa-check{{{ end }}}"></i>
+			<div class="flex-grow-1">[[users:all-users]]</div>
+			<i class="flex-shrink-0 fa fa-fw {{{ if !selectedUser }}}fa-check{{{ end }}}"></i>
 		</a>
 	</li>
 	{{{ each users }}}
 	<li role="presentation" class="user {{{ if ./selected}}}selected{{{end}}}">
 		<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menu-item" href="{config.relative_path}/{./url}">
-			<div class="flex-1 d-inline-flex gap-1 align-items-center">{buildAvatar(@value, "24px", true, "not-responsive")} {./username}</div>
-			<i class="fa fa-fw {{{ if ./selected }}}fa-check{{{ end }}}"></i>
+			<div class="flex-grow-1 d-inline-flex gap-1 align-items-center">{buildAvatar(@value, "24px", true, "not-responsive")} {./username}</div>
+			<i class="flex-shrink-0 fa fa-fw {{{ if ./selected }}}fa-check{{{ end }}}"></i>
 		</a>
 	</li>
 	{{{end}}}

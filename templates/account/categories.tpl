@@ -13,24 +13,24 @@
 			<ul class="dropdown-menu p-1 text-sm dropdown-menu-end">
 				<li><a class="dropdown-item rounded-1 d-flex flex-column p-2" href="#" component="category/watching" data-state="watching">
 						<div class="d-flex align-items-center gap-2">
-							<i class="fa fa-fw fa-inbox"></i>
-							<span class="flex-1 fw-semibold">[[category:watching]]</span>
+							<i class="flex-shrink-0 fa fa-fw fa-inbox"></i>
+							<span class="flex-grow-1 fw-semibold">[[category:watching]]</span>
 						</div>
 						<div class="help-text text-muted text-xs">[[category:watching.description]]</div>
 					</a>
 				</li>
 				<li><a class="dropdown-item rounded-1 d-flex flex-column p-2" href="#" component="category/notwatching" data-state="notwatching">
 						<div class="d-flex align-items-center gap-2">
-							<i class="fa fa-fw fa-clock-o"></i>
-							<span class="flex-1 fw-semibold">[[category:not-watching]]</span>
+							<i class="flex-shrink-0 fa fa-fw fa-clock-o"></i>
+							<span class="flex-grow-1 fw-semibold">[[category:not-watching]]</span>
 						</div>
 						<div class="help-text text-muted text-xs">[[category:not-watching.description]]</div>
 					</a>
 				</li>
 				<li><a class="dropdown-item rounded-1 d-flex flex-column p-2" href="#" component="category/ignoring" data-state="ignoring">
 						<div class="d-flex align-items-center gap-2">
-							<i class="fa fa-fw fa-eye-slash"></i>
-							<span class="flex-1 fw-semibold">[[category:ignoring]]</span>
+							<i class="flex-shrink-0 fa fa-fw fa-eye-slash"></i>
+							<span class="flex-grow-1 fw-semibold">[[category:ignoring]]</span>
 						</div>
 						<div class="help-text text-muted text-xs">[[category:ignoring.description]]</div>
 					</a>

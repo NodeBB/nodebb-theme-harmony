@@ -7,8 +7,8 @@
 		{{{each filters}}}
 		<li role="presentation" class="category {{{if filters.selected}}}selected{{{end}}}">
 			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menu-item" href="{config.relative_path}/{filters.url}">
-				<div class="flex-1">{filters.name}</div>
-				<i class="fa fa-fw {{{ if filters.selected }}}fa-check{{{ end }}}"></i>
+				<div class="flex-grow-1">{filters.name}</div>
+				<i class="flex-shrink-0 fa fa-fw {{{ if filters.selected }}}fa-check{{{ end }}}"></i>
 			</a>
 		</li>
 		{{{end}}}

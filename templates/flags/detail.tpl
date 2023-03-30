@@ -1,7 +1,7 @@
 <!-- IMPORT partials/breadcrumbs.tpl -->
 
 <div class="d-flex flex-column flex-md-row">
-	<div class="d-flex flex-column gap-3 flex-0 border-end-md text-sm mb-3 pe-4" style="flex-basis: 240px !important;">
+	<div class="flex-shrink-0 d-flex flex-column gap-3 border-end-md text-sm mb-3 pe-4" style="flex-basis: 240px !important;">
 		<div class="d-grid gap-1">
 			<a class="btn btn-ghost border btn-sm justify-content-start" href="{config.relative_path}/{type_path}/{targetId}">
 				<i class="fa fa-fw fa-external-link text-primary"></i>
@@ -106,7 +106,7 @@
 			{{{ end }}}
 		</div>
 	</div>
-	<div class="flex-1 ps-md-2 ps-lg-5" style="min-width:0;">
+	<div class="flex-grow-1 ps-md-2 ps-lg-5" style="min-width:0;">
 		<div class="d-flex flex-column gap-4">
 			<h2 class="h6 fw-bold">
 				{target_readable}

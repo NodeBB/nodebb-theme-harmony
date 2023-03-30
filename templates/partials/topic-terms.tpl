@@ -7,8 +7,8 @@
 		{{{each terms}}}
 		<li role="presentation" class="category">
 			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menu-item" href="{config.relative_path}/{terms.url}">
-				<div class="flex-1">{terms.name}</div>
-				<i class="fa fa-fw {{{ if terms.selected }}}fa-check{{{ end }}}"></i>
+				<div class="flex-grow-1">{terms.name}</div>
+				<i class="flex-shrink-0 fa fa-fw {{{ if terms.selected }}}fa-check{{{ end }}}"></i>
 			</a>
 		</li>
 		{{{end}}}

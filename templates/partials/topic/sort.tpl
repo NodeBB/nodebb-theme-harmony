@@ -7,18 +7,18 @@
 	</button>
 	<ul class="dropdown-menu p-1 text-sm">
 		<li><a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="#" class="oldest_to_newest" data-sort="oldest_to_newest">
-			<span class="flex-1">[[topic:oldest_to_newest]]</span>
-			<i class="fa fa-fw"></i> 
+			<span class="flex-grow-1">[[topic:oldest_to_newest]]</span>
+			<i class="flex-shrink-0 fa fa-fw"></i> 
 		</a>
 		</li>
 		<li><a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="#" class="newest_to_oldest" data-sort="newest_to_oldest">
-			<span class="flex-1">[[topic:newest_to_oldest]]</span>
-			<i class="fa fa-fw"></i> 
+			<span class="flex-grow-1">[[topic:newest_to_oldest]]</span>
+			<i class="flex-shrink-0 fa fa-fw"></i> 
 		</a>
 		</li>
 		<li><a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="#" class="most_votes" data-sort="most_votes">
-			<span class="flex-1">[[topic:most_votes]]</span>
-			<i class="fa fa-fw"></i> 
+			<span class="flex-grow-1">[[topic:most_votes]]</span>
+			<i class="flex-shrink-0 fa fa-fw"></i> 
 		</a>
 		</li>
 	</ul>
