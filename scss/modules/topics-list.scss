@@ -114,7 +114,8 @@ ul.topics-list, ul.categories-list {
 					flex-direction: column;
 					padding: 0.5rem;
 					gap: 0;
-					min-width: max-content;
+					width: 5rem;
+					min-width: min-content;
 					min-height:3.4rem;
 					max-height:3.4rem;
 				}
