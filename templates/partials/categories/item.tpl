@@ -1,13 +1,13 @@
-<li component="categories/category" data-cid="{./cid}" class="{{{ if config.hideCategoryLastPost }}}hideCategoryLastPost{{{ end }}} category-{./cid}">
+<li component="categories/category" data-cid="{./cid}" class="position-relative w-100 border-bottom py-3 py-lg-4 d-flex flex-column flex-lg-row  align-items-start gap-2 gap-lg-3 ps-5 category-{./cid}">
 	<meta itemprop="name" content="{./name}">
 	
-	<div class="thumb-avatar-box">
+	<div class="thumb-avatar-box position-absolute top-0 start-0 py-3 py-lg-4">
 	{buildCategoryIcon(@value, "40px", "rounded-1")}
 	</div>
-	<h2 class="title fw-semibold m-0 tracking-tight">
-		<!-- IMPORT partials/categories/link.tpl -->
-	</h2>
-	<div class="info">
+	<div class="flex-grow-1 d-flex flex-wrap gap-2">
+		<h2 class="title text-break fs-4 fw-semibold m-0 tracking-tight w-100">
+			<!-- IMPORT partials/categories/link.tpl -->
+		</h2>
 		{{{ if ./descriptionParsed }}}
 		<div class="description text-muted text-xs">
 			{./descriptionParsed}
@@ -38,23 +38,22 @@
 		{{{ end }}}
 	</div>
 	{{{ if !./link }}}
-	<div class="stats">
-		<div class="card card-header">
-			<i class="fa fa-fw fa-list"></i>
-			<span class="{./unread-class} human-readable-number ff-secondary" title="{./totalTopicCount}" data-toFixed="0">{./totalTopicCount}</span>
-			<span class="text-lowercase text-xs">[[global:topics]]</span>
+		<div class="d-flex col-lg-5 gap-3 align-content-stretch">
+			<div class="stats d-none d-lg-grid col-6 gap-1 text-muted" style="grid-template-columns: 1fr 1fr;">
+				<div class="card card-header border-0 px-0 py-2 rounded-1 d-flex flex-row flex-nowrap flex-lg-column gap-1 gap-lg-0 align-items-center" style="min-width:min-content">
+					<span class="{./unread-class} human-readable-number fs-5 ff-secondary lh-1" title="{./totalTopicCount}" data-toFixed="0">{./totalTopicCount}</span>
+					<span class="text-lowercase text-xs">[[global:topics]]</span>
+				</div>
+				<div class="card card-header border-0 px-0 py-2 rounded-1 d-flex flex-row flex-nowrap flex-lg-column gap-1 gap-lg-0 align-items-center" style="min-width:min-content">
+					<span class="{./unread-class} human-readable-number fs-5 ff-secondary lh-1" title="{./totalPostCount}" data-toFixed="0">{./totalPostCount}</span>
+					<span class="text-lowercase text-xs">[[global:posts]]</span>
+				</div>
+			</div>
+			{{{ if !config.hideCategoryLastPost }}}
+			<div component="topic/teaser" class="teaser col-lg-6">
+				<!-- IMPORT partials/categories/lastpost.tpl -->
+			</div>
+			{{{ end }}}
 		</div>
-		<div class="card card-header">
-			<i class="fa fa-fw fa-message"></i>
-			<span class="{./unread-class} human-readable-number ff-secondary" title="{./totalPostCount}" data-toFixed="0">{./totalPostCount}</span>
-			<span class="text-lowercase text-xs">[[global:posts]]</span>
-		</div>
-		</div>
-
-		{{{ if !config.hideCategoryLastPost }}}
-		<div component="topic/teaser" class="teaser">
-			<!-- IMPORT partials/categories/lastpost.tpl -->
-		</div>
-		{{{ end }}}
-		{{{ end }}}
+	{{{ end }}}
 </li>

@@ -1,4 +1,4 @@
-<div class="lastpost background-link-container border-start border-2" style="border-color: {./bgColor}!important;">
+<div class="lastpost background-link-container border-start border-2 lh-sm h-100" style="border-color: {./bgColor}!important;">
 	{{{ each ./posts }}}
 	{{{ if @first }}}
 	<div component="category/posts" class="ps-2 text-xs">
@@ -9,7 +9,7 @@
 				<span class="timeago text-xs" title="{../timestampISO}"></span>
 			</a>
 		</div>
-		<div class="post-content text-xs">
+		<div class="post-content text-xs line-clamp-2 lh-sm">
 			{./content}
 		</div>
 	</div>

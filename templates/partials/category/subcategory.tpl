@@ -6,7 +6,7 @@
 	<h3 class="fs-6 fw-semibold">[[category:subcategories]]</h3>
 	{{{ end }}}
 
-	<ul component="category/subcategory/container" class="categories-list list-unstyled {{{ if template.account/topics }}}narrow{{{ end }}}" itemscope itemtype="http://www.schema.org/ItemList">
+	<ul component="category/subcategory/container" class="categories-list list-unstyled" itemscope itemtype="http://www.schema.org/ItemList">
 		<hr class="text-muted"/>
 		{{{each children}}}
 		<!-- IMPORT partials/categories/item.tpl -->
