@@ -1,4 +1,4 @@
-<li component="categories/category" data-cid="{./cid}" class="w-100 border-bottom py-3 py-lg-4 gap-2 d-flex flex-column flex-lg-row align-items-start category-{./cid}">
+<li component="categories/category" data-cid="{./cid}" class="w-100 border-bottom py-3 py-lg-4 row row-gap-1 d-flex flex-column flex-lg-row align-items-start category-{./cid}">
 	<meta itemprop="name" content="{./name}">
 	
 	<div class="d-flex col-lg-7 gap-2 gap-lg-3">
@@ -10,13 +10,13 @@
 				<!-- IMPORT partials/categories/link.tpl -->
 			</h2>
 			{{{ if ./descriptionParsed }}}
-			<div class="description text-muted text-xs">
+			<div class="description text-muted text-xs w-100">
 				{./descriptionParsed}
 			</div>
 			{{{ end }}}
 			{{{ if !config.hideSubCategories }}}
 			{{{ if ./children.length }}}
-			<div class="category-children row row-cols-2 g-2 my-1">
+			<div class="category-children row row-cols-2 g-2 my-1 w-100">
 				{{{ each ./children }}}
 				{{{ if !./isSection }}}
 				<span class="category-children-item small">
