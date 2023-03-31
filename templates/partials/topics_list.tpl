@@ -1,7 +1,7 @@
 <ul component="category" class="topics-list list-unstyled" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
 
 	{{{ each topics }}}
-	<li component="category/topic" class="category-item w-100 border-bottom py-3 py-lg-4 d-flex flex-column flex-lg-row align-items-start gap-2 gap-lg-3 {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
+	<li component="category/topic" class="category-item w-100 border-bottom py-3 py-lg-4 gap-2 d-flex flex-column flex-lg-row align-items-start {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
 		<link itemprop="url" content="{config.relative_path}/topic/{./slug}" />
 		<meta itemprop="name" content="{function.stripTags, ./title}" />
 		<meta itemprop="itemListOrder" content="descending" />
@@ -29,7 +29,7 @@
 					<a class="text-reset" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">{./title}</a>
 					{{{ end }}}
 				</h3>
-				<span component="topic/labels" class="d-flex flex-wrap gap-1 {{{ if (!./scheduled && (!./pinned && (!./locked && (!./oldCid && !./icons.length)))) }}}hidden{{{ end }}}">
+				<span component="topic/labels" class="d-flex flex-wrap gap-1">
 					<span component="topic/scheduled" class="badge border border-gray-300 text-primary {{{ if !./scheduled }}}hidden{{{ end }}}">
 						<i class="fa fa-clock-o"></i>
 						[[topic:scheduled]]
@@ -47,37 +47,39 @@
 						[[topic:moved]]
 					</span>
 					{{{each ./icons}}}<span class="lh-1">{@value}</span>{{{end}}}
-				</span>
-				{{{ if !template.category }}}
-				<a class="lh-1" href="{config.relative_path}/category/{./category.slug}">{function.buildCategoryLabel, ./category, "border"}</a>
-				{{{ end }}}
-				{{{ if ./tags.length }}}
-				<span class="lh-1 tag-list hidden-xs d-flex flex-wrap gap-1">
-					{{{ each ./tags }}}
-					<a href="{config.relative_path}/tags/{./valueEncoded}"><span class="badge border border-gray-300 text-xs text-muted fw-normal tag tag-class-{./class}" data-tag="{./value}">{./valueEscaped}</span></a>
+					{{{ if !template.category }}}
+					<a class="lh-1" href="{config.relative_path}/category/{./category.slug}">{function.buildCategoryLabel, ./category, "border"}</a>
 					{{{ end }}}
+					{{{ if ./tags.length }}}
+					<span class="lh-1 tag-list hidden-xs d-flex flex-wrap gap-1">
+						{{{ each ./tags }}}
+						<a href="{config.relative_path}/tags/{./valueEncoded}"><span class="badge border border-gray-300 text-muted fw-normal tag tag-class-{./class}" data-tag="{./value}">{./valueEscaped}</span></a>
+						{{{ end }}}
+					</span>
+					{{{ end }}}
+					<span class="hidden-xs badge bg-transparent text-muted fw-normal timeago" title="{./timestampISO}"></span>
 				</span>
-				{{{ end }}}
-				<span class="hidden-xs badge bg-transparent text-muted text-xs fw-normal timeago" title="{./timestampISO}"></span>
-				<!-- <span class="hidden-xs text-xs timeago text-muted" title="{./timestampISO}"></span> -->
 			</div>
 		</div>
 
-		<div class="d-flex col-lg-5 gap-3 align-content-stretch">
-			<div class="meta stats d-none d-lg-grid col-6 gap-1 text-muted" style="grid-template-columns: 1fr 1fr 1fr;">
+		<div class="d-flex col-lg-5 align-content-stretch">
+			<div class="meta stats d-none d-lg-grid col-6 gap-1 pe-2 text-muted" style="grid-template-columns: 1fr 1fr 1fr;">
 				{{{ if !reputation:disabled }}}
-				<div class="stats-votes card card-header border-0 px-0 py-2 rounded-1 d-flex flex-row flex-nowrap flex-lg-column gap-1 gap-lg-0 align-items-center" style="min-width:min-content">
+				<div class="stats-votes card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-row flex-nowrap flex-xl-column gap-1 gap-xl-0 align-items-center">
+					<i class="d-xl-none fa fa-fw text-xs text-muted fa-chevron-up"></i>
 					<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./votes}" data-toFixed="0">{./votes}</span>
-					<span class="text-lowercase text-xs">[[global:votes]]</span>
+					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:votes]]</span>
 				</div>
 				{{{ end }}}
-				<div class="stats-postcount card card-header border-0 px-0 py-2 rounded-1 d-flex flex-row flex-nowrap flex-lg-column gap-1 gap-lg-0 align-items-center" style="min-width:min-content">
+				<div class="stats-postcount card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-row flex-nowrap flex-xl-column gap-1 gap-xl-0 align-items-center">
+					<i class="d-xl-none fa fa-fw text-xs text-muted fa-message"></i>
 					<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./postcount}" data-toFixed="0">{./postcount}</span>
-					<span class="text-lowercase text-xs">[[global:posts]]</span>
+					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:posts]]</span>
 				</div>
-				<div class="stats-viewcount card card-header border-0 px-0 py-2 rounded-1 d-flex flex-row flex-nowrap flex-lg-column gap-1 gap-lg-0 align-items-center" style="min-width:min-content">
+				<div class="stats-viewcount card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-row flex-nowrap flex-xl-column gap-1 gap-xl-0 align-items-center">
+					<i class="d-xl-none fa fa-fw text-xs text-muted fa-eye"></i>
 					<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
-					<span class="text-lowercase text-xs">[[global:views]]</span>
+					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:views]]</span>
 				</div>
 			</div>
 			<div component="topic/teaser" class="meta teaser col-lg-6">
