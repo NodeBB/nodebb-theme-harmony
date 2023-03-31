@@ -23,6 +23,9 @@ ul.topics-list, ul.categories-list {
 		.ui-sortable-handle {
 			cursor: move;
 		}
+
+		// if only one thumb don't display
+		[data-numthumbs="1"] { display: none; }
 	}
 }
 
