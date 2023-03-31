@@ -1,7 +1,7 @@
 <ul component="category" class="topics-list list-unstyled" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
 
 	{{{ each topics }}}
-	<li component="category/topic" class="category-item position-relative w-100 border-bottom py-3 py-lg-4 row gy-1 gy-xl-0 d-flex flex-column flex-lg-row align-items-start {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
+	<li component="category/topic" class="category-item position-relative w-100 border-bottom py-3 py-lg-4 gap-1 d-flex flex-column flex-lg-row align-items-start {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
 		<link itemprop="url" content="{config.relative_path}/topic/{./slug}" />
 		<meta itemprop="name" content="{function.stripTags, ./title}" />
 		<meta itemprop="itemListOrder" content="descending" />
@@ -9,17 +9,11 @@
 		<a id="{./index}" data-index="{./index}" component="topic/anchor" class="position-absolute"></a>
 
 
-		<div class="d-flex col-lg-7 gap-2 gap-lg-3">
+		<div class="d-flex p-0 col-lg-7 gap-2 gap-lg-3">
 			<div class="flex-shrink-0">
-				{{{ if ./thumbs.length }}}
-				<a class="text-decoration-none" href="{./thumbs.0.url}" target="_blank">
-					<img class="topic-thumb rounded-1" width="80" style="height: auto;" src="{./thumbs.0.url}"/>
-				</a>
-				{{{ else }}}
 				<a class="text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 					{buildAvatar(./user, "40px", true, "avatar avatar-tooltip")}
 				</a>
-				{{{ end }}}
 			</div>
 			<div class="flex-grow-1 d-flex flex-wrap gap-1">
 				<h3 component="topic/header" class="title text-break fs-5 fw-semibold m-0 tracking-tight w-100">
@@ -60,9 +54,14 @@
 					<span class="hidden-xs badge bg-transparent text-muted fw-normal timeago" title="{./timestampISO}"></span>
 				</span>
 			</div>
+			{{{ if ./thumbs.length }}}
+			<a class="text-decoration-none flex-shrink-0 d-none d-xl-block" href="{./thumbs.0.url}" target="_blank">
+				<img class="topic-thumb rounded-1" width="80" style="height: auto;" src="{./thumbs.0.url}"/>
+			</a>
+			{{{ end }}}
 		</div>
 
-		<div class="d-flex col-lg-5 align-content-stretch">
+		<div class="d-flex p-0 col-lg-5 align-content-stretch">
 			<div class="meta stats d-none d-lg-grid col-6 gap-1 pe-2 text-muted" style="grid-template-columns: 1fr 1fr 1fr;">
 				{{{ if !reputation:disabled }}}
 				<div class="stats-votes card card-header border-0 p-1 overflow-hidden rounded-1 d-flex flex-column gap-1 align-items-center">
