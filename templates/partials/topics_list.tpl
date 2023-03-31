@@ -57,7 +57,7 @@
 			{{{ if ./thumbs.length }}}
 			<a class="me-2 position-relative text-decoration-none flex-shrink-0 d-none d-xl-block" href="{./thumbs.0.url}" target="_blank">
 				<img class="topic-thumb rounded-1" width="80" style="height: auto;" src="{./thumbs.0.url}"/>
-				<span data-numthumbs="{./thumbs.length}" class="position-absolute top-0 start-100 translate-middle badge rounded bg-info">{./thumbs.length}</span>
+				<span data-numthumbs="{./thumbs.length}" class="px-1 position-absolute top-0 start-100 translate-middle badge rounded bg-info">+{increment(./thumbs.length, "-1")}</span>
 			</a>
 			{{{ end }}}
 		</div>
