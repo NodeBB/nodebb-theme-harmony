@@ -106,7 +106,7 @@
 		</div>
 
 		{{{ if showSelect }}}
-		<div class="checkbox position-absolute top-0 end-0">
+		<div class="checkbox position-absolute top-0 end-0 p-1 m-0 d-flex" style="max-width:max-content">
 			<i component="topic/select" class="fa fa-square-o text-muted pointer"></i>
 		</div>
 		{{{ end }}}
