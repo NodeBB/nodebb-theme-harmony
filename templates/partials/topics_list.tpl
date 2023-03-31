@@ -1,7 +1,7 @@
 <ul component="category" class="topics-list list-unstyled" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
 
 	{{{ each topics }}}
-	<li component="category/topic" class="category-item w-100 border-bottom py-3 py-lg-4 row row-gap-1 d-flex flex-column flex-lg-row align-items-start {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
+	<li component="category/topic" class="category-item w-100 border-bottom py-3 py-lg-4 row gy-1 d-flex flex-column flex-lg-row align-items-start {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
 		<link itemprop="url" content="{config.relative_path}/topic/{./slug}" />
 		<meta itemprop="name" content="{function.stripTags, ./title}" />
 		<meta itemprop="itemListOrder" content="descending" />
@@ -65,21 +65,21 @@
 		<div class="d-flex col-lg-5 align-content-stretch">
 			<div class="meta stats d-none d-lg-grid col-6 gap-1 pe-2 text-muted" style="grid-template-columns: 1fr 1fr 1fr;">
 				{{{ if !reputation:disabled }}}
-				<div class="stats-votes card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-row flex-nowrap flex-xl-column gap-1 gap-xl-0 align-items-center">
-					<i class="d-xl-none fa fa-fw text-xs text-muted fa-chevron-up"></i>
+				<div class="stats-votes card card-header border-0 p-1 overflow-hidden rounded-1 d-flex flex-column gap-1 align-items-center">
 					<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./votes}" data-toFixed="0">{./votes}</span>
 					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:votes]]</span>
+					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-chevron-up"></i>
 				</div>
 				{{{ end }}}
-				<div class="stats-postcount card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-row flex-nowrap flex-xl-column gap-1 gap-xl-0 align-items-center">
-					<i class="d-xl-none fa fa-fw text-xs text-muted fa-message"></i>
+				<div class="stats-postcount card card-header border-0 p-1 overflow-hidden rounded-1 d-flex flex-column gap-1 align-items-center">
 					<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./postcount}" data-toFixed="0">{./postcount}</span>
 					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:posts]]</span>
+					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-message"></i>
 				</div>
-				<div class="stats-viewcount card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-row flex-nowrap flex-xl-column gap-1 gap-xl-0 align-items-center">
-					<i class="d-xl-none fa fa-fw text-xs text-muted fa-eye"></i>
+				<div class="stats-viewcount card card-header border-0 p-1 overflow-hidden rounded-1 d-flex flex-column gap-1 align-items-center">
 					<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
 					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:views]]</span>
+					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-eye"></i>
 				</div>
 			</div>
 			<div component="topic/teaser" class="meta teaser col-lg-6">
