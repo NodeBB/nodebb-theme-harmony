@@ -65,18 +65,18 @@
 		<div class="d-flex p-0 col-lg-5 align-content-stretch">
 			<div class="meta stats d-none d-lg-grid col-6 gap-1 pe-2 text-muted" style="grid-template-columns: 1fr 1fr 1fr;">
 				{{{ if !reputation:disabled }}}
-				<div class="stats-votes card card-header border-0 p-1 overflow-hidden rounded-1 d-flex flex-column gap-1 align-items-center">
+				<div class="stats-votes card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-column align-items-center">
 					<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./votes}" data-toFixed="0">{./votes}</span>
 					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:votes]]</span>
 					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-chevron-up"></i>
 				</div>
 				{{{ end }}}
-				<div class="stats-postcount card card-header border-0 p-1 overflow-hidden rounded-1 d-flex flex-column gap-1 align-items-center">
+				<div class="stats-postcount card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-column align-items-center">
 					<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./postcount}" data-toFixed="0">{./postcount}</span>
 					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:posts]]</span>
 					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-message"></i>
 				</div>
-				<div class="stats-viewcount card card-header border-0 p-1 overflow-hidden rounded-1 d-flex flex-column gap-1 align-items-center">
+				<div class="stats-viewcount card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-column align-items-center">
 					<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
 					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:views]]</span>
 					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-eye"></i>
