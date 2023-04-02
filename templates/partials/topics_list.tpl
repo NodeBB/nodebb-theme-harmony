@@ -21,7 +21,7 @@
 				{{{ end }}}
 			</div>
 			<div class="flex-grow-1 d-flex flex-wrap gap-1">
-				<h3 component="topic/header" class="title text-break fs-5 fw-semibold m-0 tracking-tight w-100">
+				<h3 component="topic/header" class="title text-break fs-5 fw-semibold m-0 tracking-tight w-100 {{{ if showSelect }}}me-4 me-lg-0{{{ end }}}">
 					{{{ if topics.noAnchor }}}
 					<span>{./title}</span>
 					{{{ else }}}
