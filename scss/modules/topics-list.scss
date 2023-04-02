@@ -6,9 +6,9 @@ ul.topics-list, ul.categories-list {
 		}
 
 		&.selected {
-			outline: 1px solid $primary;
+			background-color: mix($body-bg, $body-color, 90%);
 			[component="topic/select"] {
-				color: $primary!important;
+				color: $success!important;
 			}
 		}
 		p {

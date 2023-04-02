@@ -10,10 +10,15 @@
 
 
 		<div class="d-flex p-0 col-lg-7 gap-2 gap-lg-3 align-items-start">
-			<div class="flex-shrink-0">
+			<div class="flex-shrink-0 position-relative">
 				<a class="text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 					{buildAvatar(./user, "40px", true, "avatar avatar-tooltip")}
 				</a>
+				{{{ if showSelect }}}
+				<div class="checkbox position-absolute top-100 start-50 translate-middle-x p-1 m-0 d-flex" style="max-width:max-content">
+					<i component="topic/select" class="fa text-muted pointer fa-square-o"></i>
+				</div>
+				{{{ end }}}
 			</div>
 			<div class="flex-grow-1 d-flex flex-wrap gap-1">
 				<h3 component="topic/header" class="title text-break fs-5 fw-semibold m-0 tracking-tight w-100">
@@ -57,7 +62,7 @@
 			{{{ if ./thumbs.length }}}
 			<a class="position-relative text-decoration-none flex-shrink-0 d-none d-xl-block" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">
 				<img class="topic-thumb rounded-1" style="width:auto;height: 3.33rem;" src="{./thumbs.0.url}"/>
-				<span data-numthumbs="{./thumbs.length}" class="px-1 position-absolute top-0 start-100 translate-middle badge rounded bg-info">+{increment(./thumbs.length, "-1")}</span>
+				<span data-numthumbs="{./thumbs.length}" class="px-1 position-absolute top-0 start-100 translate-middle badge rounded bg-info" style="z-index: 1;">+{increment(./thumbs.length, "-1")}</span>
 			</a>
 			{{{ end }}}
 		</div>
@@ -104,13 +109,6 @@
 				</div>
 			</div>
 		</div>
-
-		{{{ if showSelect }}}
-		<div class="checkbox position-absolute top-0 end-0 p-1 m-0 d-flex" style="max-width:max-content">
-			<i component="topic/select" class="fa fa-square-o text-muted pointer"></i>
-		</div>
-		{{{ end }}}
 	</li>
 	{{{end}}}
-
 </ul>
