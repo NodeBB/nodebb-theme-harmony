@@ -1,32 +1,35 @@
-.topic-list {
-	overflow-x: hidden!important;
+ul.topics-list, ul.categories-list {
+	li {
+		&.deleted {
+			opacity: 0.6;
+			.meta { display: none!important; }
+		}
+
+		&.selected {
+			background-color: mix($body-bg, $body-color, 90%);
+			[component="topic/select"] {
+				color: $success!important;
+			}
+		}
+		p {
+			margin: 0 !important;
+		}
+
+		// all other skins use link-color for unread titles
+		&.unread .title {
+			color: $link-color;
+		}
+
+		.ui-sortable-handle {
+			cursor: move;
+		}
+
+		// if only one thumb don't display
+		[data-numthumbs="1"] { display: none; }
+	}
 }
 
-[component="category/topic"] {
-	&.deleted {
-		opacity: 0.6;
-		.meta { display: none!important; }
-	}
-
-	&.selected {
-		[component="topic/select"] {
-			color: $success!important;
-		}
-	}
-	.lastpost .post-content {
-		p { margin-bottom: 0; }
-	}
-
-	&.unread .title {
-		color: $link-color;
-	}
-
-	.ui-sortable-handle {
-		cursor: move;
-	}
-
-	.topic-thumb img {
-		width: 80px;
-		height: auto;
-	}
+// on default skin use primary color for unread titles
+.skin-noskin ul.topics-list li.unread .title {
+	color: $primary;
 }

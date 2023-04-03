@@ -1,7 +1,7 @@
 <div class="search">
 	<div id="advanced-search" class="d-flex flex-column flex-md-row">
 		<!-- sidebar -->
-		<div class="flex-0 pe-2 border-end-md text-sm mb-3" style="flex-basis: 240px!important;">
+		<div class="flex-shrink-0 pe-2 border-end-md text-sm mb-3" style="flex-basis: 240px!important;">
 			<form action="{config.relative_path}/search" method="get" class="nav sticky-md-top d-flex flex-row flex-md-column flex-wrap gap-3 pe-md-3" style="top: 1rem; z-index: 1;">
 				<h2 class="fw-semibold tracking-tight mb-0">[[global:search]]</h2>
 
@@ -35,7 +35,7 @@
 		</div>
 
 		<!-- filters and search results -->
-		<div class="flex-1 ps-md-2 ps-lg-5" style="min-width:0;">
+		<div class="flex-grow-1 ps-md-2 ps-lg-5" style="min-width:0;">
 			<div class="d-flex flex-column gap-3">
 				<!-- IMPORT partials/search-filters.tpl -->
 				<!-- IMPORT partials/search-results.tpl -->

@@ -3,16 +3,13 @@
 	{{widgets.header.html}}
 	{{{ end }}}
 </div>
-<div class="row">
+<div class="row py-2">
 	<div class="{{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		{{{ if pagination.pages.length }}}
 		<div><!-- IMPORT partials/category/selector-dropdown-left.tpl --></div>
 		{{{ end }}}
-		<ul class="categories list-unstyled" itemscope itemtype="http://www.schema.org/ItemList">
+		<ul class="categories-list list-unstyled" itemscope itemtype="http://www.schema.org/ItemList">
 			{{{ each categories }}}
-			{{{ if !@first }}}
-			<hr class="text-muted opacity-25"/>
-			{{{ end }}}
 			<!-- IMPORT partials/categories/item.tpl -->
 			{{{ end }}}
 		</ul>

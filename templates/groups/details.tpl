@@ -44,7 +44,7 @@
 		</div>
 		<!-- IMPORT partials/groups/sidebar-left.tpl -->
 
-		<div class="flex-1 ps-md-2 ps-lg-5" style="min-width:0;">
+		<div class="flex-grow-1 ps-md-2 ps-lg-5" style="min-width:0;">
 			<div class="tab-content">
 				<div class="tab-pane fade show active" id="groups-posts" role="tabpanel">
 					<h3 class="fw-semibold fs-5 mb-0">[[global:posts]]</h3>

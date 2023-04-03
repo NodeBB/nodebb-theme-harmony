@@ -1,7 +1,7 @@
 <div class="{{{ if config.theme.stickyToolbar }}}sticky-tools{{{ end }}} mb-3">
 	<nav class="topic-list-header navbar navbar-expand p-0 border-0 rounded">
-		<div class="card card-header flex-row p-2 gap-1 border rounded w-100">
-			<ul component="category/controls" class="navbar-nav me-auto gap-2 align-items-center">
+		<div class="card card-header flex-row p-2 gap-1 border rounded w-100 align-items-center">
+			<ul component="category/controls" class="navbar-nav me-auto gap-2 align-items-start flex-wrap">
 				{{{ if template.category }}}
 				<!-- IMPORT partials/category/watch.tpl -->
 				<!-- IMPORT partials/tags/filter-dropdown-left.tpl -->
@@ -29,8 +29,8 @@
 				<a class="btn-ghost-sm d-none d-lg-flex align-self-stretch" target="_blank" href="{rssFeedUrl}" itemprop="item"><i class="fa fa-rss text-primary"></i></a>
 				{{{ end }}}
 
-				<a href="{config.relative_path}{{{ if template.category }}}{url}{{{ else }}}/{selectedFilter.url}{querystring}{{{ end }}}" class="d-inline-block text-decoration-none">
-					<div class="d-md-block alert alert-warning h-100 m-0 px-2 py-1 line-clamp-2 text-sm text-break hide" id="new-topics-alert">There is a new post. Click here to reload.</div>
+				<a href="{config.relative_path}{{{ if template.category }}}{url}{{{ else }}}/{selectedFilter.url}{querystring}{{{ end }}}" class="btn btn-secondary fw-semibold position-absolute top-100 translate-middle-x start-50 mt-1 hide" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" id="new-topics-alert">
+					<i class="fa fa-fw fa-arrow-up"></i> [[recent:load-new-posts]]
 				</a>
 			</ul>
 

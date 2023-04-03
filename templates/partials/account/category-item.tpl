@@ -1,25 +1,22 @@
-<li component="categories/category" data-cid="{./cid}" data-parent-cid="{../parentCid}" class="row category-{./cid} mb-4">
+<li component="categories/category" data-cid="{./cid}" data-parent-cid="{../parentCid}" class="category-{./cid}">
 	<meta itemprop="name" content="{./name}">
-	<div class="content col-10 depth-{./depth}">
-		<div class="d-flex">
-			<div class="fs-3">
-				{buildCategoryIcon(@value, "40px", "rounded-1")}
+	<div class="content depth-{./depth} d-flex gap-2">
+		<div class="flex-grow-1 align-items-start d-flex gap-2">
+			<div>
+				{buildCategoryIcon(@value, "24px", "rounded-1")}
 			</div>
-
-			<div class="ms-3">
-				<h3 class="title">
+			<div class="d-grid gap-0">
+				<div class="title fw-semibold">
 					<!-- IMPORT partials/categories/link.tpl -->
-				</h3>
-				<!-- description -->
-				<div class="mb-2">
-					{{{ if ./descriptionParsed }}}
-					<div class="description text-muted">{./descriptionParsed}</div>
-					{{{ end }}}
 				</div>
+				{{{ if ./descriptionParsed }}}
+				<div class="description text-muted text-xs w-100">{./descriptionParsed}</div>
+				{{{ end }}}
 			</div>
 		</div>
+		<div class="flex-shrink-0">
+			<!-- IMPORT partials/category/watch.tpl -->
+		</div>
 	</div>
-	<div class="col-2">
-		<!-- IMPORT partials/category/watch.tpl -->
-	</div>
+	<hr />
 </li>

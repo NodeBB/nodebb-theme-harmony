@@ -6,7 +6,7 @@
 <div class="alert alert-warning text-center">[[user:follows_no_one]]</div>
 {{{ end }}}
 
-<div class="row row-cols-2 row-cols-lg-3 row-cols-xl-4 g-2">
+<div class="row row-cols-2 row-cols-lg-3 row-cols-xl-4 g-4">
 {{{ each users }}}
 <!-- IMPORT partials/users/item.tpl -->
 {{{end}}}

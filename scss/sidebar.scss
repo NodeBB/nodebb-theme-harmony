@@ -45,9 +45,15 @@
 	}
 
 	.nav-link {
+		@extend .ff-secondary;
 		padding: 0;
 		&.active {
 			background-color: $hover-color;
+		}
+	}
+	.nav-item {
+		.dropdown-menu .dropdown-item {
+			@extend .rounded-1;
 		}
 	}
 	#user_dropdown .avatar {
@@ -99,6 +105,18 @@
 
 .bottombar {
 	transition: bottom 150ms linear;
+
+	.pagination-block {
+		.scroller-container {
+			border-right: 3px solid;
+			margin-right: 5.5px;
+			.scroller-thumb {
+				right: -6px;
+				padding-right: 15px;
+				margin-right: -15px;
+			}
+		}
+	}
 }
 
 .bottombar-nav {

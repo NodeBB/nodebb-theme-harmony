@@ -44,9 +44,6 @@
 	{{{ if categories.length }}}
 	<ul class="categories list-unstyled">
 		{{{each categories}}}
-		{{{ if !@first }}}
-		<hr class="text-muted opacity-25"/>
-		{{{ end }}}
 		<!-- IMPORT partials/categories/item.tpl -->
 		{{{end}}}
 	</ul>

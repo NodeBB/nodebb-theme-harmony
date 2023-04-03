@@ -10,7 +10,7 @@
 		</span>
 	</a>
 
-	<ul class="dropdown-menu overflow-auto">
+	<ul class="dropdown-menu p-1 text-sm overflow-auto">
 		<div class="d-flex px-2">
 			<div>
 				<li class="dropdown-header">Light</li>

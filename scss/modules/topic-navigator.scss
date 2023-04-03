@@ -1,10 +1,12 @@
 .topic .pagination-block {
 	min-width: 150px;
 	.scroller-container {
+		left: 10px;
 		height: 300px;
 		border-left: 2px solid $border-color;
 
 		.scroller-thumb {
+			left: -5px;
 			&:not(.active) {
 				transition: top 100ms linear;
 			}

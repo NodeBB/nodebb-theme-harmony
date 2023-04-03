@@ -1,5 +1,8 @@
 {{{ if !rooms.length }}}
-<li class="text-center p-2">[[modules:chat.no_active]]</li>
+<li class="text-center p-4 d-flex flex-column">
+    <div class="p-4"><i class="fa-solid fa-wind fs-2 text-muted"></i></div>
+	<div class="text-xs fw-semibold text-muted">[[modules:chat.no_active]]</div>
+</li>
 {{{ end }}}
 
 {{{ each rooms }}}

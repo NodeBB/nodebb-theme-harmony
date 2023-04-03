@@ -7,7 +7,7 @@
 				<span class="caret"></span>
 			</a>
 
-			<ul class="dropdown-menu">
+			<ul class="dropdown-menu p-1 text-sm">
 				<li class="px-3 py-1 mb-2 d-flex flex-column gap-2">
 					<div component="category-selector-search">
 						<input type="text" class="form-control" component="category/filter/search" placeholder="[[search:type-a-category]]">
@@ -33,7 +33,7 @@
 				<span class="caret"></span>
 			</a>
 
-			<ul class="dropdown-menu" style="width: 350px;">
+			<ul class="dropdown-menu p-1 text-sm" style="width: 350px;">
 				<li class="px-3 py-1 d-flex flex-column gap-2">
 					<input type="text" class="form-control" component="tag/filter/search" placeholder="[[search:type-a-tag]]">
 					<div component="tag/filter/selected" class="d-flex flex-wrap gap-2">
@@ -63,7 +63,7 @@
 				<span class="caret"></span>
 			</a>
 
-			<ul class="dropdown-menu" style="width: 350px;">
+			<ul class="dropdown-menu p-1 text-sm" style="width: 350px;">
 				<li class="px-3 py-1 d-flex flex-column gap-2">
 					<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
 					<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
@@ -94,7 +94,7 @@
 				<span class="caret"></span>
 			</a>
 
-			<ul class="dropdown-menu" style="width: 300px;">
+			<ul class="dropdown-menu p-1 text-sm" style="width: 300px;">
 				<li class="px-3 py-1 d-flex flex-nowrap gap-2">
 					<select id="reply-count-filter" class="form-select py-2 ps-2 pe-3">
 						<option value="atleast">[[search:at-least]]</option>
@@ -114,7 +114,7 @@
 				<span class="caret"></span>
 			</a>
 
-			<ul class="dropdown-menu" style="width: 350px;">
+			<ul class="dropdown-menu p-1 text-sm" style="width: 350px;">
 				<li class="px-3 py-1 d-flex flex-nowrap gap-2">
 					<select id="post-time-filter" class="form-select py-2 ps-2 pe-3">
 						<option value="newer">[[search:newer-than]]</option>
@@ -143,7 +143,7 @@
 				<span class="caret"></span>
 			</a>
 
-			<ul class="dropdown-menu" style="width: 250px;">
+			<ul class="dropdown-menu p-1 text-sm" style="width: 250px;">
 				<li class="px-3 py-1 d-flex flex-column gap-2">
 					<select id="post-sort-by" class="form-select py-2 ps-2 pe-3">
 						<option value="relevance">[[search:relevance]]</option>
@@ -173,7 +173,7 @@
 			<a class="btn btn-light btn-sm border border-gray-300 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">[[search:save]] <span class="caret"></span>
 			</a>
 
-			<ul class="dropdown-menu" style="width: 300px;">
+			<ul class="dropdown-menu p-1 text-sm" style="width: 300px;">
 				<li class="px-3 py-1 d-flex flex-column gap-2">
 					<button id="save-preferences" class="btn btn-primary">[[search:save-preferences]]</button>
 					<button id="clear-preferences" class="btn-outline border">[[search:clear-preferences]]</button>

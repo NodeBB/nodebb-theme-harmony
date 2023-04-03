@@ -18,7 +18,10 @@
 					<div class="text-xs placeholder col-4">&nbsp;</div>
 				</div>
 			</div>
-			<div class="hidden no-drafts text-center p-2">[[modules:composer.no-drafts]]</div>
+			<div class="hidden no-drafts text-center p-4 d-flex flex-column">
+				<div class="p-4"><i class="fa-solid fa-wind fs-2 text-muted"></i></div>
+				<div class="text-xs fw-semibold text-muted">[[modules:composer.no-drafts]]</div>
+			</div>
 			<div class="draft-item-container">
 				{{{ each drafts }}}
 				{{{ if !@first}}}

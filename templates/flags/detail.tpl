@@ -1,7 +1,7 @@
 <!-- IMPORT partials/breadcrumbs.tpl -->
 
 <div class="d-flex flex-column flex-md-row">
-	<div class="d-flex flex-column gap-3 flex-0 border-end-md text-sm mb-3 pe-4" style="flex-basis: 240px !important;">
+	<div class="flex-shrink-0 d-flex flex-column gap-3 border-end-md text-sm mb-3 pe-4" style="flex-basis: 240px !important;">
 		<div class="d-grid gap-1">
 			<a class="btn btn-ghost border btn-sm justify-content-start" href="{config.relative_path}/{type_path}/{targetId}">
 				<i class="fa fa-fw fa-external-link text-primary"></i>
@@ -14,24 +14,24 @@
 					<i class="fa fa-fw fa-street-view text-primary"></i>
 					[[flags:flagged-user]]
 				</button>
-				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="{config.relative_path}/uid/{target.uid}">[[flags:view-profile]]</a></li>
+				<ul class="dropdown-menu p-1 text-sm">
+					<li><a class="dropdown-item rounded-1" href="{config.relative_path}/uid/{target.uid}">[[flags:view-profile]]</a></li>
 					{{{ if !config.disableChat }}}
-						<li><a class="dropdown-item" href="#" data-action="chat">[[flags:start-new-chat]]</a></li>
+						<li><a class="dropdown-item rounded-1" href="#" data-action="chat">[[flags:start-new-chat]]</a></li>
 					{{{ end }}}
 					<li class="dropdown-divider"></li>
 					{{{ if privileges.ban }}}
-					<li class="{{{ if target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="ban">[[user:ban_account]]</a></li>
-					<li class="{{{ if !target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="unban">[[user:unban_account]]</a></li>
+					<li class="{{{ if target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item rounded-1" href="#" data-action="ban">[[user:ban_account]]</a></li>
+					<li class="{{{ if !target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item rounded-1" href="#" data-action="unban">[[user:unban_account]]</a></li>
 					{{{ end }}}
 					{{{ if privileges.mute}}}
-					<li class="{{{ if target.user.muted }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="mute">[[user:mute_account]]</a></li>
-					<li class="{{{ if !target.user.muted }}}hidden{{{ end }}}"><a class="dropdown-item" href="#" data-action="unmute">[[user:unmute_account]]</a></li>
+					<li class="{{{ if target.user.muted }}}hidden{{{ end }}}"><a class="dropdown-item rounded-1" href="#" data-action="mute">[[user:mute_account]]</a></li>
+					<li class="{{{ if !target.user.muted }}}hidden{{{ end }}}"><a class="dropdown-item rounded-1" href="#" data-action="unmute">[[user:unmute_account]]</a></li>
 					{{{ end }}}
 					{{{ if privileges.admin:users }}}
-					<li><a class="dropdown-item" href="#" data-action="delete-account">[[user:delete_account_as_admin]]</a></li>
-					<li><a class="dropdown-item" href="#" data-action="delete-content">[[user:delete_content]]</a></li>
-					<li><a class="dropdown-item" href="#" data-action="delete-all">[[user:delete_all]]</a></li>
+					<li><a class="dropdown-item rounded-1" href="#" data-action="delete-account">[[user:delete_account_as_admin]]</a></li>
+					<li><a class="dropdown-item rounded-1" href="#" data-action="delete-content">[[user:delete_content]]</a></li>
+					<li><a class="dropdown-item rounded-1" href="#" data-action="delete-all">[[user:delete_all]]</a></li>
 					{{{ end }}}
 				</ul>
 			</div>
@@ -83,8 +83,8 @@
 			{{{ end }}}
 			{{{ each history }}}
 			<div class="d-flex flex-column gap-1">
-				<div class="d-flex gap-2">
-					<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "16px", true)}</a>
+				<div class="d-flex gap-2 align-items-center">
+					<a class="d-flex text-decoration-none" href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "16px", true)}</a>
 					<a href="{config.relative_path}/user/{./user.userslug}">{./user.username}</a>
 					<span class="timeago text-muted" title="{./datetimeISO}"></span>
 				</div>
@@ -106,16 +106,16 @@
 			{{{ end }}}
 		</div>
 	</div>
-	<div class="flex-1 ps-md-2 ps-lg-5" style="min-width:0;">
+	<div class="flex-grow-1 ps-md-2 ps-lg-5" style="min-width:0;">
 		<div class="d-flex flex-column gap-4">
 			<h2 class="h6 fw-bold">
 				{target_readable}
 			</h2>
 			<div component="flag/content" class="d-flex flex-column gap-1 pb-3 border-bottom">
 				{{{ if type_bool.post }}}
-				<div class="d-flex gap-2">
-					<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(target.user, "16px", true)}</a>
-					<a href="{config.relative_path}/user/{./user.userslug}">{target.user.username}</a>
+				<div class="d-flex gap-2 align-items-center">
+					<a class="d-flex text-decoration-none" href="{config.relative_path}/user/{target.user.userslug}">{buildAvatar(target.user, "16px", true)}</a>
+					<a href="{config.relative_path}/user/{target.user.userslug}">{target.user.username}</a>
 					<span class="timeago text-muted" title="{target.timestampISO}"></span>
 				</div>
 				<blockquote>{target.content}</blockquote>
@@ -138,8 +138,8 @@
 				<ul class="list-unstyled mt-4">
 					{{{ each reports }}}
 					<li class="d-flex flex-column gap-1" component="flag/report" data-timestamp="{./timestamp}">
-						<div class="d-flex gap-2">
-							<a href="{config.relative_path}/user/{./reporter.userslug}">{buildAvatar(./reporter, "16px", true)}</a>
+						<div class="d-flex gap-2 align-items-center">
+							<a class="d-flex text-decoration-none" href="{config.relative_path}/user/{./reporter.userslug}">{buildAvatar(./reporter, "16px", true)}</a>
 							<a href="{config.relative_path}/user/{./reporter.userslug}">{./reporter.username}</a>
 							<span class="timeago text-muted" title="{./timestampISO}"></span>
 						</div>
