@@ -9,7 +9,7 @@
 				<span class="timeago text-xs" title="{../timestampISO}"></span>
 			</a>
 		</div>
-		<div class="post-content text-xs line-clamp-2 lh-sm">
+		<div class="post-content text-xs text-break line-clamp-2 lh-sm">
 			{./content}
 		</div>
 	</div>
