@@ -6,12 +6,12 @@
 </li>
 <li {{{ if posts.deleted }}}hidden{{{ end }}}>
 	<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" component="post/delete" role="menuitem" tabindex="-1" href="#" class="{{{ if posts.deleted }}}hidden{{{ end }}}">
-		<span class="menu-icon"><i class="fa fa-fw text-muted fa-trash-o"></i><span> [[topic:delete]]
+		<span class="menu-icon"><i class="fa fa-fw text-muted fa-trash-o"></i></span> [[topic:delete]]
 	</a>
 </li>
 <li {{{ if !posts.deleted }}}hidden{{{ end }}}>
 	<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" component="post/restore" role="menuitem" tabindex="-1" href="#" class="{{{ if !posts.deleted }}}hidden{{{ end }}}">
-		<span class="menu-icon"><i class="fa fa-fw text-muted fa-history"></i><span> [[topic:restore]]
+		<span class="menu-icon"><i class="fa fa-fw text-muted fa-history"></i></span> [[topic:restore]]
 	</a>
 </li>
 {{{ if posts.display_purge_tools }}}
