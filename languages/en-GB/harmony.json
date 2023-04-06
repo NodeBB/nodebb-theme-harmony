@@ -6,6 +6,7 @@
 	"settings.title": "Theme settings",
 	"settings.enableQuickReply": "Enable quick reply",
 	"settings.centerHeaderElements": "Center header elements",
+	"settings.mobileTopicTeasers": "Show topic teasers on mobile",
 	"settings.stickyToolbar": "Sticky toolbar",
 	"settings.stickyToolbar.help": "The toolbar on topic and category pages will stick to the top of the page",
 	"settings.autohideBottombar": "Auto hide bottom bar",

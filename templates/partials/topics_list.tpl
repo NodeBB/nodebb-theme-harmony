@@ -87,7 +87,7 @@
 					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-eye"></i>
 				</div>
 			</div>
-			<div component="topic/teaser" class="meta teaser col-lg-6">
+			<div component="topic/teaser" class="meta teaser col-lg-6 {{{ if !config.theme.mobileTopicTeasers }}}d-none d-lg-block{{{ end }}}">
 				<div class="lastpost background-link-container border-start border-2 lh-sm h-100" style="border-color: {./category.bgColor}!important;">
 					<a class="background-link" href="{config.relative_path}/topic/{./slug}/{./teaser.index}"></a>
 					{{{ if ./unreplied }}}

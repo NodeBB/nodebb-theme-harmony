@@ -18,6 +18,11 @@
 	</div>
 
 	<div class="form-check mb-3">
+		<input class="form-check-input" type="checkbox" id="mobileTopicTeasers" name="mobileTopicTeasers" {{{ if config.theme.mobileTopicTeasers }}}checked{{{ end }}}>
+		<label class="form-check-label" for="mobileTopicTeasers">[[harmony:settings.mobileTopicTeasers]]</label>
+	</div>
+
+	<div class="form-check mb-3">
 		<input class="form-check-input" type="checkbox" id="stickyToolbar" name="stickyToolbar" {{{ if config.theme.stickyToolbar }}}checked{{{ end }}}>
 		<label class="form-check-label" for="stickyToolbar">
 			[[harmony:settings.stickyToolbar]]

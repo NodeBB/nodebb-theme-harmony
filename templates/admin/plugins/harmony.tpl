@@ -11,6 +11,10 @@
 				<label for="centerHeaderElements" class="form-check-label">[[harmony:settings.centerHeaderElements]]</label>
 			</div>
 			<div class="form-check form-switch">
+				<input type="checkbox" class="form-check-input" id="mobileTopicTeasers" name="mobileTopicTeasers" />
+				<label for="mobileTopicTeasers" class="form-check-label">[[harmony:settings.mobileTopicTeasers]]</label>
+			</div>
+			<div class="form-check form-switch">
 				<input type="checkbox" class="form-check-input" id="stickyToolbar" name="stickyToolbar" />
 				<div for="stickyToolbar" class="form-check-label">
 					[[harmony:settings.stickyToolbar]]
