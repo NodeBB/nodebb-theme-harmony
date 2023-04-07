@@ -176,6 +176,8 @@
 		</a>
 	</div>
 
+	<!-- IMPORT partials/flags/bulk-actions.tpl -->
+
 	<form role="form">
 		<input type="hidden" name="sort" value="{./sort}" />
 		<input type="hidden" name="state" value="{./filters.state}" />
