@@ -1,6 +1,6 @@
 <li component="categories/category" data-cid="{./cid}" class="w-100 border-bottom py-3 py-lg-4 gap-1 d-flex flex-column flex-lg-row align-items-start category-{./cid}">
 	<meta itemprop="name" content="{./name}">
-	
+
 	<div class="d-flex col-lg-7 gap-2 gap-lg-3">
 		<div class="flex-shrink-0">
 		{buildCategoryIcon(@value, "40px", "rounded-1")}
@@ -10,7 +10,7 @@
 				<!-- IMPORT partials/categories/link.tpl -->
 			</h2>
 			{{{ if ./descriptionParsed }}}
-			<div class="description text-muted text-xs w-100">
+			<div class="description text-muted text-sm w-100">
 				{./descriptionParsed}
 			</div>
 			{{{ end }}}
