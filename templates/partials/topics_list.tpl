@@ -104,7 +104,7 @@
 						<a class="permalink text-muted timeago text-xs" href="{config.relative_path}/topic/{./slug}/{./teaser.index}" title="{./teaser.timestampISO}">
 						</a>
 					</div>
-					<div class="post-content text-xs ps-2 line-clamp-2 lh-sm text-break">
+					<div class="post-content text-xs ps-2 line-clamp-sm-2 lh-sm text-break">
 						{./teaser.content}
 					</div>
 					{{{ end }}}
