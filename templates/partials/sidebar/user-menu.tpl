@@ -5,7 +5,7 @@
 <ul id="user-control-list" component="header/usercontrol" class="overscroll-behavior-contain user-dropdown dropdown-menu shadow p-1 text-sm ff-base" aria-labelledby="user_dropdown">
 	<li>
 		<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" component="header/profilelink" href="{relative_path}/user/{user.userslug}">
-			<span component="user/status" class="flex-shrink-0 badge border border-white border-2 rounded-circle status {user.status}"><span class="visually-hidden">[[global:{user.status}]]</span></span>
+			<span component="user/status" class="flex-shrink-0 border border-white border-2 rounded-circle status {user.status}"><span class="visually-hidden">[[global:{user.status}]]</span></span>
 			<span class="fw-semibold" component="header/username">{user.username}</span>
 		</a>
 	</li>
@@ -13,28 +13,28 @@
 	<li><h6 class="dropdown-header text-xs">[[global:status]]</h6></li>
 	<li>
 		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2 {{{ if user.online }}}selected{{{ end }}}" data-status="online">
-			<span component="user/status" class="flex-shrink-0 badge border border-white border-2 rounded-circle status online"><span class="visually-hidden">[[global:online]]</span></span>
+			<span component="user/status" class="flex-shrink-0 border border-white border-2 rounded-circle status online"><span class="visually-hidden">[[global:online]]</span></span>
 			<span class="flex-grow-1">[[global:online]]</span>
 			<i class="fa-solid fa-check text-muted flex-shrink-0"></i>
 		</a>
 	</li>
 	<li>
 		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2 {{{ if user.away }}}selected{{{ end }}}" data-status="away">
-			<span component="user/status" class="flex-shrink-0 badge border border-white border-2 rounded-circle status away"><span class="visually-hidden">[[global:away]]</span></span>
+			<span component="user/status" class="flex-shrink-0 border border-white border-2 rounded-circle status away"><span class="visually-hidden">[[global:away]]</span></span>
 			<span class="flex-grow-1">[[global:away]]</span>
 			<i class="fa-solid fa-check text-muted flex-shrink-0"></i>
 		</a>
 	</li>
 	<li>
 		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2 {{{ if user.dnd }}}selected{{{ end }}}" data-status="dnd">
-			<span component="user/status" class="flex-shrink-0 badge border border-white border-2 rounded-circle status dnd"><span class="visually-hidden">[[global:dnd]]</span></span>
+			<span component="user/status" class="flex-shrink-0 border border-white border-2 rounded-circle status dnd"><span class="visually-hidden">[[global:dnd]]</span></span>
 			<span class="flex-grow-1">[[global:dnd]]</span>
 			<i class="fa-solid fa-check text-muted flex-shrink-0"></i>
 		</a>
 	</li>
 	<li>
 		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2 {{{ if user.offline }}}selected{{{ end }}}" data-status="offline">
-			<span component="user/status" class="flex-shrink-0 badge border border-white border-2 rounded-circle status offline"><span class="visually-hidden">[[global:invisible]]</span></span>
+			<span component="user/status" class="flex-shrink-0 border border-white border-2 rounded-circle status offline"><span class="visually-hidden">[[global:invisible]]</span></span>
 			<span class="flex-grow-1">[[global:invisible]]</span>
 			<i class="fa-solid fa-check text-muted flex-shrink-0"></i>
 		</a>
