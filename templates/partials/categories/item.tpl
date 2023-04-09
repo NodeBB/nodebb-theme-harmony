@@ -54,7 +54,7 @@
 				</div>
 			</div>
 			{{{ if !config.hideCategoryLastPost }}}
-			<div component="topic/teaser" class="teaser col-lg-6">
+			<div component="topic/teaser" class="teaser col-lg-6 {{{ if !config.theme.mobileTopicTeasers }}}d-none d-lg-block{{{ end }}}">
 				<!-- IMPORT partials/categories/lastpost.tpl -->
 			</div>
 			{{{ end }}}
