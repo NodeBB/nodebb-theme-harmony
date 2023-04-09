@@ -15,8 +15,8 @@
 					{buildAvatar(./user, "40px", true, "avatar avatar-tooltip")}
 				</a>
 				{{{ if showSelect }}}
-				<div class="checkbox position-absolute top-100 start-50 translate-middle-x p-1 m-0 d-none d-lg-flex" style="max-width:max-content">
-					<i component="topic/select" class="fa text-muted pointer fa-square-o"></i>
+				<div class="checkbox position-absolute top-100 start-50 translate-middle-x pt-2 m-0 d-none d-lg-flex" style="max-width:max-content">
+					<i component="topic/select" class="fa text-muted pointer fa-square-o p-1"></i>
 				</div>
 				{{{ end }}}
 			</div>
@@ -113,8 +113,8 @@
 			</div>
 		</div>
 		{{{ if showSelect }}}
-		<div class="checkbox position-absolute top-0 end-0 p-1 mt-3 m-0 d-flex d-lg-none" style="max-width:max-content">
-			<i component="topic/select" class="fa fa-square-o text-muted pointer"></i>
+		<div class="checkbox position-absolute top-0 end-0 mt-3 m-0 d-flex d-lg-none" style="max-width:max-content">
+			<i component="topic/select" class="fa fa-square-o text-muted pointer p-1"></i>
 		</div>
 		{{{ end }}}
 	</li>
