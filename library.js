@@ -140,7 +140,7 @@ async function loadThemeConfig(uid) {
 }
 
 library.getThemeConfig = async function (config) {
-	config.theme = await loadThemeConfig(config.uid);;
+	config.theme = await loadThemeConfig(config.uid);
 	config.openDraftsOnPageLoad = false;
 	return config;
 };
