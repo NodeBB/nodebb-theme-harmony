@@ -118,6 +118,16 @@ library.defineWidgetAreas = async function (areas) {
 			template: 'global',
 			location: 'brand-header',
 		},
+		{
+			name: 'About me (before)',
+			template: 'account/profile.tpl',
+			location: 'profile-aboutme-before',
+		},
+		{
+			name: 'About me (after)',
+			template: 'account/profile.tpl',
+			location: 'profile-aboutme-after',
+		},
 	]);
 
 	return areas;
