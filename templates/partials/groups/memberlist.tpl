@@ -1,5 +1,5 @@
 <div class="d-flex {{{ if group.isOwner }}}justify-content-between{{{ else }}}justify-content-end{{{ end }}} mb-3">
-	{{{ if group.isOwner }}}
+	{{{ if isAdmin }}}
 	<div class="flex-shrink-0">
 		<button component="groups/members/add" type="button" class="btn btn-primary btn-sm me-3" title="[[groups:details.add-member]]"><i class="fa fa-user-plus"></i> [[groups:details.add-member]]</button>
 	</div>
