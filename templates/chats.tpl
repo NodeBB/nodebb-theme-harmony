@@ -20,7 +20,7 @@
 			{{{end}}}
 		</div>
 	</div>
-	<div class="flex-grow-1 ms-md-2 ps-md-2 border-1 border-start-md h-100" component="chat/main-wrapper">
+	<div class="flex-grow-1 ms-md-2 ps-md-2 border-1 border-start-md h-100" component="chat/main-wrapper" style="min-width: 0;">
 		<!-- IMPORT partials/chats/message-window.tpl -->
 	</div>
 	<div class="imagedrop"><div>[[topic:composer.drag_and_drop_images]]</div></div>
