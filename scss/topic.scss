@@ -40,6 +40,9 @@
 			}
 
 			[component="post"] {
+				&.selected .post-container {
+					background-color: mix($body-bg, $body-color, 90%);
+				}
 				&.deleted .post-container {
 					opacity: .5;
 				}
