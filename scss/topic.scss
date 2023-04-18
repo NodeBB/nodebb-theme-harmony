@@ -53,6 +53,9 @@
 					pre {
 						max-height: calc($font-size-base * 24);
 					}
+					table { // text-break breaks table formatting
+						word-break:initial!important;
+					}
 				}
 
 				> [component="post/footer"] {
