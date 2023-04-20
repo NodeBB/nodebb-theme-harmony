@@ -79,7 +79,16 @@ body.page-user-chats {
 }
 
 /* Mobile handling of chat page */
+@include media-breakpoint-down(lg) {
+	.page-user-chats.chat-loaded  {
+		padding-bottom: 4.75rem;
+	}
+}
+
 @include media-breakpoint-down(md) {
+	.page-user-chats.chat-loaded  {
+		padding-bottom: initial;
+	}
 	[component="chat/nav-wrapper"] {
 		width: 100%;
 	}
