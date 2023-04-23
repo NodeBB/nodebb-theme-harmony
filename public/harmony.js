@@ -1,6 +1,7 @@
 'use strict';
 
 $(document).ready(function () {
+	setupSkinSwitcher();
 	setupNProgress();
 	setupMobileMenu();
 	setupSearch();
@@ -9,21 +10,22 @@ $(document).ready(function () {
 	setupNavTooltips();
 	fixPlaceholders();
 
-	$('[component="skinSwitcher"]').on('click', '.dropdown-item', function () {
-		const skin = $(this).attr('data-value');
-		$('[component="skinSwitcher"] .dropdown-item .fa-check').addClass('invisible');
-		$(this).find('.fa-check').removeClass('invisible');
-		require(['forum/account/settings'], function (accountSettings) {
-			$('[component="skinSwitcher"] [component="skinSwitcher/icon"]').addClass('fa-fade');
-			accountSettings.changeSkin(skin);
+	function setupSkinSwitcher() {
+		$('[component="skinSwitcher"]').on('click', '.dropdown-item', function () {
+			const skin = $(this).attr('data-value');
+			$('[component="skinSwitcher"] .dropdown-item .fa-check').addClass('invisible');
+			$(this).find('.fa-check').removeClass('invisible');
+			require(['forum/account/settings', 'hooks'], function (accountSettings, hooks) {
+				hooks.one('action:skin.change', function () {
+					$('[component="skinSwitcher"] [component="skinSwitcher/icon"]').removeClass('fa-fade');
+				});
+				$('[component="skinSwitcher"] [component="skinSwitcher/icon"]').addClass('fa-fade');
+				accountSettings.changeSkin(skin);
+			});
 		});
-	});
+	}
 
 	require(['hooks'], function (hooks) {
-		hooks.on('action:skin.change', function () {
-			$('[component="skinSwitcher"] [component="skinSwitcher/icon"]').removeClass('fa-fade');
-		});
-
 		$(window).on('action:composer.resize action:sidebar.toggle', function () {
 			$('[component="composer"]').css({
 				left: $('.sidebar-left').outerWidth(true),
@@ -65,6 +67,9 @@ $(document).ready(function () {
 			$body.on('hidden.bs.dropdown', '.sticky-tools', function () {
 				bottomBar.removeClass('hidden');
 			});
+			function isSearchVisible() {
+				return !!$('[component="bottombar"] [component="sidebar/search"] .search-dropdown.show').length;
+			}
 
 			let lastScrollTop = 0;
 			let newPostsLoaded = false;
@@ -76,7 +81,7 @@ $(document).ready(function () {
 					lastScrollTop = st;
 					return;
 				}
-				if (st !== lastScrollTop && !navigator.scrollActive) {
+				if (st !== lastScrollTop && !navigator.scrollActive && !isSearchVisible()) {
 					const diff = Math.abs(st - lastScrollTop);
 					const scrolledDown = st > lastScrollTop;
 					const scrolledUp = st < lastScrollTop;
