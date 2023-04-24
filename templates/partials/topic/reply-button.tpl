@@ -11,15 +11,15 @@
 {{{ if loggedIn }}}
 	{{{ if !privileges.topics:reply }}}
 		{{{ if locked }}}
-		<a component="topic/reply/locked" class="d-flex gap-2 align-items-center fw-semibold btn btn-primary disabled" disabled><i class="fa fa-lock"></i> [[topic:locked]]</a>
+		<a component="topic/reply/locked" class="d-flex gap-2 align-items-center fw-semibold btn btn-sm btn-primary disabled" disabled><i class="fa fa-lock"></i> [[topic:locked]]</a>
 		{{{ end }}}
 	{{{ end }}}
 
 	{{{ if !locked }}}
-	<a component="topic/reply/locked" class="d-flex gap-2 align-items-center fw-semibold btn btn-primary disabled hidden" disabled><i class="fa fa-lock"></i> [[topic:locked]]</a>
+	<a component="topic/reply/locked" class="d-flex gap-2 align-items-center fw-semibold btn btn-sm btn-primary disabled hidden" disabled><i class="fa fa-lock"></i> [[topic:locked]]</a>
 	{{{ end }}}
 {{{ else }}}
 	{{{ if !privileges.topics:reply }}}
-	<a component="topic/reply/guest" href="{config.relative_path}/login" class="d-flex align-items-center fw-semibold btn btn-primary">[[topic:guest-login-reply]]</a>
+	<a component="topic/reply/guest" href="{config.relative_path}/login" class="d-flex align-items-center fw-semibold btn btn-sm btn-primary">[[topic:guest-login-reply]]</a>
 	{{{ end }}}
 {{{ end }}}
