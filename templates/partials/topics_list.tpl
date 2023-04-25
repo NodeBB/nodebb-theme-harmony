@@ -52,7 +52,7 @@
 					{{{ if ./tags.length }}}
 					<span class="lh-1 tag-list hidden-xs d-flex flex-wrap gap-1">
 						{{{ each ./tags }}}
-						<a href="{config.relative_path}/tags/{./valueEncoded}"><span class="badge border border-gray-300 text-muted fw-normal tag tag-class-{./class}" data-tag="{./value}">{./valueEscaped}</span></a>
+						<a href="{config.relative_path}/tags/{./valueEncoded}"><span class="badge border border-gray-300 fw-normal tag tag-class-{./class}" data-tag="{./value}">{./valueEscaped}</span></a>
 						{{{ end }}}
 					</span>
 					{{{ end }}}
