@@ -56,7 +56,7 @@
 						{{{ end }}}
 					</span>
 					{{{ end }}}
-					<span class="hidden-xs badge bg-transparent text-muted fw-normal timeago" title="{./timestampISO}"></span>
+					<a href="{config.relative_path}/topic/{./slug}" class="hidden-xs badge bg-transparent text-muted fw-normal timeago" title="{./timestampISO}"></a>
 					{{{ if !config.theme.mobileTopicTeasers}}}
 					<span class="visible-xs-inline badge bg-transparent text-muted fw-normal timeago" title="{{{ if ./teaser.timestampISO }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>
 					{{{ end }}}
