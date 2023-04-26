@@ -7,34 +7,45 @@
 {{{ end }}}
 
 <div class="d-flex flex-column gap-3" itemid="{url}" itemscope itemtype="https://schema.org/DiscussionForumPosting">
-	<h2 component="post/header" class="tracking-tight fw-semibold fs-2 mb-0 text-break {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}" itemprop="headline">
-		<span class="topic-title" component="topic/title">{title}</span>
-	</h2>
+	<div class="d-flex">
+		<div class="d-flex flex-column gap-3 flex-grow-1">
+			<h2 component="post/header" class="tracking-tight fw-semibold fs-2 mb-0 text-break {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}" itemprop="headline">
+				<span class="topic-title" component="topic/title">{title}</span>
+			</h2>
 
-	<div class="topic-info d-flex gap-2 align-items-center flex-wrap {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
-		<span component="topic/labels" class="d-flex gap-2 {{{ if (!scheduled && (!pinned && (!locked && (!oldCid && !icons.length)))) }}}hidden{{{ end }}}">
-			<span component="topic/scheduled" class="badge badge border border-gray-300 text-primary {{{ if !scheduled }}}hidden{{{ end }}}">
-				<i class="fa fa-clock-o"></i>
-				[[topic:scheduled]]
-			</span>
-			<span component="topic/pinned" class="badge badge border border-gray-300 text-primary {{{ if (scheduled || !pinned) }}}hidden{{{ end }}}">
-				<i class="fa fa-thumb-tack"></i>
-				{{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {pinExpiryISO}]]{{{ end }}}
-			</span>
-			<span component="topic/locked" class="badge badge border border-gray-300 text-primary {{{ if !locked }}}hidden{{{ end }}}">
-				<i class="fa fa-lock"></i>
-				[[topic:locked]]
-			</span>
-			<span class="badge badge border border-gray-300 text-primary {{{ if !oldCid }}}hidden{{{ end }}}">
-				<i class="fa fa-arrow-circle-right"></i>
-				{{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}
-			</span>
-			{{{each icons}}}<span class="lh-1">{@value}</span>{{{end}}}
-		</span>
-		<a class="lh-1" href="{config.relative_path}/category/{category.slug}">{function.buildCategoryLabel, category, "border"}</a>
-		<div class="lh-1 tags tag-list d-flex flex-wrap hidden-xs gap-2"><!-- IMPORT partials/topic/tags.tpl --></div>
-		<div class="d-flex hidden-xs gap-2">
-			<!-- IMPORT partials/topic/stats.tpl -->
+			<div class="topic-info d-flex gap-2 align-items-center flex-wrap {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
+				<span component="topic/labels" class="d-flex gap-2 {{{ if (!scheduled && (!pinned && (!locked && (!oldCid && !icons.length)))) }}}hidden{{{ end }}}">
+					<span component="topic/scheduled" class="badge badge border border-gray-300 text-primary {{{ if !scheduled }}}hidden{{{ end }}}">
+						<i class="fa fa-clock-o"></i>
+						[[topic:scheduled]]
+					</span>
+					<span component="topic/pinned" class="badge badge border border-gray-300 text-primary {{{ if (scheduled || !pinned) }}}hidden{{{ end }}}">
+						<i class="fa fa-thumb-tack"></i>
+						{{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {pinExpiryISO}]]{{{ end }}}
+					</span>
+					<span component="topic/locked" class="badge badge border border-gray-300 text-primary {{{ if !locked }}}hidden{{{ end }}}">
+						<i class="fa fa-lock"></i>
+						[[topic:locked]]
+					</span>
+					<span class="badge badge border border-gray-300 text-primary {{{ if !oldCid }}}hidden{{{ end }}}">
+						<i class="fa fa-arrow-circle-right"></i>
+						{{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}
+					</span>
+					{{{each icons}}}<span class="lh-1">{@value}</span>{{{end}}}
+				</span>
+				<a class="lh-1" href="{config.relative_path}/category/{category.slug}">{function.buildCategoryLabel, category, "border"}</a>
+				<div class="lh-1 tags tag-list d-flex flex-wrap hidden-xs gap-2"><!-- IMPORT partials/topic/tags.tpl --></div>
+				<div class="d-flex hidden-xs gap-2">
+					<!-- IMPORT partials/topic/stats.tpl -->
+				</div>
+			</div>
+		</div>
+		<div class="d-flex gap-2 justify-content-end align-items-center mt-2" component="topic/thumb/list">
+			{{{ each thumbs }}}
+			<a class="d-inline-block h-100" href="{./url}">
+				<img class="rounded-1 h-100" src="{./url}" />
+			</a>
+			{{{ end }}}
 		</div>
 	</div>
 
