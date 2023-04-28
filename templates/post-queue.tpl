@@ -60,7 +60,7 @@
 							[[post-queue:user]]
 							{{{ if ((privileges.ban || privileges.mute) || privileges.admin:users) }}}
 							<div class="ms-auto btn-group bottom-sheet">
-								<button href="#" class="btn btn-outline-sm text-xs dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
+								<button href="#" class="btn btn-outline-sm text-xs dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">[[global:actions]]</button>
 								<ul class="dropdown-menu p-1 text-sm">
 									{{{ if privileges.ban }}}
 									<li class="{{{ if target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item rounded-1" href="#" data-action="ban">[[user:ban_account]]</a></li>
