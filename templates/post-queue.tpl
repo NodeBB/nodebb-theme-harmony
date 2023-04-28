@@ -45,7 +45,7 @@
 	{{{ each posts }}}
 	<div class="card mb-4" data-id="{./id}" data-uid="{./user.uid}">
 		<div class="row g-0">
-			<div class="col-sm-4 col-md-3 bg-card-cap rounded-start">
+			<div class="col-xs-4 col-lg-3 bg-card-cap rounded-start">
 				<ul class="list-unstyled ps-0 mb-0 border-end h-100">
 					<li class="card-body border-bottom position-relative">
 						{{{ if !singlePost }}}
@@ -55,13 +55,16 @@
 							{{{ if posts.data.tid }}}[[post-queue:reply]]{{{ else }}}[[post-queue:topic]]{{{ end }}}
 						</label>
 					</li>
-					<li class="card-body border-bottom">
-						<div class="d-flex text-xs fw-semibold mb-1 align-items-center">
+					<li class="card-body d-flex flex-column gap-1 border-bottom">
+						<div class="d-flex text-xs fw-semibold align-items-center">
 							[[post-queue:user]]
 							{{{ if ((privileges.ban || privileges.mute) || privileges.admin:users) }}}
 							<div class="ms-auto btn-group bottom-sheet">
 								<button href="#" class="btn btn-outline-sm text-xs dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">[[global:actions]]</button>
 								<ul class="dropdown-menu p-1 text-sm">
+									{{{ if privileges.view:users:info }}}
+									<li><a class="dropdown-item rounded-1" href="{config.relative_path}/user/{./user.userslug}/info">[[user:account_info]]</a></li>
+									{{{ end }}}
 									{{{ if privileges.ban }}}
 									<li class="{{{ if target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item rounded-1" href="#" data-action="ban">[[user:ban_account]]</a></li>
 									<li class="{{{ if !target.user.banned }}}hidden{{{ end }}}"><a class="dropdown-item rounded-1" href="#" data-action="unban">[[user:unban_account]]</a></li>
@@ -86,6 +89,20 @@
 							{posts.user.username}
 							{{{ end }}}
 						</div>
+						<div>
+							<span class="badge text-body border border-gray-300 stats text-xs">
+								<span title="{posts.user.postcount}" class="human-readable-number fw-bold">{posts.user.postcount}</span>
+								<span class="text-lowercase fw-normal">[[global:posts]]</span>
+							</span>
+							<span class="badge text-body border border-gray-300 stats text-xs">
+								<span title="{posts.user.reputation}" class="human-readable-number fw-bold">{posts.user.reputation}</span>
+								<span class="text-lowercase fw-normal">[[global:reputation]]</span>
+							</span>
+							<span class="badge text-body border border-gray-300 stats text-xs">
+								<span class="text-lowercase fw-normal">[[user:joined]]</span>
+								<span title="{posts.user.joindateISO}" class="timeago fw-bold"></span>
+							</span>
+						</div>
 					</li>
 					<li class="card-body border-bottom">
 						<div class="text-xs fw-semibold mb-1">[[post-queue:when]]</div>
@@ -97,7 +114,13 @@
 						</div>
 						<span class="small topic-title text-break">
 							{{{ if posts.data.tid }}}
-							<a href="{config.relative_path}/topic/{posts.data.tid}">{posts.topic.title}</a>
+							<div class="d-flex flex-column align-items-start gap-1">
+								<a href="{config.relative_path}/topic/{posts.data.tid}">{posts.topic.title}</a>
+								<span class="badge text-body border border-gray-300 stats text-xs">
+									<span class="text-lowercase fw-normal">[[global:lastpost]]</span>
+									<span title="{posts.topic.lastposttimeISO}" class="timeago fw-bold"></span>
+								</span>
+							</div>
 							{{{ end }}}
 							<span class="title-text">{posts.data.title}</span>
 						</span>
@@ -152,7 +175,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="col-sm-8 col-md-9 d-flex flex-column">
+			<div class="col-xs-8 col-lg-9 d-flex flex-column">
 				<div class="post-content mb-auto text-break p-3 pb-0 h-100">{posts.data.content}</div>
 				<div class="post-content-editable flex-grow-1 hidden">
 					<textarea class="form-control w-100 h-100 p-3">{posts.data.rawContent}</textarea>
