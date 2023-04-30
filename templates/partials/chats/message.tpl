@@ -18,12 +18,14 @@
 			{messages.content}
 		</div>
 
-		{{{ if (!config.disableChatMessageEditing && messages.self ) }}}
+		{{{ if (isAdminOrGlobalMod || (!config.disableChatMessageEditing && messages.self)) }}}
 		<div component="chat/message/controls" class="position-relative">
-			<div class="btn-group border shadow-sm controls position-absolute small hover-d-block" style="bottom:5px; right:30px; display:none;">
+			<div class="btn-group border shadow-sm controls position-absolute small hover-d-block end-0" style="bottom:1rem;">
+				{{{ if (!config.disableChatMessageEditing && messages.self) }}}
 				<button class="btn btn-sm btn-link" data-action="edit"><i class="fa fa-pencil"></i></button>
 				<button class="btn btn-sm btn-link" data-action="delete"><i class="fa fa-trash"></i></button>
 				<button class="btn btn-sm btn-link" data-action="restore"><i class="fa fa-repeat"></i></button>
+				{{{ end }}}
 				{{{ if isAdminOrGlobalMod }}}
 				<button class="btn btn-sm btn-link chat-ip" title="[[modules:chat.show-ip]]"><i class="fa fa-info-circle chat-ip-button"></i></button>
 				{{{ end }}}
