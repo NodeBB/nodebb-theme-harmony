@@ -251,11 +251,12 @@ $(document).ready(function () {
 			if (count > 1) {
 				const listEls = document.querySelectorAll(`[component="${type}/list"]`);
 				listEls.forEach((listEl) => {
-					const placeholder = listEl.querySelector('li');
-
-					for (let x = 0; x < count - 1; x++) {
-						const cloneEl = placeholder.cloneNode(true);
-						listEl.insertBefore(cloneEl, placeholder);
+					const placeholder = listEl.querySelector('*');
+					if (placeholder) {
+						for (let x = 0; x < count - 1; x++) {
+							const cloneEl = placeholder.cloneNode(true);
+							listEl.insertBefore(cloneEl, placeholder);
+						}
 					}
 				});
 			}
