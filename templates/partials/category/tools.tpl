@@ -53,6 +53,12 @@
 			</a>
 		</li>
 
+		<li>
+			<a component="topic/tag" href="#" class="dropdown-item rounded-1 d-flex align-items-center gap-2">
+				<i class="fa fa-fw text-muted fa-tag"></i> [[topic:thread_tools.tag]]
+			</a>
+		</li>
+
 		<li class="dropdown-divider"></li>
 
 		<li>
