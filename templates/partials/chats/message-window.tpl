@@ -22,7 +22,7 @@
 		<!-- IMPORT partials/chats/messages.tpl -->
 	</ul>
 	<div component="chat/composer" class="d-flex flex-column flex-md-row gap-2 border-top pt-2 align-items-start align-items-md-end">
-		<div class="w-100 flex-grow-1 position-relative input-group">
+		<div class="w-100 flex-grow-1 flex-nowrap position-relative input-group">
 			<button component="chat/upload/button" class="btn btn-outline-primary btn-sm align-self-stretch px-3 px-md-2" type="button"><i class="fa fa-fw fa-upload"></i></button>
 			<div class="flex-grow-1 position-relative">
 				<textarea component="chat/input" placeholder="[[modules:chat.placeholder.mobile]]" class="form-control chat-input mousetrap rounded-0" style="height:0;max-height:30vh;resize:none;"></textarea>
