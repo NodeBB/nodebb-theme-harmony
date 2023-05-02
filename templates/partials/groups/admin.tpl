@@ -84,7 +84,7 @@
 				<div class="member-post-cids-selector">
 					<!-- IMPORT partials/category/selector-dropdown-left.tpl -->
 				</div>
-				<input id="memberPostCids" type="text" class="form-control" value="{group.memberPostCids}">
+				<input id="memberPostCids" type="text" class="form-control form-control-sm" value="{group.memberPostCids}">
 			</div>
 		</div>
 
