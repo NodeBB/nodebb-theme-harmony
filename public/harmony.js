@@ -27,10 +27,12 @@ $(document).ready(function () {
 
 	require(['hooks'], function (hooks) {
 		$(window).on('action:composer.resize action:sidebar.toggle', function () {
-			$('[component="composer"]').css({
-				left: $('.sidebar-left').outerWidth(true),
+			const isRtl = $('html').attr('data-dir') === 'rtl';
+			const css = {
 				width: $('#panel').width(),
-			});
+			};
+			css[isRtl ? 'right' : 'left'] = $('.sidebar-left').outerWidth(true);
+			$('[component="composer"]').css(css);
 		});
 
 		hooks.on('filter:chat.openChat', function (hookData) {
