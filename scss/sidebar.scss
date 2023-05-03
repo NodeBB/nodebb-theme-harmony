@@ -103,6 +103,23 @@
 	}
 }
 
+ /*rtl:begin:ignore*/
+ html[data-dir="rtl"] {
+	.sidebar {
+		&.open {
+			.sidebar-toggle {
+				.fa-angles-right { display: none; }
+				.fa-angles-left { display: inline-block; }
+			}
+		}
+		.sidebar-toggle {
+			.fa-angles-right { display: inline-block; }
+			.fa-angles-left { display: none; }
+		}
+	}
+}
+ /*rtl:end:ignore*/
+
 .bottombar {
 	transition: bottom 150ms linear;
 
