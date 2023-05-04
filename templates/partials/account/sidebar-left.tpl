@@ -58,8 +58,8 @@
 		</a>
 		{{{ end }}}
 
-		<hr class="w-100 my-2"/>
 		{{{ if (loggedIn && (!isSelf && !banned)) }}}
+		<hr class="w-100 my-2"/>
 		<a href="#" component="account/flag" class="btn-ghost-sm">
 			<i class="flex-shrink-0 fa-solid fa-flag text-danger"></i>
 			<div class="flex-grow-1 text-nowrap">[[user:flag-profile]]</div>
@@ -72,10 +72,10 @@
 			<i class="flex-shrink-0 fa-solid fa-ban text-danger"></i>
 			<div class="flex-grow-1 text-nowrap">[[user:unblock_user]]</div>
 		</a>
-		<hr class="w-100 my-2"/>
 		{{{ end }}}
 
 		{{{ if canEdit }}}
+		<hr class="w-100 my-2"/>
 		<a href="{config.relative_path}/user/{userslug}/edit" class="btn-ghost-sm text-xs
 		{{{ if template.account/edit }}}active{{{ end }}}">
 			<div class="flex-grow-1">[[user:edit-profile]]</div>
