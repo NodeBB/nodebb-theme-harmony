@@ -1,11 +1,11 @@
-<div class="dropend m-2" component="skinSwitcher" title="[[harmony:skins]]">
+<div class="dropend m-2" component="skinSwitcher" title="[[themes/harmony:skins]]">
 	<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link nav-btn position-relative">
 		<span class="justify-content-between w-100">
 			<span class="d-flex gap-2 align-items-center text-nowrap truncate-open">
 				<span>
 					<i component="skinSwitcher/icon" class="fa fa-fw fa-paintbrush"></i>
 				</span>
-				<span class="nav-text small visible-open fw-semibold">[[harmony:skins]]</span>
+				<span class="nav-text small visible-open fw-semibold">[[themes/harmony:skins]]</span>
 			</span>
 		</span>
 	</a>

@@ -64,7 +64,7 @@ library.addProfileItem = async (data) => {
 		id: 'theme',
 		route: 'theme',
 		icon: 'fa-paint-brush',
-		name: '[[harmony:settings.title]]',
+		name: '[[themes/harmony:settings.title]]',
 		visibility: {
 			self: true,
 			other: false,

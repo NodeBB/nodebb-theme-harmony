@@ -21,6 +21,5 @@
 	"staticDirs": {
 		"inter": "node_modules/@fontsource/inter/files",
 		"poppins": "node_modules/@fontsource/poppins/files"
-	},
-	"languages": "languages"
+	}
 }

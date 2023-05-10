@@ -27,9 +27,9 @@
 
 {{{ if config.searchEnabled }}}
 <li component="sidebar/search" class="visible-open nav-item mx-2 search">
-	<div class="d-flex gap-2 py-1 px-2 align-items-center" title="[[harmony:login-register-to-search]]">
+	<div class="d-flex gap-2 py-1 px-2 align-items-center" title="[[themes/harmony:login-register-to-search]]">
 		<i class="fa fa-fw fa-search text-muted"></i>
-		<span class="nav-text visible-open text-xs text-muted">[[harmony:login-register-to-search]]</span>
+		<span class="nav-text visible-open text-xs text-muted">[[themes/harmony:login-register-to-search]]</span>
 	</a>
 </a>
 {{{ end }}}
