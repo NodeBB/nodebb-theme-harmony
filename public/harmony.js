@@ -36,8 +36,8 @@ $(document).ready(function () {
 		});
 
 		hooks.on('filter:chat.openChat', function (hookData) {
-			// disables chat modals & goes straight to chat page
-			hookData.modal = false;
+			// disables chat modals & goes straight to chat page based on user setting
+			hookData.modal = config.theme.chatModals;
 			return hookData;
 		});
 	});

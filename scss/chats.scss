@@ -105,5 +105,13 @@ body.page-user-chats {
 	[component="chat/nav-wrapper"][data-loaded="0"] + [component="chat/main-wrapper"] {
 		display: none!important;
 	}
+}
 
+.chat-modal {
+	left: auto;
+	top: auto;
+	bottom: 0px;
+	right: 2rem;
+	width: auto!important;
+	height: auto!important;
 }

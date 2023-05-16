@@ -1,5 +1,5 @@
 <div class="dropdown">
-  <button class="btn btn-outline align-text-top" data-bs-toggle="dropdown" component="chat/controlsToggle">
+  <button class="btn-ghost-sm" data-bs-toggle="dropdown" component="chat/controlsToggle">
     <i class="fa fa-gear text-muted"></i>
   </button>
   <ul class="dropdown-menu dropdown-menu-end p-1 text-sm" component="chat/controls">

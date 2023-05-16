@@ -16,6 +16,7 @@ const defaults = {
 	stickyToolbar: 'on',
 	autohideBottombar: 'off',
 	openSidebars: 'off',
+	chatModals: 'off',
 };
 
 library.init = async function (params) {
@@ -146,6 +147,7 @@ async function loadThemeConfig(uid) {
 	config.stickyToolbar = config.stickyToolbar === 'on';
 	config.autohideBottombar = config.autohideBottombar === 'on';
 	config.openSidebars = config.openSidebars === 'on';
+	config.chatModals = config.chatModals === 'on';
 	return config;
 }
 

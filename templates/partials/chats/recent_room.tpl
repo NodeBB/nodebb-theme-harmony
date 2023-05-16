@@ -2,7 +2,6 @@
 	<div class="d-flex gap-1 justify-content-between p-1">
 		<div class="chat-room-btn position-relative d-flex flex-grow-1 gap-2 justify-content-start align-items-start btn-ghost-sm ff-sans">
 			<div class="main-avatar">
-				<a class="stretched-link" href="{config.relative_path}/me/chats/{./roomId}"></a>
 				{{{ if ./users.length }}}
 				{{{ if ./groupChat}}}
 				<div class="position-relative stacked-avatars">
