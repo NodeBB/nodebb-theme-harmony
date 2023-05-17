@@ -33,7 +33,7 @@
 
 		<div class="d-flex flex-column flex-md-row mt-1 justify-content-between w-100 gap-2">
 			<div class="d-flex flex-grow-1 flex-row gap-2">
-				<div class="d-flex flex-column">
+				<div class="d-flex flex-column gap-1">
 					<h2 class="fullname fw-semibold fs-2 tracking-tight mb-0">{{{ if fullname }}}{fullname}{{{ else }}}{username}{{{ end }}}</h2>
 					<div class="d-flex flex-wrap gap-1 text-sm align-items-center">
 						<span class="username fw-bold">{{{ if !banned }}}@{username}{{{ else }}}[[user:banned]]{{{ end }}}</span>
@@ -47,7 +47,7 @@
 							{{{ end }}}
 						</div>
 					</div>
-
+					<div class="d-flex gap-2" component="user/badges"></div>
 					{{{ if isAdminOrGlobalModeratorOrModerator }}}
 					{{{ if banned }}}
 					<div class="text-xm text-muted">
