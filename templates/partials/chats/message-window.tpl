@@ -25,7 +25,7 @@
 		<div class="w-100 flex-grow-1 flex-nowrap position-relative input-group">
 			<button component="chat/upload/button" class="btn btn-outline-primary btn-sm align-self-stretch px-3 px-md-2" type="button"><i class="fa fa-fw fa-upload"></i></button>
 			<div class="flex-grow-1 position-relative">
-				<textarea component="chat/input" placeholder="[[modules:chat.placeholder.mobile]]" class="form-control chat-input mousetrap rounded-0" style="height:0;max-height:30vh;resize:none;"></textarea>
+				<textarea component="chat/input" placeholder="[[modules:chat.placeholder.mobile]]" class="form-control chat-input mousetrap rounded-0 shadow-none" style="height:0;max-height:30vh;resize:none;"></textarea>
 				<span component="chat/message/remaining" class="text-xs text-muted position-absolute me-1 mb-1 end-0 bottom-0">{maximumChatMessageLength}</span>
 			</div>
 			<button class="btn btn-primary btn-sm align-self-stretch px-3 px-md-2" type="button" data-action="send"><i class="fa fa-fw fa-paper-plane"></i></button>
