@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.14",
-    "@fontsource/poppins": "^4.5.10"
+    "@fontsource/poppins": "^5.0.0"
   },
   "devDependencies": {
     "eslint": "^8.0.0",
