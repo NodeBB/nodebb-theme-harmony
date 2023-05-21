@@ -1,14 +1,12 @@
 <div class="chats-full d-flex gap-1 h-100 mt-3 mt-md-0 py-md-3">
 	<div class="flex-shrink-0 d-flex flex-column h-100" component="chat/nav-wrapper" data-loaded="{{{ if roomId }}}1{{{ else }}}0{{{ end }}}">
 		<div class="chat-search dropdown mb-2">
-			<label class="text-xs text-muted">[[users:search-user-for-chat]]</label>
-
 			<div class="input-group">
-				<input class="form-control" type="text" component="chat/search" data-bs-toggle="dropdown" />
+				<input class="form-control form-control-sm" type="text" component="chat/search" data-bs-toggle="dropdown" placeholder="[[users:search-user-for-chat]]"/>
 				<ul component="chat/search/list" class="dropdown-menu">
 					<li><a href="#" class="dropdown-item rounded-1">[[admin/menu:search.start-typing]]</a></li>
 				</ul>
-				<button class="btn btn-primary" type="button">
+				<button class="btn btn-primary btn-sm" type="button">
 					<i class="fa fa-search"></i>
 				</button>
 			</div>

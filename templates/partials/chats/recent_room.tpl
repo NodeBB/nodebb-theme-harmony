@@ -1,5 +1,5 @@
-{{{ if (nextStart && @first)}}}
-<hr class="my-1 asd" />
+{{{ if (loadingMore && @first)}}}
+<hr class="my-1" />
 {{{ end }}}
 <div component="chat/recent/room" data-roomid="{./roomId}" data-full="1" class="rounded-1 {{{ if ./unread }}}unread{{{ end }}}">
 	<div class="d-flex gap-1 justify-content-between">
