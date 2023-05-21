@@ -33,7 +33,7 @@
 					<strong class="text-xs fw-semibold teaser-username">{./teaser.user.username}:</strong>
 					{./teaser.content}
 				</div>
-				<div class="teaser-timestamp text-muted text-xs">{./teaser.timeagoLong}</div>
+				<div class="teaser-timestamp text-muted text-xs">{{{ if ./teaser.timeagoLong }}}{./teaser.timeagoLong}{{{ else }}}<span class="timeago" title="{./teaser.timestampISO}"></span>{{{ end }}}</div>
 				{{{ end }}}
 			</div>
 		</div>
