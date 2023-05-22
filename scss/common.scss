@@ -15,7 +15,7 @@ body * {
 }
 
 hr {
-    border-top-color: $border-color;
+    border-top-color: var(--bs-border-color);
 	opacity: 1;
 }
 
