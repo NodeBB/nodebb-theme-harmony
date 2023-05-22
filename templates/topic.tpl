@@ -7,7 +7,7 @@
 {{{ end }}}
 
 <div class="d-flex flex-column gap-3" itemid="{url}" itemscope itemtype="https://schema.org/DiscussionForumPosting">
-	<div class="d-flex">
+	<div class="d-flex flex-wrap">
 		<div class="d-flex flex-column gap-3 flex-grow-1">
 			<h2 component="post/header" class="tracking-tight fw-semibold fs-2 mb-0 text-break {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}" itemprop="headline">
 				<span class="topic-title" component="topic/title">{title}</span>
