@@ -7,10 +7,6 @@
 		font-weight: $font-weight-semibold;
 	}
 
-	.tag-list:empty {
-		display: none !important;
-	}
-
 	[component="topic/reply"], [component="topic/reply/locked"], [component="topic/reply/guest"] {
 		font-size: 14px;
 		line-height: 20px;
