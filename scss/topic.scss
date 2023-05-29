@@ -46,6 +46,20 @@
 				[component="post/content"] {
 					@include fix-lists();
 
+					> blockquote {
+						> blockquote {
+							> *:not(.blockquote) {
+								display: none;
+							}
+						}
+
+						> blockquote.uncollapsed {
+							> *:not(.blockquote) {
+								display: block;
+							}
+						}
+					}
+
 					pre {
 						max-height: calc($font-size-base * 24);
 					}
