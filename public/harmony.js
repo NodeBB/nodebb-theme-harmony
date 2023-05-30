@@ -223,11 +223,18 @@ $(document).ready(function () {
 		// remove title from user icon in sidebar to prevent double tooltip
 		$('.sidebar [component="header/avatar"] .avatar').removeAttr('title');
 		const tooltipEls = $('.sidebar [title]');
+		const lefttooltipEls = $('.sidebar-left [title]');
+		const rightooltipEls = $('.sidebar-right [title]');
 		const isRtl = $('html').attr('data-dir') === 'rtl';
-		tooltipEls.tooltip({
+		lefttooltipEls.tooltip({
 			trigger: 'manual',
 			animation: false,
 			placement: isRtl ? 'left' : 'right',
+		});
+		rightooltipEls.tooltip({
+			trigger: 'manual',
+			animation: false,
+			placement: isRtl ? 'right' : 'left',
 		});
 
 		tooltipEls.on('mouseenter', function (ev) {
