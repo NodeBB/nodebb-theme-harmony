@@ -16,14 +16,6 @@
 .groups.details {
 	margin-top: 200px;
 
-	[component="groups/members"] {
-		tbody {
-			max-height: 500px;
-			display: block;
-			overflow-y: auto;
-		}
-	}
-
 	@include media-breakpoint-up(md) {
 		margin-top: 300px;
 	}
