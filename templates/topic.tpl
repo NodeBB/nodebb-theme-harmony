@@ -27,10 +27,10 @@
 						<i class="fa fa-lock"></i>
 						[[topic:locked]]
 					</span>
-					<span class="badge badge border border-gray-300 text-primary {{{ if !oldCid }}}hidden{{{ end }}}">
+					<a href="{config.relative_path}/category/{oldCid}" class="badge badge border border-gray-300 text-primary text-decoration-none {{{ if !oldCid }}}hidden{{{ end }}}">
 						<i class="fa fa-arrow-circle-right"></i>
 						{{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}
-					</span>
+					</a>
 					{{{each icons}}}<span class="lh-1">{@value}</span>{{{end}}}
 				</span>
 				<a class="lh-1" href="{config.relative_path}/category/{category.slug}">{function.buildCategoryLabel, category, "border"}</a>
