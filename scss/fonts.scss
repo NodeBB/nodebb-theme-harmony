@@ -3,15 +3,13 @@
 
 $weights: $font-weight-light, $font-weight-normal, $font-weight-semibold, $font-weight-bold;
 
-@each $weight in $weights {
-	@include Inter.fontFace(
-		$weight: $weight,
-		$display: fallback,
-		$fontDir: "./plugins/nodebb-theme-harmony/inter"
-	);
-	@include Poppins.fontFace(
-	  $weight: $weight,
-	  $display: fallback,
-	  $fontDir: "./plugins/nodebb-theme-harmony/poppins"
-	);
-}
+@include Inter.faces(
+	$weights: $weights,
+	$display: fallback,
+	$directory: "./plugins/nodebb-theme-harmony/inter"
+);
+@include Poppins.faces(
+  $weights: $weights,
+  $display: fallback,
+  $directory: "./plugins/nodebb-theme-harmony/poppins"
+);
