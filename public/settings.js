@@ -14,12 +14,14 @@ define('forum/account/theme', ['forum/account/header', 'api', 'settings', 'alert
 			const formEl = document.getElementById('theme-settings');
 			saveEl.addEventListener('click', async () => {
 				const themeSettings = settings.helper.serializeForm($(formEl));
-				await api.put(`/users/${app.user.uid}/settings`, {
+				await api.put(`/users/${ajaxify.data.uid}/settings`, {
 					settings: {
 						...themeSettings,
 					},
 				});
-				config.theme = (await api.get('/api/config')).theme;
+				if (ajaxify.data.isSelf) {
+					config.theme = (await api.get('/api/config')).theme;
+				}
 				alerts.success('[[success:settings-saved]]');
 			});
 		}

@@ -134,7 +134,7 @@ library.defineWidgetAreas = async function (areas) {
 	return areas;
 };
 
-async function loadThemeConfig(uid) {
+library.loadThemeConfig = async function (uid) {
 	const [themeConfig, userConfig] = await Promise.all([
 		meta.settings.get('harmony'),
 		user.getSettings(uid),
@@ -149,10 +149,10 @@ async function loadThemeConfig(uid) {
 	config.openSidebars = config.openSidebars === 'on';
 	config.chatModals = config.chatModals === 'on';
 	return config;
-}
+};
 
 library.getThemeConfig = async function (config) {
-	config.theme = await loadThemeConfig(config.uid);
+	config.theme = await library.loadThemeConfig(config.uid);
 	config.openDraftsOnPageLoad = false;
 	return config;
 };
