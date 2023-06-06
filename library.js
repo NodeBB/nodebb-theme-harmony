@@ -55,7 +55,7 @@ library.addAdminNavigation = async function (header) {
 	header.plugins.push({
 		route: '/plugins/harmony',
 		icon: 'fa-paint-brush',
-		name: 'Harmony Theme',
+		name: '[[themes/harmony:theme-name]]',
 	});
 	return header;
 };
