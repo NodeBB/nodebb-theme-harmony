@@ -41,7 +41,7 @@
 							{{{ end }}}
 
 							{{{ if (./action == "posts.edit") }}}
-							<div class="text text-xs fw-semibold line-clamp-2">[[topic:composer.editing]]</div>
+							<div class="text text-xs fw-semibold line-clamp-2">[[topic:composer.editing-in, "{./title}"]]</div>
 							{{{ end }}}
 
 							{{{ if ./text }}}
