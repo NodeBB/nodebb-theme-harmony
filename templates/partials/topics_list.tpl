@@ -9,7 +9,7 @@
 		<a id="{./index}" data-index="{./index}" component="topic/anchor" class="position-absolute"></a>
 
 
-		<div class="d-flex p-0 col-lg-7 gap-2 gap-lg-3 align-items-start">
+		<div class="d-flex p-0 col-lg-7 gap-2 gap-lg-3 pe-1 align-items-start">
 			<div class="flex-shrink-0 position-relative">
 				<a class="text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 					{buildAvatar(./user, "40px", true, "avatar avatar-tooltip")}
