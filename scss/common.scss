@@ -49,12 +49,16 @@ hr {
 }
 
 blockquote {
-	background-color: $light;
+	$bq-border-color: mix($light, $dark, 75%);
+	@extend .text-bg-light;
 	font-style: normal;
-	border-left: 2px solid $border-color;
+	border-left: 2px solid $bq-border-color;
 	padding: 1rem;
 	p:last-child {
 		margin-bottom: 0;
+	}
+	.toggle {
+		border-color: $bq-border-color!important;
 	}
 }
 
