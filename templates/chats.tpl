@@ -3,8 +3,12 @@
 		<div class="chat-search dropdown mb-2">
 			<div class="input-group">
 				<input class="form-control form-control-sm" type="text" component="chat/search" data-bs-toggle="dropdown" placeholder="[[users:search-user-for-chat]]"/>
-				<ul component="chat/search/list" class="dropdown-menu">
-					<li><a href="#" class="dropdown-item rounded-1">[[admin/menu:search.start-typing]]</a></li>
+				<ul component="chat/search/list" class="dropdown-menu p-1">
+					<li component="chat/search/start-typing"><a href="#" class="dropdown-item rounded-1">[[admin/menu:search.start-typing]]</a></li>
+					<li component="chat/search/no-users" class="hidden"><a href="#" class="dropdown-item rounded-1">[[users:no-users-found]]</a></li>
+					{{{ each searchUsers }}}
+					<li component="chat/search/user" data-uid="{./uid}"><a href="#" class="dropdown-item rounded-1">{buildAvatar(@value, "24px", true)} {./username}<a></a></li>
+					{{{ end }}}
 				</ul>
 				<button class="btn btn-primary btn-sm" type="button">
 					<i class="fa fa-search"></i>
