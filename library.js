@@ -177,38 +177,7 @@ library.saveUserSettings = async function (hookData) {
 };
 
 library.filterMiddlewareRenderHeader = async function (hookData) {
-	const userSettings = await user.getSettings(hookData.req.uid);
-
-	const defaultSkin = _.capitalize(meta.config.bootswatchSkin) || '[[user:no-skin]]';
-	const defaultSkins = [
-		{ name: `[[user:default, ${defaultSkin}]]`, value: '', selected: userSettings.bootswatchSkin === '' },
-		{ name: '[[user:no-skin]]', value: 'noskin', selected: userSettings.bootswatchSkin === 'noskin' },
-	];
-	const lightSkins = [
-		'cerulean', 'cosmo', 'flatly', 'journal', 'litera',
-		'lumen', 'lux', 'materia', 'minty', 'morph', 'pulse', 'sandstone',
-		'simplex', 'sketchy', 'spacelab', 'united', 'yeti', 'zephyr',
-	];
-	const darkSkins = [
-		'cyborg', 'darkly', 'quartz', 'slate', 'solar', 'superhero', 'vapor',
-	];
-	function parseSkins(skins) {
-		skins = skins.map(skin => ({
-			name: _.capitalize(skin),
-			value: skin,
-		}));
-		skins.forEach((skin) => {
-			skin.selected = skin.value === userSettings.bootswatchSkin;
-		});
-		return skins;
-	}
-
-	hookData.templateData.bootswatchSkinOptions = {
-		default: defaultSkins,
-		light: parseSkins(lightSkins),
-		dark: parseSkins(darkSkins),
-	};
-	hookData.templateData.currentBSSkin = _.capitalize(hookData.templateData.bootswatchSkin);
+	hookData.templateData.bootswatchSkinOptions = await meta.css.getSkinSwitcherOptions(hookData.req.uid);
 	return hookData;
 };
 

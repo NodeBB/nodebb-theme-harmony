@@ -40,6 +40,11 @@
 				<a href="#" class="dropdown-item rounded-1" data-value="{./value}">{./name} <i class="fa fa-fw fa-check {{{ if !./selected }}} invisible {{{ end }}}"></i></a>
 			</li>
 			{{{ end }}}
+			{{{ each bootswatchSkinOptions.custom }}}
+			<li>
+				<a href="#" class="dropdown-item rounded-1" data-value="{./value}">{./name} <i class="fa fa-fw fa-check {{{ if !./selected }}} invisible {{{ end }}}"></i></a>
+			</li>
+			{{{ end }}}
 		</div>
 	</ul>
 </div>
