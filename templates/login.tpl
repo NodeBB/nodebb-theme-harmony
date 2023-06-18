@@ -3,7 +3,7 @@
 	{{widgets.header.html}}
 	{{{end}}}
 </div>
-<div class="row login">
+<div class="row login flex-fill">
 	<div class="d-flex flex-column gap-2 {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<h2 class="tracking-tight fw-semibold text-center">[[global:login]]</h2>
 		<div class="row justify-content-center gap-5">
