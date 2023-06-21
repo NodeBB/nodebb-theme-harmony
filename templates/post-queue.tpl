@@ -45,7 +45,7 @@
 	{{{ each posts }}}
 	<div class="card mb-4" data-id="{./id}" data-uid="{./user.uid}">
 		<div class="row g-0">
-			<div class="col-4 col-lg-3 bg-card-cap rounded-start">
+			<div class="col-lg-3 bg-card-cap rounded-start">
 				<ul class="list-unstyled ps-0 mb-0 border-end h-100">
 					<li class="card-body border-bottom position-relative">
 						{{{ if !singlePost }}}
@@ -175,7 +175,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="col-8 col-lg-9 d-flex flex-column">
+			<div class="col-lg-9 d-flex flex-column">
 				<div class="post-content mb-auto text-break p-3 pb-0 h-100">{posts.data.content}</div>
 				<div class="post-content-editable flex-grow-1 hidden">
 					<textarea class="form-control w-100 h-100 p-3">{posts.data.rawContent}</textarea>
