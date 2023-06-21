@@ -64,7 +64,7 @@
 			</div>
 			{{{ if ./thumbs.length }}}
 			<a class="position-relative text-decoration-none flex-shrink-0 d-none d-xl-block" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">
-				<img class="topic-thumb rounded-1" style="width:auto;height: 3.33rem;" src="{./thumbs.0.url}"/>
+				<img class="topic-thumb rounded-1 bg-light" style="width:auto;max-width: 5.33rem;height: 3.33rem;object-fit: contain;" src="{./thumbs.0.url}"/>
 				<span data-numthumbs="{./thumbs.length}" class="px-1 position-absolute top-0 start-100 translate-middle badge rounded bg-info" style="z-index: 1;">+{increment(./thumbs.length, "-1")}</span>
 			</a>
 			{{{ end }}}
