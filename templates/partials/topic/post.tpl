@@ -7,7 +7,7 @@
 {{{ end }}}
 
 <div class="d-flex align-items-start gap-3">
-	<div class="icon py-1 bg-body d-none d-sm-block">
+	<div class="icon bg-body d-none d-sm-block rounded-circle" style="outline: 2px solid var(--bs-body-bg);">
 		<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 			{buildAvatar(posts.user, "48px", true, "", "user/picture")}
 			<span component="user/status" class="position-absolute translate-middle-y border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>

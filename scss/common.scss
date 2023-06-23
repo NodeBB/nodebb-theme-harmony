@@ -87,7 +87,6 @@ body:not(.page-user) {
 	z-index: 3;
 	top: 0;
 	padding: 0.25rem 0;
-	background-color: var(--bs-body-bg);
 }
 // quartz doesn't need body-bg for tool background
 .skin-quartz .sticky-tools {
