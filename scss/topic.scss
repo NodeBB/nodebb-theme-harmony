@@ -7,9 +7,12 @@
 	}
 
 	.topic {
-		.posts {
+		.posts-container {
 			max-width: 960px;
 			width: 960px;
+		}
+
+		.posts {
 			// fixes code blocks pushing content out on mobile
 			@include media-breakpoint-down(md) {
 				max-width: calc(100vw - $grid-gutter-width);
@@ -81,7 +84,6 @@
 	}
 
 	.quick-reply {
-		max-width: 960px;
 		@include topic-avatars();
 	}
 

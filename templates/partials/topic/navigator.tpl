@@ -1,4 +1,4 @@
-<div class="pagination-block d-none d-lg-block flex-grow-1 mb-2">
+<div class="pagination-block d-none d-lg-block flex-grow-1 mb-4">
 	<div class="d-flex justify-content-end sticky-top mt-4" style="top:6rem;z-index:1;">
 		<div class="ps-1 ps-md-0 d-inline-block">
 			<div class="scroller-content d-flex gap-2 flex-column align-items-start">

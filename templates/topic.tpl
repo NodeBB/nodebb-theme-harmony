@@ -56,7 +56,8 @@
 			{{{ end }}}
 
 			<div class="d-flex gap-0 gap-lg-5">
-				<ul component="topic" class="posts timeline list-unstyled mt-sm-2 p-0 py-3" style="min-width: 0;" data-tid="{tid}" data-cid="{cid}">
+				<div class="posts-container" style="min-width: 0;">
+					<ul component="topic" class="posts timeline list-unstyled mt-sm-2 p-0 py-3" style="min-width: 0;" data-tid="{tid}" data-cid="{cid}">
 					{{{each posts}}}
 						<li component="post" class="pt-4 {{{ if posts.deleted }}}deleted{{{ end }}} {{{ if posts.selfPost }}}self-post{{{ end }}} {{{ if posts.topicOwnerPost }}}topic-owner-post{{{ end }}}" <!-- IMPORT partials/data/topic.tpl -->>
 							<a component="post/anchor" data-index="{./index}" id="{increment(./index, "1")}"></a>
@@ -72,21 +73,20 @@
 						{{{ end }}}
 						{{{ end }}}
 					{{{end}}}
-				</ul>
+					</ul>
+					{{{ if browsingUsers }}}
+					<div class="visible-xs">
+						<!-- IMPORT partials/topic/browsing-users.tpl -->
+						<hr/>
+					</div>
+					{{{ end }}}
+					{{{ if config.theme.enableQuickReply }}}
+					<!-- IMPORT partials/topic/quickreply.tpl -->
+					{{{ end }}}
+				</div>
 
 				<!-- IMPORT partials/topic/navigator.tpl -->
 			</div>
-
-			{{{ if browsingUsers }}}
-			<div class="visible-xs">
-				<!-- IMPORT partials/topic/browsing-users.tpl -->
-				<hr/>
-			</div>
-			{{{ end }}}
-
-			{{{ if config.theme.enableQuickReply }}}
-			<!-- IMPORT partials/topic/quickreply.tpl -->
-			{{{ end }}}
 
 			{{{ if config.usePagination }}}
 			<!-- IMPORT partials/paginator.tpl -->
