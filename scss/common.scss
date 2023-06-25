@@ -161,3 +161,8 @@ body:not(.page-user) {
 		flex-basis: 200px!important;
 	}
 }
+
+.markdown-highlight {
+	@extend .shadow-sm;
+	@extend .border;
+}
