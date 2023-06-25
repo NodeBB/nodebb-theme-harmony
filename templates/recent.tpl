@@ -5,18 +5,32 @@
 	{{{end}}}
 </div>
 {{{ end }}}
-<div class="recent">
-	<!-- IMPORT partials/topic-list-bar.tpl -->
 
-	<div class="category">
-		{{{ if !topics.length }}}
-		<div class="alert alert-info" id="category-no-topics">[[recent:no_recent_topics]]</div>
-		{{{ end }}}
+<div class="row">
+	<div class="recent {{{if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
+		<!-- IMPORT partials/topic-list-bar.tpl -->
 
-		<!-- IMPORT partials/topics_list.tpl -->
+		<div class="category">
+			{{{ if !topics.length }}}
+			<div class="alert alert-info" id="category-no-topics">[[recent:no_recent_topics]]</div>
+			{{{ end }}}
 
-		{{{ if config.usePagination }}}
-		<!-- IMPORT partials/paginator.tpl -->
+			<!-- IMPORT partials/topics_list.tpl -->
+
+			{{{ if config.usePagination }}}
+			<!-- IMPORT partials/paginator.tpl -->
+			{{{ end }}}
+		</div>
+	</div>
+	<div data-widget-area="sidebar" class="col-lg-3 col-sm-12 {{{ if !widgets.sidebar.length }}}hidden{{{ end }}}">
+		{{{ each widgets.sidebar }}}
+		{{widgets.sidebar.html}}
 		{{{ end }}}
 	</div>
+</div>
+
+<div data-widget-area="footer">
+	{{{each widgets.footer}}}
+	{{widgets.footer.html}}
+	{{{end}}}
 </div>
