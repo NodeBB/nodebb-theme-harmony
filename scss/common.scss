@@ -15,7 +15,7 @@ body * {
 }
 
 hr {
-    border-top-color: var(--bs-border-color);
+	border-top-color: var(--bs-border-color);
 	opacity: 1;
 }
 
@@ -165,4 +165,17 @@ body:not(.page-user) {
 .markdown-highlight {
 	@extend .shadow-sm;
 	@extend .border;
+}
+
+[component="chat/message/body"], [component="post/content"] {
+	.img-fluid {
+		@extend .shadow-sm;
+		padding: $spacer * 0.5;
+		margin: $spacer * 0.5 0;
+		border: 1px solid $border-color;
+		background-color: $light;
+		border-radius: $border-radius-sm;
+		max-height: 500px;
+		width: auto;
+	}
 }
