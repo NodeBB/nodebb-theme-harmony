@@ -5,18 +5,31 @@
 			<button component="chat/create" class="btn btn-primary btn-sm w-100">[[modules:chat.create-room]]</button>
 		</div>
 
+		{{{ if publicRooms.length }}}
 		<hr class="my-1">
 
 		<div component="" class="">
-			<div class="d-flex gap-1 align-items-center"><button class="btn-ghost-sm"><i class="fa fa-chevron-down"></i></button> <label class="form-label text-sm text-secondary">Public Rooms</label></div>
-			{{{ each publicRooms }}}
-			<div component="chat/public/room" class="btn-ghost-sm ff-sans justify-content-start" data-roomid="{./roomId}"># {./roomName}</div>
-			{{{ end }}}
+			<div class="d-flex gap-1 align-items-center">
+				<button class="btn-ghost-sm p-1" data-bs-toggle="collapse" data-bs-target="#public-rooms"
+				onclick="$(this).find('i').toggleClass('fa-chevron-right').toggleClass('fa-chevron-down');"><i class="fa fa-fw fa-chevron-down"></i></button>
+				<label class="text-sm text-secondary">[[modules:chat.public-rooms]]</label>
+			</div>
+			<div id="public-rooms" class="collapse show">
+				{{{ each publicRooms }}}
+				<div component="chat/public/room" class="btn-ghost-sm ff-sans justify-content-start" data-roomid="{./roomId}"># {./roomName}</div>
+				{{{ end }}}
+			</div>
 		</div>
-
+		{{{ end }}}
 		<hr class="my-1">
 
-		<div component="chat/recent" class="chats-list overflow-auto mb-0 pe-1" data-nextstart="{nextStart}">
+		<div class="d-flex gap-1 align-items-center">
+			<button class="btn-ghost-sm p-1" data-bs-toggle="collapse" data-bs-target="#private-rooms"
+			onclick="$(this).find('i').toggleClass('fa-chevron-right').toggleClass('fa-chevron-down');"><i class="fa fa-fw fa-chevron-down"></i></button>
+			<label class="text-sm text-secondary">[[modules:chat.private-rooms]]</label>
+		</div>
+
+		<div id="private-rooms" component="chat/recent" class="chats-list overflow-auto mb-0 pe-1 collapse show" data-nextstart="{nextStart}">
 			{{{each rooms}}}
 			<!-- IMPORT partials/chats/recent_room.tpl -->
 			{{{end}}}

@@ -19,6 +19,13 @@
         <i class="fa fa-fw text-muted fa-sign-out"></i> [[modules:chat.leave]]
       </a>
     </li>
+    {{{ if (public && isAdmin) }}}
+    <li>
+      <a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="#" data-action="delete">
+        <i class="fa fa-fw text-danger fa-trash"></i> [[modules:chat.delete]]
+      </a>
+    </li>
+    {{{ end }}}
     {{{ if users.length }}}
     <li role="separator" class="dropdown-divider"></li>
     <li class="dropdown-header">[[modules:chat.in-room]]</li>
