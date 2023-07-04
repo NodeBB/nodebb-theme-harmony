@@ -31,7 +31,7 @@
 	</div>
 
 	{{{ if users.length }}}
-	<div component="chat/user/list/btn" class="btn-ghost-sm" title="[[modules:chat.view-users-list]]" data-bs-toggle="tooltip">
+	<div component="chat/user/list/btn" class="btn-ghost-sm d-none d-lg-flex flex-nowrap" title="[[modules:chat.view-users-list]]" data-bs-toggle="tooltip">
 		<div class="d-flex text-nowrap user-count-{./users.length}">
 			{{{ if ./users.2 }}}
 			<span class="order-3 text-decoration-none position-relative" href="{config.relative_path}/user/{./users.2.userslug}">{buildAvatar(./users.2, "24px", true)}</span>

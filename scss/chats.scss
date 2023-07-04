@@ -124,4 +124,7 @@ body.page-user-chats {
 	right: 2rem;
 	width: auto!important;
 	height: auto!important;
+	[component="chat/user/list/btn"] {
+		display: none!important;
+	}
 }
