@@ -17,13 +17,13 @@
 			</li>
 			<li>
 				<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="#" data-action="leave">
-					<i class="fa fa-fw text-muted fa-sign-out"></i> [[modules:chat.leave]]
+					<i class="fa fa-fw text-muted fa-sign-out"></i> [[modules:chat.leave-room]]
 				</a>
 			</li>
 			{{{ if (public && isAdmin) }}}
 			<li>
 				<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="#" data-action="delete">
-					<i class="fa fa-fw text-danger fa-trash"></i> [[modules:chat.delete]]
+					<i class="fa fa-fw text-danger fa-trash"></i> [[modules:chat.delete-room]]
 				</a>
 			</li>
 			{{{ end }}}
@@ -31,7 +31,7 @@
 	</div>
 
 	{{{ if users.length }}}
-	<div component="chat/user/list/btn" class="btn-ghost-sm d-none d-lg-flex flex-nowrap" title="[[modules:chat.view-users-list]]" data-bs-toggle="tooltip">
+	<div component="chat/user/list/btn" class="btn-ghost-sm d-none d-lg-flex flex-nowrap" title="[[modules:chat.view-users-list]]" data-bs-toggle="tooltip" data-bs-placement="bottom">
 		<div class="d-flex text-nowrap user-count-{./users.length}">
 			{{{ if ./users.2 }}}
 			<span class="order-3 text-decoration-none position-relative" href="{config.relative_path}/user/{./users.2.userslug}">{buildAvatar(./users.2, "24px", true)}</span>

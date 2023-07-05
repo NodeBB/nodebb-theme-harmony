@@ -23,11 +23,13 @@
 
 		<hr class="my-1">
 
+		{{{ if publicRooms.length }}}
 		<div class="d-flex gap-1 align-items-center">
 			<button class="btn-ghost-sm p-1" data-bs-toggle="collapse" data-bs-target="#private-rooms"
 			onclick="$(this).find('i').toggleClass('fa-chevron-right').toggleClass('fa-chevron-down');"><i class="fa fa-fw fa-chevron-down"></i></button>
 			<label class="text-sm text-muted">[[modules:chat.private-rooms]]</label>
 		</div>
+		{{{ end }}}
 
 		<div id="private-rooms" component="chat/recent" class="chats-list overflow-auto mb-0 pe-1 collapse show" data-nextstart="{nextStart}">
 			{{{each rooms}}}
