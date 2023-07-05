@@ -52,6 +52,9 @@ body.page-user-chats {
 
 [component="chat/nav-wrapper"] {
 	width: 300px;
+	[component="chat/public/room"].unread {
+		font-weight: $font-weight-bold;
+	}
 }
 
 .expanded-chat {

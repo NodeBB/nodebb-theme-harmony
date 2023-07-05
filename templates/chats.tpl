@@ -13,9 +13,9 @@
 				onclick="$(this).find('i').toggleClass('fa-chevron-right').toggleClass('fa-chevron-down');"><i class="fa fa-fw fa-chevron-down"></i></button>
 				<label class="text-sm text-muted">[[modules:chat.public-rooms]]</label>
 			</div>
-			<div id="public-rooms" class="collapse show">
+			<div id="public-rooms" component="chat/public" class="collapse show">
 				{{{ each publicRooms }}}
-				<div component="chat/public/room" class="btn-ghost-sm ff-sans justify-content-start" data-roomid="{./roomId}"># {./roomName}</div>
+				<div component="chat/public/room" class="btn-ghost-sm ff-sans justify-content-start {{{ if ./unread}}}unread{{{ end }}}" data-roomid="{./roomId}"># {./roomName}</div>
 				{{{ end }}}
 			</div>
 		</div>
