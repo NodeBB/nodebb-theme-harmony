@@ -58,11 +58,6 @@ body.page-user-chats {
 }
 
 .expanded-chat {
-	// no taskbar so hide minimize button
-	[data-action="minimize"] {
-		display: none!important;
-	}
-
 	.chat-content {
 		@include fix-lists;
 
