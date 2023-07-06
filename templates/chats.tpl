@@ -8,7 +8,7 @@
 		{{{ if publicRooms.length }}}
 		<hr class="my-1">
 
-		<div component="" class="">
+		<div class="d-flex flex-column gap-1">
 			<div class="d-flex gap-1 align-items-center justify-content-between justify-content-lg-start">
 				<button class="btn-ghost-sm p-1 order-1 order-lg-0" data-bs-toggle="collapse" data-bs-target="#public-rooms"
 				onclick="$(this).find('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');"><i class="fa fa-fw fa-chevron-up"></i></button>
@@ -30,18 +30,20 @@
 
 		<hr class="my-1">
 
-		{{{ if publicRooms.length }}}
-		<div class="d-flex gap-1 align-items-center justify-content-between justify-content-lg-start">
-			<button class="btn-ghost-sm p-1 order-1 order-lg-0" data-bs-toggle="collapse" data-bs-target="#private-rooms"
-			onclick="$(this).find('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');"><i class="fa fa-fw fa-chevron-up"></i></button>
-			<label class="text-sm text-muted lh-1">[[modules:chat.private-rooms]]</label>
-		</div>
-		{{{ end }}}
+		<div class="d-flex flex-column gap-1 overflow-auto">
+			{{{ if publicRooms.length }}}
+			<div class="d-flex gap-1 align-items-center justify-content-between justify-content-lg-start">
+				<button class="btn-ghost-sm p-1 order-1 order-lg-0" data-bs-toggle="collapse" data-bs-target="#private-rooms"
+				onclick="$(this).find('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');"><i class="fa fa-fw fa-chevron-up"></i></button>
+				<label class="text-sm text-muted lh-1">[[modules:chat.private-rooms]]</label>
+			</div>
+			{{{ end }}}
 
-		<div id="private-rooms" component="chat/recent" class="chats-list overflow-auto mb-0 pe-1 collapse show" data-nextstart="{nextStart}">
-			{{{each rooms}}}
-			<!-- IMPORT partials/chats/recent_room.tpl -->
-			{{{end}}}
+			<div id="private-rooms" component="chat/recent" class="chats-list overflow-auto mb-0 pe-1 collapse show" data-nextstart="{nextStart}">
+				{{{each rooms}}}
+				<!-- IMPORT partials/chats/recent_room.tpl -->
+				{{{end}}}
+			</div>
 		</div>
 	</div>
 	<div component="chat/main-wrapper" class="flex-grow-1 ms-md-2 ps-md-2 border-1 border-start-md h-100" style="min-width: 0;">

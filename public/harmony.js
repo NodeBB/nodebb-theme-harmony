@@ -116,14 +116,8 @@ $(document).ready(function () {
 			});
 			hooks.on('action:ajaxify.end', function () {
 				$window.off('scroll', delayedScroll);
-				if (!ajaxify.data.template.chats) {
-					$body.removeClass('chat-loaded');
-				}
 				bottomBar.css({ bottom: 0 });
 				setTimeout(enableAutohide, 250);
-			});
-			hooks.on('action:chat.loaded', function () {
-				$body.toggleClass('chat-loaded', !!(ajaxify.data.template.chats && ajaxify.data.roomId));
 			});
 		});
 	}
