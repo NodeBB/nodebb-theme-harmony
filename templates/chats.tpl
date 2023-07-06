@@ -1,12 +1,13 @@
 <div class="chats-full d-flex gap-1 h-100 mt-3 mt-md-0 py-md-3">
-	<div component="chat/nav-wrapper" class="flex-shrink-0 d-flex flex-column h-100" data-loaded="{{{ if roomId }}}1{{{ else }}}0{{{ end }}}">
+	<div component="chat/nav-wrapper" class="flex-shrink-0 d-flex flex-column h-100 gap-1" data-loaded="{{{ if roomId }}}1{{{ else }}}0{{{ end }}}">
 
-		<div class="mb-2">
+		<div>
 			<button component="chat/create" class="btn btn-primary btn-sm w-100">[[modules:chat.create-room]]</button>
 		</div>
 
 		{{{ if publicRooms.length }}}
 		<hr class="my-1">
+
 		<div component="" class="">
 			<div class="d-flex gap-1 align-items-center justify-content-between justify-content-lg-start">
 				<button class="btn-ghost-sm p-1 order-1 order-lg-0" data-bs-toggle="collapse" data-bs-target="#public-rooms"
