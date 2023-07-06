@@ -8,10 +8,10 @@
 		{{{ if publicRooms.length }}}
 		<hr class="my-1">
 		<div component="" class="">
-			<div class="d-flex gap-1 align-items-center">
-				<button class="btn-ghost-sm p-1" data-bs-toggle="collapse" data-bs-target="#public-rooms"
-				onclick="$(this).find('i').toggleClass('fa-chevron-right').toggleClass('fa-chevron-down');"><i class="fa fa-fw fa-chevron-down"></i></button>
-				<label class="text-sm text-muted">[[modules:chat.public-rooms]]</label>
+			<div class="d-flex gap-1 align-items-center justify-content-between justify-content-lg-start">
+				<button class="btn-ghost-sm p-1 order-1 order-lg-0" data-bs-toggle="collapse" data-bs-target="#public-rooms"
+				onclick="$(this).find('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');"><i class="fa fa-fw fa-chevron-up"></i></button>
+				<label class="text-sm text-muted lh-1">[[modules:chat.public-rooms]]</label>
 			</div>
 			<div id="public-rooms" component="chat/public" class="collapse show">
 				{{{ each publicRooms }}}
@@ -24,10 +24,10 @@
 		<hr class="my-1">
 
 		{{{ if publicRooms.length }}}
-		<div class="d-flex gap-1 align-items-center">
-			<button class="btn-ghost-sm p-1" data-bs-toggle="collapse" data-bs-target="#private-rooms"
-			onclick="$(this).find('i').toggleClass('fa-chevron-right').toggleClass('fa-chevron-down');"><i class="fa fa-fw fa-chevron-down"></i></button>
-			<label class="text-sm text-muted">[[modules:chat.private-rooms]]</label>
+		<div class="d-flex gap-1 align-items-center justify-content-between justify-content-lg-start">
+			<button class="btn-ghost-sm p-1 order-1 order-lg-0" data-bs-toggle="collapse" data-bs-target="#private-rooms"
+			onclick="$(this).find('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');"><i class="fa fa-fw fa-chevron-up"></i></button>
+			<label class="text-sm text-muted lh-1">[[modules:chat.private-rooms]]</label>
 		</div>
 		{{{ end }}}
 
