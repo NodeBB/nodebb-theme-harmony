@@ -116,7 +116,9 @@ $(document).ready(function () {
 			});
 			hooks.on('action:ajaxify.end', function () {
 				$window.off('scroll', delayedScroll);
-				$body.removeClass('chat-loaded');
+				if (!ajaxify.data.template.chats) {
+					$body.removeClass('chat-loaded');
+				}
 				bottomBar.css({ bottom: 0 });
 				setTimeout(enableAutohide, 250);
 			});
