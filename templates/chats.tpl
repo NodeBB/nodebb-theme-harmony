@@ -12,7 +12,7 @@
 			<div class="d-flex gap-1 align-items-center justify-content-between justify-content-lg-start">
 				<button class="btn-ghost-sm p-1 order-1 order-lg-0" data-bs-toggle="collapse" data-bs-target="#public-rooms"
 				onclick="$(this).find('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');"><i class="fa fa-fw fa-chevron-up"></i></button>
-				<label class="text-sm text-muted lh-1">[[modules:chat.public-rooms]]</label>
+				<label class="text-sm text-muted lh-1">[[modules:chat.public-rooms, {publicRooms.length}]]</label>
 			</div>
 			<div id="public-rooms" component="chat/public" class="collapse show">
 				{{{ each publicRooms }}}
@@ -35,7 +35,7 @@
 			<div class="d-flex gap-1 align-items-center justify-content-between justify-content-lg-start">
 				<button class="btn-ghost-sm p-1 order-1 order-lg-0" data-bs-toggle="collapse" data-bs-target="#private-rooms"
 				onclick="$(this).find('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');"><i class="fa fa-fw fa-chevron-up"></i></button>
-				<label class="text-sm text-muted lh-1">[[modules:chat.private-rooms]]</label>
+				<label class="text-sm text-muted lh-1">[[modules:chat.private-rooms, {privateRoomCount}]]</label>
 			</div>
 			{{{ end }}}
 
