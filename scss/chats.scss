@@ -17,16 +17,6 @@
 	}
 }
 
-[component="chat/user/list/btn"] {
-	> div {
-		width: 60px;
-		&.user-count-1 { width: 24px; }
-		&.user-count-2 { width: 40px; }
-		.order-3 { left: -16px; }
-		.order-2 { left: -8px; }
-	}
-}
-
 body.page-user-chats {
 	overflow: hidden;
 	[data-widget-area="footer"] {

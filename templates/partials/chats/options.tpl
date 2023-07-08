@@ -33,16 +33,16 @@
 	</div>
 
 	{{{ if users.length }}}
-	<div component="chat/user/list/btn" class="btn-ghost-sm d-none d-lg-flex flex-nowrap" title="[[modules:chat.view-users-list]]" data-bs-toggle="tooltip" data-bs-placement="bottom">
-		<div class="d-flex text-nowrap user-count-{./users.length}">
-			{{{ if ./users.2 }}}
-			<span class="order-3 text-decoration-none position-relative" href="{config.relative_path}/user/{./users.2.userslug}">{buildAvatar(./users.2, "24px", true)}</span>
+	<div component="chat/user/list/btn" class="btn-ghost-sm d-none d-lg-flex flex-nowrap gap-3" title="[[modules:chat.view-users-list]]" data-bs-toggle="tooltip" data-bs-placement="bottom">
+		<div class="d-flex text-nowrap">
+			{{{ if ./users.0 }}}
+			<span style="width: 18px; z-index: 3;" class="text-decoration-none" href="{config.relative_path}/user/{./users.0.userslug}">{buildAvatar(./users.0, "24px", true)}</span>
 			{{{ end }}}
 			{{{ if ./users.1 }}}
-			<span class="order-2 text-decoration-none position-relative" href="{config.relative_path}/user/{./users.1.userslug}">{buildAvatar(./users.1, "24px", true)}</span>
+			<span style="width: 18px; z-index: 2;" class="text-decoration-none" href="{config.relative_path}/user/{./users.1.userslug}">{buildAvatar(./users.1, "24px", true)}</span>
 			{{{ end }}}
-			{{{ if ./users.0 }}}
-			<span class="order-1 text-decoration-none position-relative" href="{config.relative_path}/user/{./users.0.userslug}">{buildAvatar(./users.0, "24px", true)}</span>
+			{{{ if ./users.2 }}}
+			<span style="width: 18px; z-index: 1;" class="text-decoration-none" href="{config.relative_path}/user/{./users.2.userslug}">{buildAvatar(./users.2, "24px", true)}</span>
 			{{{ end }}}
 		</div>
 		{./userCount}
