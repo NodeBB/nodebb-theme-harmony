@@ -1,5 +1,5 @@
-<div class="d-flex gap-1">
-	<div class="dropdown">
+<div class="d-flex gap-1 align-items-stretch">
+	<div class="dropdown d-flex">
 		<button class="btn-ghost-sm" data-bs-toggle="dropdown" component="chat/controlsToggle">
 			<i class="fa fa-gear text-muted"></i>
 		</button>
