@@ -14,8 +14,8 @@
 	</div>
 </div>
 
-<div style="max-height: 500px; overflow: auto;">
-	<table component="groups/members" class="table table-hover" data-nextstart="{group.membersNextStart}">
+<div component="groups/members" data-nextstart="{group.membersNextStart}" class="mb-5" style="max-height: 500px; overflow: auto;">
+	<table class="table table-hover">
 		<tbody>
 			{{{each group.members}}}
 			<tr class="w-100" data-uid="{group.members.uid}" data-isowner="{{{ if group.members.isOwner }}}1{{{ else }}}0{{{ end }}}">
