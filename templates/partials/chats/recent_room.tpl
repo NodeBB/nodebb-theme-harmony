@@ -20,13 +20,18 @@
 			</div>
 
 			<div class="d-flex flex-grow-1 flex-column w-100">
-				<div class="room-name fw-semibold text-xs">
+				<div component="chat/room/title" class="room-name fw-semibold text-xs">
+				{{{ if ./roomName}}}
+				{./roomName}
+				{{{ else }}}
 					{{{ if !./lastUser.uid }}}
-					<span>[[modules:chat.no-users-in-room]]</span>
+					[[modules:chat.no-users-in-room]]
 					{{{ else }}}
-					{{{ if ./roomName }}}{./roomName}{{{ else }}}{./usernames}{{{ end }}}
-					{{{ end }}}
+					{./usernames}
+					{{{ end  }}}
+				{{{ end }}}
 				</div>
+
 				{{{ if ./teaser }}}
 				<div class="teaser-content text-sm line-clamp-3 text-break">
 					<span href="#" class="text-decoration-none">{buildAvatar(./teaser.user, "14px", true)}</span>

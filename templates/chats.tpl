@@ -1,28 +1,52 @@
 <div class="chats-full d-flex gap-1 h-100 mt-3 mt-md-0 py-md-3">
-	<div class="flex-shrink-0 d-flex flex-column h-100" component="chat/nav-wrapper" data-loaded="{{{ if roomId }}}1{{{ else }}}0{{{ end }}}">
-		<div class="chat-search dropdown mb-2">
-			<div class="input-group">
-				<input class="form-control form-control-sm" type="text" component="chat/search" data-bs-toggle="dropdown" placeholder="[[users:search-user-for-chat]]"/>
-				<ul component="chat/search/list" class="dropdown-menu p-1">
-					<li component="chat/search/start-typing"><a href="#" class="dropdown-item rounded-1">[[admin/menu:search.start-typing]]</a></li>
-					<li component="chat/search/no-users" class="hidden"><a href="#" class="dropdown-item rounded-1">[[users:no-users-found]]</a></li>
-					{{{ each searchUsers }}}
-					<li component="chat/search/user" data-uid="{./uid}"><a href="#" class="dropdown-item rounded-1">{buildAvatar(@value, "24px", true)} {./username}<a></a></li>
-					{{{ end }}}
-				</ul>
-				<button class="btn btn-primary btn-sm" type="button">
-					<i class="fa fa-search"></i>
-				</button>
+	<div component="chat/nav-wrapper" class="flex-shrink-0 d-flex flex-column h-100 gap-1" data-loaded="{{{ if roomId }}}1{{{ else }}}0{{{ end }}}">
+
+		<div>
+			<button component="chat/create" class="btn btn-primary btn-sm w-100">[[modules:chat.create-room]]</button>
+		</div>
+
+		{{{ if publicRooms.length }}}
+		<hr class="my-1">
+
+		<div class="d-flex flex-column gap-1">
+			<div class="d-flex gap-1 align-items-center justify-content-between justify-content-lg-start">
+				<button class="btn-ghost-sm p-1 order-1 order-lg-0" data-bs-toggle="collapse" data-bs-target="#public-rooms"
+				onclick="$(this).find('i').toggleClass('fa-rotate-180');"><i class="fa fa-fw fa-chevron-up" style="transition: 0.25s ease;"></i></button>
+				<label class="text-sm text-muted lh-1">[[modules:chat.public-rooms, {publicRooms.length}]]</label>
+			</div>
+			<div id="public-rooms" component="chat/public" class="collapse show">
+				{{{ each publicRooms }}}
+				<div component="chat/public/room" class="btn-ghost-sm ff-sans justify-content-between hover-parent {{{ if ./unread}}}unread{{{ end }}}" data-roomid="{./roomId}">
+					<div># {./roomName}</div>
+					<div class="d-flex gap-1">
+						<div component="chat/public/room/unread/count" data-count="{./unreadCount}" class="badge border text-primary {{{ if !./unreadCount }}}hidden{{{ end }}}">{./unreadCountText}</div>
+						<div component="chat/public/room/sort/handle" class="text-muted {{{ if isAdmin }}}hover-d-block{{{ else }}}d-none{{{ end }}}" style="cursor:grab;"><i class="fa fa-bars"></i></div>
+					</div>
+				</div>
+				{{{ end }}}
 			</div>
 		</div>
+		{{{ end }}}
+
 		<hr class="my-1">
-		<div component="chat/recent" class="chats-list overflow-auto mb-0 pe-1" data-nextstart="{nextStart}">
-			{{{each rooms}}}
-			<!-- IMPORT partials/chats/recent_room.tpl -->
-			{{{end}}}
+
+		<div class="d-flex flex-column gap-1 overflow-auto">
+			{{{ if publicRooms.length }}}
+			<div class="d-flex gap-1 align-items-center justify-content-between justify-content-lg-start">
+				<button class="btn-ghost-sm p-1 order-1 order-lg-0" data-bs-toggle="collapse" data-bs-target="#private-rooms"
+				onclick="$(this).find('i').toggleClass('fa-rotate-180')"><i class="fa fa-fw fa-chevron-up" style="transition: 0.25s ease;"></i></button>
+				<label class="text-sm text-muted lh-1">[[modules:chat.private-rooms, {privateRoomCount}]]</label>
+			</div>
+			{{{ end }}}
+
+			<div id="private-rooms" component="chat/recent" class="chats-list overflow-auto mb-0 pe-1 collapse show" data-nextstart="{nextStart}">
+				{{{each rooms}}}
+				<!-- IMPORT partials/chats/recent_room.tpl -->
+				{{{end}}}
+			</div>
 		</div>
 	</div>
-	<div class="flex-grow-1 ms-md-2 ps-md-2 border-1 border-start-md h-100" component="chat/main-wrapper" style="min-width: 0;">
+	<div component="chat/main-wrapper" class="flex-grow-1 ms-md-2 ps-md-2 border-1 border-start-md h-100" style="min-width: 0;">
 		<!-- IMPORT partials/chats/message-window.tpl -->
 	</div>
 	<div class="imagedrop"><div>[[topic:composer.drag_and_drop_images]]</div></div>

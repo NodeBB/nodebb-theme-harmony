@@ -42,14 +42,12 @@ body.page-user-chats {
 
 [component="chat/nav-wrapper"] {
 	width: 300px;
+	[component="chat/public/room"].unread {
+		font-weight: $font-weight-bold;
+	}
 }
 
 .expanded-chat {
-	// no taskbar so hide minimize button
-	[data-action="minimize"] {
-		display: none!important;
-	}
-
 	.chat-content {
 		@include fix-lists;
 
@@ -114,4 +112,7 @@ body.page-user-chats {
 	right: 2rem;
 	width: auto!important;
 	height: auto!important;
+	[component="chat/user/list/btn"] {
+		display: none!important;
+	}
 }
