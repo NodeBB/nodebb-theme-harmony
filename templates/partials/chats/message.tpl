@@ -20,7 +20,7 @@
 
 		{{{ if (isAdminOrGlobalMod || (!config.disableChatMessageEditing && messages.self)) }}}
 		<div component="chat/message/controls" class="position-relative">
-			<div class="btn-group border shadow-sm controls position-absolute text-bg-light hover-d-block end-0" style="bottom:1rem;">
+			<div class="btn-group border shadow-sm controls position-absolute bg-body hover-d-block end-0" style="bottom:1rem;">
 				{{{ if (!config.disableChatMessageEditing && messages.self) }}}
 				<button class="btn btn-sm btn-link" data-action="edit"><i class="fa fa-pencil"></i></button>
 				<button class="btn btn-sm btn-link" data-action="delete"><i class="fa fa-trash"></i></button>
