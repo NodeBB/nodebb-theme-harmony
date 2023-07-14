@@ -47,6 +47,18 @@ body.page-user-chats {
 	}
 }
 
+[component="chat/user/list"] [data-uid] {
+	[component="chat/user/list/username"] {
+		color: $text-muted;
+	}
+	&.online {
+		[component="chat/user/list/username"] {
+			color: initial;
+			font-weight: $font-weight-semibold;
+		}
+	}
+}
+
 .expanded-chat {
 	.chat-content {
 		@include fix-lists;
