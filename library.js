@@ -129,6 +129,11 @@ library.defineWidgetAreas = async function (areas) {
 			template: 'account/profile.tpl',
 			location: 'profile-aboutme-after',
 		},
+		{
+			name: 'Chat Header',
+			template: 'chats.tpl',
+			location: 'header',
+		},
 	]);
 
 	return areas;

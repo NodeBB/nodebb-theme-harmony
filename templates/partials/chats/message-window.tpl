@@ -1,4 +1,11 @@
 <div class="d-flex flex-column h-100">
+	{{{ if widgets.header.length }}}
+	<div data-widget-area="header">
+		{{{each widgets.header}}}
+		{{widgets.header.html}}
+		{{{end}}}
+	</div>
+	{{{ end }}}
 	{{{ if !roomId }}}
 	<div class="d-flex flex-column align-items-center gap-3 p-5">
 		<i class="fa-solid fa-wind fs-2 text-muted"></i>
