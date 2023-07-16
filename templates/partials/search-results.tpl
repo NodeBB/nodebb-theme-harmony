@@ -38,7 +38,9 @@
 	{{{ end }}}
 
 	{{{ if tags.length }}}
+	<div class="tag-list row row-cols-2 row-cols-lg-3 row-cols-xl-4 gx-3 gy-2">
 	<!-- IMPORT partials/tags_list.tpl -->
+	</div>
 	{{{ end }}}
 
 	{{{ if categories.length }}}
