@@ -58,9 +58,6 @@
 						}
 					}
 
-					pre {
-						max-height: calc($font-size-base * 24);
-					}
 					@include media-breakpoint-up(lg) {
 						table { // text-break breaks table formatting
 						 	word-break:initial!important;
