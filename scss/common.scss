@@ -93,12 +93,6 @@ body:not(.page-user) {
 	background-color: initial;
 }
 
-.skin-noskin {
-	.sticky-tools .btn-link {
-		color: $dark;
-	}
-}
-
 .btn-link {
 	&:hover, &.active {
 		background-color: $btn-ghost-hover-color;

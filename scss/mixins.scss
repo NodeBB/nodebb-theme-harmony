@@ -136,16 +136,6 @@
 	}
 
 	@include media-breakpoint-up(sm) {
-		&.minimal {
-			.post-footer, .timeline-event, [component="topic/quickreply/container"], .bookmarked {
-				display: none !important;
-			}
-
-			[component="post/content"] {
-				@include line-clamp(1);
-			}
-		}
-
 		> [component="post"], .timeline-event, > [component="post/placeholder"] {
 			border-left: 2px solid $border-color;
 

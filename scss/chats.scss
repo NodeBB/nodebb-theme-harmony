@@ -1,9 +1,5 @@
 // chats need a bit of css
 
-.page-user-chats #content {
-	max-width: 100%;
-}
-
 .stacked-avatars {
 	width: 32px;
 	height: 32px;
@@ -18,6 +14,9 @@
 }
 
 body.page-user-chats {
+	#content {
+		max-width: 100%;
+	}
 	overflow: hidden;
 	[data-widget-area="footer"] {
 		display: none;

@@ -76,7 +76,7 @@
 			</div>
 		</form>
 
-		<div class="overflow-auto" component="flag/history">
+		<div class="overflow-auto" component="flag/history" style="max-height: 30rem;">
 			<h2 class="h6 fw-bold">[[flags:history]]</h2>
 			{{{ if !history.length }}}
 			<div class="alert alert-success text-center">[[flags:no-history]]</div>
