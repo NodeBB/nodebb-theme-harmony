@@ -3,14 +3,6 @@
 }
 .account {
 	margin-top: 200px;
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-
-	.avatar-wrapper {
-		border: 4px solid white;
-		border-radius: 50%;
-	}
 
 	@include media-breakpoint-up(md) {
 		margin-top: 300px;
@@ -18,17 +10,11 @@
 
 	.categories {
 		[component="categories/category"] {
-			.depth-1 {
-				padding-left: 50px;
-			}
-			.depth-2 {
-				padding-left: 100px;
-			}
-			.depth-3 {
-				padding-left: 150px;
-			}
-			.depth-4 {
-				padding-left: 150px;
+			$category-pad: 50;
+			@for $i from 1 through 6 {
+				.depth-#{$i} {
+					padding-left: #{$category-pad * $i}px;
+				}
 			}
 		}
 	}
