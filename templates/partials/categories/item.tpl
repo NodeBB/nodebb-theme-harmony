@@ -43,12 +43,12 @@
 		<div class="d-flex col-lg-5 align-content-stretch">
 			<div class="meta stats d-none d-lg-grid col-6 gap-1 pe-2 text-muted" style="grid-template-columns: 1fr 1fr;">
 				<div class="card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-column align-items-center">
-					<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./totalTopicCount}" data-toFixed="0">{./totalTopicCount}</span>
+					<span class="fs-5 ff-secondary lh-1" title="{./totalTopicCount}">{humanReadableNumber(./totalTopicCount, 0)}</span>
 					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:topics]]</span>
 					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-list"></i>
 				</div>
 				<div class="card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-column align-items-center">
-					<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./totalPostCount}" data-toFixed="0">{./totalPostCount}</span>
+					<span class="fs-5 ff-secondary lh-1" title="{./totalPostCount}">{humanReadableNumber(./totalPostCount, 0)}</span>
 					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:posts]]</span>
 					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-message"></i>
 				</div>

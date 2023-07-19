@@ -14,7 +14,7 @@
 				{{{ else }}}
 				<a class="btn-ghost fw-semibold {{{ if ./selected }}}active{{{ end }}}" href="{config.relative_path}/notifications?filter={./filter}">
 					<div class="flex-grow-1">{filters.name}</div>
-					<span class="flex-shrink-0 text-xs human-readable-number" title="{./count}">{./count}</span>
+					<span class="flex-shrink-0 text-xs" title="{./count}">{humanReadableNumber(./count)}</span>
 				</a>
 				{{{ end }}}
 				{{{ end }}}

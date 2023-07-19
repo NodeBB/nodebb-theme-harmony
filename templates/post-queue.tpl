@@ -91,11 +91,11 @@
 						</div>
 						<div>
 							<span class="badge text-body border border-gray-300 stats text-xs">
-								<span title="{posts.user.postcount}" class="human-readable-number fw-bold">{posts.user.postcount}</span>
+								<span title="{posts.user.postcount}" class="fw-bold">{humanReadableNumber(posts.user.postcount)}</span>
 								<span class="text-lowercase fw-normal">[[global:posts]]</span>
 							</span>
 							<span class="badge text-body border border-gray-300 stats text-xs">
-								<span title="{posts.user.reputation}" class="human-readable-number fw-bold">{posts.user.reputation}</span>
+								<span title="{posts.user.reputation}" class="fw-bold">{humanReadableNumber(posts.user.reputation)}</span>
 								<span class="text-lowercase fw-normal">[[global:reputation]]</span>
 							</span>
 							<span class="badge text-body border border-gray-300 stats text-xs">

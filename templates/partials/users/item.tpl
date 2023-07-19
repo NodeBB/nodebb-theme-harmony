@@ -18,19 +18,19 @@
 
 		{{{ if section_sort-reputation }}}
 		<div class="text-xs text-muted text-truncate">
-			<span class="formatted-number">{./reputation}</span>
+			<span>{formattedNumber(./reputation)}</span>
 		</div>
 		{{{ end }}}
 
 		{{{ if section_sort-posts }}}
 		<div class="text-xs text-muted text-truncate">
-			<span class="formatted-number">{./postcount}</span>
+			<span>{formattedNumber(./postcount)}</span>
 		</div>
 		{{{ end }}}
 
 		{{{ if section_flagged }}}
 		<div class="text-xs text-muted text-truncate">
-			<span class="formatted-number">{./flags}</span>
+			<span>{formattedNumber(./flags)}</span>
 		</div>
 		{{{ end }}}
 	</div>
