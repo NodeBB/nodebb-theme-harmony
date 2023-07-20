@@ -1,4 +1,4 @@
-<li component="categories/category" data-cid="{./cid}" class="w-100 border-bottom py-3 py-lg-4 gap-1 d-flex flex-column flex-lg-row align-items-start category-{./cid} {./unread-class}">
+<li component="categories/category" data-cid="{./cid}" class="w-100 border-bottom py-3 py-lg-4 gap-lg-0 gap-2 d-flex flex-column flex-lg-row align-items-start category-{./cid} {./unread-class}">
 	<meta itemprop="name" content="{./name}">
 
 	<div class="d-flex col-lg-7 gap-2 gap-lg-3">
@@ -40,7 +40,7 @@
 		</div>
 	</div>
 	{{{ if !./link }}}
-		<div class="d-flex col-lg-5 align-content-stretch">
+		<div class="d-flex col-lg-5 col-12 align-content-stretch">
 			<div class="meta stats d-none d-lg-grid col-6 gap-1 pe-2 text-muted" style="grid-template-columns: 1fr 1fr;">
 				<div class="card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-column align-items-center">
 					<span class="fs-5 ff-secondary lh-1" title="{./totalTopicCount}">{humanReadableNumber(./totalTopicCount, 0)}</span>
@@ -54,7 +54,7 @@
 				</div>
 			</div>
 			{{{ if !config.hideCategoryLastPost }}}
-			<div component="topic/teaser" class="teaser col-lg-6 {{{ if !config.theme.mobileTopicTeasers }}}d-none d-lg-block{{{ end }}}">
+			<div component="topic/teaser" class="teaser col-lg-6 col-12{{{ if !config.theme.mobileTopicTeasers }}}d-none d-lg-block{{{ end }}}">
 				<!-- IMPORT partials/categories/lastpost.tpl -->
 			</div>
 			{{{ end }}}
