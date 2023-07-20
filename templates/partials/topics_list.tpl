@@ -94,7 +94,7 @@
 					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-eye"></i>
 				</div>
 			</div>
-			<div component="topic/teaser" class="meta teaser col-lg-6 col-12{{{ if !config.theme.mobileTopicTeasers }}}d-none d-lg-block{{{ end }}}">
+			<div component="topic/teaser" class="meta teaser col-lg-6 col-12 {{{ if !config.theme.mobileTopicTeasers }}}d-none d-lg-block{{{ end }}}">
 				<div class="lastpost border-start border-2 lh-sm h-100 d-flex flex-column gap-1" style="border-color: {./category.bgColor}!important;">
 					{{{ if ./unreplied }}}
 					<div class="ps-2 text-xs">
