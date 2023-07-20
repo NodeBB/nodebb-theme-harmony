@@ -1,7 +1,7 @@
 <div class="lastpost border-start border-2 lh-sm h-100" style="border-color: {./bgColor}!important;">
 	{{{ each ./posts }}}
 	{{{ if @first }}}
-	<div component="category/posts" class="ps-2 text-xs d-flex flex-column h-100">
+	<div component="category/posts" class="ps-2 text-xs d-flex flex-column h-100 gap-1">
 		<div>
 			<a class="text-decoration-none" href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(posts.user, "18px", true, "avatar-tooltip")}</a>
 			<a class="permalink text-muted" href="{config.relative_path}/topic/{./topic.slug}{{{ if ./index }}}/{./index}{{{ end }}}">
