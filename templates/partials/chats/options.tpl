@@ -1,9 +1,9 @@
 <div class="d-flex gap-1 align-items-stretch">
-
-	<div class="hidden dropdown d-flex" data-manual-tooltip="1" title="[[modules:chat.notification-settings]]">
+	<!-- notification dropdown -->
+	<div class="dropdown d-flex" data-manual-tooltip="1" title="[[modules:chat.notification-settings]]">
 		<button class="btn-ghost-sm position-relative" data-bs-toggle="dropdown">
 			<i class="fa fa-bell text-muted"></i>
-			<span class="position-absolute top-0 end-0 text-xs" style="font-size: 10px!important; padding: 1px; line-height: 10px;">
+			<span class="position-absolute top-0 end-0 text-xs text-muted opacity-50" style="font-size: 10px!important; padding: 1px; line-height: 10px;">
 				<i component="chat/notification/setting/icon" class="fa {notificationOptionsIcon}"></i>
 			</span>
 		</button>
@@ -17,7 +17,7 @@
 							<i class="flex-shrink-0 fa fa-fw fa-check {{{ if !./selected }}}hidden{{{ end }}}"></i>
 						</div>
 						{{{ if @first}}}
-						<div class="text-sm text-muted">{./subLabel}</div>
+						<div component="chat/notification/setting/sub-label" class="text-sm text-muted">{./subLabel}</div>
 						{{{ end }}}
 					</div>
 				</a>
@@ -30,7 +30,7 @@
 		</ul>
 	</div>
 
-
+	<!-- manage/options dropdown -->
 	<div class="dropdown d-flex" data-manual-tooltip="1" title="[[modules:chat.options]]">
 		<button class="btn-ghost-sm" data-bs-toggle="dropdown" component="chat/controlsToggle">
 			<i class="fa fa-gear text-muted"></i>
@@ -63,6 +63,7 @@
 		</ul>
 	</div>
 
+	<!-- users toggle -->
 	{{{ if users.length }}}
 	<div component="chat/user/list/btn" class="btn-ghost-sm d-none d-lg-flex flex-nowrap gap-3" title="[[modules:chat.view-users-list]]" data-bs-toggle="tooltip" data-bs-placement="bottom">
 		<div class="d-flex text-nowrap">
