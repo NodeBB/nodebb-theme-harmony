@@ -1,6 +1,6 @@
 <div class="d-flex gap-1 align-items-stretch">
 
-	<div class="dropdown d-flex" data-manual-tooltip="1" title="[[modules:chat.notification-settings]]">
+	<div class="hidden dropdown d-flex" data-manual-tooltip="1" title="[[modules:chat.notification-settings]]">
 		<button class="btn-ghost-sm position-relative" data-bs-toggle="dropdown">
 			<i class="fa fa-bell text-muted"></i>
 			<span class="position-absolute top-0 end-0 text-xs" style="font-size: 10px!important; padding: 1px; line-height: 10px;">
