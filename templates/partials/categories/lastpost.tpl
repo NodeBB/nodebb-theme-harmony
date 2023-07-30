@@ -2,7 +2,7 @@
 	{{{ each ./posts }}}
 	{{{ if @first }}}
 	<div component="category/posts" class="ps-2 text-xs d-flex flex-column h-100 gap-1">
-		<div>
+		<div class="text-nowrap text-truncate">
 			<a class="text-decoration-none" href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(posts.user, "18px", true, "avatar-tooltip")}</a>
 			<a class="permalink text-muted" href="{config.relative_path}/topic/{./topic.slug}{{{ if ./index }}}/{./index}{{{ end }}}">
 				<span class="timeago text-xs" title="{../timestampISO}"></span>
