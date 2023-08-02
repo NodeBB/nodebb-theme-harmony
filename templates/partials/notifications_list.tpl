@@ -9,13 +9,18 @@
 <div class="{./readClass}" data-nid="{./nid}" data-path="{./path}" {{{ if ./pid }}}data-pid="{./pid}"{{{ end }}}{{{ if ./tid }}}data-tid="{./tid}"{{{ end }}}>
 	<div class="d-flex gap-1 justify-content-between">
 		<div class="btn-ghost-sm d-flex gap-2 flex-grow-1 align-items-start">
-			{{{ if ./image }}}
-			{{{ if ./from }}}
-			<a class="flex-grow-0 flex-shrink-0" href="{config.relative_path}/user/{./user.userslug}"><img class="avatar avatar-rounded" style="--avatar-size: 32px;" src="{./image}" /></a>
-			{{{ end }}}
-			{{{ else }}}
-			<a class="flex-grow-0 flex-shrink-0"  href="{config.relative_path}/user/{./user.userslug}"><div class="avatar avatar-rounded" style="--avatar-size: 32px; background-color: {./user.icon:bgColor};">{./user.icon:text}</div></a>
-			{{{ end }}}
+			<a class="flex-grow-0 flex-shrink-0" href="{{{ if ./user.userslug}}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
+				{{{ if (./image && ./from) }}}
+				<img class="avatar avatar-rounded" style="--avatar-size: 32px;" src="{./image}" />
+				{{{ else }}}
+				{{{ if ./icon }}}
+				<div class="avatar avatar-rounded" style="--avatar-size: 32px;"><i class="text-secondary fa {./icon}"></i></div>
+				{{{ else }}}
+				<div class="avatar avatar-rounded" style="--avatar-size: 32px; background-color: {./user.icon:bgColor};">{./user.icon:text}</div>
+				{{{ end }}}
+				{{{ end }}}
+			</a>
+
 			<div class="d-flex flex-grow-1 flex-column align-items-start position-relative">
 				<a href="{./path}" class="text-decoration-none d-inline-block text-reset text-break text-sm ff-sans stretched-link" component="notifications/item/link">
 					{./bodyShort}
@@ -36,4 +41,4 @@
 {{{ if !@last }}}
 <hr class="my-1" />
 {{{ end }}}
-{{{end}}}
+{{{ end }}}
