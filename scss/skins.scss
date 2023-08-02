@@ -19,6 +19,25 @@
 	}
 }
 
+.skin-superhero {
+	// TODO: remove once we update to https://github.com/thomaspark/bootswatch/commit/e62a8c6b62643cfbcb175d6f398928566ed7070c
+	.dropdown-header {
+		color: $gray-500;
+	}
+
+	// fix read button in dropdowns
+	.mark-read .read {
+		color: $primary!important;
+	}
+}
+
+.skin-slate {
+	// fix unread button colors in dropdowns
+	.mark-read .unread {
+		color: $secondary!important;
+	}
+}
+
 :root {
 	.skin-darkly, .skin-slate, .skin-cyborg {
 		--bs-border-color: #929292;

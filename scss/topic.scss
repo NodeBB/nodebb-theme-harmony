@@ -63,10 +63,10 @@
 
 			[component="post/upvote"], [component="post/downvote"] {
 				&.upvoted, &.downvoted {
-					background-color: lighten($btn-ghost-hover-color, 5%);
+					background-color: var(--btn-ghost-active-color);
 
 					&:hover {
-						background-color: $btn-ghost-hover-color;
+						background-color: var(--btn-ghost-hover-color);
 					}
 				}
 			}

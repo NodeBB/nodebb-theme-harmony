@@ -1,17 +1,18 @@
-$composer-color: $body-color !default;
-$composer-bg: $body-bg !default;
-
-@mixin composer-text-bg($color, $bg) {
-	color: $color !important;
-	background-color: $bg !important;
+.composer {
+	color: var(--bs-body-color)!important;
+	background-color: var(--bs-body-bg)!important;
 }
 
 .skin-noskin {
 	// only using colors when there is no bootswatch skin applied
-	$composer-color: $secondary;
-	$composer-bg: $light;
-
 	.composer {
-		@include composer-text-bg($composer-color, $composer-bg);
+		color: var(--bs-secondary) !important;
+		background-color: var(--bs-light) !important;
+	}
+}
+@include color-mode(dark) {
+	.skin-noskin .composer {
+	  color: var(--bs-secondary)!important;
+	  background-color: var(--bs-body-bg)!important;
 	}
 }

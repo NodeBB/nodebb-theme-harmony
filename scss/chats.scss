@@ -35,7 +35,7 @@ body.page-user-chats {
 
 [component="chat/recent"] {
 	.active .chat-room-btn {
-		background-color: $btn-ghost-hover-color;
+		background-color: var(--btn-ghost-hover-color);
 	}
 }
 

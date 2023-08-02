@@ -95,7 +95,7 @@ body:not(.page-user) {
 
 .btn-link {
 	&:hover, &.active {
-		background-color: $btn-ghost-hover-color;
+		background-color: var(--btn-ghost-hover-color);
 		text-decoration: none;
 	}
 }
@@ -116,7 +116,7 @@ body:not(.page-user) {
 	font-family: $font-family-secondary;
 	cursor: pointer;
 	&:hover, &.active {
-		background-color: $btn-ghost-hover-color;
+		background-color: var(--btn-ghost-hover-color);
 		text-decoration: none;
 	}
 }
