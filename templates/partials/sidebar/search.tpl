@@ -10,7 +10,7 @@
 			<div class="d-flex gap-1">
 				<input autocomplete="off" type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">
 
-				<div class="nav-btn d-flex justify-content-center align-items-center advanced-search-link">
+				<div class="btn-ghost advanced-search-link">
 					<i class="fa fa-gears fa-fw text-muted"></i>
 				</div>
 			</div>
