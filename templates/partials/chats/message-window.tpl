@@ -7,7 +7,7 @@
 	</div>
 	{{{ end }}}
 	{{{ if !roomId }}}
-	<div class="d-flex flex-column align-items-center gap-3 p-5">
+	<div class="d-flex flex-column align-items-center gap-3 my-auto">
 		<i class="fa-solid fa-wind fs-2 text-muted"></i>
 		<span class="text-muted text-sm">[[modules:chat.no_active]]</span>
 	</div>
