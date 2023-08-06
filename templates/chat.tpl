@@ -2,7 +2,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header d-flex gap-4 justify-content-between">
-				<div class="fs-6 flex-grow-1" component="chat/room/name">{{{ if ./roomName }}}# {roomName}{{{ else }}}{./chatWithMessage}{{{ end}}}</div>
+				<div class="fs-6 flex-grow-1" component="chat/room/name" data-icon="{icon}">{{{ if ./roomName }}}<i class="fa {icon} text-muted"></i> {roomName}{{{ else }}}{./chatWithMessage}{{{ end}}}</div>
 				<div class="d-flex gap-1 align-items-center">
 					<button type="button" class="btn-ghost-sm d-none d-md-flex" data-action="maximize">
 						<i class="fa fa-fw fa-expand text-muted"></i>
