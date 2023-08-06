@@ -12,14 +12,14 @@
 
 
 	<!-- notification dropdown -->
-	<div class="dropdown d-flex" data-manual-tooltip="1" title="[[modules:chat.notification-settings]]">
+	<div class="dropdown d-flex" data-manual-tooltip="1" title="[[modules:chat.notification-settings]]" component="chat/notification/setting">
 		<button class="btn-ghost-sm position-relative" data-bs-toggle="dropdown">
 			<i class="fa fa-bell text-muted"></i>
 			<span class="position-absolute top-0 end-0 text-xs text-muted opacity-50" style="font-size: 10px!important; padding: 1px; line-height: 10px;">
 				<i component="chat/notification/setting/icon" class="fa {notificationOptionsIcon}"></i>
 			</span>
 		</button>
-		<ul class="dropdown-menu dropdown-menu-end p-1 text-sm" component="chat/notification/setting">
+		<ul class="dropdown-menu dropdown-menu-end p-1 text-sm">
 			{{{ each notificationOptions }}}
 			<li>
 				<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="#" data-value="{./value}" data-icon="{./icon}">
@@ -49,7 +49,7 @@
 		</button>
 		<ul class="dropdown-menu dropdown-menu-end p-1 text-sm" component="chat/controls">
 			<li>
-				<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="#" data-action="members">
+				<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="#" data-action="manage">
 					<i class="fa fa-fw text-muted fa-cog"></i> [[modules:chat.manage-room]]
 				</a>
 			</li>

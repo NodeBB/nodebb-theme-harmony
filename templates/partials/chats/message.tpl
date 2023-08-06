@@ -1,4 +1,19 @@
-<li component="chat/message" class="chat-message mx-2 pe-2 {{{ if messages.deleted }}} deleted{{{ end }}} {{{ if messages.newSet }}}border-top pt-3{{{ end }}}" data-mid="{messages.messageId}" data-uid="{messages.fromuid}" data-self="{messages.self}" data-break="{messages.newSet}" data-timestamp="{messages.timestamp}">
+<li component="chat/message" class="chat-message mx-2 pe-2 {{{ if messages.deleted }}} deleted{{{ end }}} {{{ if messages.newSet }}}border-top pt-3{{{ end }}}" data-mid="{messages.messageId}" data-uid="{messages.fromuid}" data-self="{messages.self}" data-break="{messages.newSet}" data-timestamp="{messages.timestamp}" data-username="{messages.fromUser.username}">
+
+	{{{ if messages.parent }}}
+	<div class="d-flex ms-4 mb-2 align-items-center">
+		<div component="chat/message/parent" class="btn-ghost-sm align-items-start flex-row">
+			<div class="d-flex gap-2 text-sm">
+				<div><i class="fa fa-sm fa-reply opacity-50"></i></div>
+				<a href="{config.relative_path}/user/{messages.parent.user.userslug}" class="text-decoration-none lh-sm">{buildAvatar(messages.parent.user, "14px", true, "not-responsive")}</a>
+				<a class="chat-user fw-semibold" href="{config.relative_path}/user/{messages.parent.user.userslug}">{messages.parent.user.displayname}</a>
+				<span class="chat-timestamp text-muted timeago text-nowrap hidden" title="{messages.parent.timestampISO}"></span>
+			</div>
+			<div component="chat/message/parent/content" class="text-muted line-clamp-1">{messages.parent.content}</div>
+		</div>
+	</div>
+	{{{ end }}}
+
 	<div class="message-header lh-1 d-flex align-items-center gap-2 text-sm {{{ if !messages.newSet }}}hidden{{{ end }}} pb-2">
 		<a href="{config.relative_path}/user/{messages.fromUser.userslug}" class="text-decoration-none">{buildAvatar(messages.fromUser, "18px", true, "not-responsive")}</a>
 		<span class="chat-user fw-semibold"><a href="{config.relative_path}/user/{messages.fromUser.userslug}">{messages.fromUser.displayname}</a></span>
@@ -18,9 +33,9 @@
 			{messages.content}
 		</div>
 
-		{{{ if (isAdminOrGlobalMod || (!config.disableChatMessageEditing && messages.self)) }}}
 		<div component="chat/message/controls" class="position-relative">
 			<div class="btn-group border shadow-sm controls position-absolute bg-body hover-d-block end-0" style="bottom:1rem;">
+				<button class="btn btn-sm btn-link" data-action="reply"><i class="fa fa-reply"></i></button>
 				{{{ if (!config.disableChatMessageEditing && messages.self) }}}
 				<button class="btn btn-sm btn-link" data-action="edit"><i class="fa fa-pencil"></i></button>
 				<button class="btn btn-sm btn-link" data-action="delete"><i class="fa fa-trash"></i></button>
@@ -31,6 +46,5 @@
 				{{{ end }}}
 			</div>
 		</div>
-		{{{ end }}}
 	</div>
 </li>

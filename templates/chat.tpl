@@ -15,14 +15,21 @@
 			</div>
 
 			<div class="modal-body d-flex flex-column" style="height: 500px;">
-				<div class="position-relative">
-					<div component="chat/messages/scroll-up-alert" class="py-1 position-absolute start-50 translate-middle text-sm scroll-up-alert alert alert-info d-none d-md-block text-nowrap" role="button" style="z-index: 500;"><i class="fa fa-fw fa-arrow-down"></i> [[modules:chat.scroll-up-alert]]</div>
+				<div class="d-flex flex-grow-1 gap-1 overflow-auto" style="min-width: 0px;">
+					<div component="chat/messages" class="expanded-chat d-flex flex-column flex-grow-1" data-roomid="{roomId}" style="min-width: 0px;">
+						<!-- IMPORT partials/chats/scroll-up-alert.tpl -->
+						<ul component="chat/message/content" class="chat-content p-0 m-0 list-unstyled overflow-auto flex-grow-1">
+							<!-- IMPORT partials/chats/messages.tpl -->
+						</ul>
+						<ul component="chat/message/search/results" class="chat-content p-0 m-0 list-unstyled overflow-auto flex-grow-1 hidden">
+							<div component="chat/message/search/no-results" class="text-center p-4 d-flex flex-column">
+								<div class="p-4"><i class="fa-solid fa-wind fs-2 text-muted"></i></div>
+								<div class="text-xs fw-semibold text-muted">[[search:no-matches]]</div>
+							</div>
+						</ul>
+						<!-- IMPORT partials/chats/composer.tpl -->
+					</div>
 				</div>
-				<ul class="chat-content p-0 m-0 list-unstyled d-flex flex-column overflow-auto flex-grow-1" component="chat/messages">
-					<!-- IMPORT partials/chats/messages.tpl -->
-				</ul>
-
-				<!-- IMPORT partials/chats/composer.tpl -->
 			</div>
 			<div class="imagedrop"><div>[[topic:composer.drag_and_drop_images]]</div></div>
 		</div>
