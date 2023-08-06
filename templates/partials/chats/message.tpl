@@ -25,7 +25,7 @@
 		{{{ if messages.fromUser.deleted }}}
 		<span class="badge bg-danger">[[user:deleted]]</span>
 		{{{ end }}}
-		<span class="chat-timestamp text-muted ms-2 timeago" title="{messages.timestampISO}"></span>
+		<span class="chat-timestamp text-muted timeago" title="{messages.timestampISO}"></span>
 		{{{ if messages.edited }}}
 		<div class="text-muted ms-auto" title="[[global:edited-timestamp, {messages.editedISO}]]"><i class="fa fa-edit"></i></span></div>
 		{{{ end }}}
