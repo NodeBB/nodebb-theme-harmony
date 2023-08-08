@@ -67,7 +67,7 @@
 		<div class="stat">
 			<div class="align-items-center justify-content-center card card-header px-0 py-3 border-0 rounded-1 h-100 gap-2">
 				<span class="stat-label text-xs fw-semibold"><i class="text-muted fa-solid fa-globe"></i> <span>[[user:website]]</span></span>
-				<a class="text-sm text-center text-break w-100 px-2 ff-secondary text-underline text-reset" href="{websiteLink}" rel="nofollow noopener noreferrer me">{websiteName}</a>
+				<a class="text-sm text-center text-break w-100 px-2 ff-secondary text-underline text-reset" href="{websiteLink}" rel="nofollow noreferrer me">{websiteName}</a>
 			</div>
 		</div>
 		{{{ end }}}
