@@ -43,7 +43,7 @@
 		<div class="d-flex gap-2 justify-content-end align-items-center mt-2 hidden-empty" component="topic/thumb/list"><!-- IMPORT partials/topic/thumbs.tpl --></div>
 	</div>
 
-	<div class="row">
+	<div class="row mb-4 mb-lg-0">
 		<div class="topic {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 			<!-- IMPORT partials/post_bar.tpl -->
 
