@@ -31,7 +31,8 @@ $(document).ready(function () {
 			const css = {
 				width: $('#panel').width(),
 			};
-			css[isRtl ? 'right' : 'left'] = $('.sidebar-left').outerWidth(true);
+			const sidebarEl = $('.sidebar-left');
+			css[isRtl ? 'right' : 'left'] = sidebarEl.is(':visible') ? sidebarEl.outerWidth(true) : 0;
 			$('[component="composer"]').css(css);
 		});
 
