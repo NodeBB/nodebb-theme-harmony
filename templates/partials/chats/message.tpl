@@ -34,9 +34,10 @@
 		<div component="chat/message/body" class="message-body ps-0 py-0 overflow-auto text-break">
 			{messages.content}
 		</div>
-
+		<!-- IMPORT partials/chats/reactions.tpl -->
 		<div component="chat/message/controls" class="position-relative">
 			<div class="btn-group border shadow-sm controls position-absolute bg-body hover-d-block end-0" style="bottom:1rem;">
+				<!-- IMPORT partials/chats/add-reaction.tpl -->
 				<button class="btn btn-sm btn-link" data-action="reply"><i class="fa fa-reply"></i></button>
 				{{{ if (!config.disableChatMessageEditing && messages.self) }}}
 				<button class="btn btn-sm btn-link" data-action="edit"><i class="fa fa-pencil"></i></button>
