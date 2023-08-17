@@ -96,7 +96,7 @@
 		<div class="list-group">
 			{{{ each sso }}}
 			<div class="list-group-item d-flex align-items-center justify-content-between">
-				<a class="text-sm text-reset text-decoration-none" data-component="{./component}" href="{./url}" target="{{{ if ./associated }}}_blank{{{ else }}}_top{{{ end }}}">
+				<a class="text-sm text-reset text-decoration-none" data-component="{./component}" href="{{{ if ./url }}}{./url}{{{ else }}}#{{{ end }}}" target="{{{ if ./associated }}}_blank{{{ else }}}_top{{{ end }}}">
 					{{{ if ./icon }}}<i class="fa {./icon}"></i>{{{ end }}}
 					{{{ if ./associated }}}[[user:sso.associated]]{{{ else }}}[[user:sso.not-associated]]{{{ end }}}
 					{./name}
