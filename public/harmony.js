@@ -152,6 +152,9 @@ $(document).ready(function () {
 				}
 				draftItems.reverse().forEach((draft) => {
 					if (draft) {
+						if (draft.title) {
+							draft.title = utils.escapeHTML(String(draft.title));
+						}
 						draft.text = utils.escapeHTML(
 							draft.text
 						).replace(/(?:\r\n|\r|\n)/g, '<br>');
