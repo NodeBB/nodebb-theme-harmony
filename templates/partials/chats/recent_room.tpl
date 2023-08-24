@@ -20,7 +20,7 @@
 			</div>
 
 			<div class="d-flex flex-grow-1 flex-column w-100">
-				<div component="chat/room/title" class="room-name fw-semibold text-xs">
+				<div component="chat/room/title" class="room-name fw-semibold text-xs text-break">
 				{{{ if ./roomName}}}
 				{./roomName}
 				{{{ else }}}
