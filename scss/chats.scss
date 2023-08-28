@@ -64,7 +64,7 @@ body.page-user-chats {
 
 		.chat-message {
 			.message-body-wrapper .controls {
-				[data-action="restore"] {
+				[data-action="restore"], [data-action="unpin"] {
 					display: none;
 				}
 			}
@@ -82,6 +82,17 @@ body.page-user-chats {
 
 			.message-body {
 				opacity: 0.3;
+			}
+		}
+		.chat-message.pinned {
+			.message-body-wrapper .controls {
+				[data-action="pin"] {
+					display: none;
+				}
+
+				[data-action="unpin"] {
+					display: inline;
+				}
 			}
 		}
 	}
