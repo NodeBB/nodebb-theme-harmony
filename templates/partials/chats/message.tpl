@@ -1,19 +1,7 @@
 <li component="chat/message" class="chat-message mx-2 pe-2 {{{ if messages.deleted }}} deleted{{{ end }}} {{{ if messages.pinned}}} pinned{{{ end }}} {{{ if messages.newSet }}}border-top pt-3{{{ end }}}" data-mid="{messages.messageId}" data-uid="{messages.fromuid}" data-self="{messages.self}" data-break="{messages.newSet}" data-timestamp="{messages.timestamp}" data-username="{messages.fromUser.username}">
 
 	{{{ if messages.parent }}}
-	<div class="d-flex ms-4 mb-2 align-items-center">
-		<div component="chat/message/parent" data-parent-mid="{messages.parent.mid}" data-uid="{messages.parent.fromuid}" class="btn-ghost-sm align-items-start flex-row w-100">
-			<div class="d-flex gap-2 text-sm text-nowrap">
-				<div><i class="fa fa-sm fa-reply opacity-50"></i></div>
-				<div class="d-flex flex-nowrap gap-1 align-items-center">
-					<a href="{config.relative_path}/user/{messages.parent.user.userslug}" class="text-decoration-none lh-1">{buildAvatar(messages.parent.user, "14px", true, "not-responsive align-middle")}</a>
-					<a class="chat-user fw-semibold" href="{config.relative_path}/user/{messages.parent.user.userslug}">{messages.parent.user.displayname}</a>
-				</div>
-				<span class="chat-timestamp text-muted timeago text-nowrap hidden" title="{messages.parent.timestampISO}"></span>
-			</div>
-			<div component="chat/message/parent/content" class="text-muted line-clamp-1 w-100">{messages.parent.content}</div>
-		</div>
-	</div>
+	<!-- IMPORT partials/chats/parent.tpl -->
 	{{{ end }}}
 
 	<div class="message-header lh-1 d-flex align-items-center gap-2 text-sm {{{ if !messages.newSet }}}hidden{{{ end }}} pb-2">
