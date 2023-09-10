@@ -9,6 +9,7 @@ $(document).ready(function () {
 	handleMobileNavigator();
 	setupNavTooltips();
 	fixPlaceholders();
+	fixSidebarOverflow();
 
 	function setupSkinSwitcher() {
 		$('[component="skinSwitcher"]').on('click', '.dropdown-item', function () {
@@ -271,6 +272,16 @@ $(document).ready(function () {
 					}
 				});
 			}
+		});
+	}
+
+	function fixSidebarOverflow() {
+		// overflow-y-auto needs to be removed on main-nav when dropdowns are opened
+		const mainNavEl = $('#main-nav');
+		mainNavEl.on('show.bs.dropdown', () => {
+			mainNavEl.removeClass('overflow-y-auto');
+		}).on('hide.bs.dropdown', () => {
+			mainNavEl.addClass('overflow-y-auto');
 		});
 	}
 });
