@@ -14,9 +14,8 @@
 		<span class="badge bg-danger">[[user:deleted]]</span>
 		{{{ end }}}
 		<span class="chat-timestamp text-muted timeago" title="{messages.timestampISO}"></span>
-		{{{ if messages.edited }}}
-		<div class="text-muted ms-auto" title="[[global:edited-timestamp, {messages.editedISO}]]"><i class="fa fa-edit"></i></span></div>
-		{{{ end }}}
+
+		<div component="chat/message/edited" class="text-muted ms-auto {{{ if !messages.edited }}}hidden{{{ end }}}" title="[[global:edited-timestamp, {messages.editedISO}]]"><i class="fa fa-edit"></i></span></div>
 	</div>
 	<div class="message-body-wrapper hover-parent">
 		<div component="chat/message/body" class="message-body ps-0 py-0 overflow-auto text-break">
