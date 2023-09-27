@@ -44,6 +44,13 @@
 			<div class="flex-grow-1">[[user:watched_categories]]</div>
 			<span class="flex-shrink-0 text-xs" title="{counts.categoriesWatched}">{counts.categoriesWatched}</span>
 		</a>
+		{{{ if isSelf }}}
+		<a href="{config.relative_path}/user/{userslug}/tags" class="btn-ghost fw-semibold
+			{{{ if template.account/tags }}}active{{{ end }}}">
+			<div class="flex-grow-1">[[user:watched-tags]]</div>
+			<span class="flex-shrink-0 text-xs" title="{counts.tagsWatched}">{counts.tagsWatched}</span>
+		</a>
+		{{{ end }}}
 
 		<a href="{config.relative_path}/user/{userslug}/blocks" class="btn-ghost fw-semibold
 			{{{ if template.account/blocks }}}active{{{ end }}}">

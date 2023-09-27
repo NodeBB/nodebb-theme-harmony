@@ -22,6 +22,7 @@
 				{{{ end }}}
 				{{{ if template.tag }}}
 				<!-- IMPORT partials/category/filter-dropdown-left.tpl -->
+				<!-- IMPORT partials/tags/watch.tpl -->
 				{{{ end }}}
 				<!-- IMPORT partials/category/tools.tpl -->
 
