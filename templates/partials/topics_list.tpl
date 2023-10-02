@@ -27,7 +27,7 @@
 					<a class="text-reset" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">{./title}</a>
 					{{{ end }}}
 				</h3>
-				<span component="topic/labels" class="d-flex flex-wrap gap-1">
+				<span component="topic/labels" class="d-flex flex-wrap gap-1 w-100">
 					<span component="topic/scheduled" class="badge border border-gray-300 text-body {{{ if !./scheduled }}}hidden{{{ end }}}">
 						<i class="fa fa-clock-o"></i>
 						[[topic:scheduled]]
@@ -59,6 +59,9 @@
 					{{{ if !config.theme.mobileTopicTeasers}}}
 					<span class="visible-xs-inline badge bg-transparent text-muted fw-normal timeago" title="{{{ if ./teaser.timestampISO }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>
 					{{{ end }}}
+					<div class="d-block d-lg-none ms-auto card card-header border-0 p-1 me-1 overflow-hidden rounded-1 d-flex">
+						<span class="text-xs fw-semibold lh-1">{humanReadableNumber(./postcount, 0)}</span>
+					</div>
 				</span>
 				{{{ if showSelect }}}
 				<div class="checkbox position-absolute top-0 end-0 m-0 d-flex d-lg-none" style="max-width:max-content">
