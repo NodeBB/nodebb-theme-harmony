@@ -46,7 +46,7 @@
 					</span>
 					{{{each ./icons}}}<span class="lh-1">{@value}</span>{{{end}}}
 					{{{ if !template.category }}}
-					<a class="lh-1" href="{config.relative_path}/category/{./category.slug}">{function.buildCategoryLabel, ./category, "border"}</a>
+					{function.buildCategoryLabel, ./category, "a", "border"}
 					{{{ end }}}
 
 					<span data-tid="{./tid}" component="topic/tags" class="lh-1 tag-list hidden-xs d-flex flex-wrap gap-1 {{{ if !./tags.length }}}hidden{{{ end }}}">

@@ -23,7 +23,7 @@
 		</a>
 		<div class="d-flex gap-1 post-info px-2 text-xs">
 			<div class="category-item d-inline-block ff-secondary">
-				<span>{function.buildCategoryLabel, posts.category}</span>
+				{function.buildCategoryLabel, posts.category, "span"}
 			</div>
 			<span class="timeago text-muted" title="{posts.timestampISO}"></span>
 		</div>

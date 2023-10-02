@@ -33,7 +33,7 @@
 					</a>
 					{{{each icons}}}<span class="lh-1">{@value}</span>{{{end}}}
 				</span>
-				<a class="lh-1" href="{config.relative_path}/category/{category.slug}">{function.buildCategoryLabel, category, "border"}</a>
+				{function.buildCategoryLabel, category, "a", "border"}
 				<div data-tid="{./tid}" component="topic/tags" class="lh-1 tags tag-list d-flex flex-wrap hidden-xs hidden-empty gap-2"><!-- IMPORT partials/topic/tags.tpl --></div>
 				<div class="d-flex hidden-xs gap-2">
 					<!-- IMPORT partials/topic/stats.tpl -->
