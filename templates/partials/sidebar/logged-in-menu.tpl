@@ -2,7 +2,7 @@
 	<!-- IMPORT partials/sidebar/user-menu.tpl -->
 </li>
 
-{{{ if config.searchEnabled }}}
+{{{ if (config.searchEnabled && user.privileges.search:content) }}}
 <li component="sidebar/search" class="nav-item mx-2 search dropstart position-relative" title="[[global:header.search]]">
 <!-- IMPORT partials/sidebar/search.tpl -->
 </li>
