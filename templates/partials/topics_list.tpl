@@ -30,21 +30,22 @@
 				<span component="topic/labels" class="d-flex flex-wrap gap-1 w-100">
 					<span component="topic/scheduled" class="badge border border-gray-300 text-body {{{ if !./scheduled }}}hidden{{{ end }}}">
 						<i class="fa fa-clock-o"></i>
-						<span class="d-none d-md-inline">[[topic:scheduled]]</span>
+						<span>[[topic:scheduled]]</span>
 					</span>
 					<span component="topic/pinned" class="badge border border-gray-300 text-body {{{ if (./scheduled || !./pinned) }}}hidden{{{ end }}}">
 						<i class="fa fa-thumb-tack"></i>
-						<span class="d-none d-md-inline">{{{ if !./pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {isoTimeToLocaleString(./pinExpiryISO)}]]{{{ end }}}</span>
+						<span>{{{ if !./pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {isoTimeToLocaleString(./pinExpiryISO)}]]{{{ end }}}</span>
 					</span>
 					<span component="topic/locked" class="badge border border-gray-300 text-body {{{ if !./locked }}}hidden{{{ end }}}">
 						<i class="fa fa-lock"></i>
-						<span class="d-none d-md-inline">[[topic:locked]]</span>
+						<span>[[topic:locked]]</span>
 					</span>
 					<span class="badge border border-gray-300 text-body {{{ if !./oldCid }}}hidden{{{ end }}}">
 						<i class="fa fa-arrow-circle-right"></i>
-						<span class="d-none d-md-inline">[[topic:moved]]</span>
+						<span>[[topic:moved]]</span>
 					</span>
 					{{{each ./icons}}}<span class="lh-1">{@value}</span>{{{end}}}
+
 					{{{ if !template.category }}}
 					{function.buildCategoryLabel, ./category, "a", "border"}
 					{{{ end }}}
