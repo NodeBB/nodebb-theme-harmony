@@ -55,13 +55,16 @@
 						{{{ end }}}
 					</span>
 
-					<a href="{config.relative_path}/topic/{./slug}" class="hidden-xs badge bg-transparent text-muted fw-normal timeago" title="{./timestampISO}"></a>
-					{{{ if !config.theme.mobileTopicTeasers}}}
-					<span class="visible-xs-inline badge bg-transparent text-muted fw-normal timeago" title="{{{ if ./teaser.timestampISO }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>
-					{{{ end }}}
-					<div class="d-block d-lg-none ms-auto card card-header border-0 p-1 me-1 overflow-hidden rounded-1 d-flex">
-						<span class="text-xs fw-semibold lh-1">{humanReadableNumber(./postcount, 0)}</span>
+					<div class="d-flex gap-1 d-block d-lg-none w-100">
+						<span class="badge text-body border stats text-xs text-muted">
+							<i class="fa-regular fa-fw fa-message"></i>
+							<span component="topic/post-count" class="fw-normal">{humanReadableNumber(./postcount, 0)}</span>
+						</span>
+
+						<span class="border badge bg-transparent text-muted fw-normal timeago" title="{{{ if (./teaser.timestampISO && !config.theme.mobileTopicTeasers) }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>
 					</div>
+
+					<a href="{config.relative_path}/topic/{./slug}" class="d-none d-lg-block badge bg-transparent text-muted fw-normal timeago" title="{./timestampISO}"></a>
 				</span>
 				{{{ if showSelect }}}
 				<div class="checkbox position-absolute top-0 end-0 m-0 d-flex d-lg-none" style="max-width:max-content">
@@ -89,7 +92,7 @@
 				<div class="stats-postcount card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-column align-items-center">
 					<span class="fs-5 ff-secondary lh-1" title="{./postcount}">{humanReadableNumber(./postcount, 0)}</span>
 					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:posts]]</span>
-					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-message"></i>
+					<i class="d-xl-none fa-regular fa-fw text-xs text-muted opacity-75 fa-message"></i>
 				</div>
 				<div class="stats-viewcount card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-column align-items-center">
 					<span class="fs-5 ff-secondary lh-1" title="{./viewcount}">{humanReadableNumber(./viewcount, 0)}</span>
