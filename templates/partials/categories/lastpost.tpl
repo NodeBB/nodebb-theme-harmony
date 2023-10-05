@@ -19,7 +19,7 @@
 	{{{ if !./posts.length }}}
 	<div component="category/posts" class="ps-2">
 		<div class="post-content overflow-hidden text-xs">
-			[[category:no_new_posts]]
+			[[category:no-new-posts]]
 		</div>
 	</div>
 	{{{ end }}}

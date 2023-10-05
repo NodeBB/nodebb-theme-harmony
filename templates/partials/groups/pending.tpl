@@ -1,7 +1,7 @@
 {{{ if group.pending.length }}}
 <div class="d-flex justify-content-end gap-2 mb-3">
-	<button class="btn btn-danger btn-sm" data-action="rejectAll">[[groups:pending.reject_all]]</button>
-	<button class="btn btn-success btn-sm" data-action="acceptAll">[[groups:pending.accept_all]]</button>
+	<button class="btn btn-danger btn-sm" data-action="rejectAll">[[groups:pending.reject-all]]</button>
+	<button class="btn btn-success btn-sm" data-action="acceptAll">[[groups:pending.accept-all]]</button>
 
 </div>
 {{{ end }}}

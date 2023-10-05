@@ -20,7 +20,7 @@
 				<span class="visible-md-inline visible-lg-inline">{selectedCategory.name}</span>
 			</span>
 			{{{ else }}}
-			<span class="visible-md-inline visible-lg-inline">[[unread:all_categories]]</span>
+			<span class="visible-md-inline visible-lg-inline">[[unread:all-categories]]</span>
 			{{{ end }}}
 			<span class="caret"></span>
 		</button>

@@ -78,7 +78,7 @@
 						<i class="fa fa-caret-down"></i>
 					</button>
 					<ul class="dropdown-menu dropdown-menu-end p-1 text-sm" role="menu">
-						<li><a class="dropdown-item rounded-1" href="#" component="account/new-chat">[[user:new_chat_with, {username}]]</a></li>
+						<li><a class="dropdown-item rounded-1" href="#" component="account/new-chat">[[user:new-chat-with, {username}]]</a></li>
 					</ul>
 					{{{ end }}}
 				</div>

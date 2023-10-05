@@ -19,18 +19,18 @@
 						<div class="mb-2 d-flex flex-column gap-2">
 							<label for="username">[[register:username]]</label>
 							<div class="d-flex flex-column">
-								<input class="form-control" type="text" placeholder="[[register:username_placeholder]]" name="username" id="username" autocorrect="off" autocapitalize="off" autocomplete="off" />
+								<input class="form-control" type="text" placeholder="[[register:username-placeholder]]" name="username" id="username" autocorrect="off" autocapitalize="off" autocomplete="off" />
 								<span class="register-feedback text-xs text-danger" id="username-notify"></span>
-								<span class="form-text text-xs">[[register:help.username_restrictions, {minimumUsernameLength}, {maximumUsernameLength}]]</span>
+								<span class="form-text text-xs">[[register:help.username-restrictions, {minimumUsernameLength}, {maximumUsernameLength}]]</span>
 							</div>
 						</div>
 
 						<div class="mb-2 d-flex flex-column gap-2">
 							<label for="password">[[register:password]]</label>
 							<div class="d-flex flex-column">
-								<input class="form-control" type="password" placeholder="[[register:password_placeholder]]" name="password" id="password" />
+								<input class="form-control" type="password" placeholder="[[register:password-placeholder]]" name="password" id="password" />
 								<span class="register-feedback text-xs text-danger" id="password-notify"></span>
-								<span class="form-text text-xs">[[register:help.minimum_password_length, {minimumPasswordLength}]]</span>
+								<span class="form-text text-xs">[[register:help.minimum-password-length, {minimumPasswordLength}]]</span>
 								<p id="caps-lock-warning" class="text-danger hidden">
 									<i class="fa fa-exclamation-triangle"></i> [[login:caps-lock-enabled]]
 								</p>
@@ -38,9 +38,9 @@
 						</div>
 
 						<div class="mb-2 d-flex flex-column gap-2">
-							<label for="password-confirm">[[register:confirm_password]]</label>
+							<label for="password-confirm">[[register:confirm-password]]</label>
 							<div>
-								<input class="form-control" type="password" placeholder="[[register:confirm_password_placeholder]]" name="password-confirm" id="password-confirm" />
+								<input class="form-control" type="password" placeholder="[[register:confirm-password-placeholder]]" name="password-confirm" id="password-confirm" />
 								<span class="register-feedback text-xs text-danger" id="password-confirm-notify"></span>
 							</div>
 						</div>
@@ -52,7 +52,7 @@
 						</div>
 						{{{ end }}}
 
-						<button class="btn btn-primary" id="register" type="submit">[[register:register_now_button]]</button>
+						<button class="btn btn-primary" id="register" type="submit">[[register:register-now-button]]</button>
 						<hr/>
 
 						<span class="text-sm">[[register:already-have-account]]</span>
@@ -68,7 +68,7 @@
 			{{{ if alternate_logins }}}
 			<div class="col-12 col-md-5 col-lg-3 px-md-0">
 				<div class="alt-register-block d-flex flex-column gap-2">
-					<label>[[register:alternative_registration]]</label>
+					<label>[[register:alternative-registration]]</label>
 					<ul class="alt-logins list-unstyled">
 						{{{ each authentication }}}
 						<li class="{./name} mb-2">

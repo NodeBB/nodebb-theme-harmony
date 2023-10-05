@@ -12,7 +12,7 @@
 				<div class="login-block">
 					<div class="alert alert-danger alert-dismissible" id="login-error-notify" {{{ if error }}}style="display:block"{{{ else }}}style="display: none;"{{{ end }}}>
 						<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-						<strong>[[login:failed_login_attempt]]</strong>
+						<strong>[[login:failed-login-attempt]]</strong>
 						<p>{error}</p>
 					</div>
 
@@ -27,7 +27,7 @@
 							<div class="d-flex justify-content-between align-items-center">
 								<label for="password">[[user:password]]</label>
 								{{{ if allowPasswordReset }}}
-								<a id="reset-link" tabindex="-1" class="text-sm text-reset text-decoration-underline" href="{config.relative_path}/reset">[[login:forgot_password]]</a>
+								<a id="reset-link" tabindex="-1" class="text-sm text-reset text-decoration-underline" href="{config.relative_path}/reset">[[login:forgot-password]]</a>
 								{{{ end }}}
 							</div>
 							<div>
@@ -40,7 +40,7 @@
 						<div class="mb-2">
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="remember" id="remember" checked /> [[login:remember_me]]
+									<input type="checkbox" name="remember" id="remember" checked /> [[login:remember-me]]
 								</label>
 							</div>
 						</div>
@@ -59,7 +59,7 @@
 						<hr/>
 
 						{{{ if allowRegistration }}}
-						<span class="text-sm">[[login:dont_have_account]]</span>
+						<span class="text-sm">[[login:dont-have-account]]</span>
 						<a class="btn btn-outline-light text-body" href="{config.relative_path}/register">[[register:register]]</a>
 						{{{ end }}}
 					</form>
@@ -70,7 +70,7 @@
 			{{{ if alternate_logins }}}
 			<div class="col-12 col-md-5 col-lg-3 px-md-0">
 				<div class="alt-login-block d-flex flex-column gap-2">
-					<label>[[login:alternative_logins]]</label>
+					<label>[[login:alternative-logins]]</label>
 					<ul class="alt-logins list-unstyled">
 						{{{ each authentication }}}
 						<li class="{./name} mb-2">

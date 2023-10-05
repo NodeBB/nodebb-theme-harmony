@@ -1,6 +1,6 @@
 <div class="notifications">
 	<div class="btn-toolbar justify-content-end" role="toolbar">
-		<button class="btn btn-sm btn-light" component="notifications/mark_all">[[notifications:mark_all_read]]</button>
+		<button class="btn btn-sm btn-light" component="notifications/mark_all">[[notifications:mark-all-read]]</button>
 	</div>
 
 	<hr class="text-muted opacity-25"/>

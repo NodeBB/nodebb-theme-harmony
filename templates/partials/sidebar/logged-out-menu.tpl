@@ -12,7 +12,7 @@
 <hr class="my-2 mx-2 visible-open">
 {{{ if allowRegistration }}}
 <li class="nav-item mx-2" title="[[global:register]]">
-	<span class="text-xs visible-open">[[login:dont_have_account]]</span>
+	<span class="text-xs visible-open">[[login:dont-have-account]]</span>
 	<a class="nav-link nav-btn" href="{relative_path}/register">
 		<span class="d-flex gap-2 align-items-center text-nowrap truncate-open">
 			<span class="position-relative">

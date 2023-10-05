@@ -34,7 +34,7 @@
 		{{{ end }}}
 		<div class="stat">
 			<div class="align-items-center justify-content-center card card-header px-0 py-3 border-0 rounded-1 h-100">
-				<span class="stat-label text-xs fw-semibold">[[user:profile_views]]</span>
+				<span class="stat-label text-xs fw-semibold">[[user:profile-views]]</span>
 				<span class="fs-2 ff-secondary" title="
 				{profileviews}">{humanReadableNumber(profileviews)}</span>
 			</div>

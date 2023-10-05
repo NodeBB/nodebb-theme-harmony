@@ -49,7 +49,7 @@
 				<div class="tab-pane fade show active" id="groups-posts" role="tabpanel">
 					<h3 class="fw-semibold fs-5 mb-0">[[global:posts]]</h3>
 					{{{ if !posts.length }}}
-					<div class="alert alert-info">[[groups:details.has_no_posts]]</div>
+					<div class="alert alert-info">[[groups:details.has-no-posts]]</div>
 					{{{ end }}}
 					<!-- IMPORT partials/posts_list.tpl -->
 				</div>
@@ -70,7 +70,7 @@
 				</div>
 
 				<div class="tab-pane fade" id="groups-admin" role="tabpanel">
-					<h3 class="fw-semibold fs-5 mb-3">[[groups:details.owner_options]]</h3>
+					<h3 class="fw-semibold fs-5 mb-3">[[groups:details.owner-options]]</h3>
 					<!-- IMPORT partials/groups/admin.tpl -->
 				</div>
 				{{{ end }}}

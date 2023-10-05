@@ -88,10 +88,10 @@
 				[[user:info.ban-history]]
 
 				{{{ if (!banned && !isSelf) }}}
-				<button class="btn btn-sm float-end btn-danger" component="account/ban">[[user:ban_account]]</button>
+				<button class="btn btn-sm float-end btn-danger" component="account/ban">[[user:ban-account]]</button>
 				{{{ end }}}
 				{{{ if (banned && !isSelf) }}}
-				<button class="btn btn-sm float-end btn-success" component="account/unban">[[user:unban_account]]</button>
+				<button class="btn btn-sm float-end btn-success" component="account/unban">[[user:unban-account]]</button>
 				{{{ end }}}
 			</h5>
 			<div class="card-body">
@@ -127,11 +127,11 @@
 
 				{{{ if !muted }}}
 				{{{ if !isSelf }}}
-				<button class="btn btn-sm float-end btn-danger" component="account/mute">[[user:mute_account]]</button>
+				<button class="btn btn-sm float-end btn-danger" component="account/mute">[[user:mute-account]]</button>
 				{{{ end }}}
 				{{{ else }}}
 				{{{ if !isSelf }}}
-				<button class="btn btn-sm float-end btn-success" component="account/unmute">[[user:unmute_account]]</button>
+				<button class="btn btn-sm float-end btn-success" component="account/unmute">[[user:unmute-account]]</button>
 				{{{ end }}}
 				{{{ end }}}
 			</h5>

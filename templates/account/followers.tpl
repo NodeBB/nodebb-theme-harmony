@@ -2,7 +2,7 @@
 <h3 class="fw-semibold fs-5">[[pages:{template.name}, {username}]]</h3>
 
 {{{ if !users.length }}}
-<div class="alert alert-warning text-center">[[user:has_no_follower]]</div>
+<div class="alert alert-warning text-center">[[user:has-no-follower]]</div>
 {{{ end }}}
 
 <div class="row row-cols-2 row-cols-lg-3 row-cols-xl-4 g-4">

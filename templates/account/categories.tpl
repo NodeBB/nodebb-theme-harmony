@@ -8,7 +8,7 @@
 	<div class="d-flex gap-1">
 		<div class="btn-group bottom-sheet" component="category/watch/all">
 			<button class="btn-ghost-sm fw-semibold dropdown-toggle" data-bs-toggle="dropdown" type="button">
-				<span>[[user:change_all]]</span>
+				<span>[[user:change-all]]</span>
 			</button>
 			<ul class="dropdown-menu p-1 text-sm dropdown-menu-end">
 				<li><a class="dropdown-item rounded-1 d-flex flex-column p-2" href="#" component="category/watching" data-state="watching">

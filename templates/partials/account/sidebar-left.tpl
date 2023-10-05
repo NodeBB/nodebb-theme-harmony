@@ -41,7 +41,7 @@
 		{{{ if canEdit }}}
 		<a href="{config.relative_path}/user/{userslug}/categories" class="btn-ghost fw-semibold
 			{{{ if template.account/categories }}}active{{{ end }}}">
-			<div class="flex-grow-1">[[user:watched_categories]]</div>
+			<div class="flex-grow-1">[[user:watched-categories]]</div>
 			<span class="flex-shrink-0 text-xs" title="{counts.categoriesWatched}">{counts.categoriesWatched}</span>
 		</a>
 		{{{ if isSelf }}}
@@ -73,11 +73,11 @@
 		</a>
 		<a href="#" component="account/block" class="btn-ghost-sm {{{ if isBlocked }}}hidden{{{ end }}}">
 			<i class="flex-shrink-0 fa-solid fa-ban text-danger"></i>
-			<div class="flex-grow-1 text-nowrap">[[user:block_user]]</div>
+			<div class="flex-grow-1 text-nowrap">[[user:block-user]]</div>
 		</a>
 		<a href="#" component="account/unblock" class="btn-ghost-sm {{{ if !isBlocked }}}hidden{{{ end }}}">
 			<i class="flex-shrink-0 fa-solid fa-ban text-danger"></i>
-			<div class="flex-grow-1 text-nowrap">[[user:unblock_user]]</div>
+			<div class="flex-grow-1 text-nowrap">[[user:unblock-user]]</div>
 		</a>
 		{{{ end }}}
 

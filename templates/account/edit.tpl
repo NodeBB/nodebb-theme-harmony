@@ -2,7 +2,7 @@
 
 <div class="d-flex justify-content-between py-1 mb-3 align-items-center position-sticky top-0 bg-body">
 	<h3 class="fw-semibold fs-5 mb-0">{{{ if isSelf }}}[[user:edit-profile]]{{{ else }}}[[pages:account/edit, {username}]]{{{ end }}}</h3>
-	<button id="submitBtn" class="btn btn-sm btn-primary">[[global:save_changes]]</button>
+	<button id="submitBtn" class="btn btn-sm btn-primary">[[global:save-changes]]</button>
 </div>
 <div class="row">
 	<div class="col-xl-6 col-12">
@@ -68,16 +68,16 @@
 		<div class="text-center">
 			<ul class="list-group mb-3 text-sm text-nowrap">
 				{{{ if allowProfilePicture }}}
-				<a component="profile/change/picture" href="#" class="list-group-item px-1 text-decoration-none">[[user:change_picture]]</a>
+				<a component="profile/change/picture" href="#" class="list-group-item px-1 text-decoration-none">[[user:change-picture]]</a>
 				{{{ end }}}
 				{{{ if !username:disableEdit }}}
-				<a href="{config.relative_path}/user/{userslug}/edit/username" class="list-group-item px-1 text-decoration-none">[[user:change_username]]</a>
+				<a href="{config.relative_path}/user/{userslug}/edit/username" class="list-group-item px-1 text-decoration-none">[[user:change-username]]</a>
 				{{{ end }}}
 				{{{ if !email:disableEdit }}}
-				<a href="{config.relative_path}/user/{userslug}/edit/email" class="list-group-item px-1 text-decoration-none">[[user:change_email]]</a>
+				<a href="{config.relative_path}/user/{userslug}/edit/email" class="list-group-item px-1 text-decoration-none">[[user:change-email]]</a>
 				{{{ end }}}
 				{{{ if canChangePassword }}}
-				<a href="{config.relative_path}/user/{userslug}/edit/password" class="list-group-item px-1 text-decoration-none">[[user:change_password]]</a>
+				<a href="{config.relative_path}/user/{userslug}/edit/password" class="list-group-item px-1 text-decoration-none">[[user:change-password]]</a>
 				{{{ end }}}
 				{{{ each editButtons }}}
 				<a href="{config.relative_path}{./link}" class="list-group-item px-1 text-decoration-none">{./text}</a>
@@ -86,7 +86,7 @@
 
 			{{{ if config.requireEmailConfirmation }}}
 			{{{ if (email && isSelf) }}}
-			<a id="confirm-email" href="#" class="btn btn-warning {{{ if email:confirmed }}}hide{{{ end }}}">[[user:confirm_email]]</a><br/><br/>
+			<a id="confirm-email" href="#" class="btn btn-warning {{{ if email:confirmed }}}hide{{{ end }}}">[[user:confirm-email]]</a><br/><br/>
 			{{{ end }}}
 			{{{ end }}}
 		</div>
@@ -112,7 +112,7 @@
 		<hr/>
 		{{{ if (allowAccountDelete && isSelf) }}}
 		<div class="d-flex justify-content-center">
-			<button id="deleteAccountBtn" class="btn btn-danger">[[user:delete_account]]</button>
+			<button id="deleteAccountBtn" class="btn btn-danger">[[user:delete-account]]</button>
 		</div>
 		{{{ end }}}
 	</div>

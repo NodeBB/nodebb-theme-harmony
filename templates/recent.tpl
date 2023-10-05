@@ -12,7 +12,7 @@
 
 		<div class="category">
 			{{{ if !topics.length }}}
-			<div class="alert alert-info" id="category-no-topics">[[recent:no_recent_topics]]</div>
+			<div class="alert alert-info" id="category-no-topics">[[recent:no-recent-topics]]</div>
 			{{{ end }}}
 
 			<!-- IMPORT partials/topics_list.tpl -->

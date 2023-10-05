@@ -1,5 +1,5 @@
 {{{ if matchCount }}}
-<div class="card card-header text-xs px-2 py-1 fw-semibold border-0 align-self-start">[[search:results_matching, {matchCount}, {search_query}, {time}]] </div>
+<div class="card card-header text-xs px-2 py-1 fw-semibold border-0 align-self-start">[[search:results-matching, {matchCount}, {search_query}, {time}]] </div>
 {{{ else }}}
 {{{ if search_query }}}
 <div class="badge text-bg-warning align-self-start">[[search:no-matches]]</div>

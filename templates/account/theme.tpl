@@ -3,7 +3,7 @@
 <div class="mb-3 d-flex justify-content-between">
 	<h3 class="fw-semibold fs-5">[[themes/harmony:settings.title]]</h3>
 
-	<button id="save" type="button" class="btn btn-primary">[[global:save_changes]]</button>
+	<button id="save" type="button" class="btn btn-primary">[[global:save-changes]]</button>
 </div>
 
 <form id="theme-settings" role="form">
