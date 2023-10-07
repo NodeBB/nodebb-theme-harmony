@@ -4,6 +4,11 @@
 		{buildCategoryIcon(@value, "40px", "rounded-1 flex-shrink-0")}
 		<h1 class="tracking-tight fs-2 fw-semibold mb-0 text-center">{./name}</h1>
 	</div>
+	{{{ if ./descriptionParsed }}}
+		<div class="description text-muted text-sm w-100">
+			{./descriptionParsed}
+		</div>
+	{{{ end }}}
 	<div class="d-flex flex-wrap gap-2 {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
 		<span class="badge text-body border border-gray-300 stats text-xs">
 			<span title="{totalTopicCount}" class="fw-bold">{humanReadableNumber(totalTopicCount)}</span>
