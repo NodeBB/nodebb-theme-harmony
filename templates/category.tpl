@@ -5,9 +5,9 @@
 		<h1 class="tracking-tight fs-2 fw-semibold mb-0 text-center">{./name}</h1>
 	</div>
 	{{{ if ./descriptionParsed }}}
-		<div class="description text-muted text-sm w-100">
-			{./descriptionParsed}
-		</div>
+	<div class="description text-muted text-sm w-100 {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
+		{./descriptionParsed}
+	</div>
 	{{{ end }}}
 	<div class="d-flex flex-wrap gap-2 {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
 		<span class="badge text-body border border-gray-300 stats text-xs">
