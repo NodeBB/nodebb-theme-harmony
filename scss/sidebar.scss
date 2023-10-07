@@ -164,7 +164,7 @@
 		}
 		left: 0!important;
 		right: 0!important;
-		bottom: $spacer!important;
+		bottom: $spacer*0.5!important;
 		box-shadow: none!important;
 		max-height: 60vh!important;
 		overflow: auto!important;
@@ -176,7 +176,6 @@
 	.search-dropdown, .chats-dropdown, .notifications-dropdown, .drafts-dropdown {
 		left: 0 !important;
 		right: 0 !important;
-		bottom: $spacer * 0.7 !important;
 		box-shadow: none!important;
 
 		border-left: 0;

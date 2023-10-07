@@ -66,13 +66,31 @@
 					<!-- IMPORT partials/sidebar/drafts.tpl -->
 					</li>
 
-					<li id="user_label" class="nav-item m-0 py-2 usermenu">
+					<li id="user_label" class="nav-item m-0 usermenu">
 					<!-- IMPORT partials/sidebar/user-menu.tpl -->
 					</li>
 				</ul>
 				{{{ else }}}
 				<ul id="logged-out-menu" class="list-unstyled d-flex w-100 gap-3 mb-0 logged-out-menu">
-					<!-- IMPORT partials/sidebar/logged-out-menu.tpl -->
+					{{{ if (config.searchEnabled && user.privileges.search:content) }}}
+					<li component="sidebar/search" class="nav-item mx-2 search">
+						<!-- IMPORT partials/sidebar/search-mobile.tpl -->
+					</li>
+					{{{ end }}}
+
+					{{{ if allowRegistration }}}
+					<li class="nav-item mx-2" title="[[global:register]]">
+						<a class="nav-link nav-btn" href="{relative_path}/register">
+							<i class="fa fa-fw fa-user-plus"></i>
+						</a>
+					</li>
+					{{{ end }}}
+
+					<li class="nav-item mx-2" title="[[global:login]]">
+						<a class="nav-link nav-btn" href="{relative_path}/login">
+							<i class="fa fa-fw fa-sign-in"></i>
+						</a>
+					</li>
 				</ul>
 				{{{ end }}}
 			</div>
