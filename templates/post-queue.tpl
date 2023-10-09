@@ -1,5 +1,3 @@
-<!-- IMPORT partials/breadcrumbs.tpl -->
-
 <div class="btn-toolbar justify-content-end">
 	<div class="me-2">
 	<!-- IMPORT partials/category/filter-dropdown-right.tpl -->
