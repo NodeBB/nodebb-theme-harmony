@@ -7,7 +7,7 @@
 			"@type": "ListItem",
 			"position": 1,
 			"name": "{config.siteTitle}",
-			"item": "/"
+			"item": "{breadcrumbs.0.url}"
 		}
 		{{{ each breadcrumbs }}}
 		{{{ if !@first}}}
