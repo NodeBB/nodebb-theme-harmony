@@ -13,6 +13,7 @@
 				<button type="button" class="btn btn-ghost border btn-sm justify-content-start dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<i class="fa fa-fw fa-street-view text-primary"></i>
 					[[flags:flagged-user]]
+					<i class="fa fa-chevron-right ms-auto text-secondary"></i>
 				</button>
 				<ul class="dropdown-menu p-1 text-sm">
 					<li><a class="dropdown-item rounded-1" href="{config.relative_path}/uid/{target.uid}">[[flags:view-profile]]</a></li>
