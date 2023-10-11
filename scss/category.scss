@@ -1,1 +1,4 @@
 .category-header .description p { margin: 0; }
+.page-category .breadcrumb .breadcrumb-item:last-child {
+	display: none;
+}

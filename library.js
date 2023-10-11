@@ -186,16 +186,3 @@ library.filterMiddlewareRenderHeader = async function (hookData) {
 	return hookData;
 };
 
-library.removeFinalBreadcrumb = async (hookData) => {
-	const { templateData } = hookData;
-	const { breadcrumbs } = templateData;
-
-	const applyTo = ['category', 'topic'];
-
-	// Remove the last breadcrumb (the current page) as it is not part of Harmony's design
-	if (applyTo.includes(hookData.templateData.template.name) && breadcrumbs && breadcrumbs.length) {
-		breadcrumbs.pop();
-	}
-
-	return hookData;
-};
