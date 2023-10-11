@@ -18,7 +18,7 @@
 			{{{ if !@last }}}
 			,"item": "{./url}"
 			{{{ end }}}
-		},
+		}{{{ if !@last}}},{{{ end }}}
 		{{{ end }}}
 		{{{ end }}}
 	]
