@@ -70,7 +70,7 @@
 				{{{ end }}}
 				{{{ end }}}
 
-				{{{ if (loggedIn && (!isSelf && (!banned && !config.disableChat))) }}}
+				{{{ if (canChat && !banned) }}}
 				<div class="btn-group flex-fill">
 					<a {{{ if hasPrivateChat }}}component="account/chat"{{{ else }}}component="account/new-chat"{{{ end }}} href="#" class="btn btn-light" role="button">[[user:chat]]</a>
 					{{{ if hasPrivateChat}}}
