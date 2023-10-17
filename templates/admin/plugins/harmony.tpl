@@ -35,6 +35,10 @@
 					</div>
 				</div>
 				<div class="form-check form-switch">
+					<input type="checkbox" class="form-check-input" id="openSidebars" name="openSidebars" />
+					<label for="openSidebars" class="form-check-label">[[themes/harmony:settings.openSidebars]]</label>
+				</div>
+				<div class="form-check form-switch">
 					<input type="checkbox" class="form-check-input" id="chatModals" name="chatModals" />
 					<div for="chatModals" class="form-check-label">
 						[[themes/harmony:settings.chatModals]]
