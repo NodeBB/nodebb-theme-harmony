@@ -43,6 +43,11 @@
 	</div>
 
 	<div class="form-check mb-3">
+		<input class="form-check-input" type="checkbox" id="openSidebars" name="openSidebars" {{{ if theme.openSidebars }}}checked{{{ end }}}>
+		<label class="form-check-label" for="openSidebars">[[themes/harmony:settings.openSidebars]]</label>
+	</div>
+
+	<div class="form-check mb-3">
 		<input class="form-check-input" type="checkbox" id="chatModals" name="chatModals" {{{ if theme.chatModals }}}checked{{{ end }}}>
 		<label class="form-check-label" for="chatModals">
 			[[themes/harmony:settings.chatModals]]
