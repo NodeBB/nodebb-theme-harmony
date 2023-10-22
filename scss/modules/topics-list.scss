@@ -9,6 +9,7 @@ ul.topics-list, ul.categories-list {
 			background-color: mix($body-bg, $body-color, 90%);
 			[component="topic/select"] {
 				color: $success!important;
+				visibility: visible;
 			}
 		}
 		p {
