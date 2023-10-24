@@ -278,10 +278,13 @@ $(document).ready(function () {
 	function fixSidebarOverflow() {
 		// overflow-y-auto needs to be removed on main-nav when dropdowns are opened
 		const mainNavEl = $('#main-nav');
-		mainNavEl.on('show.bs.dropdown', () => {
-			mainNavEl.removeClass('overflow-y-auto');
-		}).on('hide.bs.dropdown', () => {
-			mainNavEl.addClass('overflow-y-auto');
-		});
+		function toggleOverflow() {
+			mainNavEl.toggleClass(
+				'overflow-y-auto',
+				!mainNavEl.find('.dropdown-menu.show').length
+			);
+		}
+		mainNavEl.on('shown.bs.dropdown', toggleOverflow)
+			.on('hidden.bs.dropdown', toggleOverflow);
 	}
 });
