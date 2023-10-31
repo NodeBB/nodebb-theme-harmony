@@ -1,4 +1,6 @@
 <!-- IMPORT partials/breadcrumbs-json-ld.tpl -->
+<!-- IMPORT partials/breadcrumbs.tpl -->
+
 {{{ if widgets.header.length }}}
 <div data-widget-area="header">
 	{{{each widgets.header}}}
