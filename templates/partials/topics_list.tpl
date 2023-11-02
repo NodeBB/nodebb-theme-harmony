@@ -62,10 +62,10 @@
 							<span component="topic/post-count" class="fw-normal">{humanReadableNumber(./postcount, 0)}</span>
 						</span>
 
-						<span class="border badge bg-transparent text-muted fw-normal timeago" title="{{{ if (./teaser.timestampISO && !config.theme.mobileTopicTeasers) }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>
+						<a href="{config.relative_path}/topic/{./slug}/{./postcount}" class="border badge bg-transparent text-muted fw-normal timeago" title="{{{ if (./teaser.timestampISO && !config.theme.mobileTopicTeasers) }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></a>
 					</div>
 
-					<a href="{config.relative_path}/topic/{./slug}" class="d-none d-lg-block badge bg-transparent text-muted fw-normal timeago" title="{./timestampISO}"></a>
+					<a href="{config.relative_path}/topic/{./slug}/{./postcount}" class="d-none d-lg-block badge bg-transparent text-muted fw-normal timeago" title="{./timestampISO}"></a>
 				</span>
 				{{{ if showSelect }}}
 				<div class="checkbox position-absolute top-0 end-0 m-0 d-flex d-lg-none" style="max-width:max-content">
