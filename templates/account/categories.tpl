@@ -13,12 +13,20 @@
 			<ul class="dropdown-menu p-1 text-sm dropdown-menu-end">
 				<li><a class="dropdown-item rounded-1 d-flex flex-column p-2" href="#" component="category/watching" data-state="watching">
 						<div class="d-flex align-items-center gap-2">
-							<i class="flex-shrink-0 fa fa-fw fa-inbox"></i>
+							<i class="flex-shrink-0 fa fa-fw fa-bell-o"></i>
 							<span class="flex-grow-1 fw-semibold">[[category:watching]]</span>
 						</div>
 						<div class="help-text text-muted text-xs">[[category:watching.description]]</div>
 					</a>
 				</li>
+				<li><a class="dropdown-item rounded-1 d-flex flex-column p-2" href="#" component="category/tracking" data-state="tracking">
+					<div class="d-flex align-items-center gap-2">
+						<i class="flex-shrink-0 fa fa-fw fa-inbox"></i>
+						<span class="flex-grow-1 fw-semibold">[[category:tracking]]</span>
+					</div>
+					<div class="help-text text-muted text-xs">[[category:tracking.description]]</div>
+				</a>
+			</li>
 				<li><a class="dropdown-item rounded-1 d-flex flex-column p-2" href="#" component="category/notwatching" data-state="notwatching">
 						<div class="d-flex align-items-center gap-2">
 							<i class="flex-shrink-0 fa fa-fw fa-clock-o"></i>
