@@ -190,7 +190,7 @@
 			<div class="mb-2">
 				<label class="form-label">[[user:default-category-watch-state]]</label>
 				<select class="form-select form-select-sm" data-property="categoryWatchState">
-					<option value="watching" {{{ if categoryWatchState.watching }}}selected{{{ end }}}>[[category:watching]]</option>
+					<option value="tracking" {{{ if categoryWatchState.tracking }}}selected{{{ end }}}>[[category:tracking]]</option>
 					<option value="notwatching" {{{ if categoryWatchState.notwatching }}}selected{{{ end }}}>[[category:not-watching]]</option>
 					<option value="ignoring" {{{ if categoryWatchState.ignoring }}}selected{{{ end }}}>[[category:ignoring]]</option>
 				</select>
