@@ -70,43 +70,24 @@ body.page-user-chats {
 				.controls {
 					opacity: 0;
 					transition: $transition-fade;
-					&:has([aria-expanded="true"]) {
-						opacity: 1;
-					}
-					[data-action="restore"], [data-action="unpin"] {
-						display: none;
-					}
+					&:has([aria-expanded="true"]) { opacity: 1; }
+					[data-action="restore"], [data-action="unpin"] { display: none; }
 				}
 				&:hover {
-					.controls {
-						opacity: 1;
-					}
+					.controls { opacity: 1;	}
 				}
 			}
-		}
-		.chat-message.deleted {
-			.message-body-wrapper .controls {
-				[data-action] {
-					display: none;
-				}
-
-				[data-action="restore"] {
-					display: block;
+			&.deleted {
+				.message-body { opacity: 0.3; }
+				.message-body-wrapper .controls {
+					[data-action] { display: none; }
+					[data-action="restore"] { display: block; }
 				}
 			}
-
-			.message-body {
-				opacity: 0.3;
-			}
-		}
-		.chat-message.pinned {
-			.message-body-wrapper .controls {
-				[data-action="pin"] {
-					display: none;
-				}
-
-				[data-action="unpin"] {
-					display: block;
+			&.pinned {
+				.message-body-wrapper .controls {
+					[data-action="pin"] { display: none; }
+					[data-action="unpin"] { display: block;}
 				}
 			}
 		}
