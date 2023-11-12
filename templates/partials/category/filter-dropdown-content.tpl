@@ -5,7 +5,7 @@
         <span class="visible-md-inline visible-lg-inline fw-semibold">{selectedCategory.name}</span>
     </span>
     {{{ else }}}
-    <i class="fa fa-fw fa-list link-primary"></i>
+    <i class="fa fa-fw fa-list text-primary"></i>
     <span class="visible-md-inline visible-lg-inline fw-semibold">[[unread:all-categories]]</span>{{{ end }}}
 </button>
 <div component="category-selector-search" class="hidden position-absolute">

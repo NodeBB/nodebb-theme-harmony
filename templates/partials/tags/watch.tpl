@@ -2,12 +2,12 @@
 <div class="btn-group bottom-sheet" component="tag/watch">
 	<button class="btn-ghost-sm d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown" type="button">
 		<span component="tag/following/menu" class="d-flex gap-2 align-items-center{{{ if !isFollowing }}} hidden{{{ end }}}">
-			<i class="flex-shrink-0 fa fa-fw fa-bell-o link-primary"></i>
+			<i class="flex-shrink-0 fa fa-fw fa-bell-o text-primary"></i>
 			<span class="d-none d-md-inline fw-semibold">[[tags:watching]]</span>
 		</span>
 
 		<span component="tag/not-following/menu" class="d-flex gap-2 align-items-center{{{ if isFollowing}}} hidden{{{ end }}}">
-			<i class="flex-shrink-0 fa fa-fw fa-bell-slash-o link-primary"></i>
+			<i class="flex-shrink-0 fa fa-fw fa-bell-slash-o text-primary"></i>
 			<span class="d-none d-md-inline fw-semibold">[[tags:not-watching]]</span>
 		</span>
 	</button>
