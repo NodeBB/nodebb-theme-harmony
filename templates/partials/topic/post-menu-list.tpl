@@ -94,11 +94,11 @@
 	{{{ if config.loggedIn }}}<li class="dropdown-divider"></li>{{{ end }}}
 	<li class="dropdown-header">[[topic:share-this-post]]</li>
 	{{{ end }}}
-	{{{ each postSharing }}}
-		<li>
-			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menuitem" component="share/{./id}" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-fw text-muted {./class}"></i></span> {./name}</a>
-		</li>
-	{{{ end }}}
+	<li class="d-flex gap-2 px-3">
+		{{{ each postSharing }}}
+		<a class="dropdown-item rounded-1 d-flex align-items-center px-1 py-2 w-auto" role="menuitem" component="share/{./id}" tabindex="-1" href="#" title="{./name}"><i class="fa-fw text-muted {./class}"></i></a>
+		{{{ end }}}
+	</li>
 {{{ end }}}
 
 {{{ if posts.display_flag_tools }}}
