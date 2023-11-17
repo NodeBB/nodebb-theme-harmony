@@ -12,8 +12,8 @@
 </div>
 {{{ end }}}
 
+{{{ if (!singlePost && posts.length) }}}
 <div class="btn-toolbar justify-content-end">
-	{{{ if (!singlePost && posts.length) }}}
 	<div class="me-2">
 	<!-- IMPORT partials/category/filter-dropdown-right.tpl -->
 	</div>
@@ -35,8 +35,8 @@
 			{{{ end }}}
 		</ul>
 	</div>
-	{{{ end }}}
 </div>
+{{{ end }}}
 
 <div class="post-queue posts-list">
 	{{{ if !posts.length }}}
