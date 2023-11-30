@@ -16,6 +16,9 @@
 
 	<div class="post-container d-flex flex-grow-1 flex-column w-100" style="min-width: 0;">
 		<div class="d-flex align-items-center gap-1 flex-wrap w-100 post-header mt-1" itemprop="author" itemscope itemtype="https://schema.org/Person">
+			<meta itemprop="name" content="{./user.username}">
+			{{{ if ./user.userslug }}}<meta itemprop="url" content="{config.relative_path}/user/{./user.userslug}">{{{ end }}}
+
 			<div class="icon bg-body d-sm-none">
 				<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 					{buildAvatar(posts.user, "20px", true, "", "user/picture")}
@@ -24,7 +27,7 @@
 			</div>
 
 			<span class="text-nowrap">
-				<a class="fw-bold" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" itemprop="name" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.displayname}</a>
+				<a class="fw-bold" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.displayname}</a>
 			</span>
 
 			{{{ each posts.user.selectedGroups }}}
