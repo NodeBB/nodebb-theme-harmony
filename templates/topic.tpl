@@ -8,6 +8,11 @@
 {{{ end }}}
 
 <div class="d-flex flex-column gap-3" itemid="{url}" itemscope itemtype="https://schema.org/DiscussionForumPosting">
+	<meta itemprop="datePublished" content="{timestampISO}">
+	<meta itemprop="dateModified" content="{lastposttimeISO}">
+	<meta itemprop="author" itemscope itemtype="https://schema.org/Person" itemref="topicAuthorName{{{ if author.userslug }}} topicAuthorUrl{{{ end }}}">
+    <meta id="topicAuthorName" itemprop="name" content="{author.username}">
+	{{{ if author.userslug }}}<meta id="topicAuthorUrl" itemprop="url" content="{config.relative_path}/user/{author.userslug}">{{{ end }}}
 	<div class="d-flex flex-wrap">
 		<div class="d-flex flex-column gap-3 flex-grow-1">
 			<h1 component="post/header" class="tracking-tight fw-semibold fs-3 mb-0 text-break {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}" itemprop="headline">
