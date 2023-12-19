@@ -1,8 +1,10 @@
+{{{ if widgets.header.length }}}
 <div data-widget-area="header">
 	{{{each widgets.header}}}
 	{{widgets.header.html}}
 	{{{end}}}
 </div>
+{{{ end }}}
 <div class="row">
 	<div class="tag {{{if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<!-- IMPORT partials/topic-list-bar.tpl -->
