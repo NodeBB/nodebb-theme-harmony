@@ -8,10 +8,12 @@
 			<button title="[[global:sort]]" class="btn-ghost-sm dropdown-toggle" data-bs-toggle="dropdown" type="button"><i class="fa-solid fa-arrow-up-wide-short"></i></button>
 			<ul class="dropdown-menu p-1 text-sm">
 				{{{each sortOptions }}}
-				<li><a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="{config.relative_path}{./url}">
+				<li>
+					<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="{config.relative_path}{./url}">
 					<div class="flex-grow-1">{./name}</div>
 					<i class="flex-shrink-0 fa fa-fw {{{if ./selected}}}fa-check{{{end}}}"></i>
-				</a></li>
+					</a>
+				</li>
 				{{{end}}}
 			</ul>
 		</div>
