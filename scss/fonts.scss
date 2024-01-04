@@ -3,16 +3,17 @@
 
 $weights: $font-weight-light, $font-weight-normal, $font-weight-semibold, $font-weight-bold;
 $subsets: (latin, latin-ext);
+$font-path: "./plugins/nodebb-theme-harmony" !default;
 
 @include Inter.faces(
 	$weights: $weights,
 	$subsets: $subsets,
 	$display: fallback,
-	$directory: "./plugins/nodebb-theme-harmony/inter"
+	$directory: "#{$font-path}/inter"
 );
 @include Poppins.faces(
 	$weights: $weights,
 	$subsets: $subsets,
 	$display: fallback,
-	$directory: "./plugins/nodebb-theme-harmony/poppins"
+	$directory: "#{$font-path}/poppins"
 );
