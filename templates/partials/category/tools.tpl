@@ -1,6 +1,6 @@
 {{{ if showTopicTools }}}
 <div class="btn-group thread-tools bottom-sheet">
-	<button class="btn-ghost-sm d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown" type="button">
+	<button class="btn-ghost-sm ff-secondary d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown" type="button">
 		<i class="fa fa-fw fa-gear text-primary"></i>
 		<span class="visible-md-inline visible-lg-inline fw-semibold">[[topic:thread-tools.title]]</span>
 		<span component="topic/selected/badge" class="badge rounded-pill bg-secondary"></span>

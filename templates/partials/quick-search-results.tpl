@@ -14,7 +14,7 @@
 	{{{ each posts }}}
 	<li data-tid="{posts.topic.tid}" data-pid="{posts.pid}" class="d-flex flex-column gap-1">
 		<a href="{config.relative_path}/post/{posts.pid}"
-			class="btn-ghost-sm rounded-1 text-reset d-block text-truncate px-2 py-1">
+			class="btn-ghost-sm ff-secondary rounded-1 text-reset d-block text-truncate px-2 py-1">
 			<span class="quick-search-title fw-semibold text-sm">{posts.topic.title}</span>
 			<br/>
 			<p class="snippet text-xs text-break text-wrap mb-0">

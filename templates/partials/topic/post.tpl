@@ -82,7 +82,7 @@
 
 	<div class="d-flex">
 		{{{ if !hideReplies }}}
-		<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="d-flex gap-2 align-items-center mt-2 btn-ghost border rounded-1 p-1 threaded-replies user-select-none text-muted text-decoration-none text-xs {{{ if (!./replies || shouldHideReplyContainer(@value)) }}}hidden{{{ end }}}">
+		<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="d-flex gap-2 align-items-center mt-2 btn-ghost ff-secondary border rounded-1 p-1 threaded-replies user-select-none text-muted text-decoration-none text-xs {{{ if (!./replies || shouldHideReplyContainer(@value)) }}}hidden{{{ end }}}">
 			<span component="post/reply-count/avatars" class="avatars d-inline-flex gap-1 align-items-top {{{ if posts.replies.hasMore }}}hasMore{{{ end }}}">
 				{{{each posts.replies.users}}}
 				<span>{buildAvatar(posts.replies.users, "20px", true, "avatar-tooltip")}</span>
@@ -117,7 +117,7 @@
 
 			<meta itemprop="upvoteCount" content="{posts.upvotes}">
 			<meta itemprop="downvoteCount" content="{posts.downvotes}">
-			<div class="d-inline-block px-2 mx-1 btn-ghost-sm" component="post/vote-count" data-votes="{posts.votes}">{posts.votes}</div>
+			<div class="d-inline-block px-2 mx-1 btn-ghost-sm ff-secondary" component="post/vote-count" data-votes="{posts.votes}">{posts.votes}</div>
 
 			{{{ if !downvote:disabled }}}
 			<a component="post/downvote" href="#" class="btn-ghost-sm {{{ if posts.downvoted }}}downvoted{{{ end }}}">

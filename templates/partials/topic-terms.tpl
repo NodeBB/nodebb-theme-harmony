@@ -1,5 +1,5 @@
 <div class="btn-group bottom-sheet {{{ if !terms.length }}}hidden{{{ end }}}">
-	<button type="button" class="btn-ghost-sm d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown">
+	<button type="button" class="btn-ghost-sm ff-secondary d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown">
 		<i class="fa fa-fw fa-clock text-primary"></i>
 		<span class="visible-md-inline visible-lg-inline fw-semibold">{selectedTerm.name}</span>
 	</button>

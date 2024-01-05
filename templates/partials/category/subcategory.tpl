@@ -13,7 +13,7 @@
 		{{{end}}}
 	</ul>
 	{{{ if hasMoreSubCategories}}}
-	<button class="btn-ghost-sm mb-2" component="category/load-more-subcategories">[[category:x-more-categories, {subCategoriesLeft}]]</button>
+	<button class="btn-ghost-sm ff-secondary mb-2" component="category/load-more-subcategories">[[category:x-more-categories, {subCategoriesLeft}]]</button>
 	{{{ end }}}
 </div>
 {{{ end }}}

@@ -1,4 +1,4 @@
-<button type="button" class="btn-ghost-sm dropdown-toggle" data-bs-toggle="dropdown">
+<button type="button" class="btn-ghost-sm ff-secondary dropdown-toggle" data-bs-toggle="dropdown">
 	{{{ if selectedUser }}}
 	<span class="fw-semibold">{buildAvatar(selectedUser, "20px", true, "not-responsive")} {selectedUser.username}</span>
 	{{{ else }}}

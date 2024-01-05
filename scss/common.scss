@@ -23,15 +23,9 @@ hr {
 	opacity: 1;
 }
 
-.ff-base {
-	font-family: $font-family-base !important;
-}
-.ff-sans {
-	font-family: $font-family-sans-serif !important;
-}
-.ff-secondary {
-	font-family: $font-family-secondary;
-}
+.ff-base { font-family: $font-family-base !important; }
+.ff-sans { font-family: $font-family-sans-serif !important; }
+.ff-secondary { font-family: $font-family-secondary; }
 .tracking-tight { letter-spacing: -0.02em; }
 
 .caret {
@@ -101,44 +95,6 @@ body:not(.page-user) {
 	&:hover, &.active {
 		background-color: var(--btn-ghost-hover-color);
 		text-decoration: none;
-	}
-}
-
-@mixin btn-ghost-base {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: ($spacer * 0.5);
-	border-radius: $border-radius-sm;
-	border-width: 1px;
-	border-color: transparent;
-	background-color: transparent;
-	padding: ($spacer * 0.25) ($spacer * 0.5);
-	text-align: left;
-	--bs-text-opacity: 1;
-	color: inherit !important;
-	font-family: $font-family-secondary;
-	cursor: pointer;
-	&:hover, &.active {
-		background-color: var(--btn-ghost-hover-color);
-		text-decoration: none;
-	}
-}
-
-.btn-ghost {
-	@include btn-ghost-base();
-	line-height: 1.5rem;
-	> i {
-		line-height: 1.5rem;
-	}
-}
-
-.btn-ghost-sm {
-	@include btn-ghost-base();
-	font-size: 0.875rem;
-	line-height: 1.25rem;
-	> i {
-		line-height: 1.25rem;
 	}
 }
 

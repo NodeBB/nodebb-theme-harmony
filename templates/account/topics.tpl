@@ -22,9 +22,9 @@
 
 	<div class="d-flex gap-1">
 		{{{ if canEdit }}}
-		<a href="{config.relative_path}/user/{userslug}/topics" class="btn-ghost-sm fw-semibold {{{ if template.account/topics }}}active{{{ end }}}">[[global:header.recent]]</a>
-		<a href="{config.relative_path}/user/{userslug}/watched"class="btn-ghost-sm fw-semibold {{{ if template.account/watched }}}active{{{ end }}}">[[user:watched]]</a>
-		<a href="{config.relative_path}/user/{userslug}/ignored" class="btn-ghost-sm fw-semibold {{{ if template.account/ignored }}}active{{{ end }}}">[[user:ignored]]</a>
+		<a href="{config.relative_path}/user/{userslug}/topics" class="btn-ghost-sm ff-secondary fw-semibold {{{ if template.account/topics }}}active{{{ end }}}">[[global:header.recent]]</a>
+		<a href="{config.relative_path}/user/{userslug}/watched"class="btn-ghost-sm ff-secondary fw-semibold {{{ if template.account/watched }}}active{{{ end }}}">[[user:watched]]</a>
+		<a href="{config.relative_path}/user/{userslug}/ignored" class="btn-ghost-sm ff-secondary fw-semibold {{{ if template.account/ignored }}}active{{{ end }}}">[[user:ignored]]</a>
 		{{{ end }}}
 	</div>
 </div>

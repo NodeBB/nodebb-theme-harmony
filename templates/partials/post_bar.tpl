@@ -3,7 +3,7 @@
 		<div class="d-flex flex-row p-2 text-bg-light border rounded w-100 align-items-center">
 			<ul class="d-flex list-unstyled me-auto mb-0 gap-2 align-items-center flex-wrap">
 				{{{ if loggedIn }}}
-				<button component="topic/mark-unread" class="btn-ghost-sm d-flex gap-2 align-items-center">
+				<button component="topic/mark-unread" class="btn-ghost-sm ff-secondary d-flex gap-2 align-items-center">
 					<i class="fa fa-fw fa-inbox text-primary"></i>
 					<span class="d-none d-md-inline fw-semibold">[[topic:mark-unread]]</span>
 				</button>

@@ -3,14 +3,14 @@
 <div class="d-flex flex-column flex-md-row">
 	<div class="flex-shrink-0 d-flex flex-column gap-3 border-end-md text-sm mb-3 pe-4" style="flex-basis: 240px !important;">
 		<div class="d-grid gap-1">
-			<a class="btn btn-ghost border btn-sm justify-content-start" href="{config.relative_path}/{type_path}/{targetId}">
+			<a class="btn btn-ghost ff-secondary border btn-sm justify-content-start" href="{config.relative_path}/{type_path}/{targetId}">
 				<i class="fa fa-fw fa-external-link text-primary"></i>
 				[[flags:go-to-target]]
 			</a>
 
 			{{{ if target.uid }}}
 			<div class="btn-group dropend" data-uid="{target.uid}">
-				<button type="button" class="btn btn-ghost border btn-sm justify-content-start dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<button type="button" class="btn btn-ghost ff-secondary border btn-sm justify-content-start dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<i class="fa fa-fw fa-street-view text-primary"></i>
 					[[flags:flagged-user]]
 					<i class="fa fa-chevron-right ms-auto text-secondary"></i>
@@ -38,7 +38,7 @@
 			</div>
 			{{{ end }}}
 
-			<a class="btn btn-ghost border btn-sm justify-content-start" href="#" data-action="assign">
+			<a class="btn btn-ghost ff-secondary border btn-sm justify-content-start" href="#" data-action="assign">
 				<i class="fa fa-fw fa-id-card-o text-primary"></i>
 				[[flags:assign-to-me]]
 			</a>
@@ -152,7 +152,7 @@
 			<div class="pb-4 border-bottom">
 				<div class="d-flex align-items-center">
 					<h2 class="h6 fw-bold me-auto mb-0">[[flags:notes]]</h2>
-					<button class="btn btn-ghost border" data-action="addEditNote">[[flags:add-note]]</button>
+					<button class="btn btn-ghost ff-secondary border" data-action="addEditNote">[[flags:add-note]]</button>
 				</div>
 				<ul component="flag/notes" class="list-unstyled mt-4">
 					{{{ if !notes.length }}}

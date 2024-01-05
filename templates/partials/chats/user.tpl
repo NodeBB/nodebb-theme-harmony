@@ -1,1 +1,0 @@
-<a href="{config.relative_path}/user/{rooms.users.userslug}" class="text-decoration-none">{buildAvatar(rooms.users, "32px", true)}</a>

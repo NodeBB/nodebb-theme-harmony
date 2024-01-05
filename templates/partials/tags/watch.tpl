@@ -1,6 +1,6 @@
 {{{ if config.loggedIn }}}
 <div class="btn-group bottom-sheet" component="tag/watch">
-	<button class="btn-ghost-sm d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown" type="button">
+	<button class="btn-ghost-sm ff-secondary d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown" type="button">
 		<span component="tag/following/menu" class="d-flex gap-2 align-items-center{{{ if !isFollowing }}} hidden{{{ end }}}">
 			<i class="flex-shrink-0 fa fa-fw fa-bell-o text-primary"></i>
 			<span class="d-none d-md-inline fw-semibold">[[tags:watching]]</span>

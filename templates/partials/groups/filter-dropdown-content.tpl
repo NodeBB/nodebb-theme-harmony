@@ -1,5 +1,5 @@
 <div class="dropdown bottom-sheet">
-	<button type="button" class="btn-ghost-sm dropdown-toggle" data-bs-toggle="dropdown">
+	<button type="button" class="btn-ghost-sm ff-secondary dropdown-toggle" data-bs-toggle="dropdown">
 		{{{ if selectedGroup }}}
 		<span class="fw-semibold">{selectedGroup.displayName}</span>
 		{{{ else }}}
