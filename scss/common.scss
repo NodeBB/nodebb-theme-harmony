@@ -142,18 +142,6 @@ body:not(.page-user) {
 	}
 }
 
-.btn-outline {
-	@include btn-ghost-base();
-	border-color: $border-color;
-}
-
-.btn-outline-sm {
-	@include btn-ghost-base();
-	border-color: $border-color;
-	font-size: 0.875rem;
-	line-height: 1.25rem;
-}
-
 .flex-basis-md-200 {
 	@include media-breakpoint-up(md) {
 		flex-basis: 200px!important;

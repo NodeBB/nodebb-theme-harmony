@@ -13,7 +13,7 @@
 	</div>
 	{{{ else }}}
 	<div component="chat/header" class="d-flex align-items-center px-md-3 gap-3">
-		<a href="#" data-action="close" role="button" class="flex-shrink-0 d-flex d-md-none btn btn-outline align-text-top"><i class="fa fa-chevron-left"></i></a>
+		<a href="#" data-action="close" role="button" class="flex-shrink-0 d-flex d-md-none btn btn-ghost border align-text-top"><i class="fa fa-chevron-left"></i></a>
 		<h5 component="chat/header/title" class="members flex-grow-1 fw-semibold tracking-tight mb-0 text-truncate text-nowrap">
 			{{{ if ./roomName }}}<i class="fa {icon} text-muted"></i> {roomName}{{{ else }}}{./chatWithMessage}{{{ end}}}
 		</h5>
