@@ -14,14 +14,14 @@
 	{{{ end }}}
 
 	{{{ if (!singlePost && posts.length) }}}
-	<div class="btn-toolbar justify-content-end">
+	<div class="btn-toolbar justify-content-end mb-3">
 		<div class="me-2">
 		<!-- IMPORT partials/category/filter-dropdown-right.tpl -->
 		</div>
 
 		<div class="btn-group bottom-sheet" component="post-queue/bulk-actions">
 			<button type="button" class="btn-ghost-sm ff-secondary dropdown-toggle" data-bs-toggle="dropdown" autocomplete="off" aria-haspopup="true" aria-expanded="false">
-				<i class="fa fa-clone"></i><span class="fw-semibold"> [[post-queue:bulk-actions]]</span>
+				<i class="fa fa-clone text-primary"></i><span class="fw-semibold"> [[post-queue:bulk-actions]]</span>
 			</button>
 			<ul class="dropdown-menu p-1 text-sm dropdown-menu-end">
 				{{{ if canAccept }}}

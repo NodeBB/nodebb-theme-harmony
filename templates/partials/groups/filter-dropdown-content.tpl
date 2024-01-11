@@ -4,7 +4,7 @@
 		<span class="fw-semibold">{selectedGroup.displayName}</span>
 		{{{ else }}}
 		<span class="fw-semibold">[[groups:all-groups]]</span>
-		{{{ end }}} <span class="caret"></span>
+		{{{ end }}} <span class="caret text-primary opacity-75"></span>
 	</button>
 	<ul class="dropdown-menu p-1 text-sm" role="menu">
 		<li role="presentation" class="user {{{ if !selectedGroup}}}selected{{{end}}}">

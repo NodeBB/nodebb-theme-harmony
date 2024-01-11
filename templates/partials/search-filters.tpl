@@ -4,7 +4,7 @@
 		<div component="category/filter" class="dropdown" data-filter-name="category">
 			<a component="category/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.categories.active }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 				<span class="filter-label">{{{ if filters.categories.active }}}{filters.categories.label}{{{ else }}}[[search:categories]]{{{ end }}}</span>
-				<span class="caret"></span>
+				<span class="caret text-primary opacity-75"></span>
 			</a>
 
 			<ul class="dropdown-menu p-1 text-sm">
@@ -30,7 +30,7 @@
 		<div component="tag/filter" class="dropdown" data-filter-name="tag">
 			<a component="tag/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.tags.active }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 				<span class="filter-label">{{{ if filters.tags.active }}}{filters.tags.label}{{{ else }}}[[search:tags]]{{{ end }}}</span>
-				<span class="caret"></span>
+				<span class="caret text-primary opacity-75"></span>
 			</a>
 
 			<ul class="dropdown-menu p-1 text-sm" style="width: 350px;">
@@ -60,7 +60,7 @@
 		<div component="user/filter" class="dropdown" data-filter-name="user">
 			<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.users.active }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 				<span class="filter-label">{{{ if filters.users.active }}}{filters.users.label}{{{ else }}}[[search:posted-by]]{{{ end }}}</span>
-				<span class="caret"></span>
+				<span class="caret text-primary opacity-75"></span>
 			</a>
 
 			<ul class="dropdown-menu p-1 text-sm" style="width: 350px;">
@@ -91,7 +91,7 @@
 		<div class="dropdown" data-filter-name="replies">
 			<a id="reply-count-button" class="filter-btn btn btn-light btn-sm border {{{ if filters.replies.active }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 				<span class="filter-label">{{{ if filters.replies.active }}}{filters.replies.label}{{{ else }}}[[search:replies]]{{{ end }}}</span>
-				<span class="caret"></span>
+				<span class="caret text-primary opacity-75"></span>
 			</a>
 
 			<ul class="dropdown-menu p-1 text-sm" style="width: 300px;">
@@ -111,7 +111,7 @@
 		<div class="dropdown" data-filter-name="time">
 			<a id="post-time-button" class="filter-btn btn btn-light btn-sm border {{{ if filters.time.active }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 				<span class="filter-label">{{{ if filters.time.active }}}{filters.time.label}{{{ else }}}[[search:time]]{{{ end }}}</span>
-				<span class="caret"></span>
+				<span class="caret text-primary opacity-75"></span>
 			</a>
 
 			<ul class="dropdown-menu p-1 text-sm" style="width: 350px;">
@@ -140,7 +140,7 @@
 		<div class="dropdown" data-filter-name="sort">
 			<a id="sort-by-button" class="filter-btn btn btn-light btn-sm border {{{ if filters.sort.active }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 				<span class="filter-label">{{{ if filters.sort.active }}}{filters.sort.label}{{{ else }}}[[search:sort]]{{{ end }}}</span>
-				<span class="caret"></span>
+				<span class="caret text-primary opacity-75"></span>
 			</a>
 
 			<ul class="dropdown-menu p-1 text-sm" style="width: 250px;">
@@ -170,7 +170,7 @@
 	<!-- save & reset preferences -->
 	<div class="post-search-item">
 		<div class="dropdown">
-			<a class="btn btn-light btn-sm border border-gray-300 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">[[search:save]] <span class="caret"></span>
+			<a class="btn btn-light btn-sm border border-gray-300 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">[[search:save]] <span class="caret text-primary opacity-75"></span>
 			</a>
 
 			<ul class="dropdown-menu p-1 text-sm" style="width: 300px;">

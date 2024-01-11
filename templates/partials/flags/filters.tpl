@@ -2,7 +2,7 @@
 	<div class="btn-group bottom-sheet">
 		<a class="filter-btn btn btn-light btn-sm border {{{ if filters.quick }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 			<span class="filter-label">{{{ if filters.quick }}}[[flags:filter-quick-{./filters.quick}]]{{{ else }}}[[flags:quick-filters]]{{{ end }}}</span>
-			<span class="caret"></span>
+			<span class="caret text-primary opacity-75"></span>
 		</a>
 		<ul class="dropdown-menu p-1 text-sm">
 			<li>
@@ -22,7 +22,7 @@
 			{{{ else }}}
 			<span class="visible-md-inline visible-lg-inline">[[unread:all-categories]]</span>
 			{{{ end }}}
-			<span class="caret"></span>
+			<span class="caret text-primary opacity-75"></span>
 		</button>
 		<div component="category-selector-search" class="hidden position-absolute">
 			<input type="text" class="form-control form-control-sm" placeholder="[[search:type-to-search]]" autocomplete="off">
@@ -50,7 +50,7 @@
 	<div class="btn-group bottom-sheet">
 		<a class="filter-btn btn btn-light btn-sm border {{{ if (sort != "newest") }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 			<span class="filter-label">{{{ if (sort != "newest") }}}[[flags:sort-{./sort}]]{{{ else }}}[[flags:sort]]{{{ end }}}</span>
-			<span class="caret"></span>
+			<span class="caret text-primary opacity-75"></span>
 		</a>
 		<ul class="dropdown-menu p-1 text-sm">
 			<li><h6 class="dropdown-header">[[flags:sort-all]]</h6></li>
@@ -67,7 +67,7 @@
 	<div class="btn-group bottom-sheet">
 		<a class="filter-btn btn btn-light btn-sm border {{{ if filters.state }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 			<span class="filter-label">{{{ if filters.state }}}[[flags:state-{./filters.state}]]{{{ else }}}[[flags:filter-state]]{{{ end }}}</span>
-			<span class="caret"></span>
+			<span class="caret text-primary opacity-75"></span>
 		</a>
 		<ul class="dropdown-menu p-1 text-sm">
 			<li class="dropdown-item rounded-1" data-name="state" data-value="open">[[flags:state-open]]</li>
@@ -80,7 +80,7 @@
 	<div class="btn-group bottom-sheet">
 		<a class="filter-btn btn btn-light btn-sm border {{{ if filters.type }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 			<span class="filter-label">{{{ if filters.type }}}[[flags:filter-type-{./filters.type}]]{{{ else }}}[[flags:filter-type]]{{{ end }}}</span>
-			<span class="caret"></span>
+			<span class="caret text-primary opacity-75"></span>
 		</a>
 		<ul class="dropdown-menu p-1 text-sm">
 			<li class="dropdown-item rounded-1" data-name="type" data-value="all">[[flags:filter-type-all]]</li>
@@ -92,7 +92,7 @@
 	<div component="flags/filter/assignee" class="dropdown bottom-sheet" data-filter-name="assignee">
 		<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.assignee }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 			<span class="filter-label">[[flags:filter-assignee]]</span>
-			<span class="caret"></span>
+			<span class="caret text-primary opacity-75"></span>
 		</a>
 
 		<ul class="dropdown-menu p-1 text-sm" style="min-width: 350px;">
@@ -119,7 +119,7 @@
 	<div component="flags/filter/reporterId" class="dropdown bottom-sheet" data-filter-name="reporterId">
 		<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.reporterId }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 			<span class="filter-label">[[flags:filter-reporterId]]</span>
-			<span class="caret"></span>
+			<span class="caret text-primary opacity-75"></span>
 		</a>
 
 		<ul class="dropdown-menu p-1 text-sm" style="min-width: 350px;">
@@ -146,7 +146,7 @@
 	<div component="flags/filter/targetUid" class="dropdown bottom-sheet" data-filter-name="targetUid">
 		<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.targetUid }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 			<span class="filter-label">[[flags:filter-targetUid]]</span>
-			<span class="caret"></span>
+			<span class="caret text-primary opacity-75"></span>
 		</a>
 
 		<ul class="dropdown-menu p-1 text-sm" style="min-width: 350px;">

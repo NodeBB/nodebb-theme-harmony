@@ -3,7 +3,7 @@
 	<span class="fw-semibold">{buildAvatar(selectedUser, "20px", true, "not-responsive")} {selectedUser.username}</span>
 	{{{ else }}}
 	<span class="fw-semibold">[[users:all-users]]</span>
-	{{{ end }}} <span class="caret"></span>
+	{{{ end }}} <span class="caret text-primary opacity-75"></span>
 </button>
 <ul class="dropdown-menu p-1 text-sm" role="menu">
 	<li role="presentation" class="user {{{ if !selectedUser}}}selected{{{end}}}">
