@@ -19,6 +19,13 @@
 	}
 }
 
+// table color fix, remove once https://github.com/thomaspark/bootswatch/issues/1276 is published
+.skin-darkly, .skin-superhero, .skin-solar, .skin-quartz {
+	table > :not(caption) > * > * {
+		color: white;
+	}
+}
+
 .skin-superhero {
 	// fix read button in dropdowns
 	.mark-read .read {
