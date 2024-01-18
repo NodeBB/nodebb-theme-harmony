@@ -46,7 +46,7 @@
 					</span>
 					{{{each ./icons}}}<span class="lh-1">{@value}</span>{{{end}}}
 
-					{{{ if !template.category }}}
+					{{{ if (!template.category && !template.world) }}}
 					{function.buildCategoryLabel, ./category, "a", "border"}
 					{{{ end }}}
 
