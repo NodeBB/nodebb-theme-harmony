@@ -1,4 +1,4 @@
-.page-topic {
+body.template-topic {
 	.topic {
 		.posts-container {
 			max-width: 960px;
@@ -113,7 +113,7 @@
 }
 
 @include media-breakpoint-up(sm) {
-	.page-topic {
+	body.template-topic {
 		.topic .posts {
 			[component="post"] {
 				[component="post/actions"] {
