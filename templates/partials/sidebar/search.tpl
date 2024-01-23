@@ -1,4 +1,4 @@
-<a component="search/button" id="search-button" href="#" role="button" class="nav-link nav-btn d-flex gap-2 align-items-center text-truncate" data-bs-toggle="dropdown">
+<a component="search/button" id="search-button" href="#" role="button" class="nav-link d-flex gap-2 align-items-center text-truncate" data-bs-toggle="dropdown">
 	<span>
 		<i class="fa fa-search fa-fw"></i>
 	</span>

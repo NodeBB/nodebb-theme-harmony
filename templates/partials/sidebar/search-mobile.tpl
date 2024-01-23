@@ -1,4 +1,4 @@
-<a component="search/button" id="search-button" href="#" role="button" class="nav-link nav-btn text-truncate" data-bs-toggle="dropdown" title="[[global:header.search]]">
+<a component="search/button" id="search-button" href="#" role="button" class="nav-link text-truncate" data-bs-toggle="dropdown" title="[[global:header.search]]">
 	<i class="fa fa-search fa-fw"></i>
 	<span class="nav-text visible-open px-2 fw-semibold">[[global:search]]</span>
 </a>
@@ -18,7 +18,7 @@
 			<div class="d-flex gap-1 input-container">
 				<input autocomplete="off" type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">
 
-				<div class="nav-btn d-flex justify-content-center align-items-center advanced-search-link">
+				<div class="nav-link d-flex justify-content-center align-items-center advanced-search-link">
 					<i class="fa fa-gears fa-fw text-muted"></i>
 				</div>
 			</div>

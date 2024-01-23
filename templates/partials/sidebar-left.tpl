@@ -3,7 +3,7 @@
 		{{{ each navigation }}}
 		{{{ if displayMenuItem(@root, @index) }}}
 		<li class="nav-item mx-2 {./class}{{{ if ./dropdown }}} dropend{{{ end }}}" title="{./title}">
-			<a class="nav-link nav-btn navigation-link d-flex gap-2 justify-content-between align-items-center {{{ if ./dropdown }}}dropdown-toggle{{{ end }}}"
+			<a class="nav-link navigation-link d-flex gap-2 justify-content-between align-items-center {{{ if ./dropdown }}}dropdown-toggle{{{ end }}}"
 			{{{ if ./dropdown }}} href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{{ else }}} href="{./route}"{{{ end }}} {{{ if ./id }}}id="{./id}"{{{ end }}}{{{ if ./targetBlank }}} target="_blank"{{{ end }}}>
 				<span class="d-flex gap-2 align-items-center text-nowrap truncate-open">
 					<span class="position-relative">
@@ -33,7 +33,7 @@
 		{{{ end }}}
 
 		<div class="sidebar-toggle m-2 d-none d-lg-block">
-			<a href="#" role="button" component="sidebar/toggle" class="nav-btn d-flex gap-2 align-items-center p-2 pointer nav-link w-100 text-nowrap" title="[[themes/harmony:expand]]">
+			<a href="#" role="button" component="sidebar/toggle" class="nav-link d-flex gap-2 align-items-center p-2 pointer w-100 text-nowrap" title="[[themes/harmony:expand]]">
 				<i class="fa fa-fw fa-angles-right"></i>
 				<i class="fa fa-fw fa-angles-left"></i>
 				<span class="nav-text visible-open fw-semibold small lh-1">[[themes/harmony:collapse]]</span>

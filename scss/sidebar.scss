@@ -49,27 +49,25 @@
 
 	.nav-link {
 		@extend .ff-secondary;
-		padding: 0;
+		padding: ($spacer * 0.25) ($spacer * 0.5);
+		border-radius: $border-radius-sm;
+		cursor: pointer;
 		&.active {
 			background-color: $hover-color;
 		}
+		&:hover {
+			background-color: $hover-color;
+		}
 	}
+
 	.nav-item {
 		.dropdown-menu .dropdown-item {
 			@extend .rounded-1;
 		}
 	}
+
 	#user_dropdown .avatar {
 		margin: 2px 0; // fixes the avatar so its height is same as the icons on right sidebar
-	}
-
-	.nav-btn {
-		padding: ($spacer * 0.25) ($spacer * 0.5);
-		border-radius: $border-radius-sm;
-		cursor: pointer;
-		&:hover {
-			background-color: $hover-color;
-		}
 	}
 
 	.sidebar-toggle {
@@ -144,7 +142,7 @@
 		font-size: 1rem;
 		color: $body-color;
 	}
-	.nav-btn {
+	.nav-link {
 		padding: 8px;
 		border-radius: $border-radius-sm;
 	}

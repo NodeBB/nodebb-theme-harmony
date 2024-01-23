@@ -1,4 +1,4 @@
-<a component="header/avatar" id="user_dropdown" href="#" role="button" class="nav-link nav-btn d-flex gap-2 align-items-center text-truncate" data-bs-toggle="dropdown">
+<a component="header/avatar" id="user_dropdown" href="#" role="button" class="nav-link d-flex gap-2 align-items-center text-truncate" data-bs-toggle="dropdown">
 	{buildAvatar(user, "20px", true)}
 	<span id="user-header-name" class="nav-text small visible-open fw-semibold">{user.username}</span>
 </a>

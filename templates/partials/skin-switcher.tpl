@@ -1,5 +1,5 @@
 <div class="dropend m-2" component="skinSwitcher" title="[[themes/harmony:skins]]">
-	<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link nav-btn position-relative">
+	<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link position-relative">
 		<span class="justify-content-between w-100">
 			<span class="d-flex gap-2 align-items-center text-nowrap truncate-open">
 				<span>
