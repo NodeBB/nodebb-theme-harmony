@@ -1,7 +1,7 @@
-<label class="nav-link nav-btn text-truncate d-flex gap-2 align-items-center" data-bs-toggle="dropdown" id="user_dropdown" role="button" component="header/avatar">
+<a component="header/avatar" id="user_dropdown" href="#" role="button" class="nav-link nav-btn d-flex gap-2 align-items-center text-truncate" data-bs-toggle="dropdown">
 	{buildAvatar(user, "20px", true)}
 	<span id="user-header-name" class="nav-text small visible-open fw-semibold">{user.username}</span>
-</label>
+</a>
 <ul id="user-control-list" component="header/usercontrol" class="overscroll-behavior-contain user-dropdown dropdown-menu shadow p-1 text-sm ff-base" aria-labelledby="user_dropdown">
 	<li>
 		<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" component="header/profilelink" href="{relative_path}/user/{user.userslug}">
