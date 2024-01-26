@@ -14,7 +14,7 @@
 		,{
 			"@type": "ListItem",
 			"position": {increment(@index, "1")},
-			"name": "{./text}"
+			"name": "{stripTags(./text)}"
 			{{{ if !@last }}}
 			,"item": "{./url}"
 			{{{ end }}}
