@@ -20,8 +20,8 @@
 				{{{ each ./children }}}
 				{{{ if !./isSection }}}
 				<span class="category-children-item small">
-					<div class="d-flex align-items-start gap-1">
-						<i class="fa fa-fw fa-caret-right text-primary mt-1"></i>
+					<div class="d-flex align-items-center gap-1">
+						<i class="fa fa-fw fa-caret-right text-primary"></i>
 						<a href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" class="text-reset fw-semibold">{./name}</a>
 					</div>
 				</span>
