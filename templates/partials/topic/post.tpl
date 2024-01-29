@@ -110,7 +110,7 @@
 		<a component="post/quote" href="#" class="btn-ghost-sm user-select-none {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="[[topic:quote]]"><i class="fa fa-fw fa-quote-right text-primary"></i></a>
 
 		{{{ if !reputation:disabled }}}
-		<div class="d-flex votes align-items-stretch">
+		<div class="d-flex votes align-items-center">
 			<a component="post/upvote" href="#" class="btn-ghost-sm {{{ if posts.upvoted }}}upvoted{{{ end }}}">
 				<i class="fa fa-fw fa-chevron-up text-primary"></i>
 			</a>
