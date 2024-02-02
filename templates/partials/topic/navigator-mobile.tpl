@@ -15,7 +15,7 @@
 				{{{ end }}}
 			</div>
 
-			<a href="#" class="text-reset dropdown-toggle d-inline-block px-3 text-decoration-none" data-bs-toggle="dropdown">
+			<a href="#" class="text-reset dropdown-toggle d-inline-block px-3 text-decoration-none" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<span class="d-inline-flex gap-2 align-items-center pagination-text position-relative fw-bold"></span>
 			</a>
 

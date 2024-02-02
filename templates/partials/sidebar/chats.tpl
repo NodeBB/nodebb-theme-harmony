@@ -1,4 +1,4 @@
-<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link d-flex gap-2 justify-content-between align-items-center position-relative" component="chat/dropdown">
+<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link d-flex gap-2 justify-content-between align-items-center position-relative" component="chat/dropdown" aria-haspopup="true" aria-expanded="false">
 	<span class="d-flex gap-2 align-items-center text-nowrap truncate-open">
 		<span class="position-relative">
 			<i component="chat/icon" class="fa fa-fw {{{ if unreadCount.chat}}}fa-comment{{{ else }}}fa-comment-o{{{ end }}} unread-count" data-content="{unreadCount.chat}"></i>
@@ -8,7 +8,7 @@
 	</span>
 	<span component="chat/count" class="visible-open badge rounded-1 bg-primary {{{ if !unreadCount.chat }}}hidden{{{ end }}}">{unreadCount.chat}</span>
 </a>
-<ul class="chats-dropdown dropdown-menu p-1 shadow">
+<ul class="chats-dropdown dropdown-menu p-1 shadow" role="menu">
 	<li>
 		<div component="chat/list" class="list-container chats-list overscroll-behavior-contain p-0 pe-1 ff-base">
 			<div class="rounded-1">

@@ -74,11 +74,11 @@
 				<div class="btn-group flex-fill">
 					<a {{{ if hasPrivateChat }}}component="account/chat"{{{ else }}}component="account/new-chat"{{{ end }}} href="#" class="btn btn-light" role="button">[[user:chat]]</a>
 					{{{ if hasPrivateChat}}}
-					<button type="button" class="btn btn-light dropdown-toggle flex-0" data-bs-toggle="dropdown">
+					<button type="button" class="btn btn-light dropdown-toggle flex-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i class="fa fa-caret-down"></i>
 					</button>
 					<ul class="dropdown-menu dropdown-menu-end p-1 text-sm" role="menu">
-						<li><a class="dropdown-item rounded-1" href="#" component="account/new-chat">[[user:new-chat-with, {username}]]</a></li>
+						<li><a class="dropdown-item rounded-1" href="#" component="account/new-chat" role="menuitem"s>[[user:new-chat-with, {username}]]</a></li>
 					</ul>
 					{{{ end }}}
 				</div>

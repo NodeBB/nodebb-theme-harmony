@@ -124,7 +124,9 @@ body.template-topic {
 						opacity: 1;
 					}
 				}
-
+				[component="post/actions"]:focus-within {
+					opacity: 1;
+				}
 				&:hover {
 					> .post-footer > [component="post/actions"] {
 						opacity: 1;

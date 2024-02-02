@@ -1,10 +1,10 @@
-<a component="search/button" id="search-button" href="#" role="button" class="nav-link d-flex gap-2 align-items-center text-truncate" data-bs-toggle="dropdown">
+<a component="search/button" id="search-button" href="#" role="button" class="nav-link d-flex gap-2 align-items-center text-truncate" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	<span>
 		<i class="fa fa-search fa-fw"></i>
 	</span>
 	<span class="nav-text small visible-open fw-semibold">[[global:search]]</span>
 </a>
-<div class="search-dropdown dropdown-menu p-2 shadow">
+<div class="search-dropdown dropdown-menu p-2 shadow" role="menu">
 	<form component="search/form" id="search-form" class="d-flex justify-content-end align-items-center" role="search" method="GET">
 		<div component="search/fields" class="w-100" id="search-fields">
 			<div class="d-flex gap-1">

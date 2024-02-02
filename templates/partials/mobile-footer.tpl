@@ -5,13 +5,13 @@
 	<div class="bottombar-nav p-2 text-dark bg-light d-flex justify-content-between align-items-center w-100">
 		<div class="bottombar-nav-left d-flex gap-3 align-items-center">
 			<div>
-				<a href="#" role="button" class="nav-link d-flex justify-content-between align-items-center position-relative" data-bs-toggle="dropdown">
+				<a href="#" role="button" class="nav-link d-flex justify-content-between align-items-center position-relative" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<span class="position-relative">
 						<i class="fa fa-fw fa-lg fa-bars"></i>
 						<span component="unread/count" data-unread-url="{unreadCount.unreadUrl}" class="position-absolute top-0 start-100 translate-middle badge rounded-1 bg-primary {{{ if !unreadCount.mobileUnread }}}hidden{{{ end }}}">{unreadCount.mobileUnread}</span>
 					</span>
 				</a>
-				<ul class="navigation-dropdown dropdown-menu">
+				<ul class="navigation-dropdown dropdown-menu" role="menu">
 					{{{ each navigation }}}
 					{{{ if displayMenuItem(@root, @index) }}}
 					<li class="nav-item {./class}{{{ if ./dropdown }}} dropend{{{ end }}}" title="{./title}">

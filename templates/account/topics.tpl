@@ -5,13 +5,13 @@
 		<h3 class="fw-semibold fs-5 mb-0">[[global:topics]]</h3>
 		{{{ if showSort }}}
 		<div class="btn-group bottom-sheet" component="thread/sort">
-			<button title="[[global:sort]]" class="btn-ghost-sm dropdown-toggle" data-bs-toggle="dropdown" type="button"><i class="fa-solid fa-arrow-up-wide-short"></i></button>
-			<ul class="dropdown-menu p-1 text-sm">
+			<button title="[[global:sort]]" class="btn-ghost-sm dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button"><i class="fa-solid fa-arrow-up-wide-short"></i></button>
+			<ul class="dropdown-menu p-1 text-sm" role="menu">
 				{{{each sortOptions }}}
 				<li>
-					<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="{config.relative_path}{./url}">
-					<div class="flex-grow-1">{./name}</div>
-					<i class="flex-shrink-0 fa fa-fw {{{if ./selected}}}fa-check{{{end}}}"></i>
+					<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="{config.relative_path}{./url}" role="menuitem">
+						<div class="flex-grow-1">{./name}</div>
+						<i class="flex-shrink-0 fa fa-fw {{{if ./selected}}}fa-check{{{end}}}"></i>
 					</a>
 				</li>
 				{{{end}}}
