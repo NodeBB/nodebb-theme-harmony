@@ -33,7 +33,7 @@
 		{{{ end }}}
 
 		<div class="sidebar-toggle m-2 d-none d-lg-block">
-			<a href="#" role="button" component="sidebar/toggle" class="nav-link d-flex gap-2 align-items-center p-2 pointer w-100 text-nowrap" title="[[themes/harmony:expand]]">
+			<a href="#" role="button" component="sidebar/toggle" class="nav-link d-flex gap-2 align-items-center p-2 pointer w-100 text-nowrap" title="[[themes/harmony:expand]]" aria-label="[[themes/harmony:sidebar-toggle]]">
 				<i class="fa fa-fw fa-angles-right"></i>
 				<i class="fa fa-fw fa-angles-left"></i>
 				<span class="nav-text visible-open fw-semibold small lh-1">[[themes/harmony:collapse]]</span>
