@@ -1,10 +1,10 @@
-<a component="header/avatar" id="user_dropdown" href="#" role="button" class="nav-link d-flex gap-2 align-items-center text-truncate" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<a component="header/avatar" id="user_dropdown" href="#" role="button" class="nav-link d-flex gap-2 align-items-center text-truncate" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="[[user:user-menu]]">
 	{buildAvatar(user, "20px", true)}
 	<span id="user-header-name" class="nav-text small visible-open fw-semibold">{user.username}</span>
 </a>
-<ul id="user-control-list" component="header/usercontrol" class="overscroll-behavior-contain user-dropdown dropdown-menu shadow p-1 text-sm ff-base" aria-labelledby="user_dropdown" role="menu">
+<ul id="user-control-list" component="header/usercontrol" class="overscroll-behavior-contain user-dropdown dropdown-menu shadow p-1 text-sm ff-base" role="menu">
 	<li>
-		<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" component="header/profilelink" href="{relative_path}/user/{user.userslug}" role="menuitem">
+		<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" component="header/profilelink" href="{relative_path}/user/{user.userslug}" role="menuitem" aria-label="[[user:profile]]">
 			<span component="user/status" class="flex-shrink-0 border border-white border-2 rounded-circle status {user.status}"><span class="visually-hidden">[[global:{user.status}]]</span></span>
 			<span class="fw-semibold" component="header/username">{user.username}</span>
 		</a>
@@ -13,28 +13,28 @@
 	<li><h6 class="dropdown-header text-xs">[[global:status]]</h6></li>
 	<li>
 		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2 {{{ if user.online }}}selected{{{ end }}}" data-status="online" role="menuitem">
-			<span component="user/status" class="flex-shrink-0 border border-white border-2 rounded-circle status online"><span class="visually-hidden">[[global:online]]</span></span>
+			<span component="user/status" class="flex-shrink-0 border border-white border-2 rounded-circle status online"></span>
 			<span class="flex-grow-1">[[global:online]]</span>
-			<i class="fa-solid fa-check text-muted flex-shrink-0"></i>
+			<i class="fa-solid fa-check text-muted flex-shrink-0" aria-label="[[global:selected]]"></i>
 		</a>
 	</li>
 	<li>
 		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2 {{{ if user.away }}}selected{{{ end }}}" data-status="away" role="menuitem">
-			<span component="user/status" class="flex-shrink-0 border border-white border-2 rounded-circle status away"><span class="visually-hidden">[[global:away]]</span></span>
+			<span component="user/status" class="flex-shrink-0 border border-white border-2 rounded-circle status away"></span>
 			<span class="flex-grow-1">[[global:away]]</span>
-			<i class="fa-solid fa-check text-muted flex-shrink-0"></i>
+			<i class="fa-solid fa-check text-muted flex-shrink-0"><span class="visually-hidden"></span>[[global:selected]]</span></i>
 		</a>
 	</li>
 	<li>
 		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2 {{{ if user.dnd }}}selected{{{ end }}}" data-status="dnd" role="menuitem">
-			<span component="user/status" class="flex-shrink-0 border border-white border-2 rounded-circle status dnd"><span class="visually-hidden">[[global:dnd]]</span></span>
+			<span component="user/status" class="flex-shrink-0 border border-white border-2 rounded-circle status dnd"></span>
 			<span class="flex-grow-1">[[global:dnd]]</span>
 			<i class="fa-solid fa-check text-muted flex-shrink-0"></i>
 		</a>
 	</li>
 	<li>
 		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2 {{{ if user.offline }}}selected{{{ end }}}" data-status="offline" role="menuitem">
-			<span component="user/status" class="flex-shrink-0 border border-white border-2 rounded-circle status offline"><span class="visually-hidden">[[global:invisible]]</span></span>
+			<span component="user/status" class="flex-shrink-0 border border-white border-2 rounded-circle status offline"></span>
 			<span class="flex-grow-1">[[global:invisible]]</span>
 			<i class="fa-solid fa-check text-muted flex-shrink-0"></i>
 		</a>
@@ -92,10 +92,10 @@
 
 	<li role="presentation" class="dropdown-divider"></li>
 	<li component="user/logout">
-		<form method="post" action="{relative_path}/logout">
+		<form method="post" action="{relative_path}/logout" role="menuitem">
 			<input type="hidden" name="_csrf" value="{config.csrf_token}">
 			<input type="hidden" name="noscript" value="true">
-			<button type="submit" class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menuitem">
+			<button type="submit" class="dropdown-item rounded-1 d-flex align-items-center gap-2">
 				<i class="fa fa-fw fa-sign-out text-muted"></i><span>[[global:logout]]</span>
 			</button>
 		</form>

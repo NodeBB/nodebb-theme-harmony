@@ -33,7 +33,8 @@ $body-bg: $white !default;
 $body-tertiary-bg: $gray-200 !default;
 $text-muted: $gray-600 !default;
 $border-color: $gray-200 !default;
-$link-color: shade-color($blue, 20%) !default;
+// $link-color: shade-color($blue, 20%) !default;
+$link-color: #0951be !default;
 
 // no caret on dropdown-toggle
 $enable-caret: false;

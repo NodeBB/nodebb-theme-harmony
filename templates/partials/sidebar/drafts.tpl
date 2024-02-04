@@ -1,4 +1,4 @@
-<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link d-flex gap-2 justify-content-between align-items-center position-relative" aria-haspopup="true" aria-expanded="false">
+<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link d-flex gap-2 justify-content-between align-items-center position-relative" aria-haspopup="true" aria-expanded="false" aria-label="[[global:header.drafts]]">
 	<span class="d-flex gap-2 align-items-center text-nowrap truncate-open">
 		<span class="position-relative">
 			<i component="drafts/icon" class="fa fa-fw fa-pen-to-square unread-count"></i>
