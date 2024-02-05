@@ -1,7 +1,7 @@
 <div class="{{{ if config.theme.stickyToolbar }}}sticky-tools{{{ end }}} mb-3">
 	<nav class="topic-list-header d-flex flex-nowrap my-2 p-0 border-0 rounded">
 		<div class="d-flex flex-row p-2 text-bg-light gap-1 border rounded w-100 align-items-center">
-			<ul component="category/controls" class="d-flex list-unstyled me-auto mb-0 gap-2 align-items-start flex-wrap">
+			<div component="category/controls" class="d-flex me-auto mb-0 gap-2 align-items-start flex-wrap">
 				{{{ if template.category }}}
 				<!-- IMPORT partials/category/watch.tpl -->
 				<!-- IMPORT partials/tags/filter-dropdown-left.tpl -->
@@ -33,7 +33,7 @@
 				<a href="{config.relative_path}{{{ if template.category }}}{url}{{{ else }}}/{selectedFilter.url}{querystring}{{{ end }}}" class="btn btn-secondary fw-semibold position-absolute top-100 translate-middle-x start-50 mt-1 hide" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" id="new-topics-alert">
 					<i class="fa fa-fw fa-arrow-up"></i> [[recent:load-new-posts]]
 				</a>
-			</ul>
+			</div>
 
 			<div class="d-flex gap-1 align-items-center">
 				{{{ if template.category }}}
