@@ -186,3 +186,8 @@ library.filterMiddlewareRenderHeader = async function (hookData) {
 	return hookData;
 };
 
+library.filterTeasersConfigureStripTags = function (hookData) {
+	// teasers have a stretched-link to go to last post, the anchors in them are not clickable
+	hookData.tags.push('a');
+	return hookData;
+};
