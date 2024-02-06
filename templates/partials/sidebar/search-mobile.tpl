@@ -16,11 +16,11 @@
 			</div>
 
 			<div class="d-flex gap-1 input-container">
-				<input autocomplete="off" type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">
+				<input autocomplete="off" type="text" class="form-control" placeholder="[[global:search]]" name="query" value="" aria-label="[[search:type-to-search]]">
 
-				<div class="nav-link d-flex justify-content-center align-items-center advanced-search-link">
+				<a class="nav-link d-flex justify-content-center align-items-center advanced-search-link" href="{config.relative_path}/search" title="[[search:advanced-search]]">
 					<i class="fa fa-gears fa-fw text-muted"></i>
-				</div>
+				</a>
 			</div>
 
 			<button type="submit" class="btn btn-outline-secondary hide">[[global:search]]</button>
