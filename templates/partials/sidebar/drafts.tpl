@@ -1,4 +1,4 @@
-<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link d-flex gap-2 justify-content-between align-items-center position-relative">
+<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link d-flex gap-2 justify-content-between align-items-center position-relative" aria-haspopup="true" aria-expanded="false" aria-label="[[global:header.drafts]]">
 	<span class="d-flex gap-2 align-items-center text-nowrap truncate-open">
 		<span class="position-relative">
 			<i component="drafts/icon" class="fa fa-fw fa-pen-to-square unread-count"></i>
@@ -8,7 +8,7 @@
 	</span>
 	<span component="drafts/count" class="visible-open badge rounded-1 bg-primary hidden">0</span>
 </a>
-<ul class="drafts-dropdown dropdown-menu p-1 shadow">
+<ul class="drafts-dropdown dropdown-menu p-1 shadow" role="menu">
 	<li>
 		<div component="drafts/list" class="list-container draft-list list-unstyled d-flex flex-column overscroll-behavior-contain gap-1 pe-1">
 			<div class="dropdown-item rounded-1 p-2 d-flex gap-2 placeholder-wave">
@@ -29,7 +29,7 @@
 				{{{ end }}}
 				<div data-save-id="{./save_id}">
 					<div class="d-flex gap-1 justify-content-between ff-base">
-						<div class="dropdown-item rounded-1 p-2 d-flex flex-column gap-2 pointer" component="drafts/open" data-save-id="{./save_id}">
+						<div class="dropdown-item rounded-1 p-2 d-flex flex-column gap-2 pointer" component="drafts/open" data-save-id="{./save_id}" role="menuitem">
 							{{{ if (./action == "topics.post") }}}
 							{{{ if ./title}}}
 							<div class="text text-xs fw-semibold line-clamp-2 text-break">{./title}</div>

@@ -14,7 +14,7 @@
 
 					<div class="unread d-inline-block position-absolute bottom-0">
 						<div class="meta small position-absolute top-50 translate-middle-y text-nowrap fw-semibold ms-2">
-							<a class="text-decoration-none" href="{url}"></a>
+							<a class="text-decoration-none" href="{url}" tabindex="-1" aria-disabled="true" aria-label="[[topic:unread-posts-link]]"></a>
 						</div>
 					</div>
 				</div>

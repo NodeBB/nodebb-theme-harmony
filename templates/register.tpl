@@ -19,7 +19,7 @@
 						<div class="mb-2 d-flex flex-column gap-2">
 							<label for="username">[[register:username]]</label>
 							<div class="d-flex flex-column">
-								<input class="form-control" type="text" placeholder="[[register:username-placeholder]]" name="username" id="username" autocorrect="off" autocapitalize="off" autocomplete="nickname" />
+								<input class="form-control" type="text" placeholder="[[register:username-placeholder]]" name="username" id="username" autocorrect="off" autocapitalize="off" autocomplete="nickname" aria-required="true"/>
 								<span class="register-feedback text-xs text-danger" id="username-notify"></span>
 								<span class="form-text text-xs">[[register:help.username-restrictions, {minimumUsernameLength}, {maximumUsernameLength}]]</span>
 							</div>
@@ -28,7 +28,7 @@
 						<div class="mb-2 d-flex flex-column gap-2">
 							<label for="password">[[register:password]]</label>
 							<div class="d-flex flex-column">
-								<input class="form-control" type="password" placeholder="[[register:password-placeholder]]" name="password" id="password" autocomplete="new-password" autocapitalize="off" />
+								<input class="form-control" type="password" placeholder="[[register:password-placeholder]]" name="password" id="password" autocomplete="new-password" autocapitalize="off" aria-required="true" />
 								<span class="register-feedback text-xs text-danger" id="password-notify"></span>
 								<span class="form-text text-xs">[[register:help.minimum-password-length, {minimumPasswordLength}]]</span>
 								<p id="caps-lock-warning" class="text-danger hidden">
@@ -40,15 +40,15 @@
 						<div class="mb-2 d-flex flex-column gap-2">
 							<label for="password-confirm">[[register:confirm-password]]</label>
 							<div>
-								<input class="form-control" type="password" placeholder="[[register:confirm-password-placeholder]]" name="password-confirm" id="password-confirm" autocomplete="new-password" autocapitalize="off" />
+								<input class="form-control" type="password" placeholder="[[register:confirm-password-placeholder]]" name="password-confirm" id="password-confirm" autocomplete="new-password" autocapitalize="off" aria-required="true"/>
 								<span class="register-feedback text-xs text-danger" id="password-confirm-notify"></span>
 							</div>
 						</div>
 
 						{{{ each regFormEntry }}}
-						<div class="mb-2 regFormEntry d-flex flex-column gap-2">
-							<label for="register-{regFormEntry.styleName}">{regFormEntry.label}</label>
-							<div id="register-{regFormEntry.styleName}">{{regFormEntry.html}}</div>
+						<div class="mb-2 regFormEntry d-flex flex-column gap-2 {./styleName}">
+							<label for="{./inputId}">{./label}</label>
+							<div>{{./html}}</div>
 						</div>
 						{{{ end }}}
 

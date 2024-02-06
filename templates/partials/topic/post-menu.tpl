@@ -1,5 +1,5 @@
 <span component="post/tools" class="dropdown moderator-tools bottom-sheet d-inline-block {{{ if !./display_post_menu }}}hidden{{{ end }}}">
-	<a class="btn-ghost-sm ff-secondary dropdown-toggle d-block" href="#" data-bs-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v text-primary"></i></a>
+	<a class="btn-ghost-sm ff-secondary dropdown-toggle d-block" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="[[topic:post-tools]]"><i class="fa fa-fw fa-ellipsis-v text-primary"></i></a>
 	<ul class="dropdown-menu dropdown-menu-end p-1 text-sm" role="menu">
 		<li class="dropdown-item placeholder-wave">
 			<div class="placeholder" style="width: 20px;"></div>

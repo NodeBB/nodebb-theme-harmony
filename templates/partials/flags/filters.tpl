@@ -1,12 +1,12 @@
 <div component="flags/filters" class="d-flex flex-wrap gap-2 pb-3 border-bottom">
 	<div class="btn-group bottom-sheet">
-		<a class="filter-btn btn btn-light btn-sm border {{{ if filters.quick }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+		<a class="filter-btn btn btn-light btn-sm border {{{ if filters.quick }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
 			<span class="filter-label">{{{ if filters.quick }}}[[flags:filter-quick-{./filters.quick}]]{{{ else }}}[[flags:quick-filters]]{{{ end }}}</span>
 			<span class="caret text-primary opacity-75"></span>
 		</a>
-		<ul class="dropdown-menu p-1 text-sm">
+		<ul class="dropdown-menu p-1 text-sm" role="menu">
 			<li>
-				<a class="dropdown-item rounded-1" href="{config.relative_path}/flags?quick=mine">[[flags:filter-quick-mine]]</a>
+				<a class="dropdown-item rounded-1" href="{config.relative_path}/flags?quick=mine" role="menuitem">[[flags:filter-quick-mine]]</a>
 			</li>
 		</ul>
 	</div>
@@ -30,7 +30,7 @@
 		<ul component="category/list" class="dropdown-menu p-1 text-sm category-dropdown-menu" role="menu">
 			{{{each categoryItems}}}
 			<li role="presentation" class="category {{{ if ../disabledClass }}}disabled{{{ end }}}" data-cid="{../cid}" data-parent-cid="{../parentCid}" data-name="{../name}">
-				<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menu-item" href="#">
+				<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menuitem" href="#">
 					{../level}
 					<span component="category-markup" class="flex-grow-1" style="{{{ if ../match }}}font-weight: bold;{{{end}}}">
 						<div class="category-item d-inline-flex align-items-center gap-1">
@@ -48,54 +48,54 @@
 	</div>
 
 	<div class="btn-group bottom-sheet">
-		<a class="filter-btn btn btn-light btn-sm border {{{ if (sort != "newest") }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+		<a class="filter-btn btn btn-light btn-sm border {{{ if (sort != "newest") }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
 			<span class="filter-label">{{{ if (sort != "newest") }}}[[flags:sort-{./sort}]]{{{ else }}}[[flags:sort]]{{{ end }}}</span>
 			<span class="caret text-primary opacity-75"></span>
 		</a>
-		<ul class="dropdown-menu p-1 text-sm">
+		<ul class="dropdown-menu p-1 text-sm" role="menu">
 			<li><h6 class="dropdown-header">[[flags:sort-all]]</h6></li>
-			<li class="dropdown-item rounded-1" data-name="sort" data-value="newest">[[flags:sort-newest]]</li>
-			<li class="dropdown-item rounded-1" data-name="sort" data-value="oldest">[[flags:sort-oldest]]</li>
-			<li class="dropdown-item rounded-1" data-name="sort" data-value="reports">[[flags:sort-reports]]</li>
+			<li class="dropdown-item rounded-1" data-name="sort" data-value="newest" role="menuitem">[[flags:sort-newest]]</li>
+			<li class="dropdown-item rounded-1" data-name="sort" data-value="oldest" role="menuitem">[[flags:sort-oldest]]</li>
+			<li class="dropdown-item rounded-1" data-name="sort" data-value="reports" role="menuitem">[[flags:sort-reports]]</li>
 			<li><h6 class="dropdown-header">[[flags:sort-posts-only]]</h6></li>
-			<li class="dropdown-item rounded-1" data-name="sort" data-value="downvotes">[[flags:sort-downvotes]]</li>
-			<li class="dropdown-item rounded-1" data-name="sort" data-value="upvotes">[[flags:sort-upvotes]]</li>
-			<li class="dropdown-item rounded-1" data-name="sort" data-value="replies">[[flags:sort-replies]]</li>
+			<li class="dropdown-item rounded-1" data-name="sort" data-value="downvotes" role="menuitem">[[flags:sort-downvotes]]</li>
+			<li class="dropdown-item rounded-1" data-name="sort" data-value="upvotes" role="menuitem">[[flags:sort-upvotes]]</li>
+			<li class="dropdown-item rounded-1" data-name="sort" data-value="replies" role="menuitem">[[flags:sort-replies]]</li>
 		</ul>
 	</div>
 
 	<div class="btn-group bottom-sheet">
-		<a class="filter-btn btn btn-light btn-sm border {{{ if filters.state }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+		<a class="filter-btn btn btn-light btn-sm border {{{ if filters.state }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
 			<span class="filter-label">{{{ if filters.state }}}[[flags:state-{./filters.state}]]{{{ else }}}[[flags:filter-state]]{{{ end }}}</span>
 			<span class="caret text-primary opacity-75"></span>
 		</a>
-		<ul class="dropdown-menu p-1 text-sm">
-			<li class="dropdown-item rounded-1" data-name="state" data-value="open">[[flags:state-open]]</li>
-			<li class="dropdown-item rounded-1" data-name="state" data-value="wip">[[flags:state-wip]]</li>
-			<li class="dropdown-item rounded-1" data-name="state" data-value="resolved">[[flags:state-resolved]]</li>
-			<li class="dropdown-item rounded-1" data-name="state" data-value="rejected">[[flags:state-rejected]]</li>
+		<ul class="dropdown-menu p-1 text-sm" role="menu">
+			<li class="dropdown-item rounded-1" data-name="state" data-value="open" role="menuitem">[[flags:state-open]]</li>
+			<li class="dropdown-item rounded-1" data-name="state" data-value="wip" role="menuitem">[[flags:state-wip]]</li>
+			<li class="dropdown-item rounded-1" data-name="state" data-value="resolved" role="menuitem">[[flags:state-resolved]]</li>
+			<li class="dropdown-item rounded-1" data-name="state" data-value="rejected" role="menuitem">[[flags:state-rejected]]</li>
 		</ul>
 	</div>
 
 	<div class="btn-group bottom-sheet">
-		<a class="filter-btn btn btn-light btn-sm border {{{ if filters.type }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+		<a class="filter-btn btn btn-light btn-sm border {{{ if filters.type }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
 			<span class="filter-label">{{{ if filters.type }}}[[flags:filter-type-{./filters.type}]]{{{ else }}}[[flags:filter-type]]{{{ end }}}</span>
 			<span class="caret text-primary opacity-75"></span>
 		</a>
-		<ul class="dropdown-menu p-1 text-sm">
-			<li class="dropdown-item rounded-1" data-name="type" data-value="all">[[flags:filter-type-all]]</li>
-			<li class="dropdown-item rounded-1" data-name="type" data-value="post">[[flags:filter-type-post]]</li>
-			<li class="dropdown-item rounded-1" data-name="type" data-value="user">[[flags:filter-type-user]]</li>
+		<ul class="dropdown-menu p-1 text-sm" role="menu">
+			<li class="dropdown-item rounded-1" data-name="type" data-value="all" role="menuitem">[[flags:filter-type-all]]</li>
+			<li class="dropdown-item rounded-1" data-name="type" data-value="post" role="menuitem">[[flags:filter-type-post]]</li>
+			<li class="dropdown-item rounded-1" data-name="type" data-value="user" role="menuitem">[[flags:filter-type-user]]</li>
 		</ul>
 	</div>
 
 	<div component="flags/filter/assignee" class="dropdown bottom-sheet" data-filter-name="assignee">
-		<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.assignee }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+		<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.assignee }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
 			<span class="filter-label">[[flags:filter-assignee]]</span>
 			<span class="caret text-primary opacity-75"></span>
 		</a>
 
-		<ul class="dropdown-menu p-1 text-sm" style="min-width: 350px;">
+		<ul class="dropdown-menu p-1 text-sm" style="min-width: 350px;" role="menu">
 			<li class="px-3 py-1 d-flex flex-column gap-2">
 				<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
 				<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
@@ -117,12 +117,12 @@
 	</div>
 
 	<div component="flags/filter/reporterId" class="dropdown bottom-sheet" data-filter-name="reporterId">
-		<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.reporterId }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+		<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.reporterId }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
 			<span class="filter-label">[[flags:filter-reporterId]]</span>
 			<span class="caret text-primary opacity-75"></span>
 		</a>
 
-		<ul class="dropdown-menu p-1 text-sm" style="min-width: 350px;">
+		<ul class="dropdown-menu p-1 text-sm" style="min-width: 350px;" role="menu">
 			<li class="px-3 py-1 d-flex flex-column gap-2">
 				<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
 				<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
@@ -144,12 +144,12 @@
 	</div>
 
 	<div component="flags/filter/targetUid" class="dropdown bottom-sheet" data-filter-name="targetUid">
-		<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.targetUid }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+		<a component="user/filter/button" class="filter-btn btn btn-light btn-sm border {{{ if filters.targetUid }}}active-filter{{{ end }}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
 			<span class="filter-label">[[flags:filter-targetUid]]</span>
 			<span class="caret text-primary opacity-75"></span>
 		</a>
 
-		<ul class="dropdown-menu p-1 text-sm" style="min-width: 350px;">
+		<ul class="dropdown-menu p-1 text-sm" style="min-width: 350px;" role="menu">
 			<li class="px-3 py-1 d-flex flex-column">
 				<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
 				<div component="user/filter/selected" class="d-flex flex-wrap gap-2">

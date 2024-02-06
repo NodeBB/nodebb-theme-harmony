@@ -1,4 +1,4 @@
-<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link d-flex gap-2 justify-content-between align-items-center position-relative">
+<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link d-flex gap-2 justify-content-between align-items-center position-relative" aria-haspopup="true" aria-expanded="false" aria-label="[[global:header.notifications]]">
 	<span class="d-flex gap-2 align-items-center text-nowrap truncate-open">
 		<span class="position-relative">
 			<i component="notifications/icon" class="fa fa-fw {{{ if unreadCount.notification}}}fa-bell{{{ else }}}fa-bell-o{{{ end }}} unread-count" data-content="{unreadCount.notification}"></i>
@@ -8,7 +8,7 @@
 	</span>
 	<span component="notifications/count" class="visible-open badge rounded-1 bg-primary {{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span>
 </a>
-<ul class="notifications-dropdown dropdown-menu p-1 shadow">
+<ul class="notifications-dropdown dropdown-menu p-1 shadow" role="menu">
 	<li>
 		<div component="notifications/list" class="list-container notification-list overscroll-behavior-contain pe-1 ff-base">
 			<div class="mb-2 p-1">

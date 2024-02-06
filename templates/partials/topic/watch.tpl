@@ -1,6 +1,6 @@
 {{{ if config.loggedIn }}}
 <div class="btn-group bottom-sheet" component="topic/watch">
-	<button class="btn-ghost-sm ff-secondary d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown" type="button">
+	<button class="btn-ghost-sm ff-secondary d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
 		<span component="topic/following/menu" class="d-flex gap-2 align-items-center{{{ if !isFollowing }}} hidden{{{ end }}}">
 			<i class="flex-shrink-0 fa fa-fw fa-bell-o text-primary"></i>
 			<span class="d-none d-md-inline fw-semibold">[[topic:watching]]</span>
@@ -16,9 +16,9 @@
 			<span class="d-none d-md-inline fw-semibold">[[topic:ignoring]]</span>
 		</span>
 	</button>
-	<ul class="dropdown-menu p-1 text-sm">
+	<ul class="dropdown-menu p-1 text-sm" role="menu">
 		<li>
-			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2 p-2" href="#" component="topic/following">
+			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2 p-2" href="#" component="topic/following" role="menuitem">
 				<div class="flex-grow-1 d-flex flex-column">
 					<span class="d-flex align-items-center gap-2">
 						<i class="flex-shrink-0 fa fa-fw fa-bell-o"></i>
@@ -31,7 +31,7 @@
 		</li>
 
 		<li>
-			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2 p-2" href="#" component="topic/not-following">
+			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2 p-2" href="#" component="topic/not-following" role="menuitem">
 				<div class="flex-grow-1 d-flex flex-column">
 					<span class="d-flex align-items-center gap-2">
 						<i class="flex-shrink-0 fa fa-fw fa-bell-slash-o"></i>
@@ -44,7 +44,7 @@
 		</li>
 
 		<li>
-			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2 p-2" href="#" component="topic/ignoring">
+			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2 p-2" href="#" component="topic/ignoring" role="menuitem">
 				<div class="flex-grow-1 d-flex flex-column">
 					<span class="d-flex align-items-center gap-2">
 						<i class="flex-shrink-0 fa fa-fw fa-eye-slash"></i>
