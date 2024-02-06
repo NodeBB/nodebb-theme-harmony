@@ -7,7 +7,7 @@
 	{{{ end }}}
 
 	<ul component="category/subcategory/container" class="categories-list list-unstyled" itemscope itemtype="http://www.schema.org/ItemList">
-		<hr class="text-muted"/>
+		<li><hr class="text-muted"/></li>
 		{{{each children}}}
 		<!-- IMPORT partials/categories/item.tpl -->
 		{{{end}}}
