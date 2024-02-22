@@ -5,18 +5,18 @@
 		</button>
 		<button data-bs-toggle="tab" data-bs-target="#groups-members" class="btn-ghost ff-secondary fw-semibold">
 			<div class="flex-grow-1">[[groups:members]]</div>
-			<span class="flex-shrink-0 text-xs" title="{group.memberCount}">{humanReadableNumber(group.memberCount)}</span>
+			<span component="group/member/count" class="flex-shrink-0 text-xs" title="{group.memberCount}">{humanReadableNumber(group.memberCount)}</span>
 		</button>
 
 		{{{ if group.isOwner }}}
 		<button data-bs-toggle="tab" data-bs-target="#groups-pending" class="btn-ghost ff-secondary fw-semibold">
 			<div class="flex-grow-1">[[groups:details.pending]]</div>
-			<span class="flex-shrink-0 text-xs" title="{group.pending.length}">{humanReadableNumber(group.group.pending.length)}</span>
+			<span component="group/pending/count" class="flex-shrink-0 text-xs" title="{group.pending.length}">{humanReadableNumber(group.pending.length)}</span>
 		</button>
 
 		<button data-bs-toggle="tab" data-bs-target="#groups-invited" class="btn-ghost ff-secondary fw-semibold">
 			<div class="flex-grow-1">[[groups:details.invited]]</div>
-			<span class="flex-shrink-0 text-xs" title="{group.invited.length}">{humanReadableNumber(group.group.invited.length)}</span>
+			<span component="group/invited/count" class="flex-shrink-0 text-xs" title="{group.invited.length}">{humanReadableNumber(group.invited.length)}</span>
 		</button>
 
 		<button data-bs-toggle="tab" data-bs-target="#groups-admin" class="btn-ghost ff-secondary fw-semibold">

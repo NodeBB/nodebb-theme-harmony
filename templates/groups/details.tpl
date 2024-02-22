@@ -26,7 +26,7 @@
 				</div>
 			</div>
 		</div>
-		<div>
+		<div class="d-flex gap-2 align-items-start">
 			{{{ if loggedIn }}}
 			{function.membershipBtn, group}
 			{{{ end }}}
@@ -49,7 +49,7 @@
 				<div class="tab-pane fade show active" id="groups-posts" role="tabpanel">
 					<h3 class="fw-semibold fs-5 mb-0">[[global:posts]]</h3>
 					{{{ if !posts.length }}}
-					<div class="alert alert-info">[[groups:details.has-no-posts]]</div>
+					<div class="alert alert-info my-2">[[groups:details.has-no-posts]]</div>
 					{{{ end }}}
 					<!-- IMPORT partials/posts_list.tpl -->
 				</div>
