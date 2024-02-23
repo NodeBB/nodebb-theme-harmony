@@ -87,8 +87,9 @@
 				<input id="memberPostCids" type="text" class="form-control form-control-sm" value="{group.memberPostCids}">
 			</div>
 		</div>
-
-		<button class="btn btn-link text-danger float-end" type="button" data-action="delete">[[groups:details.delete-group]]</button>
-		<button class="btn btn-primary" type="button" data-action="update">[[global:save-changes]]</button>
+		<div class="d-flex justify-content-end gap-2">
+			<button class="btn btn-link text-danger" type="button" data-action="delete">[[groups:details.delete-group]]</button>
+			<button class="btn btn-primary" type="button" data-action="update">[[global:save-changes]]</button>
+		</div>
 	</form>
 </div>
