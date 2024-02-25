@@ -31,20 +31,21 @@
 			<div class="mb-2">
 				<label class="form-label fw-bold" for="groupTitle">[[user:grouptitle]]</label>
 
-				<select class="form-select mb-1" id="groupTitle" name="groupTitle" {{{ if allowMultipleBadges }}} size="{groupSelectSize}" multiple{{{ end }}}>
-					<option value="">[[user:no-group-title]]</option>
+				<div class="d-flex flex-column gap-2" component="group/badge/list">
 					{{{ each groups }}}
-					{{{ if ./userTitleEnabled }}}
-					<option value="{groups.displayName}" {{{ if ./selected }}}selected{{{ end }}}>{./userTitle}</option>
+					<div component="group/badge/item" class="d-flex gap-2 justify-content-between align-items-center" data-value="{./displayName}" data-selected="{./selected}">
+						<!-- IMPORT partials/groups/badge.tpl -->
+						<div class="d-flex gap-1">
+							<button component="group/toggle/hide" type="button" class="btn-ghost-sm {{{ if !./selected }}}hidden{{{ end }}}" title="[[user:hide-group-title]]"><i class="fa fa-fw fa-eye"></i></button>
+							<button component="group/toggle/show" type="button" class="btn-ghost-sm {{{ if ./selected }}}hidden{{{ end }}}" title="[[user:show-group-title]]"><i class="fa fa-fw fa-eye-slash"></i></button>
+							{{{ if allowMultipleBadges }}}
+							<button component="group/order/up" type="button" class="btn-ghost-sm" title="[[user:order-group-up]]"><i class="fa fa-fw fa-chevron-up"></i></button>
+							<button component="group/order/down" type="button" class="btn-ghost-sm" title="[[user:order-group-down]]"><i class="fa fa-fw fa-chevron-down"></i></button>
+							{{{ end }}}
+						</div>
+					</div>
 					{{{ end }}}
-					{{{ end }}}
-				</select>
-				{{{ if allowMultipleBadges }}}
-				<div class="d-none d-md-block">
-					<span class="form-text">[[user:group-order-help]]</span>
-					<i role="button" component="group/order/up" class="fa fa-chevron-up"></i> <i role="button" component="group/order/down" class="fa fa-chevron-down"></i>
 				</div>
-				{{{ end }}}
 			</div>
 
 			{{{ if allowAboutMe }}}
@@ -68,19 +69,19 @@
 		<div class="text-center">
 			<ul class="list-group mb-3 text-sm text-nowrap">
 				{{{ if allowProfilePicture }}}
-				<a component="profile/change/picture" href="#" class="list-group-item px-1 text-decoration-none">[[user:change-picture]]</a>
+				<li class="list-group-item"><a component="profile/change/picture" href="#" class="text-decoration-none text-reset">[[user:change-picture]]</a></li>
 				{{{ end }}}
 				{{{ if !username:disableEdit }}}
-				<a href="{config.relative_path}/user/{userslug}/edit/username" class="list-group-item px-1 text-decoration-none">[[user:change-username]]</a>
+				<li class="list-group-item"><a href="{config.relative_path}/user/{userslug}/edit/username" class="text-decoration-none text-reset">[[user:change-username]]</a></li>
 				{{{ end }}}
 				{{{ if !email:disableEdit }}}
-				<a href="{config.relative_path}/user/{userslug}/edit/email" class="list-group-item px-1 text-decoration-none">[[user:change-email]]</a>
+				<li class="list-group-item"><a href="{config.relative_path}/user/{userslug}/edit/email" class="text-decoration-none text-reset">[[user:change-email]]</a></li>
 				{{{ end }}}
 				{{{ if canChangePassword }}}
-				<a href="{config.relative_path}/user/{userslug}/edit/password" class="list-group-item px-1 text-decoration-none">[[user:change-password]]</a>
+				<li class="list-group-item"><a href="{config.relative_path}/user/{userslug}/edit/password" class="text-decoration-none text-reset">[[user:change-password]]</a></li>
 				{{{ end }}}
 				{{{ each editButtons }}}
-				<a href="{config.relative_path}{./link}" class="list-group-item px-1 text-decoration-none">{./text}</a>
+				<li class="list-group-item"><a href="{config.relative_path}{./link}" class="text-decoration-none text-reset">{./text}</a></li>
 				{{{ end }}}
 			</ul>
 
