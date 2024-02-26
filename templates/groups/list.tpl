@@ -31,7 +31,7 @@
 				<div class="">
 					<div class="input-group">
 						<input type="text" class="form-control form-control-sm" placeholder="[[global:search]]" name="query" id="search-text">
-						<button id="search-button" class="btn btn-primary btn-sm">
+						<button id="search-button" class="btn btn-primary btn-sm" aria-label="[[global:search]]">
 							<i class="fa fa-search"></i>
 						</button>
 					</div>
