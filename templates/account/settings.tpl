@@ -7,133 +7,134 @@
 <div class="row">
 	<div class="col-12 col-md-6">
 		{{{ if !disableCustomUserSkins }}}
-		<h6 class="fw-bold">[[user:select-skin]]</h6>
-		<div class="">
-			<select class="form-select form-select-sm" id="bootswatchSkin" data-property="bootswatchSkin">
-				{{{each bootswatchSkinOptions}}}
-				<option value="{bootswatchSkinOptions.value}" {{{ if bootswatchSkinOptions.selected }}}selected{{{ end }}}>{bootswatchSkinOptions.name}</option>
-				{{{end}}}
-			</select>
-		</div>
+		<label for="bootswatchSkin" class="form-label fw-bold">[[user:select-skin]]</label>
+		<select class="form-select form-select-sm" id="bootswatchSkin" data-property="bootswatchSkin">
+			{{{each bootswatchSkinOptions}}}
+			<option value="{bootswatchSkinOptions.value}" {{{ if bootswatchSkinOptions.selected }}}selected{{{ end }}}>{bootswatchSkinOptions.name}</option>
+			{{{end}}}
+		</select>
+
 		<hr/>
 		{{{ end }}}
 
 		{{{ if allowUserHomePage }}}
-		<h6 class="fw-bold">[[user:select-homepage]]</h6>
-		<div class="">
-			<div class="mb-2">
-				<select class="form-select form-select-sm" id="homePageRoute" data-property="homePageRoute">
-					<option value="none">None</option>
-					{{{ each homePageRoutes }}}
-					<option value="{./route}" {{{ if ./selected }}}selected="1"{{{ end }}}>{./name}</option>
-					{{{ end }}}
-				</select>
-				<p class="form-text text-xs">[[user:homepage-description]]</p>
-			</div>
-			<div id="homePageCustom" class="mb-2" style="display: none;">
-				<label class="form-label" for="homePageCustom">[[user:custom-route]]</label>
-				<input type="text" class="form-control form-control-sm" data-property="homePageCustom" id="homePageCustom" value="{settings.homePageRoute}"/>
-				<p class="form-text text-xs">[[user:custom-route-help]]</p>
-			</div>
+		<label for="homePageRoute" class="form-label fw-bold">[[user:select-homepage]]</label>
+
+		<div class="mb-2">
+			<select class="form-select form-select-sm" id="homePageRoute" data-property="homePageRoute">
+				<option value="none">None</option>
+				{{{ each homePageRoutes }}}
+				<option value="{./route}" {{{ if ./selected }}}selected="1"{{{ end }}}>{./name}</option>
+				{{{ end }}}
+			</select>
+			<p class="form-text text-xs">[[user:homepage-description]]</p>
 		</div>
+		<div id="homePageCustomContainer" class="mb-2" style="display: none;">
+			<label class="form-label fw-bold" for="homePageCustom">[[user:custom-route]]</label>
+			<input type="text" class="form-control form-control-sm" data-property="homePageCustom" id="homePageCustom" value="{settings.homePageRoute}"/>
+			<p class="form-text text-xs">[[user:custom-route-help]]</p>
+		</div>
+
 		<hr/>
 		{{{ end }}}
 
 		<h6 class="fw-bold">[[global:privacy]]</h6>
-		<div class="">
-			{{{ if !hideEmail }}}
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" data-property="showemail" {{{ if settings.showemail }}}checked {{{ end }}}/>
-				<label class="form-check-label text-sm">[[user:show-email]]</label>
-			</div>
-			{{{ end }}}
 
-			{{{ if !hideFullname }}}
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" data-property="showfullname" {{{ if settings.showfullname }}}checked{{{ end }}}/>
-				<label class="form-check-label text-sm">[[user:show-fullname]]</label>
-			</div>
-			{{{ end }}}
-			{{{ if !config.disableChat }}}
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" data-property="restrictChat" {{{ if settings.restrictChat }}}checked{{{ end }}}/>
-				<label class="form-check-label text-sm">[[user:restrict-chats]]</label>
-			</div>
-			{{{ end }}}
+		{{{ if !hideEmail }}}
+		<div class="form-check form-switch">
+			<input class="form-check-input" type="checkbox" role="switch" id="showemail" data-property="showemail" {{{ if settings.showemail }}}checked {{{ end }}}/>
+			<label class="form-check-label text-sm" for="showemail">[[user:show-email]]</label>
 		</div>
+		{{{ end }}}
+
+		{{{ if !hideFullname }}}
+		<div class="form-check form-switch">
+			<input class="form-check-input" type="checkbox" role="switch" id="showfullname" data-property="showfullname" {{{ if settings.showfullname }}}checked{{{ end }}}/>
+			<label class="form-check-label text-sm" for="showfullname">[[user:show-fullname]]</label>
+		</div>
+		{{{ end }}}
+
+		{{{ if !config.disableChat }}}
+		<div class="form-check form-switch">
+			<input class="form-check-input" type="checkbox" role="switch" id="restrictChat" data-property="restrictChat" {{{ if settings.restrictChat }}}checked{{{ end }}}/>
+			<label class="form-check-label text-sm" for="restrictChat">[[user:restrict-chats]]</label>
+		</div>
+		{{{ end }}}
+
 		<hr/>
 
 		<h6 class="fw-bold">[[user:browsing]]</h6>
-		<div class="">
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" data-property="openOutgoingLinksInNewTab" {{{ if settings.openOutgoingLinksInNewTab }}}checked{{{ end }}}/>
-				<label class="form-check-label">[[user:open-links-in-new-tab]]</label>
-			</div>
-			{{{ if inTopicSearchAvailable }}}
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" data-property="topicSearchEnabled" {{{ if settings.topicSearchEnabled }}}checked{{{ end }}}/>
-				<label class="form-check-label">[[user:enable-topic-searching]]</label>
-			</div>
-			<p class="form-text text-xs">[[user:topic-search-help]]</p>
-			{{{ end }}}
 
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" data-property="updateUrlWithPostIndex" {{{ if settings.updateUrlWithPostIndex }}}checked{{{ end }}}/>
-				<label class="form-check-label">[[user:update-url-with-post-index]]</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" data-property="scrollToMyPost" {{{ if settings.scrollToMyPost }}}checked{{{ end }}}/>
-				<label class="form-check-label">[[user:scroll-to-my-post]]</label>
-			</div>
+		<div class="form-check form-switch">
+			<input class="form-check-input" type="checkbox" role="switch" id="openOutgoingLinksInNewTab" data-property="openOutgoingLinksInNewTab" {{{ if settings.openOutgoingLinksInNewTab }}}checked{{{ end }}}/>
+			<label class="form-check-label text-sm" for="openOutgoingLinksInNewTab">[[user:open-links-in-new-tab]]</label>
 		</div>
+
+		{{{ if inTopicSearchAvailable }}}
+		<div class="form-check form-switch">
+			<input class="form-check-input" type="checkbox" role="switch" id="topicSearchEnabled" data-property="topicSearchEnabled" {{{ if settings.topicSearchEnabled }}}checked{{{ end }}}/>
+			<label class="form-check-label text-sm" for="topicSearchEnabled">[[user:enable-topic-searching]]</label>
+		</div>
+		<p class="form-text text-xs">[[user:topic-search-help]]</p>
+		{{{ end }}}
+
+		<div class="form-check form-switch">
+			<input class="form-check-input" type="checkbox" role="switch" id="updateUrlWithPostIndex" data-property="updateUrlWithPostIndex" {{{ if settings.updateUrlWithPostIndex }}}checked{{{ end }}}/>
+			<label class="form-check-label text-sm" for="updateUrlWithPostIndex">[[user:update-url-with-post-index]]</label>
+		</div>
+
+		<div class="form-check form-switch">
+			<input class="form-check-input" type="checkbox" role="switch" id="scrollToMyPost" data-property="scrollToMyPost" {{{ if settings.scrollToMyPost }}}checked{{{ end }}}/>
+			<label class="form-check-label text-sm" for="scrollToMyPost">[[user:scroll-to-my-post]]</label>
+		</div>
+
 		<hr/>
 
 		<h6 class="fw-bold">[[global:pagination]]</h6>
+
+		<div class="mb-2 form-check form-switch">
+			<input type="checkbox" role="switch" id="usePagination" class="form-check-input" data-property="usePagination" {{{ if settings.usePagination }}}checked{{{ end }}}>
+			<label class="form-check-label text-sm" for="usePagination">[[user:paginate-description]]</label>
+		</div>
+		<div class="mb-2">
+			<label class="form-label text-sm" for="topicsPerPage">[[user:topics-per-page]] ([[user:max-items-per-page, {maxTopicsPerPage}]])</label>
+			<input type="text" class="form-control form-control-sm" id="topicsPerPage" data-property="topicsPerPage" value="{settings.topicsPerPage}">
+		</div>
 		<div class="">
-			<div class="mb-2 form-check">
-				<input type="checkbox" class="form-check-input" data-property="usePagination" {{{ if settings.usePagination }}}checked{{{ end }}}>
-				<label class="form-check-label">[[user:paginate-description]]</label>
-			</div>
-			<div class="mb-2">
-				<label class="form-label">[[user:topics-per-page]] ([[user:max-items-per-page, {maxTopicsPerPage}]])</label>
-				<input type="text" class="form-control form-control-sm" data-property="topicsPerPage" value="{settings.topicsPerPage}">
-			</div>
-			<div class="">
-				<label class="form-label">[[user:posts-per-page]] ([[user:max-items-per-page, {maxPostsPerPage}]])</label>
-				<input type="text" class="form-control form-control-sm" data-property="postsPerPage" value="{settings.postsPerPage}">
-			</div>
+			<label class="form-label text-sm" for="postsPerPage">[[user:posts-per-page]] ([[user:max-items-per-page, {maxPostsPerPage}]])</label>
+			<input type="text" class="form-control form-control-sm" id="postsPerPage" data-property="postsPerPage" value="{settings.postsPerPage}">
 		</div>
 
 		<hr/>
 
 		<h6 class="fw-bold">[[global:sort]]</h6>
-		<div class="">
-			<div class="mb-2">
-				<label class="form-label">[[user:category-topic-sort]]</label>
-				<select class="form-select form-select-sm" data-property="categoryTopicSort">
-					<option value="newest_to_oldest" {{{ if (settings.categoryTopicSort == "newest_to_oldest") }}}selected{{{ end }}}>[[topic:newest-to-oldest]]</option>
-					<option value="oldest_to_newest" {{{ if (settings.categoryTopicSort == "oldest_to_newest") }}}selected{{{ end }}}>[[topic:oldest-to-newest]]</option>
-					<option value="most_posts" {{{ if (settings.categoryTopicSort == "most_posts") }}}selected{{{ end }}}>[[topic:most-posts]]</option>
-					<option value="most_votes" {{{ if (settings.categoryTopicSort == "most_votes") }}}selected{{{ end }}}>[[topic:most-votes]]</option>
-					<option value="most_views" {{{ if (settings.categoryTopicSort == "most_views") }}}selected{{{ end }}}>[[topic:most-views]]</option>
-				</select>
-			</div>
-			<div class="">
-				<label class="form-label">[[user:topic-post-sort]]</label>
-				<select class="form-select form-select-sm" data-property="topicPostSort">
-					<option value="oldest_to_newest" {{{ if (settings.topicPostSort == "oldest_to_newest") }}}selected{{{ end }}}>[[topic:oldest-to-newest]]</option>
-					<option value="newest_to_oldest" {{{ if (settings.topicPostSort == "newest_to_oldest") }}}selected{{{ end }}}>[[topic:newest-to-oldest]]</option>
-					<option value="most_votes" {{{ if (settings.topicPostSort == "most_votes") }}}selected{{{ end }}}>[[topic:most-votes]]</option>
-				</select>
-			</div>
+
+		<div class="mb-2">
+			<label class="form-label text-sm" for="categoryTopicSort">[[user:category-topic-sort]]</label>
+			<select class="form-select form-select-sm" id="categoryTopicSort" data-property="categoryTopicSort">
+				<option value="newest_to_oldest" {{{ if (settings.categoryTopicSort == "newest_to_oldest") }}}selected{{{ end }}}>[[topic:newest-to-oldest]]</option>
+				<option value="oldest_to_newest" {{{ if (settings.categoryTopicSort == "oldest_to_newest") }}}selected{{{ end }}}>[[topic:oldest-to-newest]]</option>
+				<option value="most_posts" {{{ if (settings.categoryTopicSort == "most_posts") }}}selected{{{ end }}}>[[topic:most-posts]]</option>
+				<option value="most_votes" {{{ if (settings.categoryTopicSort == "most_votes") }}}selected{{{ end }}}>[[topic:most-votes]]</option>
+				<option value="most_views" {{{ if (settings.categoryTopicSort == "most_views") }}}selected{{{ end }}}>[[topic:most-views]]</option>
+			</select>
 		</div>
+		<div class="">
+			<label class="form-label text-sm" for="topicPostSort">[[user:topic-post-sort]]</label>
+			<select class="form-select form-select-sm" id="topicPostSort" data-property="topicPostSort">
+				<option value="oldest_to_newest" {{{ if (settings.topicPostSort == "oldest_to_newest") }}}selected{{{ end }}}>[[topic:oldest-to-newest]]</option>
+				<option value="newest_to_oldest" {{{ if (settings.topicPostSort == "newest_to_oldest") }}}selected{{{ end }}}>[[topic:newest-to-oldest]]</option>
+				<option value="most_votes" {{{ if (settings.topicPostSort == "most_votes") }}}selected{{{ end }}}>[[topic:most-votes]]</option>
+			</select>
+		</div>
+
 
 		{{{ if !disableEmailSubscriptions }}}
 		<hr/>
 		<h6 class="fw-bold">[[global:email]]</h6>
 		<div class="">
 			<div class="mb-2">
-				<label class="form-label" for="dailyDigestFreq">[[user:digest-label]]</label>
+				<label class="form-label text-sm" for="dailyDigestFreq">[[user:digest-label]]</label>
 				<select class="form-select form-select-sm" id="dailyDigestFreq" data-property="dailyDigestFreq" autocomplete="off">
 					{{{each dailyDigestFreqOptions}}}
 					<option value="{./value}" {{{ if ./selected }}}selected="1"{{{ end }}}>{./name}</option>
@@ -150,46 +151,44 @@
 		<div class="">
 			{./content}
 		</div>
-
 		{{{end}}}
 		<hr class="d-block d-md-none"/>
 	</div>
 
 	<div class="col-12 col-md-6">
-		<h6 class="fw-bold">[[global:language]]</h6>
-		<div class="">
-			<select data-property="userLang" class="form-select form-select-sm mb-2">
-				{{{each languages}}}
-				<option value="{./code}" {{{ if ./selected }}}selected{{{ end }}}>{./name} ({./code})</option>
-				{{{end}}}
-			</select>
-		</div>
+		<label class="form-label fw-bold" for="userLang">[[global:language]]</label>
+		<select id="userLang" data-property="userLang" class="form-select form-select-sm mb-2">
+			{{{each languages}}}
+			<option value="{./code}" {{{ if ./selected }}}selected{{{ end }}}>{./name} ({./code})</option>
+			{{{end}}}
+		</select>
+
 		<hr/>
+
 		{{{ if (isAdmin && isSelf) }}}
-		<h6 class="fw-bold">[[user:acp-language]]</h6>
-		<div class="">
-			<select data-property="acpLang" class="form-select form-select-sm">
-				{{{each acpLanguages}}}
-				<option value="{./code}" {{{ if ./selected }}}selected{{{ end }}}>{./name} ({./code})</option>
-				{{{end}}}
-			</select>
-		</div>
+		<label class="form-label fw-bold" for="acpLang">[[user:acp-language]]</label>
+		<select id="acpLang" data-property="acpLang" class="form-select form-select-sm">
+			{{{each acpLanguages}}}
+			<option value="{./code}" {{{ if ./selected }}}selected{{{ end }}}>{./name} ({./code})</option>
+			{{{end}}}
+		</select>
+
 		<hr/>
 		{{{ end }}}
 
 		<h6 class="fw-bold">[[topic:watch]]</h6>
 		<div class="">
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" data-property="followTopicsOnCreate" {{{ if settings.followTopicsOnCreate }}}checked{{{ end }}}/>
-				<label class="form-check-label">[[user:follow-topics-you-create]]</label>
+			<div class="form-check form-switch">
+				<input class="form-check-input" type="checkbox" role="switch" id="followTopicsOnCreate" data-property="followTopicsOnCreate" {{{ if settings.followTopicsOnCreate }}}checked{{{ end }}}/>
+				<label class="form-check-label text-sm" for="followTopicsOnCreate">[[user:follow-topics-you-create]]</label>
 			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" data-property="followTopicsOnReply" {{{ if settings.followTopicsOnReply }}}checked{{{ end }}}/>
-					<label class="form-check-label">[[user:follow-topics-you-reply-to]]</label>
+			<div class="form-check form-switch">
+				<input class="form-check-input" type="checkbox" role="switch" id="followTopicsOnReply" data-property="followTopicsOnReply" {{{ if settings.followTopicsOnReply }}}checked{{{ end }}}/>
+				<label class="form-check-label text-sm" for="followTopicsOnReply">[[user:follow-topics-you-reply-to]]</label>
 			</div>
 			<div class="mb-2">
-				<label class="form-label">[[user:default-category-watch-state]]</label>
-				<select class="form-select form-select-sm" data-property="categoryWatchState">
+				<label class="form-label text-sm" for="categoryWatchState">[[user:default-category-watch-state]]</label>
+				<select class="form-select form-select-sm" id="categoryWatchState" data-property="categoryWatchState">
 					<option value="tracking" {{{ if categoryWatchState.tracking }}}selected{{{ end }}}>[[category:tracking]]</option>
 					<option value="notwatching" {{{ if categoryWatchState.notwatching }}}selected{{{ end }}}>[[category:not-watching]]</option>
 					<option value="ignoring" {{{ if categoryWatchState.ignoring }}}selected{{{ end }}}>[[category:ignoring]]</option>
@@ -199,14 +198,14 @@
 		<hr/>
 
 		<h6 class="fw-bold">[[user:notifications]]</h6>
-		<div class="">
-			{{{each notificationSettings}}}
-			<div class="row mb-3">
+		<div>
+			{{{ each notificationSettings }}}
+			<div class="row mb-3 align-items-center">
 				<div class="col-7">
-					<label class="text-sm">{./label}</label>
+					<label class="text-sm" for="{./name}">{./label}</label>
 				</div>
-				<div class="mb-2 col-5">
-					<select class="form-select form-select-sm" data-property="{./name}">
+				<div class="col-5">
+					<select class="form-select form-select-sm" id="{./name}" data-property="{./name}">
 						<option value="none" {{{ if ./none }}}selected{{{ end }}}>[[notifications:none]]</option>
 						<option value="notification" {{{ if ./notification }}}selected{{{ end }}}>[[notifications:notification-only]]</option>
 						<option value="email" {{{ if ./email }}}selected{{{ end }}}>[[notifications:email-only]]</option>
@@ -216,11 +215,11 @@
 			</div>
 			{{{end}}}
 
-			<div class="row">
+			<div class="row align-items-center">
 				<div class="col-7">
 					<label class="text-sm" for="upvote-notif-freq">[[user:upvote-notif-freq]]</label>
 				</div>
-				<div class="mb-2 col-5">
+				<div class="col-5">
 					<select class="form-select form-select-sm" id="upvote-notif-freq" name="upvote-notif-freq" data-property="upvoteNotifFreq">
 						{{{ each upvoteNotifFreq }}}
 						<option value="{./name}" {{{ if ./selected }}}selected{{{ end }}}>
