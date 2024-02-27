@@ -167,8 +167,8 @@
 				[[user:info.moderation-note]]
 			</h5>
 			<div class="card-body">
-				<textarea component="account/moderation-note" class="form-control"></textarea>
-				<br/>
+				<textarea component="account/moderation-note" class="form-control mb-3" aria-label="[[user:info.moderation-note]]"></textarea>
+
 				<button class="btn btn-sm float-end btn-success" component="account/save-moderation-note">[[user:info.moderation-note.add]]</button>
 				<br/>
 				<div component="account/moderation-note/list">

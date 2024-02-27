@@ -7,28 +7,29 @@
 <div class="row">
 	<div class="col-xl-6 col-12">
 		<form role="form" component="profile/edit/form">
-			<div class="mb-2">
+			<div class="mb-3">
 				<label class="form-label fw-bold" for="fullname">[[user:fullname]]</label>
 				<input class="form-control" type="text" id="fullname" name="fullname" placeholder="[[user:fullname]]" value="{fullname}">
 			</div>
+
 			{{{ if allowWebsite }}}
-			<div class="mb-2">
+			<div class="mb-3">
 				<label class="form-label fw-bold" for="website">[[user:website]]</label>
 				<input class="form-control" type="text" id="website" name="website" placeholder="http://..." value="{website}">
 			</div>
 			{{{ end }}}
 
-			<div class="mb-2">
+			<div class="mb-3">
 				<label class="form-label fw-bold" for="location">[[user:location]]</label>
 				<input class="form-control" type="text" id="location" name="location" placeholder="[[user:location]]" value="{location}">
 			</div>
 
-			<div class="mb-2">
+			<div class="mb-3">
 				<label class="form-label fw-bold" for="birthday">[[user:birthday]]</label>
 				<input class="form-control" type="date" id="birthday" name="birthday" value="{birthday}" placeholder="mm/dd/yyyy">
 			</div>
 
-			<div class="mb-2">
+			<div class="mb-3">
 				<label class="form-label fw-bold" for="groupTitle">[[user:grouptitle]]</label>
 
 				<div class="d-flex flex-column gap-2" component="group/badge/list">
@@ -49,14 +50,14 @@
 			</div>
 
 			{{{ if allowAboutMe }}}
-			<div class="mb-2">
+			<div class="mb-3">
 				<label class="form-label fw-bold" for="aboutme">[[user:aboutme]]</label> <small><label id="aboutMeCharCountLeft"></label></small>
 				<textarea class="form-control" id="aboutme" name="aboutme" rows="5">{aboutme}</textarea>
 			</div>
 			{{{ end }}}
 
 			{{{ if (allowSignature && !disableSignatures) }}}
-			<div class="mb-2">
+			<div class="mb-3">
 				<label class="form-label fw-bold" for="signature">[[user:signature]]</label> <small><label id="signatureCharCountLeft"></label></small>
 				<textarea class="form-control" id="signature" name="signature" rows="5">{signature}</textarea>
 			</div>

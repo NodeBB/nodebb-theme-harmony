@@ -18,7 +18,7 @@
 				<div class="search">
 					<div class="input-group">
 						<input class="form-control form-control-sm" id="search-user" type="text" placeholder="[[global:search]]"/>
-						<button class="btn btn-primary btn-sm" type="button">
+						<button class="btn btn-primary btn-sm" type="button" aria-label="[[global:search]]">
 							<i component="user/search/icon" class="fa fa-search"></i>
 						</button>
 					</div>
