@@ -10,17 +10,12 @@
 
 			<div class="col-12 col-md-5 col-lg-3 px-md-0">
 				<div class="register-block">
-					<div class="alert alert-danger{{{ if !error }}} hidden{{{ end }}}" id="register-error-notify" >
-						<strong>[[error:registration-error]]</strong>
-						<p>{error}</p>
-					</div>
-
 					<form component="register/local" class="d-flex flex-column gap-3" role="form" action="{config.relative_path}/register" method="post">
 						<div class="mb-2 d-flex flex-column gap-2">
 							<label for="username">[[register:username]]</label>
 							<div class="d-flex flex-column">
-								<input class="form-control" type="text" placeholder="[[register:username-placeholder]]" name="username" id="username" autocorrect="off" autocapitalize="off" autocomplete="nickname" aria-required="true"/>
-								<span class="register-feedback text-xs text-danger" id="username-notify"></span>
+								<input class="form-control" type="text" placeholder="[[register:username-placeholder]]" name="username" id="username" autocorrect="off" autocapitalize="off" autocomplete="nickname" aria-required="true" aria-describedby="username-notify"/>
+								<span class="register-feedback text-xs text-danger" id="username-notify" aria-live="polite"></span>
 								<span class="form-text text-xs">[[register:help.username-restrictions, {minimumUsernameLength}, {maximumUsernameLength}]]</span>
 							</div>
 						</div>
@@ -28,8 +23,8 @@
 						<div class="mb-2 d-flex flex-column gap-2">
 							<label for="password">[[register:password]]</label>
 							<div class="d-flex flex-column">
-								<input class="form-control" type="password" placeholder="[[register:password-placeholder]]" name="password" id="password" autocomplete="new-password" autocapitalize="off" aria-required="true" />
-								<span class="register-feedback text-xs text-danger" id="password-notify"></span>
+								<input class="form-control" type="password" placeholder="[[register:password-placeholder]]" name="password" id="password" autocomplete="new-password" autocapitalize="off" aria-required="true" aria-describedby="password-notify"/>
+								<span class="register-feedback text-xs text-danger" id="password-notify" aria-live="polite"></span>
 								<span class="form-text text-xs">[[register:help.minimum-password-length, {minimumPasswordLength}]]</span>
 								<p id="caps-lock-warning" class="text-danger hidden">
 									<i class="fa fa-exclamation-triangle"></i> [[login:caps-lock-enabled]]
@@ -40,8 +35,8 @@
 						<div class="mb-2 d-flex flex-column gap-2">
 							<label for="password-confirm">[[register:confirm-password]]</label>
 							<div>
-								<input class="form-control" type="password" placeholder="[[register:confirm-password-placeholder]]" name="password-confirm" id="password-confirm" autocomplete="new-password" autocapitalize="off" aria-required="true"/>
-								<span class="register-feedback text-xs text-danger" id="password-confirm-notify"></span>
+								<input class="form-control" type="password" placeholder="[[register:confirm-password-placeholder]]" name="password-confirm" id="password-confirm" autocomplete="new-password" autocapitalize="off" aria-required="true" aria-describedby="password-confirm-notify"/>
+								<span class="register-feedback text-xs text-danger" id="password-confirm-notify" aria-live="polite"></span>
 							</div>
 						</div>
 
@@ -53,6 +48,12 @@
 						{{{ end }}}
 
 						<button class="btn btn-primary" id="register" type="submit">[[register:register-now-button]]</button>
+
+						<div class="alert alert-danger{{{ if !error }}} hidden{{{ end }}}" id="register-error-notify" role="alert" aria-atomic="true">
+							<strong>[[error:registration-error]]</strong>
+							<p class="mb-0">{error}</p>
+						</div>
+
 						<hr/>
 
 						<span class="text-sm">[[register:already-have-account]]</span>

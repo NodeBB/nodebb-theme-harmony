@@ -19,3 +19,9 @@
 		}
 	}
 }
+
+[component="group/badge/item"]:first-child [component="group/order/up"],
+[component="group/badge/item"]:last-child [component="group/order/down"] {
+	opacity: 0.65;
+	pointer-events: none;
+}
