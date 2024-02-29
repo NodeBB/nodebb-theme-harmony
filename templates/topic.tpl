@@ -1,4 +1,7 @@
 <!-- IMPORT partials/breadcrumbs-json-ld.tpl -->
+{{{ if config.theme.enableBreadcrumbs }}}
+<!-- IMPORT partials/breadcrumbs.tpl -->
+{{{ end }}}
 {{{ if widgets.header.length }}}
 <div data-widget-area="header">
 	{{{each widgets.header}}}

@@ -1,4 +1,7 @@
 body.template-topic {
+	.breadcrumb .breadcrumb-item:last-child {
+		display: none;
+	}
 	.topic {
 		.posts-container {
 			max-width: 960px;
