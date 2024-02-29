@@ -11,6 +11,7 @@ const library = module.exports;
 
 const defaults = {
 	enableQuickReply: 'on',
+	enableBreadcrumbs: 'on',
 	centerHeaderElements: 'off',
 	mobileTopicTeasers: 'off',
 	stickyToolbar: 'on',
@@ -142,6 +143,7 @@ library.loadThemeConfig = async function (uid) {
 
 	const config = { ...defaults, ...themeConfig, ...(_.pick(userConfig, Object.keys(defaults))) };
 	config.enableQuickReply = config.enableQuickReply === 'on';
+	config.enableBreadcrumbs = config.enableBreadcrumbs === 'on';
 	config.centerHeaderElements = config.centerHeaderElements === 'on';
 	config.mobileTopicTeasers = config.mobileTopicTeasers === 'on';
 	config.stickyToolbar = config.stickyToolbar === 'on';

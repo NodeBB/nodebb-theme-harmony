@@ -1,5 +1,7 @@
 <!-- IMPORT partials/breadcrumbs-json-ld.tpl -->
+{{{ if config.theme.enableBreadcrumbs }}}
 <!-- IMPORT partials/breadcrumbs.tpl -->
+{{{ end }}}
 
 <div class="category-header d-flex flex-column gap-2">
 	<div class="d-flex gap-2 align-items-center mb-1 {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
