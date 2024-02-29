@@ -13,7 +13,7 @@
 	</div>
 
 	<div class="form-check form-switch mb-3">
-		<input type="checkbox" class="form-check-input" id="enableBreadcrumbs" name="enableBreadcrumbs" />
+		<input type="checkbox" class="form-check-input" id="enableBreadcrumbs" name="enableBreadcrumbs" {{{ if theme.enableBreadcrumbs }}}checked{{{ end }}} />
 		<label for="enableBreadcrumbs" class="form-check-label">[[themes/harmony:settings.enableBreadcrumbs]]</label>
 	</div>
 
