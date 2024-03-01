@@ -1,6 +1,6 @@
 {
   "name": "nodebb-theme-harmony",
-  "version": "1.2.34",
+  "version": "1.2.35",
   "nbbpm": {
     "compatibility": "^3.5.0"
   },
