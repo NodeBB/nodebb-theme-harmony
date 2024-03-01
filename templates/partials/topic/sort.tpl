@@ -8,19 +8,19 @@
 		<li>
 			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="#" class="oldest_to_newest" data-sort="oldest_to_newest" role="menuitem">
 				<span class="flex-grow-1">[[topic:oldest-to-newest]]</span>
-				<i class="flex-shrink-0 fa fa-fw"></i>
+				<i class="flex-shrink-0 fa fa-fw text-secondary"></i>
 			</a>
 		</li>
 		<li>
 			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="#" class="newest_to_oldest" data-sort="newest_to_oldest" role="menuitem">
 				<span class="flex-grow-1">[[topic:newest-to-oldest]]</span>
-				<i class="flex-shrink-0 fa fa-fw"></i>
+				<i class="flex-shrink-0 fa fa-fw text-secondary"></i>
 			</a>
 		</li>
 		<li>
 			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="#" class="most_votes" data-sort="most_votes" role="menuitem">
 				<span class="flex-grow-1">[[topic:most-votes]]</span>
-				<i class="flex-shrink-0 fa fa-fw"></i>
+				<i class="flex-shrink-0 fa fa-fw text-secondary"></i>
 			</a>
 		</li>
 	</ul>
