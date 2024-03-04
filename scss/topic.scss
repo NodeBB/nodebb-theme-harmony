@@ -35,10 +35,7 @@ body.template-topic {
 				&.selected .post-container {
 					background-color: mix($body-bg, $body-color, 90%);
 				}
-				&.deleted .post-container .content {
-					opacity: .75;
-					text-decoration: line-through;
-				}
+				&.deleted .post-container .content { opacity: .65; }
 
 				[component="post/content"] {
 					@include fix-lists();
