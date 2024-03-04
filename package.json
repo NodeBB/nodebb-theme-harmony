@@ -2,7 +2,7 @@
   "name": "nodebb-theme-harmony",
   "version": "1.2.36",
   "nbbpm": {
-    "compatibility": "^3.5.0"
+    "compatibility": "^3.7.0"
   },
   "description": "Harmony theme for NodeBB",
   "main": "library.js",
