@@ -1,8 +1,8 @@
 ul.topics-list, ul.categories-list {
 	li {
 		&.deleted {
-			.meta { display: none!important; }
-			.title a { text-decoration: line-through;}
+			.meta, .topic-thumbs { display: none!important; }
+			opacity: 0.65;
 		}
 
 		&.selected {

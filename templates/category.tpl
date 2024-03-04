@@ -9,7 +9,7 @@
 		<h1 class="tracking-tight fs-2 fw-semibold mb-0 text-center">{./name}</h1>
 	</div>
 	{{{ if ./descriptionParsed }}}
-	<div class="description text-muted text-sm w-100 {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
+	<div class="description text-secondary text-sm w-100 {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
 		{./descriptionParsed}
 	</div>
 	{{{ end }}}
