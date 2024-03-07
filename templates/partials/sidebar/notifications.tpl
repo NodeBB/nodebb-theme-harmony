@@ -10,7 +10,7 @@
 </a>
 <ul class="notifications-dropdown dropdown-menu p-1 shadow" role="menu">
 	<li>
-		<div component="notifications/list" class="list-container notification-list overscroll-behavior-contain pe-1 ff-base">
+		<div component="notifications/list" class="list-container notification-list overscroll-behavior-contain pe-1 ff-base ghost-scrollbar">
 			<div class="mb-2 p-1">
 				<div class="d-flex gap-1 justify-content-between">
 					<div class="d-flex gap-2 flex-grow-1 placeholder-wave">

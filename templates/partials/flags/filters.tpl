@@ -27,24 +27,27 @@
 		<div component="category-selector-search" class="hidden position-absolute">
 			<input type="text" class="form-control form-control-sm" placeholder="[[search:type-to-search]]" autocomplete="off">
 		</div>
-		<ul component="category/list" class="dropdown-menu p-1 text-sm category-dropdown-menu" role="menu">
-			{{{each categoryItems}}}
-			<li role="presentation" class="category {{{ if ../disabledClass }}}disabled{{{ end }}}" data-cid="{../cid}" data-parent-cid="{../parentCid}" data-name="{../name}">
-				<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menuitem" href="#">
-					{../level}
-					<span component="category-markup" class="flex-grow-1" style="{{{ if ../match }}}font-weight: bold;{{{end}}}">
-						<div class="category-item d-inline-flex align-items-center gap-1">
-							{{{ if ./icon }}}
-							{buildCategoryIcon(@value, "24px", "rounded-circle")}
-							{{{ end }}}
-							{./name}
-						</div>
-					</span>
-					<i component="category/select/icon" class="flex-shrink-0 fa fa-fw fa-check {{{ if !../selected }}}invisible{{{ end }}}"></i>
-				</a>
-			</li>
-			{{{end}}}
-		</ul>
+
+		<div class="dropdown-menu p-1">
+			<ul component="category/list" class="list-unstyled mb-0 text-sm category-dropdown-menu ghost-scrollbar" role="menu">
+				{{{each categoryItems}}}
+				<li role="presentation" class="category {{{ if ../disabledClass }}}disabled{{{ end }}}" data-cid="{../cid}" data-parent-cid="{../parentCid}" data-name="{../name}">
+					<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menuitem" href="#">
+						{../level}
+						<span component="category-markup" class="flex-grow-1" style="{{{ if ../match }}}font-weight: bold;{{{end}}}">
+							<div class="category-item d-inline-flex align-items-center gap-1">
+								{{{ if ./icon }}}
+								{buildCategoryIcon(@value, "24px", "rounded-circle")}
+								{{{ end }}}
+								{./name}
+							</div>
+						</span>
+						<i component="category/select/icon" class="flex-shrink-0 fa fa-fw fa-check {{{ if !../selected }}}invisible{{{ end }}}"></i>
+					</a>
+				</li>
+				{{{end}}}
+			</ul>
+		</div>
 	</div>
 
 	<div class="btn-group bottom-sheet">

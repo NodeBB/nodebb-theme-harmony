@@ -10,7 +10,7 @@
 </a>
 <ul class="drafts-dropdown dropdown-menu p-1 shadow" role="menu">
 	<li>
-		<div component="drafts/list" class="list-container draft-list list-unstyled d-flex flex-column overscroll-behavior-contain gap-1 pe-1">
+		<div component="drafts/list" class="list-container draft-list list-unstyled d-flex flex-column overscroll-behavior-contain gap-1 pe-1 ghost-scrollbar">
 			<div class="dropdown-item rounded-1 p-2 d-flex gap-2 placeholder-wave">
 				<div class="d-flex flex-grow-1 flex-column w-100">
 					<div class="text-xs placeholder col-3">&nbsp;</div>
