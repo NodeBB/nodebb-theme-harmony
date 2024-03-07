@@ -4,7 +4,7 @@
 </button>
 <noscript>
 	<input type="checkbox" class="hidden" id="category-dropdown-check" aria-hidden="true">
-	<ul component="category/list" class="dropdown-menu p-1 text-sm category-dropdown-menu" role="menu">
+	<ul component="category/list" class="dropdown-menu p-1 text-sm category-dropdown-menu ghost-scrollbar" role="menu">
 		{{{each categories}}}
 		<li role="presentation" class="category {{{if categories.disabledClass}}}disabled{{{end}}}">
 			<a role="menu-item" href="{config.relative_path}/compose?cid={categories.cid}">{categories.level}

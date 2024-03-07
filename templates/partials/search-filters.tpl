@@ -13,7 +13,7 @@
 						<input type="text" class="form-control" component="category/filter/search" placeholder="[[search:type-a-category]]">
 					</div>
 				</li>
-				<div component="category/list" class="overflow-auto" style="max-height: 350px;"></div>
+				<div component="category/list" class="overflow-auto ghost-scrollbar" style="max-height: 350px;"></div>
 				<div class="px-3 py-1">
 					<div class="form-check">
 						<input id="search-children" class="form-check-input" type="checkbox"/>
