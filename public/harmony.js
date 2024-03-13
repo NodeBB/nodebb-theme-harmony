@@ -65,11 +65,8 @@ $(document).ready(function () {
 			const bottomBar = $('[component="bottombar"]');
 			const $body = $('body');
 			const $window = $(window);
-			$body.on('shown.bs.dropdown', '.sticky-tools', function () {
-				bottomBar.addClass('hidden');
-			});
-			$body.on('hidden.bs.dropdown', '.sticky-tools', function () {
-				bottomBar.removeClass('hidden');
+			$body.on('shown.bs.dropdown hidden.bs.dropdown', '.sticky-tools', function () {
+				bottomBar.toggleClass('hidden', $(this).find('.dropdown-menu.show').length);
 			});
 			function isSearchVisible() {
 				return !!$('[component="bottombar"] [component="sidebar/search"] .search-dropdown.show').length;
