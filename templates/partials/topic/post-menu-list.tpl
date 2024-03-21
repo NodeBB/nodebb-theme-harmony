@@ -90,6 +90,14 @@
 		</a>
 	</li>
 
+	{{{ if posts.display_original_url }}}
+	<li>
+		<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menuitem" href="{posts.pid}">
+			<i class="fa fa-fw text-secondary fa-external-link"></i> [[topic:go-to-original]]
+		</a>
+	</li>
+	{{{ end }}}
+
 	{{{ if postSharing.length }}}
 	{{{ if config.loggedIn }}}<li class="dropdown-divider"></li>{{{ end }}}
 	<li class="dropdown-header">[[topic:share-this-post]]</li>
