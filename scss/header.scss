@@ -1,5 +1,5 @@
 // hide brand/title on user and group details pages so it doesnt break covers
-.page-user, .template-groups-details {
+body[class*="template-account-"], .template-groups-details {
 	.brand-container {
 		display: none;
 	}
