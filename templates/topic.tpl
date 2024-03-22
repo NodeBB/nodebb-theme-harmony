@@ -11,7 +11,7 @@
 {{{ end }}}
 
 <div class="d-flex flex-column gap-3" itemid="{url}" itemscope itemtype="https://schema.org/DiscussionForumPosting">
-	<meta itemprop="headline" content="{title}">
+	<meta itemprop="headline" content="{escape(titleRaw)}">
 	<meta itemprop="url" content="{url}">
 	<meta itemprop="datePublished" content="{timestampISO}">
 	<meta itemprop="dateModified" content="{lastposttimeISO}">
