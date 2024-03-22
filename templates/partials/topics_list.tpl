@@ -36,7 +36,7 @@
 						<i class="fa fa-lock"></i>
 						<span>[[topic:locked]]</span>
 					</span>
-					<span class="badge border border-gray-300 text-body {{{ if !./oldCid }}}hidden{{{ end }}}">
+					<span component="topic/moved" class="badge border border-gray-300 text-body {{{ if !./oldCid }}}hidden{{{ end }}}">
 						<i class="fa fa-arrow-circle-right"></i>
 						<span>[[topic:moved]]</span>
 					</span>
