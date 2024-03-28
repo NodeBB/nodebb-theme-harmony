@@ -2,7 +2,7 @@
 	<nav class="topic-list-header d-flex flex-nowrap my-2 p-0 border-0 rounded">
 		<div class="d-flex flex-row p-2 text-bg-light gap-1 border rounded w-100 align-items-center">
 			<div component="category/controls" class="d-flex me-auto mb-0 gap-2 flex-wrap">
-				{{{ if template.category }}}
+				{{{ if (template.category || template.world) }}}
 				<!-- IMPORT partials/category/watch.tpl -->
 				<!-- IMPORT partials/tags/filter-dropdown-left.tpl -->
 				<!-- IMPORT partials/category/sort.tpl -->
@@ -36,7 +36,7 @@
 			</div>
 
 			<div class="d-flex gap-1 align-items-center">
-				{{{ if template.category }}}
+				{{{ if (template.category || template.world) }}}
 					{{{ if privileges.topics:create }}}
 					<a href="{config.relative_path}/compose?cid={cid}" component="category/post" id="new_topic" class="btn btn-primary btn-sm text-nowrap" data-ajaxify="false" role="button">[[category:new-topic-button]]</a>
 					{{{ end }}}
