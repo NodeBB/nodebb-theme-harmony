@@ -72,7 +72,7 @@
 							{{{ else }}}
 							<a class="title" href="{config.relative_path}/post/{./pid}">{./title}</a><br />
 							{{{ end }}}
-							<span class="timestamp">[[flags:flagged-timeago-readable, {./timestampISO}, {./timestampReadable}]]</span>
+							<span class="timestamp">[[flags:flagged-timeago-readable, {./timestampISO}, {isoTimeToLocaleString(./timestampISO, config.userLang)}]]</span>
 						</p>
 					</li>
 					{{{ end }}}
@@ -104,9 +104,9 @@
 							<strong>
 								<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" itemprop="author" data-username="{./user.username}" data-uid="{./user.uid}">{./user.username}</a>
 							</strong>
-							<span class="timestamp timeago" title="{./timestampISO}"></span> &mdash; {./timestampReadable}<br />
+							<span class="timestamp timeago" title="{./timestampISO}"></span> &mdash; {isoTimeToLocaleString(./timestampISO, config.userLang)}<br />
 							{{{ if ./until }}}
-							<span class="expiry">[[user:info.banned-until, {./untilReadable}]]</span><br />
+							<span class="expiry">[[user:info.banned-until, {isoTimeToLocaleString(./untilISO, config.userLang)}]]</span><br />
 							{{{ else }}}
 							<span class="expiry">[[user:info.banned-permanently]]</span><br />
 							{{{ end }}}
@@ -145,9 +145,9 @@
 							<strong>
 								<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" itemprop="author" data-username="{./user.username}" data-uid="{./user.uid}">{./user.username}</a>
 							</strong>
-							<span class="timestamp timeago" title="{./timestampISO}"></span> &mdash; {./timestampReadable}<br />
+							<span class="timestamp timeago" title="{./timestampISO}"></span> &mdash; {isoTimeToLocaleString(./timestampISO, config.userLang)}<br />
 							{{{ if ./until }}}
-							<span class="expiry">[[user:info.muted-until, {./untilReadable}]]</span><br />
+							<span class="expiry">[[user:info.muted-until, {isoTimeToLocaleString(./untilISO, config.userLang)}]]</span><br />
 							{{{ end }}}
 
 							<span class="reason"><strong>[[user:info.banned-reason-label]]</strong>: {./reason}</span>
