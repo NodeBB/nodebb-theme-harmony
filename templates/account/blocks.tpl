@@ -15,7 +15,7 @@
 					</li>
 					{{{ each edit }}}
 					<li component="blocks/search/match">
-						<div class="dropdown-item rounded-1 d-flex flex-nowrap gap-2 justify-content-between align-items-center" role="menuitem">
+						<div class="dropdown-item rounded-1 d-flex flex-nowrap gap-4 justify-content-between align-items-center" role="menuitem">
 							<div class="text-truncate">
 								<a href="{config.relative_path}/uid/{./uid}" class="text-decoration-none">{buildAvatar(edit, "24px", true)} {./username}</a>
 							</div>
@@ -35,6 +35,8 @@
 	</div>
 </div>
 <div class="users">
+	<div class="alert alert-warning text-center m-0"{{{ if users.length }}} style="display: none;"{{{ end }}}>[[user:has-no-blocks]]</div>
+
 	<div id="users-container" class="row row-cols-2 row-cols-lg-3 row-cols-xl-4 g-3">
 		{{{ each users }}}
 		<div class="d-flex flex-column gap-1">
@@ -43,7 +45,6 @@
 		</div>
 		{{{ end }}}
 	</div>
-	<div class="alert alert-warning text-center"{{{ if users.length }}} style="display: none;"{{{ end }}}>[[user:has-no-blocks]]</div>
 	<!-- IMPORT partials/paginator.tpl -->
 </div>
 
