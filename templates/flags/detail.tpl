@@ -3,7 +3,7 @@
 <div class="d-flex flex-column flex-md-row">
 	<div class="flex-shrink-0 d-flex flex-column gap-3 border-end-md text-sm mb-3 pe-4" style="flex-basis: 240px !important;">
 		<div class="d-grid gap-1">
-			<a class="btn btn-ghost ff-secondary border btn-sm justify-content-start" href="{config.relative_path}/{type_path}/{targetId}">
+			<a class="btn btn-ghost ff-secondary border btn-sm justify-content-start" href="{config.relative_path}/{type_path}/{encodeURIComponent(targetId)}">
 				<i class="fa fa-fw fa-external-link text-primary"></i>
 				[[flags:go-to-target]]
 			</a>
