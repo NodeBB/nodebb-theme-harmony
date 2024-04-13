@@ -5,5 +5,6 @@
 	<ul class="dropdown-menu dropdown-menu-end p-1 text-sm" role="menu">
 		<li><a href="#" class="dropdown-item rounded-1" data-action="bulk-assign" role="menuitem">[[flags:assign-to-me]]</a></li>
 		<li><a href="#" class="dropdown-item rounded-1" data-action="bulk-mark-resolved" role="menuitem">[[flags:bulk-resolve]]</a></li>
+		<li><a href="#" class="dropdown-item rounded-1" data-action="bulk-purge" role="menuitem">[[flags:bulk-purge]]</a></li>
 	</ul>
 </div>
