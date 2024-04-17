@@ -92,7 +92,7 @@
 
 	{{{ if posts.display_original_url }}}
 	<li>
-		<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menuitem" href="{posts.pid}">
+		<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menuitem" href="{{{ if posts.url }}}{posts.url}{{{ else }}}{posts.pid}{{{ end }}}">
 			<i class="fa fa-fw text-secondary fa-external-link"></i> [[topic:go-to-original]]
 		</a>
 	</li>
