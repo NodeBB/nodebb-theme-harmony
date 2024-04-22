@@ -9,7 +9,7 @@
 </div>
 {{{ end }}}
 
-<ul id="quick-search-results" class="quick-search-results list-unstyled mb-0 p-0 pe-1 overflow-auto overscroll-behavior-contain ff-base ghost-scrollbar" style="max-width:  400px; max-height: 500px;">
+<ul id="quick-search-results" class="quick-search-results list-unstyled mb-0 p-0 pe-1 overflow-auto overscroll-behavior-contain ff-base ghost-scrollbar" style="max-width: {dropdown.maxWidth}; max-height: {dropdown.maxHeight};">
 	<li role="separator" class="dropdown-divider d-none d-md-block"></li>
 	{{{ each posts }}}
 	<li data-tid="{posts.topic.tid}" data-pid="{posts.pid}" class="d-flex flex-column gap-1">
