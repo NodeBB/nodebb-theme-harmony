@@ -101,15 +101,38 @@
 				{{{ if history.flags.length }}}
 				<ul class="recent-flags list-unstyled">
 					{{{ each history.flags }}}
-					<li>
-						<p>
+					<li class="mb-4 border-bottom">
+						<div class="mb-1 d-flex align-items-center justify-content-between">
+							<div>
+								{{{ if (./type == "user")}}}
+								<span class="badge text-bg-info">[[user:info.profile]]</span>
+								{{{ else }}}
+								<span class="badge text-bg-info">[[user:info.post]]</span>
+								{{{ end }}}
+								<span class="timestamp timeago" title="{./timestampISO}"></span>
+							</div>
+
+							<a href="{config.relative_path}/flags/{./flagId}" class="badge badge border border-gray-300 text-body">[[user:info.view-flag]]</a>
+						</div>
+
+						{{{ if (./type == "post") }}}
+						<p class="mb-1">
 							{{{ if history.flags.targetPurged }}}
 							<div>[[flags:target-purged]]</div>
 							{{{ else }}}
-							<a class="title" href="{config.relative_path}/post/{./pid}">{./title}</a><br />
+							<a class="title" href="{config.relative_path}/post/{./pid}">{./title}</a>
 							{{{ end }}}
-							<span class="timestamp">[[flags:flagged-timeago-readable, {./timestampISO}, {isoTimeToLocaleString(./timestampISO, config.userLang)}]]</span>
 						</p>
+						{{{ end }}}
+
+						<div class="d-flex gap-2 align-items-center mb-3">
+							<span class="text-sm">[[user:info.reported-by]]</span>
+							<div class="d-flex text-nowrap">
+								{{{ each ./reports }}}
+								<a style="width: 18px; z-index: 3;" class="text-decoration-none" href="{config.relative_path}/user/{./reporter.userslug}">{buildAvatar(./reporter, "24px", true)}</a>
+								{{{ end }}}
+							</div>
+						</div>
 					</li>
 					{{{ end }}}
 				</ul>
