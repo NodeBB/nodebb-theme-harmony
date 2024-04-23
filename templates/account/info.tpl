@@ -40,7 +40,7 @@
 			</div>
 		</div>
 
-		<div class="card">
+		<div class="card mb-3">
 			<h5 class="card-header">
 				[[user:info.email-history]]
 			</h5>
@@ -55,6 +55,42 @@
 				</ul>
 			</div>
 		</div>
+
+		{{{ if isAdminOrGlobalModerator }}}
+		<div class="card">
+			<h5 class="card-header">
+				[[user:info.moderation-note]]
+			</h5>
+			<div class="card-body">
+				<textarea component="account/moderation-note" class="form-control mb-3" aria-label="[[user:info.moderation-note]]"></textarea>
+
+				<button class="btn btn-sm float-end btn-success" component="account/save-moderation-note">[[user:info.moderation-note.add]]</button>
+				<br/>
+				<div component="account/moderation-note/list">
+					{{{ each moderationNotes }}}
+					<hr/>
+
+					<div>
+						<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{buildAvatar(./user, "24px", true)}</a>
+						<strong>
+							<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" itemprop="author" data-username="{./user.username}" data-uid="{./user.uid}">{./user.username}</a>
+						</strong>
+
+						<div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+							<span class="timeago" title="{./timestampISO}"></span>
+						</div>
+						<br />
+
+						<div class="content">
+							{./note}
+						</div>
+					</div>
+					{{{ end }}}
+				</div>
+				<!-- IMPORT partials/paginator.tpl -->
+			</div>
+		</div>
+		{{{ end }}}
 	</div>
 	<div class="col-sm-6 mb-3">
 		<div class="card mb-3">
@@ -97,23 +133,36 @@
 			<div class="card-body">
 				{{{ if history.bans.length }}}
 				<ul class="ban-history list-unstyled">
-					{{{each history.bans}}}
-					<li>
-						<p>
-							<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "24px", true)}</a>
-							<strong>
-								<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" itemprop="author" data-username="{./user.username}" data-uid="{./user.uid}">{./user.username}</a>
-							</strong>
-							<span class="timestamp timeago" title="{./timestampISO}"></span> &mdash; {isoTimeToLocaleString(./timestampISO, config.userLang)}<br />
-							{{{ if ./until }}}
-							<span class="expiry">[[user:info.banned-until, {isoTimeToLocaleString(./untilISO, config.userLang)}]]</span><br />
+					{{{ each history.bans }}}
+					<li class="mb-4 border-bottom">
+						<div class="mb-1 d-flex align-items-center justify-content-between">
+							<div>
+								<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "24px", true)}</a>
+								<strong>
+									<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" itemprop="author" data-username="{./user.username}" data-uid="{./user.uid}">{./user.username}</a>
+								</strong>
+								<span class="timestamp timeago" title="{./timestampISO}"></span>
+							</div>
+							{{{ if (./type != "unban") }}}
+							<span class="badge text-bg-danger">[[user:banned]]</span>
 							{{{ else }}}
-							<span class="expiry">[[user:info.banned-permanently]]</span><br />
+							<span class="badge text-bg-success">[[user:unbanned]]</span>
 							{{{ end }}}
-							<span class="reason"><strong>[[user:info.banned-reason-label]]</strong>: {./reason}</span>
+						</div>
+						<p class="mb-1">
+							<span class="reason">[[user:info.banned-reason-label]]: <strong>{./reason}</strong></span>
+						</p>
+						<p class="">
+							{{{ if ./until }}}
+							<span class="expiry">[[user:info.banned-until, {isoTimeToLocaleString(./untilISO, config.userLang)}]]</span>
+							{{{ else }}}
+							{{{ if (./type != "unban") }}}
+							<span class="expiry">[[user:info.banned-permanently]]</span>
+							{{{ end }}}
+							{{{ end }}}
 						</p>
 					</li>
-					{{{end}}}
+					{{{ end }}}
 				</ul>
 				{{{ else }}}
 				<div class="alert alert-success">[[user:info.no-ban-history]]</div>
@@ -139,18 +188,28 @@
 				{{{ if history.mutes.length }}}
 				<ul class="ban-history list-unstyled">
 					{{{ each history.mutes }}}
-					<li>
-						<p>
-							<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "24px", true)}</a>
-							<strong>
-								<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" itemprop="author" data-username="{./user.username}" data-uid="{./user.uid}">{./user.username}</a>
-							</strong>
-							<span class="timestamp timeago" title="{./timestampISO}"></span> &mdash; {isoTimeToLocaleString(./timestampISO, config.userLang)}<br />
-							{{{ if ./until }}}
-							<span class="expiry">[[user:info.muted-until, {isoTimeToLocaleString(./untilISO, config.userLang)}]]</span><br />
+					<li class="mb-4 border-bottom">
+						<div class="mb-1 d-flex align-items-center justify-content-between">
+							<div>
+								<a href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "24px", true)}</a>
+								<strong>
+									<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" itemprop="author" data-username="{./user.username}" data-uid="{./user.uid}">{./user.username}</a>
+								</strong>
+								<span class="timestamp timeago" title="{./timestampISO}"></span>
+							</div>
+							{{{ if (./type != "unmute") }}}
+							<span class="badge text-bg-danger">[[user:muted]]</span>
+							{{{ else }}}
+							<span class="badge text-bg-success">[[user:unmuted]]</span>
 							{{{ end }}}
-
-							<span class="reason"><strong>[[user:info.banned-reason-label]]</strong>: {./reason}</span>
+						</div>
+						<p class="mb-1">
+							<span class="reason">[[user:info.banned-reason-label]]: <strong>{./reason}</strong></span>
+						</p>
+						<p class="">
+							{{{ if ./until }}}
+							<span class="expiry">[[user:info.muted-until, {isoTimeToLocaleString(./untilISO, config.userLang)}]]</span>
+							{{{ end }}}
 						</p>
 					</li>
 					{{{ end }}}
@@ -160,42 +219,6 @@
 				{{{ end }}}
 			</div>
 		</div>
-
-		{{{ if isAdminOrGlobalModerator }}}
-		<div class="card">
-			<h5 class="card-header">
-				[[user:info.moderation-note]]
-			</h5>
-			<div class="card-body">
-				<textarea component="account/moderation-note" class="form-control mb-3" aria-label="[[user:info.moderation-note]]"></textarea>
-
-				<button class="btn btn-sm float-end btn-success" component="account/save-moderation-note">[[user:info.moderation-note.add]]</button>
-				<br/>
-				<div component="account/moderation-note/list">
-					{{{ each moderationNotes }}}
-					<hr/>
-
-					<div>
-						<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{buildAvatar(./user, "24px", true)}</a>
-						<strong>
-							<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" itemprop="author" data-username="{./user.username}" data-uid="{./user.uid}">{./user.username}</a>
-						</strong>
-
-						<div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
-							<span class="timeago" title="{./timestampISO}"></span>
-						</div>
-						<br />
-
-						<div class="content">
-							{./note}
-						</div>
-					</div>
-					{{{ end }}}
-				</div>
-				<!-- IMPORT partials/paginator.tpl -->
-			</div>
-		</div>
-		{{{ end }}}
 	</div>
 </div>
 
