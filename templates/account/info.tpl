@@ -70,19 +70,29 @@
 					{{{ each moderationNotes }}}
 					<hr/>
 
-					<div>
-						<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{buildAvatar(./user, "24px", true)}</a>
-						<strong>
-							<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" itemprop="author" data-username="{./user.username}" data-uid="{./user.uid}">{./user.username}</a>
-						</strong>
+					<div data-id="{./id}">
+						<div class="mb-1">
+							<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{buildAvatar(./user, "24px", true)}</a>
 
-						<div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+							<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" class="fw-bold" itemprop="author" data-username="{./user.username}" data-uid="{./user.uid}">{./user.username}</a>
+
 							<span class="timeago" title="{./timestampISO}"></span>
 						</div>
-						<br />
 
-						<div class="content">
-							{./note}
+
+						<div component="account/moderation-note/content-area" class="d-flex flex-column">
+							<div class="content">
+								{./note}
+							</div>
+							<button component="account/moderation-note/edit" class="btn btn-sm btn-link align-self-end">[[topic:edit]]</button>
+						</div>
+
+						<div component="account/moderation-note/edit-area" class="d-flex flex-column gap-2">
+							<textarea class="form-control w-100 overflow-hidden">{./rawNote}</textarea>
+							<div class="align-self-end">
+								<button component="account/moderation-note/cancel-edit" class="btn btn-sm btn-link text-danger align-self-end">[[global:cancel]]</button>
+								<button component="account/moderation-note/save-edit" class="btn btn-sm btn-primary align-self-end">[[global:save]]</button>
+							</div>
 						</div>
 					</div>
 					{{{ end }}}
