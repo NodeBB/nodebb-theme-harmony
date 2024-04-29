@@ -116,7 +116,7 @@
 	<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" component="post/flag" role="menuitem" href="#"><i class="fa fa-fw text-secondary fa-flag"></i> [[topic:flag-post]]</a>
 </li>
 <li {{{ if !posts.flags.flagged }}}hidden{{{ end }}} class="disabled text-secondary">
-	<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" component="post/already-flagged" role="menuitem" href="#"><i class="fa fa-fw text-secondary fa-flag"></i> [[topic:already-flagged]]</a>
+	<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" component="post/already-flagged" role="menuitem" href="#" data-flag-id="{posts.flagId}"><i class="fa fa-fw text-secondary fa-flag"></i> [[topic:already-flagged]]</a>
 </li>
 
 {{{ if (!posts.selfPost && posts.uid) }}}
