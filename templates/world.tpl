@@ -12,11 +12,19 @@
 		<h1 class="tracking-tight fs-2 fw-semibold mb-0 text-center">{./name}</h1>
 	</div>
 	{{{ if ./descriptionParsed }}}
-	<div class="description text-secondary text-sm w-100 {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
+	<p class="description text-secondary text-sm w-100 {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
 		{./descriptionParsed}
-	</div>
-	<a class="text-sm" href="{config.relative_path}/popular?term=daily&cid=-1">[[activitypub:world.popular]]</a>
+	</p>
 	{{{ end }}}
+
+	<p class="description text-secondary text-sm w-100 {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
+		<a class="btn btn-sm btn-link" href="{config.relative_path}/popular?term=daily&cid=-1">[[activitypub:world.popular]]</a>
+		<a class="btn btn-sm btn-link" href="{config.relative_path}/recent?cid=-1">[[activitypub:world.recent]]</a>
+		<button class="btn btn-sm btn-link" id="world-help">
+			<i class="fa fa-question"></i>
+			[[activitypub:world.help]]
+		</button>
+	</p>
 </div>
 
 <div class="row">
