@@ -67,9 +67,13 @@
 
 		{{{ if (loggedIn && (!isSelf && !banned)) }}}
 		<hr class="w-100 my-2"/>
-		<a href="#" component="account/flag" class="btn-ghost-sm ff-secondary">
+		<a {{{if flagged }}}hidden{{{end}}} href="#" component="account/flag" class="btn-ghost-sm ff-secondary">
 			<i class="flex-shrink-0 fa-solid fa-flag text-danger"></i>
 			<div class="flex-grow-1 text-nowrap">[[user:flag-profile]]</div>
+		</a>
+		<a {{{if !flagged }}}hidden{{{end}}} href="#" component="account/already-flagged" class="btn-ghost-sm ff-secondary" data-flag-id="{flagId}">
+			<i class="flex-shrink-0 fa-solid fa-flag text-danger"></i>
+			<div class="flex-grow-1 text-nowrap">[[user:profile-flagged]]</div>
 		</a>
 		<a href="#" component="account/block" class="btn-ghost-sm ff-secondary {{{ if isBlocked }}}hidden{{{ end }}}">
 			<i class="flex-shrink-0 fa-solid fa-ban text-danger"></i>
