@@ -87,7 +87,7 @@
 				<div class="d-flex gap-2 align-items-center">
 					<a class="d-flex text-decoration-none" href="{config.relative_path}/user/{./user.userslug}">{buildAvatar(./user, "16px", true)}</a>
 					<a href="{config.relative_path}/user/{./user.userslug}">{./user.username}</a>
-					<span class="timeago text-muted" title="{./datetimeISO}"></span>
+					<span class="timeago text-muted text-nowrap" title="{./datetimeISO}"></span>
 				</div>
 				<div>
 					<ul class="list-unstyled">

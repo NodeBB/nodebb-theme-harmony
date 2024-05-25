@@ -15,26 +15,20 @@
 							<label for="username">{allowLoginWith}</label>
 							<input class="form-control" type="text" placeholder="{allowLoginWith}" name="username" id="username" autocorrect="off" autocapitalize="off" autocomplete="nickname" value="{username}" aria-required="true"/>
 						</div>
+
 						<div class="mb-2 d-flex flex-column gap-2">
-							<div class="d-flex justify-content-between align-items-center">
-								<label for="password">[[user:password]]</label>
-								{{{ if allowPasswordReset }}}
-								<a id="reset-link" class="text-sm text-reset text-decoration-underline" href="{config.relative_path}/reset">[[login:forgot-password]]</a>
-								{{{ end }}}
-							</div>
+							<label for="password">[[user:password]]</label>
 							<div>
 								<input class="form-control" type="password" placeholder="[[user:password]]" name="password" id="password" autocomplete="current-password" autocapitalize="off" aria-required="true"/>
 								<p id="caps-lock-warning" class="text-danger hidden text-sm mb-0 form-text" aria-live="polite" role="alert" aria-atomic="true">
 									<i class="fa fa-exclamation-triangle"></i> [[login:caps-lock-enabled]]
 								</p>
 							</div>
-						</div>
-						<div class="mb-2">
-							<div class="checkbox">
-								<label>
-									<input type="checkbox" name="remember" id="remember" checked /> [[login:remember-me]]
-								</label>
+							{{{ if allowPasswordReset }}}
+							<div>
+								<a id="reset-link" class="text-sm text-reset text-decoration-underline" href="{config.relative_path}/reset">[[login:forgot-password]]</a>
 							</div>
+							{{{ end }}}
 						</div>
 
 						{{{ each loginFormEntry }}}
@@ -48,6 +42,11 @@
 						<input type="hidden" name="noscript" id="noscript" value="true" />
 
 						<button class="btn btn-primary" id="login" type="submit">[[global:login]]</button>
+
+						<div class="form-check mb-2">
+							<input class="form-check-input" type="checkbox" name="remember" id="remember" checked />
+							<label class="form-check-label" for="remember">[[login:remember-me]]</label>
+						</div>
 
 						<div class="alert alert-danger {{{ if !error }}} hidden{{{ end }}}" id="login-error-notify" role="alert" aria-atomic="true">
 							<strong>[[login:failed-login-attempt]]</strong>
