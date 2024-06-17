@@ -4,9 +4,9 @@
 {{{ end }}}
 {{{ if widgets.header.length }}}
 <div data-widget-area="header">
-	{{{each widgets.header}}}
-	{{widgets.header.html}}
-	{{{end}}}
+{{{each widgets.header}}}
+{{widgets.header.html}}
+{{{end}}}
 </div>
 {{{ end }}}
 
@@ -27,28 +27,22 @@
 			<div class="topic-info d-flex gap-2 align-items-center flex-wrap {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
 				<span component="topic/labels" class="d-flex gap-2 {{{ if (!scheduled && (!pinned && (!locked && (!oldCid && !icons.length)))) }}}hidden{{{ end }}}">
 					<span component="topic/scheduled" class="badge badge border border-gray-300 text-body {{{ if !scheduled }}}hidden{{{ end }}}">
-						<i class="fa fa-clock-o"></i>
-						[[topic:scheduled]]
+						<i class="fa fa-clock-o"></i> [[topic:scheduled]]
 					</span>
 					<span component="topic/pinned" class="badge badge border border-gray-300 text-body {{{ if (scheduled || !pinned) }}}hidden{{{ end }}}">
-						<i class="fa fa-thumb-tack"></i>
-						{{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {isoTimeToLocaleString(./pinExpiryISO, config.userLang)}]]{{{ end }}}
+						<i class="fa fa-thumb-tack"></i> {{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {isoTimeToLocaleString(./pinExpiryISO, config.userLang)}]]{{{ end }}}
 					</span>
 					<span component="topic/locked" class="badge badge border border-gray-300 text-body {{{ if !locked }}}hidden{{{ end }}}">
-						<i class="fa fa-lock"></i>
-						[[topic:locked]]
+						<i class="fa fa-lock"></i> [[topic:locked]]
 					</span>
 					<a component="topic/moved" href="{config.relative_path}/category/{oldCid}" class="badge badge border border-gray-300 text-body text-decoration-none {{{ if !oldCid }}}hidden{{{ end }}}">
-						<i class="fa fa-arrow-circle-right"></i>
-						{{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}
+						<i class="fa fa-arrow-circle-right"></i> {{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}
 					</a>
 					{{{each icons}}}<span class="lh-1">{@value}</span>{{{end}}}
 				</span>
 				{function.buildCategoryLabel, category, "a", "border"}
 				<div data-tid="{./tid}" component="topic/tags" class="lh-1 tags tag-list d-flex flex-wrap hidden-xs hidden-empty gap-2"><!-- IMPORT partials/topic/tags.tpl --></div>
-				<div class="d-flex hidden-xs gap-2">
-					<!-- IMPORT partials/topic/stats.tpl -->
-				</div>
+				<div class="d-flex hidden-xs gap-2"><!-- IMPORT partials/topic/stats.tpl --></div>
 			</div>
 		</div>
 		<div class="d-flex gap-2 justify-content-end align-items-center mt-2 hidden-empty" component="topic/thumb/list"><!-- IMPORT partials/topic/thumbs.tpl --></div>
@@ -57,15 +51,12 @@
 	<div class="row mb-4 mb-lg-0">
 		<div class="topic {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 			<!-- IMPORT partials/post_bar.tpl -->
-
 			{{{ if merger }}}
 			<!-- IMPORT partials/topic/merged-message.tpl -->
 			{{{ end }}}
-
 			{{{ if forker }}}
 			<!-- IMPORT partials/topic/forked-message.tpl -->
 			{{{ end }}}
-
 			{{{ if !scheduled }}}
 			<!-- IMPORT partials/topic/deleted-message.tpl -->
 			{{{ end }}}
@@ -76,7 +67,6 @@
 					{{{ each posts }}}
 						<li component="post" class="pt-4 {{{ if posts.deleted }}}deleted{{{ end }}} {{{ if posts.selfPost }}}self-post{{{ end }}} {{{ if posts.topicOwnerPost }}}topic-owner-post{{{ end }}}" <!-- IMPORT partials/data/topic.tpl -->>
 							<a component="post/anchor" data-index="{./index}" id="{increment(./index, "1")}"></a>
-
 							<meta itemprop="datePublished" content="{./timestampISO}">
 							{{{ if ./editedISO }}}
 							<meta itemprop="dateModified" content="{./editedISO}">
@@ -85,9 +75,7 @@
 							<!-- IMPORT partials/topic/post.tpl -->
 						</li>
 						{{{ if (config.topicPostSort != "most_votes") }}}
-						{{{ each ./events}}}
-						<!-- IMPORT partials/topic/event.tpl -->
-						{{{ end }}}
+						{{{ each ./events}}}<!-- IMPORT partials/topic/event.tpl -->{{{ end }}}
 						{{{ end }}}
 					{{{ end }}}
 					</ul>
@@ -110,17 +98,17 @@
 			{{{ end }}}
 		</div>
 		<div data-widget-area="sidebar" class="col-lg-3 col-sm-12 {{{ if !widgets.sidebar.length }}}hidden{{{ end }}}">
-			{{{each widgets.sidebar}}}
-			{{widgets.sidebar.html}}
-			{{{end}}}
+		{{{each widgets.sidebar}}}
+		{{widgets.sidebar.html}}
+		{{{end}}}
 		</div>
 	</div>
 </div>
 
 <div data-widget-area="footer">
-	{{{each widgets.footer}}}
-	{{widgets.footer.html}}
-	{{{end}}}
+{{{each widgets.footer}}}
+{{widgets.footer.html}}
+{{{end}}}
 </div>
 
 {{{ if !config.usePagination }}}

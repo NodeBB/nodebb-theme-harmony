@@ -24,7 +24,7 @@
 <div class="alert alert-warning text-center">{noItemsFoundKey}</div>
 {{{ end }}}
 
-<div class="">
+<div>
 	<!-- IMPORT partials/posts_list.tpl -->
 
 	{{{ if config.usePagination }}}

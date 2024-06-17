@@ -15,16 +15,13 @@
 					{{{ each navigation }}}
 					{{{ if displayMenuItem(@root, @index) }}}
 					<li class="nav-item {./class}{{{ if ./dropdown }}} dropend{{{ end }}}" title="{./title}">
-						<a class="nav-link navigation-link px-3 py-2 {{{ if ./dropdown }}}dropdown-toggle{{{ end }}}"
-						{{{ if ./dropdown }}} href="#" role="button" data-bs-toggle="collapse" data-bs-target="#collapse-target-{@index}" onclick="event.stopPropagation();" {{{ else }}} href="{./route}"{{{ end }}} {{{ if ./id }}}id="{./id}"{{{ end }}}{{{ if ./targetBlank }}} target="_blank"{{{ end }}}>
+						<a class="nav-link navigation-link px-3 py-2 {{{ if ./dropdown }}}dropdown-toggle{{{ end }}}" {{{ if ./dropdown }}} href="#" role="button" data-bs-toggle="collapse" data-bs-target="#collapse-target-{@index}" onclick="event.stopPropagation();" {{{ else }}} href="{./route}"{{{ end }}} {{{ if ./id }}}id="{./id}"{{{ end }}}{{{ if ./targetBlank }}} target="_blank"{{{ end }}}>
 							<span class="d-inline-flex justify-content-between align-items-center w-100">
 								<span class="text-nowrap">
 									{{{ if ./iconClass }}}
 									<i class="fa fa-fw {./iconClass}" data-content="{./content}"></i>
 									{{{ end }}}
-									{{{ if ./text }}}
-									<span class="nav-text px-2 fw-semibold">{./text}</span>
-									{{{ end }}}
+									{{{ if ./text }}}<span class="nav-text px-2 fw-semibold">{./text}</span>{{{ end }}}
 								</span>
 								<span component="navigation/count" class="badge rounded-1 bg-primary {{{ if !./content }}}hidden{{{ end }}}">{./content}</span>
 							</span>
