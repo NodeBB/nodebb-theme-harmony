@@ -100,7 +100,7 @@
 			<label class="form-label text-sm" for="topicsPerPage">[[user:topics-per-page]] ([[user:max-items-per-page, {maxTopicsPerPage}]])</label>
 			<input type="text" class="form-control form-control-sm" id="topicsPerPage" data-property="topicsPerPage" value="{settings.topicsPerPage}">
 		</div>
-		<div class="">
+		<div>
 			<label class="form-label text-sm" for="postsPerPage">[[user:posts-per-page]] ([[user:max-items-per-page, {maxPostsPerPage}]])</label>
 			<input type="text" class="form-control form-control-sm" id="postsPerPage" data-property="postsPerPage" value="{settings.postsPerPage}">
 		</div>
@@ -119,7 +119,7 @@
 				<option value="most_views" {{{ if (settings.categoryTopicSort == "most_views") }}}selected{{{ end }}}>[[topic:most-views]]</option>
 			</select>
 		</div>
-		<div class="">
+		<div>
 			<label class="form-label text-sm" for="topicPostSort">[[user:topic-post-sort]]</label>
 			<select class="form-select form-select-sm" id="topicPostSort" data-property="topicPostSort">
 				<option value="oldest_to_newest" {{{ if (settings.topicPostSort == "oldest_to_newest") }}}selected{{{ end }}}>[[topic:oldest-to-newest]]</option>
@@ -132,7 +132,7 @@
 		{{{ if !disableEmailSubscriptions }}}
 		<hr/>
 		<h6 class="fw-bold">[[global:email]]</h6>
-		<div class="">
+		<div>
 			<div class="mb-2">
 				<label class="form-label text-sm" for="dailyDigestFreq">[[user:digest-label]]</label>
 				<select class="form-select form-select-sm" id="dailyDigestFreq" data-property="dailyDigestFreq" autocomplete="off">
@@ -148,7 +148,7 @@
 		{{{ each customSettings}}}
 		<hr/>
 		<h6 class="fw-bold">{./title}</h6>
-		<div class="">
+		<div>
 			{./content}
 		</div>
 		{{{end}}}
@@ -177,7 +177,7 @@
 		{{{ end }}}
 
 		<h6 class="fw-bold">[[topic:watch]]</h6>
-		<div class="">
+		<div>
 			<div class="form-check form-switch">
 				<input class="form-check-input" type="checkbox" role="switch" id="followTopicsOnCreate" data-property="followTopicsOnCreate" {{{ if settings.followTopicsOnCreate }}}checked{{{ end }}}/>
 				<label class="form-check-label text-sm" for="followTopicsOnCreate">[[user:follow-topics-you-create]]</label>

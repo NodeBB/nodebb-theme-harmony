@@ -9,7 +9,7 @@
 		<div class="mb-2 mb-md-0">
 		<!-- IMPORT partials/users_list_menu.tpl -->
 		</div>
-		<div class="">
+		<div>
 			<div class="d-flex justify-content-end gap-2">
 				{{{ if showInviteButton }}}
 				<button component="user/invite" class="btn btn-primary btn-sm text-nowrap"><i class="fa fa-user-plus"></i> [[users:invite]]</button>

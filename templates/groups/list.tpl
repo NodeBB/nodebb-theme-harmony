@@ -16,9 +16,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="">
+		<div>
 			<div class="d-flex justify-content-end gap-2">
-				<div class="">
+				<div>
 					{{{ if allowGroupCreation }}}
 					<button class="btn btn-primary btn-sm text-nowrap" data-action="new"><i class="fa fa-users"></i> [[groups:new-group]]</button>
 					{{{ end }}}
@@ -28,7 +28,7 @@
 						<option value="date">[[groups:details.creation-date]]</option>
 					</select>
 				</div>
-				<div class="">
+				<div>
 					<div class="input-group">
 						<input type="text" class="form-control form-control-sm" placeholder="[[global:search]]" name="query" id="search-text">
 						<button id="search-button" class="btn btn-primary btn-sm" aria-label="[[global:search]]">

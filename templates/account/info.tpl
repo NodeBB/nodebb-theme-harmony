@@ -198,7 +198,7 @@
 						<p class="mb-1">
 							<span class="reason">[[user:info.banned-reason-label]]: <strong>{./reason}</strong></span>
 						</p>
-						<p class="">
+						<p>
 							{{{ if ./until }}}
 							<span class="expiry">[[user:info.banned-until, {isoTimeToLocaleString(./untilISO, config.userLang)}]]</span>
 							{{{ else }}}
@@ -252,7 +252,7 @@
 						<p class="mb-1">
 							<span class="reason">[[user:info.banned-reason-label]]: <strong>{./reason}</strong></span>
 						</p>
-						<p class="">
+						<p>
 							{{{ if ./until }}}
 							<span class="expiry">[[user:info.muted-until, {isoTimeToLocaleString(./untilISO, config.userLang)}]]</span>
 							{{{ end }}}

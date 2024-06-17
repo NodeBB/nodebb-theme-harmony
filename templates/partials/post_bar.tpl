@@ -18,9 +18,7 @@
 				{{{ end }}}
 
 				{{{ if browsingUsers }}}
-				<div class="hidden-xs">
-				<!-- IMPORT partials/topic/browsing-users.tpl -->
-				</div>
+				<div class="hidden-xs"><!-- IMPORT partials/topic/browsing-users.tpl --></div>
 				{{{ end }}}
 			</div>
 			<!-- IMPORT partials/topic/reply-button.tpl -->
