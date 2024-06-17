@@ -97,6 +97,10 @@
 		<a component="post/reply" href="#" class="btn-ghost-sm {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="[[topic:reply]]"><i class="fa fa-fw fa-reply text-primary"></i></a>
 		<a component="post/quote" href="#" class="btn-ghost-sm {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="[[topic:quote]]"><i class="fa fa-fw fa-quote-right text-primary"></i></a>
 
+		{{{ if ./announces }}}
+		<a component="post/announce-count" href="#" class="btn-ghost-sm" title="[[activitypub:announcers]]"><i class="fa fa-share-alt text-primary"></i> {./announces}</a>
+		{{{ end }}}
+
 		{{{ if !reputation:disabled }}}
 		<div class="d-flex votes align-items-center">
 			<a component="post/upvote" href="#" class="btn-ghost-sm {{{ if posts.upvoted }}}upvoted{{{ end }}}" title="[[topic:upvote-post]]">
@@ -105,7 +109,7 @@
 
 			<meta itemprop="upvoteCount" content="{posts.upvotes}">
 			<meta itemprop="downvoteCount" content="{posts.downvotes}">
-			<a href="#" class="d-inline-block px-2 mx-1 btn-ghost-sm ff-secondary" component="post/vote-count" data-votes="{posts.votes}" title="[[global:voters]]">{posts.votes}</a>
+			<a href="#" class="px-2 mx-1 btn-ghost-sm ff-secondary" component="post/vote-count" data-votes="{posts.votes}" title="[[global:voters]]">{posts.votes}</a>
 
 			{{{ if !downvote:disabled }}}
 			<a component="post/downvote" href="#" class="btn-ghost-sm {{{ if posts.downvoted }}}downvoted{{{ end }}}" title="[[topic:downvote-post]]">
