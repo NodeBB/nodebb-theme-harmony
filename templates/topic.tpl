@@ -12,6 +12,7 @@
 
 <div itemid="{url}" itemscope itemtype="https://schema.org/DiscussionForumPosting">
 	<meta itemprop="headline" content="{escape(titleRaw)}">
+	<meta itemprop="text" content="{escape(titleRaw)}">
 	<meta itemprop="url" content="{url}">
 	<meta itemprop="datePublished" content="{timestampISO}">
 	<meta itemprop="dateModified" content="{lastposttimeISO}">
