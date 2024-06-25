@@ -5,7 +5,7 @@
 	<span class="timeline-text small d-flex align-items-center gap-1 flex-wrap">
 		{./text}
 	</span>
-	{{{ if privileges.isAdminOrMod }}}
+	{{{ if (privileges.isAdminOrMod && ./id) }}}
 	<span component="topic/event/delete" data-topic-event-id="{./id}" data-topic-event-type="{./type}" class="timeline-text pointer" title="[[topic:delete-event]]"><i class="fa fa-trash"></i></span>
 	{{{ end }}}
 </li>
