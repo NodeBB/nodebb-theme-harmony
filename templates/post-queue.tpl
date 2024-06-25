@@ -198,6 +198,10 @@
 					<div class="post-content-editable flex-grow-1 hidden">
 						<textarea class="form-control w-100 h-100 p-3">{posts.data.rawContent}</textarea>
 					</div>
+					<div component="post-queue/link-container" class="hidden border-top mx-3 py-3">
+						<label class="text-secondary form-text mb-2">[[post-queue:links-in-this-post]]</label>
+						<ul component="post-queue/link-container/list" class="text-sm"></ul>
+					</div>
 				</div>
 			</div>
 		</div>
