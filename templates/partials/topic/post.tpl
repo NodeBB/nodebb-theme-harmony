@@ -9,7 +9,14 @@
 	<div class="bg-body d-none d-sm-block rounded-circle" style="outline: 2px solid var(--bs-body-bg);">
 		<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" aria-label="[[aria:user-avatar-for, {./user.username}]]">
 			{buildAvatar(posts.user, "48px", true, "", "user/picture")}
-			<span component="user/status" class="position-absolute translate-middle-y border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
+			{{{ if ./user.isLocal }}}
+			<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
+			{{{ else }}}
+			<span component="user/locality" class="position-absolute top-100 start-100 lh-1 border border-white border-2 rounded-circle small" title="[[global:remote-user]]">
+				<span class="visually-hidden">[[global:remote-user]]</span>
+				<i class="fa fa-globe"></i>
+			</span>
+			{{{ end }}}
 		</a>
 	</div>
 	<div class="post-container d-flex flex-grow-1 flex-column w-100" style="min-width:0;">
@@ -20,7 +27,14 @@
 			<div class="bg-body d-sm-none">
 				<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 					{buildAvatar(posts.user, "20px", true, "", "user/picture")}
-					<span component="user/status" class="position-absolute translate-middle-y border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
+					{{{ if ./user.isLocal }}}
+					<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
+					{{{ else }}}
+					<span component="user/locality" class="position-absolute top-100 start-100 lh-1 border border-white border-2 rounded-circle small" title="[[global:remote-user]]">
+						<span class="visually-hidden">[[global:remote-user]]</span>
+						<i class="fa fa-globe"></i>
+					</span>
+					{{{ end }}}
 				</a>
 			</div>
 
