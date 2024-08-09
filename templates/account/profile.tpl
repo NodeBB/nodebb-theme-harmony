@@ -23,7 +23,7 @@
 {{{ end }}}
 
 <div class="account-stats container">
-	<div class="row row-cols-2 row-cols-xl-3 row-cols-xxl-4 g-2">
+	<div class="row row-cols-2 row-cols-xl-3 row-cols-xxl-4 g-2 mb-5">
 		{{{ if !reputation:disabled }}}
 		<div class="stat">
 			<div class="align-items-center justify-content-center card card-header px-0 py-3 border-0 rounded-1 h-100">
@@ -88,6 +88,21 @@
 				<span class="fs-6 ff-secondary">{age}</span>
 			</div>
 		</div>
+		{{{ end }}}
+
+		{{{ each customUserFields }}}
+		{{{ if ./value }}}
+		<div class="stat">
+			<div class="align-items-center justify-content-center card card-header px-0 py-3 border-0 rounded-1 h-100 gap-2">
+				<span class="stat-label text-xs fw-semibold"><span>{./name}</span></span>
+				{{{ if (./type == "input-link") }}}
+				<a class="text-sm text-center text-break w-100 px-2 ff-secondary text-underline text-reset" href="{./value}" rel="nofollow noreferrer me">{./value}</a>
+				{{{ else }}}
+				<span class="text-center fs-6 ff-secondary">{./value}</span>
+				{{{ end }}}
+			</div>
+		</div>
+		{{{ end }}}
 		{{{ end }}}
 	</div>
 </div>
