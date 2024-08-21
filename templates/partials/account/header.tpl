@@ -1,10 +1,4 @@
 <div class="account w-100 mx-auto">
-	<div data-widget-area="header">
-		{{{each widgets.header}}}
-		{{widgets.header.html}}
-		{{{end}}}
-	</div>
-
 	<div class="cover position-absolute start-0 top-0 w-100" component="account/cover" style="background-image: url({cover:url}); background-position: {cover:position};">
 		<div class="container">
 			{{{ if allowCoverPicture }}}
@@ -90,6 +84,12 @@
 				{{{ end }}}
 			</div>
 		</div>
+	</div>
+
+	<div data-widget-area="header">
+		{{{each widgets.header}}}
+		{{widgets.header.html}}
+		{{{end}}}
 	</div>
 
 	<div class="d-flex flex-column flex-md-row">
