@@ -11,6 +11,7 @@
 				<div class="form-check form-switch">
 					<input type="checkbox" class="form-check-input" id="enableBreadcrumbs" name="enableBreadcrumbs" />
 					<label for="enableBreadcrumbs" class="form-check-label">[[themes/harmony:settings.enableBreadcrumbs]]</label>
+					<p class="form-text">[[themes/harmony:settings.enableBreadcrumbs.why]]</p>
 				</div>
 				<div class="form-check form-switch">
 					<input type="checkbox" class="form-check-input" id="centerHeaderElements" name="centerHeaderElements" />
