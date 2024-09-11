@@ -20,7 +20,7 @@
 		</div>
 
 		<div class="btn-group bottom-sheet" component="post-queue/bulk-actions">
-			<button type="button" class="btn-ghost-sm ff-secondary dropdown-toggle" data-bs-toggle="dropdown" autocomplete="off" aria-haspopup="true" aria-expanded="false">
+			<button type="button" class="btn btn-ghost btn-sm ff-secondary dropdown-toggle d-flex align-items-center gap-2" data-bs-toggle="dropdown" autocomplete="off" aria-haspopup="true" aria-expanded="false">
 				<i class="fa fa-clone text-primary"></i><span class="fw-semibold"> [[post-queue:bulk-actions]]</span>
 			</button>
 			<ul class="dropdown-menu p-1 text-sm dropdown-menu-end" role="menu">

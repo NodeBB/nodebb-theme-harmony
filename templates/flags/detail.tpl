@@ -3,14 +3,14 @@
 <div class="d-flex flex-column flex-md-row">
 	<div class="flex-shrink-0 d-flex flex-column gap-3 border-end-md text-sm mb-3 pe-4" style="flex-basis: 240px !important;">
 		<div class="d-grid gap-1">
-			<a class="btn btn-ghost ff-secondary border btn-sm justify-content-start" href="{config.relative_path}/{type_path}/{targetId}">
+			<a class="btn btn-ghost btn-sm ff-secondary border d-flex gap-2 align-items-center" href="{config.relative_path}/{type_path}/{targetId}">
 				<i class="fa fa-fw fa-external-link text-primary"></i>
 				[[flags:go-to-target]]
 			</a>
 
 			{{{ if target.uid }}}
 			<div class="btn-group dropend" data-uid="{target.uid}">
-				<button type="button" class="btn btn-ghost ff-secondary border btn-sm justify-content-start dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<button type="button" class="btn btn-ghost btn-sm ff-secondary border d-flex gap-2 align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<i class="fa fa-fw fa-street-view text-primary"></i>
 					[[flags:flagged-user]]
 					<i class="fa fa-chevron-right ms-auto text-secondary"></i>
@@ -38,7 +38,7 @@
 			</div>
 			{{{ end }}}
 
-			<a class="btn btn-ghost ff-secondary border btn-sm justify-content-start" href="#" data-action="assign">
+			<a class="btn btn-ghost btn-sm ff-secondary border d-flex gap-2 align-items-center" href="#" data-action="assign">
 				<i class="fa fa-fw fa-id-card-o text-primary"></i>
 				[[flags:assign-to-me]]
 			</a>
