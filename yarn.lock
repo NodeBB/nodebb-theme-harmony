@@ -55,15 +55,15 @@
   dependencies:
     levn "^0.4.1"
 
-"@fontsource/inter@5.0.15":
-  version "5.0.15"
-  resolved "https://registry.npmjs.org/@fontsource/inter/-/inter-5.0.15.tgz"
-  integrity sha512-/IoWYEXl8lqJEx50JqNPT+bI4VNwxb/bg2oOfvG8PiEsDsmHRFvWBVHlohBNn1+QdBf+KbAjU/gb4vlGOSsVWw==
+"@fontsource/inter@5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-5.1.0.tgz#ab629b2c662457022d2d6a29854b8dc8ba538c47"
+  integrity sha512-zKZR3kf1G0noIes1frLfOHP5EXVVm0M7sV/l9f/AaYf+M/DId35FO4LkigWjqWYjTJZGgplhdv4cB+ssvCqr5A==
 
-"@fontsource/poppins@5.0.8":
-  version "5.0.8"
-  resolved "https://registry.npmjs.org/@fontsource/poppins/-/poppins-5.0.8.tgz"
-  integrity sha512-P8owfYWluoUY5Nyzk4gT/L6LmLmseP6ezFWhj6VBUa5pRIdnCvNJpoQ6i/vhekjtJOfqX6nKlB+LCttoUl2GQQ==
+"@fontsource/poppins@5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/poppins/-/poppins-5.1.0.tgz#919205f53d99ec4751a945057ef525f06681df8a"
+  integrity sha512-tpLXlnNi2fwQjiipvuj4uNFHCdoLA8izRsKdoexZuEzjx0r/g1aKLf4ta6lFgF7L+/+AFdmaXFlUwwvmDzYH+g==
 
 "@humanwhocodes/module-importer@^1.0.1":
   version "1.0.1"
