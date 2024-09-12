@@ -14,14 +14,14 @@
 	{{{ each posts }}}
 	<li data-tid="{posts.topic.tid}" data-pid="{posts.pid}" class="d-flex flex-column gap-1">
 		<a href="{config.relative_path}/post/{encodeURIComponent(posts.pid)}"
-			class="btn-ghost-sm ff-secondary rounded-1 text-reset d-block text-truncate px-2 py-1">
+			class="btn btn-ghost btn-sm ff-secondary rounded-1 text-start text-reset d-block text-truncate px-2 py-1">
 			<span class="quick-search-title fw-semibold text-sm">{posts.topic.title}</span>
 			<br/>
 			<p class="snippet text-xs text-break text-wrap mb-0">
 			{posts.snippet}
 			</p>
 		</a>
-		<div class="d-flex gap-1 post-info px-2 text-xs">
+		<div class="d-flex gap-2 post-info px-2 text-xs">
 			<div class="category-item d-inline-block ff-secondary">
 				{function.buildCategoryLabel, posts.category, "span"}
 			</div>

@@ -10,9 +10,9 @@
 			<div class="text-sm d-flex flex-wrap align-items-center gap-2">
 				[[topic:sort-by]]
 				<div class="d-flex gap-2">
-					<a href="?sort=alpha" class="btn-ghost ff-secondary fw-semibold {{{ if (sort == "alpha") }}}active{{{ end }}}">[[groups:details.group-name]]</a>
-					<a href="?sort=count" class="btn-ghost ff-secondary fw-semibold {{{ if (sort == "count") }}}active{{{ end }}}">[[groups:details.member-count]]</a>
-					<a href="?sort=date" class="btn-ghost ff-secondary fw-semibold {{{ if (sort == "date") }}}active{{{ end }}}">[[groups:details.creation-date]]</a>
+					<a href="?sort=alpha" class="btn btn-ghost btn-sm ff-secondary fw-semibold {{{ if (sort == "alpha") }}}active{{{ end }}}">[[groups:details.group-name]]</a>
+					<a href="?sort=count" class="btn btn-ghost btn-sm ff-secondary fw-semibold {{{ if (sort == "count") }}}active{{{ end }}}">[[groups:details.member-count]]</a>
+					<a href="?sort=date" class="btn btn-ghost btn-sm ff-secondary fw-semibold {{{ if (sort == "date") }}}active{{{ end }}}">[[groups:details.creation-date]]</a>
 				</div>
 			</div>
 		</div>

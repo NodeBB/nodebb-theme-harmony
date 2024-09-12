@@ -10,8 +10,8 @@
 			<div class="d-flex gap-1">
 				<input autocomplete="off" type="text" class="form-control" placeholder="[[global:search]]" name="query" value="" aria-label="[[search:type-to-search]]">
 
-				<a class="btn-ghost advanced-search-link" href="{config.relative_path}/search" title="[[search:advanced-search]]">
-					<i class="fa fa-gears fa-fw text-muted"></i>
+				<a class="btn btn-ghost advanced-search-link p-2" href="{config.relative_path}/search" title="[[search:advanced-search]]">
+					<i class="fa fa-gears text-muted"></i>
 				</a>
 			</div>
 
