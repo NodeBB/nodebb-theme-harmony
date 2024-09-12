@@ -90,13 +90,6 @@ body:not(.page-user) {
 	background-color: initial;
 }
 
-.btn-link {
-	&:hover, &.active {
-		background-color: var(--btn-ghost-hover-color);
-		text-decoration: none;
-	}
-}
-
 .flex-basis-md-200 {
 	@include media-breakpoint-up(md) {
 		flex-basis: 200px!important;
