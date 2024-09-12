@@ -78,7 +78,7 @@
 								[[post-queue:user]]
 								{{{ if ((privileges.ban || privileges.mute) || privileges.admin:users) }}}
 								<div class="ms-auto btn-group bottom-sheet">
-									<button href="#" class="btn btn-ghost-sm ff-secondary border text-xs dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">[[global:actions]]</button>
+									<button href="#" class="btn btn-ghost btn-sm ff-secondary border text-xs dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">[[global:actions]]</button>
 									<ul class="dropdown-menu p-1 text-sm" role="menu">
 										{{{ if privileges.view:users:info }}}
 										<li><a class="dropdown-item rounded-1" href="{config.relative_path}/user/{./user.userslug}/info" role="menuitem">[[user:account-info]]</a></li>
