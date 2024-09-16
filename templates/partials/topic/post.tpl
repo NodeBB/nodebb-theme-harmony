@@ -112,7 +112,7 @@
 		<a component="post/quote" href="#" class="btn btn-ghost btn-sm {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="[[topic:quote]]"><i class="fa fa-fw fa-quote-right text-primary"></i></a>
 
 		{{{ if ./announces }}}
-		<a component="post/announce-count" href="#" class="btn btn-ghost btn-sm" title="[[activitypub:announcers]]"><i class="fa fa-share-alt text-primary"></i> {./announces}</a>
+		<a component="post/announce-count" href="#" class="btn btn-ghost btn-sm d-flex gap-2 align-items-center" title="[[activitypub:announcers]]"><i class="fa fa-share-alt text-primary"></i> {./announces}</a>
 		{{{ end }}}
 
 		{{{ if !reputation:disabled }}}
