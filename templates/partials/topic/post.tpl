@@ -78,7 +78,7 @@
 				<span>{buildAvatar(posts.replies.users, "20px", true, "avatar-tooltip")}</span>
 				{{{end}}}
 				{{{ if posts.replies.hasMore}}}
-				<span><i class="fa fa-ellipsis"></i></span>
+				<span style="height: 20px; line-height: 20px;"><i class="fa fa-ellipsis"></i></span>
 				{{{ end }}}
 			</span>
 
