@@ -7,22 +7,22 @@
 			<!-- disables autocomplete on FF --><input type="password" style="display:none">
 
 			{{{ if isSelf }}}
-			<div class="mb-2">
-				<label class="form-label fw-semibold text-xm" for="inputCurrentPassword">[[user:current-password]]</label>
+			<div class="mb-3">
+				<label class="form-label fw-semibold text-sm" for="inputCurrentPassword">[[user:current-password]]</label>
 				<input autocomplete="off" class="form-control" type="password" id="inputCurrentPassword" placeholder="[[user:current-password]]" value="" {{{ if !hasPassword }}} disabled{{{ end }}}>
 			</div>
 			{{{ end }}}
 
-			<div class="mb-2">
-				<label class="form-label fw-semibold text-xm" for="inputNewPassword">[[user:new-password]]</label>
+			<div class="mb-3">
+				<label class="form-label fw-semibold text-sm" for="inputNewPassword">[[user:new-password]]</label>
 				<input class="form-control" type="password" id="inputNewPassword" placeholder="[[user:password]]" value="">
-				<span class="form-feedback" id="password-notify"></span>
+				<span class="form-text" id="password-notify"></span>
 			</div>
 
-			<div class="mb-2">
-				<label class="form-label fw-semibold text-xm" for="inputNewPasswordAgain">[[user:confirm-password]]</label>
+			<div class="mb-3">
+				<label class="form-label fw-semibold text-sm" for="inputNewPasswordAgain">[[user:confirm-password]]</label>
 				<input class="form-control" type="password" id="inputNewPasswordAgain" placeholder="[[user:confirm-password]]" value="">
-				<span class="form-feedback" id="password-confirm-notify"></span>
+				<span class="form-text" id="password-confirm-notify"></span>
 			</div>
 
 			<div class="form-actions">
