@@ -72,7 +72,7 @@ $(document).ready(function () {
 				return !!$('[component="bottombar"] [component="sidebar/search"] .search-dropdown.show').length;
 			}
 
-			let lastScrollTop = 0;
+			let lastScrollTop = $window.scrollTop();
 			let newPostsLoaded = false;
 
 			function onWindowScroll() {
@@ -86,7 +86,7 @@ $(document).ready(function () {
 					const diff = Math.abs(st - lastScrollTop);
 					const scrolledDown = st > lastScrollTop;
 					const scrolledUp = st < lastScrollTop;
-					if (diff > 5) {
+					if (diff > 10) {
 						bottomBar.css({
 							bottom: !scrolledUp && scrolledDown ?
 								-bottomBar.find('.bottombar-nav').outerHeight(true) :
@@ -115,8 +115,10 @@ $(document).ready(function () {
 			});
 			hooks.on('action:ajaxify.end', function () {
 				$window.off('scroll', delayedScroll);
-				bottomBar.css({ bottom: 0 });
-				setTimeout(enableAutohide, 250);
+				if (config.theme.autohideBottombar) {
+					bottomBar.css({ bottom: 0 });
+					setTimeout(enableAutohide, 250);
+				}
 			});
 		});
 	}

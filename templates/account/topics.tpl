@@ -25,6 +25,7 @@
 		<a href="{config.relative_path}/user/{userslug}/topics" class="btn btn-ghost btn-sm ff-secondary fw-semibold {{{ if template.account/topics }}}active{{{ end }}}">[[global:header.recent]]</a>
 		<a href="{config.relative_path}/user/{userslug}/watched"class="btn btn-ghost btn-sm ff-secondary fw-semibold {{{ if template.account/watched }}}active{{{ end }}}">[[user:watched]]</a>
 		<a href="{config.relative_path}/user/{userslug}/ignored" class="btn btn-ghost btn-sm ff-secondary fw-semibold {{{ if template.account/ignored }}}active{{{ end }}}">[[user:ignored]]</a>
+		<a href="{config.relative_path}/user/{userslug}/read" class="btn btn-ghost btn-sm ff-secondary fw-semibold {{{ if template.account/read }}}active{{{ end }}}">[[user:read]]</a>
 		{{{ end }}}
 	</div>
 </div>
