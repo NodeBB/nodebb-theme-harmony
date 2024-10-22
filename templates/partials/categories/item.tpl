@@ -20,8 +20,8 @@
 				{{{ each ./children }}}
 				{{{ if !./isSection }}}
 				<span class="category-children-item small">
-					<div class="d-flex align-items-center gap-1">
-						<i class="fa fa-fw fa-caret-right text-primary align-self-start" style="line-height: var(--bs-body-line-height);"></i>
+					<div class="d-flex gap-1">
+						<i class="fa fa-fw fa-caret-right text-primary" style="line-height: var(--bs-body-line-height);"></i>
 						<a href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" class="text-reset fw-semibold">{./name}</a>
 					</div>
 				</span>
