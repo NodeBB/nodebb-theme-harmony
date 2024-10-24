@@ -254,22 +254,17 @@ $(document).ready(function () {
 			return;
 		}
 		['notifications', 'chat'].forEach((type) => {
-			const countEl = document.querySelector(`[component="${type}/count"]`);
-			if (!countEl) {
+			const countEl = $(`nav.sidebar [component="${type}/count"]`).first();
+			if (!countEl.length) {
 				return;
 			}
-			const count = parseInt(countEl.innerText, 10);
+			const count = parseInt(countEl.text(), 10);
 			if (count > 1) {
-				const listEls = document.querySelectorAll(`[component="${type}/list"]`);
-				listEls.forEach((listEl) => {
-					const placeholder = listEl.querySelector('*');
-					if (placeholder) {
-						for (let x = 0; x < count - 1; x++) {
-							const cloneEl = placeholder.cloneNode(true);
-							listEl.insertBefore(cloneEl, placeholder);
-						}
-					}
-				});
+				const placeholder = $(`nav.sidebar [component="${type}/list"]`).children().first();
+				for (let x = 0; x < count - 1; x++) {
+					const cloneEl = placeholder.clone(true);
+					cloneEl.insertAfter(placeholder);
+				}
 			}
 		});
 	}
