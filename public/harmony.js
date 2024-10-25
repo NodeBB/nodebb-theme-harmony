@@ -260,11 +260,14 @@ $(document).ready(function () {
 			}
 			const count = parseInt(countEl.text(), 10);
 			if (count > 1) {
-				const placeholder = $(`nav.sidebar [component="${type}/list"]`).children().first();
-				for (let x = 0; x < count - 1; x++) {
-					const cloneEl = placeholder.clone(true);
-					cloneEl.insertAfter(placeholder);
-				}
+				const listEls = $(`.dropdown-menu [component="${type}/list"]`);
+				listEls.each((index, el) => {
+					const placeholder = $(el).children().first();
+					for (let x = 0; x < count - 1; x++) {
+						const cloneEl = placeholder.clone(true);
+						cloneEl.insertAfter(placeholder);
+					}
+				});
 			}
 		});
 	}
