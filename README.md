@@ -10,6 +10,9 @@ Issues are tracked in [the main project issue tracker](https://github.com/NodeBB
 ## Screenshots
 
 ### Categories
+
+_The cards in the header are added by the recent cards plugin. https://github.com/NodeBB-Community/nodebb-plugin-recent-cards_
+
 <img height="450" src="screenshots/categories.png">
 
 ### Recent

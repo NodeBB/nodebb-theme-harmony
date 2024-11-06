@@ -72,7 +72,7 @@ $(document).ready(function () {
 				return !!$('[component="bottombar"] [component="sidebar/search"] .search-dropdown.show').length;
 			}
 
-			let lastScrollTop = 0;
+			let lastScrollTop = $window.scrollTop();
 			let newPostsLoaded = false;
 
 			function onWindowScroll() {
@@ -86,7 +86,7 @@ $(document).ready(function () {
 					const diff = Math.abs(st - lastScrollTop);
 					const scrolledDown = st > lastScrollTop;
 					const scrolledUp = st < lastScrollTop;
-					if (diff > 5) {
+					if (diff > 10) {
 						bottomBar.css({
 							bottom: !scrolledUp && scrolledDown ?
 								-bottomBar.find('.bottombar-nav').outerHeight(true) :
@@ -115,8 +115,10 @@ $(document).ready(function () {
 			});
 			hooks.on('action:ajaxify.end', function () {
 				$window.off('scroll', delayedScroll);
-				bottomBar.css({ bottom: 0 });
-				setTimeout(enableAutohide, 250);
+				if (config.theme.autohideBottombar) {
+					bottomBar.css({ bottom: 0 });
+					setTimeout(enableAutohide, 250);
+				}
 			});
 		});
 	}
@@ -252,20 +254,18 @@ $(document).ready(function () {
 			return;
 		}
 		['notifications', 'chat'].forEach((type) => {
-			const countEl = document.querySelector(`[component="${type}/count"]`);
-			if (!countEl) {
+			const countEl = $(`nav.sidebar [component="${type}/count"]`).first();
+			if (!countEl.length) {
 				return;
 			}
-			const count = parseInt(countEl.innerText, 10);
+			const count = parseInt(countEl.text(), 10);
 			if (count > 1) {
-				const listEls = document.querySelectorAll(`[component="${type}/list"]`);
-				listEls.forEach((listEl) => {
-					const placeholder = listEl.querySelector('*');
-					if (placeholder) {
-						for (let x = 0; x < count - 1; x++) {
-							const cloneEl = placeholder.cloneNode(true);
-							listEl.insertBefore(cloneEl, placeholder);
-						}
+				const listEls = $(`.dropdown-menu [component="${type}/list"]`);
+				listEls.each((index, el) => {
+					const placeholder = $(el).children().first();
+					for (let x = 0; x < count - 1; x++) {
+						const cloneEl = placeholder.clone(true);
+						cloneEl.insertAfter(placeholder);
 					}
 				});
 			}

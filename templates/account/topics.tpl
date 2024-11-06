@@ -2,10 +2,10 @@
 
 <div class="d-flex justify-content-between align-items-center mb-3">
 	<div class="d-flex gap-1">
-		<h3 class="fw-semibold fs-5 mb-0">[[global:topics]]</h3>
+		<h3 class="fw-semibold fs-5 mb-0 align-self-center">[[global:topics]]</h3>
 		{{{ if showSort }}}
 		<div class="btn-group bottom-sheet" component="thread/sort">
-			<button title="[[global:sort]]" class="btn-ghost-sm dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button"><i class="fa-solid fa-arrow-up-wide-short"></i></button>
+			<button title="[[global:sort]]" class="btn btn-ghost btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button"><i class="fa-solid fa-arrow-up-wide-short"></i></button>
 			<ul class="dropdown-menu p-1 text-sm" role="menu">
 				{{{each sortOptions }}}
 				<li>
@@ -22,9 +22,10 @@
 
 	<div class="d-flex gap-1">
 		{{{ if canEdit }}}
-		<a href="{config.relative_path}/user/{userslug}/topics" class="btn-ghost-sm ff-secondary fw-semibold {{{ if template.account/topics }}}active{{{ end }}}">[[global:header.recent]]</a>
-		<a href="{config.relative_path}/user/{userslug}/watched"class="btn-ghost-sm ff-secondary fw-semibold {{{ if template.account/watched }}}active{{{ end }}}">[[user:watched]]</a>
-		<a href="{config.relative_path}/user/{userslug}/ignored" class="btn-ghost-sm ff-secondary fw-semibold {{{ if template.account/ignored }}}active{{{ end }}}">[[user:ignored]]</a>
+		<a href="{config.relative_path}/user/{userslug}/topics" class="btn btn-ghost btn-sm ff-secondary fw-semibold {{{ if template.account/topics }}}active{{{ end }}}">[[global:header.recent]]</a>
+		<a href="{config.relative_path}/user/{userslug}/watched"class="btn btn-ghost btn-sm ff-secondary fw-semibold {{{ if template.account/watched }}}active{{{ end }}}">[[user:watched]]</a>
+		<a href="{config.relative_path}/user/{userslug}/ignored" class="btn btn-ghost btn-sm ff-secondary fw-semibold {{{ if template.account/ignored }}}active{{{ end }}}">[[user:ignored]]</a>
+		<a href="{config.relative_path}/user/{userslug}/read" class="btn btn-ghost btn-sm ff-secondary fw-semibold {{{ if template.account/read }}}active{{{ end }}}">[[user:read]]</a>
 		{{{ end }}}
 	</div>
 </div>

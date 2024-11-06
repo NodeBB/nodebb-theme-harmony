@@ -7,7 +7,7 @@
 
 	<div class="d-flex gap-1">
 		<div class="btn-group bottom-sheet" component="category/watch/all">
-			<button class="btn-ghost-sm ff-secondary fw-semibold dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">
+			<button class="btn btn-ghost btn-sm ff-secondary fw-semibold dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">
 				<span>[[user:change-all]]</span>
 			</button>
 			<ul class="dropdown-menu p-1 text-sm dropdown-menu-end" role="menu">
