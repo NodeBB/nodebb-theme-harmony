@@ -9,11 +9,6 @@ body.template-topic {
 		}
 
 		.posts {
-			// fixes code blocks pushing content out on mobile
-			@include media-breakpoint-down(md) {
-				max-width: calc(100vw - $grid-gutter-width);
-			}
-
 			&.timeline {
 				@include timeline-style;
 			}
@@ -25,10 +20,6 @@ body.template-topic {
 				.bookmarked {
 					transition: $transition-fade;
 				}
-			}
-
-			> [component="post"] > [component="post/footer"] {
-				margin-left: calc($spacer * 2.5);
 			}
 
 			[component="post"] {
@@ -101,6 +92,7 @@ body.template-topic {
 			&:last-of-type {
 				padding-bottom: 0;
 				.post-footer {
+					padding-bottom: 0!important;
 					border-bottom: none !important;
 				}
 			}
@@ -113,7 +105,7 @@ body.template-topic {
 	}
 }
 
-@include media-breakpoint-up(sm) {
+@include media-breakpoint-up(lg) {
 	body.template-topic {
 		.topic .posts {
 			[component="post"] {
@@ -129,7 +121,7 @@ body.template-topic {
 					opacity: 1;
 				}
 				&:hover {
-					> .post-footer > [component="post/actions"] {
+					> div > .post-container > [component="post/footer"] > div > [component="post/actions"] {
 						opacity: 1;
 					}
 				}
