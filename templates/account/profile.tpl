@@ -94,7 +94,7 @@
 		{{{ if ./value }}}
 		<div class="stat">
 			<div class="align-items-center justify-content-center card card-header px-0 py-3 border-0 rounded-1 h-100 gap-2">
-				<span class="stat-label text-xs fw-semibold"><span>{./name}</span></span>
+				<span class="stat-label text-xs fw-semibold"><span><i class="text-muted {./icon}"></i> {./name}</span></span>
 				{{{ if (./type == "input-link") }}}
 				<a class="text-sm text-center text-break w-100 px-2 ff-secondary text-underline text-reset" href="{./value}" rel="nofollow noreferrer me">{./value}</a>
 				{{{ else }}}
