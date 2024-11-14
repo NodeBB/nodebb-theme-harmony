@@ -1,6 +1,7 @@
-{{{ if (brand:logo || config.showSiteTitle)}}}
+{{{ if (brand:logo || (config.showSiteTitle || widgets.brand-header.length)) }}}
 <div class="container-lg px-md-4 brand-container">
 	<div class="col-12 d-flex border-bottom pb-3 {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
+		{{{ if (brand:logo || config.showSiteTitle) }}}
 		<div component="brand/wrapper" class="d-flex align-items-center gap-3 p-2 rounded-1 align-content-stretch ">
 			{{{ if brand:logo }}}
 			<a component="brand/anchor" href="{{{ if brand:logo:url }}}{brand:logo:url}{{{ else }}}{relative_path}/{{{ end }}}" title="[[global:header.brand-logo]]">
@@ -14,6 +15,7 @@
 			</a>
 			{{{ end }}}
 		</div>
+		{{{ end }}}
 		{{{ if widgets.brand-header.length }}}
 		<div data-widget-area="brand-header" class="flex-fill gap-3 p-2 align-self-center">
 			{{{each widgets.brand-header}}}
