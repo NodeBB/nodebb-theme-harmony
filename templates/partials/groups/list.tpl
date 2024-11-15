@@ -6,7 +6,7 @@
 			<div class="card-body d-flex flex-column gap-1 border border-top-0 rounded-bottom h-100">
 				<div class="d-flex">
 					<div class="flex-grow-1 fs-6 fw-semibold">{./displayName}</div>
-					<div class="flex-shrink-0 text-sm"><i class="text-muted fa-solid fa-user"></i> {./memberCount}</div>
+					<div class="flex-shrink-0 text-sm"><i class="text-muted fa-solid fa-user"></i> {formattedNumber(./memberCount)}</div>
 				</div>
 				<div class="text-sm">{./description}</div>
 			</div>
