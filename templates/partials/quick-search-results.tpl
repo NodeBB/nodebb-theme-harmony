@@ -1,7 +1,7 @@
 {{{ if multiplePages }}}
 <div class="show-more-container">
 	<div class="text-center d-block d-md-none">
-		<a href="{url}" class="btn btn-primary">
+		<a href="{url}" class="btn btn-sm btn-primary">
 			[[search:see-more-results, {matchCount}]]
 		</a>
 	</div>
