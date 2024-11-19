@@ -98,7 +98,7 @@
 				{{{ if (./type == "input-link") }}}
 				<a class="text-sm text-center text-break w-100 px-2 ff-secondary text-underline text-reset" href="{./value}" rel="nofollow noreferrer me">{./value}</a>
 				{{{ else }}}
-				<span class="text-center fs-6 ff-secondary">{./value}</span>
+				<span class="text-center {{{ if (./type == "input-number") }}}fs-2{{{else }}}fs-6{{{ end }}} ff-secondary">{./value}</span>
 				{{{ end }}}
 			</div>
 		</div>
