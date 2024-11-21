@@ -1,6 +1,6 @@
 <!-- IMPORT partials/account/header.tpl -->
 
-<div class="d-flex justify-content-between py-1 mb-3 align-items-center position-sticky top-0 bg-body">
+<div class="d-flex justify-content-between py-1 mb-3 align-items-center position-sticky top-0 bg-body z-1">
 	<h3 class="fw-semibold fs-5 mb-0">{{{ if isSelf }}}[[user:edit-profile]]{{{ else }}}[[pages:account/edit, {username}]]{{{ end }}}</h3>
 	<button id="submitBtn" class="btn btn-sm btn-primary">[[global:save-changes]]</button>
 </div>
@@ -39,13 +39,20 @@
 				{{{ if (./type == "input-number") }}}
 				<input class="form-control" type="number" id="{./key}" name="{./key}" value="{./value}">
 				{{{ end }}}
-				{{{ if (./type == "select") }}}
-				<select class="form-select" id="{./key}" name="{./key}">
+
+				{{{ if (./type == "input-date") }}}
+				<input class="form-control" type="date" id="{./key}" name="{./key}" value="{./value}">
+				{{{ end }}}
+
+				{{{ if ((./type == "select") || (./type == "select-multi")) }}}
+				<select class="form-select" id="{./key}" name="{./key}" {{{ if (./type == "select-multi") }}} multiple{{{ end }}}>
 					{{{ each ./select-options}}}
 					<option value="{./value}" {{{ if ./selected }}}selected{{{ end }}}>{./value}</option>
 					{{{ end }}}
 				</select>
 				{{{ end }}}
+
+
 			</div>
 			{{{ end }}}
 
