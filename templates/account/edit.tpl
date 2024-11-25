@@ -12,18 +12,6 @@
 				<input class="form-control" type="text" id="fullname" name="fullname" placeholder="[[user:fullname]]" value="{fullname}">
 			</div>
 
-			{{{ if allowWebsite }}}
-			<div class="mb-3">
-				<label class="form-label fw-bold" for="website">[[user:website]]</label>
-				<input class="form-control" type="text" id="website" name="website" placeholder="http://..." value="{website}">
-			</div>
-			{{{ end }}}
-
-			<div class="mb-3">
-				<label class="form-label fw-bold" for="location">[[user:location]]</label>
-				<input class="form-control" type="text" id="location" name="location" placeholder="[[user:location]]" value="{location}">
-			</div>
-
 			<div class="mb-3">
 				<label class="form-label fw-bold" for="birthday">[[user:birthday]]</label>
 				<input class="form-control" type="date" id="birthday" name="birthday" value="{birthday}" placeholder="mm/dd/yyyy">
@@ -51,8 +39,6 @@
 					{{{ end }}}
 				</select>
 				{{{ end }}}
-
-
 			</div>
 			{{{ end }}}
 
