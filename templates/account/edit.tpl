@@ -1,6 +1,6 @@
 <!-- IMPORT partials/account/header.tpl -->
 
-<div class="d-flex justify-content-between py-1 mb-3 align-items-center position-sticky top-0 bg-body">
+<div class="d-flex justify-content-between py-1 mb-3 align-items-center position-sticky top-0 bg-body z-1">
 	<h3 class="fw-semibold fs-5 mb-0">{{{ if isSelf }}}[[user:edit-profile]]{{{ else }}}[[pages:account/edit, {username}]]{{{ end }}}</h3>
 	<button id="submitBtn" class="btn btn-sm btn-primary">[[global:save-changes]]</button>
 </div>
@@ -10,18 +10,6 @@
 			<div class="mb-3">
 				<label class="form-label fw-bold" for="fullname">[[user:fullname]]</label>
 				<input class="form-control" type="text" id="fullname" name="fullname" placeholder="[[user:fullname]]" value="{fullname}">
-			</div>
-
-			{{{ if allowWebsite }}}
-			<div class="mb-3">
-				<label class="form-label fw-bold" for="website">[[user:website]]</label>
-				<input class="form-control" type="text" id="website" name="website" placeholder="http://..." value="{website}">
-			</div>
-			{{{ end }}}
-
-			<div class="mb-3">
-				<label class="form-label fw-bold" for="location">[[user:location]]</label>
-				<input class="form-control" type="text" id="location" name="location" placeholder="[[user:location]]" value="{location}">
 			</div>
 
 			<div class="mb-3">
@@ -39,8 +27,13 @@
 				{{{ if (./type == "input-number") }}}
 				<input class="form-control" type="number" id="{./key}" name="{./key}" value="{./value}">
 				{{{ end }}}
-				{{{ if (./type == "select") }}}
-				<select class="form-select" id="{./key}" name="{./key}">
+
+				{{{ if (./type == "input-date") }}}
+				<input class="form-control" type="date" id="{./key}" name="{./key}" value="{./value}">
+				{{{ end }}}
+
+				{{{ if ((./type == "select") || (./type == "select-multi")) }}}
+				<select class="form-select" id="{./key}" name="{./key}" {{{ if (./type == "select-multi") }}} multiple{{{ end }}}>
 					{{{ each ./select-options}}}
 					<option value="{./value}" {{{ if ./selected }}}selected{{{ end }}}>{./value}</option>
 					{{{ end }}}
