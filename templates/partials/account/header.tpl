@@ -31,7 +31,7 @@
 					<h2 class="fullname fw-semibold fs-2 tracking-tight mb-0">{{{ if fullname }}}{fullname}{{{ else }}}{username}{{{ end }}}</h2>
 					<div class="d-flex flex-wrap gap-1 text-sm align-items-center">
 						<span class="username fw-bold">{{{ if !banned }}}@{username}{{{ else }}}[[user:banned]]{{{ end }}}</span>
-						<div class="d-flex align-items-center gap-1 p-1">
+						<div class="d-flex align-items-center gap-1 p-1 flex-wrap">
 							{{{ if selectedGroup.length }}}
 							{{{ each selectedGroup }}}
 							{{{ if ./slug }}}
