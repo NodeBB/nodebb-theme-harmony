@@ -18,11 +18,11 @@
 	{{{ end }}}
 
 	<p class="description text-secondary text-sm w-100 {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
-		<a class="btn btn-sm btn-link" href="{config.relative_path}/popular?term=daily&cid=-1">[[activitypub:world.popular]]</a>
-		<a class="btn btn-sm btn-link" href="{config.relative_path}/recent?cid=-1">[[activitypub:world.recent]]</a>
+		<a class="btn btn-sm btn-link" href="{config.relative_path}/popular?term=daily&cid=-1">[[world:popular]]</a>
+		<a class="btn btn-sm btn-link" href="{config.relative_path}/recent?cid=-1">[[world:recent]]</a>
 		<button class="btn btn-sm btn-link" id="world-help">
 			<i class="fa fa-question"></i>
-			[[activitypub:world.help]]
+			[[world:help]]
 		</button>
 	</p>
 </div>
@@ -33,7 +33,17 @@
 
 		<div class="category">
 			{{{ if !topics.length }}}
-			<div class="alert alert-info" id="category-no-topics">[[activitypub:no-topics]]</div>
+			<div class="row">
+				<div class="col-md-10 offset-md-1 d-flex align-items-center">
+					<div>
+						<h2 class="fs-4 mb-3">[[world:onboard.title]]</h2>
+						<p>[[world:onboard.what]]</p>
+						<p>[[world:onboard.why]]</p>
+						<p>[[world:onboard.how]]</p>
+					</div>
+					<i class="fa fa-comment-nodes fa-8x p-3"></i>
+				</div>
+			</div>
 			{{{ end }}}
 
 			<!-- IMPORT partials/topics_list.tpl -->

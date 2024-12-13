@@ -15,6 +15,13 @@
 			<div class="alert alert-info" id="category-no-topics">[[recent:no-recent-topics]]</div>
 			{{{ end }}}
 
+			{{{ if (selectedCategory.cid == "-1") }}}
+			<div class="py-3">
+				<h4>[[recent:uncategorized.title]]</h4>
+				<p>[[recent:uncategorized.intro]]</p>
+			</div>
+			{{{ end }}}
+
 			<!-- IMPORT partials/topics_list.tpl -->
 
 			{{{ if config.usePagination }}}
