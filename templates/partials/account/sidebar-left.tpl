@@ -3,6 +3,7 @@
 		<a href="{config.relative_path}/user/{userslug}" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold {{{ if template.account/profile }}}active{{{ end }}}">
 			<div class="flex-grow-1">[[global:about]]</div>
 		</a>
+
 		<a href="{config.relative_path}/user/{userslug}/posts"class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-center
 			{{{ if template.account/posts }}}active{{{ end }}}
 			{{{ if template.account/best }}}active{{{ end }}}
@@ -13,6 +14,7 @@
 			<div class="flex-grow-1">[[global:posts]]</div>
 			<span class="flex-shrink-0 text-xs" title="{counts.posts}">{humanReadableNumber(counts.posts)}</span>
 		</a>
+
 		<a href="{config.relative_path}/user/{userslug}/topics" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-center
 			{{{ if template.account/topics }}}active{{{ end }}}
 			{{{ if template.account/watched }}}active{{{ end }}}
@@ -20,6 +22,13 @@
 			<div class="flex-grow-1">[[global:topics]]</div>
 			<span class="flex-shrink-0 text-xs" title="{counts.topics}">{humanReadableNumber(counts.topics)}</span>
 		</a>
+
+		<a href="{config.relative_path}/user/{userslug}/shares" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-center
+			{{{ if template.account/shares }}}active{{{ end }}}">
+			<div class="flex-grow-1">[[user:shares]]</div>
+			<span class="flex-shrink-0 text-xs" title="{counts.shares}">{humanReadableNumber(counts.shares)}</span>
+		</a>
+
 		<a href="{config.relative_path}/user/{userslug}/groups" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-center
 			{{{ if template.account/groups }}}active{{{ end }}}">
 			<div class="flex-grow-1">[[global:header.groups]]</div>
