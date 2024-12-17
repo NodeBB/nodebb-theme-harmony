@@ -5,7 +5,7 @@
 		<div class="flex-shrink-0">
 		{buildCategoryIcon(@value, "40px", "rounded-1")}
 		</div>
-		<div class="flex-grow-1 d-flex flex-wrap gap-1">
+		<div class="flex-grow-1 d-flex flex-wrap gap-1 me-0 me-lg-2">
 			<h2 class="title text-break fs-4 fw-semibold m-0 tracking-tight w-100">
 				<!-- IMPORT partials/categories/link.tpl -->
 			</h2>
