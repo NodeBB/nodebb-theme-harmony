@@ -3,6 +3,15 @@
 	[component="post"] .icon {
 		background-color: transparent !important;
 	}
+	.form-control::placeholder {
+		color:$gray-100!important;
+	}
+}
+
+.skin-solar {
+	.form-control::placeholder {
+		color:$gray-100!important;
+	}
 }
 
 .skin-quartz, .skin-lux, .skin-morph {

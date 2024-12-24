@@ -37,6 +37,8 @@ $link-color: 		#0951be !default;
 
 $form-check-input-border: var(--bs-border-width) solid $gray-500 !default;
 
+$input-placeholder-color: $gray-600!important;
+
 // no caret on dropdown-toggle
 $enable-caret: false;
 
