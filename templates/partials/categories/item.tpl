@@ -16,18 +16,18 @@
 			{{{ end }}}
 			{{{ if !config.hideSubCategories }}}
 			{{{ if ./children.length }}}
-			<div class="category-children row row-cols-1 row-cols-md-2 g-2 my-1 w-100">
+			<ul class="list-unstyled category-children row row-cols-1 row-cols-md-2 g-2 my-1 w-100">
 				{{{ each ./children }}}
 				{{{ if !./isSection }}}
-				<span class="category-children-item small">
+				<li class="category-children-item small">
 					<div class="d-flex gap-1">
 						<i class="fa fa-fw fa-caret-right text-primary" style="line-height: var(--bs-body-line-height);"></i>
 						<a href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" class="text-reset fw-semibold">{./name}</a>
 					</div>
-				</span>
+				</li>
 				{{{ end }}}
 				{{{ end }}}
-			</div>
+			</ul>
 			{{{ end }}}
 			{{{ end }}}
 		</div>
