@@ -42,6 +42,7 @@
 			</div>
 			{{{ end }}}
 
+			{{{ if groups.length }}}
 			<div class="mb-3">
 				<label class="form-label fw-bold" for="groupTitle">[[user:grouptitle]]</label>
 
@@ -61,6 +62,7 @@
 					{{{ end }}}
 				</div>
 			</div>
+			{{{ end }}}
 
 			{{{ if allowAboutMe }}}
 			<div class="mb-3">

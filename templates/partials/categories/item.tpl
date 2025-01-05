@@ -5,7 +5,7 @@
 		<div class="flex-shrink-0">
 		{buildCategoryIcon(@value, "40px", "rounded-1")}
 		</div>
-		<div class="flex-grow-1 d-flex flex-wrap gap-1">
+		<div class="flex-grow-1 d-flex flex-wrap gap-1 me-0 me-lg-2">
 			<h2 class="title text-break fs-4 fw-semibold m-0 tracking-tight w-100">
 				<!-- IMPORT partials/categories/link.tpl -->
 			</h2>
@@ -16,23 +16,23 @@
 			{{{ end }}}
 			{{{ if !config.hideSubCategories }}}
 			{{{ if ./children.length }}}
-			<div class="category-children row row-cols-1 row-cols-md-2 g-2 my-1 w-100">
+			<ul class="list-unstyled category-children row row-cols-1 row-cols-md-2 g-2 my-1 w-100">
 				{{{ each ./children }}}
 				{{{ if !./isSection }}}
-				<span class="category-children-item small">
+				<li class="category-children-item small">
 					<div class="d-flex gap-1">
 						<i class="fa fa-fw fa-caret-right text-primary" style="line-height: var(--bs-body-line-height);"></i>
 						<a href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" class="text-reset fw-semibold">{./name}</a>
 					</div>
-				</span>
+				</li>
 				{{{ end }}}
 				{{{ end }}}
-			</div>
+			</ul>
 			{{{ end }}}
 			{{{ end }}}
 		</div>
 	</div>
-	{{{ if (!./link && !./isSection) }}}
+	{{{ if !./link }}}
 	<div class="d-flex col-lg-5 col-12 align-content-stretch">
 		<div class="meta stats d-none d-lg-grid col-6 gap-1 pe-2 text-muted" style="grid-template-columns: 1fr 1fr;">
 			<div class="card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-column align-items-center">
