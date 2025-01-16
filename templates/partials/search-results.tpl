@@ -17,7 +17,7 @@
 	{{{ each posts }}}
 	<hr/>
 	<div class="topic-row  mb-3">
-		<a class="topic-title fw-semibold fs-5 text-reset text-break" href="{config.relative_path}/post/{./pid}">
+		<a class="topic-title fw-semibold fs-5 text-reset text-break" href="{config.relative_path}/post/{encodeURIComponent(./pid)}">
 			{{{ if !./isMainPost }}}RE: {{{ end }}}{./topic.title}
 		</a>
 		<div class="post-body d-flex flex-column gap-1">

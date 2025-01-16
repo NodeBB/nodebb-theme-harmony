@@ -9,7 +9,14 @@
 	<div class="bg-body d-none d-sm-block rounded-circle" style="outline: 2px solid var(--bs-body-bg);">
 		<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" aria-label="[[aria:profile-page-for, {./user.displayname}]]">
 			{buildAvatar(posts.user, "48px", true, "", "user/picture")}
-			<span component="user/status" class="position-absolute translate-middle-y border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
+			{{{ if ./user.isLocal }}}
+			<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
+			{{{ else }}}
+			<span component="user/locality" class="position-absolute top-100 start-100 lh-1 border border-white border-2 rounded-circle small" title="[[global:remote-user]]">
+				<span class="visually-hidden">[[global:remote-user]]</span>
+				<i class="fa fa-globe"></i>
+			</span>
+			{{{ end }}}
 		</a>
 	</div>
 	<div class="post-container d-flex gap-2 flex-grow-1 flex-column w-100" style="min-width:0;">
@@ -21,7 +28,14 @@
 				<div class="bg-body d-sm-none">
 					<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 						{buildAvatar(posts.user, "20px", true, "", "user/picture")}
-						<span component="user/status" class="position-absolute translate-middle-y border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
+						{{{ if ./user.isLocal }}}
+						<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
+						{{{ else }}}
+						<span component="user/locality" class="position-absolute top-100 start-100 lh-1 border border-white border-2 rounded-circle small" title="[[global:remote-user]]">
+							<span class="visually-hidden">[[global:remote-user]]</span>
+							<i class="fa fa-globe"></i>
+						</span>
+						{{{ end }}}
 					</a>
 				</div>
 
@@ -57,7 +71,7 @@
 			</div>
 			<div class="d-flex align-items-center gap-1 justify-content-end">
 				<span class="bookmarked opacity-0 text-primary"><i class="fa fa-bookmark-o"></i></span>
-				<a href="{config.relative_path}/post/{./pid}" class="post-index text-muted d-none d-md-inline">#{increment(./index, "1")}</a>
+				<a href="{config.relative_path}/post/{encodeURIComponent(./pid)}" class="post-index text-muted d-none d-md-inline">#{increment(./index, "1")}</a>
 			</div>
 		</div>
 
@@ -92,6 +106,10 @@
 					<!-- IMPORT partials/topic/reactions.tpl -->
 					<a component="post/reply" href="#" class="btn btn-ghost btn-sm {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="[[topic:reply]]"><i class="fa fa-fw fa-reply text-primary"></i></a>
 					<a component="post/quote" href="#" class="btn btn-ghost btn-sm {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="[[topic:quote]]"><i class="fa fa-fw fa-quote-right text-primary"></i></a>
+
+					{{{ if ./announces }}}
+					<a component="post/announce-count" href="#" class="btn btn-ghost btn-sm d-flex gap-2 align-items-center" title="[[topic:announcers]]"><i class="fa fa-share-alt text-primary"></i> {./announces}</a>
+					{{{ end }}}
 
 					{{{ if !reputation:disabled }}}
 					<div class="d-flex votes align-items-center">

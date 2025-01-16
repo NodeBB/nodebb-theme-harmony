@@ -84,7 +84,7 @@ library.defineWidgetAreas = async function (areas) {
 	const templates = [
 		'categories.tpl', 'category.tpl', 'topic.tpl', 'users.tpl',
 		'unread.tpl', 'recent.tpl', 'popular.tpl', 'top.tpl', 'tags.tpl', 'tag.tpl',
-		'login.tpl', 'register.tpl',
+		'login.tpl', 'register.tpl', 'world.tpl',
 	];
 	function capitalizeFirst(str) {
 		return str.charAt(0).toUpperCase() + str.slice(1);
@@ -180,11 +180,5 @@ library.saveUserSettings = async function (hookData) {
 
 library.filterMiddlewareRenderHeader = async function (hookData) {
 	hookData.templateData.bootswatchSkinOptions = await meta.css.getSkinSwitcherOptions(hookData.req.uid);
-	return hookData;
-};
-
-library.filterTeasersConfigureStripTags = function (hookData) {
-	// teasers have a stretched-link to go to last post, the anchors in them are not clickable
-	hookData.tags.push('a');
 	return hookData;
 };

@@ -94,11 +94,25 @@
 	</li>
 	{{{ end }}}
 
+
+	{{{ if !posts.display_original_url }}}
 	<li>
 		<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menuitem" href="#" data-clipboard-text="{posts.absolute_url}">
 			<i class="fa fa-fw text-secondary fa-link"></i> [[topic:copy-permalink]]
 		</a>
 	</li>
+	{{{ else }}}
+	<li>
+		<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menuitem" href="#" data-clipboard-text="{{{ if posts.url }}}{posts.url}{{{ else }}}{posts.pid}{{{ end }}}">
+			<i class="fa fa-fw text-secondary fa-link"></i> [[topic:copy-permalink]]
+		</a>
+	</li>
+	<li>
+		<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" role="menuitem" target="_self" href="{{{ if posts.url }}}{posts.url}{{{ else }}}{posts.pid}{{{ end }}}">
+			<i class="fa fa-fw text-secondary fa-external-link"></i> [[topic:go-to-original]]
+		</a>
+	</li>
+	{{{ end }}}
 
 	{{{ if postSharing.length }}}
 	{{{ if config.loggedIn }}}<li class="dropdown-divider"></li>{{{ end }}}
@@ -118,7 +132,7 @@
 	<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" component="post/flag" role="menuitem" href="#"><i class="fa fa-fw text-secondary fa-flag"></i> [[topic:flag-post]]</a>
 </li>
 <li {{{ if !posts.flags.flagged }}}hidden{{{ end }}} class="disabled text-secondary">
-	<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" component="post/already-flagged" role="menuitem" href="#"><i class="fa fa-fw text-secondary fa-flag"></i> [[topic:already-flagged]]</a>
+	<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" component="post/already-flagged" role="menuitem" href="#" data-flag-id="{posts.flagId}"><i class="fa fa-fw text-secondary fa-flag"></i> [[topic:already-flagged]]</a>
 </li>
 
 {{{ if (!posts.selfPost && posts.uid) }}}

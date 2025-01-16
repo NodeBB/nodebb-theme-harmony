@@ -5,18 +5,25 @@
 		line-height: calc(var(--avatar-size) - 4px);
 	}
 
-	[component="user/status"] {
-		top: 20px;
-		left: 12px;
+	[component="user/locality"] {
+		transform: translate(-75%, -100%);
+		z-index: 2;
+		background-color: $body-bg;
+		font-size: .5rem;
+	}
 
+	[component="user/status"] {
+		transform: translate(-80%, -100%);
 		z-index: 2;
 	}
 
 	@include media-breakpoint-up(sm) {
 		[component="user/status"] {
 			padding: 5px;
-			top: 36px;
-			left: 36px;
+		}
+
+		[component="user/locality"] {
+			font-size: .75rem;
 		}
 	}
 }

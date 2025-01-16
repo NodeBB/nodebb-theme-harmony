@@ -13,7 +13,7 @@
 	<li role="separator" class="dropdown-divider d-none d-md-block"></li>
 	{{{ each posts }}}
 	<li data-tid="{posts.topic.tid}" data-pid="{posts.pid}" class="d-flex flex-column gap-1">
-		<a href="{config.relative_path}/post/{posts.pid}"
+		<a href="{config.relative_path}/post/{encodeURIComponent(posts.pid)}"
 			class="btn btn-ghost btn-sm ff-secondary rounded-1 text-start text-reset d-block text-truncate px-2 py-1">
 			<span class="quick-search-title fw-semibold text-sm">{posts.topic.title}</span>
 			<br/>

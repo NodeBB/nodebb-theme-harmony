@@ -3,7 +3,7 @@
 	<div class="icon hidden-xs">
 		<a class="d-inline-block position-relative" href="{{{ if loggedInUser.userslug }}}{config.relative_path}/user/{loggedInUser.userslug}{{{ else }}}#{{{ end }}}">
 			{buildAvatar(loggedInUser, "48px", true, "", "user/picture")}
-			{{{ if loggedInUser.status }}}<span component="user/status" class="position-absolute translate-middle-y border border-white border-2 rounded-circle status {loggedInUser.status}"><span class="visually-hidden">[[global:{loggedInUser.status}]]</span></span>{{{ end }}}
+			{{{ if loggedInUser.status }}}<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {loggedInUser.status}"><span class="visually-hidden">[[global:{loggedInUser.status}]]</span></span>{{{ end }}}
 		</a>
 	</div>
 	<form class="flex-grow-1 d-flex flex-column gap-2" method="post" action="{config.relative_path}/compose">
