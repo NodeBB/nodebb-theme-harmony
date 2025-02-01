@@ -21,25 +21,27 @@
 	</div>
 	<div class="post-container d-flex gap-2 flex-grow-1 flex-column w-100" style="min-width:0;">
 		<div class="d-flex align-items-start justify-content-between gap-1 flex-nowrap w-100 post-header" itemprop="author" itemscope itemtype="https://schema.org/Person">
-			<div class="d-flex gap-1 flex-wrap align-items-center">
+			<div class="d-flex gap-1 flex-wrap align-items-center text-truncate">
 				<meta itemprop="name" content="{./user.displayname}">
 				{{{ if ./user.userslug }}}<meta itemprop="url" content="{config.relative_path}/user/{./user.userslug}">{{{ end }}}
 
-				<div class="bg-body d-sm-none">
-					<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
-						{buildAvatar(posts.user, "20px", true, "", "user/picture")}
-						{{{ if ./user.isLocal }}}
-						<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
-						{{{ else }}}
-						<span component="user/locality" class="position-absolute top-100 start-100 lh-1 border border-white border-2 rounded-circle small" title="[[global:remote-user]]">
-							<span class="visually-hidden">[[global:remote-user]]</span>
-							<i class="fa fa-globe"></i>
-						</span>
-						{{{ end }}}
-					</a>
-				</div>
+				<div class="d-flex flex-nowrap gap-1 align-items-center text-truncate">
+					<div class="bg-body d-sm-none">
+						<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
+							{buildAvatar(posts.user, "20px", true, "", "user/picture")}
+							{{{ if ./user.isLocal }}}
+							<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
+							{{{ else }}}
+							<span component="user/locality" class="position-absolute top-100 start-100 lh-1 border border-white border-2 rounded-circle small" title="[[global:remote-user]]">
+								<span class="visually-hidden">[[global:remote-user]]</span>
+								<i class="fa fa-globe"></i>
+							</span>
+							{{{ end }}}
+						</a>
+					</div>
 
-				<a class="fw-bold text-nowrap" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.displayname}</a>
+					<a class="fw-bold text-nowrap text-truncate" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.displayname}</a>
+				</div>
 
 				{{{ each posts.user.selectedGroups }}}
 				{{{ if posts.user.selectedGroups.slug }}}
