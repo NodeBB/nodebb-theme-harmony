@@ -1,5 +1,5 @@
 {{{ each thumbs }}}
 <a class="d-inline-block" href="{./url}">
-	<img class="rounded-1 h-100 bg-light" style="max-width: 5.33rem; object-fit: contain;" src="{./url}" />
+	<img class="rounded-1 bg-light" style="width:auto; max-width: 5.33rem; height: 3.33rem; object-fit: contain;" src="{./url}" />
 </a>
 {{{ end }}}
