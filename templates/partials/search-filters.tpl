@@ -8,9 +8,9 @@
 			</a>
 
 			<ul class="dropdown-menu p-1 text-sm" role="menu">
-				<li class="px-3 py-1 mb-2 d-flex flex-column gap-2">
+				<li class="px-2 py-1 mb-2 d-flex flex-column gap-2">
 					<div component="category-selector-search">
-						<input type="text" class="form-control" component="category/filter/search" placeholder="[[search:type-a-category]]">
+						<input type="text" class="form-control form-control-sm" component="category/filter/search" placeholder="[[search:type-a-category]]">
 					</div>
 				</li>
 				<div component="category/list" class="overflow-auto ghost-scrollbar" style="max-height: 350px;"></div>
@@ -34,8 +34,8 @@
 			</a>
 
 			<ul class="dropdown-menu p-1 text-sm" style="width: 350px;" role="menu">
-				<li class="px-3 py-1 d-flex flex-column gap-2">
-					<input type="text" class="form-control" component="tag/filter/search" placeholder="[[search:type-a-tag]]">
+				<li class="px-2 py-1 d-flex flex-column gap-2">
+					<input type="text" class="form-control form-control-sm" component="tag/filter/search" placeholder="[[search:type-a-tag]]">
 					<div component="tag/filter/selected" class="d-flex flex-wrap gap-2">
 						{{{ each tagFilterSelected }}}
 						<div class="d-flex px-2 py-1 rounded-1 text-bg-primary gap-2 align-items-center text-sm">
@@ -44,7 +44,7 @@
 						</div>
 						{{{ end }}}
 					</div>
-					<hr/>
+					<hr class="my-2"/>
 					<div component="tag/filter/results" class="d-flex flex-wrap gap-2">
 						{{{ each tagFilterResults }}}
 						<button class="btn btn-light btn-sm border" data-tag="{./valueEscaped}">{./valueEscaped}</button>
@@ -64,8 +64,8 @@
 			</a>
 
 			<ul class="dropdown-menu p-1 text-sm" style="width: 350px;" role="menu">
-				<li class="px-3 py-1 d-flex flex-column gap-2">
-					<input type="text" class="form-control" component="user/filter/search" placeholder="[[search:type-a-username]]">
+				<li class="px-2 py-1 d-flex flex-column gap-2">
+					<input type="text" class="form-control form-control-sm" component="user/filter/search" placeholder="[[search:type-a-username]]">
 					<div component="user/filter/selected" class="d-flex flex-wrap gap-2">
 						{{{ each userFilterSelected }}}
 						<div class="d-flex px-2 py-1 rounded-1 text-bg-primary gap-2 align-items-center text-sm">
@@ -74,7 +74,7 @@
 						</div>
 						{{{ end }}}
 					</div>
-					<hr/>
+					<hr class="my-2"/>
 					<div component="user/filter/results" class="d-flex flex-wrap gap-2">
 						{{{ each userFilterResults }}}
 						<button class="btn btn-light btn-sm border" data-uid="{./uid}" data-username="{./username}">{buildAvatar(@value, "16px", true)} {./username}</button>
@@ -95,12 +95,12 @@
 			</a>
 
 			<ul class="dropdown-menu p-1 text-sm" style="width: 300px;" role="menu">
-				<li class="px-3 py-1 d-flex flex-nowrap gap-2">
-					<select id="reply-count-filter" class="form-select py-2 ps-2 pe-3">
+				<li class="px-2 py-1 d-flex flex-nowrap gap-2">
+					<select id="reply-count-filter" class="form-select form-select-sm">
 						<option value="atleast">[[search:at-least]]</option>
 						<option value="atmost">[[search:at-most]]</option>
 					</select>
-					<input id="reply-count" type="number" min="0" class="form-control py-2 ps-2 pe-3" />
+					<input id="reply-count" type="number" min="0" class="form-control form-control-sm" />
 				</li>
 			</ul>
 		</div>
@@ -115,12 +115,12 @@
 			</a>
 
 			<ul class="dropdown-menu p-1 text-sm" style="width: 350px;" role="menu">
-				<li class="px-3 py-1 d-flex flex-nowrap gap-2">
-					<select id="post-time-filter" class="form-select py-2 ps-2 pe-3">
+				<li class="px-2 py-1 d-flex flex-nowrap gap-2">
+					<select id="post-time-filter" class="form-select form-select-sm">
 						<option value="newer">[[search:newer-than]]</option>
 						<option value="older">[[search:older-than]]</option>
 					</select>
-					<select id="post-time-range" class="form-select py-2 ps-2 pe-3">
+					<select id="post-time-range" class="form-select form-select-sm">
 						<option value="">[[search:any-date]]</option>
 						<option value="86400">[[search:yesterday]]</option>
 						<option value="604800">[[search:one-week]]</option>
@@ -144,8 +144,8 @@
 			</a>
 
 			<ul class="dropdown-menu p-1 text-sm" style="width: 250px;" role="menu">
-				<li class="px-3 py-1 d-flex flex-column gap-2">
-					<select id="post-sort-by" class="form-select py-2 ps-2 pe-3">
+				<li class="px-2 py-1 d-flex flex-column gap-2">
+					<select id="post-sort-by" class="form-select form-select-sm">
 						<option value="relevance">[[search:relevance]]</option>
 						<option value="timestamp">[[search:post-time]]</option>
 						<option value="votes">[[search:votes]]</option>
@@ -158,7 +158,7 @@
 						<option value="user.username">[[search:username]]</option>
 						<option value="category.name">[[search:category]]</option>
 					</select>
-					<select id="post-sort-direction" class="form-select py-2 ps-2 pe-3">
+					<select id="post-sort-direction" class="form-select form-select-sm">
 						<option value="desc">[[search:descending]]</option>
 						<option value="asc">[[search:ascending]]</option>
 					</select>
@@ -174,9 +174,9 @@
 			</a>
 
 			<ul class="dropdown-menu p-1 text-sm" style="width: 300px;" role="menu">
-				<li class="px-3 py-1 d-flex flex-column gap-2">
-					<button id="save-preferences" class="btn btn-primary">[[search:save-preferences]]</button>
-					<button id="clear-preferences" class="btn btn-ghost border">[[search:clear-preferences]]</button>
+				<li class="px-2 py-1 d-flex flex-column gap-2">
+					<button id="save-preferences" class="btn btn-sm btn-primary">[[search:save-preferences]]</button>
+					<button id="clear-preferences" class="btn btn-sm btn-ghost border">[[search:clear-preferences]]</button>
 				</li>
 			</ul>
 		</div>
