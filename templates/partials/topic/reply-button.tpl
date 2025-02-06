@@ -18,6 +18,6 @@
 	{{{ end }}}
 {{{ else }}}
 	{{{ if !privileges.topics:reply }}}
-	<a component="topic/reply/guest" href="{config.relative_path}/login" class="d-flex gap-2 align-items-center fw-semibold btn btn-sm btn-primary"><i class="fa fa-fw fa-reply {{{ if !config.theme.topicSidebarTools}}} d-sm-block d-md-none {{{ end }}}"></i><span class="d-none d-md-block">[[topic:guest-login-reply]]</span></a>
+	<a component="topic/reply/guest" href="{config.relative_path}/login" class="d-flex gap-2 align-items-center fw-semibold btn btn-sm btn-primary"><i class="fa fa-fw fa-sign-in {{{ if !config.theme.topicSidebarTools}}} d-sm-block d-md-none {{{ end }}}"></i><span class="d-none d-md-block">[[topic:guest-login-reply]]</span></a>
 	{{{ end }}}
 {{{ end }}}
