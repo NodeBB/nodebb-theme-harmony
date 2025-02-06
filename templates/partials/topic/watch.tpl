@@ -1,19 +1,19 @@
 {{{ if config.loggedIn }}}
 <div class="btn-group bottom-sheet" component="topic/watch">
-	<button class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 dropdown-toggle" data-bs-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
+	<button class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 dropdown-toggle text-truncate" data-bs-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
 		<span component="topic/following/menu" class="d-flex gap-2 align-items-center{{{ if !isFollowing }}} hidden{{{ end }}}">
 			<i class="flex-shrink-0 fa fa-fw fa-bell-o text-primary"></i>
-			<span class="d-none d-md-inline fw-semibold">[[topic:watching]]</span>
+			<span class="d-none d-md-inline fw-semibold text-truncate text-nowrap">[[topic:watching]]</span>
 		</span>
 
 		<span component="topic/not-following/menu" class="d-flex gap-2 align-items-center{{{ if !isNotFollowing}}} hidden{{{ end }}}">
 			<i class="flex-shrink-0 fa fa-fw fa-bell-slash-o text-primary"></i>
-			<span class="d-none d-md-inline fw-semibold">[[topic:not-watching]]</span>
+			<span class="d-none d-md-inline fw-semibold text-truncate text-nowrap">[[topic:not-watching]]</span>
 		</span>
 
 		<span component="topic/ignoring/menu" class="d-flex gap-2 align-items-center{{{ if !isIgnoring }}} hidden{{{ end }}}">
 			<i class="flex-shrink-0 fa fa-fw fa-eye-slash text-primary"></i>
-			<span class="d-none d-md-inline fw-semibold">[[topic:ignoring]]</span>
+			<span class="d-none d-md-inline fw-semibold text-truncate text-nowrap">[[topic:ignoring]]</span>
 		</span>
 	</button>
 	<ul class="dropdown-menu p-1 text-sm" role="menu">

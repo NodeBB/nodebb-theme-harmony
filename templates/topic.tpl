@@ -97,7 +97,7 @@
 						<div class="sticky-top" style="{{{ if config.theme.topicSidebarTools }}}top:2rem;{{{ else }}}top:6rem; {{{ end }}} z-index:1;">
 							<div class="d-flex flex-column gap-3 align-items-end">
 								{{{ if config.theme.topicSidebarTools }}}
-								<div class="d-flex flex-column gap-2" style="min-width: 170px;">
+								<div class="d-flex flex-column gap-2" style="width: 170px;">
 									<!-- IMPORT partials/topic/reply-button.tpl -->
 									<!-- IMPORT partials/topic/mark-unread.tpl -->
 									<!-- IMPORT partials/topic/watch.tpl -->
