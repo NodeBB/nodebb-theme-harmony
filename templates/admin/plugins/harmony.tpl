@@ -31,6 +31,15 @@
 					</div>
 				</div>
 				<div class="form-check form-switch">
+					<input type="checkbox" class="form-check-input" id="topicSidebarTools" name="topicSidebarTools" />
+					<div for="topicSidebarTools" class="form-check-label">
+						[[themes/harmony:settings.topicSidebarTools]]
+						<p class="form-text">
+							[[themes/harmony:settings.topicSidebarTools.help]]
+						</p>
+					</div>
+				</div>
+				<div class="form-check form-switch">
 					<input type="checkbox" class="form-check-input" id="autohideBottombar" name="autohideBottombar" />
 					<div for="autohideBottombar" class="form-check-label">
 						[[themes/harmony:settings.autohideBottombar]]

@@ -15,6 +15,7 @@ const defaults = {
 	centerHeaderElements: 'off',
 	mobileTopicTeasers: 'off',
 	stickyToolbar: 'on',
+	topicSidebarTools: 'off',
 	autohideBottombar: 'on',
 	openSidebars: 'off',
 	chatModals: 'off',
@@ -147,6 +148,7 @@ library.loadThemeConfig = async function (uid) {
 	config.centerHeaderElements = config.centerHeaderElements === 'on';
 	config.mobileTopicTeasers = config.mobileTopicTeasers === 'on';
 	config.stickyToolbar = config.stickyToolbar === 'on';
+	config.topicSidebarTools = config.topicSidebarTools === 'on';
 	config.autohideBottombar = config.autohideBottombar === 'on';
 	config.openSidebars = config.openSidebars === 'on';
 	config.chatModals = config.chatModals === 'on';

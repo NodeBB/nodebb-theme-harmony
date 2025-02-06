@@ -35,24 +35,6 @@
 		margin-left: 1.5rem;
 		transition: border-color 1s ease-out;
 
-		&:first-child {
-			&:before {
-				content: '';
-				position: absolute;
-				top: 0;
-				height: 16px;
-				width: 16px;
-				background-color: $border-color;
-				border-radius: 100%;
-				transform: translate(calc(-50% - .5px), -100%);
-				transition: background-color 1s ease-out;
-			}
-
-			&.highlight:before {
-				background-color: $primary;
-			}
-		}
-
 		&:last-child {
 			padding-bottom: 2rem;
 

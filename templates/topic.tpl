@@ -67,9 +67,9 @@
 
 				<div class="d-flex gap-0 gap-lg-5">
 					<div class="posts-container" style="min-width: 0;">
-						<ul component="topic" class="posts timeline list-unstyled mt-sm-2 p-0 py-3" style="min-width: 0;" data-tid="{tid}" data-cid="{cid}">
+						<ul component="topic" class="posts timeline list-unstyled p-0 py-3" style="min-width: 0;" data-tid="{tid}" data-cid="{cid}">
 						{{{ each posts }}}
-							<li component="post" class="pt-4 {{{ if posts.deleted }}}deleted{{{ end }}} {{{ if posts.selfPost }}}self-post{{{ end }}} {{{ if posts.topicOwnerPost }}}topic-owner-post{{{ end }}}" <!-- IMPORT partials/data/topic.tpl -->>
+							<li component="post" class="{{{ if (./index != 0) }}}pt-4{{{ end }}} {{{ if posts.deleted }}}deleted{{{ end }}} {{{ if posts.selfPost }}}self-post{{{ end }}} {{{ if posts.topicOwnerPost }}}topic-owner-post{{{ end }}}" <!-- IMPORT partials/data/topic.tpl -->>
 								<a component="post/anchor" data-index="{./index}" id="{increment(./index, "1")}"></a>
 								<meta itemprop="datePublished" content="{./timestampISO}">
 								{{{ if ./editedISO }}}
@@ -93,8 +93,29 @@
 						<!-- IMPORT partials/topic/quickreply.tpl -->
 						{{{ end }}}
 					</div>
-
-					<!-- IMPORT partials/topic/navigator.tpl -->
+					<div class="d-flex d-none d-lg-block flex-grow-1 mt-2">
+						<div class="sticky-top" style="{{{ if config.theme.topicSidebarTools }}}top:2rem;{{{ else }}}top:6rem; {{{ end }}} z-index:1;">
+							<div class="d-flex flex-column gap-3 align-items-end">
+								{{{ if config.theme.topicSidebarTools }}}
+								<div class="d-flex flex-column gap-2" style="min-width: 170px;">
+									<!-- IMPORT partials/topic/reply-button.tpl -->
+									<!-- IMPORT partials/topic/mark-unread.tpl -->
+									<!-- IMPORT partials/topic/watch.tpl -->
+									<!-- IMPORT partials/topic/sort.tpl -->
+									<!-- IMPORT partials/topic/tools.tpl -->
+								</div>
+								{{{ end }}}
+								{{{ if config.theme.topicSidebarTools }}}<hr class="my-0" style="min-width: 170px;"/>{{{ end }}}
+								<!-- IMPORT partials/topic/navigator.tpl -->
+								{{{ if config.theme.topicSidebarTools }}}<hr class="my-0" style="min-width: 170px;" />{{{ end }}}
+								{{{ if browsingUsers }}}
+								<div class="d-flex flex-column ps-2 hidden-xs" style="min-width: 170px;">
+								<!-- IMPORT partials/topic/browsing-users.tpl -->
+								</div>
+								{{{ end }}}
+							</div>
+						</div>
+					</div>
 				</div>
 
 				{{{ if config.usePagination }}}
