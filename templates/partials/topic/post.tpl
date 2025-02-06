@@ -5,7 +5,10 @@
 	{{{ end }}}
 </div>
 {{{ end }}}
-<div class="d-flex align-items-start gap-3">
+{{{ if (./parent && !hideParent) }}}
+<!-- IMPORT partials/topic/post-parent.tpl -->
+{{{ end }}}
+<div class="d-flex align-items-start gap-3 post-container-parent">
 	<div class="bg-body d-none d-sm-block rounded-circle" style="outline: 2px solid var(--bs-body-bg);">
 		<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" aria-label="[[aria:profile-page-for, {./user.displayname}]]">
 			{buildAvatar(posts.user, "48px", true, "", "user/picture")}
@@ -54,7 +57,7 @@
 				{{{ end }}}
 
 				<div class="d-flex gap-1 align-items-center">
-					<span class="text-muted">{generateWroteReplied(@value, config.timeagoCutoff)}</span>
+					<span class="text-muted">{generateWrote(@value, config.timeagoCutoff)}</span>
 
 					<i component="post/edit-indicator" class="fa fa-edit text-muted{{{ if privileges.posts:history }}} pointer{{{ end }}} edit-icon {{{ if !posts.editor.username }}}hidden{{{ end }}}" title="[[global:edited-timestamp, {isoTimeToLocaleString(./editedISO, config.userLang)}]]"></i>
 					<span data-editor="{posts.editor.userslug}" component="post/editor" class="visually-hidden">[[global:last-edited-by, {posts.editor.username}]] <span class="timeago" title="{isoTimeToLocaleString(posts.editedISO, config.userLang)}"></span></span>

@@ -69,6 +69,13 @@ body.template-topic {
 		@include topic-avatars();
 	}
 
+	[component="post/parent"] {
+		margin-left: 2.5rem;
+		[component="post/parent/content"] > p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
 	[component="post/replies/container"] {
 		.icon {
 			display: none !important;
