@@ -22,7 +22,7 @@
 		<a href="#" class="dropdown-item rounded-1 user-status d-flex align-items-center gap-2 {{{ if user.away }}}selected{{{ end }}}" data-status="away" role="menuitem">
 			<span component="user/status" class="flex-shrink-0 border border-white border-2 rounded-circle status away"></span>
 			<span class="flex-grow-1">[[global:away]]</span>
-			<i class="fa-solid fa-check text-secondary flex-shrink-0"><span class="visually-hidden"></span>[[global:selected]]</span></i>
+			<i class="fa-solid fa-check text-secondary flex-shrink-0"><span class="visually-hidden">[[global:selected]]</span></i>
 		</a>
 	</li>
 	<li>
