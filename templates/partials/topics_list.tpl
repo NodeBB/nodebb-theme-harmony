@@ -51,7 +51,7 @@
 					{{{each ./icons}}}<span class="lh-1">{@value}</span>{{{end}}}
 
 					{{{ if (!template.category && !template.world) }}}
-					{function.buildCategoryLabel, ./category, "a", "border"}
+					{buildCategoryLabel(./category, "a", "border")}
 					{{{ end }}}
 
 					<span data-tid="{./tid}" component="topic/tags" class="lh-1 tag-list hidden-xs d-flex flex-wrap gap-1 {{{ if !./tags.length }}}hidden{{{ end }}}">
