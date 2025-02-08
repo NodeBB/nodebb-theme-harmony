@@ -15,7 +15,7 @@ const defaults = {
 	centerHeaderElements: 'off',
 	mobileTopicTeasers: 'off',
 	stickyToolbar: 'on',
-	topicSidebarTools: 'off',
+	topicSidebarTools: 'on',
 	autohideBottombar: 'on',
 	openSidebars: 'off',
 	chatModals: 'off',
