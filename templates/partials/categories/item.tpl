@@ -14,6 +14,19 @@
 				{./descriptionParsed}
 			</div>
 			{{{ end }}}
+			<div class="d-flex gap-1 d-block d-lg-none w-100">
+				<span class="badge text-body border stats text-xs text-muted">
+					<i class="fa fa-fw fa-list"></i>
+					<span class="fw-normal">{humanReadableNumber(./totalTopicCount, 0)}</span>
+				</span>
+				<span class="badge text-body border stats text-xs text-muted">
+					<i class="fa-regular fa-fw fa-message"></i>
+					<span class="fw-normal">{humanReadableNumber(./totalPostCount, 0)}</span>
+				</span>
+				{{{ if ./teaser }}}
+				<a href="{config.relative_path}{./teaser.url}" class="border badge bg-transparent text-muted fw-normal timeago {{{ if (!./teaser.timestampISO || config.theme.mobileTopicTeasers) }}}hidden{{{ end }}}" title="{./teaser.timestampISO}"></a>
+				{{{ end }}}
+			</div>
 			{{{ if !config.hideSubCategories }}}
 			{{{ if ./children.length }}}
 			<ul class="list-unstyled category-children row row-cols-1 row-cols-md-2 g-2 my-1 w-100">
@@ -43,11 +56,11 @@
 			<div class="card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-column align-items-center">
 				<span class="fs-5 ff-secondary lh-1" title="{./totalPostCount}">{humanReadableNumber(./totalPostCount, 0)}</span>
 				<span class="d-none d-xl-flex text-lowercase text-xs">[[global:posts]]</span>
-				<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-message"></i>
+				<i class="d-xl-none fa-regular fa-fw text-xs text-muted opacity-75 fa-message"></i>
 			</div>
 		</div>
 		{{{ if !config.hideCategoryLastPost }}}
-		<div component="topic/teaser" class="teaser col-lg-6 col-12 {{{ if !config.theme.mobileTopicTeasers }}}d-none d-lg-block{{{ end }}}">
+		<div component="topic/teaser" class="teaser ps-5 ps-lg-0 col-lg-6 col-12 {{{ if !config.theme.mobileTopicTeasers }}}d-none d-lg-block{{{ end }}}">
 			<!-- IMPORT partials/categories/lastpost.tpl -->
 		</div>
 		{{{ end }}}
