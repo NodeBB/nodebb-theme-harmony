@@ -14,6 +14,7 @@
 				{./descriptionParsed}
 			</div>
 			{{{ end }}}
+			{{{ if !./link }}}
 			<div class="d-flex gap-1 d-block d-lg-none w-100">
 				<span class="badge text-body border stats text-xs text-muted">
 					<i class="fa fa-fw fa-list"></i>
@@ -27,6 +28,7 @@
 				<a href="{config.relative_path}{./teaser.url}" class="border badge bg-transparent text-muted fw-normal timeago {{{ if (!./teaser.timestampISO || config.theme.mobileTopicTeasers) }}}hidden{{{ end }}}" title="{./teaser.timestampISO}"></a>
 				{{{ end }}}
 			</div>
+			{{{ end }}}
 			{{{ if !config.hideSubCategories }}}
 			{{{ if ./children.length }}}
 			<ul class="list-unstyled category-children row row-cols-1 row-cols-md-2 g-2 my-1 w-100">
