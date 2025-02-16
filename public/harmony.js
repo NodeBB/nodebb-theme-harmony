@@ -63,6 +63,7 @@ $(document).ready(function () {
 			});
 
 			const bottomBar = $('[component="bottombar"]');
+			let stickyTools = null;
 			const location = config.theme.topMobilebar ? 'top' : 'bottom';
 			const $body = $('body');
 			const $window = $(window);
@@ -94,8 +95,8 @@ $(document).ready(function () {
 								-bottomBar.find('.bottombar-nav').outerHeight(true) :
 								0,
 						});
-						if (config.theme.topMobilebar && config.theme.autohideBottombar) {
-							$('.sticky-tools').css({
+						if (stickyTools && config.theme.topMobilebar && config.theme.autohideBottombar) {
+							stickyTools.css({
 								top: isHiding ? 0 : 'var(--panel-offset)',
 							});
 						}
@@ -121,6 +122,8 @@ $(document).ready(function () {
 				setTimeout(enableAutohide, 250);
 			});
 			hooks.on('action:ajaxify.end', function () {
+				const { template } = ajaxify.data;
+				stickyTools = (template.category || template.topic) ? $('.sticky-tools') : null;
 				$window.off('scroll', delayedScroll);
 				if (config.theme.autohideBottombar) {
 					bottomBar.css({ [location]: 0 });
