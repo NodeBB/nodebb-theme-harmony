@@ -63,6 +63,7 @@ $(document).ready(function () {
 			});
 
 			const bottomBar = $('[component="bottombar"]');
+			const location = config.theme.topMobilebar ? 'top' : 'bottom';
 			const $body = $('body');
 			const $window = $(window);
 			$body.on('shown.bs.dropdown hidden.bs.dropdown', '.sticky-tools', function () {
@@ -86,12 +87,18 @@ $(document).ready(function () {
 					const diff = Math.abs(st - lastScrollTop);
 					const scrolledDown = st > lastScrollTop;
 					const scrolledUp = st < lastScrollTop;
+					const isHiding = !scrolledUp && scrolledDown;
 					if (diff > 10) {
 						bottomBar.css({
-							bottom: !scrolledUp && scrolledDown ?
+							[location]: isHiding ?
 								-bottomBar.find('.bottombar-nav').outerHeight(true) :
 								0,
 						});
+						if (config.theme.topMobilebar && config.theme.autohideBottombar) {
+							$('.sticky-tools').css({
+								top: isHiding ? 0 : 'var(--panel-offset)',
+							});
+						}
 					}
 				}
 				lastScrollTop = st;
@@ -116,7 +123,7 @@ $(document).ready(function () {
 			hooks.on('action:ajaxify.end', function () {
 				$window.off('scroll', delayedScroll);
 				if (config.theme.autohideBottombar) {
-					bottomBar.css({ bottom: 0 });
+					bottomBar.css({ [location]: 0 });
 					setTimeout(enableAutohide, 250);
 				}
 			});

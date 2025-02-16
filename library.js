@@ -16,6 +16,7 @@ const defaults = {
 	mobileTopicTeasers: 'off',
 	stickyToolbar: 'on',
 	topicSidebarTools: 'on',
+	topMobilebar: 'off',
 	autohideBottombar: 'on',
 	openSidebars: 'off',
 	chatModals: 'off',
@@ -150,6 +151,7 @@ library.loadThemeConfig = async function (uid) {
 	config.stickyToolbar = config.stickyToolbar === 'on';
 	config.topicSidebarTools = config.topicSidebarTools === 'on';
 	config.autohideBottombar = config.autohideBottombar === 'on';
+	config.topMobilebar = config.topMobilebar === 'on';
 	config.openSidebars = config.openSidebars === 'on';
 	config.chatModals = config.chatModals === 'on';
 	return config;

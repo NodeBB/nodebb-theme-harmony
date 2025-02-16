@@ -49,6 +49,12 @@
 					</div>
 				</div>
 				<div class="form-check form-switch">
+					<input type="checkbox" class="form-check-input" id="topMobilebar" name="topMobilebar" />
+					<div for="topMobilebar" class="form-check-label">
+						[[themes/harmony:settings.topMobilebar]]
+					</div>
+				</div>
+				<div class="form-check form-switch">
 					<input type="checkbox" class="form-check-input" id="openSidebars" name="openSidebars" />
 					<label for="openSidebars" class="form-check-label">[[themes/harmony:settings.openSidebars]]</label>
 				</div>

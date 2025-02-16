@@ -59,6 +59,13 @@
 	</div>
 
 	<div class="form-check form-switch mb-3">
+		<input class="form-check-input" type="checkbox" role="switch" id="topMobilebar" name="topMobilebar" {{{ if theme.topMobilebar }}}checked{{{ end }}}>
+		<label class="form-check-label" for="topMobilebar">
+			[[themes/harmony:settings.topMobilebar]]
+		</label>
+	</div>
+
+	<div class="form-check form-switch mb-3">
 		<input class="form-check-input" type="checkbox" role="switch" id="openSidebars" name="openSidebars" {{{ if theme.openSidebars }}}checked{{{ end }}}>
 		<label class="form-check-label" for="openSidebars">[[themes/harmony:settings.openSidebars]]</label>
 	</div>

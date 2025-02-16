@@ -4,7 +4,7 @@
 			{buildAvatar(post.user, "24px", true)} {post.user.username}
 		</a>
 	</div>
-	<span class="timeago text-nowrap text-sm" title="{post.timestampISO}"></span>
+	<span class="timeago text-nowrap text-sm text-muted" title="{post.timestampISO}"></span>
 </div>
 
 <div>{post.content}</div>

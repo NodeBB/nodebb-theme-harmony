@@ -1,0 +1,63 @@
+.navigator-mobile {
+	.pagination-block {
+		.scroller-container {
+			border-right: 3px solid;
+			margin-right: 5.5px;
+			.scroller-thumb {
+				right: -6px;
+				padding-right: 15px;
+				margin-right: -15px;
+			}
+		}
+	}
+}
+
+.bottombar-nav {
+	#user_dropdown .avatar {
+		margin: 2px 0; // fixes the avatar so its height is same as the icons on right sidebar
+	}
+	.nav-text {
+		font-size: 1rem;
+		color: $body-color;
+	}
+	.nav-link {
+		padding: 8px;
+		border-radius: $border-radius-sm;
+	}
+	.usermenu, .chats, .notifications, .drafts, .search, .logged-out-menu {
+		.visible-open { display: none; }
+	}
+	.badge {
+		font-size: 9px;
+		line-height: 12px;
+	}
+
+	.dropdown-menu {
+		left: 0!important;
+		right: 0!important;
+		box-shadow: none!important;
+		border-left: 0;
+		border-right: 0;
+		border-radius: 0;
+		.list-container {
+			max-height: 60vh!important;
+			overflow-y: auto!important;
+		}
+	}
+
+	.navigation-dropdown, .user-dropdown {
+		> li {
+			> a, .dropdown-item {
+				padding: 10px 20px!important;
+			}
+		}
+
+		max-height: 60vh!important;
+		overflow: auto!important;
+	}
+
+	.search-dropdown .quick-search-results {
+		max-height: 225px!important;
+		overflow-y: auto!important;
+	}
+}

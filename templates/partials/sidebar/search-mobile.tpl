@@ -4,7 +4,7 @@
 </a>
 <div class="search-dropdown dropdown-menu p-2 shadow" role="menu">
 	<form component="search/form" id="search-form" class="d-flex justify-content-end align-items-center" role="search" method="GET">
-		<div component="search/fields" class="w-100" id="search-fields">
+		<div component="search/fields" class="d-flex flex-column w-100 {{{ if config.theme.topMobilebar }}}flex-column-reverse gap-2{{{ end }}}" id="search-fields">
 			<div id="quick-search-container" class="quick-search-container d-block hidden">
 				<div class="form-check filter-category mb-2 ms-2">
 					<input class="form-check-input" type="checkbox" checked>
