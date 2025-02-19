@@ -10,6 +10,15 @@ body {
 	text-rendering: optimizeLegibility;
 }
 
+@include media-breakpoint-down(lg) {
+	body {
+		height: 100%;
+		.layout-container {
+			height: 100%;
+		}
+	}
+}
+
 // fixes chrome font boosting :/ https://stackoverflow.com/questions/13430897/how-to-override-font-boosting-in-mobile-chrome
 body * {
 	max-height:1000000px;

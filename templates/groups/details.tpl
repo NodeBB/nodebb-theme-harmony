@@ -1,4 +1,4 @@
-<div component="groups/container" class="groups details">
+<div component="groups/container" class="groups details flex-fill">
 	<div class="cover position-absolute start-0 top-0" component="groups/cover" style="background-image: url({group.cover:url}); background-position: {group.cover:position};">
 		<div class="container">
 			{{{ if group.isOwner }}}

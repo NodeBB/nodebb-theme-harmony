@@ -34,7 +34,7 @@
 {{{ end }}}
 
 
-<div class="row mt-3">
+<div class="row flex-fill mt-3">
 	<div class="category d-flex flex-column {{{if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<!-- IMPORT partials/category/subcategory.tpl -->
 		{{{ if (topics.length || privileges.topics:create) }}}

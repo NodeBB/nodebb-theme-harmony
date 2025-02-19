@@ -1,4 +1,4 @@
-<div class="search">
+<div class="search flex-fill">
 	<div id="advanced-search" class="d-flex flex-column flex-md-row">
 		<!-- sidebar -->
 		<div class="flex-shrink-0 pe-2 border-end-md text-sm mb-3" style="flex-basis: 240px!important;">

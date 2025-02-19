@@ -3,7 +3,7 @@
 	{{widgets.header.html}}
 	{{{end}}}
 </div>
-<div class="users">
+<div class="users flex-fill">
 	<h3 class="fw-semibold">[[global:users]]</h3>
 	<div class="d-flex flex-wrap justify-content-between">
 		<div class="mb-2 mb-md-0">

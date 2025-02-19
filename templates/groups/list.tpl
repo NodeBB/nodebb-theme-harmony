@@ -3,7 +3,7 @@
 	{{widgets.header.html}}
 	{{{end}}}
 </div>
-<div class="groups list">
+<div class="groups list flex-fill">
 	<h3 class="fw-semibold">[[pages:groups]]</h3>
 	<div class="d-flex flex-wrap justify-content-between">
 		<div class="mb-2 mb-md-0">

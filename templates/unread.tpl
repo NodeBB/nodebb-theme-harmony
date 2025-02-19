@@ -5,7 +5,7 @@
 	{{{end}}}
 </div>
 {{{ end }}}
-<div class="row">
+<div class="row flex-fill">
 	<div class="unread {{{if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<!-- IMPORT partials/topic-list-bar.tpl -->
 		<div class="category">

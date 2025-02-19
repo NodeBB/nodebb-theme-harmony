@@ -1,4 +1,4 @@
-<div class="notifications">
+<div class="notifications flex-fill">
 	<div class="btn-toolbar justify-content-end" role="toolbar">
 		<button class="btn btn-sm btn-light" component="notifications/mark_all">[[notifications:mark-all-read]]</button>
 	</div>
