@@ -122,6 +122,7 @@ $(document).ready(function () {
 				setTimeout(enableAutohide, 250);
 			});
 			hooks.on('action:ajaxify.end', function () {
+				bottomBar.removeClass('hidden');
 				const { template } = ajaxify.data;
 				stickyTools = (template.category || template.topic) ? $('.sticky-tools') : null;
 				$window.off('scroll', delayedScroll);
