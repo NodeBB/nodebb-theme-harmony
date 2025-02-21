@@ -9,10 +9,10 @@
 		<div class="mb-2 mb-md-0">
 			<div class="text-sm d-flex flex-wrap align-items-center gap-2">
 				[[topic:sort-by]]
-				<div class="d-flex gap-2">
-					<a href="?sort=alpha" class="btn btn-ghost btn-sm ff-secondary fw-semibold {{{ if (sort == "alpha") }}}active{{{ end }}}">[[groups:details.group-name]]</a>
-					<a href="?sort=count" class="btn btn-ghost btn-sm ff-secondary fw-semibold {{{ if (sort == "count") }}}active{{{ end }}}">[[groups:details.member-count]]</a>
-					<a href="?sort=date" class="btn btn-ghost btn-sm ff-secondary fw-semibold {{{ if (sort == "date") }}}active{{{ end }}}">[[groups:details.creation-date]]</a>
+				<div class="d-flex flex-wrap gap-2">
+					<a href="?sort=alpha" class="btn btn-ghost btn-sm ff-secondary fw-semibold text-nowrap {{{ if (sort == "alpha") }}}active{{{ end }}}">[[groups:details.group-name]]</a>
+					<a href="?sort=count" class="btn btn-ghost btn-sm ff-secondary fw-semibold text-nowrap {{{ if (sort == "count") }}}active{{{ end }}}">[[groups:details.member-count]]</a>
+					<a href="?sort=date" class="btn btn-ghost btn-sm ff-secondary fw-semibold text-nowrap {{{ if (sort == "date") }}}active{{{ end }}}">[[groups:details.creation-date]]</a>
 				</div>
 			</div>
 		</div>
