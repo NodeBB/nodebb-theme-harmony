@@ -1,10 +1,9 @@
-<div class="d-flex gap-2 mb-2 justify-content-between align-items-center flex-nowrap">
-	<div class="icon text-truncate">
-		<a href="{{{ if post.user.userslug }}}{config.relative_path}/user/{post.user.userslug}{{{else }}}#{{{ end }}}">
-			{buildAvatar(post.user, "24px", true)} {post.user.username}
-		</a>
+<div class="d-flex gap-2 mb-2 align-items-center flex-nowrap text-sm">
+	{buildAvatar(post.user, "24px", true)}
+	<div class="text-truncate">
+		<a href="{{{ if post.user.userslug }}}{config.relative_path}/user/{post.user.userslug}{{{else }}}#{{{ end }}}">{post.user.displayname}</a>
 	</div>
-	<span class="timeago text-nowrap text-sm text-muted" title="{post.timestampISO}"></span>
+	<span class="timeago text-nowrap text-muted" title="{post.timestampISO}"></span>
 </div>
 
-<div>{post.content}</div>
+<div class="text-sm">{post.content}</div>

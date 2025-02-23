@@ -1,4 +1,4 @@
-<div class="d-flex w-100">
+<div class="d-flex w-100 navigator-mobile">
 	<div class="pagination-block text-bg-light m-2 rounded-1 border border-gray-300 w-100" style="height:30px;">
 		<div class="position-relative">
 			<div class="progress-bar rounded-1 bg-info d-block position-absolute" style="height:28px;"></div>
@@ -49,10 +49,10 @@
 					</div>
 					<div class="row">
 						<div class="col-6">
-							<button id="myNextPostBtn" class="btn btn-outline-secondary form-control text-truncate" disabled>[[topic:go-to-my-next-post]]</button>
+							<button id="myNextPostBtn" class="btn btn-sm btn-ghost border form-control text-truncate" disabled>[[topic:go-to-my-next-post]]</button>
 						</div>
 						<div class="col-6">
-							<input type="number" class="form-control" id="indexInput" placeholder="[[global:pagination.enter-index]]">
+							<input type="number" class="form-control form-control-sm" id="indexInput" placeholder="[[global:pagination.enter-index]]">
 						</div>
 					</div>
 				</li>

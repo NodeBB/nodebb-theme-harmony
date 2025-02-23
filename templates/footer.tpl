@@ -6,7 +6,7 @@
 	{{{ if !config.theme.topMobilebar }}}
 	<!-- IMPORT partials/mobile-footer.tpl -->
 	{{{ else }}}
-	<div class="fixed-bottom navigator-mobile d-lg-none">
+	<div class="fixed-bottom d-lg-none">
 		<!-- IMPORT partials/topic/navigator-mobile.tpl -->
 	</div>
 	{{{ end }}}
