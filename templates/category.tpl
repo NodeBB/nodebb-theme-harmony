@@ -13,6 +13,12 @@
 		{./descriptionParsed}
 	</div>
 	{{{ end }}}
+	{{{ if ./handleFull }}}
+	<p class="text-secondary text-sm fst-italic">
+		[[category:handle.description, {handleFull}]]
+		<a href="#" class="link-secondary" data-action="copy" data-clipboard-text="{handleFull}"><i class="fa fa-fw fa-copy" aria-hidden="true"></i></a>
+	</p>
+	{{{ end }}}
 	<div class="d-flex flex-wrap gap-2 {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
 		<span class="badge text-body border border-gray-300 stats text-xs">
 			<span title="{totalTopicCount}" class="fw-bold">{humanReadableNumber(totalTopicCount)}</span>
