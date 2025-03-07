@@ -74,6 +74,16 @@
 		</a>
 		{{{ end }}}
 
+		{{{ if remoteUrl }}}
+		<hr class="w-100 my-2"/>
+
+		<a href="{remoteUrl}" target="_self" component="account/view-remote" class="btn btn-ghost btn-sm ff-secondary d-flex align-items-center gap-2 text-start">
+			<i class="flex-shrink-0 fa-solid fa-globe"></i>
+			<div class="flex-grow-1 text-nowrap">[[user:view-remote]]</div>
+		</a>
+		{{{ end }}}
+
+
 		{{{ if (loggedIn && (!isSelf && !banned)) }}}
 		<hr class="w-100 my-2"/>
 
