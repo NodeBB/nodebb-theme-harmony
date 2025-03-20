@@ -50,7 +50,7 @@
 					</span>
 					{{{each ./icons}}}<span class="lh-1">{@value}</span>{{{end}}}
 
-					{{{ if (!template.category && !template.world) }}}
+					{{{ if !template.category }}}
 					{buildCategoryLabel(./category, "a", "border")}
 					{{{ end }}}
 
