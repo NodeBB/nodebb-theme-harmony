@@ -29,7 +29,7 @@
 				{{{ end }}}
 				<div data-save-id="{./save_id}">
 					<div class="d-flex gap-1 justify-content-between ff-base">
-						<div class="dropdown-item rounded-1 p-2 d-flex flex-column gap-2 pointer" component="drafts/open" data-save-id="{./save_id}" role="menuitem">
+						<a href="#" class="d-flex flex-column flex-grow-1 gap-2 justify-content-start align-items-start btn btn-ghost btn-sm ff-sans text-start" component="drafts/open" data-save-id="{./save_id}" role="menuitem">
 							{{{ if (./action == "topics.post") }}}
 							{{{ if ./title}}}
 							<div class="text text-xs fw-semibold line-clamp-2 text-break">{./title}</div>
@@ -48,7 +48,7 @@
 							<div class="text text-sm line-clamp-3 text-break">{./text}</div>
 							{{{ end }}}
 							<div class="timeago text-xs text-muted" title="{./timestampISO}"></div>
-						</div>
+						</a>
 						<div>
 							<button component="drafts/delete" data-save-id="{./save_id}" class="btn btn-light btn-sm">
 								<i class="unread fa fa-xs fa-trash text-secondary"></i>
