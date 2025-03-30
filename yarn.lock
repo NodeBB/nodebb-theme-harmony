@@ -68,15 +68,15 @@
     "@eslint/core" "^0.12.0"
     levn "^0.4.1"
 
-"@fontsource/inter@5.0.15":
-  version "5.0.15"
-  resolved "https://registry.npmjs.org/@fontsource/inter/-/inter-5.0.15.tgz"
-  integrity sha512-/IoWYEXl8lqJEx50JqNPT+bI4VNwxb/bg2oOfvG8PiEsDsmHRFvWBVHlohBNn1+QdBf+KbAjU/gb4vlGOSsVWw==
+"@fontsource/inter@5.2.5":
+  version "5.2.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-5.2.5.tgz#69efffe6ccfae138cbe1806f41daa39cef986b59"
+  integrity sha512-kbsPKj0S4p44JdYRFiW78Td8Ge2sBVxi/PIBwmih+RpSXUdvS9nbs1HIiuUSPtRMi14CqLEZ/fbk7dj7vni1Sg==
 
-"@fontsource/poppins@5.0.8":
-  version "5.0.8"
-  resolved "https://registry.npmjs.org/@fontsource/poppins/-/poppins-5.0.8.tgz"
-  integrity sha512-P8owfYWluoUY5Nyzk4gT/L6LmLmseP6ezFWhj6VBUa5pRIdnCvNJpoQ6i/vhekjtJOfqX6nKlB+LCttoUl2GQQ==
+"@fontsource/poppins@5.2.5":
+  version "5.2.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/poppins/-/poppins-5.2.5.tgz#038958aa6945f12875d37bda8f442eff54a2d636"
+  integrity sha512-1S3k45pZOz2jqGPPqKw0in3uxFwnB+d5jSU8Tp9YwH/dIJptE3jdkQbYN0QD861GtuOpn6QhPW/yKt1w7hVRBQ==
 
 "@humanfs/core@^0.19.1":
   version "0.19.1"
