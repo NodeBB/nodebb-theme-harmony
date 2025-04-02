@@ -74,6 +74,12 @@ body.template-topic {
 		[component="post/parent/content"] > p:last-child {
 			margin-bottom: 0;
 		}
+		&[data-collapsed="true"] {
+			> [component="post/parent/content"] > * {
+				font-size: 13px!important;
+				line-height: var(--bs-btn-line-height)!important;
+			}
+		}
 	}
 
 	[component="post/replies/container"] {
