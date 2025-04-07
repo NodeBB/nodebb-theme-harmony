@@ -26,7 +26,9 @@
 			<span class="timeago text-muted" title="{posts.timestampISO}"></span>
 		</div>
 	</li>
+	{{{ if !@last }}}
 	<li role="separator" class="dropdown-divider"></li>
+	{{{ end }}}
 	{{{ end }}}
 
 </ul>
