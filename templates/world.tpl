@@ -41,9 +41,11 @@
 
 		<hr />
 
-		{{{ each categories }}}
-		<!-- IMPORT partials/categories/item.tpl -->
-		{{{ end }}}
+		<ul class="categories-list">
+			{{{ each categories }}}
+			<!-- IMPORT partials/categories/item.tpl -->
+			{{{ end }}}
+		</ul>
 
 		<!-- IMPORT partials/topic-list-bar.tpl -->
 
