@@ -47,7 +47,7 @@
 		<!-- IMPORT partials/topic-list-bar.tpl -->
 		{{{ end }}}
 
-		{{{ if (./hasFollowers == false) }}}
+		{{{ if (./inbox && (./hasFollowers == false)) }}}
 		<div class="alert alert-warning mb-4" id="category-no-followers" data-bs-toggle="dropdown" data-bs-target='[component="topic/watch"] button' aria-hidden="true">
 			<i class="fa fa-triangle-exclamation pe-2"></i>
 			[[category:no-followers]]
