@@ -55,10 +55,42 @@
 		{{{ end }}}
 
 		{{{ if !config.disableChat }}}
-		<div class="form-check form-switch">
-			<input class="form-check-input" type="checkbox" role="switch" id="restrictChat" data-property="restrictChat" {{{ if settings.restrictChat }}}checked{{{ end }}}/>
-			<label class="form-check-label text-sm" for="restrictChat">[[user:restrict-chats]]</label>
+		<div class="form-check form-switch mb-3">
+			<input class="form-check-input" type="checkbox" role="switch" id="disableIncomingChats" data-property="disableIncomingChats" {{{ if settings.disableIncomingChats }}}checked{{{ end }}}/>
+			<label class="form-check-label text-sm" for="disableIncomingChats">[[user:disable-incoming-chats]]</label>
 		</div>
+
+
+		<div class="d-flex flex-column mb-3">
+			<label class="form-label text-sm" for="chatAllowListAdd">[[user:chat-allow-list]]</label>
+
+			<div component="chat/allow/list" class="d-flex flex-wrap gap-2 mb-2">
+				{{{ each settings.chatAllowListUsers }}}
+				<div component="chat/allow/list/user" data-uid="{./uid}" class="d-flex px-2 py-1 rounded-1 text-bg-light gap-2 align-items-center text-sm">
+					{buildAvatar(@value, "16px", true)} {./username}
+					<button component="chat/allow/delete" data-uid="{./uid}" class="btn btn-light btn-sm py-0"><i class="fa fa-times fa-xs text-danger"></i></button>
+				</div>
+				{{{ end }}}
+			</div>
+
+			<input type="text" class="form-control form-control-sm" id="chatAllowListAdd" placeholder="[[user:chat-list-add-user]]"/>
+		</div>
+
+		<div class="d-flex flex-column mb-3">
+			<label class="form-label text-sm" for="chatAllowListAdd">[[user:chat-deny-list]]</label>
+
+			<div component="chat/deny/list" class="d-flex flex-wrap gap-2 mb-2">
+				{{{ each settings.chatDenyListUsers }}}
+				<div component="chat/deny/list/user" data-uid="{./uid}" class="d-flex px-2 py-1 rounded-1 text-bg-light gap-2 align-items-center text-sm">
+					{buildAvatar(@value, "16px", true)} {./username}
+					<button component="chat/deny/delete" data-uid="{./uid}" class="btn btn-light btn-sm py-0"><i class="fa fa-times fa-xs text-danger"></i></button>
+				</div>
+				{{{ end }}}
+			</div>
+
+			<input type="text" class="form-control form-control-sm" id="chatDenyListAdd" placeholder="[[user:chat-list-add-user]]"/>
+		</div>
+
 		{{{ end }}}
 
 		<hr/>
