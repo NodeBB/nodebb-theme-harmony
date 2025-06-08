@@ -73,15 +73,15 @@
     "@eslint/core" "^0.14.0"
     levn "^0.4.1"
 
-"@fontsource/inter@5.0.15":
-  version "5.0.15"
-  resolved "https://registry.npmjs.org/@fontsource/inter/-/inter-5.0.15.tgz"
-  integrity sha512-/IoWYEXl8lqJEx50JqNPT+bI4VNwxb/bg2oOfvG8PiEsDsmHRFvWBVHlohBNn1+QdBf+KbAjU/gb4vlGOSsVWw==
+"@fontsource/inter@5.2.6":
+  version "5.2.6"
+  resolved "https://registry.npmjs.org/@fontsource/inter/-/inter-5.2.6.tgz"
+  integrity sha512-CZs9S1CrjD0jPwsNy9W6j0BhsmRSQrgwlTNkgQXTsAeDRM42LBRLo3eo9gCzfH4GvV7zpyf78Ozfl773826csw==
 
-"@fontsource/poppins@5.0.8":
-  version "5.0.8"
-  resolved "https://registry.npmjs.org/@fontsource/poppins/-/poppins-5.0.8.tgz"
-  integrity sha512-P8owfYWluoUY5Nyzk4gT/L6LmLmseP6ezFWhj6VBUa5pRIdnCvNJpoQ6i/vhekjtJOfqX6nKlB+LCttoUl2GQQ==
+"@fontsource/poppins@5.2.6":
+  version "5.2.6"
+  resolved "https://registry.npmjs.org/@fontsource/poppins/-/poppins-5.2.6.tgz"
+  integrity sha512-NFr0121+vWCfzLDVvSZOzwAjRUaNj6QHA9gtUh/KHHoWf1Qn23EkwVFs63XZ6UtF5K1b3UNmCx77YEMGgV7BOQ==
 
 "@humanfs/core@^0.19.1":
   version "0.19.1"
@@ -222,9 +222,9 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
-eslint-config-nodebb@^1.1.6:
+eslint-config-nodebb@^1.1.4:
   version "1.1.6"
-  resolved "https://registry.yarnpkg.com/eslint-config-nodebb/-/eslint-config-nodebb-1.1.6.tgz#f04e7045f6a6610d9f2450ac1fcfd1e87d7c9933"
+  resolved "https://registry.npmjs.org/eslint-config-nodebb/-/eslint-config-nodebb-1.1.6.tgz"
   integrity sha512-Ak3IMAKkKe2Bi8xXIasTo+qjtF6IcUsrdNMdnyEFuJfscxykVmQcyhLL5J0mlE6mnk/5GEGBAEaRbaStKsNFxQ==
 
 eslint-scope@^8.3.0:
