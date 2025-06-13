@@ -23,7 +23,7 @@
 
 	<div class="d-flex flex-column gap-3">
 		<div class="d-flex gap-2 flex-wrap">
-			<div class="d-flex flex-column gap-3 flex-grow-1 flex-1">
+			<div class="d-flex flex-column gap-3 flex-1">
 				<h1 component="post/header" class="tracking-tight fw-semibold fs-3 mb-0 text-break {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
 					<span class="topic-title" component="topic/title">{title}</span>
 				</h1>
