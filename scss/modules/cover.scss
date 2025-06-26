@@ -56,8 +56,9 @@
 	.save, .indicator {
 		display: inline-block;
 		position: absolute;
-		top: 1em;
-		right: 2em;
+		bottom: 1em;
+		left: 50%;
+		transform: translateX(-50%);
 		opacity: 1;
 		padding: 0.5em;
 		font-weight: bold;
