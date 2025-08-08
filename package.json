@@ -37,8 +37,8 @@
     "url": "https://github.com/NodeBB/nodebb-theme-harmony/issues"
   },
   "dependencies": {
-    "@fontsource/inter": "5.0.15",
-    "@fontsource/poppins": "5.0.8"
+    "@fontsource/inter": "5.2.6",
+    "@fontsource/poppins": "5.2.6"
   },
   "devDependencies": {
     "eslint": "9.33.0",
