@@ -55,10 +55,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@eslint/js@9.33.0":
-  version "9.33.0"
-  resolved "https://registry.npmjs.org/@eslint/js/-/js-9.33.0.tgz"
-  integrity sha512-5K1/mKhWaMfreBGJTwval43JJmkip0RmM+3+IuqupeSKNC/Th2Kc7ucaq5ovTSra/OOKB9c58CGSz3QMVbWt0A==
+"@eslint/js@9.34.0":
+  version "9.34.0"
+  resolved "https://registry.npmjs.org/@eslint/js/-/js-9.34.0.tgz"
+  integrity sha512-EoyvqQnBNsV1CWaEJ559rxXL4c8V92gxirbawSmVUOWXlsRxxQXl6LmCpdUblgxgSkDIqKnhzba2SjRTI/A5Rw==
 
 "@eslint/object-schema@^2.1.6":
   version "2.1.6"
@@ -73,15 +73,15 @@
     "@eslint/core" "^0.15.2"
     levn "^0.4.1"
 
-"@fontsource/inter@5.0.15":
-  version "5.0.15"
-  resolved "https://registry.npmjs.org/@fontsource/inter/-/inter-5.0.15.tgz"
-  integrity sha512-/IoWYEXl8lqJEx50JqNPT+bI4VNwxb/bg2oOfvG8PiEsDsmHRFvWBVHlohBNn1+QdBf+KbAjU/gb4vlGOSsVWw==
+"@fontsource/inter@5.2.6":
+  version "5.2.6"
+  resolved "https://registry.npmjs.org/@fontsource/inter/-/inter-5.2.6.tgz"
+  integrity sha512-CZs9S1CrjD0jPwsNy9W6j0BhsmRSQrgwlTNkgQXTsAeDRM42LBRLo3eo9gCzfH4GvV7zpyf78Ozfl773826csw==
 
-"@fontsource/poppins@5.0.8":
-  version "5.0.8"
-  resolved "https://registry.npmjs.org/@fontsource/poppins/-/poppins-5.0.8.tgz"
-  integrity sha512-P8owfYWluoUY5Nyzk4gT/L6LmLmseP6ezFWhj6VBUa5pRIdnCvNJpoQ6i/vhekjtJOfqX6nKlB+LCttoUl2GQQ==
+"@fontsource/poppins@5.2.6":
+  version "5.2.6"
+  resolved "https://registry.npmjs.org/@fontsource/poppins/-/poppins-5.2.6.tgz"
+  integrity sha512-NFr0121+vWCfzLDVvSZOzwAjRUaNj6QHA9gtUh/KHHoWf1Qn23EkwVFs63XZ6UtF5K1b3UNmCx77YEMGgV7BOQ==
 
 "@humanfs/core@^0.19.1":
   version "0.19.1"
@@ -222,9 +222,9 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
-eslint-config-nodebb@^1.1.11:
+eslint-config-nodebb@^1.1.4:
   version "1.1.11"
-  resolved "https://registry.yarnpkg.com/eslint-config-nodebb/-/eslint-config-nodebb-1.1.11.tgz#7a30237e8fb1a2e4a96d4a046af8f71398b5a8d6"
+  resolved "https://registry.npmjs.org/eslint-config-nodebb/-/eslint-config-nodebb-1.1.11.tgz"
   integrity sha512-UEAPQgOG0bof5gcnmw4KANVNdmkL63n4Xu3SvkVT0HgOfnlG0OfYtIaBiTXztvAktUr/pvV/BEpWGOJFfJvbKg==
 
 eslint-scope@^8.4.0:
@@ -245,10 +245,10 @@ eslint-visitor-keys@^4.2.1:
   resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-4.2.1.tgz"
   integrity sha512-Uhdk5sfqcee/9H/rCOJikYz67o0a2Tw2hGRPOG2Y1R2dg7brRe1uG0yaNQDHu+TO/uQPF/5eCapvYSmHUjt7JQ==
 
-eslint@9.33.0:
-  version "9.33.0"
-  resolved "https://registry.npmjs.org/eslint/-/eslint-9.33.0.tgz"
-  integrity sha512-TS9bTNIryDzStCpJN93aC5VRSW3uTx9sClUn4B87pwiCaJh220otoI0X8mJKr+VcPtniMdN8GKjlwgWGUv5ZKA==
+eslint@9.34.0:
+  version "9.34.0"
+  resolved "https://registry.npmjs.org/eslint/-/eslint-9.34.0.tgz"
+  integrity sha512-RNCHRX5EwdrESy3Jc9o8ie8Bog+PeYvvSR8sDGoZxNFTvZ4dlxUB3WzQ3bQMztFrSRODGrLLj8g6OFuGY/aiQg==
   dependencies:
     "@eslint-community/eslint-utils" "^4.2.0"
     "@eslint-community/regexpp" "^4.12.1"
@@ -256,7 +256,7 @@ eslint@9.33.0:
     "@eslint/config-helpers" "^0.3.1"
     "@eslint/core" "^0.15.2"
     "@eslint/eslintrc" "^3.3.1"
-    "@eslint/js" "9.33.0"
+    "@eslint/js" "9.34.0"
     "@eslint/plugin-kit" "^0.3.5"
     "@humanfs/node" "^0.16.6"
     "@humanwhocodes/module-importer" "^1.0.1"
