@@ -49,7 +49,7 @@
 					<div class="d-flex gap-2"><!-- IMPORT partials/topic/stats.tpl --></div>
 				</div>
 			</div>
-			<div class="d-flex flex-wrap gap-2 align-items-start mt-2 hidden-empty" component="topic/thumb/list"><!-- IMPORT partials/topic/thumbs.tpl --></div>
+			<div class="d-flex flex-wrap gap-2 align-items-start mt-2 hidden-empty {{{ if greaterthan(thumbs.length, "4") }}}thumbs-collapsed{{{ end }}}" component="topic/thumb/list"><!-- IMPORT partials/topic/thumbs.tpl --></div>
 		</div>
 
 		<div class="row mb-4 mb-lg-0">

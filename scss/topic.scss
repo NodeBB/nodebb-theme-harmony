@@ -113,8 +113,13 @@ body.template-topic {
 	}
 
 
-	[component="topic/thumb/list"] > a{
-		height: calc($font-size-base * 4);
+	[component="topic/thumb/list"] {
+		&.thumbs-collapsed a.d-inline-block:nth-of-type(n+4) {
+  			display: none!important;
+		}
+		> a {
+			height: calc($font-size-base * 4);
+		}
 	}
 }
 
