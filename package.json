@@ -41,7 +41,7 @@
     "@fontsource/poppins": "5.2.7"
   },
   "devDependencies": {
-    "eslint": "9.39.0",
+    "eslint": "9.39.1",
     "eslint-config-nodebb": "^1.1.4"
   }
 }
