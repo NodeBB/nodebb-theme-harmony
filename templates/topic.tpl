@@ -20,6 +20,14 @@
 		<meta itemprop="name" content="{author.username}">
 		{{{ if author.userslug }}}<meta itemprop="url" content="{config.relative_path}/user/{author.userslug}">{{{ end }}}
 	</div>
+	<div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+		<meta itemprop="interactionType" content="https://schema.org/CommentAction">
+		<meta itemprop="userInteractionCount" content="{increment(postcount, "-1")}">
+	</div>
+	<div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+		<meta itemprop="interactionType" content="https://schema.org/LikeAction">
+		<meta itemprop="userInteractionCount" content="{upvotes}">
+	</div>
 
 	<div class="d-flex flex-column gap-3">
 		<div class="d-flex gap-2 flex-wrap flex-column flex-md-row justify-content-between">
