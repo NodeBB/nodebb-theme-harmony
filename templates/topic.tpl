@@ -54,7 +54,7 @@
 					</span>
 					{buildCategoryLabel(category, "a", "border")}
 					<div data-tid="{./tid}" component="topic/tags" class="lh-1 tags tag-list d-flex flex-wrap hidden-xs hidden-empty gap-2"><!-- IMPORT partials/topic/tags.tpl --></div>
-					<div class="d-flex gap-2"><!-- IMPORT partials/topic/stats.tpl --></div>
+					<div class="d-flex gap-2" component="topic/stats"><!-- IMPORT partials/topic/stats.tpl --></div>
 				</div>
 			</div>
 			<div class="d-flex flex-wrap gap-2 align-items-start mt-2 hidden-empty {{{ if greaterthan(thumbs.length, "4") }}}thumbs-collapsed{{{ end }}}" component="topic/thumb/list"><!-- IMPORT partials/topic/thumbs.tpl --></div>
