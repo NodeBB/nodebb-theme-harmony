@@ -29,11 +29,11 @@
 
 						{{{ if group.isOwner }}}
 						<div class="owner-controls d-flex gap-1">
-							<a class="btn btn-light btn-sm" href="#" data-ajaxify="false" data-action="toggleOwnership" title="[[groups:details.grant]]">
+							<a class="btn btn-light btn-sm" href="#" data-action="toggleOwnership" title="[[groups:details.grant]]">
 								<i class="fa fa-star text-warning"></i>
 							</a>
 
-							<a class="btn btn-light btn-sm" href="#" data-ajaxify="false" data-action="kick" title="[[groups:details.kick]]">
+							<a class="btn btn-light btn-sm" href="#" data-action="kick" title="[[groups:details.kick]]">
 								<i class="fa fa-ban text-danger"></i>
 							</a>
 						</div>
