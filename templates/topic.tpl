@@ -110,6 +110,10 @@
 									<!-- IMPORT partials/topic/mark-unread.tpl -->
 									<!-- IMPORT partials/topic/watch.tpl -->
 									<!-- IMPORT partials/topic/sort.tpl -->
+									<button component="topic/crosspost" class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center text-truncate">
+										<i class="fa fa-fw fa-clone text-primary"></i>
+										<span class="d-none d-md-inline fw-semibold text-truncate text-nowrap">[[topic:thread-tools.crosspost]]</span>
+									</button>
 									<!-- IMPORT partials/topic/tools.tpl -->
 								</div>
 								{{{ end }}}
