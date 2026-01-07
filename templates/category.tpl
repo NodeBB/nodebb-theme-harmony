@@ -14,7 +14,7 @@
 	</div>
 	{{{ end }}}
 	{{{ if ./handleFull }}}
-	<p class="text-secondary text-sm fst-italic">
+	<p class="text-secondary text-sm fst-italic {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
 		[[category:handle.description, {handleFull}]]
 		<a href="#" class="link-secondary" data-action="copy" data-clipboard-text="{handleFull}"><i class="fa fa-fw fa-copy" aria-hidden="true"></i></a>
 	</p>
