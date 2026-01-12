@@ -5,6 +5,9 @@
 				<!-- IMPORT partials/topic/mark-unread.tpl -->
 				<!-- IMPORT partials/topic/watch.tpl -->
 				<!-- IMPORT partials/topic/sort.tpl -->
+				<button component="topic/crosspost" title="[[topic:crosspost-topic]]" class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center dropdown-toggle text-truncate">
+					<i class="fa fa-fw fa-square-arrow-up-right text-primary"></i>
+				</button>
 				<!-- IMPORT partials/topic/tools.tpl -->
 
 				{{{ if (!feeds:disableRSS && rssFeedUrl) }}}
