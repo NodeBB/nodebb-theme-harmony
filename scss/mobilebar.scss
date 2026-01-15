@@ -31,17 +31,18 @@
 		font-size: 9px;
 		line-height: 12px;
 	}
-
-	.dropdown-menu {
-		left: 0!important;
-		right: 0!important;
-		box-shadow: none!important;
-		border-left: 0;
-		border-right: 0;
-		border-radius: 0;
-		.list-container {
-			max-height: 60vh!important;
-			overflow-y: auto!important;
+	@include media-breakpoint-down(lg) {
+		.dropdown-menu {
+			left: 0!important;
+			right: 0!important;
+			box-shadow: none!important;
+			border-left: 0;
+			border-right: 0;
+			border-radius: 0;
+			.list-container {
+				max-height: 60vh!important;
+				overflow-y: auto!important;
+			}
 		}
 	}
 
