@@ -31,7 +31,7 @@
 		font-size: 9px;
 		line-height: 12px;
 	}
-	@include media-breakpoint-down(lg) {
+	@include media-breakpoint-down(md) {
 		.dropdown-menu {
 			left: 0!important;
 			right: 0!important;
