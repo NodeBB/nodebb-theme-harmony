@@ -1,7 +1,9 @@
 
 			</div><!-- /.container#content -->
 		</main>
+		{{{ if !config.theme.alternativeNavigation }}}
 		<!-- IMPORT partials/sidebar-right.tpl -->
+		{{{ end }}}
 	</div>
 	{{{ if !config.theme.topMobilebar }}}
 	<!-- IMPORT partials/mobile-footer.tpl -->

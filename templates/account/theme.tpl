@@ -38,6 +38,16 @@
 	</div>
 
 	<div class="form-check form-switch mb-3">
+		<input class="form-check-input" type="checkbox" role="switch" id="alternativeNavigation" name="alternativeNavigation" {{{ if theme.alternativeNavigation }}}checked{{{ end }}}>
+		<label class="form-check-label" for="alternativeNavigation">
+			[[themes/harmony:settings.alternativeNavigation]]
+			<p class="form-text mb-0">
+				[[themes/harmony:settings.alternativeNavigation.help]]
+			</p>
+		</label>
+	</div>
+
+	<div class="form-check form-switch mb-3">
 		<input class="form-check-input" type="checkbox" role="switch" id="topicSidebarTools" name="topicSidebarTools" {{{ if theme.topicSidebarTools }}}checked{{{ end }}}>
 		<label class="form-check-label" for="topicSidebarTools">
 			[[themes/harmony:settings.topicSidebarTools]]

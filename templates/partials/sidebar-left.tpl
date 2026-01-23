@@ -1,5 +1,5 @@
-<nav component="sidebar/left" class="{{{ if config.theme.openSidebars}}}open{{{ end }}} text-dark bg-light sidebar sidebar-left start-0 border-end vh-100 d-none d-lg-flex flex-column justify-content-between sticky-top">
-	<ul id="main-nav" class="list-unstyled d-flex flex-column w-100 gap-2 mt-2 overflow-y-auto">
+<nav component="sidebar/left" class="{{{ if config.theme.openSidebars}}}open{{{ end }}} sticky-top text-dark bg-light sidebar sidebar-left start-0 vh-100 d-none d-lg-flex flex-column {{{ if config.theme.alternativeNavigation }}} justify-content-center {{{ else }}}justify-content-between border-end{{{ end }}}" {{{ if config.theme.alternativeNavigation }}}style="background: transparent!important;"{{{ end }}}>
+	<ul id="main-nav" class="list-unstyled d-flex flex-column w-100 gap-2 mt-2 overflow-y-auto {{{ if config.theme.alternativeNavigation }}} bg-light border shadow-sm rounded-2 py-2{{{ end }}}">
 		{{{ each navigation }}}
 		{{{ if displayMenuItem(@root, @index) }}}
 		<li class="nav-item mx-2 {./class}{{{ if ./dropdown }}} dropend{{{ end }}}" title="{./title}">
@@ -24,7 +24,7 @@
 		{{{ end }}}
 		{{{ end }}}
 	</ul>
-	<div class="sidebar-toggle-container align-self-start">
+	<div class="sidebar-toggle-container align-self-start {{{ if config.theme.alternativeNavigation }}} d-none{{{ end }}}">
 		{{{ if !config.disableCustomUserSkins }}}
 		<!-- IMPORT partials/skin-switcher.tpl -->
 		{{{ end }}}
