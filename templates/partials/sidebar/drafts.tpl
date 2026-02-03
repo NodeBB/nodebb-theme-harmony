@@ -31,9 +31,7 @@
 					<div class="d-flex gap-1 justify-content-between ff-base">
 						<a href="#" class="d-flex flex-column flex-grow-1 gap-2 justify-content-start align-items-start btn btn-ghost btn-sm ff-sans text-start" component="drafts/open" data-save-id="{./save_id}" role="menuitem">
 							{{{ if (./action == "topics.post") }}}
-							{{{ if ./title}}}
-							<div class="text text-xs fw-semibold line-clamp-2 text-break">{./title}</div>
-							{{{ end }}}
+							<div class="text text-xs fw-semibold line-clamp-2 text-break">{{{ if ./title}}}{./title}{{{ else }}}[[topic:composer.untitled-topic]]{{{ end }}}</div>
 							{{{ end }}}
 
 							{{{ if (./action == "posts.reply") }}}
