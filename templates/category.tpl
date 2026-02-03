@@ -10,11 +10,11 @@
 			<h1 class="tracking-tight fs-3 fw-semibold mb-0">{./name}</h1>
 			<div class="d-flex flex-wrap gap-2 {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
 				<span class="badge text-body border border-gray-300 stats text-xs">
-					<span title="{totalTopicCount}" class="fw-bold">{humanReadableNumber(totalTopicCount)}</span>
+					<span title="{formattedNumber(totalTopicCount)}" class="fw-bold">{humanReadableNumber(totalTopicCount)}</span>
 					<span class="text-lowercase fw-normal">[[global:topics]]</span>
 				</span>
 				<span class="badge text-body border border-gray-300 stats text-xs">
-					<span title="{totalPostCount}" class="fw-bold">{humanReadableNumber(totalPostCount)}</span>
+					<span title="{formattedNumber(totalPostCount)}" class="fw-bold">{humanReadableNumber(totalPostCount)}</span>
 					<span class="text-lowercase fw-normal">[[global:posts]]</span>
 				</span>
 				{{{ if !isNumber(cid) }}}
