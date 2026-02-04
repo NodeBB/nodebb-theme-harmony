@@ -14,3 +14,21 @@ body[class*="template-account-"], .template-chats, .template-groups-details {
 	max-height: 48px;
 	width: auto;
 }
+
+
+body[class*="template-account-"], .template-groups-details {
+	&.alt-nav {
+		[component="brand/wrapper"], [data-widget-area="brand-header"] {
+			visibility: hidden!important;
+		}
+		.brand-container {
+			display: initial!important;
+			>div { border: none!important; }
+			z-index: 1;
+			.sidebar {
+				background-color: rgba(var(--bs-body-bg-rgb), 0.65);
+				backdrop-filter: blur(5px);
+			}
+		}
+	}
+}

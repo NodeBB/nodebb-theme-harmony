@@ -13,13 +13,13 @@
 		<div class="d-flex align-items-center">
 		<!-- IMPORT partials/header/brand-content.tpl -->
 		</div>
-		<div class="sidebar ms-auto d-none d-lg-block">
+		<div class="sidebar sidebar-right ms-auto d-none d-lg-block rounded-2">
 			{{{ if config.loggedIn }}}
-			<ul id="logged-in-menu" class="list-unstyled d-flex gap-2 m-0" role="menu">
+			<ul id="logged-in-menu" class="list-unstyled d-flex gap-2 m-0 p-2" role="menu">
 			<!-- IMPORT partials/header/logged-in-menu.tpl -->
 			</ul>
 			{{{ else }}}
-			<ul id="logged-out-menu" class="list-unstyled d-flex gap-2 m-0" role="menu">
+			<ul id="logged-out-menu" class="list-unstyled d-flex gap-2 m-0 p-2" role="menu">
 			<!-- IMPORT partials/header/logged-out-menu.tpl -->
 			</ul>
 			{{{ end }}}

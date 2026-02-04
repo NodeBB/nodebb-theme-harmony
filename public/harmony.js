@@ -252,7 +252,7 @@ $(document).ready(function () {
 			const target = $(ev.target);
 			const isDropdown = target.hasClass('dropdown-menu') || !!target.parents('.dropdown-menu').length;
 			const isSidebarOpen = target.parents('.sidebar').hasClass('open');
-			console.log('showing', isDropdown, isSidebarOpen);
+			console.log('showing isDropdown/isSidebarOpen', isDropdown, isSidebarOpen);
 			if (!isSidebarOpen && !isDropdown) {
 				console.log('showing');
 				$(this).tooltip('show');

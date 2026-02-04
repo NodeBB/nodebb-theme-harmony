@@ -1,7 +1,10 @@
 
 			</div><!-- /.container#content -->
 		</main>
-		{{{ if !config.theme.alternativeNavigation }}}
+
+		{{{ if config.theme.alternativeNavigation }}}
+		</div>
+		{{{ else }}}
 		<!-- IMPORT partials/sidebar-right.tpl -->
 		{{{ end }}}
 	</div>
