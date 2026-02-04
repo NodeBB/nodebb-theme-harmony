@@ -251,7 +251,8 @@ $(document).ready(function () {
 		tooltipEls.on('mouseenter', function (ev) {
 			const target = $(ev.target);
 			const isDropdown = target.hasClass('dropdown-menu') || !!target.parents('.dropdown-menu').length;
-			if (!$('.sidebar').hasClass('open') && !isDropdown) {
+			const isSidebarOpen = target.parents('.sidebar').hasClass('open');
+			if (!isSidebarOpen && !isDropdown) {
 				$(this).tooltip('show');
 			}
 		});
