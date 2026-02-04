@@ -15,6 +15,10 @@ _The cards in the header are added by the recent cards plugin. https://github.co
 
 <img height="450" src="screenshots/categories.png">
 
+### Category
+
+<img height="450" src="screenshots/category.png">
+
 ### Recent
 <img height="450" src="screenshots/recent.png">
 

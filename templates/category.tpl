@@ -4,9 +4,27 @@
 {{{ end }}}
 
 <div class="category-header d-flex flex-column gap-2">
-	<div class="d-flex gap-2 align-items-center mb-1 {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
-		{buildCategoryIcon(@value, "40px", "rounded-1 flex-shrink-0")}
-		<h1 class="tracking-tight fs-2 fw-semibold mb-0">{./name}</h1>
+	<div class="d-flex gap-3 align-items-center mb-1 {{{ if config.theme.centerHeaderElements }}}justify-content-center flex-column{{{ end }}}">
+		{buildCategoryIcon(@value, "60px", "rounded-1 flex-shrink-0")}
+		<div class="d-flex flex-column gap-1">
+			<h1 class="tracking-tight fs-3 fw-semibold mb-0">{./name}</h1>
+			<div class="d-flex flex-wrap gap-2 {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
+				<span class="badge text-body border border-gray-300 stats text-xs">
+					<span title="{formattedNumber(totalTopicCount)}" class="fw-bold">{humanReadableNumber(totalTopicCount)}</span>
+					<span class="text-lowercase fw-normal">[[global:topics]]</span>
+				</span>
+				<span class="badge text-body border border-gray-300 stats text-xs">
+					<span title="{formattedNumber(totalPostCount)}" class="fw-bold">{humanReadableNumber(totalPostCount)}</span>
+					<span class="text-lowercase fw-normal">[[global:posts]]</span>
+				</span>
+				{{{ if !isNumber(cid) }}}
+				<a href="{./url}" class="badge text-body border border-gray-300 text-xs" data-ajaxify="false">
+					<span class="fw-normal">View Original</span>
+					<i class="fa fa-external-link"></i>
+				</a>
+				{{{ end }}}
+			</div>
+		</div>
 	</div>
 	{{{ if ./descriptionParsed }}}
 	<div class="description text-secondary text-sm w-100 {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}} line-clamp-4 clamp-fade-4">
@@ -14,27 +32,12 @@
 	</div>
 	{{{ end }}}
 	{{{ if ./handleFull }}}
-	<p class="text-secondary text-sm fst-italic {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
+	<p class="text-secondary text-sm fst-italic mb-0 {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
 		[[category:handle.description, {handleFull}]]
 		<a href="#" class="link-secondary" data-action="copy" data-clipboard-text="{handleFull}"><i class="fa fa-fw fa-copy" aria-hidden="true"></i></a>
 	</p>
 	{{{ end }}}
-	<div class="d-flex flex-wrap gap-2 {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
-		<span class="badge text-body border border-gray-300 stats text-xs">
-			<span title="{totalTopicCount}" class="fw-bold">{humanReadableNumber(totalTopicCount)}</span>
-			<span class="text-lowercase fw-normal">[[global:topics]]</span>
-		</span>
-		<span class="badge text-body border border-gray-300 stats text-xs">
-			<span title="{totalPostCount}" class="fw-bold">{humanReadableNumber(totalPostCount)}</span>
-			<span class="text-lowercase fw-normal">[[global:posts]]</span>
-		</span>
-		{{{ if !isNumber(cid) }}}
-		<a href="{./url}" class="badge text-body border border-gray-300 text-xs" data-ajaxify="false">
-			<span class="fw-normal">View Original</span>
-			<i class="fa fa-external-link"></i>
-		</a>
-		{{{ end }}}
-	</div>
+
 </div>
 
 {{{ if widgets.header.length }}}

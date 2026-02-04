@@ -12,7 +12,7 @@
 			{{{ if template.account/downvoted }}}active{{{ end }}}
 			{{{ if template.account/bookmarks }}}active{{{ end }}}">
 			<div class="flex-grow-1">[[global:posts]]</div>
-			<span class="flex-shrink-0 text-xs" title="{counts.posts}">{humanReadableNumber(counts.posts)}</span>
+			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.posts)}">{humanReadableNumber(counts.posts)}</span>
 		</a>
 
 		<a href="{config.relative_path}/user/{userslug}/topics" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-center
@@ -20,57 +20,57 @@
 			{{{ if template.account/watched }}}active{{{ end }}}
 			{{{ if template.account/ignored }}}active{{{ end }}}">
 			<div class="flex-grow-1">[[global:topics]]</div>
-			<span class="flex-shrink-0 text-xs" title="{counts.topics}">{humanReadableNumber(counts.topics)}</span>
+			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.topics)}">{humanReadableNumber(counts.topics)}</span>
 		</a>
 
 		<a href="{config.relative_path}/user/{userslug}/shares" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-center
 			{{{ if template.account/shares }}}active{{{ end }}}">
 			<div class="flex-grow-1">[[user:shares]]</div>
-			<span class="flex-shrink-0 text-xs" title="{counts.shares}">{humanReadableNumber(counts.shares)}</span>
+			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.shares)}">{humanReadableNumber(counts.shares)}</span>
 		</a>
 
 		<a href="{config.relative_path}/user/{userslug}/groups" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-center
 			{{{ if template.account/groups }}}active{{{ end }}}">
 			<div class="flex-grow-1">[[global:header.groups]]</div>
-			<span class="flex-shrink-0 text-xs" title="{counts.groups}">{humanReadableNumber(counts.groups)}</span>
+			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.groups)}">{humanReadableNumber(counts.groups)}</span>
 		</a>
 
 		<a href="{config.relative_path}/user/{userslug}/followers" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-center
 			{{{ if template.account/followers }}}active{{{ end }}}">
 			<div class="flex-grow-1">[[user:followers]]</div>
-			<span class="flex-shrink-0 text-xs" title="{counts.followers}">{humanReadableNumber(counts.followers)}</span>
+			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.followers)}">{humanReadableNumber(counts.followers)}</span>
 		</a>
 
 		<a href="{config.relative_path}/user/{userslug}/following" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-center
 			{{{ if template.account/following }}}active{{{ end }}}">
 			<div class="flex-grow-1">[[user:following]]</div>
-			<span class="flex-shrink-0 text-xs" title="{counts.following}">{humanReadableNumber(counts.following)}</span>
+			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.following)}">{humanReadableNumber(counts.following)}</span>
 		</a>
 
 		{{{ if canEdit }}}
 		<a href="{config.relative_path}/user/{userslug}/categories" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-center
 			{{{ if template.account/categories }}}active{{{ end }}}">
 			<div class="flex-grow-1">[[user:watched-categories]]</div>
-			<span class="flex-shrink-0 text-xs" title="{counts.categoriesWatched}">{counts.categoriesWatched}</span>
+			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.categoriesWatched)}">{humanReadableNumber(counts.categoriesWatched)}</span>
 		</a>
 		{{{ if isSelf }}}
 		<a href="{config.relative_path}/user/{userslug}/tags" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-center
 			{{{ if template.account/tags }}}active{{{ end }}}">
 			<div class="flex-grow-1">[[user:watched-tags]]</div>
-			<span class="flex-shrink-0 text-xs" title="{counts.tagsWatched}">{counts.tagsWatched}</span>
+			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.tagsWatched)}">{humanReadableNumber(counts.tagsWatched)}</span>
 		</a>
 		{{{ end }}}
 
 		<a href="{config.relative_path}/user/{userslug}/blocks" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-center
 			{{{ if template.account/blocks }}}active{{{ end }}}">
 			<div class="flex-grow-1">[[user:blocked-users]]</div>
-			<span class="flex-shrink-0 text-xs" title="{counts.blocks}">{humanReadableNumber(counts.blocks)}</span>
+			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.blocks)}">{humanReadableNumber(counts.blocks)}</span>
 		</a>
 
 		<a href="{config.relative_path}/user/{userslug}/uploads" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-center
 			{{{ if template.account/uploads }}}active{{{ end }}}">
 			<div class="flex-grow-1">[[global:uploads]]</div>
-			<span class="flex-shrink-0 text-xs" title="{counts.uploaded}">{humanReadableNumber(counts.uploaded)}</span>
+			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.uploaded)}">{humanReadableNumber(counts.uploaded)}</span>
 		</a>
 		{{{ end }}}
 

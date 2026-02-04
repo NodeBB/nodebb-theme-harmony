@@ -28,7 +28,7 @@
 		<div class="stat">
 			<div class="align-items-center justify-content-center card card-header p-3 border-0 rounded-1 h-100">
 				<span class="stat-label text-xs fw-semibold">[[global:reputation]]</span>
-				<span class="fs-2 ff-secondary" title="{reputation}">{humanReadableNumber(reputation)}</span>
+				<span class="fs-2 ff-secondary" title="{formattedNumber(reputation)}">{humanReadableNumber(reputation)}</span>
 			</div>
 		</div>
 		{{{ end }}}
@@ -36,7 +36,7 @@
 			<div class="align-items-center justify-content-center card card-header p-3 border-0 rounded-1 h-100">
 				<span class="stat-label text-xs fw-semibold">[[user:profile-views]]</span>
 				<span class="fs-2 ff-secondary" title="
-				{profileviews}">{humanReadableNumber(profileviews)}</span>
+				{formattedNumber(profileviews)}">{humanReadableNumber(profileviews)}</span>
 			</div>
 		</div>
 
