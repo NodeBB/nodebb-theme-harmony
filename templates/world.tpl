@@ -1,3 +1,8 @@
+<!-- IMPORT partials/breadcrumbs-json-ld.tpl -->
+{{{ if config.theme.enableBreadcrumbs }}}
+<!-- IMPORT partials/breadcrumbs.tpl -->
+{{{ end }}}
+
 {{{ if widgets.header.length }}}
 <div data-widget-area="header">
 	{{{each widgets.header}}}
@@ -16,70 +21,58 @@
 		{./descriptionParsed}
 	</p>
 	{{{ end }}}
-
-	<p class="description text-secondary text-sm w-100 {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
-		<a class="btn btn-sm btn-link" href="{config.relative_path}/popular?term=daily&cid=-1">[[world:popular]]</a>
-		<a class="btn btn-sm btn-link" href="{config.relative_path}/recent?cid=-1">[[world:recent]]</a>
-		<button class="btn btn-sm btn-link" id="world-help">
-			<i class="fa fa-question"></i>
-			[[world:help]]
-		</button>
-	</p>
 </div>
 
 <div class="row flex-fill">
 	<div class="world {{{if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
-		<form class="mb-4" role="search" method="GET" action="{config.relative_path}/search">
-			<input type="hidden" name="in" value="categories" />
-			<div class="input-group" id="category-options">
-				<input class="form-control form-control-lg" component="category-search" name="term" type="text" autocomplete="off" placeholder="Find a category..." aria-label="Category Search" />
-				<button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-cog"></i></button>
-				<ul class="dropdown-menu dropdown-menu-end">
-					<li id="show-categories"><a class="dropdown-item" href="#">
-						<i class="fa fa-eye"></i>
-						[[world:show-categories]]
-					</a></li>
-					<li id="hide-categories"><a class="dropdown-item" href="#">
-						<i class="fa fa-eye-slash"></i>
-						[[world:hide-categories]]
-					</a></li>
-				</ul>
-			</div>
-		</form>
-
-		<div class="quick-search-container dropdown-menu d-block p-2 hidden">
-			<div class="text-center loading-indicator"><i class="fa fa-spinner fa-spin"></i></div>
-			<div class="quick-search-results-container"></div>
-		</div>
-
-		<ul class="categories-list ps-0 hidden">
-			{{{ each categories }}}
-			<!-- IMPORT partials/categories/item.tpl -->
-			{{{ end }}}
-		</ul>
-
-		<!-- IMPORT partials/topic-list-bar.tpl -->
-
 		<div class="category">
-			{{{ if !topics.length }}}
-			<div class="row">
-				<div class="col-md-10 offset-md-1 d-flex align-items-center">
+			<div class="row flex-row-reverse">
+				<div class="col-lg-4 col-sm-12 mt-2 pt-1">
+					<form class="mb-3" role="search" method="GET" action="{config.relative_path}/search">
+						<input type="hidden" name="in" value="categories" />
+						<input class="form-control form-control-lg" component="category-search" name="term" type="text" autocomplete="off" placeholder="[[world:category-search]]" />
+					</form>
+					<div class="quick-search-container dropdown-menu d-block p-2 hidden">
+						<div class="text-center loading-indicator"><i class="fa fa-spinner fa-spin"></i></div>
+						<div class="quick-search-results-container"></div>
+					</div>
+
+					<ul class="categories-list ps-0 list-unstyled pt-3">
+						{{{ each categories }}}
+						<!-- IMPORT partials/account/category-item.tpl -->
+						{{{ end }}}
+					</ul>
+				</div>
+
+				{{{ if posts.length }}}
+				<div class="col-lg-8 col-sm-12">
+					{{{ if posts.length }}}
+					<!-- IMPORT partials/topic-list-bar.tpl -->
+					{{{ end }}}
+					<ul class="list-unstyled" id="world-feed">
+						{{{ each posts }}}
+						<!-- IMPORT partials/feed/item.tpl -->
+						{{{ end }}}
+					</ul>
+
+					{{{ if config.usePagination }}}
+					<!-- IMPORT partials/paginator.tpl -->
+					{{{ end }}}
+				</div>
+				{{{ else }}}
+				<div class="col-lg-8 col-sm-12 d-flex gap-3 align-items-top">
 					<div>
-						<h2 class="fs-4 mb-3">[[world:onboard.title]]</h2>
+						<h2 class="fs-4 mb-3">
+							<i class="fa fa-comment-nodes"></i>
+							[[world:onboard.title]]
+						</h2>
 						<p>[[world:onboard.what]]</p>
 						<p>[[world:onboard.why]]</p>
 						<p>[[world:onboard.how]]</p>
 					</div>
-					<i class="fa fa-comment-nodes fa-8x p-3"></i>
 				</div>
+				{{{ end }}}
 			</div>
-			{{{ end }}}
-
-			<!-- IMPORT partials/topics_list.tpl -->
-
-			{{{ if config.usePagination }}}
-			<!-- IMPORT partials/paginator.tpl -->
-			{{{ end }}}
 		</div>
 	</div>
 	<div data-widget-area="sidebar" class="col-lg-3 col-sm-12 {{{ if !widgets.sidebar.length }}}hidden{{{ end }}}">

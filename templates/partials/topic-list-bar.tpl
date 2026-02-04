@@ -2,7 +2,7 @@
 	<nav class="topic-list-header d-flex flex-nowrap my-2 p-0 border-0 rounded">
 		<div class="d-flex flex-row p-2 text-bg-light gap-1 border rounded w-100">
 			<div component="category/controls" class="d-flex me-auto mb-0 gap-2 flex-wrap">
-				{{{ if (template.category || template.world) }}}
+				{{{ if template.category }}}
 				<!-- IMPORT partials/category/watch.tpl -->
 				<!-- IMPORT partials/tags/filter-dropdown-left.tpl -->
 				<!-- IMPORT partials/category/sort.tpl -->
@@ -24,11 +24,34 @@
 				<!-- IMPORT partials/category/filter-dropdown-left.tpl -->
 				<!-- IMPORT partials/tags/watch.tpl -->
 				{{{ end }}}
-				<!-- IMPORT partials/category/tools-dropdown-left.tpl -->
 
 				{{{ if (!feeds:disableRSS && rssFeedUrl) }}}
 				<a class="btn btn-ghost btn-sm d-none d-lg-flex align-items-center align-self-stretch" target="_blank" href="{rssFeedUrl}" itemprop="item" title="[[global:rss-feed]]"><i class="fa fa-rss text-primary"></i></a>
 				{{{ end }}}
+
+				{{{ if template.world }}}
+				<a class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center fw-semibold" href="{config.relative_path}/world">
+					<i class="fa fa-clock text-primary"></i>
+					[[world:latest]]
+				</a>
+				<button class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center dropdown-toggle" data-bs-toggle="dropdown">
+					<i class="fa fa-fw fa-fire text-primary"></i>
+					<span class="visible-md-inline visible-lg-inline fw-semibold">[[world:popular]]</span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="{config.relative_path}/world?sort=popular&term=day">Day</a></li>
+					<li><a class="dropdown-item" href="{config.relative_path}/world?sort=popular&term=week">Week</a></li>
+					<li><a class="dropdown-item" href="{config.relative_path}/world?sort=popular&term=month">Month</a></li>
+					<li><a class="dropdown-item" href="{config.relative_path}/world?sort=popular&term=year">Year</a></li>
+					<li><a class="dropdown-item" href="{config.relative_path}/world?sort=popular&term=alltime">All time</a></li>
+				</ul>
+				<a class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center fw-semibold" href="{config.relative_path}/world">
+					<i class="fa fa-question text-primary"></i>
+					[[world:help]]
+				</a>
+				{{{ end }}}
+
+				<!-- IMPORT partials/category/tools-dropdown-left.tpl -->
 
 				<a href="{{{ if (template.category || template.world) }}}{url}{{{ else }}}{config.relative_path}/{selectedFilter.url}{querystring}{{{ end }}}" class="btn btn-secondary fw-semibold position-absolute top-100 translate-middle-x start-50 mt-1 hide" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" id="new-topics-alert">
 					<i class="fa fa-fw fa-arrow-up"></i> [[recent:load-new-posts]]
