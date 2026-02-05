@@ -1,7 +1,6 @@
 'use strict';
 
 const nconf = require.main.require('nconf');
-const { setTimeout } = require('timers/promises');
 const meta = require.main.require('./src/meta');
 const _ = require.main.require('lodash');
 const user = require.main.require('./src/user');
@@ -48,8 +47,6 @@ async function buildSkins() {
 		for (const skin of meta.css.supportedSkins) {
 			// eslint-disable-next-line no-await-in-loop
 			await meta.css.buildBundle(`client-${skin}`, true);
-			// eslint-disable-next-line no-await-in-loop
-			await setTimeout(5000);
 		}
 		require.main.require('./src/meta/minifier').killAll();
 	} catch (err) {
