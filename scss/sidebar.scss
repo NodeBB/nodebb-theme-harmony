@@ -75,14 +75,14 @@
 		.fa-angles-right { display: inline-block; }
 		.fa-angles-left { display: none; }
 	}
-
+	$dropdown-menu-width: 350px;
 	.search-dropdown {
-		width: 300px;
+		width: $dropdown-menu-width;
 	}
 
 	.chats-dropdown, .notifications-dropdown, .drafts-dropdown {
-		min-width: 300px;
-		width: 300px;
+		min-width: $dropdown-menu-width;
+		width: $dropdown-menu-width;
 		.list-container {
 			max-height: 400px;
 			overflow-y: auto;
