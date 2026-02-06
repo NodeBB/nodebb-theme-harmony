@@ -2,8 +2,7 @@
 	<div class="d-flex flex-column flex-md-row">
 		<div class="d-flex flex-column flex-shrink-0 pe-2 border-end-md text-sm mb-3 flex-basis-md-200 gap-2">
 
-			<button class="btn btn-sm btn-light w-100" component="notifications/mark_all"><i class="fa fa-check-double"></i> [[notifications:mark-all-read]]</a></button>
-
+			<button class="btn btn-sm btn-primary w-100" component="notifications/mark_all"><i class="fa fa-check-double"></i> [[notifications:mark-all-read]]</a></button>
 
 			<div class="nav sticky-top d-flex flex-row flex-md-column flex-wrap gap-1" style="z-index: 1;">
 				{{{ each filters }}}
