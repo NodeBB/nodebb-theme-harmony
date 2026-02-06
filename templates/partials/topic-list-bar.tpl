@@ -38,12 +38,12 @@
 					<i class="fa fa-fw fa-fire text-primary"></i>
 					<span class="visible-md-inline visible-lg-inline fw-semibold">[[world:popular]]</span>
 				</button>
-				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="{config.relative_path}/world?sort=popular&term=day">Day</a></li>
-					<li><a class="dropdown-item" href="{config.relative_path}/world?sort=popular&term=week">Week</a></li>
-					<li><a class="dropdown-item" href="{config.relative_path}/world?sort=popular&term=month">Month</a></li>
-					<li><a class="dropdown-item" href="{config.relative_path}/world?sort=popular&term=year">Year</a></li>
-					<li><a class="dropdown-item" href="{config.relative_path}/world?sort=popular&term=alltime">All time</a></li>
+				<ul class="dropdown-menu p-1">
+					<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=day">Day</a></li>
+					<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=week">Week</a></li>
+					<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=month">Month</a></li>
+					<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=year">Year</a></li>
+					<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=alltime">All time</a></li>
 				</ul>
 				<a class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center fw-semibold" href="#" id="world-help">
 					<i class="fa fa-question text-primary"></i>
