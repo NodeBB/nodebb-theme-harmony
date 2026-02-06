@@ -45,7 +45,7 @@
 					<li><a class="dropdown-item" href="{config.relative_path}/world?sort=popular&term=year">Year</a></li>
 					<li><a class="dropdown-item" href="{config.relative_path}/world?sort=popular&term=alltime">All time</a></li>
 				</ul>
-				<a class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center fw-semibold" href="{config.relative_path}/world">
+				<a class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center fw-semibold" href="#" id="world-help">
 					<i class="fa fa-question text-primary"></i>
 					[[world:help]]
 				</a>
