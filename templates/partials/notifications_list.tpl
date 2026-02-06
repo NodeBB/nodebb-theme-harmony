@@ -26,7 +26,7 @@
 					{./bodyShort}
 				</a>
 				{{{ if ./bodyLong}}}
-				<div class="text-secondary text-sm line-clamp-2 hidden-blockquote hidden-pre hidden-leading-br">
+				<div class="text-secondary text-sm line-clamp-2 text-contain hidden-blockquote hidden-pre hidden-leading-br">
 					{./bodyLong}
 				</div>
 				{{{ end }}}
