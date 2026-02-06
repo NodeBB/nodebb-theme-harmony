@@ -12,7 +12,10 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "publish": "npm version $npm_config_release && git push && git push --tags && npm publish"
+    "publish:patch": "npm version patch && npm run publish:common",
+    "publish:minor": "npm version minor && npm run publish:common",
+    "publish:major": "npm version major && npm run publish:common",
+    "publish:common": "git push && git push --tags && npm publish"
   },
   "keywords": [
     "nodebb",
