@@ -1,12 +1,10 @@
 <div class="notifications flex-fill">
-	<div class="btn-toolbar justify-content-end" role="toolbar">
-		<button class="btn btn-sm btn-light" component="notifications/mark_all">[[notifications:mark-all-read]]</button>
-	</div>
-
-	<hr class="text-muted opacity-25"/>
-
 	<div class="d-flex flex-column flex-md-row">
-		<div class="flex-shrink-0 pe-2 border-end-md text-sm mb-3 flex-basis-md-200">
+		<div class="d-flex flex-column flex-shrink-0 pe-2 border-end-md text-sm mb-3 flex-basis-md-200 gap-2">
+
+			<button class="btn btn-sm btn-light w-100" component="notifications/mark_all"><i class="fa fa-check-double"></i> [[notifications:mark-all-read]]</a></button>
+
+
 			<div class="nav sticky-top d-flex flex-row flex-md-column flex-wrap gap-1" style="z-index: 1;">
 				{{{ each filters }}}
 				{{{ if ./separator }}}
