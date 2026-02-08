@@ -9,9 +9,11 @@
 				{{{ if ./separator }}}
 				<hr/>
 				{{{ else }}}
-				<a class="btn btn-ghost d-flex gap-2 text-start align-items-center text-sm ff-secondary fw-semibold {{{ if ./selected }}}active{{{ end }}}" href="{config.relative_path}/notifications?filter={./filter}">
+				<a class="btn btn-ghost d-flex gap-2 text-start align-items-baseline text-sm ff-secondary fw-semibold {{{ if ./selected }}}active{{{ end }}}" href="{config.relative_path}/notifications?filter={./filter}">
 					<div class="flex-grow-1">{filters.name}</div>
+					{{{ if ./filter }}}
 					<span class="flex-shrink-0 text-xs" title="{./count}">{humanReadableNumber(./count)}</span>
+					{{{ end }}}
 				</a>
 				{{{ end }}}
 				{{{ end }}}
