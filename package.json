@@ -46,6 +46,6 @@
   },
   "devDependencies": {
     "eslint": "10.0.0",
-    "eslint-config-nodebb": "^1.1.4"
+    "eslint-config-nodebb": "^2.0.0"
   }
 }
