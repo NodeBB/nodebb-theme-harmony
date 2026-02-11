@@ -1,0 +1,5 @@
+.page-world {
+	.quick-reply {
+		@include topic-avatars();
+	}
+}
