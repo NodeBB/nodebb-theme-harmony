@@ -70,6 +70,7 @@
 				<div class="col-lg-8 col-sm-12">
 					{{{ if posts.length }}}
 					<!-- IMPORT partials/topic-list-bar.tpl -->
+					<!-- IMPORT partials/topic/quickreply.tpl -->
 					{{{ end }}}
 					<ul class="list-unstyled" id="world-feed">
 						{{{ each posts }}}
