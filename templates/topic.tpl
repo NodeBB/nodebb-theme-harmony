@@ -100,6 +100,9 @@
 						{{{ if config.theme.enableQuickReply }}}
 						<!-- IMPORT partials/topic/quickreply.tpl -->
 						{{{ end }}}
+						{{{ if !config.loggedIn }}}
+						<!-- IMPORT partials/topic/guest-cta.tpl -->
+						{{{ end }}}
 					</div>
 					<div class="d-flex d-none d-lg-block flex-grow-1 mt-2">
 						<div class="sticky-top" style="{{{ if config.theme.topicSidebarTools }}}top:2rem;{{{ else }}}top:6rem; {{{ end }}} z-index:1;">
