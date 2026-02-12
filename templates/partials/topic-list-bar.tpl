@@ -16,7 +16,7 @@
 				<!-- IMPORT partials/tags/filter-dropdown-left.tpl -->
 				{{{ end }}}
 				{{{ if template.unread }}}
-				<div class="markread btn-group {{{ if !topics.length }}}hidden{{{ end }}}">
+				<div class="markread {{{ if !topics.length }}}hidden{{{ end }}}">
 					<!-- IMPORT partials/category/selector-dropdown-left.tpl -->
 				</div>
 				{{{ end }}}
@@ -26,7 +26,7 @@
 				{{{ end }}}
 
 				{{{ if template.world }}}
-				<div class="btn-group bottom-sheet">
+				<div class="dropdown bottom-sheet">
 					<button class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center dropdown-toggle" data-bs-toggle="dropdown">
 						<i class="fa fa-fw fa-arrow-down-wide-short text-primary"></i>
 						<span id="sort-label" class="visible-md-inline visible-lg-inline fw-semibold"></span>

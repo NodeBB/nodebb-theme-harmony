@@ -1,4 +1,4 @@
-<div class="btn-group bottom-sheet">
+<div class="dropdown bottom-sheet">
 	<button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		<i class="fa fa-gear fa-fw"></i>
 	</button>

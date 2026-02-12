@@ -10,7 +10,7 @@
 <div class="alert alert-warning text-center">[[uploads:no-uploads-found]]</div>
 {{{ end }}}
 
-<table class="table table-striped table-responsive">
+<table class="table table-striped table-responsive w-100">
 	<thead>
 		<tr>
 			<th></th>
@@ -23,10 +23,8 @@
 			<td>
 				<a class="text-break" href="{config.relative_path}{./url}">{./url}</a>
 			</td>
-			<td>
-				<div class="btn-group ">
-					<button class="btn btn-danger btn-sm" data-action="delete" aria-label="[[aria:delete-upload-button]]"><i class="fa fa-trash"></i></button>
-				</div>
+			<td style="width: 1%; white-space: nowrap;">
+				<button class="btn btn-danger btn-sm" data-action="delete" aria-label="[[aria:delete-upload-button]]"><i class="fa fa-trash"></i></button>
 			</td>
 		</tr>
 		{{{ end }}}
