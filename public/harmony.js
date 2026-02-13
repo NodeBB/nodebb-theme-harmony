@@ -187,11 +187,15 @@ $(document).ready(function () {
 
 			draftsEl.on('click', '[component="drafts/delete"]', function () {
 				const save_id = $(this).attr('data-save-id');
-				bootbox.confirm('[[modules:composer.discard-draft-confirm]]', function (ok) {
-					if (ok) {
-						drafts.removeDraft(save_id);
-						renderDraftList();
-					}
+				bootbox.confirm({
+					title: '[[modules:bootbox.confirm]]',
+					message: '[[modules:composer.discard-draft-confirm]]',
+					callback: function (ok) {
+						if (ok) {
+							drafts.removeDraft(save_id);
+							renderDraftList();
+						}
+					},
 				});
 				return false;
 			});
