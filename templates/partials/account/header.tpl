@@ -44,7 +44,7 @@
 					<div class="d-flex gap-2" component="user/badges"></div>
 					{{{ if isAdminOrGlobalModeratorOrModerator }}}
 					{{{ if banned }}}
-					<div class="text-xm text-muted">
+					<div class="text-sm text-muted">
 						{{{ if banned_until }}}
 						[[user:info.banned-until, {isoTimeToLocaleString(./banned_until_readable, config.userLang)}]]
 						{{{ else }}}
