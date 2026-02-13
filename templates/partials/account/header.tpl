@@ -46,7 +46,7 @@
 					{{{ if banned }}}
 					<div class="text-xm text-muted">
 						{{{ if banned_until }}}
-						[[user:info.banned-until, {banned_until_readable}]]
+						[[user:info.banned-until, {isoTimeToLocaleString(./banned_until_readable, config.userLang)}]]
 						{{{ else }}}
 						[[user:info.banned-permanently]]
 						{{{ end }}}
