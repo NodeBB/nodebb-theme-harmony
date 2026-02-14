@@ -12,6 +12,14 @@
 	}
 }
 
+.skin-brite {
+	.topic-sidebar-tools .btn {
+		// this removes the 3px left margin on buttons in brite skin
+		// without this buttons in the sidebar on topic.tpl aren't properly aligned
+		margin-left: 0px;
+	}
+}
+
 .skin-solar {
 	.form-control::placeholder {
 		color:$gray-100!important;
