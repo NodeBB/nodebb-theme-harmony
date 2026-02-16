@@ -66,7 +66,7 @@
 				{{{ if posts.user.custom_profile_info.length }}}
 				<div>
 					<span>
-						&#124;
+
 						{{{ each posts.user.custom_profile_info }}}
 						{posts.user.custom_profile_info.content}
 						{{{ end }}}
