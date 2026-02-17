@@ -97,18 +97,18 @@
 
 		<h6 class="fw-bold">[[user:browsing]]</h6>
 
+		<div class="mb-3">
+			<div class="d-flex gap-4 align-items-center justify-content-between mb-3">
+				<label class="form-label text-sm mb-0" for="unreadCutoff">[[user:unread.cutoff, {maximumUnreadCutoff}]]</label>
+				<input id="unreadCutoff" value="{settings.unreadCutoff}" type="number" class="form-control form-control-sm text-end" data-property="unreadCutoff" min="1" max="{maximumUnreadCutoff}" style="max-width: 64px;">
+			</div>
+			<p class="form-text text-xs">[[user:unread.cutoff-help]]</p>
+		</div>
+
 		<div class="form-check form-switch">
 			<input class="form-check-input" type="checkbox" role="switch" id="openOutgoingLinksInNewTab" data-property="openOutgoingLinksInNewTab" {{{ if settings.openOutgoingLinksInNewTab }}}checked{{{ end }}}/>
 			<label class="form-check-label text-sm" for="openOutgoingLinksInNewTab">[[user:open-links-in-new-tab]]</label>
 		</div>
-
-		{{{ if inTopicSearchAvailable }}}
-		<div class="form-check form-switch">
-			<input class="form-check-input" type="checkbox" role="switch" id="topicSearchEnabled" data-property="topicSearchEnabled" {{{ if settings.topicSearchEnabled }}}checked{{{ end }}}/>
-			<label class="form-check-label text-sm" for="topicSearchEnabled">[[user:enable-topic-searching]]</label>
-		</div>
-		<p class="form-text text-xs">[[user:topic-search-help]]</p>
-		{{{ end }}}
 
 		<div class="form-check form-switch">
 			<input class="form-check-input" type="checkbox" role="switch" id="updateUrlWithPostIndex" data-property="updateUrlWithPostIndex" {{{ if settings.updateUrlWithPostIndex }}}checked{{{ end }}}/>
@@ -120,6 +120,14 @@
 			<label class="form-check-label text-sm" for="scrollToMyPost">[[user:scroll-to-my-post]]</label>
 		</div>
 
+		{{{ if inTopicSearchAvailable }}}
+		<div class="form-check form-switch">
+			<input class="form-check-input" type="checkbox" role="switch" id="topicSearchEnabled" data-property="topicSearchEnabled" {{{ if settings.topicSearchEnabled }}}checked{{{ end }}}/>
+			<label class="form-check-label text-sm" for="topicSearchEnabled">[[user:enable-topic-searching]]</label>
+		</div>
+		<p class="form-text text-xs">[[user:topic-search-help]]</p>
+		{{{ end }}}
+
 		<hr/>
 
 		<h6 class="fw-bold">[[global:pagination]]</h6>
@@ -128,13 +136,13 @@
 			<input type="checkbox" role="switch" id="usePagination" class="form-check-input" data-property="usePagination" {{{ if settings.usePagination }}}checked{{{ end }}}>
 			<label class="form-check-label text-sm" for="usePagination">[[user:paginate-description]]</label>
 		</div>
-		<div class="mb-2">
-			<label class="form-label text-sm" for="topicsPerPage">[[user:topics-per-page]] ([[user:max-items-per-page, {maxTopicsPerPage}]])</label>
-			<input type="text" class="form-control form-control-sm" id="topicsPerPage" data-property="topicsPerPage" value="{settings.topicsPerPage}">
+		<div class="d-flex gap-4 align-items-center justify-content-between  mb-2">
+			<label class="form-label text-sm text-nowrap mb-0" for="topicsPerPage">[[user:topics-per-page]] ([[user:max-items-per-page, {maxTopicsPerPage}]])</label>
+			<input type="number" class="form-control form-control-sm text-end" id="topicsPerPage" data-property="topicsPerPage" value="{settings.topicsPerPage}" min="1" max="{maxTopicsPerPage}" style="max-width: 64px;">
 		</div>
-		<div>
-			<label class="form-label text-sm" for="postsPerPage">[[user:posts-per-page]] ([[user:max-items-per-page, {maxPostsPerPage}]])</label>
-			<input type="text" class="form-control form-control-sm" id="postsPerPage" data-property="postsPerPage" value="{settings.postsPerPage}">
+		<div class="d-flex gap-4 align-items-center justify-content-between">
+			<label class="form-label text-sm text-nowrap mb-0" for="postsPerPage">[[user:posts-per-page]] ([[user:max-items-per-page, {maxPostsPerPage}]])</label>
+			<input type="number" class="form-control form-control-sm text-end" id="postsPerPage" data-property="postsPerPage" value="{settings.postsPerPage}" min="1" max="{maxPostsPerPage}" style="max-width: 64px;">
 		</div>
 
 		<hr/>
