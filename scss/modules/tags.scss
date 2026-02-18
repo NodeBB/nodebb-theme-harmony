@@ -1,6 +1,22 @@
 .tag-list {
 	.tag {
+		position: relative;
 		background-color: $gray-200!important;
 		color: $gray-700!important;
+		border-radius: 12px var(--bs-badge-border-radius) var(--bs-badge-border-radius) 12px!important;
+		padding-left: 1.125rem;
+		&:before {
+			content: "";
+			position: absolute;
+			left: 4px;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: var(--bs-body-bg);
+			box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.4);
+			border: 1px solid $gray-300;
+		}
 	}
 }
