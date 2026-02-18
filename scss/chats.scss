@@ -2,11 +2,6 @@
 body.page-user-chats {
 	> .layout-container {
 		height: 100%;
-		> #panel {
-			height: 100%;
-			> .container {
-				height: 100%;
-			}
-		}
+		height: 100dvh;
 	}
 }
