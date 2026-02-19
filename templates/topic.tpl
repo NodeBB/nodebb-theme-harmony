@@ -31,7 +31,7 @@
 
 	<div class="d-flex flex-column gap-3">
 		<div class="d-flex gap-2 flex-wrap flex-column flex-md-row {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ else }}}justify-content-between{{{ end }}}">
-			<div class="d-flex flex-column gap-3">
+			<div class="d-flex flex-column gap-3 flex-md-shrink-50">
 				<h1 component="post/header" class="tracking-tight fw-semibold fs-3 mb-0 text-break {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
 					<span class="topic-title" component="topic/title">{title}</span>
 				</h1>
@@ -57,7 +57,7 @@
 					<div class="d-flex gap-2" component="topic/stats"><!-- IMPORT partials/topic/stats.tpl --></div>
 				</div>
 			</div>
-			<div class="d-flex flex-wrap gap-2 align-items-start mt-2 hidden-empty {{{ if greaterthan(thumbs.length, "4") }}}thumbs-collapsed{{{ end }}}" component="topic/thumb/list"><!-- IMPORT partials/topic/thumbs.tpl --></div>
+			<div class="flex-shrink-1 d-flex flex-wrap gap-2 align-items-start mt-2 hidden-empty {{{ if greaterthan(thumbs.length, "4") }}}thumbs-collapsed{{{ end }}}" component="topic/thumb/list"><!-- IMPORT partials/topic/thumbs.tpl --></div>
 		</div>
 
 		<div class="row mb-4 mb-lg-0">
