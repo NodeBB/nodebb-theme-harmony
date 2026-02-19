@@ -1,5 +1,5 @@
 <div component="topic/reply/container" class="btn-group {{{ if !privileges.topics:reply }}}hidden{{{ end }}}">
-	<a href="{config.relative_path}/compose?tid={tid}" class="d-flex {{{ if !config.theme.topicSidebarTools}}}px-3{{{ end }}} gap-2 align-items-center btn btn-sm btn-primary fw-semibold" component="topic/reply" role="button"><i class="fa fa-fw fa-reply d-none {{{ if config.theme.topicSidebarTools}}} d-md-block{{{ end }}}"></i><span class="text-truncate text-nowrap">[[topic:reply]]</span></a>
+	<a href="{config.relative_path}/compose?tid={tid}" class="d-flex {{{ if !config.theme.topicSidebarTools}}}px-3{{{ end }}} gap-2 align-items-center btn btn-sm btn-primary fw-semibold" component="topic/reply" data-ajaxify="false" role="button"><i class="fa fa-fw fa-reply d-none {{{ if config.theme.topicSidebarTools}}} d-md-block{{{ end }}}"></i><span class="text-truncate text-nowrap">[[topic:reply]]</span></a>
 	<button type="button" class="btn btn-sm btn-primary dropdown-toggle flex-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="[[topic:reply-options]]">
 		<span class="caret"></span>
 	</button>
