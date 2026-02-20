@@ -143,12 +143,10 @@ $(document).ready(function () {
 	function setupDrafts() {
 		require(['composer/drafts', 'bootbox'], function (drafts, bootbox) {
 			const draftsEl = $('[component="sidebar/drafts"]');
-
+			const bottomBarDraftsEl = $('[component="bottombar"] [component="sidebar/drafts"]');
 			function updateBadgeCount() {
 				const count = drafts.getAvailableCount();
-				if (count > 0) {
-					draftsEl.removeClass('hidden');
-				}
+				bottomBarDraftsEl.toggleClass('hidden', count === 0);
 				$('[component="drafts/count"]').toggleClass('hidden', count <= 0).text(count);
 			}
 
