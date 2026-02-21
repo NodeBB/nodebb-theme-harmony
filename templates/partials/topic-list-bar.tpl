@@ -42,7 +42,7 @@
 				</div>
 				<div>
 					<a class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center fw-semibold h-100" href="#" id="world-help">
-						<i class="fa fa-question text-primary"></i>
+						<i class="fa fa-fw fa-question text-primary"></i>
 						<span class="visible-md-inline visible-lg-inline">[[world:help]]</span>
 					</a>
 				</div>
