@@ -239,22 +239,6 @@
 
 		<h6 class="fw-bold">[[user:notifications]]</h6>
 		<div>
-			{{{ each notificationSettings }}}
-			<div class="row mb-3 align-items-center">
-				<div class="col-7">
-					<label class="text-sm" for="{./name}">{./label}</label>
-				</div>
-				<div class="col-5">
-					<select class="form-select form-select-sm" id="{./name}" data-property="{./name}">
-						<option value="none" {{{ if ./none }}}selected{{{ end }}}>[[notifications:none]]</option>
-						<option value="notification" {{{ if ./notification }}}selected{{{ end }}}>[[notifications:notification-only]]</option>
-						<option value="email" {{{ if ./email }}}selected{{{ end }}}>[[notifications:email-only]]</option>
-						<option value="notificationemail" {{{ if ./notificationemail }}}selected{{{ end }}}>[[notifications:notification-and-email]]</option>
-					</select>
-				</div>
-			</div>
-			{{{end}}}
-
 			<div class="row align-items-center">
 				<div class="col-7">
 					<label class="text-sm" for="upvote-notif-freq">[[user:upvote-notif-freq]]</label>
@@ -269,6 +253,45 @@
 					</select>
 				</div>
 			</div>
+			<hr />
+			<table component="notification/table" class="table table-sm">
+				<thead>
+					<tr>
+						<th></th>
+						<th class="text-center fw-semibold px-2">[[user:notification-type-web]]</th>
+						<th class="text-center fw-semibold px-2">[[user:notification-type-email]]</th>
+					</tr>
+				</thead>
+				<tbody>
+				{{{ each notificationSettings }}}
+					<tr component="notification/setting" class="align-middle">
+						<td style="width:100%;">
+							<div class="align-items-center">
+								<label class="text-sm tracking-tight" for="{./name}">{./label}</label>
+								<select class="form-select form-select-sm d-none" id="{./name}" data-property="{./name}">
+									<option value="none" {{{ if ./none }}}selected{{{ end }}}>[[notifications:none]]</option>
+									<option value="notification" {{{ if ./notification }}}selected{{{ end }}}>[[notifications:notification-only]]</option>
+									<option value="email" {{{ if ./email }}}selected{{{ end }}}>[[notifications:email-only]]</option>
+									<option value="notificationemail" {{{ if ./notificationemail }}}selected{{{ end }}}>[[notifications:notification-and-email]]</option>
+								</select>
+							</div>
+						</td>
+						<td class="text-center">
+							<a href="#" data-type="notification" data-value="{{{ if (./notification || ./notificationemail) }}}1{{{ else }}}0{{{ end}}}">
+								<i class="fa-solid fa-lg fa-bell text-primary {{{ if (!./notification && !./notificationemail) }}}hidden{{{ end }}}"></i>
+								<i class="fa-regular fa-lg fa-bell text-secondary {{{ if (./notification || ./notificationemail) }}}hidden{{{ end }}}"></i>
+							</a>
+						</td>
+						<td class="text-center">
+							<a href="#" data-type="email" data-value="{{{ if (./email || ./notificationemail) }}}1{{{ else }}}0{{{ end}}}">
+								<i class="fa-solid fa-lg fa-envelope text-primary {{{ if (!./email && !./notificationemail) }}}hidden{{{ end }}}"></i>
+								<i class="fa-regular fa-lg fa-envelope text-secondary {{{ if (./email || ./notificationemail) }}}hidden{{{ end }}}"></i>
+							</a>
+						</td>
+					</tr>
+				{{{end}}}
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>
