@@ -27,7 +27,7 @@
 
 				{{{ if template.world }}}
 				<div class="dropdown bottom-sheet">
-					<button class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center dropdown-toggle" data-bs-toggle="dropdown">
+					<button class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center dropdown-toggle h-100" data-bs-toggle="dropdown">
 						<i class="fa fa-fw fa-arrow-down-wide-short text-primary"></i>
 						<span id="sort-label" class="visible-md-inline visible-lg-inline fw-semibold"></span>
 					</button>
@@ -40,10 +40,12 @@
 						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=alltime">[[world:popular-alltime]]</a></li>
 					</ul>
 				</div>
-				<a class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center fw-semibold" href="#" id="world-help">
-					<i class="fa fa-question text-primary"></i>
-					<span class="visible-md-inline visible-lg-inline">[[world:help]]</span>
-				</a>
+				<div>
+					<a class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center fw-semibold h-100" href="#" id="world-help">
+						<i class="fa fa-question text-primary"></i>
+						<span class="visible-md-inline visible-lg-inline">[[world:help]]</span>
+					</a>
+				</div>
 				{{{ end }}}
 
 				<!-- IMPORT partials/category/tools-dropdown-left.tpl -->
