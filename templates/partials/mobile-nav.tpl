@@ -1,4 +1,4 @@
-<div class="bottombar-nav p-2 text-dark bg-light d-flex justify-content-between align-items-center w-100">
+<div class="bottombar-nav p-2 text-dark bg-light {{{ if config.theme.topMobilebar }}}border-bottom{{{ else }}}border-top{{{ end }}} d-flex justify-content-between align-items-center w-100">
 	<div class="bottombar-nav-left d-flex gap-3 align-items-center">
 		<div>
 			<a href="#" role="button" class="nav-link d-flex justify-content-between align-items-center position-relative" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
