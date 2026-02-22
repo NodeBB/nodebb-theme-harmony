@@ -4,13 +4,10 @@
 	&::before {
 		font-family: $font-family-sans-serif;
 		font-weight: $font-weight-semibold;
-		font-size: $small-font-size;
-		line-height: $h4-font-size;
 	}
 
 	a, span {
 		color: $body-color;
 		font-size: $small-font-size;
-		line-height: 16px;
 	}
 }
