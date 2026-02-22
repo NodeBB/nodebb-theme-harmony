@@ -8,7 +8,7 @@
 		{buildCategoryIcon(@value, "60px", "rounded-1 flex-shrink-0")}
 		<div class="d-flex flex-column gap-1">
 			<h1 class="tracking-tight fs-3 fw-semibold mb-0">{./name}</h1>
-			<div class="d-flex flex-wrap gap-2 {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
+			<div class="d-flex flex-wrap gap-2 align-items-center {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
 				<span class="badge text-body border border-gray-300 stats text-xs">
 					<span title="{formattedNumber(totalTopicCount)}" class="fw-bold">{humanReadableNumber(totalTopicCount)}</span>
 					<span class="text-lowercase fw-normal">[[global:topics]]</span>
@@ -22,6 +22,9 @@
 					<span class="fw-normal">View Original</span>
 					<i class="fa fa-external-link"></i>
 				</a>
+				{{{ end }}}
+				{{{ if (!feeds:disableRSS && rssFeedUrl) }}}
+				<a class="btn btn-ghost btn-sm border border-gray-300 d-flex align-items-center align-self-stretch" target="_blank" href="{rssFeedUrl}" itemprop="item" title="[[global:rss-feed]]"><i class="fa fa-rss fa-sm text-muted"></i></a>
 				{{{ end }}}
 			</div>
 		</div>

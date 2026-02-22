@@ -55,6 +55,10 @@
 					{buildCategoryLabel(category, "a", "border")}
 					<div data-tid="{./tid}" component="topic/tags" class="lh-1 tags tag-list d-flex flex-wrap hidden-xs hidden-empty gap-2"><!-- IMPORT partials/topic/tags.tpl --></div>
 					<div class="d-flex gap-2" component="topic/stats"><!-- IMPORT partials/topic/stats.tpl --></div>
+
+					{{{ if (!feeds:disableRSS && rssFeedUrl) }}}
+					<a class="btn btn-ghost btn-sm border border-gray-300 d-flex align-items-center align-self-stretch" target="_blank" href="{rssFeedUrl}" data-bs-toggle="tooltip" title="[[global:rss-feed]]"><i class="fa fa-rss fa-sm text-muted"></i></a>
+					{{{ end }}}
 				</div>
 			</div>
 			<div class="flex-shrink-1 d-flex flex-wrap gap-2 align-items-start mt-2 hidden-empty {{{ if greaterthan(thumbs.length, "4") }}}thumbs-collapsed{{{ end }}}" component="topic/thumb/list"><!-- IMPORT partials/topic/thumbs.tpl --></div>
