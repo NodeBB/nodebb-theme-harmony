@@ -57,7 +57,7 @@
 					<div class="d-flex gap-2" component="topic/stats"><!-- IMPORT partials/topic/stats.tpl --></div>
 
 					{{{ if (!feeds:disableRSS && rssFeedUrl) }}}
-					<a class="btn btn-ghost btn-sm border border-gray-300 d-flex align-items-center align-self-stretch" target="_blank" href="{rssFeedUrl}" data-bs-toggle="tooltip" title="[[global:rss-feed]]"><i class="fa fa-rss fa-sm text-muted"></i></a>
+					<a class="btn btn-ghost btn-sm border border-gray-300 d-flex align-items-center align-self-stretch" target="_blank" href="{rssFeedUrl}" title="[[global:rss-feed]]"><i class="fa fa-rss fa-sm text-muted lh-1"></i></a>
 					{{{ end }}}
 				</div>
 			</div>
