@@ -37,7 +37,7 @@ $link-color: 		#0951be !default;
 
 $form-check-input-border: var(--bs-border-width) solid $gray-500 !default;
 
-$input-placeholder-color: $gray-600!important;
+$input-placeholder-color: $gray-600 !default;
 
 // no caret on dropdown-toggle
 $enable-caret: false;
@@ -60,7 +60,3 @@ $breadcrumb-divider: quote("→");
 $breadcrumb-divider-color: $gray-500 !default;
 $breadcrumb-active-color: $body-color !default;
 $breadcrumb-item-padding-x: 12px !default;
-
-.form-control::placeholder, .bootstrap-tagsinput::placeholder {
-	color: $gray-500 !important;
-}

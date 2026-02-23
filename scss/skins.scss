@@ -3,8 +3,8 @@
 	.topic-main-buttons, .topic-list-header, [component="post"] .icon {
 		background-color: transparent !important;
 	}
-	.form-control::placeholder {
-		color:$gray-100!important;
+	.form-control::placeholder, .bootstrap-tagsinput input::placeholder {
+		color: $gray-100!important;
 	}
 	.position-sticky.bg-body {
 		background-color: transparent!important;
