@@ -29,7 +29,7 @@
 				{{{ if ./user.userslug }}}<meta itemprop="url" content="{config.relative_path}/user/{./user.userslug}">{{{ end }}}
 
 				<div class="d-flex flex-nowrap gap-1 align-items-center text-truncate">
-					<div class="bg-body d-sm-none">
+					<div class="d-sm-none">
 						<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 							{buildAvatar(posts.user, "20px", true, "", "user/picture")}
 							{{{ if ./user.isLocal }}}
