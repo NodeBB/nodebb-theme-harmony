@@ -4,6 +4,6 @@
 		<i class="fa fa-fw fa-gear text-primary"></i>
 		<span class="d-none d-md-inline fw-semibold text-truncate text-nowrap">[[topic:thread-tools.title]]</span>
 	</button>
-	<ul class="dropdown-menu p-1 text-sm" role="menu"></ul>
+	<ul class="dropdown-menu dropdown-menu-end p-1 text-sm" role="menu"></ul>
 </div>
 {{{ end }}}

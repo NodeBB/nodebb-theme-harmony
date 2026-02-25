@@ -4,7 +4,7 @@
 		<span class="d-none d-md-inline fw-semibold text-truncate text-nowrap">{sortOptionLabel}</span>
 	</button>
 
-	<ul class="dropdown-menu p-1 text-sm" role="menu">
+	<ul class="dropdown-menu dropdown-menu-end p-1 text-sm" role="menu">
 		<li>
 			<a class="dropdown-item rounded-1 d-flex align-items-center gap-2" href="#" class="oldest_to_newest" data-sort="oldest_to_newest" role="menuitem">
 				<span class="flex-grow-1">[[topic:oldest-to-newest]]</span>
