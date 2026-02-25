@@ -94,10 +94,6 @@ body:not(.page-user) {
 	top: 0;
 	padding: 0.25rem 0;
 }
-// quartz doesn't need body-bg for tool background
-.skin-quartz .sticky-tools {
-	background-color: initial;
-}
 
 .flex-basis-md-200 {
 	@include media-breakpoint-up(md) {
