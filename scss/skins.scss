@@ -1,4 +1,8 @@
 .skin-quartz {
+	.post-container-parent > div.rounded-circle {
+		// box-shadow: none!important;
+		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2)!important;
+	}
 	// $body-bg-image is gradient in quartz
 	.topic-main-buttons, .topic-list-header, [component="post"] .icon {
 		background-color: transparent !important;
