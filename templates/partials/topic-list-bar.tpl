@@ -16,7 +16,7 @@
 				<!-- IMPORT partials/tags/filter-dropdown-left.tpl -->
 				{{{ end }}}
 				{{{ if template.unread }}}
-				<div class="markread {{{ if !topics.length }}}hidden{{{ end }}}">
+				<div class="d-flex markread {{{ if !topics.length }}}hidden{{{ end }}}">
 					<!-- IMPORT partials/category/selector-dropdown-left.tpl -->
 				</div>
 				{{{ end }}}
