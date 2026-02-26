@@ -38,16 +38,16 @@
 
 				<div class="topic-info d-flex gap-2 align-items-center flex-wrap {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
 					<span component="topic/labels" class="d-flex gap-2 {{{ if (!scheduled && (!pinned && (!locked && (!icons.length && (!oldCid || (oldCid == "-1")))))) }}}hidden{{{ end }}}">
-						<span component="topic/scheduled" class="badge badge border border-gray-300 text-body {{{ if !scheduled }}}hidden{{{ end }}}">
+						<span component="topic/scheduled" class="badge border border-gray-300 text-body {{{ if !scheduled }}}hidden{{{ end }}}">
 							<i class="fa fa-clock-o"></i> [[topic:scheduled]]
 						</span>
-						<span component="topic/pinned" class="badge badge border border-gray-300 text-body {{{ if (scheduled || !pinned) }}}hidden{{{ end }}}">
+						<span component="topic/pinned" class=" badge border border-gray-300 text-body {{{ if (scheduled || !pinned) }}}hidden{{{ end }}}">
 							<i class="fa fa-thumb-tack"></i> {{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {isoTimeToLocaleString(./pinExpiryISO, config.userLang)}]]{{{ end }}}
 						</span>
-						<span component="topic/locked" class="badge badge border border-gray-300 text-body {{{ if !locked }}}hidden{{{ end }}}">
+						<span component="topic/locked" class="badge border border-gray-300 text-body {{{ if !locked }}}hidden{{{ end }}}">
 							<i class="fa fa-lock"></i> [[topic:locked]]
 						</span>
-						<a component="topic/moved" href="{config.relative_path}/category/{oldCid}" class="badge badge border border-gray-300 text-body text-decoration-none {{{ if (!oldCid || (oldCid == "-1")) }}}hidden{{{ end }}}">
+						<a component="topic/moved" href="{config.relative_path}/category/{oldCid}" class="badge border border-gray-300 text-body text-decoration-none {{{ if (!oldCid || (oldCid == "-1")) }}}hidden{{{ end }}}">
 							<i class="fa fa-arrow-circle-right"></i> {{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}
 						</a>
 						{{{each icons}}}<span class="lh-1">{@value}</span>{{{end}}}
@@ -57,7 +57,7 @@
 					<div class="d-flex gap-2" component="topic/stats"><!-- IMPORT partials/topic/stats.tpl --></div>
 
 					{{{ if (!feeds:disableRSS && rssFeedUrl) }}}
-					<a class="btn btn-ghost btn-sm border border-gray-300 d-flex align-items-center align-self-stretch" target="_blank" href="{rssFeedUrl}" title="[[global:rss-feed]]"><i class="fa fa-rss fa-sm text-muted lh-1"></i></a>
+					<a class="badge border border-gray-300 text-body text-decoration-none d-flex align-items-center align-self-stretch" target="_blank" href="{rssFeedUrl}" title="[[global:rss-feed]]"><i class="fa fa-rss fa-sm text-muted lh-1"></i></a>
 					{{{ end }}}
 				</div>
 			</div>
