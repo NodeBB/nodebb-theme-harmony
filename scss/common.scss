@@ -54,20 +54,6 @@ hr {
 	background-color: $card-cap-bg!important;
 }
 
-blockquote {
-	$bq-border-color: mix($light, $dark, 75%);
-	@extend .text-bg-light;
-	font-style: normal;
-	border-left: 2px solid $bq-border-color;
-	padding: 1rem;
-	p:last-child {
-		margin-bottom: 0;
-	}
-	.toggle {
-		border-color: $bq-border-color!important;
-	}
-}
-
 body:not(.page-user) {
 	#content {
 		transition: opacity 150ms linear;
