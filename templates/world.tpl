@@ -66,11 +66,19 @@
 					</ul>
 				</div>
 
-				{{{ if posts.length }}}
 				<div class="col-lg-8 col-sm-12">
-					{{{ if posts.length }}}
 					<!-- IMPORT partials/topic-list-bar.tpl -->
 					<!-- IMPORT partials/topic/quickreply.tpl -->
+					{{{ if !posts.length }}}
+					<div>
+						<h2 class="fs-4 mb-3">
+							<i class="fa fa-comment-nodes"></i>
+							[[world:onboard.title]]
+						</h2>
+						<p>[[world:onboard.what]]</p>
+						<p>[[world:onboard.why]]</p>
+						<p>[[world:onboard.how]]</p>
+					</div>
 					{{{ end }}}
 					<ul class="list-unstyled" id="world-feed">
 						{{{ each posts }}}
@@ -82,19 +90,6 @@
 					<!-- IMPORT partials/paginator.tpl -->
 					{{{ end }}}
 				</div>
-				{{{ else }}}
-				<div class="col-lg-8 col-sm-12 d-flex gap-3 align-items-top">
-					<div>
-						<h2 class="fs-4 mb-3">
-							<i class="fa fa-comment-nodes"></i>
-							[[world:onboard.title]]
-						</h2>
-						<p>[[world:onboard.what]]</p>
-						<p>[[world:onboard.why]]</p>
-						<p>[[world:onboard.how]]</p>
-					</div>
-				</div>
-				{{{ end }}}
 			</div>
 		</div>
 	</div>
