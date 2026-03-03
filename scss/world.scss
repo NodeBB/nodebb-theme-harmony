@@ -2,4 +2,10 @@
 	.quick-reply {
 		@include topic-avatars();
 	}
+
+	[component="post/content"] {
+		> p {
+			margin-bottom: 1rem;
+		}
+	}
 }
