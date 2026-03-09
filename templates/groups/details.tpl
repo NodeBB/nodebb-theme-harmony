@@ -13,17 +13,17 @@
 		</div>
 	</div>
 
-	<div class="d-flex flex-column flex-md-row justify-content-md-between pb-4 mb-4 mt-2 border-bottom">
-		<div class="d-flex flex-column mt-1">
-			<div class="d-flex align-items-center gap-2">
+	<div class="d-flex flex-column flex-md-row justify-content-md-between pb-4 mb-4 mt-2 border-bottom gap-3">
+		<div class="d-flex flex-column mt-1 gap-2">
+			<div class="d-flex flex-column flex-md-row align-items-md-center gap-2">
 				<h3 class="mb-0 text-capitalize">{group.displayName}</h3>
-			</div>
-			<div class="d-flex gap-2">
-				{group.descriptionParsed}
 				<div>
 					{{{ if group.private }}}<span class="badge text-bg-light border border-1">[[groups:details.private]]</span>{{{ end }}}
 					{{{ if group.hidden }}}<span class="badge text-bg-light border border-1">[[groups:details.hidden]]</span>{{{ end }}}
 				</div>
+			</div>
+			<div>
+				{group.descriptionParsed}
 			</div>
 		</div>
 		<div class="d-flex gap-2 align-items-start">
@@ -31,7 +31,7 @@
 			{function.membershipBtn, group}
 			{{{ end }}}
 			{{{ if isAdmin }}}
-			<a href="{config.relative_path}/admin/manage/groups/{group.slug}" target="_blank" class="btn btn-light"><i class="fa fa-gear"></i> [[user:edit]]</a>
+			<a href="{config.relative_path}/admin/manage/groups/{group.slug}" target="_blank" class="btn btn-light text-nowrap"><i class="fa fa-gear"></i> [[user:edit]]</a>
 			{{{ end }}}
 		</div>
 	</div>

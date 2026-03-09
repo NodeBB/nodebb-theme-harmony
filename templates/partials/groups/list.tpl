@@ -6,9 +6,10 @@
 			<div class="card-body d-flex flex-column gap-1 border border-top-0 rounded-bottom h-100">
 				<div class="d-flex">
 					<div class="flex-grow-1 fs-6 fw-semibold text-capitalize">{./displayName}</div>
-					<div class="flex-shrink-0 text-sm"><i class="text-muted fa-solid fa-user"></i> {formattedNumber(./memberCount)}</div>
+					<div class="align-self-start flex-shrink-0 badge border border-gray-300 fw-normal text-body"><i class="text-secondary fa-solid fa-users"></i> {formattedNumber(./memberCount)}</div>
 				</div>
-				<div class="text-sm">{./description}</div>
+				<div class="text-sm line-clamp-3">{./description}</div>
+				<span class="timeago text-xs text-secondary mt-auto" title="{./createtimeISO}"></span>
 			</div>
 		</a>
 	</div>
