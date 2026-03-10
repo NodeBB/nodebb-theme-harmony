@@ -5,9 +5,7 @@
 .group-hover-bg {
 	$hover-color: mix($body-bg, $body-color, 90%);
 	$border-color: mix($body-bg, $body-color, 90%);
-	.card-body {
-		border-color: $border-color!important;
-	}
+	border-color: $border-color!important;
 	&:hover {
 		background-color: $hover-color;
 	}
