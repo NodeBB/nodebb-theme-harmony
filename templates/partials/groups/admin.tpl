@@ -50,7 +50,7 @@
 				</div>
 
 
-				<div class="mb-2">
+				<div class="mb-3">
 					<label class="form-label text-xs text-muted" for="userTitle">[[groups:details.badge-text]]</label>
 					<div class="d-flex gap-1">
 						<input component="groups/userTitleOption" class="form-control" name="userTitle" id="userTitle" type="text" maxlength="40" value="{group.userTitleEscaped}"{{{ if !group.userTitleEnabled }}} disabled{{{ end }}} />
@@ -65,13 +65,13 @@
 						</div>
 					</div>
 				</div>
-				<div class="mb-2">
-					<label class="form-label text-xs text-muted" for="labelColor" class="badge-color-label">[[groups:details.change-label-colour]]</label>
-					<input class="form-control" component="groups/userTitleOption" type="color" name="labelColor" id="labelColor" value="{{{ if group.labelColor }}}{group.labelColor}{{{ end }}}" />
+				<div class="mb-3 d-flex align-items-center justify-content-between gap-5">
+					<label class="form-label text-xs text-muted mb-0 text-nowrap" for="labelColor" class="badge-color-label">[[groups:details.change-label-colour]]</label>
+					<input class="form-control p-1" component="groups/userTitleOption" type="color" name="labelColor" id="labelColor" value="{{{ if group.labelColor }}}{group.labelColor}{{{ end }}}" style="width: 128px;" />
 				</div>
-				<div class="mb-2">
-					<label class="form-label text-xs text-muted" for="textColor" class="badge-color-label">[[groups:details.change-text-colour]]</label>
-					<input class="form-control" component="groups/userTitleOption" type="color" name="textColor" id="textColor" value="{{{ if group.textColor }}}{group.textColor}{{{ end }}}" />
+				<div class="d-flex align-items-center justify-content-between gap-5">
+					<label class="form-label text-xs text-muted mb-0 text-nowrap" for="textColor" class="badge-color-label">[[groups:details.change-text-colour]]</label>
+					<input class="form-control p-1" component="groups/userTitleOption" type="color" name="textColor" id="textColor" value="{{{ if group.textColor }}}{group.textColor}{{{ end }}}" style="width: 128px;"/>
 				</div>
 			</div>
 		</div>
@@ -86,10 +86,6 @@
 				</div>
 				<input id="memberPostCids" type="text" class="form-control form-control-sm" value="{group.memberPostCids}">
 			</div>
-		</div>
-		<div class="d-flex justify-content-end gap-2">
-			<button class="btn btn-link text-danger" type="button" data-action="delete">[[groups:details.delete-group]]</button>
-			<button class="btn btn-primary" type="button" data-action="update">[[global:save-changes]]</button>
 		</div>
 	</form>
 </div>
