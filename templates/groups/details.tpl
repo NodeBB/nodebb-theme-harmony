@@ -73,7 +73,7 @@
 					<div class="d-flex align-items-center gap-1 justify-content-between mb-3 flex-wrap">
 						<h3 class="fw-semibold fs-5">[[groups:details.owner-options]]</h3>
 						<div class="d-flex justify-content-end gap-2">
-							<button class="btn btn-link btn-sm text-danger" type="button" data-action="delete">[[groups:details.delete-group]]</button>
+							<button class="btn btn-link btn-sm text-danger border-danger" type="button" data-action="delete">[[groups:details.delete-group]]</button>
 							<button class="btn btn-primary btn-sm" type="button" data-action="update">[[global:save-changes]]</button>
 						</div>
 					</div>
