@@ -7,7 +7,7 @@
 				<!-- IMPORT partials/tags/filter-dropdown-left.tpl -->
 				<!-- IMPORT partials/category/sort.tpl -->
 				{{{ end }}}
-				{{{ if (template.popular || template.top)}}}
+				{{{ if (template.popular || template.top) }}}
 				<!-- IMPORT partials/topic-terms.tpl -->
 				{{{ end }}}
 				{{{ if (template.unread || (template.recent || (template.popular || template.top))) }}}
@@ -33,6 +33,7 @@
 					</button>
 					<ul class="dropdown-menu" id="sort-options">
 						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world">[[world:latest]]</a></li>
+						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?all=1">[[world:latest-all]]</a></li>
 						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=day">[[world:popular-day]]</a></li>
 						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=week">[[world:popular-week]]</a></li>
 						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=month">[[world:popular-month]]</a></li>
