@@ -27,7 +27,7 @@
 	<div class="world {{{if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<div class="category">
 			<div class="row flex-row-reverse">
-				<div class="col-lg-4 col-sm-12 mt-2 pt-1">
+				<div class="col-lg-4 col-sm-12 mt-2 pt-1 {{{ if !config.loggedIn }}}invisible{{{ end }}}">
 					<form class="mb-3" role="search" method="GET" action="{config.relative_path}/search">
 						<input type="hidden" name="in" value="categories" />
 						<div class="input-group bottom-sheet">
@@ -69,17 +69,21 @@
 				<div class="col-lg-8 col-sm-12">
 					<!-- IMPORT partials/topic-list-bar.tpl -->
 					<!-- IMPORT partials/topic/quickreply.tpl -->
-					{{{ if !posts.length }}}
-					<div>
-						<h2 class="fs-4 mb-3">
-							<i class="fa fa-comment-nodes"></i>
+
+					{{{ if !config.loggedIn }}}
+					<div class="alert alert-info alert-dismissible fade show">
+						<p class="fw-semibold">
 							[[world:onboard.title]]
-						</h2>
+						</p>
 						<p>[[world:onboard.what]]</p>
 						<p>[[world:onboard.why]]</p>
 						<p>[[world:onboard.how]]</p>
+						<a href="{config.relative_path}/register" class="fw-semibold btn btn-sm btn-warning">[[global:register]]</a>
+						<a href="{config.relative_path}/login" class="fw-semibold btn btn-sm btn-info">[[global:login]]</a>
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 					</div>
 					{{{ end }}}
+
 					<ul class="list-unstyled" id="world-feed">
 						{{{ each posts }}}
 						<!-- IMPORT partials/feed/item.tpl -->
