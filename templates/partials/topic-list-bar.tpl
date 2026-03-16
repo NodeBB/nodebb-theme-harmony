@@ -26,6 +26,7 @@
 				{{{ end }}}
 
 				{{{ if template.world }}}
+				{{{ if config.loggedIn }}}
 				<div class="dropdown bottom-sheet">
 					<button class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center dropdown-toggle h-100" data-bs-toggle="dropdown">
 						<i class="fa fa-fw fa-arrow-down-wide-short text-primary"></i>
@@ -33,6 +34,7 @@
 					</button>
 					<ul class="dropdown-menu" id="sort-options">
 						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world">[[world:latest]]</a></li>
+						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?local=1">[[world:latest-local]]</a></li>
 						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?all=1">[[world:latest-all]]</a></li>
 						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=day">[[world:popular-day]]</a></li>
 						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=week">[[world:popular-week]]</a></li>
@@ -41,6 +43,7 @@
 						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=alltime">[[world:popular-alltime]]</a></li>
 					</ul>
 				</div>
+				{{{ end }}}
 				<div>
 					<a class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center fw-semibold h-100" href="#" id="world-help">
 						<i class="fa fa-fw fa-question text-primary"></i>
