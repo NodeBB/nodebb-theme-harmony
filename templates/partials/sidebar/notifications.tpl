@@ -1,4 +1,4 @@
-<a data-bs-toggle="dropdown" href="#" role="button" class="nav-link d-flex gap-2 justify-content-between align-items-center position-relative" aria-haspopup="true" aria-expanded="false" aria-label="[[global:header.notifications]]">
+<a data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#" role="button" class="nav-link d-flex gap-2 justify-content-between align-items-center position-relative" aria-haspopup="true" aria-expanded="false" aria-label="[[global:header.notifications]]">
 	<span class="d-flex gap-2 align-items-center text-nowrap truncate-open">
 		<span class="position-relative">
 			<i component="notifications/icon" class="fa fa-fw {{{ if unreadCount.notification}}}fa-bell{{{ else }}}fa-bell-o{{{ end }}} unread-count" data-content="{unreadCount.notification}"></i>
@@ -9,6 +9,11 @@
 	<span component="notifications/count" class="visible-open badge rounded-1 bg-primary {{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span>
 </a>
 <ul class="notifications-dropdown dropdown-menu p-1 shadow" role="menu">
+	<li>
+		<button type="button" class="btn btn-ghost btn-sm fw-bold" data-filter="all">All</button>
+		<button type="button" class="btn btn-ghost btn-sm" data-filter="unread">Unread</button>
+	</li>
+	<li class="dropdown-divider"></li>
 	<li>
 		<div component="notifications/list" class="list-container notification-list overscroll-behavior-contain pe-1 ff-base ghost-scrollbar">
 			<div class="mb-2 p-1">
