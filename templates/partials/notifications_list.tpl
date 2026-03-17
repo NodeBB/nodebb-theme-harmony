@@ -1,9 +1,7 @@
-{{{ if !notifications.length }}}
-<div class="no-notifs text-center p-4 d-flex flex-column">
+<div class="no-notifs text-center p-4 d-flex flex-column {{{ if notifications.length }}}hidden{{{ end }}}">
 	<div class="p-4"><i class="fa-solid fa-wind fs-2 text-muted"></i></div>
 	<div class="text-xs fw-semibold text-muted">[[notifications:no-notifs]]</div>
 </div>
-{{{ end }}}
 
 {{{ each notifications }}}
 <div class="{./readClass}" data-nid="{./nid}" data-path="{./path}" {{{ if ./pid }}}data-pid="{./pid}"{{{ end }}}{{{ if ./tid }}}data-tid="{./tid}"{{{ end }}}>

@@ -9,9 +9,9 @@
 	<span component="notifications/count" class="visible-open badge rounded-1 bg-primary {{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span>
 </a>
 <ul class="notifications-dropdown dropdown-menu p-1 shadow" role="menu">
-	<li>
-		<button type="button" class="btn btn-ghost btn-sm fw-bold" data-filter="all">All</button>
-		<button type="button" class="btn btn-ghost btn-sm" data-filter="unread">Unread</button>
+	<li class="d-flex gap-1 align-items-center">
+		<button type="button" class="btn btn-ghost btn-sm ff-secondary active px-3" data-filter="all">[[notifications:all]]</button>
+		<button type="button" class="btn btn-ghost btn-sm ff-secondary d-flex align-items-center gap-2" data-filter="unread">[[unread:title]] <span component="notifications/count" class="{{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span></button>
 	</li>
 	<li class="dropdown-divider"></li>
 	<li>
