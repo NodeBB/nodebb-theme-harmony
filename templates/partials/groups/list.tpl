@@ -5,7 +5,7 @@
 		<a href="{config.relative_path}/groups/{./slug}" class="d-block h-100 text-reset text-decoration-none">
 			<div class="card-body d-flex flex-column gap-2  h-100 pb-2">
 				<div class="d-flex">
-					<div class="flex-grow-1 fs-6 fw-semibold text-capitalize">{./displayName}</div>
+					<div class="flex-grow-1 fs-6 fw-semibold text-capitalize">{generateGroupDisplayName(@value)}</div>
 					<div class="align-self-start flex-shrink-0 badge border border-gray-300 fw-normal text-body"><i class="text-secondary fa-solid fa-users"></i> {formattedNumber(./memberCount)}</div>
 				</div>
 				<div class="text-sm line-clamp-3">{./description}</div>
