@@ -239,7 +239,7 @@
 
 		<h6 class="fw-bold">[[user:notifications]]</h6>
 		<div>
-			<div class="row align-items-center">
+			<div class="row align-items-center mb-2">
 				<div class="col-7">
 					<label class="text-sm" for="upvote-notif-freq">[[user:upvote-notif-freq]]</label>
 				</div>
@@ -252,6 +252,10 @@
 						{{{end}}}
 					</select>
 				</div>
+			</div>
+			<div class="form-check form-switch mb-3">
+				<input class="form-check-input" type="checkbox" role="switch" id="hideReadNotifications" data-property="hideReadNotifications" {{{ if settings.hideReadNotifications }}}checked{{{ end }}} />
+				<label class="form-check-label text-sm" for="hideReadNotifications">[[user:hide-read-notifications]]</label>
 			</div>
 			<hr />
 			<table component="notification/table" class="table">
