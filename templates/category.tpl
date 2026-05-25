@@ -18,7 +18,7 @@
 					<span class="text-lowercase fw-normal">[[global:posts]]</span>
 				</span>
 				{{{ if !isNumber(cid) }}}
-				<a href="{./url}" class="badge text-body border border-gray-300 text-xs" data-ajaxify="false">
+				<a href="{escape(./url)}" class="badge text-body border border-gray-300 text-xs" data-ajaxify="false">
 					<span class="fw-normal">View Original</span>
 					<i class="fa fa-external-link"></i>
 				</a>
