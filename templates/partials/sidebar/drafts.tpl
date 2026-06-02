@@ -35,11 +35,11 @@
 							{{{ end }}}
 
 							{{{ if (./action == "posts.reply") }}}
-							<div class="text text-xs fw-semibold line-clamp-2 text-break">[[topic:composer.replying-to, "{./title}"]]</div>
+							<div class="text text-xs fw-semibold line-clamp-2 text-break">[[topic:composer.replying-to, "{txEscape(./title)}"]]</div>
 							{{{ end }}}
 
 							{{{ if (./action == "posts.edit") }}}
-							<div class="text text-xs fw-semibold line-clamp-2">[[topic:composer.editing-in, "{./title}"]]</div>
+							<div class="text text-xs fw-semibold line-clamp-2">[[topic:composer.editing-in, "{txEscape(./title)}"]]</div>
 							{{{ end }}}
 
 							{{{ if ./text }}}
