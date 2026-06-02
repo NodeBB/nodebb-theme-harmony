@@ -2,7 +2,7 @@
   "name": "nodebb-theme-harmony",
   "version": "2.2.70",
   "nbbpm": {
-    "compatibility": "^4.0.0"
+    "compatibility": "^4.12.0"
   },
   "description": "Harmony theme for NodeBB",
   "main": "library.js",
@@ -46,6 +46,6 @@
   },
   "devDependencies": {
     "eslint": "10.4.1",
-    "eslint-config-nodebb": "^2.0.0"
+    "eslint-config-nodebb": "^2.0.2"
   }
 }

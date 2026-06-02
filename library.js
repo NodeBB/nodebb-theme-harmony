@@ -1,9 +1,9 @@
 'use strict';
 
-const nconf = require.main.require('nconf');
-const meta = require.main.require('./src/meta');
-const _ = require.main.require('lodash');
-const user = require.main.require('./src/user');
+const nconf = nodebb.require('nconf');
+const meta = nodebb.require('./src/meta');
+const _ = nodebb.require('lodash');
+const user = nodebb.require('./src/user');
 
 const controllers = require('./lib/controllers');
 
@@ -24,7 +24,7 @@ const defaults = {
 
 library.init = async function (params) {
 	const { router, middleware } = params;
-	const routeHelpers = require.main.require('./src/routes/helpers');
+	const routeHelpers = nodebb.require('./src/routes/helpers');
 
 	routeHelpers.setupAdminPageRoute(router, '/admin/plugins/harmony', [], controllers.renderAdminPage);
 
@@ -42,13 +42,13 @@ library.init = async function (params) {
 
 async function buildSkins() {
 	try {
-		const plugins = require.main.require('./src/plugins');
+		const plugins = nodebb.require('./src/plugins');
 		await plugins.prepareForBuild(['client side styles']);
 		for (const skin of meta.css.supportedSkins) {
 			// eslint-disable-next-line no-await-in-loop
 			await meta.css.buildBundle(`client-${skin}`, true);
 		}
-		require.main.require('./src/meta/minifier').killAll();
+		nodebb.require('./src/meta/minifier').killAll();
 	} catch (err) {
 		console.error(err.stack);
 	}

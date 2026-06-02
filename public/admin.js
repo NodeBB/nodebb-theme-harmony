@@ -1,7 +1,7 @@
 'use strict';
 
 define('admin/plugins/harmony', ['settings'], function (Settings) {
-	var ACP = {};
+	const ACP = {};
 
 	ACP.init = function () {
 		Settings.load('harmony', $('.harmony-settings'));
