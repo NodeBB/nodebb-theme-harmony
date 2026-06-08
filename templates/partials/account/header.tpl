@@ -1,8 +1,7 @@
 <div class="account w-100 mx-auto">
-	<div class="cover position-absolute start-0 top-0 w-100" component="account/cover" style="background-image: url({cover:url}); background-position: {cover:position};">
+	<div class="cover position-absolute start-0 top-0 w-100" component="account/cover" style="background-image: url({escape(cover:url)}); background-position: {cover:position};">
 		<div class="container">
-			{{{ if allowCoverPicture }}}
-			{{{ if canEdit }}}
+			{{{ if (allowCoverPicture && canEdit) }}}
 			<div class="controls text-center">
 				<a href="#" class="upload p-2 m-2 rounded-1 text-bg-light opacity-75"><i class="fa fa-fw fa-upload"></i></a>
 				<a href="#" class="resize p-2 m-2 rounded-1 text-bg-light opacity-75"><i class="fa fa-fw fa-arrows"></i></a>
@@ -10,7 +9,6 @@
 			</div>
 			<a href="#" class="save btn btn-primary">[[groups:cover-save]] <i class="fa fa-fw fa-floppy-o"></i></a>
 			<div class="indicator text-bg-primary">[[groups:cover-saving]] <i class="fa fa-fw fa-refresh fa-spin"></i></div>
-			{{{ end }}}
 			{{{ end }}}
 		</div>
 	</div>
