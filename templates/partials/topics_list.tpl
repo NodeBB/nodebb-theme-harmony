@@ -1,9 +1,9 @@
 <ul component="category" class="topics-list list-unstyled" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
 
 	{{{ each topics }}}
-	<li component="category/topic" class="category-item hover-parent border-bottom py-3 py-lg-4 d-flex flex-column flex-lg-row align-items-start {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
+	<li component="category/topic" class="category-item hover-parent border-bottom py-3 py-lg-4 d-flex flex-column flex-lg-row align-items-start {generateTopicClass(@value)}" <!-- IMPORT partials/data/category.tpl -->>
 		<link itemprop="url" content="{config.relative_path}/topic/{./slug}" />
-		<meta itemprop="name" content="{function.stripTags, ./title}" />
+		<meta itemprop="name" content="{stripTags(./title)}" />
 		<meta itemprop="itemListOrder" content="descending" />
 		<meta itemprop="position" content="{increment(./index, "1")}" />
 		<a id="{./index}" data-index="{./index}" component="topic/anchor"></a>
