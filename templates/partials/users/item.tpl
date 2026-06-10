@@ -1,6 +1,6 @@
 <div>
 	<a href="{config.relative_path}/user/{./userslug}" class="btn btn-ghost gap-2 ff-base d-flex align-items-start justify-content-start p-2 text-start">
-		{buildAvatar(@value, "48px", true, "flex-shrink-0")}
+		{{buildAvatar(@value, "48px", true, "flex-shrink-0")}}
 		<div class="d-flex flex-column gap-1 text-truncate">
 			<div class="fw-semibold text-truncate" title="{./displayname}">{./displayname}</div>
 			<div class="text-xs text-muted text-truncate">@{./username}</div>

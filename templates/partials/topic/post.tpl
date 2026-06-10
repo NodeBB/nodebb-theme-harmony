@@ -11,7 +11,7 @@
 <div class="d-flex align-items-start gap-3 post-container-parent">
 	<div class="bg-body d-none d-sm-block rounded-circle" style="box-shadow: 0 0 0 3px var(--bs-body-bg);">
 		<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" aria-label="[[aria:profile-page-for, {./user.displayname}]]">
-			{buildAvatar(posts.user, "48px", true, "", "user/picture")}
+			{{buildAvatar(posts.user, "48px", true, "", "user/picture")}}
 			{{{ if ./user.isLocal }}}
 			<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
 			{{{ else }}}
@@ -31,7 +31,7 @@
 				<div class="d-flex flex-nowrap gap-1 align-items-center text-truncate">
 					<div class="d-sm-none">
 						<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
-							{buildAvatar(posts.user, "20px", true, "", "user/picture")}
+							{{buildAvatar(posts.user, "20px", true, "", "user/picture")}}
 							{{{ if ./user.isLocal }}}
 							<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
 							{{{ else }}}
@@ -57,7 +57,7 @@
 				{{{ end }}}
 
 				<div class="d-flex gap-1 align-items-center">
-					<span class="text-muted">{generateWrote(@value, config.timeagoCutoff)}</span>
+					<span class="text-muted">{{generateWrote(@value, config.timeagoCutoff)}}</span>
 
 					<i component="post/edit-indicator" class="fa fa-edit text-muted{{{ if privileges.posts:history }}} pointer{{{ end }}} edit-icon {{{ if !posts.editor.username }}}hidden{{{ end }}}" title="[[global:edited-timestamp, {isoTimeToLocaleString(./editedISO, config.userLang)}]]"></i>
 					<span data-editor="{posts.editor.userslug}" component="post/editor" class="visually-hidden">[[global:last-edited-by, {posts.editor.username}]] <span class="timeago" title="{isoTimeToLocaleString(posts.editedISO, config.userLang)}"></span></span>
@@ -81,7 +81,7 @@
 		</div>
 
 		<div class="content text-break" component="post/content" itemprop="text">
-			{posts.content}
+			{{posts.content}}
 		</div>
 
 		<div component="post/footer" class="post-footer border-bottom pb-2">
@@ -94,7 +94,7 @@
 				<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="d-flex gap-2 align-items-center btn btn-ghost ff-secondary border rounded-1 p-1 text-muted text-decoration-none text-xs {{{ if (!./replies || shouldHideReplyContainer(@value)) }}}hidden{{{ end }}}">
 					<span component="post/reply-count/avatars" class="d-flex gap-1 {{{ if posts.replies.hasMore }}}hasMore{{{ end }}}">
 						{{{each posts.replies.users}}}
-						<span>{buildAvatar(posts.replies.users, "20px", true, "avatar-tooltip")}</span>
+						<span>{{buildAvatar(posts.replies.users, "20px", true, "avatar-tooltip")}}</span>
 						{{{end}}}
 						{{{ if posts.replies.hasMore}}}
 						<span style="height: 20px; line-height: 20px;"><i class="fa fa-ellipsis"></i></span>

@@ -17,7 +17,7 @@
 					<li component="blocks/search/match">
 						<div class="dropdown-item rounded-1 d-flex flex-nowrap gap-4 justify-content-between align-items-center" role="menuitem">
 							<div class="text-truncate">
-								<a href="{config.relative_path}/uid/{./uid}" class="text-decoration-none">{buildAvatar(edit, "24px", true)} {./username}</a>
+								<a href="{config.relative_path}/uid/{./uid}" class="text-decoration-none">{{buildAvatar(edit, "24px", true)}} {./username}</a>
 							</div>
 
 							<button class="btn btn-sm btn-outline-danger text-nowrap {{{ if ./isBlocked }}}hidden{{{ end }}}" data-uid="{./uid}" data-action="block">[[user:block-user]]</button>

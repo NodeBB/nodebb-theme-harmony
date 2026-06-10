@@ -5,7 +5,7 @@
 
 <div class="category-header d-flex flex-column gap-2">
 	<div class="d-flex gap-3 align-items-center mb-1 {{{ if config.theme.centerHeaderElements }}}justify-content-center flex-column{{{ end }}}">
-		{buildCategoryIcon(@value, "60px", "rounded-1 flex-shrink-0")}
+		{{buildCategoryIcon(@value, "60px", "rounded-1 flex-shrink-0")}}
 		<div class="d-flex flex-column gap-1">
 			<h1 class="tracking-tight fs-3 fw-semibold mb-0">{./name}</h1>
 			<div class="d-flex flex-wrap gap-2 align-items-center {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
