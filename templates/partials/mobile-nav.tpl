@@ -25,7 +25,7 @@
 					{{{ if ./dropdown }}}
 					<div class="ps-3">
 						<ul id="collapse-target-{@index}" class="collapse list-unstyled ps-3">
-							{./dropdownContent}
+							{{./dropdownContent}}
 						</ul>
 					</div>
 					{{{ end }}}

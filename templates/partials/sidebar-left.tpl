@@ -17,7 +17,7 @@
 			</a>
 			{{{ if ./dropdown }}}
 			<ul class="dropdown-menu p-1 shadow" role="menu">
-				{./dropdownContent}
+				{{./dropdownContent}}
 			</ul>
 			{{{ end }}}
 		</li>
