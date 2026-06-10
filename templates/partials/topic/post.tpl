@@ -68,7 +68,7 @@
 					<span>
 
 						{{{ each posts.user.custom_profile_info }}}
-						{posts.user.custom_profile_info.content}
+						{{posts.user.custom_profile_info.content}}
 						{{{ end }}}
 					</span>
 				</div>

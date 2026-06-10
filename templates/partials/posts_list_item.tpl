@@ -14,7 +14,7 @@
         </div>
 
         <div component="post/content" class="content text-sm text-break">
-            {./content}
+            {{./content}}
         </div>
     </div>
     <div class="mb-3 d-flex flex-wrap gap-1 w-100">

@@ -8,4 +8,4 @@
 	<span class="timeago text-nowrap text-muted" title="{post.timestampISO}"></span>
 </div>
 
-<div class="text-sm">{post.content}</div>
+<div class="text-sm">{{post.content}}</div>

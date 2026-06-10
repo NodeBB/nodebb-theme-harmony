@@ -189,7 +189,7 @@
 		<hr/>
 		<h6 class="fw-bold">{./title}</h6>
 		<div>
-			{./content}
+			{{./content}}
 		</div>
 		{{{end}}}
 		<hr class="d-block d-md-none"/>
