@@ -31,7 +31,7 @@
 	</div>
 	{{{ if ./descriptionParsed }}}
 	<div class="description text-secondary text-sm lh-sm w-100 {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}} line-clamp-4 clamp-fade-sm-4">
-		{./descriptionParsed}
+		{{./descriptionParsed}}
 	</div>
 	{{{ end }}}
 	{{{ if ./handleFull }}}
