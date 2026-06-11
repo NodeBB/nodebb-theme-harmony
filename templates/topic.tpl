@@ -11,29 +11,13 @@
 {{{ end }}}
 
 <div class="flex-fill" itemid="{url}" itemscope itemtype="https://schema.org/DiscussionForumPosting">
-	<meta itemprop="headline" content="{escape(titleRaw)}">
-	<meta itemprop="text" content="{escape(titleRaw)}">
-	<meta itemprop="url" content="{url}">
-	<meta itemprop="datePublished" content="{timestampISO}">
-	<meta itemprop="dateModified" content="{lastposttimeISO}">
-	<div itemprop="author" itemscope itemtype="https://schema.org/Person">
-		<meta itemprop="name" content="{author.username}">
-		{{{ if author.userslug }}}<meta itemprop="url" content="{config.relative_path}/user/{author.userslug}">{{{ end }}}
-	</div>
-	<div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
-		<meta itemprop="interactionType" content="https://schema.org/CommentAction">
-		<meta itemprop="userInteractionCount" content="{increment(postcount, "-1")}">
-	</div>
-	<div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
-		<meta itemprop="interactionType" content="https://schema.org/LikeAction">
-		<meta itemprop="userInteractionCount" content="{upvotes}">
-	</div>
+	<!-- IMPORT partials/topic/meta-tags.tpl -->
 
 	<div class="d-flex flex-column gap-3">
 		<div class="d-flex gap-2 flex-wrap flex-column flex-md-row {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ else }}}justify-content-between{{{ end }}}">
 			<div class="d-flex flex-column gap-3 flex-md-shrink-50">
 				<h1 component="post/header" class="tracking-tight fw-semibold fs-3 mb-0 text-break {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
-					<span class="topic-title" component="topic/title">{title}</span>
+					<span class="topic-title" component="topic/title">{{escapeTxHtml(title)}}</span>
 				</h1>
 
 				<div class="topic-info d-flex gap-2 align-items-center flex-wrap {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">

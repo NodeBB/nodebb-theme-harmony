@@ -7,9 +7,8 @@
 	{{{each linkTags}}}{{buildLinkTag(@value)}}{{{end}}}
 
 	<script>
-		const config = JSON.parse('{{configJSON}}');
-		// const config = {{configJSON}};
-		const app = {
+		var config = JSON.parse('{{configJSON}}');
+		var app = {
 			user: JSON.parse('{{userJSON}}')
 		};
 		document.documentElement.style.setProperty('--panel-offset', `0px`);
