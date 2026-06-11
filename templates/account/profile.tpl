@@ -10,7 +10,7 @@
 
 {{{ if aboutme }}}
 <div component="aboutme" class="text-sm text-break">
-{aboutmeParsed}
+{{aboutmeParsed}}
 </div>
 {{{ end }}}
 
