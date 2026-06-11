@@ -12,7 +12,7 @@
 				{{{ each ./items }}}
 				<div class="d-flex gap-2 pt-3 pt-lg-2" data-topic-event-id="{./id}" data-topic-event-type="{./type}">
 					<span class="timeline-text small d-flex align-items-center gap-1 flex-wrap flex-grow-1 flex-lg-grow-0">
-						{./text}
+						{{./text}}
 					</span>
 					{{{ if (privileges.isAdminOrMod && ./id) }}}
 					<span component="topic/event/delete" data-topic-event-id="{./id}" data-topic-event-type="{./type}" class="timeline-text pointer" title="[[topic:delete-event]]"><i class="fa fa-trash"></i></span>
@@ -30,7 +30,7 @@
 		<i class="fa fa-fw {{{ if ./icon }}}{./icon}{{{ else }}}fa-circle{{{ end }}} small"></i>
 	</div>
 	<span class="timeline-text small d-flex align-items-center gap-1 flex-wrap flex-grow-1 flex-lg-grow-0">
-		{./text}
+		{{./text}}
 	</span>
 	{{{ if (privileges.isAdminOrMod && ./id) }}}
 	<span component="topic/event/delete" data-topic-event-id="{./id}" data-topic-event-type="{./type}" class="timeline-text pointer" title="[[topic:delete-event]]"><i class="fa fa-trash"></i></span>
