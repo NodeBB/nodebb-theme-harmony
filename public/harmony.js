@@ -159,16 +159,7 @@ $(document).ready(function () {
 					draftListEl.find('.draft-item-container').html('');
 					return;
 				}
-				draftItems.reverse().forEach((draft) => {
-					if (draft) {
-						if (draft.title) {
-							draft.title = utils.escapeHTML(String(draft.title));
-						}
-						draft.text = utils.escapeHTML(
-							draft.text
-						).replace(/(?:\r\n|\r|\n)/g, '<br>');
-					}
-				});
+				draftItems.reverse();
 
 				const html = await app.parseAndTranslate('partials/sidebar/drafts', 'drafts', { drafts: draftItems });
 				draftListEl.find('.no-drafts').addClass('hidden');
