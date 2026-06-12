@@ -1,6 +1,6 @@
 <!-- IMPORT partials/account/header.tpl -->
 
-<h3 class="fw-semibold fs-5">{title}</h3>
+<h3 class="fw-semibold fs-5">{tx(title)}</h3>
 
 <div class="alert alert-info text-center">
 	{{{ if privateUploads }}}[[uploads:private-uploads-info]]{{{ else }}}[[uploads:public-uploads-info]]{{{ end }}}
