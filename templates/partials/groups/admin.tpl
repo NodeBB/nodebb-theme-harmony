@@ -63,7 +63,7 @@
 				<div class="mb-3">
 					<label class="form-label" for="userTitle">[[groups:details.badge-text]]</label>
 					<div class="d-flex gap-1">
-						<input component="groups/userTitleOption" class="form-control" name="userTitle" id="userTitle" type="text" maxlength="40" value="{group.userTitleEscaped}"{{{ if !group.userTitleEnabled }}} disabled{{{ end }}} />
+						<input component="groups/userTitleOption" class="form-control" name="userTitle" id="userTitle" type="text" maxlength="40" value="{group.userTitle}"{{{ if !group.userTitleEnabled }}} disabled{{{ end }}} />
 						<button component="groups/userTitleOption" type="button" class="btn btn-outline-secondary text-nowrap" data-action="icon-select"{{{ if !group.userTitleEnabled }}} disabled{{{ end }}}>[[groups:details.change-icon]]</button>
 						<input type="hidden" name="icon" value="{{{ if group.icon }}}{group.icon}{{{ end }}}" />
 						<div id="icons" class="hidden">
