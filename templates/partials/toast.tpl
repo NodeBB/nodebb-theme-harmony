@@ -6,11 +6,11 @@
 		{{{ end }}}
 		<div class="d-flex flex-column gap-2">
 			{{{ if title }}}
-			<strong>{title}</strong>
+			<strong>{tx(title)}</strong>
 			{{{ end }}}
 
 			{{{ if message }}}
-			<p class="m-0">{message}</p>
+			<p class="m-0">{tx(message)}</p>
 			{{{ end }}}
 		</div>
 	</div>

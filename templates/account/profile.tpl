@@ -3,7 +3,7 @@
 {{{ if widgets.profile-aboutme-before.length }}}
 <div data-widget-area="profile-aboutme-before">
 {{{each widgets.profile-aboutme-before}}}
-{./html}
+{{./html}}
 {{{end}}}
 </div>
 {{{ end }}}
@@ -17,7 +17,7 @@
 {{{ if widgets.profile-aboutme-after.length }}}
 <div data-widget-area="profile-aboutme-after">
 {{{each widgets.profile-aboutme-after}}}
-{./html}
+{{./html}}
 {{{end}}}
 </div>
 {{{ end }}}
