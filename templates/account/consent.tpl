@@ -54,7 +54,7 @@
 
 				<hr />
 
-				<div class="btn-group-vertical d-grid">
+				<div class="d-grid gap-2">
 					<a data-action="export-profile" class="btn btn-outline-secondary">
 						<i class="fa fa-download"></i> [[user:consent.export-profile]]
 					</a>
