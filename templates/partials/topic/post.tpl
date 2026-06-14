@@ -17,7 +17,7 @@
 			{{{ else }}}
 			<span component="user/locality" class="position-absolute top-100 start-100 lh-1 border border-white border-2 rounded-circle small" title="[[global:remote-user]]">
 				<span class="visually-hidden">[[global:remote-user]]</span>
-				<i class="fa fa-globe"></i>
+				<i class="fa fa-globe fa-width-auto"></i>
 			</span>
 			{{{ end }}}
 		</a>
@@ -37,7 +37,7 @@
 							{{{ else }}}
 							<span component="user/locality" class="position-absolute top-100 start-100 lh-1 border border-white border-2 rounded-circle small" title="[[global:remote-user]]">
 								<span class="visually-hidden">[[global:remote-user]]</span>
-								<i class="fa fa-globe"></i>
+								<i class="fa fa-globe fa-width-auto"></i>
 							</span>
 							{{{ end }}}
 						</a>
