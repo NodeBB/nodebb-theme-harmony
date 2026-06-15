@@ -54,6 +54,7 @@
 
 				<hr />
 
+				{{{ if canExport }}}
 				<div class="d-grid gap-2">
 					<a data-action="export-profile" class="btn btn-outline-secondary">
 						<i class="fa fa-download"></i> [[user:consent.export-profile]]
@@ -65,6 +66,7 @@
 						<i class="fa fa-download"></i> [[user:consent.export-uploads]]
 					</a>
 				</div>
+				{{{ end }}}
 			</div>
 		</div>
 	</div>
