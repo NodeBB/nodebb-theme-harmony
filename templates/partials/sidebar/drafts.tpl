@@ -45,7 +45,12 @@
 							{{{ if ./text }}}
 							<div class="text text-sm line-clamp-3 text-break">{./text}</div>
 							{{{ end }}}
-							<div class="timeago text-xs text-muted" title="{./timestampISO}"></div>
+							<div class="d-flex align-items-baseline gap-2">
+								{{{ if (./action == "topics.post") }}}
+								{{buildCategoryLabel(./category, "span", "border")}}
+								{{{ end }}}
+								<div class="timeago text-xs text-muted" title="{./timestampISO}"></div>
+							</div>
 						</a>
 						<div>
 							<button component="drafts/delete" data-save-id="{./save_id}" class="btn btn-light btn-sm">

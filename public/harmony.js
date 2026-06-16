@@ -141,7 +141,7 @@ $(document).ready(function () {
 	}
 
 	function setupDrafts() {
-		require(['composer/drafts', 'bootbox'], function (drafts, bootbox) {
+		require(['composer/drafts', 'bootbox', 'api'], function (drafts, bootbox, api) {
 			const draftsEl = $('[component="sidebar/drafts"]');
 			const bottomBarDraftsEl = $('[component="bottombar"] [component="sidebar/drafts"]');
 			function updateBadgeCount() {
@@ -160,7 +160,14 @@ $(document).ready(function () {
 					return;
 				}
 				draftItems.reverse();
-
+				await Promise.all(draftItems.map(async (item) => {
+					const cid = String(item.cid);
+					if (item && item.action === 'topics.post' && cid !== '0') {
+						const categoryUrl = cid !== '-1' ?
+							`/api/category/${encodeURIComponent(cid)}` : `/api/world`;
+						item.category = await api.get(categoryUrl, {});
+					}
+				}));
 				const html = await app.parseAndTranslate('partials/sidebar/drafts', 'drafts', { drafts: draftItems });
 				draftListEl.find('.no-drafts').addClass('hidden');
 				draftListEl.find('.placeholder-wave').addClass('hidden');
