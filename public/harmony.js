@@ -141,7 +141,7 @@ $(document).ready(function () {
 	}
 
 	function setupDrafts() {
-		require(['composer/drafts', 'bootbox', 'api'], function (drafts, bootbox, api) {
+		require(['composer/drafts', 'modals', 'api'], function (drafts, modals, api) {
 			const draftsEl = $('[component="sidebar/drafts"]');
 			const bottomBarDraftsEl = $('[component="bottombar"] [component="sidebar/drafts"]');
 			function updateBadgeCount() {
@@ -183,7 +183,7 @@ $(document).ready(function () {
 
 			draftsEl.on('click', '[component="drafts/delete"]', function () {
 				const save_id = $(this).attr('data-save-id');
-				bootbox.confirm({
+				modals.confirm({
 					title: '[[modules:bootbox.confirm]]',
 					message: '[[modules:composer.discard-draft-confirm]]',
 					callback: function (ok) {
