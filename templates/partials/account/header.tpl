@@ -1,5 +1,5 @@
 <div class="account w-100 mx-auto">
-	<div class="cover position-absolute start-0 top-0 w-100" component="account/cover" style="background-image: url({escape(cover:url)}); background-position: {cover:position};">
+	<div class="cover position-absolute start-0 top-0 w-100" component="account/cover" style="background-image: url({cover:url}); background-position: {cover:position};">
 		<div class="container">
 			{{{ if (allowCoverPicture && canEdit) }}}
 			<div class="controls text-center">
@@ -15,7 +15,7 @@
 
 	<div class="d-flex flex-column flex-md-row gap-2 w-100 pb-4 mb-4 mt-2 border-bottom">
 		<div {{{ if (allowProfilePicture && isSelfOrAdminOrGlobalModerator)}}}component="profile/change/picture"{{{ end }}} class="avatar-wrapper bg-body rounded-circle position-relative align-self-center align-self-md-start hover-parent" style="margin-top: -75px; padding: 4px;">
-			{buildAvatar(@value, "142px", true)}
+			{{buildAvatar(@value, "142px", true)}}
 			{{{ if (allowProfilePicture && isSelfOrAdminOrGlobalModerator)}}}
 			<a href="#" component="profile/change/picture" class="d-none d-md-block pointer p-2 rounded-1 text-bg-light position-absolute top-50 start-50 translate-middle hover-opacity-75">
 				<span class="upload"><i class="fa fa-fw fa-upload"></i></span>

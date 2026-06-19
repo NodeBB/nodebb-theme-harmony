@@ -3,21 +3,21 @@
 {{{ if widgets.profile-aboutme-before.length }}}
 <div data-widget-area="profile-aboutme-before">
 {{{each widgets.profile-aboutme-before}}}
-{./html}
+{{./html}}
 {{{end}}}
 </div>
 {{{ end }}}
 
 {{{ if aboutme }}}
 <div component="aboutme" class="text-sm text-break">
-{aboutmeParsed}
+{{txEscape(aboutmeParsed)}}
 </div>
 {{{ end }}}
 
 {{{ if widgets.profile-aboutme-after.length }}}
 <div data-widget-area="profile-aboutme-after">
 {{{each widgets.profile-aboutme-after}}}
-{./html}
+{{./html}}
 {{{end}}}
 </div>
 {{{ end }}}
@@ -76,7 +76,7 @@
 		{{{ if ./value }}}
 		<div class="stat">
 			<div class="align-items-center justify-content-center card card-header p-3 border-0 rounded-1 h-100 gap-2">
-				<span class="stat-label text-xs fw-semibold"><span><i class="text-muted {./icon}"></i> {./name}</span></span>
+				<span class="stat-label text-xs fw-semibold"><span><i class="text-muted {./icon}"></i> {tx(./name)}</span></span>
 				{{{ if (./type == "input-link") }}}
 				<a class="text-center text-break w-100 px-2 ff-secondary text-underline text-reset" href="{./value}" rel="nofollow noreferrer">{./linkValue}</a>
 				{{{ else }}}

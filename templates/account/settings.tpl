@@ -10,7 +10,7 @@
 		<label for="bootswatchSkin" class="form-label fw-bold">[[user:select-skin]]</label>
 		<select class="form-select form-select-sm" id="bootswatchSkin" data-property="bootswatchSkin">
 			{{{each bootswatchSkinOptions}}}
-			<option value="{bootswatchSkinOptions.value}" {{{ if bootswatchSkinOptions.selected }}}selected{{{ end }}}>{bootswatchSkinOptions.name}</option>
+			<option value="{bootswatchSkinOptions.value}" {{{ if bootswatchSkinOptions.selected }}}selected{{{ end }}}>{tx(bootswatchSkinOptions.name)}</option>
 			{{{end}}}
 		</select>
 
@@ -67,7 +67,7 @@
 			<div component="chat/allow/list" class="d-flex flex-wrap gap-2 mb-2">
 				{{{ each settings.chatAllowListUsers }}}
 				<div component="chat/allow/list/user" data-uid="{./uid}" class="d-flex px-2 py-1 rounded-1 text-bg-light gap-2 align-items-center text-sm">
-					{buildAvatar(@value, "16px", true)} {./username}
+					{{buildAvatar(@value, "16px", true)}} {./username}
 					<button component="chat/allow/delete" data-uid="{./uid}" class="btn btn-light btn-sm py-0"><i class="fa fa-times fa-xs text-danger"></i></button>
 				</div>
 				{{{ end }}}
@@ -82,7 +82,7 @@
 			<div component="chat/deny/list" class="d-flex flex-wrap gap-2 mb-2">
 				{{{ each settings.chatDenyListUsers }}}
 				<div component="chat/deny/list/user" data-uid="{./uid}" class="d-flex px-2 py-1 rounded-1 text-bg-light gap-2 align-items-center text-sm">
-					{buildAvatar(@value, "16px", true)} {./username}
+					{{buildAvatar(@value, "16px", true)}} {./username}
 					<button component="chat/deny/delete" data-uid="{./uid}" class="btn btn-light btn-sm py-0"><i class="fa fa-times fa-xs text-danger"></i></button>
 				</div>
 				{{{ end }}}
@@ -177,7 +177,7 @@
 				<label class="form-label text-sm" for="dailyDigestFreq">[[user:digest-label]]</label>
 				<select class="form-select form-select-sm" id="dailyDigestFreq" data-property="dailyDigestFreq" autocomplete="off">
 					{{{each dailyDigestFreqOptions}}}
-					<option value="{./value}" {{{ if ./selected }}}selected="1"{{{ end }}}>{./name}</option>
+					<option value="{./value}" {{{ if ./selected }}}selected="1"{{{ end }}}>{tx(./name)}</option>
 					{{{end}}}
 				</select>
 				<p class="form-text text-xs">[[user:digest-description]]</p>
@@ -189,7 +189,7 @@
 		<hr/>
 		<h6 class="fw-bold">{./title}</h6>
 		<div>
-			{./content}
+			{{./content}}
 		</div>
 		{{{end}}}
 		<hr class="d-block d-md-none"/>
@@ -271,7 +271,7 @@
 					<tr component="notification/setting" class="align-middle">
 						<td style="width:100%;">
 							<div class="align-items-center">
-								<label class="text-sm tracking-tight" for="{./name}">{./label}</label>
+								<label class="text-sm tracking-tight" for="{./name}">{tx(./label)}</label>
 								<input type="hidden" data-property="{./name}" value="{./value}">
 							</div>
 						</td>

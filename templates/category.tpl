@@ -5,9 +5,9 @@
 
 <div class="category-header d-flex flex-column gap-2">
 	<div class="d-flex gap-3 align-items-center mb-1 {{{ if config.theme.centerHeaderElements }}}justify-content-center flex-column{{{ end }}}">
-		{buildCategoryIcon(@value, "60px", "rounded-1 flex-shrink-0")}
+		{{buildCategoryIcon(@value, "60px", "rounded-1 flex-shrink-0")}}
 		<div class="d-flex flex-column gap-1">
-			<h1 class="tracking-tight fs-3 fw-semibold mb-0">{./name}</h1>
+			<h1 class="tracking-tight fs-3 fw-semibold mb-0">{tx(./name)}</h1>
 			<div class="d-flex flex-wrap gap-2 align-items-center {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
 				<span class="badge text-body border border-gray-300 stats text-xs">
 					<span title="{formattedNumber(totalTopicCount)}" class="fw-bold">{humanReadableNumber(totalTopicCount)}</span>
@@ -18,7 +18,7 @@
 					<span class="text-lowercase fw-normal">[[global:posts]]</span>
 				</span>
 				{{{ if !isNumber(cid) }}}
-				<a href="{escape(./url)}" class="badge text-body border border-gray-300 text-xs" data-ajaxify="false">
+				<a href="{./url}" class="badge text-body border border-gray-300 text-xs" data-ajaxify="false">
 					<span class="fw-normal">View Original</span>
 					<i class="fa fa-external-link"></i>
 				</a>
@@ -31,12 +31,12 @@
 	</div>
 	{{{ if ./descriptionParsed }}}
 	<div class="description text-secondary text-sm lh-sm w-100 {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}} line-clamp-4 clamp-fade-sm-4">
-		{./descriptionParsed}
+		{{./descriptionParsed}}
 	</div>
 	{{{ end }}}
 	{{{ if ./handleFull }}}
 	<p class="text-secondary text-sm fst-italic mb-0 {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
-		[[category:handle.description, {txEscape(handleFull)}]]
+		[[category:handle.description, {handleFull}]]
 		<a href="#" class="link-secondary" data-action="copy" data-clipboard-text="{handleFull}"><i class="fa fa-fw fa-copy" aria-hidden="true"></i></a>
 	</p>
 	{{{ end }}}

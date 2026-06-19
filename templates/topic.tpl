@@ -11,23 +11,7 @@
 {{{ end }}}
 
 <div class="flex-fill" itemid="{url}" itemscope itemtype="https://schema.org/DiscussionForumPosting">
-	<meta itemprop="headline" content="{escape(titleRaw)}">
-	<meta itemprop="text" content="{escape(titleRaw)}">
-	<meta itemprop="url" content="{url}">
-	<meta itemprop="datePublished" content="{timestampISO}">
-	<meta itemprop="dateModified" content="{lastposttimeISO}">
-	<div itemprop="author" itemscope itemtype="https://schema.org/Person">
-		<meta itemprop="name" content="{author.username}">
-		{{{ if author.userslug }}}<meta itemprop="url" content="{config.relative_path}/user/{author.userslug}">{{{ end }}}
-	</div>
-	<div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
-		<meta itemprop="interactionType" content="https://schema.org/CommentAction">
-		<meta itemprop="userInteractionCount" content="{increment(postcount, "-1")}">
-	</div>
-	<div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
-		<meta itemprop="interactionType" content="https://schema.org/LikeAction">
-		<meta itemprop="userInteractionCount" content="{upvotes}">
-	</div>
+	<!-- IMPORT partials/topic/meta-tags.tpl -->
 
 	<div class="d-flex flex-column gap-3">
 		<div class="d-flex gap-2 flex-wrap flex-column flex-md-row {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ else }}}justify-content-between{{{ end }}}">
@@ -50,9 +34,9 @@
 						<a component="topic/moved" href="{config.relative_path}/category/{oldCid}" class="badge border border-gray-300 text-body text-decoration-none {{{ if (!oldCid || (oldCid == "-1")) }}}hidden{{{ end }}}">
 							<i class="fa fa-arrow-circle-right"></i> {{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}
 						</a>
-						{{{each icons}}}<span class="lh-1">{@value}</span>{{{end}}}
+						{{{ each ./icons }}}<!-- IMPORT partials/topic/icon.tpl -->{{{ end }}}
 					</span>
-					{buildCategoryLabel(category, "a", "border")}
+					{{buildCategoryLabel(category, "a", "border")}}
 					<div data-tid="{./tid}" component="topic/tags" class="lh-1 tags tag-list d-flex flex-wrap hidden-xs hidden-empty gap-2"><!-- IMPORT partials/topic/tags.tpl --></div>
 					<div class="d-flex gap-2" component="topic/stats"><!-- IMPORT partials/topic/stats.tpl --></div>
 

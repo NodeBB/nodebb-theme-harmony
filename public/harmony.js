@@ -141,7 +141,7 @@ $(document).ready(function () {
 	}
 
 	function setupDrafts() {
-		require(['composer/drafts', 'bootbox'], function (drafts, bootbox) {
+		require(['composer/drafts', 'modals', 'api'], function (drafts, modals, api) {
 			const draftsEl = $('[component="sidebar/drafts"]');
 			const bottomBarDraftsEl = $('[component="bottombar"] [component="sidebar/drafts"]');
 			function updateBadgeCount() {
@@ -159,17 +159,15 @@ $(document).ready(function () {
 					draftListEl.find('.draft-item-container').html('');
 					return;
 				}
-				draftItems.reverse().forEach((draft) => {
-					if (draft) {
-						if (draft.title) {
-							draft.title = utils.escapeHTML(String(draft.title));
-						}
-						draft.text = utils.escapeHTML(
-							draft.text
-						).replace(/(?:\r\n|\r|\n)/g, '<br>');
+				draftItems.reverse();
+				await Promise.all(draftItems.map(async (item) => {
+					const cid = String(item.cid);
+					if (item && item.action === 'topics.post' && cid !== '0') {
+						const categoryUrl = cid !== '-1' ?
+							`/api/category/${encodeURIComponent(cid)}` : `/api/world`;
+						item.category = await api.get(categoryUrl, {});
 					}
-				});
-
+				}));
 				const html = await app.parseAndTranslate('partials/sidebar/drafts', 'drafts', { drafts: draftItems });
 				draftListEl.find('.no-drafts').addClass('hidden');
 				draftListEl.find('.placeholder-wave').addClass('hidden');
@@ -185,7 +183,7 @@ $(document).ready(function () {
 
 			draftsEl.on('click', '[component="drafts/delete"]', function () {
 				const save_id = $(this).attr('data-save-id');
-				bootbox.confirm({
+				modals.confirm({
 					title: '[[modules:bootbox.confirm]]',
 					message: '[[modules:composer.discard-draft-confirm]]',
 					callback: function (ok) {
