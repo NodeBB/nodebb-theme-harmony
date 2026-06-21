@@ -78,7 +78,7 @@
 		</div>
 
 		<div class="content text-break" component="post/content" itemprop="text">
-			{{txEscape(posts.content)}}
+			{{renderContent(posts.content, posts.deleted)}}
 		</div>
 
 		<div component="post/footer" class="post-footer border-bottom pb-2">
