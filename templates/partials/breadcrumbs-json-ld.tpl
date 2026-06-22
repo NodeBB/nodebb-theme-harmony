@@ -10,7 +10,7 @@
 {{{ each breadcrumbs }}}{{{ if !@first}}},{
 	"@type": "ListItem",
 	"position": {increment(@index, "1")},
-	"name": "{stripTags(tx(./text))}"
+	"name": "{{tx(./text)}}"
 	{{{ if !@last }}},"item": "{./url}"{{{ end }}}
 }{{{ end }}}{{{ end }}}
 ]}</script>
