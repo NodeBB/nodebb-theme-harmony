@@ -2,5 +2,5 @@
 	<div class="timeline-badge">
 		<i class="fa fa-clock small"></i>
 	</div>
-	<span class="timeline-text small fw-semibold">{tx(text)}</span>
+	<span class="timeline-text small fw-semibold">{{tx(text)}}</span>
 </li>

@@ -11,7 +11,7 @@
 						<span component="navigation/count" class="visible-closed position-absolute top-0 start-100 translate-middle badge rounded-1 bg-primary {{{ if !./content }}}hidden{{{ end }}}">{./content}</span>
 						{{{ end }}}
 					</span>
-					{{{ if ./text }}}<span class="nav-text small visible-open fw-semibold text-truncate">{tx(./text)}</span>{{{ end }}}
+					{{{ if ./text }}}<span class="nav-text small visible-open fw-semibold text-truncate">{{tx(./text)}}</span>{{{ end }}}
 				</span>
 				<span component="navigation/count" class="visible-open badge rounded-1 bg-primary {{{ if !./content }}}hidden{{{ end }}}">{./content}</span>
 			</a>

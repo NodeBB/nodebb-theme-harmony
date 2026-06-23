@@ -21,7 +21,7 @@
 </div>
 
 {{{ if !posts.length }}}
-<div class="alert alert-warning text-center">{tx(noItemsFoundKey)}</div>
+<div class="alert alert-warning text-center">{{tx(noItemsFoundKey)}}</div>
 {{{ end }}}
 
 <div>

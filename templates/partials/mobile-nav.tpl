@@ -17,7 +17,7 @@
 								{{{ if ./iconClass }}}
 								<i class="fa fa-fw {./iconClass}" data-content="{./content}"></i>
 								{{{ end }}}
-								{{{ if ./text }}}<span class="nav-text px-2 fw-semibold">{tx(./text)}</span>{{{ end }}}
+								{{{ if ./text }}}<span class="nav-text px-2 fw-semibold">{{tx(./text)}}</span>{{{ end }}}
 							</span>
 							<span component="navigation/count" class="badge rounded-1 bg-primary {{{ if !./content }}}hidden{{{ end }}}">{./content}</span>
 						</span>

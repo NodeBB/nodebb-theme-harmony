@@ -2,7 +2,7 @@
 
 <div class="d-flex justify-content-between align-items-center mb-3">
 	<div class="d-flex gap-1">
-		<h3 class="fw-semibold fs-5 mb-0">{tx(title)}</h3>
+		<h3 class="fw-semibold fs-5 mb-0">{{tx(title)}}</h3>
 	</div>
 </div>
 

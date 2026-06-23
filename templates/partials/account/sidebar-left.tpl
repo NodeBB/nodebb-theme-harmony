@@ -119,7 +119,7 @@
 
 		{{{ each profile_links }}}
 		<a href="{config.relative_path}/user/{userslug}/{./route}" class="btn btn-ghost btn-sm ff-secondary text-xs text-start plugin-link {{{ if ./public }}}public{{{ else }}}private{{{ end }}} {{{ if (url == ./url) }}}active{{{ end }}}" id="{./id}">
-			<div class="flex-grow-1">{tx(./name)}</div>
+			<div class="flex-grow-1">{{tx(./name)}}</div>
 		</a>
 		{{{end}}}
 	</div>
