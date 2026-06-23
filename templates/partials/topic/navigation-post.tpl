@@ -8,4 +8,4 @@
 	<span class="timeago text-nowrap text-muted" title="{post.timestampISO}"></span>
 </div>
 
-<div class="text-sm">{{renderContent(post.content, post.deleted)}}</div>
+<div class="text-sm">{{{ if post.txContent }}}{{tx(posts.content)}}{{{ else }}}{{txEscape(post.content))}}</div>

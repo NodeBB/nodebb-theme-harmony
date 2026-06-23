@@ -21,7 +21,7 @@
 			</div>
 			<div class="flex-grow-1 d-flex flex-wrap gap-1 position-relative">
 				<h3 component="topic/header" class="title text-break text-wrap-pretty fs-5 fw-semibold m-0 tracking-tight w-100 {{{ if showSelect }}}me-4 me-lg-0{{{ end }}}">
-					<a class="text-reset" href="{{{ if topics.noAnchor }}}#{{{ else }}}{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}{{{ end }}}">{{renderTitle(./title, ./deleted)}}</a>
+					<a class="text-reset" href="{{{ if topics.noAnchor }}}#{{{ else }}}{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}{{{ end }}}">{{{ if ./txTitle }}}{{tx(./title)}}{{{ else }}}{./title}{{{ end }}}</a>
 
 				</h3>
 				<span component="topic/labels" class="d-flex flex-wrap gap-1 w-100">
@@ -120,7 +120,7 @@
 					</div>
 					<div class="post-content text-xs ps-2 line-clamp-sm-2 lh-sm text-break position-relative flex-fill">
 						<a class="stretched-link" tabindex="-1" href="{config.relative_path}/topic/{./slug}/{./teaser.index}" aria-label="[[global:lastpost]]"></a>
-						{{renderContent(./teaser.content)}}
+						{{txEscape(./teaser.content)}}
 					</div>
 					{{{ end }}}
 					{{{ end }}}
