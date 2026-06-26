@@ -14,7 +14,7 @@
 <div class="category-header d-flex flex-column gap-2">
 	<div class="d-flex gap-2 align-items-center mb-1 {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
 		{{buildCategoryIcon(@value, "40px", "rounded-1 flex-shrink-0")}}
-		<h1 class="tracking-tight fs-2 fw-semibold mb-0 text-center">[[world:name]]</h1>
+		<h1 class="tracking-tight fs-2 fw-semibold mb-0 text-center">{{tx("world:name")}}</h1>
 	</div>
 	{{{ if ./descriptionParsed }}}
 	<p class="description text-secondary text-sm w-100 {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
@@ -73,14 +73,14 @@
 					{{{ if !config.loggedIn }}}
 					<div class="alert alert-info alert-dismissible fade show">
 						<p class="fw-semibold">
-							[[world:onboard.title]]
+							{{tx("world:onboard.title")}}
 						</p>
-						<p>[[world:onboard.what]]</p>
-						<p>[[world:onboard.why]]</p>
-						<p>[[world:onboard.how]]</p>
-						<a href="{config.relative_path}/register" class="fw-semibold btn btn-sm btn-warning">[[global:register]]</a>
-						<a href="{config.relative_path}/login" class="fw-semibold btn btn-sm btn-info">[[global:login]]</a>
-						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+						<p>{{tx("world:onboard.what")}}</p>
+						<p>{{tx("world:onboard.why")}}</p>
+						<p>{{tx("world:onboard.how")}}</p>
+						<a href="{config.relative_path}/register" class="fw-semibold btn btn-sm btn-warning">{{tx("global:register")}}</a>
+						<a href="{config.relative_path}/login" class="fw-semibold btn btn-sm btn-info">{{tx("global:login")}}</a>
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{{tx("global:close")}}"></button>
 					</div>
 					{{{ end }}}
 

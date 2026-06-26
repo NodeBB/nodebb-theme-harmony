@@ -7,8 +7,8 @@
 				<a href="#" class="resize p-2 m-2 rounded-1 text-bg-light opacity-75"><i class="fa fa-fw fa-arrows"></i></a>
 				<a href="#" class="remove p-2 m-2 rounded-1 text-bg-light opacity-75"><i class="fa fa-fw fa-times"></i></a>
 			</div>
-			<a href="#" class="save btn btn-primary">[[groups:cover-save]] <i class="fa fa-fw fa-floppy-o"></i></a>
-			<div class="indicator text-bg-primary">[[groups:cover-saving]] <i class="fa fa-fw fa-refresh fa-spin"></i></div>
+			<a href="#" class="save btn btn-primary">{{tx("groups:cover-save")}} <i class="fa fa-fw fa-floppy-o"></i></a>
+			<div class="indicator text-bg-primary">{{tx("groups:cover-saving")}} <i class="fa fa-fw fa-refresh fa-spin"></i></div>
 			{{{ end }}}
 		</div>
 	</div>
@@ -44,18 +44,18 @@
 					{{{ if banned }}}
 					<div class="text-sm text-muted">
 						{{{ if banned_until }}}
-						[[user:info.banned-until, {isoTimeToLocaleString(./banned_until_readable, config.userLang)}]]
+						{{tx("user:info.banned-until", isoTimeToLocaleString(./banned_until_readable, config.userLang))}}
 						{{{ else }}}
-						[[user:info.banned-permanently]]
+						{{tx("user:info.banned-permanently")}}
 						{{{ end }}}
 					</div>
 					{{{ end }}}
 					{{{ if muted }}}
 					<div class="text-sm text-muted">
 						{{{ if mutedUntil }}}
-						[[user:info.muted-until, {isoTimeToLocaleString(./muted_until_readable, config.userLang)}]]
+						{{tx("user:info.muted-until", isoTimeToLocaleString(./muted_until_readable, config.userLang))}}
 						{{{ else }}}
-						[[user:info.muted-permanently]]
+						{{tx("user:info.muted-permanently")}}
 						{{{ end }}}
 					</div>
 					{{{ end }}}
@@ -65,19 +65,21 @@
 
 			<div class="flex-shrink-0 d-flex gap-1 align-self-stretch align-self-md-start justify-content-end">
 				{{{ if !isSelf }}}
-				<a component="account/unfollow" href="#" class="btn btn-outline-warning flex-fill{{{ if (!isFollowing && !isFollowPending) }}} hide{{{ end }}}">[[user:{{{ if isFollowPending }}}cancel-follow{{{ else }}}unfollow{{{ end }}}]]</a>
-				<a component="account/follow" href="#" class="btn btn-primary flex-fill{{{ if (isFollowing || isFollowPending) }}} hide{{{ end }}}">[[user:follow]]</a>
+				<a component="account/unfollow" href="#" class="btn btn-outline-warning flex-fill{{{ if (!isFollowing && !isFollowPending) }}} hide{{{ end }}}">
+					{{{ if isFollowPending }}}{{tx("user:cancel-follow")}}{{{ else }}}{{tx("user:unfollow")}}{{{ end }}}
+				</a>
+				<a component="account/follow" href="#" class="btn btn-primary flex-fill{{{ if (isFollowing || isFollowPending) }}} hide{{{ end }}}">{{tx("user:follow")}}</a>
 				{{{ end }}}
 
 				{{{ if (canChat && !banned) }}}
 				<div class="btn-group flex-fill">
-					<a {{{ if hasPrivateChat }}}component="account/chat"{{{ else }}}component="account/new-chat"{{{ end }}} href="#" class="btn btn-light" role="button">[[user:chat]]</a>
+					<a {{{ if hasPrivateChat }}}component="account/chat"{{{ else }}}component="account/new-chat"{{{ end }}} href="#" class="btn btn-light" role="button">{{tx("user:chat")}}</a>
 					{{{ if hasPrivateChat}}}
 					<button type="button" class="btn btn-light dropdown-toggle flex-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i class="fa fa-caret-down"></i>
 					</button>
 					<ul class="dropdown-menu dropdown-menu-end p-1 text-sm" role="menu">
-						<li><a class="dropdown-item rounded-1" href="#" component="account/new-chat" role="menuitem"s>[[user:new-chat-with, {username}]]</a></li>
+						<li><a class="dropdown-item rounded-1" href="#" component="account/new-chat" role="menuitem">{{tx("user:new-chat-with", txEscape(username))}}</a></li>
 					</ul>
 					{{{ end }}}
 				</div>

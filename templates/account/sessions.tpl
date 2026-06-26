@@ -1,6 +1,6 @@
 <!-- IMPORT partials/account/header.tpl -->
 
-<p class="lead">[[user:sessions.description]]</p>
+<p class="lead">{{tx("user:sessions.description")}}</p>
 <hr />
 <ul class="list-group" component="user/sessions">
 	<!-- IMPORT partials/account/session-list.tpl -->

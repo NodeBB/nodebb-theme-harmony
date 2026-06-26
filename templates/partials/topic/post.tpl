@@ -10,13 +10,13 @@
 {{{ end }}}
 <div class="d-flex align-items-start gap-3 post-container-parent">
 	<div class="bg-body d-none d-sm-block rounded-circle" style="box-shadow: 0 0 0 3px var(--bs-body-bg);">
-		<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" aria-label="[[aria:profile-page-for, {./user.displayname}]]">
+		<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" aria-label="{{tx("aria:profile-page-for", txEscape(./user.displayname))}}">
 			{{buildAvatar(posts.user, "48px", true, "", "user/picture")}}
 			{{{ if ./user.isLocal }}}
-			<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
+			<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">{{tx(concat("global:", posts.user.status))}}</span></span>
 			{{{ else }}}
-			<span component="user/locality" class="position-absolute top-100 start-100 lh-1 border border-white border-2 rounded-circle small" title="[[global:remote-user]]">
-				<span class="visually-hidden">[[global:remote-user]]</span>
+			<span component="user/locality" class="position-absolute top-100 start-100 lh-1 border border-white border-2 rounded-circle small" title="{{tx("global:remote-user")}}">
+				<span class="visually-hidden">{{tx("global:remote-user")}}</span>
 				<i class="fa fa-globe fa-width-auto"></i>
 			</span>
 			{{{ end }}}
@@ -33,10 +33,10 @@
 						<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 							{{buildAvatar(posts.user, "20px", true, "", "user/picture")}}
 							{{{ if ./user.isLocal }}}
-							<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
+							<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">{{tx(concat("global:", posts.user.status))}}</span></span>
 							{{{ else }}}
-							<span component="user/locality" class="position-absolute top-100 start-100 lh-1 border border-white border-2 rounded-circle small" title="[[global:remote-user]]">
-								<span class="visually-hidden">[[global:remote-user]]</span>
+							<span component="user/locality" class="position-absolute top-100 start-100 lh-1 border border-white border-2 rounded-circle small" title="{{tx("global:remote-user")}}">
+								<span class="visually-hidden">{{tx("global:remote-user")}}</span>
 								<i class="fa fa-globe fa-width-auto"></i>
 							</span>
 							{{{ end }}}
@@ -53,14 +53,14 @@
 				{{{ end }}}
 
 				{{{ if posts.user.banned }}}
-				<span class="badge bg-danger rounded-1">[[user:banned]]</span>
+				<span class="badge bg-danger rounded-1">{{tx("user:banned")}}</span>
 				{{{ end }}}
 
 				<div class="d-flex gap-1 align-items-center">
 					<span class="text-muted">{{generateWrote(@value, config.timeagoCutoff)}}</span>
 
-					<i component="post/edit-indicator" class="fa fa-edit text-muted{{{ if privileges.posts:history }}} pointer{{{ end }}} edit-icon {{{ if !posts.editor.username }}}hidden{{{ end }}}" title="[[global:edited-timestamp, {isoTimeToLocaleString(./editedISO, config.userLang)}]]"></i>
-					<span data-editor="{posts.editor.userslug}" component="post/editor" class="visually-hidden">[[global:last-edited-by, {posts.editor.username}]] <span class="timeago" title="{isoTimeToLocaleString(posts.editedISO, config.userLang)}"></span></span>
+					<i component="post/edit-indicator" class="fa fa-edit text-muted{{{ if privileges.posts:history }}} pointer{{{ end }}} edit-icon {{{ if !posts.editor.username }}}hidden{{{ end }}}" title="{{tx("global:edited-timestamp", isoTimeToLocaleString(./editedISO, config.userLang))}}"></i>
+					<span data-editor="{posts.editor.userslug}" component="post/editor" class="visually-hidden">{{tx("global:last-edited-by", txEscape(posts.editor.username))}} <span class="timeago" title="{{isoTimeToLocaleString(posts.editedISO, config.userLang)}}"></span></span>
 				</div>
 
 				{{{ if posts.user.custom_profile_info.length }}}
@@ -99,32 +99,32 @@
 					</span>
 
 					<span class="ms-2 replies-count fw-semibold text-nowrap" component="post/reply-count/text" data-replies="{posts.replies.count}">{{tx(posts.replies.text)}}</span>
-					<span class="ms-2 replies-last hidden-xs fw-semibold">[[topic:last-reply-time]] <span class="timeago" title="{posts.replies.timestampISO}"></span></span>
+					<span class="ms-2 replies-last hidden-xs fw-semibold">{{tx("topic:last-reply-time")}} <span class="timeago" title="{{isoTimeToLocaleString(posts.replies.timestampISO, config.userLang)}}"></span></span>
 
 					<i class="fa fa-fw fa-chevron-down" component="post/replies/open"></i>
 				</a>
 				{{{ end }}}
 				<div component="post/actions" class="d-flex flex-grow-1 align-items-center justify-content-end gap-1 post-tools">
 					<!-- IMPORT partials/topic/reactions.tpl -->
-					<a component="post/reply" href="#" class="btn btn-ghost btn-sm {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="[[topic:reply]]"><i class="fa fa-fw fa-reply text-primary"></i></a>
-					<a component="post/quote" href="#" class="btn btn-ghost btn-sm {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="[[topic:quote]]"><i class="fa fa-fw fa-quote-right text-primary"></i></a>
+					<a component="post/reply" href="#" class="btn btn-ghost btn-sm {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="{{tx("topic:reply")}}"><i class="fa fa-fw fa-reply text-primary"></i></a>
+					<a component="post/quote" href="#" class="btn btn-ghost btn-sm {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="{{tx("topic:quote")}}"><i class="fa fa-fw fa-quote-right text-primary"></i></a>
 
 					{{{ if ./announces }}}
-					<a component="post/announce-count" href="#" class="btn btn-ghost btn-sm d-flex gap-2 align-items-center" title="[[topic:announcers]]"><i class="fa fa-share-alt text-primary"></i> {./announces}</a>
+					<a component="post/announce-count" href="#" class="btn btn-ghost btn-sm d-flex gap-2 align-items-center" title="{{tx("topic:announcers")}}"><i class="fa fa-share-alt text-primary"></i> {./announces}</a>
 					{{{ end }}}
 
 					{{{ if !reputation:disabled }}}
 					<div class="d-flex votes align-items-center">
-						<a component="post/upvote" href="#" class="btn btn-ghost btn-sm{{{ if posts.upvoted }}} upvoted{{{ end }}}" title="[[topic:upvote-post]]">
+						<a component="post/upvote" href="#" class="btn btn-ghost btn-sm{{{ if posts.upvoted }}} upvoted{{{ end }}}" title="{{tx("topic:upvote-post")}}">
 							<i class="fa fa-fw fa-chevron-up text-primary"></i>
 						</a>
 
 						<meta itemprop="upvoteCount" content="{posts.upvotes}">
 						<meta itemprop="downvoteCount" content="{posts.downvotes}">
-						<a href="#" class="px-2 mx-1 btn btn-ghost btn-sm" component="post/vote-count" data-votes="{posts.votes}" title="[[global:voters]]">{posts.votes}</a>
+						<a href="#" class="px-2 mx-1 btn btn-ghost btn-sm" component="post/vote-count" data-votes="{posts.votes}" title="{{tx("global:voters")}}">{posts.votes}</a>
 
 						{{{ if !downvote:disabled }}}
-						<a component="post/downvote" href="#" class="btn btn-ghost btn-sm{{{ if posts.downvoted }}} downvoted{{{ end }}}" title="[[topic:downvote-post]]">
+						<a component="post/downvote" href="#" class="btn btn-ghost btn-sm{{{ if posts.downvoted }}} downvoted{{{ end }}}" title="{{tx("topic:downvote-post")}}">
 							<i class="fa fa-fw fa-chevron-down text-primary"></i>
 						</a>
 						{{{ end }}}

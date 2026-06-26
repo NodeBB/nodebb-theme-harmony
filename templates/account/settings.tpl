@@ -1,13 +1,13 @@
 <!-- IMPORT partials/account/header.tpl -->
 
 <div class="d-flex justify-content-between py-1 mb-3 align-items-center position-sticky top-0 bg-body">
-	<h3 class="fw-semibold fs-5 mb-0">{{{ if isSelf }}}[[pages:account/settings]]{{{ else }}}[[pages:account/settings-of, {username}]]{{{ end }}}</h3>
-	<button id="submitBtn" class="btn btn-sm btn-primary">[[global:save-changes]]</button>
+	<h3 class="fw-semibold fs-5 mb-0">{{{ if isSelf }}}{{tx("pages:account/settings")}}{{{ else }}}{{tx("pages:account/settings-of", txEscape(username))}}{{{ end }}}</h3>
+	<button id="submitBtn" class="btn btn-sm btn-primary">{{tx("global:save-changes")}}</button>
 </div>
 <div class="row">
 	<div class="col-12 col-md-6">
 		{{{ if !disableCustomUserSkins }}}
-		<label for="bootswatchSkin" class="form-label fw-bold">[[user:select-skin]]</label>
+		<label for="bootswatchSkin" class="form-label fw-bold">{{tx("user:select-skin")}}</label>
 		<select class="form-select form-select-sm" id="bootswatchSkin" data-property="bootswatchSkin">
 			{{{each bootswatchSkinOptions}}}
 			<option value="{bootswatchSkinOptions.value}" {{{ if bootswatchSkinOptions.selected }}}selected{{{ end }}}>{{tx(bootswatchSkinOptions.name)}}</option>
@@ -18,7 +18,7 @@
 		{{{ end }}}
 
 		{{{ if allowUserHomePage }}}
-		<label for="homePageRoute" class="form-label fw-bold">[[user:select-homepage]]</label>
+		<label for="homePageRoute" class="form-label fw-bold">{{tx("user:select-homepage")}}</label>
 
 		<div class="mb-2">
 			<select class="form-select form-select-sm" id="homePageRoute" data-property="homePageRoute">
@@ -27,42 +27,42 @@
 				<option value="{./route}" {{{ if ./selected }}}selected="1"{{{ end }}}>{./name}</option>
 				{{{ end }}}
 			</select>
-			<p class="form-text text-xs">[[user:homepage-description]]</p>
+			<p class="form-text text-xs">{{tx("user:homepage-description")}}</p>
 		</div>
 		<div id="homePageCustomContainer" class="mb-2" style="display: none;">
-			<label class="form-label fw-bold" for="homePageCustom">[[user:custom-route]]</label>
+			<label class="form-label fw-bold" for="homePageCustom">{{tx("user:custom-route")}}</label>
 			<input type="text" class="form-control form-control-sm" data-property="homePageCustom" id="homePageCustom" value="{settings.homePageRoute}"/>
-			<p class="form-text text-xs">[[user:custom-route-help]]</p>
+			<p class="form-text text-xs">{{tx("user:custom-route-help")}}</p>
 		</div>
 
 		<hr/>
 		{{{ end }}}
 
-		<h6 class="fw-bold">[[global:privacy]]</h6>
+		<h6 class="fw-bold">{{tx("global:privacy")}}</h6>
 
 		{{{ if !hideEmail }}}
 		<div class="form-check form-switch">
 			<input class="form-check-input" type="checkbox" role="switch" id="showemail" data-property="showemail" {{{ if settings.showemail }}}checked {{{ end }}}/>
-			<label class="form-check-label text-sm" for="showemail">[[user:show-email]]</label>
+			<label class="form-check-label text-sm" for="showemail">{{tx("user:show-email")}}</label>
 		</div>
 		{{{ end }}}
 
 		{{{ if !hideFullname }}}
 		<div class="form-check form-switch">
 			<input class="form-check-input" type="checkbox" role="switch" id="showfullname" data-property="showfullname" {{{ if settings.showfullname }}}checked{{{ end }}}/>
-			<label class="form-check-label text-sm" for="showfullname">[[user:show-fullname]]</label>
+			<label class="form-check-label text-sm" for="showfullname">{{tx("user:show-fullname")}}</label>
 		</div>
 		{{{ end }}}
 
 		{{{ if !config.disableChat }}}
 		<div class="form-check form-switch mb-3">
 			<input class="form-check-input" type="checkbox" role="switch" id="disableIncomingChats" data-property="disableIncomingChats" {{{ if settings.disableIncomingChats }}}checked{{{ end }}}/>
-			<label class="form-check-label text-sm" for="disableIncomingChats">[[user:disable-incoming-chats]]</label>
+			<label class="form-check-label text-sm" for="disableIncomingChats">{{tx("user:disable-incoming-chats")}}</label>
 		</div>
 
 
 		<div class="d-flex flex-column mb-3">
-			<label class="form-label text-sm" for="chatAllowListAdd">[[user:chat-allow-list]]</label>
+			<label class="form-label text-sm" for="chatAllowListAdd">{{tx("user:chat-allow-list")}}</label>
 
 			<div component="chat/allow/list" class="d-flex flex-wrap gap-2 mb-2">
 				{{{ each settings.chatAllowListUsers }}}
@@ -77,7 +77,7 @@
 		</div>
 
 		<div class="d-flex flex-column mb-3">
-			<label class="form-label text-sm" for="chatAllowListAdd">[[user:chat-deny-list]]</label>
+			<label class="form-label text-sm" for="chatAllowListAdd">{{tx("user:chat-deny-list")}}</label>
 
 			<div component="chat/deny/list" class="d-flex flex-wrap gap-2 mb-2">
 				{{{ each settings.chatDenyListUsers }}}
@@ -88,99 +88,99 @@
 				{{{ end }}}
 			</div>
 
-			<input type="text" class="form-control form-control-sm" id="chatDenyListAdd" placeholder="[[user:chat-list-add-user]]"/>
+			<input type="text" class="form-control form-control-sm" id="chatDenyListAdd" placeholder="{{tx("user:chat-list-add-user")}}"/>
 		</div>
 
 		{{{ end }}}
 
 		<hr/>
 
-		<h6 class="fw-bold">[[user:browsing]]</h6>
+		<h6 class="fw-bold">{{tx("user:browsing")}}</h6>
 
 		<div class="mb-3">
 			<div class="d-flex gap-4 align-items-center justify-content-between mb-3">
-				<label class="form-label text-sm mb-0" for="unreadCutoff">[[user:unread.cutoff, {maxUnreadCutoff}]]</label>
+				<label class="form-label text-sm mb-0" for="unreadCutoff">{{tx("user:unread.cutoff", maxUnreadCutoff)}}</label>
 				<input id="unreadCutoff" value="{settings.unreadCutoff}" type="number" class="form-control form-control-sm text-end" data-property="unreadCutoff" min="1" max="{maxUnreadCutoff}" style="max-width: 64px;">
 			</div>
-			<p class="form-text text-xs">[[user:unread.cutoff-help]]</p>
+			<p class="form-text text-xs">{{tx("user:unread.cutoff-help")}}</p>
 		</div>
 
 		<div class="form-check form-switch">
 			<input class="form-check-input" type="checkbox" role="switch" id="openOutgoingLinksInNewTab" data-property="openOutgoingLinksInNewTab" {{{ if settings.openOutgoingLinksInNewTab }}}checked{{{ end }}}/>
-			<label class="form-check-label text-sm" for="openOutgoingLinksInNewTab">[[user:open-links-in-new-tab]]</label>
+			<label class="form-check-label text-sm" for="openOutgoingLinksInNewTab">{{tx("user:open-links-in-new-tab")}}</label>
 		</div>
 
 		<div class="form-check form-switch">
 			<input class="form-check-input" type="checkbox" role="switch" id="updateUrlWithPostIndex" data-property="updateUrlWithPostIndex" {{{ if settings.updateUrlWithPostIndex }}}checked{{{ end }}}/>
-			<label class="form-check-label text-sm" for="updateUrlWithPostIndex">[[user:update-url-with-post-index]]</label>
+			<label class="form-check-label text-sm" for="updateUrlWithPostIndex">{{tx("user:update-url-with-post-index")}}</label>
 		</div>
 
 		<div class="form-check form-switch">
 			<input class="form-check-input" type="checkbox" role="switch" id="scrollToMyPost" data-property="scrollToMyPost" {{{ if settings.scrollToMyPost }}}checked{{{ end }}}/>
-			<label class="form-check-label text-sm" for="scrollToMyPost">[[user:scroll-to-my-post]]</label>
+			<label class="form-check-label text-sm" for="scrollToMyPost">{{tx("user:scroll-to-my-post")}}</label>
 		</div>
 
 		{{{ if inTopicSearchAvailable }}}
 		<div class="form-check form-switch">
 			<input class="form-check-input" type="checkbox" role="switch" id="topicSearchEnabled" data-property="topicSearchEnabled" {{{ if settings.topicSearchEnabled }}}checked{{{ end }}}/>
-			<label class="form-check-label text-sm" for="topicSearchEnabled">[[user:enable-topic-searching]]</label>
+			<label class="form-check-label text-sm" for="topicSearchEnabled">{{tx("user:enable-topic-searching")}}</label>
 		</div>
-		<p class="form-text text-xs">[[user:topic-search-help]]</p>
+		<p class="form-text text-xs">{{tx("user:topic-search-help")}}</p>
 		{{{ end }}}
 
 		<hr/>
 
-		<h6 class="fw-bold">[[global:pagination]]</h6>
+		<h6 class="fw-bold">{{tx("global:pagination")}}</h6>
 
 		<div class="mb-2 form-check form-switch">
 			<input type="checkbox" role="switch" id="usePagination" class="form-check-input" data-property="usePagination" {{{ if settings.usePagination }}}checked{{{ end }}}>
-			<label class="form-check-label text-sm" for="usePagination">[[user:paginate-description]]</label>
+			<label class="form-check-label text-sm" for="usePagination">{{tx("user:paginate-description")}}</label>
 		</div>
 		<div class="d-flex gap-4 align-items-center justify-content-between  mb-2">
-			<label class="form-label text-sm text-nowrap mb-0" for="topicsPerPage">[[user:topics-per-page]] ([[user:max-items-per-page, {maxTopicsPerPage}]])</label>
+			<label class="form-label text-sm text-nowrap mb-0" for="topicsPerPage">{{tx("user:topics-per-page", maxTopicsPerPage)}}</label>
 			<input type="number" class="form-control form-control-sm text-end" id="topicsPerPage" data-property="topicsPerPage" value="{settings.topicsPerPage}" min="1" max="{maxTopicsPerPage}" style="max-width: 64px;">
 		</div>
 		<div class="d-flex gap-4 align-items-center justify-content-between">
-			<label class="form-label text-sm text-nowrap mb-0" for="postsPerPage">[[user:posts-per-page]] ([[user:max-items-per-page, {maxPostsPerPage}]])</label>
+			<label class="form-label text-sm text-nowrap mb-0" for="postsPerPage">{{tx("user:posts-per-page", maxPostsPerPage)}}</label>
 			<input type="number" class="form-control form-control-sm text-end" id="postsPerPage" data-property="postsPerPage" value="{settings.postsPerPage}" min="1" max="{maxPostsPerPage}" style="max-width: 64px;">
 		</div>
 
 		<hr/>
 
-		<h6 class="fw-bold">[[global:sort]]</h6>
+		<h6 class="fw-bold">{{tx("global:sort")}}</h6>
 
 		<div class="mb-2">
-			<label class="form-label text-sm" for="categoryTopicSort">[[user:category-topic-sort]]</label>
+			<label class="form-label text-sm" for="categoryTopicSort">{{tx("user:category-topic-sort")}}</label>
 			<select class="form-select form-select-sm" id="categoryTopicSort" data-property="categoryTopicSort">
-				<option value="recently_replied" {{{ if (settings.categoryTopicSort == "recently_replied") }}}selected{{{ end }}}>[[topic:recently-replied]]</option>
-				<option value="recently_created" {{{ if (settings.categoryTopicSort == "recently_created") }}}selected{{{ end }}}>[[topic:recently-created]]</option>
-				<option value="most_posts" {{{ if (settings.categoryTopicSort == "most_posts") }}}selected{{{ end }}}>[[topic:most-posts]]</option>
-				<option value="most_votes" {{{ if (settings.categoryTopicSort == "most_votes") }}}selected{{{ end }}}>[[topic:most-votes]]</option>
-				<option value="most_views" {{{ if (settings.categoryTopicSort == "most_views") }}}selected{{{ end }}}>[[topic:most-views]]</option>
+				<option value="recently_replied" {{{ if (settings.categoryTopicSort == "recently_replied") }}}selected{{{ end }}}>{{tx("topic:recently-replied")}}</option>
+				<option value="recently_created" {{{ if (settings.categoryTopicSort == "recently_created") }}}selected{{{ end }}}>{{tx("topic:recently-created")}}</option>
+				<option value="most_posts" {{{ if (settings.categoryTopicSort == "most_posts") }}}selected{{{ end }}}>{{tx("topic:most-posts")}}</option>
+				<option value="most_votes" {{{ if (settings.categoryTopicSort == "most_votes") }}}selected{{{ end }}}>{{tx("topic:most-votes")}}</option>
+				<option value="most_views" {{{ if (settings.categoryTopicSort == "most_views") }}}selected{{{ end }}}>{{tx("topic:most-views")}}</option>
 			</select>
 		</div>
 		<div>
-			<label class="form-label text-sm" for="topicPostSort">[[user:topic-post-sort]]</label>
+			<label class="form-label text-sm" for="topicPostSort">{{tx("user:topic-post-sort")}}</label>
 			<select class="form-select form-select-sm" id="topicPostSort" data-property="topicPostSort">
-				<option value="oldest_to_newest" {{{ if (settings.topicPostSort == "oldest_to_newest") }}}selected{{{ end }}}>[[topic:oldest-to-newest]]</option>
-				<option value="newest_to_oldest" {{{ if (settings.topicPostSort == "newest_to_oldest") }}}selected{{{ end }}}>[[topic:newest-to-oldest]]</option>
-				<option value="most_votes" {{{ if (settings.topicPostSort == "most_votes") }}}selected{{{ end }}}>[[topic:most-votes]]</option>
+				<option value="oldest_to_newest" {{{ if (settings.topicPostSort == "oldest_to_newest") }}}selected{{{ end }}}>{{tx("topic:oldest-to-newest")}}</option>
+				<option value="newest_to_oldest" {{{ if (settings.topicPostSort == "newest_to_oldest") }}}selected{{{ end }}}>{{tx("topic:newest-to-oldest")}}</option>
+				<option value="most_votes" {{{ if (settings.topicPostSort == "most_votes") }}}selected{{{ end }}}>{{tx("topic:most-votes")}}</option>
 			</select>
 		</div>
 
 
 		{{{ if !disableEmailSubscriptions }}}
 		<hr/>
-		<h6 class="fw-bold">[[global:email]]</h6>
+		<h6 class="fw-bold">{{tx("global:email")}}</h6>
 		<div>
 			<div class="mb-2">
-				<label class="form-label text-sm" for="dailyDigestFreq">[[user:digest-label]]</label>
+				<label class="form-label text-sm" for="dailyDigestFreq">{{tx("user:digest-label")}}</label>
 				<select class="form-select form-select-sm" id="dailyDigestFreq" data-property="dailyDigestFreq" autocomplete="off">
 					{{{each dailyDigestFreqOptions}}}
 					<option value="{./value}" {{{ if ./selected }}}selected="1"{{{ end }}}>{{tx(./name)}}</option>
 					{{{end}}}
 				</select>
-				<p class="form-text text-xs">[[user:digest-description]]</p>
+				<p class="form-text text-xs">{{tx("user:digest-description")}}</p>
 			</div>
 		</div>
 		{{{ end }}}
@@ -196,7 +196,7 @@
 	</div>
 
 	<div class="col-12 col-md-6">
-		<label class="form-label fw-bold" for="userLang">[[global:language]]</label>
+		<label class="form-label fw-bold" for="userLang">{{tx("global:language")}}</label>
 		<select id="userLang" data-property="userLang" class="form-select form-select-sm mb-2">
 			{{{each languages}}}
 			<option value="{./code}" {{{ if ./selected }}}selected{{{ end }}}>{./name} ({./code})</option>
@@ -206,7 +206,7 @@
 		<hr/>
 
 		{{{ if (isAdmin && isSelf) }}}
-		<label class="form-label fw-bold" for="acpLang">[[user:acp-language]]</label>
+		<label class="form-label fw-bold" for="acpLang">{{tx("user:acp-language")}}</label>
 		<select id="acpLang" data-property="acpLang" class="form-select form-select-sm">
 			{{{each acpLanguages}}}
 			<option value="{./code}" {{{ if ./selected }}}selected{{{ end }}}>{./name} ({./code})</option>
@@ -216,38 +216,38 @@
 		<hr/>
 		{{{ end }}}
 
-		<h6 class="fw-bold">[[topic:watch]]</h6>
+		<h6 class="fw-bold">{{tx("topic:watch")}}</h6>
 		<div>
 			<div class="form-check form-switch">
 				<input class="form-check-input" type="checkbox" role="switch" id="followTopicsOnCreate" data-property="followTopicsOnCreate" {{{ if settings.followTopicsOnCreate }}}checked{{{ end }}}/>
-				<label class="form-check-label text-sm" for="followTopicsOnCreate">[[user:follow-topics-you-create]]</label>
+				<label class="form-check-label text-sm" for="followTopicsOnCreate">{{tx("user:follow-topics-you-create")}}</label>
 			</div>
 			<div class="form-check form-switch">
 				<input class="form-check-input" type="checkbox" role="switch" id="followTopicsOnReply" data-property="followTopicsOnReply" {{{ if settings.followTopicsOnReply }}}checked{{{ end }}}/>
-				<label class="form-check-label text-sm" for="followTopicsOnReply">[[user:follow-topics-you-reply-to]]</label>
+				<label class="form-check-label text-sm" for="followTopicsOnReply">{{tx("user:follow-topics-you-reply-to")}}</label>
 			</div>
 			<div class="mb-2">
-				<label class="form-label text-sm" for="categoryWatchState">[[user:default-category-watch-state]]</label>
+				<label class="form-label text-sm" for="categoryWatchState">{{tx("user:default-category-watch-state")}}</label>
 				<select class="form-select form-select-sm" id="categoryWatchState" data-property="categoryWatchState">
-					<option value="tracking" {{{ if categoryWatchState.tracking }}}selected{{{ end }}}>[[category:tracking]]</option>
-					<option value="notwatching" {{{ if categoryWatchState.notwatching }}}selected{{{ end }}}>[[category:not-watching]]</option>
-					<option value="ignoring" {{{ if categoryWatchState.ignoring }}}selected{{{ end }}}>[[category:ignoring]]</option>
+					<option value="tracking" {{{ if categoryWatchState.tracking }}}selected{{{ end }}}>{{tx("category:tracking")}}</option>
+					<option value="notwatching" {{{ if categoryWatchState.notwatching }}}selected{{{ end }}}>{{tx("category:not-watching")}}</option>
+					<option value="ignoring" {{{ if categoryWatchState.ignoring }}}selected{{{ end }}}>{{tx("category:ignoring")}}</option>
 				</select>
 			</div>
 		</div>
 		<hr/>
 
-		<h6 class="fw-bold">[[user:notifications]]</h6>
+		<h6 class="fw-bold">{{tx("user:notifications")}}</h6>
 		<div>
 			<div class="row align-items-center mb-2">
 				<div class="col-7">
-					<label class="text-sm" for="upvote-notif-freq">[[user:upvote-notif-freq]]</label>
+					<label class="text-sm" for="upvote-notif-freq">{{tx("user:upvote-notif-freq")}}</label>
 				</div>
 				<div class="col-5">
 					<select class="form-select form-select-sm" id="upvote-notif-freq" name="upvote-notif-freq" data-property="upvoteNotifFreq">
 						{{{ each upvoteNotifFreq }}}
 						<option value="{./name}" {{{ if ./selected }}}selected{{{ end }}}>
-							[[user:upvote-notif-freq.{./name}]]
+							{{tx(./label)}}
 						</option>
 						{{{end}}}
 					</select>
@@ -255,15 +255,15 @@
 			</div>
 			<div class="form-check form-switch mb-3">
 				<input class="form-check-input" type="checkbox" role="switch" id="hideReadNotifications" data-property="hideReadNotifications" {{{ if settings.hideReadNotifications }}}checked{{{ end }}} />
-				<label class="form-check-label text-sm" for="hideReadNotifications">[[user:hide-read-notifications]]</label>
+				<label class="form-check-label text-sm" for="hideReadNotifications">{{tx("user:hide-read-notifications")}}</label>
 			</div>
 			<hr />
 			<table component="notification/table" class="table">
 				<thead>
 					<tr>
 						<th></th>
-						<th class="text-center fw-semibold px-2">[[user:notification-type-web]]</th>
-						<th class="text-center fw-semibold px-2">[[user:notification-type-email]]</th>
+						<th class="text-center fw-semibold px-2">{{tx("user:notification-type-web")}}</th>
+						<th class="text-center fw-semibold px-2">{{tx("user:notification-type-email")}}</th>
 					</tr>
 				</thead>
 				<tbody>

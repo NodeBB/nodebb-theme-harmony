@@ -1,7 +1,7 @@
 <div class="flex-shrink-0 pe-2 border-end-md text-sm mb-3 flex-basis-md-200">
 	<div class="sticky-md-top d-flex flex-row flex-md-column flex-wrap gap-1" style="top: 1rem;z-index: 1;">
 		<a href="{config.relative_path}/user/{userslug}" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold {{{ if template.account/profile }}}active{{{ end }}}">
-			<div class="flex-grow-1">[[global:about]]</div>
+			<div class="flex-grow-1">{{tx("global:about")}}</div>
 		</a>
 
 		<a href="{config.relative_path}/user/{userslug}/posts"class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-baseline
@@ -11,7 +11,7 @@
 			{{{ if template.account/upvoted }}}active{{{ end }}}
 			{{{ if template.account/downvoted }}}active{{{ end }}}
 			{{{ if template.account/bookmarks }}}active{{{ end }}}">
-			<div class="flex-grow-1">[[global:posts]]</div>
+			<div class="flex-grow-1">{{tx("global:posts")}}</div>
 			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.posts)}">{humanReadableNumber(counts.posts)}</span>
 		</a>
 
@@ -19,57 +19,57 @@
 			{{{ if template.account/topics }}}active{{{ end }}}
 			{{{ if template.account/watched }}}active{{{ end }}}
 			{{{ if template.account/ignored }}}active{{{ end }}}">
-			<div class="flex-grow-1">[[global:topics]]</div>
+			<div class="flex-grow-1">{{tx("global:topics")}}</div>
 			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.topics)}">{humanReadableNumber(counts.topics)}</span>
 		</a>
 
 		<a href="{config.relative_path}/user/{userslug}/shares" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-baseline
 			{{{ if template.account/shares }}}active{{{ end }}}">
-			<div class="flex-grow-1">[[user:shares]]</div>
+			<div class="flex-grow-1">{{tx("user:shares")}}</div>
 			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.shares)}">{humanReadableNumber(counts.shares)}</span>
 		</a>
 
 		<a href="{config.relative_path}/user/{userslug}/groups" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-baseline
 			{{{ if template.account/groups }}}active{{{ end }}}">
-			<div class="flex-grow-1">[[global:header.groups]]</div>
+			<div class="flex-grow-1">{{tx("global:header.groups")}}</div>
 			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.groups)}">{humanReadableNumber(counts.groups)}</span>
 		</a>
 
 		<a href="{config.relative_path}/user/{userslug}/followers" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-baseline
 			{{{ if template.account/followers }}}active{{{ end }}}">
-			<div class="flex-grow-1">[[user:followers]]</div>
+			<div class="flex-grow-1">{{tx("user:followers")}}</div>
 			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.followers)}">{humanReadableNumber(counts.followers)}</span>
 		</a>
 
 		<a href="{config.relative_path}/user/{userslug}/following" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-baseline
 			{{{ if template.account/following }}}active{{{ end }}}">
-			<div class="flex-grow-1">[[user:following]]</div>
+			<div class="flex-grow-1">{{tx("user:following")}}</div>
 			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.following)}">{humanReadableNumber(counts.following)}</span>
 		</a>
 
 		{{{ if canEdit }}}
 		<a href="{config.relative_path}/user/{userslug}/categories" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-baseline
 			{{{ if template.account/categories }}}active{{{ end }}}">
-			<div class="flex-grow-1">[[user:watched-categories]]</div>
+			<div class="flex-grow-1">{{tx("user:watched-categories")}}</div>
 			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.categoriesWatched)}">{humanReadableNumber(counts.categoriesWatched)}</span>
 		</a>
 		{{{ if isSelf }}}
 		<a href="{config.relative_path}/user/{userslug}/tags" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-baseline
 			{{{ if template.account/tags }}}active{{{ end }}}">
-			<div class="flex-grow-1">[[user:watched-tags]]</div>
+			<div class="flex-grow-1">{{tx("user:watched-tags")}}</div>
 			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.tagsWatched)}">{humanReadableNumber(counts.tagsWatched)}</span>
 		</a>
 		{{{ end }}}
 
 		<a href="{config.relative_path}/user/{userslug}/blocks" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-baseline
 			{{{ if template.account/blocks }}}active{{{ end }}}">
-			<div class="flex-grow-1">[[user:blocked-users]]</div>
+			<div class="flex-grow-1">{{tx("user:blocked-users")}}</div>
 			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.blocks)}">{humanReadableNumber(counts.blocks)}</span>
 		</a>
 
 		<a href="{config.relative_path}/user/{userslug}/uploads" class="btn btn-ghost btn-sm text-start ff-secondary fw-semibold d-flex gap-2 align-items-baseline
 			{{{ if template.account/uploads }}}active{{{ end }}}">
-			<div class="flex-grow-1">[[global:uploads]]</div>
+			<div class="flex-grow-1">{{tx("global:uploads")}}</div>
 			<span class="flex-shrink-0 text-xs" title="{formattedNumber(counts.uploaded)}">{humanReadableNumber(counts.uploaded)}</span>
 		</a>
 		{{{ end }}}
@@ -79,7 +79,7 @@
 
 		<a href="{remoteUrl}" target="_self" component="account/view-remote" class="btn btn-ghost btn-sm ff-secondary d-flex align-items-baseline gap-2 text-start">
 			<i class="flex-shrink-0 fa-solid fa-globe"></i>
-			<div class="flex-grow-1 text-nowrap">[[user:view-remote]]</div>
+			<div class="flex-grow-1 text-nowrap">{{tx("user:view-remote")}}</div>
 		</a>
 		{{{ end }}}
 
@@ -89,19 +89,19 @@
 
 		<a href="#" component="account/flag" class="btn btn-ghost btn-sm ff-secondary d-flex align-items-baseline gap-2 text-start {{{if flagId }}}hidden{{{end}}}">
 			<i class="flex-shrink-0 fa-solid fa-flag text-danger"></i>
-			<div class="flex-grow-1 text-nowrap">[[user:flag-profile]]</div>
+			<div class="flex-grow-1 text-nowrap">{{tx("user:flag-profile")}}</div>
 		</a>
 		<a href="#" component="account/already-flagged" class="btn btn-ghost btn-sm ff-secondary d-flex align-items-baseline gap-2 text-start {{{if !flagId }}}hidden{{{end}}}" data-flag-id="{flagId}">
 			<i class="flex-shrink-0 fa-solid fa-flag text-danger"></i>
-			<div class="flex-grow-1 text-nowrap">[[user:profile-flagged]]</div>
+			<div class="flex-grow-1 text-nowrap">{{tx("user:profile-flagged")}}</div>
 		</a>
 		<a href="#" component="account/block" class="btn btn-ghost btn-sm ff-secondary d-flex align-items-baseline gap-2 text-start {{{ if isBlocked }}}hidden{{{ end }}}">
 			<i class="flex-shrink-0 fa-solid fa-ban text-danger"></i>
-			<div class="flex-grow-1 text-nowrap">[[user:block-user]]</div>
+			<div class="flex-grow-1 text-nowrap">{{tx("user:block-user")}}</div>
 		</a>
 		<a href="#" component="account/unblock" class="btn btn-ghost btn-sm ff-secondary d-flex align-items-baseline gap-2 text-start {{{ if !isBlocked }}}hidden{{{ end }}}">
 			<i class="flex-shrink-0 fa-solid fa-ban text-danger"></i>
-			<div class="flex-grow-1 text-nowrap">[[user:unblock-user]]</div>
+			<div class="flex-grow-1 text-nowrap">{{tx("user:unblock-user")}}</div>
 		</a>
 		{{{ end }}}
 
@@ -109,11 +109,11 @@
 		<hr class="w-100 my-2"/>
 		<a href="{config.relative_path}/user/{userslug}/edit" class="btn btn-ghost btn-sm ff-secondary text-xs text-start
 		{{{ if template.account/edit }}}active{{{ end }}}">
-			<div class="flex-grow-1">[[user:edit-profile]]</div>
+			<div class="flex-grow-1">{{tx("user:edit-profile")}}</div>
 		</a>
 		<a href="{config.relative_path}/user/{userslug}/settings" class="btn btn-ghost btn-sm ff-secondary text-xs text-start
 			{{{ if template.account/settings }}}active{{{ end }}}">
-			<div class="flex-grow-1">[[user:settings]]</div>
+			<div class="flex-grow-1">{{tx("user:settings")}}</div>
 		</a>
 		{{{ end }}}
 

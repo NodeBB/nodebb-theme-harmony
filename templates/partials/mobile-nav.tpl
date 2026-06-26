@@ -72,14 +72,14 @@
 				{{{ end }}}
 
 				{{{ if allowRegistration }}}
-				<li class="nav-item mx-2" title="[[global:register]]">
+				<li class="nav-item mx-2" title="{{tx("global:register")}}">
 					<a class="nav-link" href="{relative_path}/register">
 						<i class="fa fa-fw fa-user-plus"></i>
 					</a>
 				</li>
 				{{{ end }}}
 
-				<li class="nav-item mx-2" title="[[global:login]]">
+				<li class="nav-item mx-2" title="{{tx("global:login")}}">
 					<a class="nav-link" href="{relative_path}/login">
 						<i class="fa fa-fw fa-sign-in"></i>
 					</a>

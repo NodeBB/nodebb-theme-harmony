@@ -8,43 +8,43 @@
 	<div class="d-flex gap-1">
 		<div class="dropdown bottom-sheet" component="category/watch/all">
 			<button class="btn btn-ghost btn-sm ff-secondary fw-semibold dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">
-				<span>[[user:change-all]]</span>
+				<span>{{tx("user:change-all")}}</span>
 			</button>
 			<ul class="dropdown-menu p-1 text-sm dropdown-menu-end" role="menu">
 				<li>
 					<a class="dropdown-item rounded-1 d-flex flex-column p-2" href="#" component="category/watching" data-state="watching" role="menuitem">
 						<div class="d-flex align-items-center gap-2">
 							<i class="flex-shrink-0 fa fa-fw fa-bell-o"></i>
-							<span class="flex-grow-1 fw-semibold">[[category:watching]]</span>
+							<span class="flex-grow-1 fw-semibold">{{tx("category:watching")}}</span>
 						</div>
-						<div class="help-text text-muted text-xs">[[category:watching.description]]</div>
+						<div class="help-text text-muted text-xs">{{tx("category:watching.description")}}</div>
 					</a>
 				</li>
 				<li>
 					<a class="dropdown-item rounded-1 d-flex flex-column p-2" href="#" component="category/tracking" data-state="tracking" role="menuitem">
 						<div class="d-flex align-items-center gap-2">
 							<i class="flex-shrink-0 fa fa-fw fa-inbox"></i>
-							<span class="flex-grow-1 fw-semibold">[[category:tracking]]</span>
+							<span class="flex-grow-1 fw-semibold">{{tx("category:tracking")}}</span>
 						</div>
-						<div class="help-text text-muted text-xs">[[category:tracking.description]]</div>
+						<div class="help-text text-muted text-xs">{{tx("category:tracking.description")}}</div>
 					</a>
 				</li>
 				<li>
 					<a class="dropdown-item rounded-1 d-flex flex-column p-2" href="#" component="category/notwatching" data-state="notwatching" role="menuitem">
 						<div class="d-flex align-items-center gap-2">
 							<i class="flex-shrink-0 fa fa-fw fa-clock-o"></i>
-							<span class="flex-grow-1 fw-semibold">[[category:not-watching]]</span>
+							<span class="flex-grow-1 fw-semibold">{{tx("category:not-watching")}}</span>
 						</div>
-						<div class="help-text text-muted text-xs">[[category:not-watching.description]]</div>
+						<div class="help-text text-muted text-xs">{{tx("category:not-watching.description")}}</div>
 					</a>
 				</li>
 				<li>
 					<a class="dropdown-item rounded-1 d-flex flex-column p-2" href="#" component="category/ignoring" data-state="ignoring" role="menuitem">
 						<div class="d-flex align-items-center gap-2">
 							<i class="flex-shrink-0 fa fa-fw fa-eye-slash"></i>
-							<span class="flex-grow-1 fw-semibold">[[category:ignoring]]</span>
+							<span class="flex-grow-1 fw-semibold">{{tx("category:ignoring")}}</span>
 						</div>
-						<div class="help-text text-muted text-xs">[[category:ignoring.description]]</div>
+						<div class="help-text text-muted text-xs">{{tx("category:ignoring.description")}}</div>
 					</a>
 				</li>
 			</ul>

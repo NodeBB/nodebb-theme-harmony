@@ -4,7 +4,7 @@
 			<i component="drafts/icon" class="fa fa-fw fa-pen-to-square unread-count"></i>
 			<span component="drafts/count" class="visible-closed position-absolute top-0 start-100 translate-middle badge rounded-1 bg-primary hidden">0</span>
 		</span>
-		<span class="nav-text small visible-open fw-semibold">[[global:header.drafts]]</span>
+		<span class="nav-text small visible-open fw-semibold">{{tx("global:header.drafts")}}</span>
 	</span>
 	<span component="drafts/count" class="visible-open badge rounded-1 bg-primary hidden">0</span>
 </a>
@@ -20,7 +20,7 @@
 			</div>
 			<div class="hidden no-drafts text-center p-4 d-flex flex-column">
 				<div class="p-4"><i class="fa-solid fa-wind fs-2 text-muted"></i></div>
-				<div class="text-xs fw-semibold text-muted">[[modules:composer.no-drafts]]</div>
+				<div class="text-xs fw-semibold text-muted">{{tx("modules:composer.no-drafts")}}</div>
 			</div>
 			<div class="draft-item-container">
 				{{{ each drafts }}}
@@ -31,7 +31,7 @@
 					<div class="d-flex gap-1 justify-content-between ff-base">
 						<a href="#" class="d-flex flex-column flex-grow-1 gap-2 justify-content-start align-items-start btn btn-ghost btn-sm ff-sans text-start" component="drafts/open" data-save-id="{./save_id}" role="menuitem">
 							{{{ if (./action == "topics.post") }}}
-							<div class="text text-xs fw-semibold line-clamp-2 text-break">{{{ if ./title}}}{./title}{{{ else }}}[[topic:composer.untitled-topic]]{{{ end }}}</div>
+							<div class="text text-xs fw-semibold line-clamp-2 text-break">{{{ if ./title}}}{./title}{{{ else }}}{{tx("topic:composer.untitled-topic")}}{{{ end }}}</div>
 							{{{ end }}}
 
 							{{{ if (./action == "posts.reply") }}}

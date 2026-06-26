@@ -3,11 +3,11 @@
 <h3 class="fw-semibold fs-5">{{tx(title)}}</h3>
 
 <div class="alert alert-info text-center">
-	{{{ if privateUploads }}}[[uploads:private-uploads-info]]{{{ else }}}[[uploads:public-uploads-info]]{{{ end }}}
+	{{{ if privateUploads }}}{{tx("uploads:private-uploads-info")}}{{{ else }}}{{tx("uploads:public-uploads-info")}}{{{ end }}}
 </div>
 
 {{{ if !uploads.length }}}
-<div class="alert alert-warning text-center">[[uploads:no-uploads-found]]</div>
+<div class="alert alert-warning text-center">{{tx("uploads:no-uploads-found")}}</div>
 {{{ end }}}
 
 <div class="table-responsive">
@@ -25,7 +25,7 @@
 					<a class="text-break text-reset text-sm" href="{config.relative_path}{./url}">{./url}</a>
 				</td>
 				<td style="width: 1%; white-space: nowrap;">
-					<button class="btn btn-danger btn-sm" data-action="delete" aria-label="[[aria:delete-upload-button]]"><i class="fa fa-trash"></i></button>
+					<button class="btn btn-danger btn-sm" data-action="delete" aria-label="{{tx("aria:delete-upload-button")}}"><i class="fa fa-trash"></i></button>
 				</td>
 			</tr>
 			{{{ end }}}
