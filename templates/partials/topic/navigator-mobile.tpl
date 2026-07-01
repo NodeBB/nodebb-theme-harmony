@@ -36,23 +36,23 @@
 						<div class="col-8 post-content overflow-hidden mb-3" style="height: 350px;"></div>
 						<div class="col-4 ps-0 text-end">
 							<div class="scroller-content">
-								<span class="pointer pagetop">[[topic:first-post]] <i class="fa fa-angle-double-up"></i></span>
+								<span class="pointer pagetop">{{tx("topic:first-post")}} <i class="fa fa-angle-double-up"></i></span>
 								<div class="scroller-container border-gray-200" style="height: 300px;">
 									<div class="scroller-thumb position-relative text-nowrap" style="height: 40px;">
 										<span class="thumb-text text-sm fw-bold user-select-none position-relative pe-2" style="top: -15px;"></span>
 										<div class="rounded-2 scroller-thumb-icon bg-primary d-inline-block position-relative" style="width: 9px; height:40px;"></div>
 									</div>
 								</div>
-								<span class="pointer pagebottom">[[topic:last-post]] <i class="fa fa-angle-double-down"></i></span>
+								<span class="pointer pagebottom">{{tx("topic:last-post")}} <i class="fa fa-angle-double-down"></i></span>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-6">
-							<button id="myNextPostBtn" class="btn btn-sm btn-ghost border form-control text-truncate" disabled>[[topic:go-to-my-next-post]]</button>
+							<button id="myNextPostBtn" class="btn btn-sm btn-ghost border form-control text-truncate" disabled>{{tx("topic:go-to-my-next-post")}}</button>
 						</div>
 						<div class="col-6">
-							<input type="number" class="form-control form-control-sm" id="indexInput" placeholder="[[global:pagination.enter-index]]">
+							<input type="number" class="form-control form-control-sm" id="indexInput" placeholder="{{tx("global:pagination.enter-index")}}">
 						</div>
 					</div>
 				</li>

@@ -4,8 +4,8 @@
 		{{{ if (brand:logo || config.showSiteTitle) }}}
 		<div component="brand/wrapper" class="d-flex align-items-center gap-3 p-2 rounded-1 align-content-stretch ">
 			{{{ if brand:logo }}}
-			<a component="brand/anchor" href="{{{ if brand:logo:url }}}{brand:logo:url}{{{ else }}}{relative_path}/{{{ end }}}" title="[[global:header.brand-logo]]">
-				<img component="brand/logo" alt="{{{ if brand:logo:alt }}}{brand:logo:alt}{{{ else }}}[[global:header.brand-logo]]{{{ end }}}" class="{brand:logo:display}" src="{brand:logo}?{config.cache-buster}" />
+			<a component="brand/anchor" href="{{{ if brand:logo:url }}}{brand:logo:url}{{{ else }}}{relative_path}/{{{ end }}}" title="{{tx("global:header.brand-logo")}}">
+				<img component="brand/logo" alt="{{{ if brand:logo:alt }}}{brand:logo:alt}{{{ else }}}{{tx("global:header.brand-logo")}}{{{ end }}}" class="{brand:logo:display}" src="{brand:logo}?{config.cache-buster}" />
 			</a>
 			{{{ end }}}
 

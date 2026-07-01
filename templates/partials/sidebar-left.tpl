@@ -30,10 +30,10 @@
 		{{{ end }}}
 
 		<div class="sidebar-toggle m-2 d-none d-lg-block">
-			<a href="#" role="button" component="sidebar/toggle" class="nav-link d-flex gap-2 align-items-center p-2 pointer w-100 text-nowrap" title="[[themes/harmony:expand]]" aria-label="[[themes/harmony:sidebar-toggle]]">
+			<a href="#" role="button" component="sidebar/toggle" class="nav-link d-flex gap-2 align-items-center p-2 pointer w-100 text-nowrap" title="{{tx("themes/harmony:expand")}}" aria-label="{{tx("themes/harmony:sidebar-toggle")}}">
 				<i class="fa fa-fw fa-angles-right"></i>
 				<i class="fa fa-fw fa-angles-left"></i>
-				<span class="nav-text visible-open fw-semibold small lh-1">[[themes/harmony:collapse]]</span>
+				<span class="nav-text visible-open fw-semibold small lh-1">{{tx("themes/harmony:collapse")}}</span>
 			</a>
 		</div>
 	</div>

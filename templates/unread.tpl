@@ -9,10 +9,10 @@
 	<div class="unread {{{if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<!-- IMPORT partials/topic-list-bar.tpl -->
 		<div class="category">
-			<div id="category-no-topics" class="alert alert-info {{{ if topics.length }}}hidden{{{ end }}}">[[unread:no-unread-topics]]</div>
+			<div id="category-no-topics" class="alert alert-info {{{ if topics.length }}}hidden{{{ end }}}">{{tx("unread:no-unread-topics")}}</div>
 
 			<!-- IMPORT partials/topics_list.tpl -->
-			<button id="load-more-btn" class="btn btn-primary hide">[[unread:load-more]]</button>
+			<button id="load-more-btn" class="btn btn-primary hide">{{tx("unread:load-more")}}</button>
 			{{{ if config.usePagination }}}
 			<!-- IMPORT partials/paginator.tpl -->
 			{{{ end }}}

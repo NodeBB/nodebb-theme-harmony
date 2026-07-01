@@ -5,7 +5,7 @@
 	</div>
 	<div class="d-flex flex-column align-items-start">
 		<button class="btn btn-sm btn-ghost" type="button" data-bs-toggle="collapse" data-bs-target="#event-collapse-{./id}" aria-expanded="false" aria-controls="collapseExample">
-			[[topic:announcers-x, {./items.length}]]
+			{{tx("topic:announcers-x", ./items.length)}}
 		</button>
 		<div class="collapse align-self-start" id="event-collapse-{./id}">
 			<div component="topic/event/items">
@@ -15,7 +15,7 @@
 						{{./text}}
 					</span>
 					{{{ if (privileges.isAdminOrMod && ./id) }}}
-					<span component="topic/event/delete" data-topic-event-id="{./id}" data-topic-event-type="{./type}" class="timeline-text pointer" title="[[topic:delete-event]]"><i class="fa fa-trash"></i></span>
+					<span component="topic/event/delete" data-topic-event-id="{./id}" data-topic-event-type="{./type}" class="timeline-text pointer" title="{{tx("topic:delete-event")}}"><i class="fa fa-trash"></i></span>
 					{{{ end }}}
 				</div>
 				{{{ end }}}
@@ -33,7 +33,7 @@
 		{{./text}}
 	</span>
 	{{{ if (privileges.isAdminOrMod && ./id) }}}
-	<span component="topic/event/delete" data-topic-event-id="{./id}" data-topic-event-type="{./type}" class="timeline-text pointer" title="[[topic:delete-event]]"><i class="fa fa-trash"></i></span>
+	<span component="topic/event/delete" data-topic-event-id="{./id}" data-topic-event-type="{./type}" class="timeline-text pointer" title="{{tx("topic:delete-event")}}"><i class="fa fa-trash"></i></span>
 	{{{ end }}}
 </li>
 {{{ end }}}

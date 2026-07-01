@@ -2,7 +2,7 @@
 <div class="dropdown thread-tools bottom-sheet">
 	<button class="btn btn-ghost btn-sm ff-secondary d-flex align-items-center gap-2 dropdown-toggle text-truncate w-100" data-bs-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
 		<i class="fa fa-fw fa-gear text-primary"></i>
-		<span class="d-none d-md-inline fw-semibold text-truncate text-nowrap">[[topic:thread-tools.title]]</span>
+		<span class="d-none d-md-inline fw-semibold text-truncate text-nowrap">{{tx("topic:thread-tools.title")}}</span>
 	</button>
 	<ul class="dropdown-menu dropdown-menu-end p-1 text-sm" role="menu"></ul>
 </div>
