@@ -1,6 +1,6 @@
 {
   "name": "nodebb-theme-harmony",
-  "version": "3.0.12",
+  "version": "3.0.14",
   "nbbpm": {
     "compatibility": "^4.14.0"
   },
@@ -45,7 +45,7 @@
     "@fontsource/poppins": "5.2.7"
   },
   "devDependencies": {
-    "eslint": "10.5.0",
+    "eslint": "10.6.0",
     "eslint-config-nodebb": "^2.0.2"
   }
 }

@@ -4,8 +4,10 @@
 			<div component="category/controls" class="d-flex flex-wrap align-items-stretch me-auto mb-0 gap-2">
 				{{{ if template.category }}}
 				<!-- IMPORT partials/category/watch.tpl -->
+				{{{ if topic_count }}}
 				<!-- IMPORT partials/tags/filter-dropdown-left.tpl -->
 				<!-- IMPORT partials/category/sort.tpl -->
+				{{{ end }}}
 				{{{ end }}}
 				{{{ if (template.popular || template.top) }}}
 				<!-- IMPORT partials/topic-terms.tpl -->
@@ -52,7 +54,9 @@
 				</div>
 				{{{ end }}}
 
+				{{{ if topic_count }}}
 				<!-- IMPORT partials/category/tools-dropdown-left.tpl -->
+				{{{ end }}}
 
 				<a href="{{{ if (template.category || template.world) }}}{url}{{{ else }}}{config.relative_path}/{selectedFilter.url}{querystring}{{{ end }}}" class="btn btn-secondary fw-semibold position-absolute top-100 translate-middle-x start-50 mt-1 hide" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" id="new-topics-alert">
 					<i class="fa fa-fw fa-arrow-up"></i> {{tx("recent:load-new-posts")}}
