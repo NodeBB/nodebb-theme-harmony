@@ -19,7 +19,7 @@
 				</span>
 				{{{ if !isNumber(cid) }}}
 				<a href="{./url}" class="badge text-body border border-gray-300 text-xs" data-ajaxify="false">
-					<span class="fw-normal">{{tx("global:view-original")}}</span>
+					<span class="fw-normal">{{tx("category:view-original")}}</span>
 					<i class="fa fa-external-link"></i>
 				</a>
 				{{{ end }}}

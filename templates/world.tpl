@@ -18,7 +18,7 @@
 	</div>
 	{{{ if ./descriptionParsed }}}
 	<p class="description text-secondary text-sm w-100 {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}">
-		{{./descriptionParsed}}
+		{{{ if (cid == "-1") }}}{{tx(./descriptionParsed)}}{{{ else }}}{{./descriptionParsed}}{{{ end }}}
 	</p>
 	{{{ end }}}
 </div>
