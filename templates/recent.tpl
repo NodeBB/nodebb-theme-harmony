@@ -12,13 +12,13 @@
 
 		<div class="category">
 			{{{ if !topics.length }}}
-			<div class="alert alert-info" id="category-no-topics">[[recent:no-recent-topics]]</div>
+			<div class="alert alert-info" id="category-no-topics">{{tx("recent:no-recent-topics")}}</div>
 			{{{ end }}}
 
 			{{{ if (selectedCategory.cid == "-1") }}}
 			<div class="py-3">
-				<h4>[[recent:uncategorized.title]]</h4>
-				<p>[[recent:uncategorized.intro]]</p>
+				<h4>{{tx("recent:uncategorized.title")}}</h4>
+				<p>{{tx("recent:uncategorized.intro")}}</p>
 			</div>
 			{{{ end }}}
 

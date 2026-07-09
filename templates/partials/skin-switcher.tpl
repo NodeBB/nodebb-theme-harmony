@@ -5,7 +5,7 @@
 				<span>
 					<i component="skinSwitcher/icon" class="fa fa-fw fa-paintbrush"></i>
 				</span>
-				<span class="nav-text small visible-open fw-semibold">[[themes/harmony:skins]]</span>
+				<span class="nav-text small visible-open fw-semibold">{{tx("themes/harmony:skins")}}</span>
 			</span>
 		</span>
 	</a>
@@ -13,7 +13,7 @@
 	<ul class="dropdown-menu p-1 text-sm overflow-auto p-1" role="menu">
 		<div class="d-flex">
 			<div>
-				<li class="dropdown-header">[[themes/harmony:light]]</li>
+				<li class="dropdown-header">{{tx("themes/harmony:light")}}</li>
 				<div class="d-grid" style="grid-template-columns: 1fr 1fr;">
 					{{{ each bootswatchSkinOptions.light }}}
 					<li>
@@ -23,7 +23,7 @@
 				</div>
 			</div>
 			<div>
-				<li class="dropdown-header">[[themes/harmony:dark]]</li>
+				<li class="dropdown-header">{{tx("themes/harmony:dark")}}</li>
 				{{{ each bootswatchSkinOptions.dark }}}
 				<li>
 					<a href="#" class="dropdown-item rounded-1" data-value="{./value}" role="menuitem">{./name} <i class="fa fa-fw fa-check {{{ if !./selected }}} invisible {{{ end }}}"></i></a>

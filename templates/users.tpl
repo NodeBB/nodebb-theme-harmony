@@ -4,7 +4,7 @@
 	{{{end}}}
 </div>
 <div class="users flex-fill">
-	<h3 class="fw-semibold">[[global:users]]</h3>
+	<h3 class="fw-semibold">{{tx("global:users")}}</h3>
 	<div class="d-flex flex-wrap justify-content-between">
 		<div class="mb-2 mb-md-0">
 		<!-- IMPORT partials/users_list_menu.tpl -->
@@ -12,13 +12,13 @@
 		<div>
 			<div class="d-flex justify-content-end gap-2">
 				{{{ if showInviteButton }}}
-				<button component="user/invite" class="btn btn-primary btn-sm text-nowrap"><i class="fa fa-user-plus"></i> [[users:invite]]</button>
+				<button component="user/invite" class="btn btn-primary btn-sm text-nowrap"><i class="fa fa-user-plus"></i> {{tx("users:invite")}}</button>
 				{{{ end }}}
 				{{{ if displayUserSearch }}}
 				<div class="search">
 					<div class="input-group">
-						<input class="form-control form-control-sm" id="search-user" type="text" placeholder="[[global:search]]" autocomplete="off" />
-						<button class="btn btn-primary btn-sm" type="button" aria-label="[[global:search]]">
+						<input class="form-control form-control-sm" id="search-user" type="text" placeholder="{{tx("global:search")}}" autocomplete="off" />
+						<button class="btn btn-primary btn-sm" type="button" aria-label="{{tx("global:search")}}">
 							<i component="user/search/icon" class="fa fa-search"></i>
 						</button>
 					</div>

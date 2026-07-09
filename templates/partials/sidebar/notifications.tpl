@@ -4,15 +4,15 @@
 			<i component="notifications/icon" class="fa fa-fw {{{ if unreadCount.notification}}}fa-bell{{{ else }}}fa-bell-o{{{ end }}} unread-count" data-content="{unreadCount.notification}"></i>
 			<span component="notifications/count" class="visible-closed position-absolute top-0 start-100 translate-middle badge rounded-1 bg-primary {{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span>
 		</span>
-		<span class="nav-text small visible-open fw-semibold truncate-text">[[global:header.notifications]]</span>
+		<span class="nav-text small visible-open fw-semibold truncate-text">{{tx("global:header.notifications")}}</span>
 	</span>
 	<span component="notifications/count" class="visible-open badge rounded-1 bg-primary {{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span>
 </a>
 <ul class="notifications-dropdown dropdown-menu p-1 shadow" role="menu">
 	{{{ if !config.hideReadNotifications }}}
 	<li class="d-flex gap-1 align-items-center">
-		<button type="button" class="btn btn-ghost btn-sm ff-secondary active px-3" data-filter="all">[[notifications:all]]</button>
-		<button type="button" class="btn btn-ghost btn-sm ff-secondary d-flex align-items-center gap-2" data-filter="unread">[[unread:title]] <span component="notifications/count" class="{{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span></button>
+		<button type="button" class="btn btn-ghost btn-sm ff-secondary active px-3" data-filter="all">{{tx("notifications:all")}}</button>
+		<button type="button" class="btn btn-ghost btn-sm ff-secondary d-flex align-items-center gap-2" data-filter="unread">{{tx("unread:title")}} <span component="notifications/count" class="{{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span></button>
 	</li>
 	<li class="dropdown-divider"></li>
 	{{{ end }}}
@@ -49,8 +49,8 @@
 	<li class="dropdown-divider"></li>
 	<li>
 		<div class="d-flex justify-content-center gap-1 flex-wrap">
-			<a role="button" href="#" class="btn btn-sm btn-light mark-all-read flex-fill text-nowrap text-truncate ff-secondary"><i class="fa fa-check-double"></i> [[notifications:mark-all-read]]</a>
-			<a class="btn btn-sm btn-primary flex-fill text-nowrap text-truncate ff-secondary" href="{relative_path}/notifications"><i class="fa fa-list"></i> [[notifications:see-all]]</a>
+			<a role="button" href="#" class="btn btn-sm btn-light mark-all-read flex-fill text-nowrap text-truncate ff-secondary"><i class="fa fa-check-double"></i> {{tx("notifications:mark-all-read")}}</a>
+			<a class="btn btn-sm btn-primary flex-fill text-nowrap text-truncate ff-secondary" href="{relative_path}/notifications"><i class="fa fa-list"></i> {{tx("notifications:see-all")}}</a>
 		</div>
 	</li>
 </ul>

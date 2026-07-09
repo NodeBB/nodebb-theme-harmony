@@ -2,7 +2,7 @@
 
 <div class="d-flex justify-content-between align-items-center mb-3">
 	<div class="d-flex gap-1">
-		<h3 class="fw-semibold fs-5">[[pages:account/shares, {username}]]</h3>
+		<h3 class="fw-semibold fs-5">{{tx("pages:account/shares", txEscape(username))}}</h3>
 	</div>
 </div>
 

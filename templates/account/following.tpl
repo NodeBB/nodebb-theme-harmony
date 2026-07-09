@@ -1,9 +1,9 @@
 <!-- IMPORT partials/account/header.tpl -->
 
-<h3 class="fw-semibold fs-5">[[pages:{template.name}, {username}]]</h3>
+<h3 class="fw-semibold fs-5">{{tx("pages:account/following", txEscape(username))}}</h3>
 
 {{{ if !users.length }}}
-<div class="alert alert-warning text-center">[[user:follows-no-one]]</div>
+<div class="alert alert-warning text-center">{{tx("user:follows-no-one")}}</div>
 {{{ end }}}
 
 <!-- IMPORT partials/users_list.tpl -->

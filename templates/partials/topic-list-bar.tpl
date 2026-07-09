@@ -35,21 +35,21 @@
 						<span id="sort-label" class="visible-md-inline visible-lg-inline fw-semibold"></span>
 					</button>
 					<ul class="dropdown-menu" id="sort-options">
-						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world">[[world:latest]]</a></li>
-						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?local=1">[[world:latest-local]]</a></li>
-						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?all=1">[[world:latest-all]]</a></li>
-						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=day">[[world:popular-day]]</a></li>
-						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=week">[[world:popular-week]]</a></li>
-						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=month">[[world:popular-month]]</a></li>
-						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=year">[[world:popular-year]]</a></li>
-						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=alltime">[[world:popular-alltime]]</a></li>
+						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world">{{tx("world:latest")}}</a></li>
+						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?local=1">{{tx("world:latest-local")}}</a></li>
+						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?all=1">{{tx("world:latest-all")}}</a></li>
+						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=day">{{tx("world:popular-day")}}</a></li>
+						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=week">{{tx("world:popular-week")}}</a></li>
+						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=month">{{tx("world:popular-month")}}</a></li>
+						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=year">{{tx("world:popular-year")}}</a></li>
+						<li><a class="dropdown-item rounded-1" href="{config.relative_path}/world?sort=popular&term=alltime">{{tx("world:popular-alltime")}}</a></li>
 					</ul>
 				</div>
 				{{{ end }}}
 				<div>
 					<a class="btn btn-ghost btn-sm ff-secondary d-flex gap-2 align-items-center fw-semibold h-100" href="#" id="world-help">
 						<i class="fa fa-fw fa-question text-primary"></i>
-						<span class="visible-md-inline visible-lg-inline">[[world:help]]</span>
+						<span class="visible-md-inline visible-lg-inline">{{tx("world:help")}}</span>
 					</a>
 				</div>
 				{{{ end }}}
@@ -59,14 +59,14 @@
 				{{{ end }}}
 
 				<a href="{{{ if (template.category || template.world) }}}{url}{{{ else }}}{config.relative_path}/{selectedFilter.url}{querystring}{{{ end }}}" class="btn btn-secondary fw-semibold position-absolute top-100 translate-middle-x start-50 mt-1 hide" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" id="new-topics-alert">
-					<i class="fa fa-fw fa-arrow-up"></i> [[recent:load-new-posts]]
+					<i class="fa fa-fw fa-arrow-up"></i> {{tx("recent:load-new-posts")}}
 				</a>
 			</div>
 
 			<div class="d-flex gap-1 align-items-center">
 				{{{ if (template.category || template.world) }}}
 					{{{ if privileges.topics:create }}}
-					<a href="{config.relative_path}/compose?cid={cid}" component="category/post" id="new_topic" class="btn btn-primary btn-sm text-nowrap" data-ajaxify="false" role="button">[[category:new-topic-button]]</a>
+					<a href="{config.relative_path}/compose?cid={cid}" component="category/post" id="new_topic" class="btn btn-primary btn-sm text-nowrap" data-ajaxify="false" role="button">{{tx("category:new-topic-button")}}</a>
 					{{{ end }}}
 				{{{ else }}}
 					{{{ if canPost }}}
@@ -75,7 +75,7 @@
 				{{{ end }}}
 				<!-- only show login button if not logged in and doesn't have any posting privilege -->
 				{{{ if (!loggedIn && (!privileges.topics:create && !canPost))}}}
-				<a component="category/post/guest" href="{config.relative_path}/login" class="btn btn-sm btn-primary">[[category:guest-login-post]]</a>
+				<a component="category/post/guest" href="{config.relative_path}/login" class="btn btn-sm btn-primary">{{tx("category:guest-login-post")}}</a>
 				{{{ end }}}
 			</div>
 		</div>

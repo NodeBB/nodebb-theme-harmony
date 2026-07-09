@@ -3,15 +3,15 @@
 	<div class="icon hidden-xs">
 		<a class="d-inline-block position-relative" href="{{{ if loggedInUser.userslug }}}{config.relative_path}/user/{loggedInUser.userslug}{{{ else }}}#{{{ end }}}">
 			{{buildAvatar(loggedInUser, "48px", true, "", "user/picture")}}
-			{{{ if loggedInUser.status }}}<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {loggedInUser.status}"><span class="visually-hidden">[[global:{loggedInUser.status}]]</span></span>{{{ end }}}
+			{{{ if loggedInUser.status }}}<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {loggedInUser.status}"><span class="visually-hidden">{{tx(concat("global:", loggedInUser.status))}}</span></span>{{{ end }}}
 		</a>
 	</div>
 	<form class="flex-grow-1 d-flex flex-column gap-2" method="post" action="{config.relative_path}/compose">
 		<input type="hidden" name="tid" value="{tid}" />
 		<input type="hidden" name="_csrf" value="{config.csrf_token}" />
 		<div class="quickreply-message position-relative">
-			<textarea rows="4" name="content" component="topic/quickreply/text" class="form-control mousetrap" placeholder="[[modules:composer.textarea.placeholder]]"></textarea>
-			<div class="imagedrop"><div>[[topic:composer.drag-and-drop-images]]</div></div>
+			<textarea rows="4" name="content" component="topic/quickreply/text" class="form-control mousetrap" placeholder="{{tx("modules:composer.textarea.placeholder")}}"></textarea>
+			<div class="imagedrop"><div>{{tx("topic:composer.drag-and-drop-images")}}</div></div>
 		</div>
 		<div>
 			<div class="d-flex justify-content-end gap-2">
@@ -19,8 +19,10 @@
 					<!-- IMPORT partials/category/selector-dropdown-left.tpl -->
 				</div>
 				<button type="button" component="topic/quickreply/upload/button" class="btn btn-ghost btn-sm border"><i class="fa fa-upload"></i></button>
-				<button type="button" component="topic/quickreply/expand" class="btn btn-ghost btn-sm border" title="[[topic:open-composer]]"><i class="fa fa-expand"></i></button>
-				<button type="submit" component="topic/quickreply/button" class="btn btn-sm btn-primary">[[topic:post-quick-{{{ if tid }}}reply{{{ else }}}create{{{ end }}}]]</button>
+				<button type="button" component="topic/quickreply/expand" class="btn btn-ghost btn-sm border" title="{{tx("topic:open-composer")}}"><i class="fa fa-expand"></i></button>
+				<button type="submit" component="topic/quickreply/button" class="btn btn-sm btn-primary">
+					{{{ if tid }}}{{tx("topic:post-quick-reply")}}{{{ else }}}{{tx("topic:post-quick-create")}}{{{ end }}}
+				</button>
 			</div>
 		</div>
 	</form>

@@ -6,7 +6,7 @@
 
 <div class="row flex-fill">
 	<div class="tags {{{if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
-		<h3 class="fw-semibold">[[pages:tags]]</h3>
+		<h3 class="fw-semibold">{{tx("pages:tags")}}</h3>
 		{{{ if displayTagSearch }}}
 		{{{ if tags.length }}}
 		<div class="row justify-content-end mb-3">
@@ -14,7 +14,7 @@
 				<div class="d-flex justify-content-end">
 					<div>
 						<div class="input-group">
-							<input type="text" class="form-control form-control-sm" placeholder="[[global:search]]" id="tag-search">
+							<input type="text" class="form-control form-control-sm" placeholder="{{tx("global:search")}}" id="tag-search">
 							<button class="btn btn-primary btn-sm" type="button">
 							<i class="fa fa-search"></i>
 							</button>
@@ -27,7 +27,7 @@
 		{{{ end }}}
 		<hr/>
 		{{{ if !tags.length }}}
-		<div class="alert alert-warning">[[tags:no-tags]]</div>
+		<div class="alert alert-warning">{{tx("tags:no-tags")}}</div>
 		{{{ end }}}
 
 		<div class="category">

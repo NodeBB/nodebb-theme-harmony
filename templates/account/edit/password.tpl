@@ -1,6 +1,6 @@
 <!-- IMPORT partials/account/header.tpl -->
 
-<h3 class="fw-semibold fs-5">{{{ if isSelf }}}[[user:change-password]]{{{ else }}}[[pages:{template.name}, {username}]]{{{ end }}}</h3>
+<h3 class="fw-semibold fs-5">{{{ if isSelf }}}{{tx("user:change-password")}}{{{ else }}}{{tx("pages:account/edit/password", txEscape(username))}}{{{ end }}}</h3>
 <div class="row">
 	<div class="col-12 col-lg-4">
 		<form class="edit-form">
@@ -8,25 +8,25 @@
 
 			{{{ if isSelf }}}
 			<div class="mb-3">
-				<label class="form-label fw-semibold text-sm" for="inputCurrentPassword">[[user:current-password]]</label>
-				<input autocomplete="off" class="form-control" type="password" id="inputCurrentPassword" placeholder="[[user:current-password]]" value="" {{{ if !hasPassword }}} disabled{{{ end }}}>
+				<label class="form-label fw-semibold text-sm" for="inputCurrentPassword">{{tx("user:current-password")}}</label>
+				<input autocomplete="off" class="form-control" type="password" id="inputCurrentPassword" placeholder="{{tx("user:current-password")}}" value="" {{{ if !hasPassword }}} disabled{{{ end }}}>
 			</div>
 			{{{ end }}}
 
 			<div class="mb-3">
-				<label class="form-label fw-semibold text-sm" for="inputNewPassword">[[user:new-password]]</label>
-				<input class="form-control" type="password" id="inputNewPassword" placeholder="[[user:password]]" value="">
+				<label class="form-label fw-semibold text-sm" for="inputNewPassword">{{tx("user:new-password")}}</label>
+				<input class="form-control" type="password" id="inputNewPassword" placeholder="{{tx("user:password")}}" value="">
 				<span class="form-text" id="password-notify"></span>
 			</div>
 
 			<div class="mb-3">
-				<label class="form-label fw-semibold text-sm" for="inputNewPasswordAgain">[[user:confirm-password]]</label>
-				<input class="form-control" type="password" id="inputNewPasswordAgain" placeholder="[[user:confirm-password]]" value="">
+				<label class="form-label fw-semibold text-sm" for="inputNewPasswordAgain">{{tx("user:confirm-password")}}</label>
+				<input class="form-control" type="password" id="inputNewPasswordAgain" placeholder="{{tx("user:confirm-password")}}" value="">
 				<span class="form-text" id="password-confirm-notify"></span>
 			</div>
 
 			<div class="form-actions">
-				<button id="changePasswordBtn" class="btn btn-primary btn-block"><i class="hide fa fa-spinner fa-spin"></i> [[user:change-password]]</button>
+				<button id="changePasswordBtn" class="btn btn-primary btn-block"><i class="hide fa fa-spinner fa-spin"></i> {{tx("user:change-password")}}</button>
 			</div>
 		</form>
 	</div>
