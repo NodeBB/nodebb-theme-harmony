@@ -250,7 +250,7 @@
 
 						<div component="account/moderation-note/content-area" class="d-flex flex-column">
 							<div class="content text-secondary">
-								{./note}
+								{{txEscape(./note)}}
 							</div>
 							<button component="account/moderation-note/edit" class="btn btn-sm btn-link align-self-end">{{tx("topic:edit")}}</button>
 						</div>
