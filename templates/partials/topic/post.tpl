@@ -1,7 +1,7 @@
 {{{ if (!./index && widgets.mainpost-header.length) }}}
 <div data-widget-area="mainpost-header">
 	{{{ each widgets.mainpost-header }}}
-	{widgets.mainpost-header.html}
+	{{widgets.mainpost-header.html}}
 	{{{ end }}}
 </div>
 {{{ end }}}
@@ -143,7 +143,7 @@
 {{{ if (!./index && widgets.mainpost-footer.length) }}}
 <div data-widget-area="mainpost-footer">
 	{{{ each widgets.mainpost-footer }}}
-	{widgets.mainpost-footer.html}
+	{{widgets.mainpost-footer.html}}
 	{{{ end }}}
 </div>
 {{{ end }}}
