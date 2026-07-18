@@ -78,12 +78,12 @@
 		</div>
 
 		<div class="content text-break" component="post/content" itemprop="text">
-			{{{ if posts.txContent }}}{{tx(posts.content)}}{{{ else }}}{{posts.content}}{{{ end }}}
+			{{{ if posts.txContent }}}{{tx(posts.content)}}{{{ else }}}{{txEscape(posts.content)}}{{{ end }}}
 		</div>
 
 		<div component="post/footer" class="post-footer border-bottom pb-2">
 			{{{ if posts.user.signature }}}
-			<div component="post/signature" data-uid="{posts.user.uid}" class="text-xs text-muted mt-2">{{posts.user.signature}}</div>
+			<div component="post/signature" data-uid="{posts.user.uid}" class="text-xs text-muted mt-2">{{txEscape(posts.user.signature)}}</div>
 			{{{ end }}}
 
 			<div class="d-flex flex-wrap-reverse gap-2 {{{ if (hideReplies || !posts.replies.count) }}}justify-content-end{{{ else }}}justify-content-between{{{ end }}}">
