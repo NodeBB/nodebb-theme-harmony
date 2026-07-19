@@ -57,6 +57,13 @@ $font-weight-semibold: 500 !default;
 $small-font-size: 0.875rem !default;
 
 $breadcrumb-divider: quote("→");
+$breadcrumb-divider-rtl: quote("←");
 $breadcrumb-divider-color: $gray-500 !default;
 $breadcrumb-active-color: $body-color !default;
 $breadcrumb-item-padding-x: 12px !default;
+
+html[data-dir="rtl"] {
+	.breadcrumb-item + .breadcrumb-item::before {
+		content: $breadcrumb-divider-rtl;
+	}
+}
