@@ -31,7 +31,7 @@
 					<form class="mb-3" role="search" method="GET" action="{config.relative_path}/search">
 						<input type="hidden" name="in" value="categories" />
 						<div class="input-group bottom-sheet">
-							<input class="form-control form-control-lg" component="category-search" name="term" type="text" autocomplete="off" placeholder="[[world:category-search]]" />
+							<input class="form-control form-control-lg" component="category-search" name="term" type="text" autocomplete="off" placeholder="{{tx("world:category-search")}}" />
 							<button class="btn btn-outline-secondary dropdown-toggle d-md-none" type="button" data-bs-toggle="dropdown">
 								<i class="fa fa-fw fa-list"></i>
 							</button>
