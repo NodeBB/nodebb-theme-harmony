@@ -3,8 +3,8 @@
 	{{{ each breadcrumbs }}}
 	<li{{{ if @last }}} component="breadcrumb/current"{{{ end }}} itemscope="itemscope" itemprop="itemListElement" itemtype="http://schema.org/ListItem" class="breadcrumb-item {{{ if @last }}}active{{{ end }}}">
 		<meta itemprop="position" content="{increment(@index, "1")}" />
-		{{{ if ./url }}}<a href="{./url}" itemprop="item">{{{ end }}}
-			<span class="fw-semibold" itemprop="name">{{tx(./text)}}</span>
+		{{{ if ./url }}}<a href="{./url}" itemprop="item" class="text-reset">{{{ end }}}
+			<span class="fw-semibold text-sm" itemprop="name">{{tx(./text)}}</span>
 		{{{ if ./url }}}</a>{{{ end }}}
 	</li>
 	{{{ end }}}
