@@ -99,7 +99,7 @@
 					</span>
 
 					<span class="ms-2 replies-count fw-semibold text-nowrap" component="post/reply-count/text" data-replies="{posts.replies.count}">{{tx(posts.replies.text)}}</span>
-					<span class="ms-2 replies-last hidden-xs fw-semibold">{{tx("topic:last-reply-time")}} <span class="timeago" title="{{isoTimeToLocaleString(posts.replies.timestampISO, config.userLang)}}"></span></span>
+					<span class="ms-2 replies-last hidden-xs fw-semibold">{{tx("topic:last-reply-time")}} <span class="timeago" title="{posts.replies.timestampISO}"></span></span>
 
 					<i class="fa fa-fw fa-chevron-down" component="post/replies/open"></i>
 				</a>
