@@ -114,14 +114,14 @@
 					{{{ end }}}
 
 					{{{ if !reputation:disabled }}}
-					<div class="d-flex votes align-items-center">
+					<div class="d-flex gap-1 votes align-items-center">
 						<a component="post/upvote" href="#" class="btn btn-ghost btn-sm{{{ if posts.upvoted }}} upvoted{{{ end }}}" title="{{tx("topic:upvote-post")}}">
 							<i class="fa fa-fw fa-chevron-up text-primary"></i>
 						</a>
 
 						<meta itemprop="upvoteCount" content="{posts.upvotes}">
 						<meta itemprop="downvoteCount" content="{posts.downvotes}">
-						<a href="#" class="px-2 mx-1 btn btn-ghost btn-sm" component="post/vote-count" data-votes="{posts.votes}" title="{{tx("global:voters")}}">{posts.votes}</a>
+						<a href="#" class="px-2 btn btn-ghost btn-sm" component="post/vote-count" data-votes="{posts.votes}" title="{{tx("global:voters")}}">{posts.votes}</a>
 
 						{{{ if !downvote:disabled }}}
 						<a component="post/downvote" href="#" class="btn btn-ghost btn-sm{{{ if posts.downvoted }}} downvoted{{{ end }}}" title="{{tx("topic:downvote-post")}}">
