@@ -8,7 +8,7 @@
 
 				<ul component="blocks/search/list" class="dropdown-menu dropdown-menu-end p-1 text-sm block-edit overflow-auto" style="max-height:300px;" role="menu">
 					<li component="blocks/start-typing">
-						<a href="#" class="dropdown-item rounded-1" role="menuitem">{{tx("admin/menu:search.start-typing")}}</a>
+						<a href="#" class="dropdown-item rounded-1" role="menuitem">{{tx("search:type-to-search")}}</a>
 					</li>
 					<li component="blocks/no-users" class="hidden">
 						<a href="#" class="dropdown-item rounded-1" role="menuitem">{{tx("users:no-users-found")}}</a>
@@ -35,13 +35,13 @@
 	</div>
 </div>
 <div class="users">
-	<div class="alert alert-warning text-center m-0"{{{ if users.length }}} style="display: none;"{{{ end }}}>[[user:has-no-blocks]]</div>
+	<div class="alert alert-warning text-center m-0"{{{ if users.length }}} style="display: none;"{{{ end }}}>{{tx("user:has-no-blocks")}}</div>
 
 	<div id="users-container" class="row row-cols-2 row-cols-lg-3 row-cols-xl-4 g-3">
 		{{{ each users }}}
 		<div class="d-flex flex-column gap-1">
 			<!-- IMPORT partials/users/item.tpl -->
-			<button class="btn btn-sm btn-outline-primary text-nowrap mx-auto" data-uid="{./uid}" data-action="unblock">[[user:unblock-user]]</button>
+			<button class="btn btn-sm btn-outline-primary text-nowrap mx-auto" data-uid="{./uid}" data-action="unblock">{{tx("user:unblock-user")}}</button>
 		</div>
 		{{{ end }}}
 	</div>
