@@ -3,7 +3,7 @@
 		{{buildAvatar(post.user, "24px", true)}}
 	</div>
 	<div class="text-truncate">
-		<a href="{{{ if post.user.userslug }}}{config.relative_path}/user/{post.user.userslug}{{{else }}}#{{{ end }}}">{post.user.displayname}</a>
+		<a href="{{{ if post.user.userslug }}}{config.relative_path}/user/{post.user.userslug}{{{else }}}#{{{ end }}}">{userDisplayname(post.user)}</a>
 	</div>
 	<span class="timeago text-nowrap text-muted" title="{post.timestampISO}"></span>
 </div>
