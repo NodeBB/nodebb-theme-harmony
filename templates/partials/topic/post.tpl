@@ -10,7 +10,7 @@
 {{{ end }}}
 <div class="d-flex align-items-start gap-3 post-container-parent">
 	<div class="bg-body d-none d-sm-block rounded-circle" style="box-shadow: 0 0 0 3px var(--bs-body-bg);">
-		<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" aria-label="{{tx("aria:profile-page-for", txEscape(userDisplayname(./user)))}}">
+		<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" aria-label="{{tx("aria:profile-page-for", txEscape(txDisplayname(./user)))}}">
 			{{buildAvatar(posts.user, "48px", true, "", "user/picture")}}
 			{{{ if ./user.isLocal }}}
 			<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">{{tx(concat("global:", posts.user.status))}}</span></span>
@@ -25,7 +25,7 @@
 	<div class="post-container d-flex gap-2 flex-grow-1 flex-column w-100" style="min-width:0;">
 		<div class="d-flex align-items-start justify-content-between gap-1 flex-nowrap w-100 post-header" itemprop="author" itemscope itemtype="https://schema.org/Person">
 			<div class="d-flex gap-1 flex-wrap align-items-center text-truncate">
-				<meta itemprop="name" content="{userDisplayname(./user)}">
+				<meta itemprop="name" content="{{txDisplayname(./user)}}">
 				{{{ if ./user.userslug }}}<meta itemprop="url" content="{config.relative_path}/user/{./user.userslug}">{{{ end }}}
 
 				<div class="d-flex flex-nowrap gap-1 align-items-center text-truncate">
@@ -43,7 +43,7 @@
 						</a>
 					</div>
 
-					<a class="fw-bold text-nowrap text-truncate" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{userDisplayname(posts.user)}</a>
+					<a class="fw-bold text-nowrap text-truncate" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{{txDisplayname(posts.user)}}</a>
 				</div>
 
 				{{{ each posts.user.selectedGroups }}}
