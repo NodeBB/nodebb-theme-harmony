@@ -247,7 +247,7 @@
 
 						<div component="account/moderation-note/content-area" class="d-flex flex-column">
 							<div class="content text-secondary">
-								{{txEscape(./note)}}
+								{{./note}}
 							</div>
 							{{{ if isAdmin }}}
 							<div class="d-flex gap-1 justify-content-end">
