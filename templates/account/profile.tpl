@@ -10,7 +10,7 @@
 
 {{{ if aboutme }}}
 <div component="aboutme" class="text-sm text-break">
-{{txEscape(aboutmeParsed)}}
+{{aboutmeParsed}}
 </div>
 {{{ end }}}
 

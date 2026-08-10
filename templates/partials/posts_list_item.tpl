@@ -14,7 +14,7 @@
 		</div>
 
 		<div component="post/content" class="content text-sm text-break">
-			{{{ if ./txContent }}}{{tx(./content)}}{{{ else }}}{{txEscape(./content)}}{{{ end }}}
+			{{{ if ./txContent }}}{{tx(./content)}}{{{ else }}}{{./content}}{{{ end }}}
 		</div>
 	</div>
 	<div class="mb-3 d-flex flex-wrap gap-1 w-100">
