@@ -35,7 +35,7 @@ library.init = async function (params) {
 		middleware.checkAccountPermissions,
 	], controllers.renderThemeSettings);
 
-	if (nconf.get('isPrimary') && process.env.NODE_ENV === 'production') {
+	if (nconf.get('isPrimary') && process.env.NODE_ENV === 'production' && !process.env.CI) {
 		setTimeout(buildSkins, 0);
 	}
 };
