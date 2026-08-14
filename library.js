@@ -1,6 +1,8 @@
 'use strict';
 
+const os = nodebb.require('os');
 const nconf = nodebb.require('nconf');
+
 const meta = nodebb.require('./src/meta');
 const _ = nodebb.require('lodash');
 const user = nodebb.require('./src/user');
@@ -35,7 +37,8 @@ library.init = async function (params) {
 		middleware.checkAccountPermissions,
 	], controllers.renderThemeSettings);
 
-	if (nconf.get('isPrimary') && process.env.NODE_ENV === 'production' && !process.env.CI) {
+	const cpuCountOk = os.cpus().length > 2; // save resources on low-cpu deployments; don't proactively build
+	if (cpuCountOk && nconf.get('isPrimary') && process.env.NODE_ENV === 'production' && !process.env.CI) {
 		setTimeout(buildSkins, 0);
 	}
 };
