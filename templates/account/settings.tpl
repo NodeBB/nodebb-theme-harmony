@@ -187,7 +187,7 @@
 
 		{{{ each customSettings}}}
 		<hr/>
-		<h6 class="fw-bold">{./title}</h6>
+		<h6 class="fw-bold">{{tx(./title)}}</h6>
 		<div>
 			{{./content}}
 		</div>
