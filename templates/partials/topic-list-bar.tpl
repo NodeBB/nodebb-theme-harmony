@@ -13,7 +13,7 @@
 				<!-- IMPORT partials/topic-terms.tpl -->
 				{{{ end }}}
 				{{{ if (template.unread || (template.recent || (template.popular || template.top))) }}}
-				<!-- IMPORT partials/topic-filters.tpl -->
+				<!-- IMPORT partials/topic-filters-left.tpl -->
 				<!-- IMPORT partials/category/filter-dropdown-left.tpl -->
 				<!-- IMPORT partials/tags/filter-dropdown-left.tpl -->
 				{{{ end }}}
