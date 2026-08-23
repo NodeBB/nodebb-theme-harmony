@@ -78,7 +78,7 @@
 			<div class="align-items-center justify-content-center card card-header p-3 border-0 rounded-1 h-100 gap-2">
 				<span class="stat-label text-xs fw-semibold"><span><i class="text-muted {./icon}"></i> {{tx(./name)}}</span></span>
 				{{{ if (./type == "input-link") }}}
-				<a class="text-center text-break w-100 px-2 ff-secondary text-underline text-reset" href="{./value}" rel="nofollow noreferrer">{./linkValue}</a>
+				<a class="text-center text-break w-100 px-2 ff-secondary text-underline text-reset" href="{./value}" rel="nofollow noreferrer{{{ if (./key == "website") }}} me{{{ end }}}">{./linkValue}</a>
 				{{{ else }}}
 				<span class="text-center text-break {{{ if (./type == "input-number") }}}fs-2{{{else }}}fs-6{{{ end }}} ff-secondary">{./value}</span>
 				{{{ end }}}
