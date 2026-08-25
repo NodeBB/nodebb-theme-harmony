@@ -11,8 +11,8 @@
 <ul class="notifications-dropdown dropdown-menu p-1 shadow" role="menu">
 	{{{ if !config.hideReadNotifications }}}
 	<li class="d-flex gap-1 align-items-center">
-		<button type="button" class="btn btn-ghost btn-sm ff-secondary active px-3" data-filter="all">{{tx("notifications:all")}}</button>
-		<button type="button" class="btn btn-ghost btn-sm ff-secondary d-flex align-items-center gap-2" data-filter="unread">{{tx("unread:title")}} <span component="notifications/count" class="{{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span></button>
+		<button type="button" class="btn btn-ghost btn-sm ff-secondary {{{ if !unreadCount.notification }}}active{{{ end }}} px-3" data-filter="all">{{tx("notifications:all")}}</button>
+		<button type="button" class="btn btn-ghost btn-sm ff-secondary d-flex align-items-center gap-2 {{{ if unreadCount.notification }}}active{{{ end }}}" data-filter="unread">{{tx("unread:title")}} <span component="notifications/count" class="{{{ if !unreadCount.notification }}}hidden{{{ end }}}">{unreadCount.notification}</span></button>
 	</li>
 	<li class="dropdown-divider"></li>
 	{{{ end }}}
