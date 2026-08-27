@@ -1,9 +1,9 @@
 {{{ if (privileges.topics:create || privileges.topics:reply) }}}
 <div component="topic/quickreply/container" class="quick-reply d-flex gap-3 mb-4">
 	<div class="icon hidden-xs">
-		<a class="d-inline-block position-relative" href="{{{ if loggedInUser.userslug }}}{config.relative_path}/user/{loggedInUser.userslug}{{{ else }}}#{{{ end }}}">
+		<a class="d-inline-block position-relative" href="{{{ if loggedInUser.userslug }}}{config.relative_path}/user/{loggedInUser.userslug}{{{ else }}}#{{{ end }}}" data-uid="{loggedInUser.uid}">
 			{{buildAvatar(loggedInUser, "48px", true, "", "user/picture")}}
-			{{{ if loggedInUser.status }}}<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {loggedInUser.status}"><span class="visually-hidden">{{tx(concat("global:", loggedInUser.status))}}</span></span>{{{ end }}}
+			{{{ if loggedInUser.status }}}<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {loggedInUser.status}" title="{{tx(concat("global:", loggedInUser.status))}}" aria-label="{{tx(concat("global:", loggedInUser.status))}}"></span>{{{ end }}}
 		</a>
 	</div>
 	<form class="flex-grow-1 d-flex flex-column gap-2" method="post" action="{config.relative_path}/compose">
