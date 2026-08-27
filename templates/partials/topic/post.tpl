@@ -12,14 +12,7 @@
 	<div class="bg-body d-none d-sm-block rounded-circle" style="box-shadow: 0 0 0 3px var(--bs-body-bg);">
 		<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" aria-label="{{tx("aria:profile-page-for", txEscape(txDisplayname(./user)))}}">
 			{{buildAvatar(posts.user, "48px", true, "", "user/picture")}}
-			{{{ if ./user.isLocal }}}
-			<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">{{tx(concat("global:", posts.user.status))}}</span></span>
-			{{{ else }}}
-			<span component="user/locality" class="position-absolute top-100 start-100 lh-1 border border-white border-2 rounded-circle small" title="{{tx("global:remote-user")}}">
-				<span class="visually-hidden">{{tx("global:remote-user")}}</span>
-				<i class="fa fa-globe fa-width-auto"></i>
-			</span>
-			{{{ end }}}
+			<!-- IMPORT partials/topic/user-status.tpl -->
 		</a>
 	</div>
 	<div class="post-container d-flex gap-2 flex-grow-1 flex-column w-100" style="min-width:0;">
@@ -32,14 +25,7 @@
 					<div class="d-sm-none">
 						<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 							{{buildAvatar(posts.user, "20px", true, "", "user/picture")}}
-							{{{ if ./user.isLocal }}}
-							<span component="user/status" class="position-absolute top-100 start-100 border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">{{tx(concat("global:", posts.user.status))}}</span></span>
-							{{{ else }}}
-							<span component="user/locality" class="position-absolute top-100 start-100 lh-1 border border-white border-2 rounded-circle small" title="{{tx("global:remote-user")}}">
-								<span class="visually-hidden">{{tx("global:remote-user")}}</span>
-								<i class="fa fa-globe fa-width-auto"></i>
-							</span>
-							{{{ end }}}
+							<!-- IMPORT partials/topic/user-status.tpl -->
 						</a>
 					</div>
 
