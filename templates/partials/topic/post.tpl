@@ -29,7 +29,7 @@
 						</a>
 					</div>
 
-					<a class="fw-bold text-nowrap text-truncate" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{{txDisplayname(posts.user)}}</a>
+					<a class="fw-bold text-nowrap text-truncate" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{{renderShortcodeEmoji(txDisplayname(posts.user), posts.user.fullnameEmoji)}}</a>
 				</div>
 
 				{{{ each posts.user.selectedGroups }}}
