@@ -26,7 +26,7 @@
 		<div class="d-flex flex-column flex-md-row mt-1 justify-content-between w-100 gap-2">
 			<div class="d-flex flex-grow-1 flex-row gap-2">
 				<div class="d-flex flex-column gap-1">
-					<h2 class="fullname fw-semibold fs-2 tracking-tight mb-0">{{{ if fullname }}}{fullname}{{{ else }}}{username}{{{ end }}}</h2>
+					<h2 class="fullname fw-semibold fs-2 tracking-tight mb-0">{{{ if fullname }}}{{renderShortcodeEmoji(fullname, fullnameEmoji)}}{{{ else }}}{username}{{{ end }}}</h2>
 					<div class="d-flex flex-wrap gap-1 text-sm align-items-center">
 						<span class="username fw-bold">@{username}</span>
 						<div class="d-flex align-items-center gap-1 p-1 flex-wrap">
