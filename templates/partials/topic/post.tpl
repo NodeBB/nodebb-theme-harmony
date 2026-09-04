@@ -90,34 +90,36 @@
 					<i class="fa fa-fw fa-chevron-down" component="post/replies/open"></i>
 				</a>
 				{{{ end }}}
-				<div component="post/actions" class="d-flex flex-grow-1 align-items-start align-items-lg-center justify-content-end gap-1 post-tools">
+				<div component="post/actions" class="d-flex flex-wrap flex-grow-1 align-items-start align-items-lg-center justify-content-end gap-1 post-tools">
 					<!-- IMPORT partials/topic/reactions.tpl -->
-					<a component="post/reply" href="#" class="btn btn-ghost btn-sm {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="{{tx("topic:reply")}}"><i class="fa fa-fw fa-reply text-primary"></i></a>
-					<a component="post/quote" href="#" class="btn btn-ghost btn-sm {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="{{tx("topic:quote")}}"><i class="fa fa-fw fa-quote-right text-primary"></i></a>
+					<div class="d-flex gap-1">
+						<a component="post/reply" href="#" class="btn btn-ghost btn-sm {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="{{tx("topic:reply")}}"><i class="fa fa-fw fa-reply text-primary"></i></a>
+						<a component="post/quote" href="#" class="btn btn-ghost btn-sm {{{ if !privileges.topics:reply }}}hidden{{{ end }}}" title="{{tx("topic:quote")}}"><i class="fa fa-fw fa-quote-right text-primary"></i></a>
 
-					{{{ if ./announces }}}
-					<a component="post/announce-count" href="#" class="btn btn-ghost btn-sm d-flex gap-2 align-items-center" title="{{tx("topic:announcers")}}"><i class="fa fa-share-alt text-primary"></i> {./announces}</a>
-					{{{ end }}}
-
-					{{{ if !reputation:disabled }}}
-					<div class="d-flex gap-1 votes align-items-center">
-						<a component="post/upvote" href="#" class="btn btn-ghost btn-sm{{{ if posts.upvoted }}} upvoted{{{ end }}}" title="{{tx("topic:upvote-post")}}">
-							<i class="fa fa-fw fa-chevron-up text-primary"></i>
-						</a>
-
-						<meta itemprop="upvoteCount" content="{posts.upvotes}">
-						<meta itemprop="downvoteCount" content="{posts.downvotes}">
-						<a href="#" class="px-2 btn btn-ghost btn-sm" component="post/vote-count" data-votes="{posts.votes}" title="{{tx("global:voters")}}">{posts.votes}</a>
-
-						{{{ if !downvote:disabled }}}
-						<a component="post/downvote" href="#" class="btn btn-ghost btn-sm{{{ if posts.downvoted }}} downvoted{{{ end }}}" title="{{tx("topic:downvote-post")}}">
-							<i class="fa fa-fw fa-chevron-down text-primary"></i>
-						</a>
+						{{{ if ./announces }}}
+						<a component="post/announce-count" href="#" class="btn btn-ghost btn-sm d-flex gap-2 align-items-center" title="{{tx("topic:announcers")}}"><i class="fa fa-share-alt text-primary"></i> {./announces}</a>
 						{{{ end }}}
-					</div>
-					{{{ end }}}
 
-					<!-- IMPORT partials/topic/post-menu.tpl -->
+						{{{ if !reputation:disabled }}}
+						<div class="d-flex gap-1 votes align-items-center">
+							<a component="post/upvote" href="#" class="btn btn-ghost btn-sm{{{ if posts.upvoted }}} upvoted{{{ end }}}" title="{{tx("topic:upvote-post")}}">
+								<i class="fa fa-fw fa-chevron-up text-primary"></i>
+							</a>
+
+							<meta itemprop="upvoteCount" content="{posts.upvotes}">
+							<meta itemprop="downvoteCount" content="{posts.downvotes}">
+							<a href="#" class="px-2 btn btn-ghost btn-sm" component="post/vote-count" data-votes="{posts.votes}" title="{{tx("global:voters")}}">{posts.votes}</a>
+
+							{{{ if !downvote:disabled }}}
+							<a component="post/downvote" href="#" class="btn btn-ghost btn-sm{{{ if posts.downvoted }}} downvoted{{{ end }}}" title="{{tx("topic:downvote-post")}}">
+								<i class="fa fa-fw fa-chevron-down text-primary"></i>
+							</a>
+							{{{ end }}}
+						</div>
+						{{{ end }}}
+
+						<!-- IMPORT partials/topic/post-menu.tpl -->
+					 </div>
 				</div>
 			</div>
 
