@@ -198,6 +198,13 @@ $(document).ready(function () {
 
 			$(window).on('action:composer.drafts.save', updateBadgeCount);
 			$(window).on('action:composer.drafts.remove', updateBadgeCount);
+			// drafts live in localStorage; keep the badge in sync when another tab saves or removes a draft
+			$(window).on('storage', function (ev) {
+				const key = ev.originalEvent && ev.originalEvent.key;
+				if (key === null || key === 'drafts:available') {
+					updateBadgeCount();
+				}
+			});
 			updateBadgeCount();
 		});
 	}
