@@ -8,4 +8,13 @@
 	<span class="timeago text-nowrap text-muted" title="{post.timestampISO}"></span>
 </div>
 
-<div class="text-sm">{{{ if post.txContent }}}{{tx(posts.content)}}{{{ else }}}{{post.content}}{{{ end }}}</div>
+<div class="text-sm">
+{{{ if post.contentWarning }}}
+<details class="content-warning">
+<summary>{post.contentWarning}</summary>
+{{{ if post.txContent }}}{{tx(posts.content)}}{{{ else }}}{{post.content}}{{{ end }}}
+</details>
+{{{ else }}}
+{{{ if post.txContent }}}{{tx(posts.content)}}{{{ else }}}{{post.content}}{{{ end }}}
+{{{ end }}}
+</div>

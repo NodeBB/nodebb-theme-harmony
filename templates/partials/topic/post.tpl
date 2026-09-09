@@ -64,7 +64,14 @@
 		</div>
 
 		<div class="content text-break" component="post/content" itemprop="text">
+			{{{ if posts.contentWarning }}}
+			<details class="content-warning">
+			<summary>{posts.contentWarning}</summary>
 			{{{ if posts.txContent }}}{{tx(posts.content)}}{{{ else }}}{{posts.content}}{{{ end }}}
+			</details>
+			{{{ else }}}
+			{{{ if posts.txContent }}}{{tx(posts.content)}}{{{ else }}}{{posts.content}}{{{ end }}}
+			{{{ end }}}
 		</div>
 
 		<div component="post/footer" class="post-footer border-bottom pb-2">

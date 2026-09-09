@@ -22,7 +22,14 @@
 		</div>
 
 		<div component="post/content" class="content text-sm text-break">
+			{{{ if ./contentWarning }}}
+			<details class="content-warning">
+			<summary>{./contentWarning}</summary>
 			{{{ if ./txContent }}}{{tx(./content)}}{{{ else }}}{{./content}}{{{ end }}}
+			</details>
+			{{{ else }}}
+			{{{ if ./txContent }}}{{tx(./content)}}{{{ else }}}{{./content}}{{{ end }}}
+			{{{ end }}}
 		</div>
 	</div>
 </li>
