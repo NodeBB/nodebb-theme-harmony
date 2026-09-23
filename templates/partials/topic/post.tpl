@@ -1,3 +1,5 @@
+<!-- IMPORT partials/topic/post-meta-tags.tpl -->
+
 {{{ if (!./index && widgets.mainpost-header.length) }}}
 <div data-widget-area="mainpost-header">
 	{{{ each widgets.mainpost-header }}}
@@ -18,9 +20,6 @@
 	<div class="post-container d-flex gap-2 flex-grow-1 flex-column w-100" style="min-width:0;">
 		<div class="d-flex align-items-start justify-content-between gap-1 flex-nowrap w-100 post-header" itemprop="author" itemscope itemtype="https://schema.org/Person">
 			<div class="d-flex gap-1 flex-wrap align-items-center text-truncate">
-				<meta itemprop="name" content="{{txDisplayname(./user)}}">
-				{{{ if ./user.userslug }}}<meta itemprop="url" content="{config.relative_path}/user/{./user.userslug}">{{{ end }}}
-
 				<div class="d-flex flex-nowrap gap-1 align-items-center text-truncate">
 					<div class="d-sm-none">
 						<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">

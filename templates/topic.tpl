@@ -67,10 +67,6 @@
 						{{{ each posts }}}
 							<li component="post" class="{{{ if (./index != 0) }}}pt-4{{{ end }}} {{{ if posts.deleted }}}deleted{{{ end }}} {{{ if posts.selfPost }}}self-post{{{ end }}} {{{ if posts.topicOwnerPost }}}topic-owner-post{{{ end }}}" <!-- IMPORT partials/data/topic.tpl -->>
 								<a component="post/anchor" data-index="{./index}" id="{increment(./index, "1")}"></a>
-								<meta itemprop="datePublished" content="{./timestampISO}">
-								{{{ if ./editedISO }}}
-								<meta itemprop="dateModified" content="{./editedISO}">
-								{{{ end }}}
 
 								<!-- IMPORT partials/topic/post.tpl -->
 							</li>
