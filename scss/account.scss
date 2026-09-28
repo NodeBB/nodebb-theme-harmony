@@ -8,6 +8,21 @@
 		margin-top: 300px;
 	}
 
+	.cover {
+		@include media-breakpoint-down(md) {
+			.save,
+			.indicator {
+				left: auto;
+				right: 1em;
+				transform: none;
+			}
+
+			.controls {
+				text-align: end;
+			}
+		}
+	}
+
 	.categories {
 		[component="categories/category"] {
 			$category-pad: 50;
