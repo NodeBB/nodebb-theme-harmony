@@ -79,6 +79,7 @@
 				<span class="stat-label text-xs fw-semibold"><span><i class="text-muted {./icon}"></i> {{tx(./name)}}</span></span>
 				{{{ if (./type == "input-link") }}}
 				<a class="text-center text-break w-100 px-2 ff-secondary text-underline text-reset" href="{./value}" rel="nofollow noreferrer me">{./linkValue}</a>
+					{{{ if ./verified }}}<i class="fa-solid fa-circle-check text-success" title="{{tx("user:link-verified")}}"></i>{{{ end }}}
 				{{{ else }}}
 				<span class="text-center text-break {{{ if (./type == "input-number") }}}fs-2{{{else }}}fs-6{{{ end }}} ff-secondary">{./value}</span>
 				{{{ end }}}
