@@ -93,7 +93,7 @@ body:not(.page-user) {
 }
 
 [component="chat/message/body"], [component="post/content"] {
-	img {
+	img:not(.emoji) {
 		@extend .shadow-sm;
 		padding: $spacer * 0.5;
 		margin: $spacer * 0.5 0;
