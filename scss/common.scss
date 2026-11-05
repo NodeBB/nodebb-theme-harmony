@@ -79,6 +79,11 @@ body:not(.page-user) {
 	z-index: 3;
 	top: 0;
 	padding: 0.25rem 0;
+
+	// keep open dropdowns above the sidebars
+	&:has(.dropdown-menu.show) {
+		z-index: $zindex-sticky + 1;
+	}
 }
 
 .flex-basis-md-200 {
